@@ -6,6 +6,15 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "1.2.0",
+    date: "2026-09-21",
+    changes: [
+      "Improved the small-screen experience with a leaner header, horizontally scrolling navigation and filters, clearer dense lists, and a card layout for SR history on phones.",
+      "Winner records are now treated as an incomplete log: profiles show recorded wins instead of misleading zeroes, and winner-based achievements, luck, and superlatives stay hidden until that data is trustworthy.",
+      "Added clearer data-quality messaging to profiles, item pages, recorded loot, and guild statistics.",
+    ],
+  },
+  {
     version: "1.1.0",
     date: "2026-08-29",
     changes: [
