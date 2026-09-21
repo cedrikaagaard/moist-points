@@ -274,7 +274,7 @@ h1, h2 {
 .raid-badge.clickable { cursor: pointer; }
 
 /* ---------- Segmented control ---------- */
-.segmented { display: inline-flex; gap: 4px; background: var(--surface-1); border: 1px solid var(--border-soft); border-radius: 12px; padding: 5px; flex-wrap: wrap; }
+.segmented { display: inline-flex; gap: 4px; background: var(--surface-1); border: 1px solid var(--border-soft); border-radius: 12px; padding: 5px; flex-wrap: wrap; max-width: 100%; }
 .segmented-btn {
   display: flex; align-items: center; gap: 8px; border: none; background: transparent;
   color: var(--text-2); font-family: var(--font); font-size: 13.5px; font-weight: 600;
@@ -301,7 +301,7 @@ h1, h2 {
 .point-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .point-list li { display: flex; align-items: center; gap: 10px; padding: 5px 0; border-radius: 6px; }
 .point-list li.hit { background: rgba(212, 175, 90, 0.10); box-shadow: 0 0 0 1px rgba(212, 175, 90, 0.2); padding: 5px 6px; }
-.point-name { flex-shrink: 0; min-width: 96px; font-size: 13.5px; color: var(--text); }
+.point-name { flex-shrink: 0; min-width: 96px; font-size: 13.5px; color: var(--text); overflow-wrap: anywhere; }
 .point-name:hover { color: var(--gold-bright); }
 .point-bar-track { flex: 1; height: 6px; background: var(--surface-3); border-radius: 4px; overflow: hidden; }
 .point-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-deep), var(--gold)); border-radius: 4px; }
@@ -664,15 +664,27 @@ body.leeroy-shake { animation: leeroy-quake 0.4s cubic-bezier(0.36,0.07,0.19,0.9
 
   /* Top bar reflows into tidy rows instead of one cramped line:
      row 1 = brand + identity chip, row 2 = search, row 3 = nav. */
-  .topbar { flex-wrap: wrap; gap: 10px 12px; padding: 12px 16px; }
+  .topbar { flex-wrap: wrap; gap: 8px 12px; padding: 10px 16px; }
   .brand { margin-right: auto; }
   .me-chip { order: 1; }
   .global-search { order: 2; width: 100%; max-width: none; margin: 0; }
+  .global-search.mobile-hide { display: none; }
   .global-search .search.sm { width: 100%; }
   .search-drop { width: 100%; min-width: 0; }
-  .nav { order: 3; width: 100%; margin: 0; flex-wrap: wrap; gap: 2px 4px; }
-  .nav-link { white-space: nowrap; }
+  .nav {
+    order: 3; width: calc(100% + 32px); margin: 0 -16px; padding: 0 16px 2px;
+    flex-wrap: nowrap; gap: 2px 4px; overflow-x: auto; scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-link { white-space: nowrap; padding: 10px 14px; }
   .nav-link.active::after { bottom: -3px; }
+
+  .segmented, .filter-bar {
+    width: calc(100% + 32px); margin-inline: -16px; padding-inline: 16px;
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+  }
+  .segmented::-webkit-scrollbar, .filter-bar::-webkit-scrollbar { display: none; }
+  .segmented-btn, .chip { min-height: 42px; white-space: nowrap; flex-shrink: 0; }
 }
 @media (max-width: 560px) {
   .content { padding: 20px 14px 48px; }
@@ -682,15 +694,58 @@ body.leeroy-shake { animation: leeroy-quake 0.4s cubic-bezier(0.36,0.07,0.19,0.9
   .barchart-row { grid-template-columns: 88px 1fr auto; }
   .view-head { gap: 12px; }
   .view-head .search { width: 100%; }
+  .segmented, .filter-bar {
+    width: calc(100% + 28px); margin-inline: -14px; padding-inline: 14px;
+  }
 
   /* Stack panel titles above their subtitle so the muted note stops
      crowding the heading on narrow screens. */
   .panel { padding: 18px 16px; }
   .panel-head { flex-direction: column; align-items: flex-start; gap: 3px; }
 
-  /* Give tables a little more room per column so more fits before scroll. */
-  .data-table thead th { padding: 10px 12px; }
-  .data-table td { padding: 9px 12px; }
+  .point-list li { flex-wrap: wrap; gap: 7px 9px; }
+  .point-name { min-width: 0; flex: 1 1 120px; }
+  .point-list .you-tag { order: 4; }
+  .point-bar-track { order: 5; flex: 1 0 calc(100% - 32px); margin-left: 31px; }
+  .point-value, .item-odds { flex-shrink: 0; }
+
+  .bets li {
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 7px 10px;
+  }
+  .bets-bar-track { grid-column: 2 / -1; width: 100%; }
+  .bets-pct { grid-column: 3; grid-row: 1; }
+
+  .loot-feed li {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 4px 9px; align-items: center;
+  }
+  .loot-date { min-width: 0; }
+  .loot-item { grid-column: 2 / -1; }
+  .loot-arrow { display: none; }
+  .loot-winner { grid-column: 2; }
+
+  .table-wrap { overflow-x: visible; background: transparent; border: none; }
+  .data-table, .data-table thead, .data-table tbody, .data-table tr, .data-table td { display: block; }
+  .data-table thead { display: none; }
+  .data-table tbody { display: flex; flex-direction: column; gap: 10px; }
+  .data-table tr {
+    background: var(--surface-1); border: 1px solid var(--border-soft);
+    border-radius: var(--radius); padding: 12px 14px;
+  }
+  .data-table tr.me { box-shadow: inset 3px 0 0 var(--gold); }
+  .data-table tr.me td:first-child { box-shadow: none; }
+  .data-table td {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 4px 0; border-bottom: none; text-align: right;
+  }
+  .data-table td::before {
+    content: attr(data-label); color: var(--muted); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.08em; text-align: left;
+  }
+  .data-table td:first-child {
+    display: block; text-align: left; font-size: 14px; padding-bottom: 8px;
+  }
+  .data-table td:first-child::before { display: none; }
+  .data-table .num { text-align: right; }
 
   /* Item / profile page heads: let action buttons drop below the title. */
   .item-page-head { gap: 12px; }

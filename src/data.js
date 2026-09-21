@@ -42,6 +42,7 @@ function buildIndex(raw) {
   const { pointsByRaid, srHistory, updated, dataThrough, source, dbUpdated } = raw;
   const wins = raw.wins || [];
   const clears = raw.clears || {};
+  const awardsComplete = raw.awardsComplete === true;
 
   // Flatten point entries: one row per (item, character).
   const pointRows = [];
@@ -127,6 +128,7 @@ function buildIndex(raw) {
       maxItemSRs: perItem.size ? Math.max(...perItem.values()) : 0,
       raidsWithPoints: new Set(p.points.map((x) => x.raid)).size,
       winRate: p.srCount ? p.wins / p.srCount : 0,
+      awardsComplete,
     };
     const { earned, locked } = evaluateAchievements(p, d);
     p.achievements = earned;
@@ -175,14 +177,14 @@ function buildIndex(raw) {
   const winsByItem = new Map();
   for (const w of wins) winsByItem.set(w.itemId, (winsByItem.get(w.itemId) || 0) + 1);
 
-  const superlatives = computeSuperlatives(playerList, contested);
+  const superlatives = computeSuperlatives(playerList, contested, awardsComplete);
 
   // Item metadata (name + raid) for every tracked item, for the luck calc.
   const itemMeta = new Map();
   for (const raid of RAID_ORDER) {
     for (const it of pointsByRaid[raid] || []) itemMeta.set(it.itemId, { item: it.item, raid });
   }
-  const luck = computeLuck(itemMeta, winsByItem, clears);
+  const luck = computeLuck(itemMeta, winsByItem, clears, awardsComplete);
 
   // Every item that appears anywhere (points, history, or wins), keyed by id,
   // so the item page can resolve any linked item.
@@ -206,6 +208,7 @@ function buildIndex(raw) {
     dbUpdated,
     source,
     lootFeed,
+    awardsComplete,
     superlatives,
     mostDecorated,
     winsByItem,
@@ -241,7 +244,18 @@ function buildIndex(raw) {
 // Guild "drop luck": did items drop more or less often than their drop rate
 // predicts, given how many times we've cleared each raid? Only considers items
 // that have a drop rate filled in (src/data/dropRates.js).
-function computeLuck(itemMeta, winsByItem, clears) {
+function computeLuck(itemMeta, winsByItem, clears, awardsComplete) {
+  if (!awardsComplete) {
+    return {
+      unavailable: true,
+      reason: "Winner data is incomplete, so actual-vs-expected drop luck would be misleading.",
+      coverage: { withRates: 0, total: itemMeta.size },
+      overall: null,
+      luckiest: [],
+      unluckiest: [],
+    };
+  }
+
   const items = [];
   let sumActual = 0;
   let sumExpected = 0;
@@ -283,7 +297,7 @@ function computeLuck(itemMeta, winsByItem, clears) {
 
 // "Hall of fame" - fun, defensible awards from the data we have. Luck here is
 // roll-luck (wins vs how much you soft-reserve), which needs no drop rates.
-function computeSuperlatives(players, contested) {
+function computeSuperlatives(players, contested, awardsComplete) {
   const withSR = players.filter((p) => p.srCount >= 15); // enough SRs to be fair
   const maxBy = (arr, f) => arr.reduce((best, p) => (f(p) > f(best) ? p : best), arr[0]);
   const minBy = (arr, f) => arr.reduce((best, p) => (f(p) < f(best) ? p : best), arr[0]);
@@ -292,7 +306,7 @@ function computeSuperlatives(players, contested) {
   const mk = (p, value) => (p ? { name: p.name, value } : null);
 
   return {
-    mostWins: players.some((p) => p.wins)
+    mostWins: awardsComplete && players.some((p) => p.wins)
       ? mk(maxBy(players, (p) => p.wins), `${maxBy(players, (p) => p.wins).wins} items won`)
       : null,
     mostSRs: mk(maxBy(players, (p) => p.srCount), `${maxBy(players, (p) => p.srCount).srCount} soft-reserves`),
@@ -300,13 +314,13 @@ function computeSuperlatives(players, contested) {
       players[0],
       `${players[0]?.totalPoints.toLocaleString()} points banked`
     ),
-    luckiest: withSR.length
+    luckiest: awardsComplete && withSR.length
       ? mk(
           maxBy(withSR, winRate),
           `${maxBy(withSR, winRate).wins} wins / ${maxBy(withSR, winRate).srCount} SRs`
         )
       : null,
-    unluckiest: withSR.length
+    unluckiest: awardsComplete && withSR.length
       ? mk(
           minBy(withSR, winRate),
           `${minBy(withSR, winRate).wins} wins / ${minBy(withSR, winRate).srCount} SRs`

@@ -132,8 +132,10 @@ export default function Overview({ data }) {
 
       <section className="panel">
         <div className="panel-head">
-          <h2>Recent loot</h2>
-          <span className="muted">items awarded</span>
+          <h2>{data.awardsComplete ? "Recent loot" : "Recorded loot"}</h2>
+          <span className="muted">
+            {data.awardsComplete ? "items awarded" : "winner log incomplete"}
+          </span>
         </div>
         <ul className="loot-feed">
           {data.lootFeed.slice(0, 16).map((w, i) => (
@@ -147,13 +149,38 @@ export default function Overview({ data }) {
             </li>
           ))}
         </ul>
-        {data.lootFeed.length === 0 && <div className="empty">No loot recorded yet.</div>}
+        {data.lootFeed.length === 0 && (
+          <div className="empty">
+            {data.awardsComplete ? "No loot recorded yet." : "No recorded loot in the incomplete winner log."}
+          </div>
+        )}
       </section>
     </div>
   );
 }
 
 function GuildLuck({ luck }) {
+  if (luck?.unavailable) {
+    return (
+      <section className="panel">
+        <div className="panel-head">
+          <h2>Guild luck</h2>
+          <span className="muted">disabled until winner data is complete</span>
+        </div>
+        <div className="empty luck-empty">
+          <p>
+            <strong>Winner data is incomplete.</strong>
+          </p>
+          <p className="muted">
+            Soft-reserve rows are reliable, but awarded-item rows can be missing. Actual-vs-expected
+            drop luck would treat missing awards as non-drops, so this panel stays hidden rather
+            than showing misleading bad luck.
+          </p>
+        </div>
+      </section>
+    );
+  }
+
   if (!luck || luck.coverage.withRates === 0) {
     return (
       <section className="panel">
@@ -241,7 +268,9 @@ function HallOfFame({ superlatives: s, isMe }) {
     <section className="panel">
       <div className="panel-head">
         <h2>Hall of fame</h2>
-        <span className="muted">guild superlatives · luck = wins vs SRs</span>
+      <span className="muted">
+        guild superlatives{s.mostWins ? " · luck = wins vs SRs" : " · winner-based awards hidden"}
+      </span>
       </div>
       <div className="hof-grid">
         {awards.map((a) => {

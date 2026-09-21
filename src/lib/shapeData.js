@@ -53,7 +53,9 @@ export function shapeData(query) {
     ORDER BY pg.raid_date DESC, rd.raid_id, c.character_name
   `);
 
-  // Items actually awarded (won) - powers the loot feed, superlatives, and luck.
+  // Items actually awarded (won). In current exports this table is known to be
+  // incomplete, so consumers must treat these rows as a recorded lower bound,
+  // not authoritative winner history.
   const wins = query(`
     SELECT i.item_name AS item, i.item_id AS itemId, c.character_name AS character,
            r.date_rewarded AS date, rd.short_name AS raid
@@ -81,5 +83,5 @@ export function shapeData(query) {
     `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ` +
     `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
 
-  return { updated, dataThrough, raids, pointsByRaid, srHistory, wins, clears };
+  return { updated, dataThrough, raids, pointsByRaid, srHistory, wins, clears, awardsComplete: false };
 }

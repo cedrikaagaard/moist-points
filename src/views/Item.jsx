@@ -27,6 +27,7 @@ export default function Item({ data, id }) {
   const winners = data.wins.filter((w) => w.itemId === itemId); // date desc
   const srs = data.srHistory.filter((h) => h.itemId === itemId);
   const srCount = srs.reduce((a, h) => a + h.quantity, 0);
+  const awardsComplete = data.awardsComplete;
 
   const rate = DROP_RATES[itemId];
   const clears = data.clears[item.raid] || 0;
@@ -36,7 +37,7 @@ export default function Item({ data, id }) {
   // relative to how many times we've cleared its raid. A rough, guild-only
   // estimate raiders can eyeball against Wowhead's community numbers. Capped at
   // 100% since a few items drop more than once per clear.
-  const guildRate = clears > 0 ? Math.min(1, winners.length / clears) : null;
+  const guildRate = awardsComplete && clears > 0 ? Math.min(1, winners.length / clears) : null;
 
   return (
     <div className="view">
@@ -69,18 +70,39 @@ export default function Item({ data, id }) {
       <div className="stat-row">
         <StatTile label="Current holders" value={entries.length} />
         <StatTile label="Total soft-reserves" value={srCount} />
-        <StatTile label="Times won" value={winners.length} />
         <StatTile
-          label="Guild drop rate"
-          value={guildRate != null ? `${Math.round(guildRate * 100)}%` : "—"}
-          sub={
-            guildRate != null
-              ? `${winners.length} in ${clears} clears`
-              : "no clears logged yet"
-          }
-          accent="var(--frost-bright)"
+          label={awardsComplete ? "Times won" : "Recorded wins"}
+          value={awardsComplete ? winners.length : (winners.length ? `${winners.length}+` : "—")}
+          sub={awardsComplete ? undefined : "winner log incomplete"}
         />
+        {awardsComplete ? (
+          <StatTile
+            label="Guild drop rate"
+            value={guildRate != null ? `${Math.round(guildRate * 100)}%` : "—"}
+            sub={
+              guildRate != null
+                ? `${winners.length} in ${clears} clears`
+                : "no clears logged yet"
+            }
+            accent="var(--frost-bright)"
+          />
+        ) : (
+          <StatTile
+            label="Winner data"
+            value="Incomplete"
+            sub="SRs are the reliable source"
+            accent="var(--raid-bwl)"
+          />
+        )}
       </div>
+
+      {!awardsComplete && (
+        <p className="drop-note muted small">
+          <strong>Winner data is incomplete.</strong> Soft-reserves and points are tracked reliably,
+          but recorded wins/past winners may be missing, so this page avoids drop-rate or luck
+          conclusions from the award log.
+        </p>
+      )}
 
       {guildRate != null && (
         <p className="drop-note muted small">
@@ -132,8 +154,10 @@ export default function Item({ data, id }) {
 
         <section className="panel">
           <div className="panel-head">
-            <h2>Past winners</h2>
-            <span className="muted">{winners.length} awarded</span>
+            <h2>{awardsComplete ? "Past winners" : "Recorded winners"}</h2>
+            <span className="muted">
+              {awardsComplete ? `${winners.length} awarded` : "award log incomplete"}
+            </span>
           </div>
           <ul className="timeline">
             {winners.map((w, i) => (
@@ -144,7 +168,11 @@ export default function Item({ data, id }) {
               </li>
             ))}
           </ul>
-          {winners.length === 0 && <div className="empty">Not awarded yet.</div>}
+          {winners.length === 0 && (
+            <div className="empty">
+              {awardsComplete ? "Not awarded yet." : "No recorded winners for this item yet."}
+            </div>
+          )}
         </section>
       </div>
     </div>

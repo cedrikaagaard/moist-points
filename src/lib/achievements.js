@@ -28,10 +28,12 @@ export const ACHIEVEMENTS = [
   { id: "pts-800", emoji: "🏦", name: "Scrooge", desc: "800 points banked", rarity: "legendary", ...reach((p) => p.totalPoints, 800) },
 
   // --- Items won ---
-  { id: "win-1", emoji: "🎁", name: "First Blood", desc: "Won your first item", rarity: "common", ...reach((p) => p.wins, 1) },
-  { id: "win-5", emoji: "🛡️", name: "Geared Up", desc: "Won 5 items", rarity: "rare", ...reach((p) => p.wins, 5) },
-  { id: "win-15", emoji: "👑", name: "Loot Goblin", desc: "Won 15 items", rarity: "epic", ...reach((p) => p.wins, 15) },
-  { id: "win-30", emoji: "💎", name: "Loot Goblin King", desc: "Won 30 items", rarity: "legendary", ...reach((p) => p.wins, 30) },
+  // Awarded-item rows are optional/incomplete in many exports, so these are
+  // only evaluated when the dataset explicitly marks winner data complete.
+  { id: "win-1", needsAwardData: true, emoji: "🎁", name: "First Blood", desc: "Won your first item", rarity: "common", ...reach((p) => p.wins, 1) },
+  { id: "win-5", needsAwardData: true, emoji: "🛡️", name: "Geared Up", desc: "Won 5 items", rarity: "rare", ...reach((p) => p.wins, 5) },
+  { id: "win-15", needsAwardData: true, emoji: "👑", name: "Loot Goblin", desc: "Won 15 items", rarity: "epic", ...reach((p) => p.wins, 15) },
+  { id: "win-30", needsAwardData: true, emoji: "💎", name: "Loot Goblin King", desc: "Won 30 items", rarity: "legendary", ...reach((p) => p.wins, 30) },
 
   // --- Breadth ---
   { id: "all-raids-sr", emoji: "🗺️", name: "Everywhere at Once", desc: "Soft-reserved in all four raids", rarity: "common", ...reach((p) => p.raids.length, 4) },
@@ -48,10 +50,10 @@ export const ACHIEVEMENTS = [
   { id: "podium", emoji: "🏆", name: "Podium Finish", desc: "Top 3 in total points", rarity: "epic", test: (p, d) => d.rank <= 3 },
 
   // --- Luck (no progress bar - surprises) ---
-  { id: "lucky", emoji: "🍀", name: "Blessed by RNG", desc: "Won on at least half your SRs (20+ SRs)", rarity: "epic", test: (p, d) => p.srCount >= 20 && d.winRate >= 0.5 },
-  { id: "horseshoe", emoji: "🌈", name: "Golden Horseshoe", desc: "Won on 70%+ of your SRs (15+ SRs)", rarity: "legendary", test: (p, d) => p.srCount >= 15 && d.winRate >= 0.7 },
-  { id: "cursed", emoji: "🎲", name: "RNG Victim", desc: "30+ SRs and still no wins", rarity: "rare", test: (p) => p.srCount >= 30 && p.wins === 0 },
-  { id: "snake-eyes", emoji: "🐍", name: "Snake Eyes", desc: "50+ SRs, one win or fewer", rarity: "epic", test: (p) => p.srCount >= 50 && p.wins <= 1 },
+  { id: "lucky", needsAwardData: true, emoji: "🍀", name: "Blessed by RNG", desc: "Won on at least half your SRs (20+ SRs)", rarity: "epic", test: (p, d) => p.srCount >= 20 && d.winRate >= 0.5 },
+  { id: "horseshoe", needsAwardData: true, emoji: "🌈", name: "Golden Horseshoe", desc: "Won on 70%+ of your SRs (15+ SRs)", rarity: "legendary", test: (p, d) => p.srCount >= 15 && d.winRate >= 0.7 },
+  { id: "cursed", needsAwardData: true, emoji: "🎲", name: "RNG Victim", desc: "30+ SRs and still no wins", rarity: "rare", test: (p) => p.srCount >= 30 && p.wins === 0 },
+  { id: "snake-eyes", needsAwardData: true, emoji: "🐍", name: "Snake Eyes", desc: "50+ SRs, one win or fewer", rarity: "epic", test: (p) => p.srCount >= 50 && p.wins <= 1 },
 ];
 
 const RARITY_ORDER = { legendary: 0, epic: 1, rare: 2, common: 3 };
@@ -69,6 +71,7 @@ export function evaluateAchievements(p, d) {
   const earned = [];
   const locked = [];
   for (const a of ACHIEVEMENTS) {
+    if (a.needsAwardData && !d.awardsComplete) continue;
     if (passed(a, p, d)) {
       earned.push(a);
     } else if (a.progress) {

@@ -50,6 +50,7 @@ export default function History({ data }) {
   };
 
   const arrow = (key) => (sort.key === key ? (sort.dir === "asc" ? " ▲" : " ▼") : "");
+  const sortLabel = (key) => (sort.key === key ? (sort.dir === "asc" ? "ascending" : "descending") : "none");
 
   return (
     <div className="view">
@@ -77,6 +78,7 @@ export default function History({ data }) {
             key={r}
             className={`chip${raidFilter.has(r) ? " active" : ""}`}
             style={{ "--chip-color": RAID_META[r].color }}
+            aria-pressed={raidFilter.has(r)}
             onClick={() => toggleRaid(r)}
           >
             <span className="seg-dot" style={{ background: RAID_META[r].color }} />
@@ -101,21 +103,21 @@ export default function History({ data }) {
         <table className="data-table">
           <thead>
             <tr>
-              <th className="sortable" onClick={() => setSortKey("item")}>Item{arrow("item")}</th>
-              <th className="sortable" onClick={() => setSortKey("character")}>Raider{arrow("character")}</th>
-              <th className="sortable" onClick={() => setSortKey("date")}>Date{arrow("date")}</th>
-              <th className="sortable" onClick={() => setSortKey("raid")}>Raid{arrow("raid")}</th>
-              <th className="sortable num" onClick={() => setSortKey("quantity")}>Qty{arrow("quantity")}</th>
+              <th className="sortable" aria-sort={sortLabel("item")} onClick={() => setSortKey("item")}>Item{arrow("item")}</th>
+              <th className="sortable" aria-sort={sortLabel("character")} onClick={() => setSortKey("character")}>Raider{arrow("character")}</th>
+              <th className="sortable" aria-sort={sortLabel("date")} onClick={() => setSortKey("date")}>Date{arrow("date")}</th>
+              <th className="sortable" aria-sort={sortLabel("raid")} onClick={() => setSortKey("raid")}>Raid{arrow("raid")}</th>
+              <th className="sortable num" aria-sort={sortLabel("quantity")} onClick={() => setSortKey("quantity")}>Qty{arrow("quantity")}</th>
             </tr>
           </thead>
           <tbody>
             {slice.map((r, i) => (
               <tr key={i} className={isMe(r.character) ? "me" : ""}>
-                <td><WowheadLink id={r.itemId} name={r.item} className="item-name" /></td>
-                <td><PlayerLink name={r.character} /></td>
-                <td className="mono">{r.date}</td>
-                <td><RaidBadge raid={r.raid} size="xs" /></td>
-                <td className="num">{r.quantity}</td>
+                <td data-label="Item"><WowheadLink id={r.itemId} name={r.item} className="item-name" /></td>
+                <td data-label="Raider"><PlayerLink name={r.character} /></td>
+                <td data-label="Date" className="mono">{r.date}</td>
+                <td data-label="Raid"><RaidBadge raid={r.raid} size="xs" /></td>
+                <td data-label="Qty" className="num">{r.quantity}</td>
               </tr>
             ))}
           </tbody>

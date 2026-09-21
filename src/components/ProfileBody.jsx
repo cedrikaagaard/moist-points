@@ -41,7 +41,11 @@ export default function ProfileBody({ data, player }) {
     <>
       <div className="stat-row">
         <StatTile label="Total points" value={player.totalPoints.toLocaleString()} accent="var(--gold)" />
-        <StatTile label="Items won" value={player.wins ?? 0} />
+        <StatTile
+          label={data.awardsComplete ? "Items won" : "Recorded wins"}
+          value={data.awardsComplete ? (player.wins ?? 0) : (player.wins ? `${player.wins}+` : "—")}
+          sub={data.awardsComplete ? undefined : "winner log incomplete"}
+        />
         <StatTile label="Soft-reserves" value={player.srCount} />
         <StatTile label="Achievements" value={player.achievements?.length ?? 0} />
       </div>
@@ -50,7 +54,10 @@ export default function ProfileBody({ data, player }) {
         <section className="panel">
           <div className="panel-head">
             <h2>Achievements</h2>
-            <span className="muted">{player.achievements.length} earned</span>
+            <span className="muted">
+              {player.achievements.length} earned
+              {!data.awardsComplete && " · winner-based badges hidden"}
+            </span>
           </div>
           {player.achievements.length > 0 && (
             <div className="ach-grid">

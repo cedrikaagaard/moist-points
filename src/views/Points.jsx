@@ -69,6 +69,7 @@ export default function Points({ data, raid }) {
               key={r}
               className={`segmented-btn${r === activeRaid ? " active" : ""}`}
               style={{ "--seg-color": color }}
+              aria-pressed={r === activeRaid}
               onClick={() => navigate("points", r)}
             >
               <span className="seg-dot" style={{ background: color }} />

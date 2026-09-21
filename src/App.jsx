@@ -27,6 +27,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [step, setStep] = useState("engine");
   const { view, param } = useHashRoute();
+  const hasPageSearch = view === "points" || view === "players" || view === "history";
 
   useEffect(() => {
     // onFresh swaps in the newest data if the background check finds a newer
@@ -64,7 +65,7 @@ export default function App() {
           ))}
         </nav>
         <MeChip active={view === "me"} />
-        {data && <GlobalSearch data={data} />}
+        {data && <GlobalSearch data={data} compactMobile={hasPageSearch} />}
       </header>
 
       <main className="content">
@@ -162,7 +163,7 @@ function MeChip({ active }) {
   );
 }
 
-function GlobalSearch({ data }) {
+function GlobalSearch({ data, compactMobile }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const term = q.trim().toLowerCase();
@@ -171,7 +172,10 @@ function GlobalSearch({ data }) {
     : [];
 
   return (
-    <div className="global-search" onBlur={() => setTimeout(() => setOpen(false), 120)}>
+    <div
+      className={`global-search${compactMobile ? " mobile-hide" : ""}`}
+      onBlur={() => setTimeout(() => setOpen(false), 120)}
+    >
       <input
         className="search sm"
         placeholder="⌕ Find a raider…"
