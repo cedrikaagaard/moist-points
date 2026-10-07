@@ -225,12 +225,30 @@ async function reportExtras(report, fightIDs) {
   const x = { fightIDs, ...d.reportData.report, events: await mechanicEvents(report.code, end, fightIDs) };
   // Parses cost ~2 API points per kill, so only for the kills we actually use.
   const kills = report.fights.filter((f) => f.encounterID && f.kill && fightIDs.includes(f.id)).map((f) => f.id);
-  if (kills.length) {
-    const rk = await gql(`query($code: String!, $ids: [Int]!) { reportData { report(code: $code) { rankings(fightIDs: $ids) } } }`, { code: report.code, ids: kills });
-    x.rankings = rk.reportData.report.rankings;
-  }
+  if (kills.length) x.rankings = await rankings(report.code, kills);
   writeRaw(rel, x, report);
   return x;
+}
+
+// Parses for some kills. The API occasionally 500s on this one; then ask one
+// kill at a time and skip any single kill that keeps failing.
+async function rankings(code, kills) {
+  const q = `query($code: String!, $ids: [Int]!) { reportData { report(code: $code) { rankings(fightIDs: $ids) } } }`;
+  try {
+    return (await gql(q, { code, ids: kills })).reportData.report.rankings;
+  } catch (e) {
+    if (!/failed: 5\d\d/.test(e.message)) throw e;
+    const data = [];
+    for (const id of kills) {
+      try {
+        data.push(...((await gql(q, { code, ids: [id] })).reportData.report.rankings?.data || []));
+      } catch (e2) {
+        if (!/failed: 5\d\d/.test(e2.message)) throw e2;
+        console.log(`  (no parses for ${code} fight ${id}: Warcraft Logs keeps erroring)`);
+      }
+    }
+    return { data };
+  }
 }
 
 const quote = (list) => list.map((n) => `"${n.replace(/"/g, '\\"')}"`).join(", ");
