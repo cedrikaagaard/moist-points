@@ -199,12 +199,23 @@ src/lib/odds.js       win-the-roll probabilities (points + d100)
 src/index.css         all styling; theme colours are CSS variables at the top
 moistdb.sqlite        a local snapshot, used only for `npm run dev` (offline)
 netlify.toml          hosting config for the app itself
+src/raids/            the Raid Logs pages (separate from SR points - see below)
+scripts/raids/        fetches the guild's Warcraft Logs into src/raids/data/
+data/wcl/             every Warcraft Logs API response, gzipped (the raw archive)
 ```
 
 ---
 
 ## The site's pages
 
+- **Home** - the front door: what's where (SR Points, Raid Logs, your page), the
+  latest raid night with its timeline and standouts, and recent loot. First-time
+  visitors get a short "what's new" note (dismissed per device).
+
+- **My Page / raider pages** - every raider has one page with two tabs: their
+  **raid record** (raid nights, parses over time, best parse per boss, decurses,
+  kicks, Sunders and other quiet work, boss mechanics) and their **SR points**.
+  Names everywhere show in class colour with the class/spec icon and link here.
 - **My Page** - pick your character once (no login - saved on the device) and get
   a personal page: your points, your SR history, and **Best bets** - your chance
   to win the roll on each item you have points on. Your rows are highlighted
@@ -236,11 +247,58 @@ netlify.toml          hosting config for the app itself
   and breadth. Every profile and My Page shows the earned badges plus a "Next up"
   list with progress bars toward the closest unearned ones. Defined in
   `src/lib/achievements.js` (easy to add more).
+- **Raid Logs** - the guild's raiding, from Warcraft Logs (not parses - the
+  fun, guild-specific stuff). An overview with every raid, a calendar of raid
+  nights, **clear-time trends** per raid (with the record-so-far line), a hall of
+  fame for the quiet work (dispels, interrupts, battle rezzes, Sunders, curses,
+  sappers, deathless nights...) and boss records. Each **night** has a timeline
+  of every pull and death, "standout" cards for who did the useful work, kill
+  times vs the guild's best, dispels, interrupts, raid debuffs, consumables and
+  the roster; open a boss from a night for just that fight (each pull, a
+  death log, and one line comparing it to other nights). Separately, each
+  **raid** and **boss** has an all-time "guild history" page (gold-framed, so
+  "Naxx on 7 Oct" and "Moist in Naxx" never get mixed up). See
+  [Raid Logs](#raid-logs-warcraft-logs) for how the data gets there.
 - **Changelog** - a plain what's-new page (linked from the footer, next to the
   version number and a GitHub link). Edit **`src/changelog.js`**: add a new entry
   at the top of the `CHANGELOG` array with a `version`, `date`, and a list of
   `changes`. The footer's version number is taken from the newest entry
   automatically, so that one file is the only place you touch.
+
+---
+
+## Raid Logs (Warcraft Logs)
+
+Unlike the SR points, the raid pages are **not live** - their data is fetched
+from the Warcraft Logs API and committed to the repo as JSON
+(`src/raids/data/`), so updating them means fetching, then deploying.
+
+1. Create a free API client at <https://www.warcraftlogs.com/api/clients/> and
+   put its id and secret in **`.env.local`** (git-ignored, never commit it):
+   ```
+   WCL_CLIENT_ID=...
+   WCL_CLIENT_SECRET=...
+   ```
+2. `npm run raids:fetch` - pulls new raid nights from the last 3 weeks
+   (`-- --since 2025-02-01` to go further back, `-- --list` to just see what's
+   there). Several people log every raid, so each night is stitched together from
+   all the logs with the overlap removed. The free API allows ~720 points an hour
+   (a night costs ~10-40); the script stops cleanly near the limit - run it again
+   after the hour to continue.
+3. `npm run raids:history` prints an all-time summary to sanity-check, then
+   build/deploy as usual.
+
+**Everything Warcraft Logs gives us is kept** in `data/wcl/` (gzipped JSON, in
+git): the report list, each report's fights/actors/abilities/player specs/
+parses/deaths, and per-night casts, dispels, interrupts and an event stream of
+debuffs, mechanic hits and rezzes. `npm run raids:fetch -- --force` rebuilds
+every night from that archive without touching the API - so new stats or page
+changes never need re-downloading. Boss mechanics are configured in
+`src/raids/mechanics.js`.
+
+In Claude Code, **`/raid-logs`** runs this whole routine (the skill lives in
+`.claude/skills/raid-logs/`). Everything on the pages is computed from the data -
+the "standout" cards come from fixed rules in `src/raids/highlights.js`.
 
 ---
 

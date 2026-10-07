@@ -7,7 +7,10 @@
     "predev": "node scripts/copy-db.mjs",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "raids:fetch": "node --env-file=.env.local scripts/raids/fetch.mjs",
+    "raids:history": "node scripts/raids/history.mjs",
+    "raids:summary": "node scripts/raids/summary.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

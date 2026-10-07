@@ -1,7 +1,13 @@
-import { RaidBadge } from "../components/common.jsx";
-import ProfileBody from "../components/ProfileBody.jsx";
+import PlayerPage from "../components/PlayerPage.jsx";
 import IdentityPicker from "../components/IdentityPicker.jsx";
 import { useMe, setMe } from "../identity.js";
+import { allRaiders } from "../lib/roster.js";
+
+// SR raiders first, then anyone the raid logs know who hasn't soft-reserved yet.
+function pickable(players) {
+  const known = new Set(players.map((p) => p.name.toLowerCase()));
+  return [...players, ...allRaiders().filter((r) => !known.has(r.name.toLowerCase()))];
+}
 
 export default function Me({ data }) {
   const me = useMe();
@@ -21,7 +27,7 @@ export default function Me({ data }) {
           </p>
           <div className="me-hero-pick">
             <IdentityPicker
-              players={data.players}
+              players={pickable(data.players)}
               autoFocus
               placeholder="Type your character name…"
               onPick={setMe}
@@ -32,51 +38,6 @@ export default function Me({ data }) {
     );
   }
 
-  // Chosen, but no data yet → friendly zero-state (brand-new raider).
-  if (!player) {
-    return (
-      <div className="view">
-        <MeHeader me={me} />
-        <div className="empty me-empty">
-          <p>
-            No points or soft-reserves recorded for <strong>{me}</strong> yet.
-          </p>
-          <p className="muted">
-            Once you SR items in a raid, they'll show up here, with your points and your odds of
-            winning each roll. Points build up 10 per SR (5 in Naxxramas) and carry over until you
-            win the item.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="view">
-      <MeHeader me={me} player={player} />
-      <ProfileBody data={data} player={player} />
-    </div>
-  );
-}
-
-function MeHeader({ me, player }) {
-  return (
-    <div className="profile-head me-head">
-      <span className="player-avatar lg me-avatar">{me.slice(0, 2).toUpperCase()}</span>
-      <div className="me-head-text">
-        <div className="me-greeting">Your page</div>
-        <h1>{player ? player.name : me}</h1>
-        {player && (
-          <div className="player-card-raids">
-            {player.raids.map((r) => (
-              <RaidBadge key={r} raid={r} size="sm" />
-            ))}
-          </div>
-        )}
-      </div>
-      <button className="link-btn me-change" onClick={() => setMe(null)}>
-        Not you? Change
-      </button>
-    </div>
-  );
+  // Chosen: the same page as their raider profile, framed as "yours".
+  return <PlayerPage data={data} name={me} player={player} isMe onChangeMe={() => setMe(null)} />;
 }

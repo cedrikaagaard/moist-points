@@ -56,6 +56,7 @@ export default function History({ data }) {
     <div className="view">
       <div className="view-head">
         <div>
+          <div className="rr-kicker"><span className="rr-kicker-dot" aria-hidden="true">♜</span>SR Points · every soft-reserve</div>
           <h1>SR history</h1>
           <p className="muted">
             {rows.length.toLocaleString()} of {data.srHistory.length.toLocaleString()} records

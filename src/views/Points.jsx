@@ -34,6 +34,7 @@ export default function Points({ data, raid }) {
     <div className="view">
       <div className="view-head">
         <div>
+          <div className="rr-kicker"><span className="rr-kicker-dot" aria-hidden="true">♜</span>SR Points</div>
           <h1>Points by item</h1>
           <p className="muted">
             {activeRaid === "all" ? (

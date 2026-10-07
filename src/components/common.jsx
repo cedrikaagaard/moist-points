@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { RAID_META, wowheadUrl } from "../data.js";
 import { href, navigate } from "../router.js";
+import { rosterOf, classColor, specIcon } from "../lib/roster.js";
 
 // The Wowhead tooltip script decorates links with icons/tooltips, but for
 // dynamically rendered links you have to call refreshLinks(). That scans the
@@ -73,11 +74,31 @@ export function StatTile({ label, value, sub, accent }) {
   );
 }
 
-export function PlayerLink({ name, className }) {
+// A raider's name: class icon + class colour when the raid logs know them,
+// linking to their profile.
+export function PlayerLink({ name, className, icon = true }) {
+  const r = rosterOf(name);
   return (
-    <a className={`player-link ${className || ""}`} href={href("players", name)}>
+    <a
+      className={`player-link ${className || ""}`}
+      href={href("players", name)}
+      style={r?.class ? { color: classColor(r.class) } : undefined}
+    >
+      {icon && r?.class && <img className="player-link-ic" src={specIcon(r.spec || r.class)} alt="" width="16" height="16" loading="lazy" />}
       {name}
     </a>
+  );
+}
+
+// Round portrait: the class/spec icon ringed in class colour, or initials for
+// someone the raid logs haven't seen.
+export function Avatar({ name, size = "md" }) {
+  const r = rosterOf(name);
+  if (!r?.class) return <span className={`player-avatar ${size === "lg" ? "lg" : ""}`}>{(name || "?").slice(0, 2).toUpperCase()}</span>;
+  return (
+    <span className={`player-avatar has-ic ${size === "lg" ? "lg" : ""}`} style={{ "--ring": classColor(r.class) }}>
+      <img src={specIcon(r.spec || r.class)} alt={r.spec || r.class} loading="lazy" />
+    </span>
   );
 }
 

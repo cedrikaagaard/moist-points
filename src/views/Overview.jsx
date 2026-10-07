@@ -15,7 +15,8 @@ export default function Overview({ data }) {
 
   return (
     <div className="view">
-      <section className="hero">
+      <section className="hero view-head-banner">
+        <div className="rr-kicker"><span className="rr-kicker-dot" aria-hidden="true">♜</span>SR Points · statistics</div>
         <h1>
           <span className="hero-accent">Moist</span> soft-reserve points
         </h1>

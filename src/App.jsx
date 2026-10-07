@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { loadData } from "./data.js";
 import { useHashRoute, navigate, href } from "./router.js";
 import Overview from "./views/Overview.jsx";
@@ -8,25 +8,35 @@ import History from "./views/History.jsx";
 import Me from "./views/Me.jsx";
 import Item from "./views/Item.jsx";
 import Changelog from "./views/Changelog.jsx";
+import Home from "./views/Home.jsx";
 import Leeroy from "./components/Leeroy.jsx";
 import Loader from "./components/Loader.jsx";
 import { GitHubIcon } from "./components/common.jsx";
 import { useMe } from "./identity.js";
+import { allRaiders } from "./lib/roster.js";
 import { VERSION, REPO_URL } from "./changelog.js";
 
+// Raid recaps (from Warcraft Logs) live in src/raids/, separate from the SR data.
+const RaidsView = lazy(() => import("./raids/RaidsView.jsx"));
+
+// Grouped: you, the SR points pages, the raid pages. `group` starts a new
+// visual group in the nav.
 const NAV = [
+  { view: "home", label: "Home" },
   { view: "me", label: "My Page" },
-  { view: "points", label: "Points" },
-  { view: "players", label: "Raiders" },
+  { view: "points", label: "SR Points", group: true },
   { view: "history", label: "SR History" },
-  { view: "stats", label: "Statistics" },
+  { view: "stats", label: "SR Stats" },
+  { view: "players", label: "Raiders" },
+  { view: "raids", label: "Raid Logs", group: true },
 ];
 
 export default function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [step, setStep] = useState("engine");
-  const { view, param } = useHashRoute();
+  const { view, param, sub } = useHashRoute();
+  const standalone = view === "changelog" || view === "home" || view.startsWith("raid"); // pages that don't need the SR data
   const hasPageSearch = view === "points" || view === "players" || view === "history";
 
   useEffect(() => {
@@ -40,7 +50,7 @@ export default function App() {
   // Scroll to top on route change.
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [view, param]);
+  }, [view, param, sub]);
 
   return (
     <div className="app">
@@ -50,7 +60,7 @@ export default function App() {
           <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="Moist" className="brand-logo" />
           <div className="brand-text">
             <span className="brand-name">Moist</span>
-            <span className="brand-sub">SR Points</span>
+            <span className="brand-sub">EU · Firemaw</span>
           </div>
         </a>
         <nav className="nav">
@@ -58,7 +68,7 @@ export default function App() {
             <a
               key={n.view}
               href={href(n.view)}
-              className={`nav-link${view === n.view ? " active" : ""}`}
+              className={`nav-link${n.group ? " nav-group" : ""}${view === n.view || (n.view === "raids" && view.startsWith("raid")) ? " active" : ""}`}
             >
               {n.label}
             </a>
@@ -70,8 +80,14 @@ export default function App() {
 
       <main className="content">
         {view === "changelog" && <Changelog />}
-        {error && view !== "changelog" && <div className="empty error">Couldn’t load data: {error}</div>}
-        {!data && !error && view !== "changelog" && <Loader step={step} />}
+        {view === "home" && <Home data={data} />}
+        {view.startsWith("raid") && (
+          <Suspense fallback={null}>
+            <RaidsView view={view} param={param} sub={sub} />
+          </Suspense>
+        )}
+        {error && !standalone && <div className="empty error">Couldn’t load data: {error}</div>}
+        {!data && !error && !standalone && <Loader step={step} />}
         {data && view === "me" && <Me data={data} />}
         {data && view === "stats" && <Overview data={data} />}
         {data && view === "points" && <Points data={data} raid={param} />}
@@ -167,9 +183,12 @@ function GlobalSearch({ data, compactMobile }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const term = q.trim().toLowerCase();
-  const matches = term
-    ? data.players.filter((p) => p.name.toLowerCase().includes(term)).slice(0, 6)
-    : [];
+  // SR raiders plus anyone the raid logs know (raid-only raiders have pages too).
+  const everyone = useMemo(() => {
+    const seen = new Set(data.players.map((p) => p.name.toLowerCase()));
+    return [...data.players, ...allRaiders().filter((r) => !seen.has(r.name.toLowerCase()))];
+  }, [data.players]);
+  const matches = term ? everyone.filter((p) => p.name.toLowerCase().includes(term)).slice(0, 6) : [];
 
   return (
     <div
@@ -202,7 +221,7 @@ function GlobalSearch({ data, compactMobile }) {
               onClick={() => setQ("")}
             >
               <span>{p.name}</span>
-              <span className="muted">{p.totalPoints.toLocaleString()} pts</span>
+              <span className="muted">{p.totalPoints != null ? `${p.totalPoints.toLocaleString()} pts` : `${p.nights} raid nights`}</span>
             </a>
           ))}
         </div>

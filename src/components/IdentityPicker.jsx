@@ -25,7 +25,7 @@ export default function IdentityPicker({ players, onPick, autoFocus, placeholder
   const exact = term && players.some((p) => p.name.toLowerCase() === term);
   // Offer "use exactly what I typed" for a new raider not already listed.
   const options = [
-    ...matches.map((p) => ({ name: p.name, meta: `${p.totalPoints} pts`, isNew: false })),
+    ...matches.map((p) => ({ name: p.name, meta: p.totalPoints != null ? `${p.totalPoints} pts` : `${p.nights} raid nights`, isNew: false })),
     ...(q.trim() && !exact
       ? [{ name: q.trim(), meta: "new raider, no points yet", isNew: true }]
       : []),

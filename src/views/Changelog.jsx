@@ -6,9 +6,10 @@ export default function Changelog() {
     <div className="view">
       <div className="view-head">
         <div>
+          <div className="rr-kicker"><span className="rr-kicker-dot" aria-hidden="true">♜</span>Moist</div>
           <h1>Changelog</h1>
           <p className="muted">
-            What's new in Moist SR Points · currently <strong>v{VERSION}</strong>
+            What's new on the Moist site · currently <strong>v{VERSION}</strong>
           </p>
         </div>
         <div className="item-page-links">

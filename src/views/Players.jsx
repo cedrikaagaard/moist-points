@@ -1,13 +1,15 @@
 import { useMemo, useState } from "react";
-import { RaidBadge } from "../components/common.jsx";
-import ProfileBody from "../components/ProfileBody.jsx";
-import { navigate, href } from "../router.js";
+import { RaidBadge, Avatar } from "../components/common.jsx";
+import PlayerPage from "../components/PlayerPage.jsx";
+import { rosterOf } from "../lib/roster.js";
+import { href } from "../router.js";
 import { useDebouncedValue } from "../lib/useDebouncedValue.js";
 
 export default function Players({ data, name }) {
   if (name) {
-    const player = data.playerByName.get(name.toLowerCase());
-    if (player) return <PlayerProfile data={data} player={player} />;
+    const player = data.playerByName.get(name.toLowerCase()) || null;
+    // Raiders without SR data still get a page if the raid logs know them.
+    if (player || rosterOf(name)) return <PlayerPage data={data} name={name} player={player} />;
   }
   return <PlayerDirectory data={data} initial={name || ""} />;
 }
@@ -24,6 +26,7 @@ function PlayerDirectory({ data, initial }) {
     <div className="view">
       <div className="view-head">
         <div>
+          <div className="rr-kicker"><span className="rr-kicker-dot" aria-hidden="true">♜</span>The guild</div>
           <h1>Raiders</h1>
           <p className="muted">{data.players.length} tracked · sorted by total points</p>
         </div>
@@ -40,7 +43,7 @@ function PlayerDirectory({ data, initial }) {
         {list.map((p) => (
           <a key={p.name} className="player-card" href={href("players", p.name)}>
             <div className="player-card-top">
-              <span className="player-avatar">{p.name.slice(0, 2).toUpperCase()}</span>
+              <Avatar name={p.name} />
               <div>
                 <div className="player-card-name">{p.name}</div>
                 <div className="player-card-raids">
@@ -65,30 +68,6 @@ function PlayerDirectory({ data, initial }) {
         ))}
       </div>
       {q && list.length === 0 && <div className="empty">No raider matches “{query}”.</div>}
-    </div>
-  );
-}
-
-function PlayerProfile({ data, player }) {
-  return (
-    <div className="view">
-      <button className="back-btn" onClick={() => navigate("players")}>
-        ← All raiders
-      </button>
-
-      <div className="profile-head">
-        <span className="player-avatar lg">{player.name.slice(0, 2).toUpperCase()}</span>
-        <div>
-          <h1>{player.name}</h1>
-          <div className="player-card-raids">
-            {player.raids.map((r) => (
-              <RaidBadge key={r} raid={r} size="sm" />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <ProfileBody data={data} player={player} />
     </div>
   );
 }

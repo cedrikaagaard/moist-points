@@ -12,8 +12,9 @@ export function useHashRoute() {
 
   const parts = hash.replace(/^#\/?/, "").split("/").filter(Boolean);
   return {
-    view: parts[0] || "points", // Points is the home page
+    view: parts[0] || "home",
     param: parts[1] ? decodeURIComponent(parts[1]) : null,
+    sub: parts[2] ? decodeURIComponent(parts[2]) : null, // e.g. #/raids/<night>/<boss>
   };
 }
 
@@ -22,7 +23,8 @@ export function navigate(view, param) {
   window.location.hash = `#/${view}${suffix}`;
 }
 
-export function href(view, param) {
+export function href(view, param, sub) {
   const suffix = param ? `/${encodeURIComponent(param)}` : "";
-  return `#/${view}${suffix}`;
+  const subSuffix = param && sub != null ? `/${encodeURIComponent(sub)}` : "";
+  return `#/${view}${suffix}${subSuffix}`;
 }

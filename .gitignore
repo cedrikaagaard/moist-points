@@ -11,3 +11,10 @@ public/moistdb.sqlite
 # Logs & OS cruft
 *.log
 .DS_Store
+
+# Local secrets (Warcraft Logs API client for scripts/raids/)
+.env.local
+.env*.local
+
+# Personal Claude Code permissions (the shared skill + launch config are committed)
+.claude/settings.local.json
