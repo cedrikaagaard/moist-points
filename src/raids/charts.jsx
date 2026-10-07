@@ -19,8 +19,10 @@ export function NightTimeline({ n }) {
     .flatMap((b) => b.pulls.map((p, i) => ({ ...p, boss: b, attempt: i + 1 })))
     .sort((a, b) => a.at - b.at);
 
-  // Stack deaths into 30-second buckets so wipes rise into towers.
-  const BUCKET = 30;
+  // Stack deaths into time buckets so wipes rise into towers. A bucket is at
+  // least a dot wide on screen, so neighbouring towers never overlap.
+  const R = 5.5;
+  const BUCKET = Math.max(30, Math.ceil((end * (2 * R + 2)) / (W - 32)));
   const stacks = new Map();
   const dots = n.deaths.map((d) => {
     const k = Math.floor(d.at / BUCKET);
@@ -29,7 +31,6 @@ export function NightTimeline({ n }) {
     return { d, cx: x(k * BUCKET + BUCKET / 2), level: h };
   });
   const tallest = Math.max(1, ...stacks.values());
-  const R = 5.5;
   const STEP = 2 * R + 1;
   const deathH = Math.min(tallest, 18) * STEP + 8;
 

@@ -30,7 +30,7 @@ export default function HomeRaids() {
         </div>
         <div className="rr-night-bosses home-latest-bosses">
           {latest.bosses.map((b) => (
-            <a key={b.id} href={href("raids", latest.night, b.id)} className={`rr-mini-boss${b.killed ? "" : " wiped"}`} title={`${b.name}${b.killed ? ` - ${mmss(b.killTimeSec)}` : " - not killed"}`}>
+            <a key={b.id} href={href("raids", latest.night, b.id)} className={`rr-mini-boss${b.killed ? "" : " wiped"}`} title={`${b.name}${b.killed ? ` · ${mmss(b.killTimeSec)}` : " · not killed"}`}>
               <BossIcon id={b.id} name={b.name} size={26} />
             </a>
           ))}

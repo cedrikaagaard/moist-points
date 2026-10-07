@@ -19,7 +19,7 @@ export default function RaidsView({ view, param, sub }) {
   if (!NIGHTS.length) {
     return (
       <div className="view">
-        <div className="empty">No raid nights yet - run <code>npm run raids:fetch</code>.</div>
+        <div className="empty">No raid nights yet. Run <code>npm run raids:fetch</code>.</div>
       </div>
     );
   }
@@ -55,7 +55,7 @@ function Overview() {
       <div className="stat-row rr-stat-row">
         <Tile value={a.nights} label="Raid nights" sub={`${Math.round(a.totals.minutes / 60)} hours in raids`} />
         <Tile value={a.totals.kills} label="Boss kills" accent="var(--gold-bright)" sub={`${a.totals.wipes} wipes`} />
-        <Tile value={a.totals.dispels.toLocaleString()} label="Dispels" sub={`${a.totals.interrupts} interrupts`} />
+        <Tile value={`${Math.round(a.totals.minutes / 60)}h`} label="In raids" sub={`${Math.round(a.totals.minutes / a.nights)} min per night`} />
         <Tile value={a.totals.deaths.toLocaleString()} label="Deaths" sub={`${(a.totals.deaths / a.nights).toFixed(1)} per night`} />
       </div>
 
@@ -163,7 +163,7 @@ function NightRow({ n }) {
         </div>
         <div className="rr-night-bosses">
           {n.bosses.map((b) => (
-            <span key={b.id} className={`rr-mini-boss${b.killed ? "" : " wiped"}`} title={`${b.name}${b.killed ? ` - ${mmss(b.killTimeSec)}` : " - not killed"}`}>
+            <span key={b.id} className={`rr-mini-boss${b.killed ? "" : " wiped"}`} title={`${b.name}${b.killed ? ` · ${mmss(b.killTimeSec)}` : " · not killed"}`}>
               <BossIcon id={b.id} name={b.name} size={20} />
             </span>
           ))}
@@ -179,7 +179,7 @@ function NightRow({ n }) {
   );
 }
 
-// All-time leaderboards, mostly for the work that never tops a meter.
+// All-time leaderboards: attendance, utility and raid debuffs.
 const BOARDS = [
   { key: "nights", label: "Attendance", icon: "Hearthstone", get: (p) => p.nights, note: (p) => `last seen ${fmtDate(p.lastNight)}`, unit: "nights" },
   { key: "dispels", label: "Dispels", icon: "Decurse", get: (p) => p.dispels, unit: "dispels" },
@@ -195,7 +195,7 @@ const BOARDS = [
 ];
 
 function HallOfFame() {
-  const [key, setKey] = useState("dispels");
+  const [key, setKey] = useState("nights");
   const board = BOARDS.find((b) => b.key === key);
   const rows = ALL_TIME.players
     .map((p) => ({ p, v: board.get(p) }))
@@ -318,7 +318,7 @@ function Night({ n }) {
       </Panel>
 
       {(cards.length > 0 || recs.length > 0) && (
-        <Panel title="Standouts" sub="who did the work tonight">
+        <Panel title="Standouts" sub="a few highlights from the night">
           <div className="rr-awards">
             {recs.map((r) => (
               <div key={`rec-${r.boss.name}`} className="rr-award rr-award-record">

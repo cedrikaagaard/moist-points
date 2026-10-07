@@ -43,7 +43,7 @@ export function NightMechanics({ b, icons }) {
               </div>
               {m.tone === "bad" ? (
                 total === 0 ? (
-                  <div className="rr-mech-clean">Nobody got caught. Clean.</div>
+                  <div className="rr-mech-clean">Nobody got caught.</div>
                 ) : (
                   <>
                     <div className="rr-mech-people">
@@ -165,7 +165,7 @@ export function BossMechanicsAllTime({ b }) {
                   <span key={n}><P name={n} /> <span className="muted">{c}</span></span>
                 ))}
               </div>
-              {m.tone === "bad" && <div className="rr-mech-sub muted">most hits, all time - the trend is hits per raider per night</div>}
+              {m.tone === "bad" && <div className="rr-mech-sub muted">most hits all time · trend is hits per raider per night</div>}
             </div>
           );
         })}

@@ -454,6 +454,7 @@ async function buildNight(night, reports) {
       durationSec: sec(f.absEnd - f.absStart),
       bossPctLeft: f.kill ? 0 : f.fightPercentage != null ? Math.round(f.fightPercentage) : null,
       deaths: deaths.filter((d) => d.pull === pull).length,
+      src: { code: f.report.code, fight: f.id }, // where to find this pull in data/wcl (replays)
     });
     if (f.kill) b.killed = true;
   }

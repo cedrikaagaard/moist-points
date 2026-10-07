@@ -1,8 +1,8 @@
 // Recognition, computed - no generated text. Each rule looks at a night's
 // numbers and, when something stands out, returns a card:
 //   { key, title, icon, player, class, value, unit, detail }
-// The bias is deliberate: mostly the quiet, useful work that never shows up on a
-// damage meter (decursing, kicks, battle rezzes, keeping debuffs up).
+// Mostly utility and teamwork (kicks, battle rezzes, keeping debuffs up),
+// each with a threshold so a card only appears when it means something.
 import { COMBAT_REZ } from "./aggregate.js";
 
 const top = (byPlayer) => Object.entries(byPlayer || {}).sort((a, b) => b[1] - a[1]);

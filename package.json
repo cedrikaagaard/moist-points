@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "raids:fetch": "node --env-file=.env.local scripts/raids/fetch.mjs",
     "raids:history": "node scripts/raids/history.mjs",
-    "raids:summary": "node scripts/raids/summary.mjs"
+    "raids:summary": "node scripts/raids/summary.mjs",
+    "raids:replays": "node --env-file=.env.local scripts/raids/replays.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

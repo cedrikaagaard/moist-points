@@ -10,7 +10,7 @@ export const CHANGELOG = [
     date: "2026-10-08",
     changes: [
       "Moist is now one site: a new Home page ties together SR Points, the new Raid Logs and your own page.",
-      "Raid Logs (new): every raid night from the guild's Warcraft Logs - a timeline of pulls and deaths, standout cards for the useful work nobody sees (decurses, kicks, battle rezzes, Sunders, curses), boss and raid pages, clear-time trends and guild records.",
+      "Raid Logs (new): every raid night from the guild's Warcraft Logs: a timeline of pulls and deaths, a few highlights from each night, boss and raid pages, clear-time trends and guild records.",
       "Every raider's page (and My Page) now has a Raid record tab next to their SR points, and raiders who only show up in the logs get a page too.",
       "Names across the site show in class colour with their class/spec icon and link to the raider's page; page headers share one look.",
     ],

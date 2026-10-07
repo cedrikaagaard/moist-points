@@ -91,4 +91,5 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
 - **Charts:** follow the dataviz skill. Kill is gold `#d4af5a` and wipe is red
   `#e0525f` (checked for colour-blind separation). Class colours mark players
   and always appear with the class icon and name.
-- Use a plain hyphen (" - ") instead of em dashes, in UI text and comments.
+- UI text: plain and low-key, no sales tone. Don't use dashes as sentence breaks
+  (" - " or em dashes); use full stops, commas or "·".

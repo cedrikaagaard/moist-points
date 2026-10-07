@@ -269,6 +269,8 @@ data/wcl/             every Warcraft Logs API response, gzipped (the raw archive
 
 ## Raid Logs (Warcraft Logs)
 
+![A raid night: every pull and every death](docs/moist-raid-night.png)
+
 Unlike the SR points, the raid pages are **not live** - their data is fetched
 from the Warcraft Logs API and committed to the repo as JSON
 (`src/raids/data/`), so updating them means fetching, then deploying.

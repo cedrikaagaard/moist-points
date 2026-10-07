@@ -89,7 +89,7 @@ function Record({ p }) {
       )}
 
       <div className="grid-2">
-        <Panel title="Quiet work" sub="the stuff meters don't show">
+        <Panel title="Utility" sub="all nights">
           <QuietWork p={p} me={me} dispels={dispels} kicks={kicks} />
         </Panel>
         <Panel title="Mechanics" sub="boss by boss, all nights">

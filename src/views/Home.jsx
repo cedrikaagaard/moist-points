@@ -55,10 +55,10 @@ export default function Home({ data }) {
             <button className="link-btn" onClick={dismiss}>Got it ×</button>
           </div>
           <ul>
-            <li><b>SR Points</b> works just like before - points, history and stats for every item.</li>
-            <li><b>Raid Logs</b> is new: every raid night from Warcraft Logs, with a timeline, boss pages, records and the quiet work that never shows up on a meter.</li>
-            <li><b>Your page</b> now has your raid record too - parses over time, best parse per boss, decurses, kicks and more. Set your character to see it.</li>
-            <li>Names show in class colour with a class icon - click any raider to open their page.</li>
+            <li><b>SR Points</b> works just like before: points, history and stats for every item.</li>
+            <li><b>Raid Logs</b> is new: every raid night from Warcraft Logs, with a timeline, boss pages and records.</li>
+            <li><b>Your page</b> now has your raid history too. Set your character to see it.</li>
+            <li>Names show in class colour with a class icon. Click any raider to open their page.</li>
           </ul>
         </section>
       )}

@@ -175,3 +175,18 @@ export function Banner({ kind, accent, art = [], kicker, title, sub, crumbs = []
     </div>
   );
 }
+
+// Page-level tabs (switch a whole section of a page): underlined, like the
+// raider page. tabs: [{ key, label, icon? (img url) }]
+export function PageTabs({ tabs, value, onChange }) {
+  return (
+    <div className="page-tabs" role="tablist">
+      {tabs.map((t) => (
+        <button key={t.key} role="tab" aria-selected={value === t.key} className={`page-tab${value === t.key ? " active" : ""}`} onClick={() => onChange(t.key)}>
+          {t.icon && <img src={t.icon} alt="" width="20" height="20" />}
+          {t.label}
+        </button>
+      ))}
+    </div>
+  );
+}

@@ -45,7 +45,7 @@ export const MECHANICS = {
     { key: "kick", kind: "kick", abilities: ["Dark Mending", "Shadow Word: Pain", "Immolate"], tone: "good", label: "Priest heals interrupted", note: "no Dark Mending allowed" },
   ],
   50672: [ // Ragnaros
-    { key: "wrath", kind: "hit", abilities: ["Wrath of Ragnaros"], tone: "info", label: "Knocked back", note: "Wrath of Ragnaros - melee get thrown" },
+    { key: "wrath", kind: "hit", abilities: ["Wrath of Ragnaros"], tone: "info", label: "Knocked back", note: "melee get thrown by Wrath of Ragnaros" },
     { key: "lava", kind: "hit", abilities: ["Lava Burst"], tone: "bad", label: "Hit by Lava Burst", note: "the eruptions under the raid" },
     { key: "elemental", kind: "hit", abilities: ["Elemental Fire"], tone: "info", label: "Elemental Fire", note: "melee taking the burn" },
     prot("Fire"),
@@ -53,8 +53,8 @@ export const MECHANICS = {
 
   // ---------------- Onyxia ----------------
   51084: [
-    { key: "breath", kind: "hit", abilities: ["Flame Breath"], tone: "bad", label: "Stood in front", note: "Flame Breath - stay at her sides" },
-    { key: "deep", kind: "hit", abilities: ["Deep Breath", "Breath"], tone: "bad", label: "Caught by Deep Breath", note: "phase 2 - get out of the line" },
+    { key: "breath", kind: "hit", abilities: ["Flame Breath"], tone: "bad", label: "Stood in front", note: "stay at her sides" },
+    { key: "deep", kind: "hit", abilities: ["Deep Breath", "Breath"], tone: "bad", label: "Caught by Deep Breath", note: "phase 2, get out of the line" },
     { key: "eruption", kind: "hit", abilities: ["Eruption"], tone: "bad", label: "Lava cracks", note: "Eruption in phase 2" },
     { key: "fear", kind: "debuff", abilities: ["Bellowing Roar"], tone: "info", label: "Feared", note: "Bellowing Roar in phase 3" },
     prot("Fire"),
@@ -198,7 +198,7 @@ export const MECHANICS = {
     { key: "wrath", kind: "hit", abilities: ["Wrath of the Plaguebringer"], tone: "bad", label: "Hit by Wrath of the Plaguebringer", note: "a curse that wasn't removed" },
   ],
   51112: [ // Heigan
-    { key: "eruption", kind: "hit", abilities: ["Eruption"], tone: "bad", label: "Hit by Eruption", note: "the dance - never getting hit is perfect" },
+    { key: "eruption", kind: "hit", abilities: ["Eruption"], tone: "bad", label: "Hit by Eruption", note: "the dance" },
     { key: "fever", kind: "dispel", abilities: ["Decrepit Fever"], tone: "good", label: "Decrepit Fever cured", note: "" },
   ],
   51115: [ // Loatheb
@@ -219,7 +219,7 @@ export const MECHANICS = {
     { key: "wound", kind: "debuff", abilities: ["Mortal Wound"], tone: "info", label: "Mortal Wound stacks", note: "tank swaps" },
   ],
   51120: [ // Thaddius
-    { key: "polarity", kind: "hit", abilities: ["Positive Charge", "Negative Charge"], tone: "bad", label: "Wrong side of the polarity", note: "+ goes with +, - with -" },
+    { key: "polarity", kind: "hit", abilities: ["Positive Charge", "Negative Charge"], tone: "bad", label: "Wrong side of the polarity", note: "stand with your own charge" },
     { key: "chain", kind: "hit", abilities: ["Chain Lightning"], tone: "info", label: "Chain Lightning hits", note: "" },
   ],
   51113: [ // Razuvious

@@ -310,3 +310,30 @@ a.rr-player-link:hover span { text-decoration: underline; }
 .rr-parse-groups .rr-clean-title { display: block; margin-bottom: 8px; }
 .rr-parse-val { display: flex; gap: 8px; align-items: center; justify-content: flex-end; min-width: 110px; }
 .rr-parse-val .muted { font-size: 12px; font-weight: 500; }
+
+/* ---------- replay ---------- */
+.rr-replay { display: grid; gap: 20px; }
+.rr-replay-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.rr-replay-controls input[type="range"] { flex: 1; min-width: 160px; accent-color: var(--gold); }
+.rr-play { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(212, 175, 90, 0.12); color: var(--gold-bright); font-size: 14px; cursor: pointer; }
+.rr-play:hover { background: rgba(212, 175, 90, 0.22); }
+.rr-replay-time { font-variant-numeric: tabular-nums; font-size: 13px; min-width: 96px; text-align: center; }
+.rr-replay-speeds { display: inline-flex; gap: 4px; }
+.rr-speed { background: var(--surface-2); border: 1px solid var(--border-soft); color: var(--text-2); border-radius: 6px; padding: 4px 8px; font: 600 12px var(--font); cursor: pointer; }
+.rr-speed.active { color: var(--gold-bright); border-color: var(--gold); }
+.rr-race { position: relative; }
+.rr-race-row { position: absolute; left: 0; right: 0; height: 26px; display: grid; grid-template-columns: 24px minmax(0, 1fr) 120px; gap: 10px; align-items: center; transition: transform 0.35s ease; }
+.rr-race-rank { font-size: 12px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.rr-race-track { position: relative; height: 26px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
+.rr-race-fill { position: absolute; inset: 0 auto 0 0; opacity: 0.55; border-radius: 0 5px 5px 0; transition: width 0.15s linear; }
+.rr-race-name { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 13px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9); }
+.rr-race-val { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; font-variant-numeric: tabular-nums; font-size: 13px; }
+.rr-race-val .muted { font-size: 11px; }
+.rr-replay-foot { margin-top: 12px; font-size: 12.5px; }
+.rr-replay-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; }
+.rr-ticker { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.rr-tick { display: grid; grid-template-columns: 42px auto minmax(0, 1fr); gap: 8px; align-items: center; font-size: 13px; }
+.rr-tick-t { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 12px; }
+.rr-tick-death { color: #f08791; }
+@media (max-width: 900px) { .rr-replay-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .rr-race-row { grid-template-columns: 20px minmax(0, 1fr) 84px; } }

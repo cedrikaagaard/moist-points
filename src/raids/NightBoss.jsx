@@ -2,7 +2,10 @@ import { ALL_TIME, CLASS_OF, useNight } from "./data.js";
 import { bossImg, classColor, fmtDate, mmss, zoneOf } from "./assets.js";
 import { zoneForEncounter, nightZones } from "./aggregate.js";
 import { Banner, Panel, Player, SpellIcon, useTip } from "./components.jsx";
+import { useState } from "react";
 import { NightMechanics, NightFightWork } from "./MechanicsView.jsx";
+import Replay, { hasReplay } from "./Replay.jsx";
+import { PageTabs } from "./components.jsx";
 import { href } from "../router.js";
 
 // #/raids/<night>/<boss> - ONE boss on ONE night: what happened on each pull.
@@ -14,7 +17,7 @@ export default function NightBossPage({ night, bossId }) {
   if (!n || n.night !== night) return <div className="view rr-loading muted">Loading…</div>;
   const b = n.bosses.find((x) => x.encounterId === bossId);
   if (!b) return <div className="view"><div className="empty">That boss wasn't pulled on {fmtDate(night)}.</div></div>;
-  return <NightBoss n={n} b={b} />;
+  return <NightBoss key={`${night}-${bossId}`} n={n} b={b} />;
 }
 
 function NightBoss({ n, b }) {
@@ -35,6 +38,16 @@ function NightBoss({ n, b }) {
   }));
   const deaths = pulls.flatMap((p) => p.deathsList.map((d) => ({ ...d, pullN: p.n, into: d.at - p.at })));
   const fought = b.pulls.reduce((t, p) => t + p.durationSec, 0);
+
+  // One page, four views - so the fight's story doesn't turn into a wall.
+  const [tab, setTab] = useState("overview");
+  const hasPerf = b.parses?.length || b.dispels?.length || b.kicks?.length;
+  const tabs = [
+    { key: "overview", label: "Overview" },
+    hasPerf && { key: "performance", label: "Performance" },
+    { key: "deaths", label: `Deaths${deaths.length ? ` · ${deaths.length}` : ""}` },
+    hasReplay(n.night, b.encounterId) && { key: "replay", label: "Replay" },
+  ].filter(Boolean);
 
   return (
     <div className="view rr">
@@ -67,55 +80,65 @@ function NightBoss({ n, b }) {
         ]}
       />
 
-      <Compare b={b} night={n.night} />
+      <PageTabs tabs={tabs} value={tab} onChange={setTab} />
 
-      <NightMechanics b={b} icons={n.icons} />
+      {tab === "overview" && (
+        <>
+        <Compare b={b} night={n.night} />
 
-      <Panel title="Pulls" sub="each bar is one attempt · dots are deaths, when they happened">
-        <PullStrips pulls={pulls} />
-      </Panel>
+        <NightMechanics b={b} icons={n.icons} />
 
-      <NightFightWork b={b} icons={n.icons} />
+        <Panel title="Pulls" sub="each bar is one attempt · dots are deaths, when they happened">
+          <PullStrips pulls={pulls} />
+        </Panel>
+        </>
+      )}
 
-      <Panel title="Death log" sub={deaths.length ? "in order, per pull" : undefined}>
-        {deaths.length ? (
-          <div className="rr-table-wrap">
-            <table className="rr-table rr-deathlog">
-              <thead>
-                <tr>
-                  <th>Pull</th>
-                  <th className="num">Time</th>
-                  <th>Raider</th>
-                  <th>Killing blow</th>
-                  <th className="hide-sm">From</th>
-                </tr>
-              </thead>
-              <tbody>
-                {deaths.map((d, k) => (
-                  <tr key={k} className={d.firstOfPull ? "rr-first" : ""}>
-                    <td className="muted">#{d.pullN}</td>
-                    <td className="num">{mmss(d.into)}</td>
-                    <td>
-                      <NP name={d.player} size={16} />
-                      {d.firstOfPull && <span className="rr-chip">first</span>}
-                    </td>
-                    <td>
-                      <span className="rr-inline-ic">
-                        <SpellIcon name={d.killingBlow || "Unknown"} icons={n.icons} size={18} /> {d.killingBlow || "Unknown"}
-                      </span>
-                    </td>
-                    <td className="hide-sm muted">
-                      {d.killer ? (classOf.has(d.killer.name) || CLASS_OF.has(d.killer.name) ? <NP name={d.killer.name} size={14} /> : d.killer.name) : "-"}
-                    </td>
+      {tab === "performance" && <NightFightWork b={b} icons={n.icons} />}
+
+      {tab === "deaths" && (
+        <Panel title="Death log" sub={deaths.length ? "in order, per pull" : undefined}>
+          {deaths.length ? (
+            <div className="rr-table-wrap">
+              <table className="rr-table rr-deathlog">
+                <thead>
+                  <tr>
+                    <th>Pull</th>
+                    <th className="num">Time</th>
+                    <th>Raider</th>
+                    <th>Killing blow</th>
+                    <th className="hide-sm">From</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <div className="rr-clean-kill">Clean kill - nobody died.</div>
-        )}
-      </Panel>
+                </thead>
+                <tbody>
+                  {deaths.map((d, k) => (
+                    <tr key={k} className={d.firstOfPull ? "rr-first" : ""}>
+                      <td className="muted">#{d.pullN}</td>
+                      <td className="num">{mmss(d.into)}</td>
+                      <td>
+                        <NP name={d.player} size={16} />
+                        {d.firstOfPull && <span className="rr-chip">first</span>}
+                      </td>
+                      <td>
+                        <span className="rr-inline-ic">
+                          <SpellIcon name={d.killingBlow || "Unknown"} icons={n.icons} size={18} /> {d.killingBlow || "Unknown"}
+                        </span>
+                      </td>
+                      <td className="hide-sm muted">
+                        {d.killer ? (classOf.has(d.killer.name) || CLASS_OF.has(d.killer.name) ? <NP name={d.killer.name} size={14} /> : d.killer.name) : "-"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="rr-clean-kill">Clean kill, nobody died.</div>
+          )}
+        </Panel>
+      )}
+
+      {tab === "replay" && <Replay n={n} b={b} />}
     </div>
   );
 }
