@@ -337,3 +337,18 @@ a.rr-player-link:hover span { text-decoration: underline; }
 .rr-tick-death { color: #f08791; }
 @media (max-width: 900px) { .rr-replay-grid { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .rr-race-row { grid-template-columns: 20px minmax(0, 1fr) 84px; } }
+
+/* ---------- parses on raider pages ---------- */
+.rr-parses .panel-head { align-items: flex-start; gap: 16px; }
+.rr-parses .panel-head .muted { max-width: 520px; text-align: right; line-height: 1.4; }
+.rr-parse-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; }
+.rr-parse-head .rr-parse { font-size: 16px; padding: 3px 8px; }
+.rr-bossparse { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 10px; margin-top: 16px; }
+.rr-bossparse-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid transparent; color: inherit; text-decoration: none; }
+.rr-bossparse-card:hover { border-color: var(--border); }
+.rr-bossparse-name { font-weight: 700; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rr-bossparse-meta { font-size: 11.5px; margin-bottom: 2px; }
+.rr-parsedots { display: block; border-radius: 4px; }
+.rr-bossparse-best { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; }
+.rr-bossparse-best .rr-parse { font-size: 16px; padding: 3px 8px; }
+@media (max-width: 640px) { .rr-parses .panel-head .muted { text-align: left; } }

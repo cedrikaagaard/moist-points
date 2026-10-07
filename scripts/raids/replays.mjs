@@ -84,27 +84,28 @@ async function fetchGraphs(code, fight) {
   return { fight: f, ...d.reportData.report };
 }
 
-// Graph series -> per-player amounts per step (seconds), players only.
-function series(graph, fight, players) {
+// Graph series -> per-player amounts per step, players only. Warcraft Logs
+// gives a smoothed rate per point; we keep its shape but scale each player so
+// the steps add up to their exact total for the fight.
+function series(graph, players) {
   const out = [];
   let step = 1;
   for (const s of graph?.data?.series || []) {
     const p = players.get(s.name);
-    if (!p) continue; // pets, totals, NPCs
-    const interval = (s.pointInterval || 1000) / 1000;
-    step = interval;
-    const vals = (s.data || []).map((v) => (Array.isArray(v) ? v[1] : v) || 0);
-    // Graph values are a rate (per second); turn them into an amount per step.
-    out.push({ ...p, vals: vals.map((v) => Math.round(v * interval)) });
+    if (!p || !s.total) continue; // pets, totals, NPCs, idle
+    step = (s.pointInterval || 1000) / 1000;
+    const vals = (s.data || []).map((v) => Math.max(0, (Array.isArray(v) ? v[1] : v) || 0));
+    const sum = vals.reduce((t, v) => t + v, 0) || 1;
+    out.push({ ...p, total: s.total, vals: vals.map((v) => Math.round((v / sum) * s.total)) });
   }
-  out.sort((a, b) => b.vals.reduce((t, v) => t + v, 0) - a.vals.reduce((t, v) => t + v, 0));
-  return { step, players: out.map(({ vals, ...p }) => p), series: out.map((x) => x.vals) };
+  out.sort((a, b) => b.total - a.total);
+  return { step: Math.round(step * 1000) / 1000, players: out.map(({ vals, total, ...p }) => p), series: out.map((x) => x.vals) };
 }
 
 function buildReplay(n, b, kill, raw) {
   const players = new Map(n.raiders.map((r) => [r.name, { name: r.name, class: r.class, spec: r.spec }]));
-  const damage = series(raw.damage, raw.fight, players);
-  const healing = series(raw.healing, raw.fight, players);
+  const damage = series(raw.damage, players);
+  const healing = series(raw.healing, players);
 
   // Ticker: deaths and this boss's mechanics, seconds into the pull.
   const events = n.deaths

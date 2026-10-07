@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { NIGHTS, ALL_TIME } from "./data.js";
-import { fmtDate } from "./assets.js";
-import { BossIcon, Panel, SpellIcon, Tile, ZoneIcon, useTip } from "./components.jsx";
+import { fmtDate, zoneOf } from "./assets.js";
+import { BossIcon, Panel, SpellIcon, Tabs, Tile, ZoneIcon, useTip } from "./components.jsx";
+import { zoneForEncounter } from "./aggregate.js";
 import { MECHANICS } from "./mechanics.js";
 import { rosterOf } from "../lib/roster.js";
 import { href } from "../router.js";
@@ -59,7 +60,6 @@ function Record({ p }) {
   const first = nights[0].night;
   const guildNights = NIGHTS.filter((n) => n.night >= first).length;
   const parses = nights.flatMap((n) => n.parses.map((x) => ({ ...x, night: n.night })));
-  const avg = parses.length ? Math.round(parses.reduce((t, x) => t + x.pct, 0) / parses.length) : null;
   const best = parses.reduce((b, x) => (!b || x.pct > b.pct ? x : b), null);
   const deaths = nights.reduce((t, n) => t + n.deaths, 0);
   const clean = nights.filter((n) => n.deaths === 0).length;
@@ -71,22 +71,12 @@ function Record({ p }) {
     <div className="rr rr-profile">
       <div className="stat-row rr-stat-row">
         <Tile value={nights.length} label="Raid nights" sub={`${Math.round((nights.length / Math.max(1, guildNights)) * 100)}% of guild nights since ${fmtDate(first, { day: "numeric", month: "short" })}`} />
-        <Tile value={avg ?? "-"} label="Average parse" accent={parseColor(avg)} sub={`over ${parses.length} boss kills`} />
+        <Tile value={parses.length} label="Boss kills" sub="with a parse on Warcraft Logs" />
         <Tile value={best ? best.pct : "-"} label="Best parse" accent={parseColor(best?.pct)} sub={best && `${best.boss} · ${fmtDate(best.night, { day: "numeric", month: "short" })}`} />
         <Tile value={clean} label="Deathless nights" sub={`${(deaths / nights.length).toFixed(1)} deaths per night`} />
       </div>
 
-      {parses.length > 1 && (
-        <Panel title="Parses over time" sub="each dot a boss kill · line = rolling average">
-          <ParseTrend parses={parses} />
-        </Panel>
-      )}
-
-      {parses.length > 0 && (
-        <Panel title="Best parse per boss">
-          <BestPerBoss parses={parses} />
-        </Panel>
-      )}
+      {parses.length > 0 && <Parses parses={parses} />}
 
       <div className="grid-2">
         <Panel title="Utility" sub="all nights">
@@ -121,76 +111,144 @@ function Record({ p }) {
   );
 }
 
-function ParseTrend({ parses }) {
-  const [tip, bind] = useTip();
-  const W = 1000;
-  const H = 220;
-  const pad = { l: 36, r: 10, t: 12, b: 26 };
-  const x = (i) => pad.l + (i / Math.max(1, parses.length - 1)) * (W - pad.l - pad.r);
-  const y = (v) => pad.t + (1 - v / 100) * (H - pad.t - pad.b);
-  const K = Math.min(8, parses.length);
-  const rolling = parses.map((_, i) => {
-    const win = parses.slice(Math.max(0, i - K + 1), i + 1);
-    return win.reduce((t, w) => t + w.pct, 0) / win.length;
-  });
-  let lastNight = null;
+// ---------- Parses: per raid, then per boss ----------
+
+// WCL parse tiers, low to high - drawn as faint bands behind the charts.
+const TIERS = [[0, 25], [25, 50], [50, 75], [75, 95], [95, 99], [99, 100]];
+
+function Parses({ parses }) {
+  const zoneIds = [...new Set(parses.map((x) => zoneForEncounter(x.id)).filter(Boolean))];
+  const latest = zoneForEncounter(parses.at(-1).id);
+  const [zone, setZone] = useState(zoneIds.includes(latest) ? latest : zoneIds[0]);
+  const mine = parses.filter((x) => zoneForEncounter(x.id) === zone);
+  const avg = Math.round(mine.reduce((t, x) => t + x.pct, 0) / mine.length);
+
+  // Per night in this raid: average parse over that night's kills.
+  const nights = [];
+  for (const x of mine) {
+    const last = nights.at(-1);
+    if (last?.night === x.night) last.list.push(x);
+    else nights.push({ night: x.night, list: [x] });
+  }
+  for (const n of nights) n.avg = Math.round(n.list.reduce((t, x) => t + x.pct, 0) / n.list.length);
+
+  // Per boss: best, average, every kill in order.
+  const bosses = new Map();
+  for (const x of mine) {
+    const b = bosses.get(x.id) || { id: x.id, boss: x.boss, kills: [] };
+    b.kills.push(x);
+    bosses.set(x.id, b);
+  }
+  const bossList = [...bosses.values()].sort((a, b) => a.id - b.id);
+
   return (
-    <div className="rr-timeline">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Parse percentiles over time">
-        {[0, 25, 50, 75, 95, 100].map((t) => (
-          <g key={t}>
-            <line x1={pad.l} x2={W - pad.r} y1={y(t)} y2={y(t)} stroke="var(--border-soft)" />
-            <text x={pad.l - 6} y={y(t) + 4} textAnchor="end" className="rr-axis">{t}</text>
-          </g>
-        ))}
-        <polyline points={rolling.map((v, i) => `${x(i)},${y(v)}`).join(" ")} fill="none" stroke="var(--gold)" strokeWidth="2.5" />
-        {parses.map((pr, i) => {
-          const label = pr.night !== lastNight && (parses.length < 40 || i % Math.ceil(parses.length / 10) === 0);
-          lastNight = pr.night;
+    <Panel
+      title="Parses"
+      sub="how your damage (or healing) ranks against everyone who killed the same boss on Warcraft Logs · 50 = average, 95+ = top 5%"
+      className="rr-parses"
+    >
+      <Tabs
+        tabs={zoneIds.map((z) => ({ key: z, label: zoneOf(z).short, icon: <ZoneIcon id={z} size={18} /> }))}
+        value={zone}
+        onChange={setZone}
+      />
+      <div className="rr-parse-head">
+        <ParseBadge pct={avg} />
+        <span>
+          average in <b>{zoneOf(zone).name}</b> <span className="muted">· {mine.length} kills over {nights.length} nights</span>
+        </span>
+      </div>
+      {nights.length > 1 && <NightParseChart nights={nights} />}
+      <div className="rr-bossparse">
+        {bossList.map((b) => {
+          const best = b.kills.reduce((m, x) => (x.pct > m.pct ? x : m));
+          const bAvg = Math.round(b.kills.reduce((t, x) => t + x.pct, 0) / b.kills.length);
           return (
-            <g key={i}>
-              <circle
-                cx={x(i)}
-                cy={y(pr.pct)}
-                r="5"
-                fill={parseColor(pr.pct)}
-                stroke="var(--surface-1)"
-                strokeWidth="1.5"
-                {...bind(<><strong>{pr.boss}</strong><div className="muted">{fmtDate(pr.night)} · {pr.pct} parse · {pr.amount.toLocaleString()} {pr.role === "healer" ? "HPS" : "DPS"}</div></>)}
-              />
-              {label && <text x={x(i)} y={H - 8} textAnchor="middle" className="rr-axis">{fmtDate(pr.night, { day: "numeric", month: "short" })}</text>}
-            </g>
+            <a key={b.id} className="rr-bossparse-card" href={href("raids", best.night, b.id)} title={`Best on ${fmtDate(best.night)} · open that kill`}>
+              <BossIcon id={b.id} name={b.boss} size={36} />
+              <div className="rr-bossparse-body">
+                <div className="rr-bossparse-name">{b.boss}</div>
+                <div className="muted rr-bossparse-meta">avg {bAvg} · {b.kills.length} {b.kills.length === 1 ? "kill" : "kills"}</div>
+                <ParseDots kills={b.kills} />
+              </div>
+              <div className="rr-bossparse-best">
+                <ParseBadge pct={best.pct} />
+                <span className="muted">best</span>
+              </div>
+            </a>
           );
         })}
+      </div>
+    </Panel>
+  );
+}
+
+function Bands({ x0, x1, y }) {
+  return TIERS.map(([lo, hi]) => (
+    <rect key={lo} x={x0} width={x1 - x0} y={y(hi)} height={y(lo) - y(hi)} fill={parseColor(lo)} opacity="0.07" />
+  ));
+}
+
+// Average parse per night in one raid, on the parse-colour bands.
+function NightParseChart({ nights }) {
+  const [tip, bind] = useTip();
+  const W = 1000;
+  const H = 200;
+  const pad = { l: 34, r: 12, t: 10, b: 26 };
+  const x = (i) => pad.l + (i / Math.max(1, nights.length - 1)) * (W - pad.l - pad.r);
+  const y = (v) => pad.t + (1 - v / 100) * (H - pad.t - pad.b);
+  const every = Math.max(1, Math.ceil(nights.length / 10));
+  return (
+    <div className="rr-timeline">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average parse per raid night">
+        <Bands x0={pad.l} x1={W - pad.r} y={y} />
+        {[25, 50, 75, 95].map((t) => (
+          <text key={t} x={pad.l - 6} y={y(t) + 4} textAnchor="end" className="rr-axis">{t}</text>
+        ))}
+        <polyline points={nights.map((n, i) => `${x(i)},${y(n.avg)}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth="2" />
+        {nights.map((n, i) => (
+          <g key={n.night}>
+            <circle
+              cx={x(i)}
+              cy={y(n.avg)}
+              r="7"
+              fill={parseColor(n.avg)}
+              stroke="var(--surface-1)"
+              strokeWidth="2"
+              {...bind(
+                <>
+                  <strong>{fmtDate(n.night)}</strong> · average {n.avg}
+                  {n.list.map((k) => (
+                    <div key={k.id} className="muted">{k.boss}: <span style={{ color: parseColor(k.pct) }}>{k.pct}</span></div>
+                  ))}
+                </>
+              )}
+            />
+            {i % every === 0 && <text x={x(i)} y={H - 8} textAnchor="middle" className="rr-axis">{fmtDate(n.night, { day: "numeric", month: "short" })}</text>}
+          </g>
+        ))}
       </svg>
       {tip}
     </div>
   );
 }
 
-function BestPerBoss({ parses }) {
-  const byBoss = new Map();
-  for (const x of parses) {
-    const b = byBoss.get(x.id);
-    if (!b) byBoss.set(x.id, { ...x, kills: 1, sum: x.pct });
-    else {
-      b.kills++;
-      b.sum += x.pct;
-      if (x.pct > b.pct) Object.assign(b, { pct: x.pct, night: x.night, amount: x.amount });
-    }
-  }
-  const rows = [...byBoss.values()].sort((a, b) => a.id - b.id);
+// Every kill on one boss, oldest to newest, as coloured dots on a 0-100 strip.
+function ParseDots({ kills }) {
+  const W = 160;
+  const H = 30;
+  const x = (i) => 5 + (i / Math.max(1, kills.length - 1)) * (W - 10);
+  const y = (v) => 3 + (1 - v / 100) * (H - 6);
   return (
-    <div className="rr-bestboss">
-      {rows.map((b) => (
-        <a key={b.id} className="rr-bestboss-row" href={href("raids", b.night, b.id)} title={`Best on ${fmtDate(b.night)}`}>
-          <BossIcon id={b.id} name={b.boss} size={30} />
-          <span className="rr-bestboss-name">{b.boss}</span>
-          <ParseBadge pct={b.pct} />
-          <span className="muted rr-bestboss-meta">avg {Math.round(b.sum / b.kills)} · {b.kills} kills</span>
-        </a>
+    <svg className="rr-parsedots" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true">
+      <Bands x0={0} x1={W} y={y} />
+      {kills.length > 1 && <polyline points={kills.map((k, i) => `${x(i)},${y(k.pct)}`).join(" ")} fill="none" stroke="var(--muted)" strokeWidth="1" />}
+      {kills.map((k, i) => (
+        <circle key={i} cx={kills.length > 1 ? x(i) : W / 2} cy={y(k.pct)} r="3" fill={parseColor(k.pct)}>
+          <title>{`${fmtDate(k.night)}: ${k.pct}`}</title>
+        </circle>
       ))}
-    </div>
+    </svg>
   );
 }
 

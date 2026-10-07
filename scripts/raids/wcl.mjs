@@ -23,7 +23,20 @@ async function getToken() {
   return token;
 }
 
+// Retries a couple of times on server hiccups (5xx); a 429 means the hourly
+// budget is gone, so that one fails straight away.
 export async function gql(query, variables = {}) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await gqlOnce(query, variables);
+    } catch (e) {
+      if (attempt >= 3 || !/WCL query failed: 5\d\d/.test(e.message)) throw e;
+      await new Promise((r) => setTimeout(r, 3000 * attempt));
+    }
+  }
+}
+
+async function gqlOnce(query, variables) {
   const res = await fetch(API_URL, {
     method: "POST",
     headers: {
@@ -35,7 +48,8 @@ export async function gql(query, variables = {}) {
   const body = await res.json().catch(() => null);
   if (!res.ok || body?.errors) {
     const msg = body?.errors?.map((e) => e.message).join("; ") || `${res.status}`;
-    throw new Error(`WCL query failed: ${msg}`);
+    const what = query.replace(/\s+/g, " ").match(/report\(code: \$code\) \{ ?([a-zA-Z]+[:(]?[^{(]{0,40})/)?.[1] || query.slice(0, 60);
+    throw new Error(`WCL query failed: ${msg} (${variables.code || ""} ${what.trim()})`);
   }
   return body.data;
 }

@@ -28,7 +28,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
-const RESERVE_POINTS = 60; // the biggest nights cost ~40
+const RESERVE_POINTS = 70; // a big night costs ~55
+const SCHEMA = 3; // bump when the night file shape changes; older files get rebuilt
 const args = parseArgs(process.argv.slice(2));
 
 main().catch((e) => {
@@ -62,9 +63,10 @@ async function main() {
   fs.mkdirSync(NIGHTS_DIR, { recursive: true });
   for (const night of nights) {
     const file = path.join(NIGHTS_DIR, `${night}.json`);
+    // Skip nights already built with the current schema; older ones get upgraded.
     if (fs.existsSync(file) && !args.force && !args.refresh) {
-      console.log(`${night}  already there (use --force to rebuild)`);
-      continue;
+      const schema = JSON.parse(fs.readFileSync(file, "utf8")).schema || 1;
+      if (schema >= SCHEMA) continue;
     }
     // Stop before the hourly API budget runs out; the next run picks up here.
     const rl = await rateLimit();
@@ -152,9 +154,9 @@ function writeRaw(rel, data, report) {
   fs.writeFileSync(file, zlib.gzipSync(JSON.stringify(data), { level: 9 }));
 }
 
-// Everything about one report that doesn't depend on which fights we use:
-// fights, every actor and ability (names + icons), each player's spec/role/gear,
-// and the full deaths table. Stored as data/wcl/reports/<code>.json.gz.
+// The light part of a report, needed for every log of the night to work out
+// which pulls to use: fights, every actor and ability (names + icons).
+// Stored as data/wcl/reports/<code>.json.gz.
 async function reportDetails(code) {
   const rel = `reports/${code}.json.gz`;
   const stored = readRaw(rel);
@@ -172,25 +174,37 @@ async function reportDetails(code) {
     { code }
   );
   const report = d.reportData.report;
+  report.masterData.players = report.masterData.actors.filter((a) => a.type === "Player");
+  writeRaw(rel, report, report);
+  return report;
+}
+
+// The heavy part of a report - deaths and player details (specs, roles, gear) -
+// only fetched for logs we actually use (several people log the same
+// raid). Stored as data/wcl/reports/<code>-detail.json.gz.
+async function reportHeavy(report) {
+  if (report.deaths) return {}; // older archive files have it inline
+  const rel = `reports/${report.code}-detail.json.gz`;
+  const stored = readRaw(rel);
+  if (stored) return stored;
+  // One field per request: together they're heavy enough to make the API 500.
+  const code = report.code;
   const span = { code, end: report.endTime - report.startTime };
-  const t = await gql(
-    `query($code: String!, $end: Float!) { reportData { report(code: $code) {
-      deaths: table(dataType: Deaths, startTime: 0, endTime: $end)
-      players: playerDetails(startTime: 0, endTime: $end, includeCombatantInfo: true)
-      rankings
-    } } }`,
-    span
-  );
-  const full = { ...report, deaths: t.reportData.report.deaths, players: t.reportData.report.players, rankings: t.reportData.report.rankings };
-  // Older code reads masterData.actors as players only.
-  full.masterData.players = full.masterData.actors.filter((a) => a.type === "Player");
-  writeRaw(rel, full, report);
-  return full;
+  const one = async (field) => {
+    const vars = field.includes("$end") ? "$code: String!, $end: Float!" : "$code: String!";
+    return (await gql(`query(${vars}) { reportData { report(code: $code) { x: ${field} } } }`, field.includes("$end") ? span : { code })).reportData.report.x;
+  };
+  const heavy = {
+    deaths: await one("table(dataType: Deaths, startTime: 0, endTime: $end)"),
+    players: await one("playerDetails(startTime: 0, endTime: $end, includeCombatantInfo: true)"),
+  };
+  writeRaw(rel, heavy, report);
+  return heavy;
 }
 
 // Everything for the fights of a report we actually use (several people log
 // the same raid; only their unique pulls are taken): full casts-by-ability,
-// dispels, interrupts, and a fight-tagged event stream - rezzes, every debuff
+// dispels, interrupts, parses for the kills, and a fight-tagged event stream - rezzes, every debuff
 // landing on a raider, every dispel/interrupt, plus the mechanic hits and casts
 // in src/raids/mechanics.js. Stored as data/wcl/fights/<code>-<hash>.json.gz.
 async function reportExtras(report, fightIDs) {
@@ -209,6 +223,12 @@ async function reportExtras(report, fightIDs) {
     { code: report.code, end, ids: fightIDs }
   );
   const x = { fightIDs, ...d.reportData.report, events: await mechanicEvents(report.code, end, fightIDs) };
+  // Parses cost ~2 API points per kill, so only for the kills we actually use.
+  const kills = report.fights.filter((f) => f.encounterID && f.kill && fightIDs.includes(f.id)).map((f) => f.id);
+  if (kills.length) {
+    const rk = await gql(`query($code: String!, $ids: [Int]!) { reportData { report(code: $code) { rankings(fightIDs: $ids) } } }`, { code: report.code, ids: kills });
+    x.rankings = rk.reportData.report.rankings;
+  }
   writeRaw(rel, x, report);
   return x;
 }
@@ -221,7 +241,7 @@ function eventFilter() {
     `type in ("dispel", "interrupt", "resurrect")`,
     `(type in ("applydebuff", "applydebuffstack") and target.type = "player")`,
     `(type = "cast" and ability.name in (${quote(casts)}))`,
-    `(type = "damage" and ability.name in (${quote(m.hit)}))`,
+    `(type = "damage" and target.type = "player" and ability.name in (${quote(m.hit)}))`,
   ].join(" or ");
 }
 
@@ -292,6 +312,7 @@ async function buildNight(night, reports) {
   fights.sort((a, b) => a.absStart - b.absStart);
 
   const used = reports.filter((r) => fights.some((f) => f.report === r));
+  for (const r of used) Object.assign(r, await reportHeavy(r));
   const nightStart = fights[0]?.absStart ?? used[0]?.startTime ?? 0;
   const nightEnd = Math.max(...fights.map((f) => f.absEnd), nightStart);
   const sec = (ms) => Math.round(ms / 1000);
@@ -423,7 +444,7 @@ async function buildNight(night, reports) {
       for (const id of f.friendlyPlayers || []) if (isPlayer(id)) pb.present.add(actor.get(id).name);
     }
     // Parses: Warcraft Logs' rank % per player on each kill (dps, or hps for healers).
-    for (const rk of r.rankings?.data || []) {
+    for (const rk of (x.rankings || r.rankings)?.data || []) {
       if (!own.some((f) => f.id === rk.fightID)) continue;
       const pb = bossSlot(perBoss, rk.encounter?.id);
       for (const [role, group] of Object.entries(rk.roles || {})) {
@@ -474,7 +495,7 @@ async function buildNight(night, reports) {
 
   const kills = bosses.filter((b) => b.killed).length;
   return {
-    schema: 3,
+    schema: SCHEMA,
     night,
     // Every log of the night: a combined "BWL/MC" log only carries one zone name.
     zones: [...new Set(reports.map((r) => r.zone?.name).filter(Boolean))],
