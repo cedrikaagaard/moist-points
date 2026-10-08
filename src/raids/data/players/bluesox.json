@@ -1,0 +1,1 @@
+{"name":"Bluesox","class":"Mage","spec":"Mage-Frost","role":"dps","nights":[{"night":"2026-04-21","zones":[2001],"role":"dps","spec":"Mage-Frost","deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":13,"amount":156,"role":"dps"}],"mech":{"51084:fear":1,"51084:eruption":1},"casts":{}}]}

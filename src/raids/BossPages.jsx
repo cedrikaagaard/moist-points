@@ -1,4 +1,4 @@
-import { NIGHTS, ALL_TIME, CLASS_OF } from "./data.js";
+import { NIGHTS, ALL_TIME, CLASS_OF, useBosses } from "./data.js";
 import { bossImg, classColor, fmtDate, mmss, zoneImg, zoneOf } from "./assets.js";
 import { Banner, BarList, BossIcon, Panel, Player, SpellIcon, Tile, ZoneIcon, useTip } from "./components.jsx";
 import { ClearTrend, KillSparkline } from "./charts.jsx";
@@ -86,27 +86,36 @@ export function ZonePage({ id }) {
           />
         </Panel>
         <Panel title="Raid veterans" sub="boss kills attended here">
-          <BarList rows={playerBars(killsAttended(id), 10)} />
+          <Veterans ids={bosses.map((b) => b.id)} />
         </Panel>
       </div>
     </div>
   );
 }
 
-// Boss kills each raider was present for, summed over the raid's bosses.
-function killsAttended(id) {
+// Boss kills each raider was present for, summed over the raid's bosses
+// (from the per-boss detail files, loaded on this page).
+function Veterans({ ids }) {
+  const detail = useBosses(ids);
+  if (!detail) return <div className="muted rr-empty-sm">Loading…</div>;
   const out = {};
-  for (const b of ALL_TIME.bosses.filter((b) => b.zoneId === id)) {
-    for (const [name, c] of Object.entries(b.raidersBy)) out[name] = (out[name] || 0) + c;
+  for (const b of Object.values(detail)) {
+    for (const [name, c] of Object.entries(b?.raidersBy || {})) out[name] = (out[name] || 0) + c;
   }
-  return out;
+  return <BarList rows={playerBars(out, 10)} />;
 }
 
 // ================= Boss =================
 
 export function BossPage({ id }) {
-  const b = ALL_TIME.bosses.find((x) => x.id === id);
-  if (!b) return <div className="view"><div className="empty">No logs for this boss yet.</div></div>;
+  const light = ALL_TIME.bosses.find((x) => x.id === id);
+  const detail = useBosses(light ? [id] : []);
+  if (!light) return <div className="view"><div className="empty">No logs for this boss yet.</div></div>;
+  if (!detail?.[id]) return <div className="view rr-loading muted">Loading…</div>;
+  return <Boss b={{ ...light, ...detail[id] }} />;
+}
+
+function Boss({ b }) {
   const zone = zoneOf(b.zoneId);
   const kills = b.history;
   const avg = kills.length ? kills.reduce((t, k) => t + k.sec, 0) / kills.length : null;

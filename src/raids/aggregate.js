@@ -172,22 +172,39 @@ function topEntry(counts) {
 
 const sum = (list, f) => list.reduce((t, x) => t + f(x), 0);
 
-// What the overview page needs: one light row per night + the all-time numbers.
+// Boss fields every page needs (records, kill-time history); the rest of a
+// boss - attempts, mechanics, parses, who was there - goes in its own file.
+const BOSS_LIGHT = ["id", "name", "zoneId", "kills", "wipes", "pulls", "timeSec", "deaths", "bestKillSec", "bestKillNight", "history"];
+const pick = (o, keys) => Object.fromEntries(keys.filter((k) => k in o).map((k) => [k, o[k]]));
+
+// What the site loads up front (summary.json): one light row per night + the
+// all-time numbers. Per-boss detail comes back separately as `bosses`
+// (written to data/bosses/<id>.json and loaded by the boss/raid pages).
 export function buildSummary(nights) {
+  const all = aggregate(nights);
+  const bosses = Object.fromEntries(all.bosses.map((b) => [b.id, b]));
   return {
-    nights: nights
-      .map((n) => ({
-        night: n.night,
-        zones: n.zones,
-        zoneIds: nightZones(n),
-        durationMin: n.durationMin,
-        raiders: n.raiders.length,
-        totals: n.totals,
-        bosses: n.bosses.map((b) => ({ id: b.encounterId, name: b.name, killed: b.killed, wipes: b.wipes, killTimeSec: b.killTimeSec })),
-        zoneTimes: zoneTimes(n),
-      }))
-      .sort((a, b) => b.night.localeCompare(a.night)),
-    allTime: aggregate(nights),
+    summary: {
+      nights: nights
+        .map((n) => ({
+          night: n.night,
+          zones: n.zones,
+          zoneIds: nightZones(n),
+          durationMin: n.durationMin,
+          raiders: n.raiders.length,
+          totals: n.totals,
+          bosses: n.bosses.map((b) => ({ id: b.encounterId, name: b.name, killed: b.killed, wipes: b.wipes, killTimeSec: b.killTimeSec })),
+          zoneTimes: zoneTimes(n),
+        }))
+        .sort((a, b) => b.night.localeCompare(a.night)),
+      allTime: {
+        ...all,
+        bosses: all.bosses.map((b) => pick(b, BOSS_LIGHT)),
+        players: all.players.map(({ killedBy, parseSum, parseCount, ...p }) => p),
+        killers: all.killers.slice(0, 40),
+      },
+    },
+    bosses,
   };
 }
 

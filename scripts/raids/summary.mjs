@@ -21,8 +21,14 @@ export function readNights() {
 
 export function writeSummary() {
   const nights = readNights();
-  const summary = buildSummary(nights);
+  const { summary, bosses } = buildSummary(nights);
   fs.writeFileSync(path.join(DATA, "summary.json"), JSON.stringify(summary) + "\n");
+
+  // Per-boss detail, loaded by the boss and raid pages only.
+  const bossDir = path.join(DATA, "bosses");
+  fs.rmSync(bossDir, { recursive: true, force: true });
+  fs.mkdirSync(bossDir, { recursive: true });
+  for (const [id, b] of Object.entries(bosses)) fs.writeFileSync(path.join(bossDir, `${id}.json`), JSON.stringify(b) + "\n");
 
   // One file per raider (their profile loads it), and a tiny roster the whole
   // site uses for class icons/colours next to names.

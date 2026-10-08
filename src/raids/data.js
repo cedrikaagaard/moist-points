@@ -23,3 +23,23 @@ export function useNight(night) {
   }, [night]);
   return state;
 }
+
+// Per-boss detail (attempts, mechanics, parses, who was there) lives in
+// data/bosses/<id>.json and only loads on the boss and raid pages.
+const bossFiles = import.meta.glob("./data/bosses/*.json", { import: "default" });
+
+// Full detail for several bosses: { [id]: boss } once loaded, null while loading.
+export function useBosses(ids) {
+  const key = ids.join(",");
+  const [state, setState] = useState({ key: null, data: null });
+  useEffect(() => {
+    let live = true;
+    Promise.all(ids.map((id) => bossFiles[`./data/bosses/${id}.json`]?.() ?? Promise.resolve(null))).then((list) => {
+      if (live) setState({ key, data: Object.fromEntries(ids.map((id, i) => [id, list[i]])) });
+    });
+    return () => {
+      live = false;
+    };
+  }, [key]);
+  return state.key === key ? state.data : null;
+}
