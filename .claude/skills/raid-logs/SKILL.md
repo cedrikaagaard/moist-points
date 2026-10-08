@@ -80,6 +80,14 @@ only when asked, or for new nights after a fetch if the user wants it.
 - Insight, not filler. Every sentence carries a fact from the facts pack (a
   number, a name, a time) or a cause explained by the reference. Cut anything
   that would be true of any raid ("communication is key").
+- Bosses with a debuff the raid must remove (Life Drain, Lucifron's/Gehennas'
+  curses, Curse of the Plaguebringer, Necrotic Poison, Veil of Shadow...):
+  check the "(coverage)" entries per pull first (applied / removed / never
+  removed / median seconds). Debuffs left running are a classic root cause
+  (7 Oct Sapphiron: 21 of 79 Life Drains never removed on the wipe, 0 on the
+  kill). Check the reference before calling it a failure: some debuffs are
+  normally ignored or deliberately not dispelled (Faerlina's poison, Mutating
+  Injection).
 - Wipes: what happened (the sequence), the most likely root cause (first
   deaths and their timing, not the cascade at the end), the evidence, and one
   concrete thing to do differently. Say "most likely" when inferring; never

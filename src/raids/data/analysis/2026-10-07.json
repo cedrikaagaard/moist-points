@@ -1,8 +1,8 @@
 {
   "night": "2026-10-07",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-08T10:00:00Z",
-  "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe that bled out early",
+  "generatedAt": "2026-10-08T10:20:00Z",
+  "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe from Life Drains left running",
   "overview": [
     "15 of 15 bosses in 2h22m, about 16 minutes slower than the guild's usual Naxx night. A good part of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
     "Fourteen bosses went down first try. The Four Horsemen kill (3:54) is the fastest in the logs, and Thaddius, Faerlina and Grobbulus were all well above the guild's usual standard on their key mechanics."
@@ -12,16 +12,15 @@
       "encounterId": 51119,
       "pull": 1,
       "title": "Sapphiron, pull 1 (wiped at 40%)",
-      "whatHappened": "Deaths started at 0:40 and never stopped: 10 dead by 1:45, including three healers and a tank. A second tank died at 2:47, and three players died to Cleave three seconds later as Sapphiron turned. From there it was a cascade: 29 deaths in 4:05, with 4 of 5 tanks and 8 of 11 healers dead.",
-      "likelyCause": "An early bleed rather than one big mistake. Life Drain killed 7 players (the kill pull: none), people stood in the Blizzard far more than on the kill, and fewer frost protection potions were used. That pressure cost three healers in the first 1:45, after which Frost Aura could not be out-healed.",
+      "whatHappened": "21 of the 79 Life Drains were never removed and ran their full course, draining raiders and healing Sapphiron. People started dying at 0:40, 10 were dead by 1:45 (three healers and a tank among them), and once tanks went down the rest followed: 29 deaths in 4:05.",
+      "likelyCause": "Life Drain not being decursed. On the kill pull, with the same 79 Life Drains, every single one was removed. Everything else on the wipe (Frost Aura deaths, Blizzard, the Cleave deaths when a tank died) is what happens once healers are losing that race.",
       "evidence": [
-        "7 deaths to Life Drain, 6 to Chill (Blizzard), 4 to Icebolt, 8 to Frost Aura",
-        "Life Drain removed about 14 per minute on the wipe vs 17 per minute on the kill",
-        "17 Blizzard hits on the wipe vs 5 on the kill",
-        "22 frost protection potions on the wipe vs 34 on the kill",
-        "Fenhir (tank) died at 2:47 and 3 Cleave deaths followed at 2:50"
+        "Life Drain: 79 applied, 21 never removed on the wipe vs 0 never removed on the kill",
+        "7 deaths directly to Life Drain on the wipe, none on the kill",
+        "8 of 11 healers and 4 of 5 tanks died on the wipe",
+        "17 Blizzard hits and 22 frost protection potions on the wipe vs 5 and 34 on the kill"
       ],
-      "avoid": "Treat the first air phase as the danger point: everyone spread past 10 yards before the Icebolts (4 Icebolt deaths), potions up before the pull, and decursers on their areas from the first Life Drain. The kill pull did all three and lost only 5 people."
+      "avoid": "Decurse assignments by area that cover the whole raid from the first Life Drain (it lands on about 10 people every 24 seconds), with a backup decurser for each group. The kill pull shows the raid can do it: zero missed."
     }
   ],
   "wentWell": [
@@ -74,7 +73,7 @@
     {
       "encounterId": 51119,
       "verdict": "good",
-      "text": "The kill pull was clean on mechanics: no Frost Breath hits, 5 Blizzard hits and no Life Drain deaths. It was still slow (4:37 vs a usual 3:52) with a median parse of 36, the lowest of the night."
+      "text": "The kill pull was clean: all 79 Life Drains removed (median 2.7 seconds), no Frost Breath hits, 5 Blizzard hits. It was still slow (4:37 vs a usual 3:52) with a median parse of 36, the lowest of the night."
     }
   ]
 }

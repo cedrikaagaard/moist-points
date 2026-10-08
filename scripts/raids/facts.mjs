@@ -101,6 +101,32 @@ function pullMechanics(src, encounterId) {
     }
   }
   for (const s of Object.values(out)) s.by = Object.fromEntries(Object.entries(s.by).sort((a, b) => b[1] - a[1]).slice(0, 8));
+
+  // Coverage of must-remove debuffs (curses, poisons, magic): how many landed,
+  // how many were removed, how many ran their full course, and how fast.
+  for (const m of list.filter((m) => m.kind === "dispel")) {
+    const apps = x.events.filter((e) => e.fight === src.fight && e.type === "applydebuff" && m.abilities.includes(ability.get(e.abilityGameID)) && actor.get(e.targetID)?.type === "Player");
+    const dispels = x.events.filter((e) => e.fight === src.fight && e.type === "dispel" && m.abilities.includes(ability.get(e.extraAbilityGameID)));
+    if (!apps.length) continue;
+    const used = new Set();
+    const times = [];
+    for (const a of apps) {
+      const i = dispels.findIndex((d, j) => !used.has(j) && d.targetID === a.targetID && d.timestamp >= a.timestamp && d.timestamp - a.timestamp <= 30000);
+      if (i >= 0) {
+        used.add(i);
+        times.push((dispels[i].timestamp - a.timestamp) / 1000);
+      }
+    }
+    times.sort((a, b) => a - b);
+    out[`${m.label} (coverage)`] = {
+      tone: "coverage",
+      applied: apps.length,
+      removed: times.length,
+      neverRemoved: apps.length - times.length,
+      medianSecondsToRemove: times.length ? Math.round(times[Math.floor(times.length / 2)] * 10) / 10 : null,
+      slowerThan6s: times.filter((t) => t > 6).length,
+    };
+  }
   return out;
 }
 
@@ -162,7 +188,7 @@ const facts = {
           deathsByAbility: byAbility,
           tanksDead: deaths.filter((d) => d.role === "tank").map((d) => `${d.player} at ${d.t}s`),
           healersDead: deaths.filter((d) => d.role === "healer").length,
-          mechanics: p.kill && b.pulls.length === 1 ? undefined : pullMechanics(p.src, b.encounterId),
+          mechanics: pullMechanics(p.src, b.encounterId),
         };
       }),
     };
