@@ -1,0 +1,80 @@
+{
+  "night": "2026-10-07",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-08T10:00:00Z",
+  "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe that bled out early",
+  "overview": [
+    "15 of 15 bosses in 2h22m, about 16 minutes slower than the guild's usual Naxx night. A good part of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
+    "Fourteen bosses went down first try. The Four Horsemen kill (3:54) is the fastest in the logs, and Thaddius, Faerlina and Grobbulus were all well above the guild's usual standard on their key mechanics."
+  ],
+  "wipes": [
+    {
+      "encounterId": 51119,
+      "pull": 1,
+      "title": "Sapphiron, pull 1 (wiped at 40%)",
+      "whatHappened": "Deaths started at 0:40 and never stopped: 10 dead by 1:45, including three healers and a tank. A second tank died at 2:47, and three players died to Cleave three seconds later as Sapphiron turned. From there it was a cascade: 29 deaths in 4:05, with 4 of 5 tanks and 8 of 11 healers dead.",
+      "likelyCause": "An early bleed rather than one big mistake. Life Drain killed 7 players (the kill pull: none), people stood in the Blizzard far more than on the kill, and fewer frost protection potions were used. That pressure cost three healers in the first 1:45, after which Frost Aura could not be out-healed.",
+      "evidence": [
+        "7 deaths to Life Drain, 6 to Chill (Blizzard), 4 to Icebolt, 8 to Frost Aura",
+        "Life Drain removed about 14 per minute on the wipe vs 17 per minute on the kill",
+        "17 Blizzard hits on the wipe vs 5 on the kill",
+        "22 frost protection potions on the wipe vs 34 on the kill",
+        "Fenhir (tank) died at 2:47 and 3 Cleave deaths followed at 2:50"
+      ],
+      "avoid": "Treat the first air phase as the danger point: everyone spread past 10 yards before the Icebolts (4 Icebolt deaths), potions up before the pull, and decursers on their areas from the first Life Drain. The kill pull did all three and lost only 5 people."
+    }
+  ],
+  "wentWell": [
+    {
+      "encounterId": 51121,
+      "text": "Four Horsemen in 3:54, the fastest kill in the logs (previous best 4:12, guild median 5:06). Marks per raider were down to 12.6 from a usual 15.6."
+    },
+    {
+      "encounterId": 51120,
+      "text": "Thaddius in 2:42 with only 6 wrong-side polarity hits. The guild usually takes around 30 hits there, and the median kill is 3:33."
+    },
+    {
+      "encounterId": 51110,
+      "text": "Faerlina in 0:49 with 13 Rain of Fire hits, about a fifth of the usual 65 or so."
+    },
+    {
+      "encounterId": 51111,
+      "text": "Grobbulus in 1:10 (median 1:27) with a median parse of 75, well up from the usual 57."
+    },
+    {
+      "encounterId": 51114,
+      "text": "Kel'Thuzad down first try in 2:50 with only 2 Frost Blasts (usually about 28) and 5 mind controls (usually about 22)."
+    },
+    {
+      "encounterId": 51115,
+      "text": "27 raiders drank a shadow protection potion on Loatheb, more than three times the usual 8."
+    }
+  ],
+  "mechanics": [
+    {
+      "encounterId": 51107,
+      "verdict": "bad",
+      "text": "Anub'Rekhan died in 0:48, a hair faster than ever, but Impale hit 29 raiders (34 hits, about two thirds more per raider than usual). Spreading out of each other's lines would cost nothing."
+    },
+    {
+      "encounterId": 51121,
+      "verdict": "bad",
+      "text": "Four players died at the same moment (1:50) to a Mark from the Spirit of Mograine. Spirits keep marking after the Horseman dies, so this is a group standing too close to the dead corner rather than a missed rotation."
+    },
+    {
+      "encounterId": 51114,
+      "verdict": "bad",
+      "text": "Frostbolt interrupts were about half the usual rate (20 vs roughly 39), and two raiders died to Frostbolt in the last 15 seconds. Two Guardian of Icecrown melee deaths at 2:15 and 2:30 suggest one Guardian got loose briefly."
+    },
+    {
+      "encounterId": 51116,
+      "verdict": "bad",
+      "text": "Both Maexxna deaths, including the tank, came within 8 seconds after the first Web Spray at 0:40. The usual fix is HoTs and a shield on the tank before the Spray lands."
+    },
+    {
+      "encounterId": 51119,
+      "verdict": "good",
+      "text": "The kill pull was clean on mechanics: no Frost Breath hits, 5 Blizzard hits and no Life Drain deaths. It was still slow (4:37 vs a usual 3:52) with a median parse of 36, the lowest of the night."
+    }
+  ]
+}
