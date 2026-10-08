@@ -132,6 +132,11 @@ The 7 Oct Sapphiron wipe is the cautionary example: the death list said
 never removed". Always go to the numbers.
 
 **Rules for the analysis**
+- Name people for good plays. When the log shows a moment where someone saved
+  a pull or carried a job ("Birkler picked Maexxna back up within 3 seconds",
+  "Etowa's battle rez on the tank kept the pull alive"), say who, with the
+  number or time that proves it. Credit by name; problems stay about the raid,
+  not a person. Keep dispel/decurse credit low-key (the site owner is a mage).
 - Insight, not filler. Every sentence carries a fact from the facts pack (a
   number, a name, a time) or a cause explained by the reference. Cut anything
   that would be true of any raid ("communication is key").
