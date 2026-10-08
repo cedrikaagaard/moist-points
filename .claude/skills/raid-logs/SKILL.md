@@ -1,6 +1,6 @@
 ---
 name: raid-logs
-description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs - fetch new raid nights, sanity-check them, and extend the stats/charts. Use after a raid night, to backfill older nights, or when asked for new raid stats.
+description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs - fetch new raid nights, sanity-check them, write the optional "magic LLM analysis" for a night, and extend the stats/charts. Use after a raid night, to backfill older nights, to analyse a night's wipes, or when asked for new raid stats.
 ---
 
 # Raid logs
@@ -8,9 +8,8 @@ description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs 
 The **Raid Logs** pages (`#/raids`, `#/raids/<night>`, `#/raids/<night>/<boss>`,
 `#/raid-zone/<id>`, `#/raid-boss/<id>`) are built from the guild's Warcraft Logs (Moist,
 EU-Firemaw, Classic Era). Everything on them is **computed from data**: stats,
-charts, and award cards from fixed rules. There is no generated prose. Don't
-add paragraphs, summaries or "story" text; the user explicitly doesn't want
-that.
+charts, and award cards from fixed rules. The only prose is the opt-in "magic LLM analysis" (see below),
+always collapsed and labelled as AI-written.
 
 This lives entirely in `scripts/raids/` and `src/raids/` (plus one nav link and
 route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
@@ -37,6 +36,62 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
    (`npm run dev`, `#/raids/<date>`).
 4. Report what came in (nights, kills, anything notable from the numbers).
    Commit only if asked.
+
+## Magic LLM analysis (optional, per night)
+
+Each night can have an AI-written analysis, shown on the night page (and the
+boss's part on each night-boss page) in a collapsed, clearly labelled
+"✨ Magic LLM analysis" panel. It is the one place prose is allowed. Write it
+only when asked, or for new nights after a fetch if the user wants it.
+
+1. **Read the reference first**: `reference/classes-and-log-reading.md` and the
+   file for the night's raid(s) in `reference/` (molten-core-onyxia,
+   blackwing-lair-zulgurub, ahnqiraj, naxxramas). Don't analyse from memory.
+2. **Build the facts**: `npm run raids:facts -- --night <date>` prints JSON with
+   every boss (kill time vs guild best/median, parse medians vs history,
+   mechanics per raider vs the guild's usual rate), every wipe pull (death
+   sequence with time, player, inferred role, killing blow, who dealt it, deaths
+   per ability, mechanic hits in that pull), trash deaths, utility and
+   consumables. Roles are inferred from casts; specs from WCL can be wrong.
+   If you need more, query the raw archive in `data/wcl/` (never the API).
+3. **Write** `src/raids/data/analysis/<night>.json`:
+
+   ```json
+   {
+     "night": "2026-09-23",
+     "model": "Claude (Opus 5.5)",
+     "generatedAt": "<ISO date>",
+     "headline": "one line, max ~80 chars",
+     "overview": ["1-2 short paragraphs: the shape of the night"],
+     "wipes": [{ "encounterId": 51119, "pull": 1, "title": "Sapphiron, pull 1 (2%)",
+                 "whatHappened": "...", "likelyCause": "...",
+                 "evidence": ["numbers from the facts"], "avoid": "..." }],
+     "wentWell": [{ "encounterId": 51120, "text": "..." }],
+     "mechanics": [{ "encounterId": 51112, "verdict": "good", "text": "..." }]
+   }
+   ```
+
+   `encounterId` ties an item to a boss (the night-boss page shows only its own).
+4. Build, open the night page, expand the panel, and read it once as a raider.
+
+**Rules for the analysis**
+- Insight, not filler. Every sentence carries a fact from the facts pack (a
+  number, a name, a time) or a cause explained by the reference. Cut anything
+  that would be true of any raid ("communication is key").
+- Wipes: what happened (the sequence), the most likely root cause (first
+  deaths and their timing, not the cascade at the end), the evidence, and one
+  concrete thing to do differently. Say "most likely" when inferring; never
+  invent things the logs can't show (voice comms, intent, mana bars).
+- Compare with the guild's own history (faster/slower than usual, more/fewer
+  mechanic hits per raider than usual). Good things first and generously, but
+  only where they're real.
+- Name players for good things freely; for mistakes prefer the pattern ("19
+  Blizzard hits from 8 raiders") over singling people out, unless one person's
+  action clearly caused the wipe.
+- Don't spotlight dispels/decursing (the site owner is a mage and doesn't
+  want it to look self-promoting); mention only when it matters to a wipe.
+- Plain, low-key tone. No dashes as sentence breaks, no hype, no emojis.
+- Keep it short: overview 2-5 sentences, 3-6 "went well", each wipe ~4 lines.
 
 ## How the data flows
 
@@ -74,6 +129,8 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
   compact "vs other nights" line. **Guild history** pages (`RaidsView.jsx`
   overview, `BossPages.jsx` zone and boss) hold the all-time stats. Don't mix
   all-time panels into night pages.
+- `Analysis.jsx`: the collapsed magic LLM analysis panel (data in
+  `src/raids/data/analysis/<night>.json`, written by this skill).
 - Other files: `charts.jsx` (timeline, calendar, clear-time trend, sparklines),
   `components.jsx` and `assets.js` (WCL CDN art: zones, bosses, specs, spells).
 

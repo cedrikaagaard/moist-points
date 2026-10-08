@@ -5,6 +5,7 @@ import { Banner, Panel, Player, SpellIcon, useTip } from "./components.jsx";
 import { useState } from "react";
 import { NightMechanics, NightFightWork } from "./MechanicsView.jsx";
 import Replay, { hasReplay } from "./Replay.jsx";
+import Analysis from "./Analysis.jsx";
 import { PageTabs } from "./components.jsx";
 import { href } from "../router.js";
 
@@ -79,6 +80,8 @@ function NightBoss({ n, b }) {
           { value: mmss(fought), label: "time fighting" },
         ]}
       />
+
+      <Analysis night={n.night} encounterId={b.encounterId} bossName={b.name} />
 
       <PageTabs tabs={tabs} value={tab} onChange={setTab} />
 

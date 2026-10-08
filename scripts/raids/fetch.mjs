@@ -70,8 +70,8 @@ async function main() {
     const file = path.join(NIGHTS_DIR, `${night}.json`);
     // Skip nights already built with the current schema; older ones get upgraded.
     if (fs.existsSync(file) && !args.force && !args.refresh) {
-      const schema = JSON.parse(fs.readFileSync(file, "utf8")).schema || 1;
-      if (schema >= SCHEMA) continue;
+      const old = JSON.parse(fs.readFileSync(file, "utf8"));
+      if ((old.schema || 1) >= SCHEMA && old.archived !== false) continue;
     }
     // Stop before the hourly API budget runs out; the next run picks up here.
     const rl = await rateLimit();
@@ -82,7 +82,9 @@ async function main() {
     }
     const details = [];
     for (const r of byNight.get(night)) details.push({ ...(await reportDetails(r.code)), zone: r.zone });
+    skippedArchive = false;
     const out = await buildNight(night, details);
+    out.archived = !skippedArchive;
     fs.writeFileSync(file, JSON.stringify(out) + "\n");
     const t = out.totals;
     console.log(
@@ -152,8 +154,14 @@ function readRaw(rel) {
 }
 
 // Only finished logs are stored - one still being uploaded would go stale.
+// A night built from a too-fresh log is marked `archived: false` and fetched
+// again on a later run.
+let skippedArchive = false;
 function writeRaw(rel, data, report) {
-  if (Date.now() - report.endTime < 3 * 3600e3) return;
+  if (Date.now() - report.endTime < 3 * 3600e3) {
+    skippedArchive = true;
+    return;
+  }
   const file = path.join(RAW_DIR, rel);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, zlib.gzipSync(JSON.stringify(data), { level: 9 }));

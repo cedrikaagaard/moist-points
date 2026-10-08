@@ -7,6 +7,7 @@ export function zoneForEncounter(id) {
   if (id === 51084) return 2001; // Onyxia
   if (id >= 50610 && id <= 50617) return 2002; // Blackwing Lair
   if (id >= 50784 && id <= 50793) return 2003; // Zul'Gurub
+  if (id >= 50718 && id <= 50723) return 2004; // Ruins of Ahn'Qiraj (AQ20)
   if (id >= 50709 && id <= 50717) return 2005; // AQ40
   if (id >= 51107 && id <= 51121) return 2006; // Naxxramas
   return null;

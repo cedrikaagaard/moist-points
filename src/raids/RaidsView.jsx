@@ -7,6 +7,7 @@ import { deathless, friendlyFire, nightHighlights, records } from "./highlights.
 import { nightZones } from "./aggregate.js";
 import { ZonePage, BossPage } from "./BossPages.jsx";
 import NightBossPage from "./NightBoss.jsx";
+import Analysis from "./Analysis.jsx";
 import { href } from "../router.js";
 import "./raids.css";
 
@@ -312,6 +313,8 @@ function Night({ n }) {
           { value: n.raiders.length, label: "raiders" },
         ]}
       />
+
+      <Analysis night={n.night} />
 
       <Panel title="The night at a glance" sub="pulls and deaths over time">
         <NightTimeline n={n} />

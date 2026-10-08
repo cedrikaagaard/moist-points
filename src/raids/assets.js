@@ -16,6 +16,7 @@ export const ZONES = {
   2001: { short: "Ony", name: "Onyxia", color: "#b0563c" },
   2002: { short: "BWL", name: "Blackwing Lair", color: "var(--raid-bwl)" },
   2003: { short: "ZG", name: "Zul'Gurub", color: "#3fa36b" },
+  2004: { short: "AQ20", name: "Ruins of Ahn'Qiraj", color: "#d6a34a" },
   2005: { short: "AQ40", name: "Temple of Ahn'Qiraj", color: "var(--raid-aq40)" },
   2006: { short: "Naxx", name: "Naxxramas", color: "var(--raid-naxx)" },
 };
