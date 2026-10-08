@@ -1,11 +1,12 @@
 {
   "night": "2026-10-07-naxx",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-08T14:10:00Z",
+  "generatedAt": "2026-10-08T15:20:00Z",
   "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe that was lost in the first two Life Drain waves",
   "overview": [
     "15 of 15 bosses in 2h22m, about 10 minutes over the guild's usual Naxx night (median 2h11m). Most of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
-    "Fourteen bosses went down first try. The Four Horsemen kill (3:54) is the fastest in the logs, and Thaddius, Faerlina and Grobbulus were all well above the guild's usual standard on their key mechanics."
+    "Fourteen bosses went down first try. The Four Horsemen kill (3:54) is the fastest in the logs, and Thaddius, Faerlina and Grobbulus were all well above the guild's usual standard on their key mechanics.",
+    "It was a Darkmoon Faire week and the raid came in heavily buffed: at Anub'Rekhan 32 of 40 had Sayge's Fortune, 38 Rallying Cry, 39 Spirit of Zandalar, 39 Songflower and most had the Dire Maul buffs. Songflower and Warchief's Blessing ran out between Heigan and Loatheb, and the Sapphiron wipe cost almost everyone their Dire Maul and Sayge's buffs, which shows in the last two bosses."
   ],
   "wipes": [
     {
@@ -18,7 +19,8 @@
         "Life Drain waves 1 and 2: 10 of 20 never decursed. Waves 3 to 8: 11 of 59",
         "Life Drain healed Sapphiron for 297k on the wipe vs 38k on the kill",
         "On the wipe three players did 50 of the 58 Life Drain removals; on the kill five players shared all 79 (12 to 20 each)",
-        "7 deaths directly to Life Drain (a usual kill has about 1), and 4 of 5 tanks and 7 of 11 healers died"
+        "7 deaths directly to Life Drain (a usual kill has about 1), and 4 of 5 tanks and 7 of 11 healers died",
+        "The wipe also cost the raid its Dire Maul buffs (77 down to 4) and Sayge's Fortune (27 down to 1) for the rest of the night"
       ],
       "avoid": "Have every decurser assigned and in range before the pull, so the first wave is cleaned up as fast as the later ones. The kill pull shows the raid can do it: all 79 removed, half of them within 2.7 seconds."
     }
@@ -238,7 +240,7 @@
         },
         {
           "tone": "bad",
-          "text": "It was slow (4:37 against a usual 3:53) because raid DPS was 76% of normal. The wipe had cost most world buffs: the raid had 77 Dire Maul buffs and 27 Sayge's buffs on the wipe and 4 and 1 on the kill. 22 people picked up Rallying Cry and Zandalar again in between."
+          "text": "It was slow (4:37 against a usual 3:53) because raid DPS was 76% of normal. The wipe had cost most world buffs. Rallying Cry and Spirit of Zandalar survive death and were still on 32 people, but the Dire Maul buffs went from 24, 33 and 20 people to 1, 2 and 1, and Sayge's Fortune from 27 to 1. In a Darkmoon Faire week that alone is a big damage loss."
         },
         {
           "tone": "info",
@@ -264,7 +266,7 @@
         },
         {
           "tone": "info",
-          "text": "Raid DPS was 88% of normal, likely the same lost world buffs as on Sapphiron."
+          "text": "Raid DPS was 88% of normal. No buff snapshot was logged for this pull, but most of the raid had lost its Dire Maul and Sayge's buffs on the Sapphiron wipe just before."
         }
       ]
     }

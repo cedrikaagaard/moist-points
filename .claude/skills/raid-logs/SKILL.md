@@ -120,6 +120,12 @@ wrong and why, not to describe the death list.
    `baseline.deathsPerKill`.
 6. **Output.** `raidDps` vs `baseline.raidDps`, kill time vs history. A slow
    kill with low DPS stretches every attrition mechanic.
+   Check `worldBuffsAtPull` too: world buffs are a big deal in vanilla. Note a
+   Darkmoon Faire week (Sayge's Fortune), how buffed the raid came in, buffs
+   running out over a long night (Songflower and Rend last 1 h), and above all
+   buffs lost on a wipe: Dire Maul and Sayge's buffs die with the player,
+   Rallying Cry and Spirit of Zandalar survive death (seen on 7 Oct). A slow
+   kill right after a wipe is often this.
 7. **Then write it.** For a wipe: the chain of events from the first thing
    that went wrong to the wipe, the root cause with the numbers that prove it,
    and the one or two things that would have prevented it. For kills: what was

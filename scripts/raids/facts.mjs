@@ -44,7 +44,7 @@ const readRaw = (rel) => {
 };
 // The full combat log (data/events/) when we have it: per-fight numbers plus
 // the raw events the mechanic counting below walks through.
-const KEEP = new Set(["dispel", "interrupt", "applydebuff", "cast", "begincast", "applybuff", "refreshbuff"]);
+const KEEP = new Set(["dispel", "interrupt", "applydebuff", "cast", "begincast", "applybuff", "refreshbuff", "combatantinfo"]);
 const logs = new Map();
 function fullLog(code) {
   if (!logs.has(code)) {
@@ -226,6 +226,30 @@ function bossBuffsAndCasts(src) {
 
 // Frenzies a Tranquilizing Shot removes (other bosses' enrages can't be).
 const TRANQ_BOSSES = new Set(["Magmadar", "Flamegor", "Chromaggus", "Princess Huhuran", "Gluth"]);
+// World buffs: big in vanilla, lost on death. Counted from each raider's buff
+// snapshot at the pull (combatantinfo). Sayge's Fortune = Darkmoon Faire week.
+const WORLD_BUFFS = [
+  ["Rallying Cry (Ony/Nef head)", /^Rallying Cry of the Dragonslayer$/],
+  ["Warchief's Blessing (Rend)", /^Warchief's Blessing$/],
+  ["Spirit of Zandalar (ZG heart)", /^Spirit of Zandalar$/],
+  ["Songflower Serenade", /^Songflower Serenade$/],
+  ["Dire Maul: Fengus' Ferocity", /^Fengus' Ferocity$/],
+  ["Dire Maul: Mol'dar's Moxie", /^Mol'dar's Moxie$/],
+  ["Dire Maul: Slip'kik's Savvy", /^Slip'kik's Savvy$/],
+  ["Sayge's Fortune (DMF)", /^Sayge's Dark Fortune/],
+];
+function worldBuffs(src) {
+  const x = src && pullEvents(src);
+  const snaps = (x?.events || []).filter((e) => e.type === "combatantinfo");
+  if (!snaps.length) return undefined;
+  const out = { raidersWithSnapshot: snaps.length };
+  for (const [label, re] of WORLD_BUFFS) out[label] = snaps.filter((e) => (e.auras || []).some((a) => re.test(a.name || ""))).length;
+  const total = WORLD_BUFFS.reduce((t, [l]) => t + out[l], 0);
+  // Some pulls' snapshots come without auras at all (Razuvious, Gothik): unknown, not zero.
+  if (total === 0 && snaps.every((e) => !(e.auras || []).length)) return { note: "buff snapshot missing for this pull" };
+  return out;
+}
+
 const BOSS_CASTS = new Set(["Frostbolt", "Great Heal", "Dark Mending", "Arcane Explosion", "Shadow Bolt Volley", "Heal", "Holy Fire", "Mend", "Flash Heal"]);
 
 const fightName = (base, src) => base.fights.find((f) => f.id === src.fight)?.name;
@@ -407,6 +431,7 @@ function pullFacts(b, p, i) {
     damageTakenPerSecond: p.takenTotal ? Math.round(p.takenTotal / p.durationSec) : null,
     topDamage: p.topDamage,
     topHealing: p.topHealing,
+    worldBuffsAtPull: worldBuffs(p.src),
     ...bossBuffsAndCasts(p.src),
   };
 }
