@@ -12,7 +12,8 @@
     "raids:history": "node scripts/raids/history.mjs",
     "raids:summary": "node scripts/raids/summary.mjs",
     "raids:replays": "node --env-file=.env.local scripts/raids/replays.mjs",
-    "raids:facts": "node scripts/raids/facts.mjs"
+    "raids:facts": "node scripts/raids/facts.mjs",
+    "raids:events": "node --env-file=.env.local scripts/raids/events.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

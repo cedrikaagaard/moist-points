@@ -290,6 +290,11 @@ from the Warcraft Logs API and committed to the repo as JSON
 3. `npm run raids:history` prints an all-time summary to sanity-check, then
    build/deploy as usual.
 
+**The full combat log of every night** is downloaded by `npm run raids:events`
+into `data/events/` (local only, not in git, a few GB in total) - every hit,
+heal, buff and death including mana/health, so new features can be computed
+offline without asking Warcraft Logs again.
+
 **Everything Warcraft Logs gives us is kept** in `data/wcl/` (gzipped JSON, in
 git): the report list, each report's fights/actors/abilities/player specs/
 parses/deaths, and per-night casts, dispels, interrupts and an event stream of

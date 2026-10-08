@@ -18,3 +18,6 @@ public/moistdb.sqlite
 
 # Personal Claude Code permissions (the shared skill + launch config are committed)
 .claude/settings.local.json
+
+# Full combat-log events per night (scripts/raids/events.mjs) - too big for git, kept locally
+data/events/

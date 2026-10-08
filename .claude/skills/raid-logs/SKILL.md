@@ -159,6 +159,13 @@ never removed". Always go to the numbers.
 
 ## How the data flows
 
+- **Full combat logs (source of truth):** `npm run raids:events` downloads every
+  event of every night (hits, heals, casts, buffs, deaths, mana and health via
+  `includeResources`) for exactly the fights each night uses, into
+  `data/events/<night>/<code>/page-NNN.json.gz` (local only, git-ignored, ~2-12
+  MB per night). New features should compute from these offline instead of
+  adding API queries. Mana for "healers ran out" analysis lives here too.
+
 - **Raw archive:** `data/wcl/` (committed) holds every API response gzipped -
   `reports.json` (the guild's report list), `reports/<code>.json.gz` (fights,
   actors, abilities+icons, playerDetails specs/roles, rankings = parses, deaths
