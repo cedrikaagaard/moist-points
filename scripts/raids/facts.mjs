@@ -136,7 +136,7 @@ function anomalies(b, p, base, deaths, extra) {
     if (c >= 2 && c >= 3 * Math.max(usual, 0.34)) add(c * 4, `${c} deaths to ${k}; a usual kill has ${usual}`);
   }
   // Boss buffs and casts.
-  if (extra?.bossFrenzy && extra.bossFrenzy.gained > extra.bossFrenzy.removedByTranq) add(30, `Boss Frenzy/Enrage gained ${extra.bossFrenzy.gained}x, removed by Tranquilizing Shot ${extra.bossFrenzy.removedByTranq}x`);
+  if (TRANQ_BOSSES.has(b.name) && extra?.bossFrenzy && extra.bossFrenzy.gained > extra.bossFrenzy.removedByTranq) add(30, `Boss Frenzy/Enrage gained ${extra.bossFrenzy.gained}x, removed by Tranquilizing Shot ${extra.bossFrenzy.removedByTranq}x`);
   for (const [k, c] of Object.entries(extra?.bossCasts || {})) if (c.started - c.interrupted >= 2) add(10 + (c.started - c.interrupted) * 2, `Boss ${k}: started ${c.started}, interrupted ${c.interrupted}`);
   for (const [k, v] of Object.entries(p.mechanics || {})) {
     if (v.tone === "coverage" && v.neverRemoved >= 3) add(10 + v.neverRemoved * 2, `${k.replace(" (coverage)", "")}: ${v.neverRemoved} of ${v.applied} never removed (median ${v.medianSecondsToRemove}s to remove)`);
@@ -193,7 +193,7 @@ function bossBuffsAndCasts(src) {
   const out = {};
   const npc = new Set(base.masterData.actors.filter((a) => a.type === "NPC").map((a) => a.id));
   const frenzies = ev.filter((e) => (e.type === "applybuff" || e.type === "refreshbuff") && npc.has(e.targetID) && ["Frenzy", "Enrage"].includes(ability.get(e.abilityGameID)));
-  if (frenzies.length) {
+  if (frenzies.length && TRANQ_BOSSES.has(fightName(base, src))) {
     const removed = ev.filter((e) => e.type === "dispel" && ["Frenzy", "Enrage"].includes(ability.get(e.extraAbilityGameID))).length;
     out.bossFrenzy = { gained: frenzies.length, removedByTranq: removed };
   }
@@ -210,7 +210,11 @@ function bossBuffsAndCasts(src) {
   return Object.keys(out).length ? out : undefined;
 }
 
+// Frenzies a Tranquilizing Shot removes (other bosses' enrages can't be).
+const TRANQ_BOSSES = new Set(["Magmadar", "Flamegor", "Chromaggus", "Princess Huhuran", "Gluth"]);
 const BOSS_CASTS = new Set(["Frostbolt", "Great Heal", "Dark Mending", "Arcane Explosion", "Shadow Bolt Volley", "Heal", "Holy Fire", "Mend", "Flash Heal"]);
+
+const fightName = (base, src) => base.fights.find((f) => f.id === src.fight)?.name;
 
 // Raw per-pull detail: mechanic hits per player for one fight.
 function pullMechanics(src, encounterId) {

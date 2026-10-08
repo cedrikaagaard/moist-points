@@ -118,7 +118,8 @@ export function deriveLog(night, report, keep = null) {
           s.healing[p] = (s.healing[p] || 0) + amount;
           tick(s.perSec.healing, p, t, amount);
           if (isPlayer(e.targetID) && amount > 0) remember(s, nameOf(e.targetID), { t, kind: "heal", ability: spell(e.abilityGameID), source: p, amount });
-        } else if (enemy(e.targetID) && e.type === "heal" && amount > 0) {
+        } else if (enemy(e.targetID) && !friendly(e.sourceID) && e.type === "heal" && amount > 0) {
+          // (raid healing on a mind-controlled add isn't the enemy healing)
           const key = `${nameOf(e.sourceID)}|${spell(e.abilityGameID)}|${nameOf(e.targetID)}`;
           s.enemyHealed[key] = (s.enemyHealed[key] || 0) + amount;
         }
@@ -172,7 +173,7 @@ export function deriveLog(night, report, keep = null) {
         if (enemy(e.sourceID)) s.bossCasts.push({ t, source: nameOf(e.sourceID), name: spell(e.abilityGameID) });
         break;
       case "death": {
-        if (!isPlayer(e.targetID)) break;
+        if (!isPlayer(e.targetID) || e.feign) break; // Feign Death logs as a death
         const p = nameOf(e.targetID);
         const window = (s.recent.get(p) || []).filter((r) => r.t >= t - RECAP_MS);
         const dmg = window.filter((r) => r.kind === "dmg");

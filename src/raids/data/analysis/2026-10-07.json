@@ -1,10 +1,10 @@
 {
   "night": "2026-10-07",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-08T10:40:00Z",
-  "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe from Life Drains left running",
+  "generatedAt": "2026-10-08T12:55:00Z",
+  "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe that was lost in the first two Life Drain waves",
   "overview": [
-    "15 of 15 bosses in 2h22m, about 16 minutes slower than the guild's usual Naxx night. A good part of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
+    "15 of 15 bosses in 2h22m, about 10 minutes over the guild's usual Naxx night (median 2h11m). Most of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
     "Fourteen bosses went down first try. The Four Horsemen kill (3:54) is the fastest in the logs, and Thaddius, Faerlina and Grobbulus were all well above the guild's usual standard on their key mechanics."
   ],
   "wipes": [
@@ -12,25 +12,25 @@
       "encounterId": 51119,
       "pull": 1,
       "title": "Sapphiron, pull 1 (wiped at 40%)",
-      "whatHappened": "21 of the 79 Life Drains were never removed and ran their full course, draining raiders and healing Sapphiron. People started dying at 0:40, 10 were dead by 1:45 (three healers and a tank among them), and once tanks went down the rest followed: 29 deaths in 4:05.",
-      "likelyCause": "Life Drain not being decursed. On the kill pull, with the same 79 Life Drains, every single one was removed. Everything else on the wipe (Frost Aura deaths, Blizzard, the Cleave deaths when a tank died) is what happens once healers are losing that race.",
+      "whatHappened": "Life Drain lands on about 10 people every 20 to 25 seconds. In the first two waves (0:13 and 0:35) half of them were never decursed and drained for their full duration. Deaths started at 0:40: a healer, then a tank at 0:49 who got 110 healing in his last 10 seconds, then another healer at 0:57. By 1:45 ten people were dead, three of them healers. From the fifth wave on nearly every Life Drain was removed within a few seconds, but the raid never got the healing back and fell apart at 2:50 when the second tank went down (three Cleave deaths in one second).",
+      "likelyCause": "The first two Life Drain waves. They cost early healer and tank deaths, and the healing they gave Sapphiron (297k over the pull, about a tenth of his health) is roughly what the raid was short when it wiped at 40%.",
       "evidence": [
-        "Life Drain healed Sapphiron for about 297k on the wipe (roughly a tenth of his health) vs 38k on the kill",
-        "Life Drain: 79 applied, 21 never removed on the wipe vs 0 never removed on the kill",
-        "Life Drain dealt 165k to the raid on the wipe vs 59k on the kill, with 7 deaths directly to it",
-        "8 of 11 healers and 4 of 5 tanks died on the wipe"
+        "Life Drain waves 1 and 2: 10 of 20 never decursed. Waves 3 to 8: 11 of 59",
+        "Life Drain healed Sapphiron for 297k on the wipe vs 38k on the kill",
+        "On the wipe three players did 50 of the 58 Life Drain removals; on the kill five players shared all 79 (12 to 20 each)",
+        "7 deaths directly to Life Drain (a usual kill has about 1), and 4 of 5 tanks and 7 of 11 healers died"
       ],
-      "avoid": "Decurse assignments by area that cover the whole raid from the first Life Drain (it lands on about 10 people every 24 seconds), with a backup decurser for each group. The kill pull shows the raid can do it: zero missed."
+      "avoid": "Have every decurser assigned and in range before the pull, so the first wave is cleaned up as fast as the later ones. The kill pull shows the raid can do it: all 79 removed, half of them within 2.7 seconds."
     }
   ],
   "wentWell": [
     {
       "encounterId": 51121,
-      "text": "Four Horsemen in 3:54, the fastest kill in the logs (previous best 4:12, guild median 5:06). Marks per raider were down to 12.6 from a usual 15.6."
+      "text": "Four Horsemen in 3:54, the fastest kill in the logs (previous best 4:12, guild median 5:13). Marks per raider were down to 12.6 from a usual 15.8."
     },
     {
       "encounterId": 51120,
-      "text": "Thaddius in 2:42 with only 6 wrong-side polarity hits. The guild usually takes around 30 hits there, and the median kill is 3:33."
+      "text": "Thaddius in 2:42 with only 6 wrong-side polarity hits. The guild usually takes around 28 there, and the median kill is 3:35."
     },
     {
       "encounterId": 51110,
@@ -38,22 +38,27 @@
     },
     {
       "encounterId": 51111,
-      "text": "Grobbulus in 1:10 (median 1:27) with a median parse of 75, well up from the usual 57."
+      "text": "Grobbulus in 1:10 (median 1:25) with a median parse of 75, well up from the usual 60."
     },
     {
       "encounterId": 51114,
-      "text": "Kel'Thuzad down first try in 2:50 with only 2 Frost Blasts (usually about 28) and 5 mind controls (usually about 22)."
+      "text": "Kel'Thuzad down first try in 2:50. Every one of his 20 Frostbolt casts was interrupted, and there were only 2 Frost Blasts (usually about 29) and 5 mind controls (usually about 23)."
     },
     {
       "encounterId": 51115,
-      "text": "27 raiders drank a shadow protection potion on Loatheb, more than three times the usual 8."
+      "text": "27 raiders drank a shadow protection potion on Loatheb, about three times the usual 9, and nobody died."
     }
   ],
   "mechanics": [
     {
+      "encounterId": 51116,
+      "verdict": "bad",
+      "text": "At 0:35 Maexxna left her tank for the off tank, and the Poison Shock she cast while turning hit 24 raiders instead of the tank alone (53k damage, about six times a usual kill). The Web Spray at 0:40 then stunned everyone while she killed a mage and the off tank. No taunt was cast during the fight."
+    },
+    {
       "encounterId": 51107,
       "verdict": "bad",
-      "text": "Anub'Rekhan died in 0:48, a hair faster than ever, but Impale hit 29 raiders (34 hits, about two thirds more per raider than usual). Spreading out of each other's lines would cost nothing."
+      "text": "Anub'Rekhan died in 0:48, a hair faster than ever, but Impale hit 29 raiders (34 hits, about two thirds more per raider than usual) and the landing from those throws added another 20k damage. Spreading out of each other's lines would cost nothing."
     },
     {
       "encounterId": 51121,
@@ -63,17 +68,12 @@
     {
       "encounterId": 51114,
       "verdict": "bad",
-      "text": "Frostbolt interrupts were about half the usual rate (20 vs roughly 39), and two raiders died to Frostbolt in the last 15 seconds. Two Guardian of Icecrown melee deaths at 2:15 and 2:30 suggest one Guardian got loose briefly."
-    },
-    {
-      "encounterId": 51116,
-      "verdict": "bad",
-      "text": "Both Maexxna deaths, including the tank, came within 8 seconds after the first Web Spray at 0:40. The usual fix is HoTs and a shield on the tank before the Spray lands."
+      "text": "Two deaths to Shadow Fissures (1:02 and 2:19), and two to a Guardian of Icecrown at 2:15 and 2:30, which suggests one Guardian got loose briefly."
     },
     {
       "encounterId": 51119,
       "verdict": "good",
-      "text": "The kill pull was clean: all 79 Life Drains removed (median 2.7 seconds), no Frost Breath hits, 5 Blizzard hits. It was still slow (4:37 vs a usual 3:52) with a median parse of 36, the lowest of the night."
+      "text": "The kill pull was clean on Life Drain: all 79 removed, half within 2.7 seconds, and no deaths to it. It was still slow (4:37 vs a usual 3:53) with a median parse of 36, the lowest of the night."
     }
   ]
 }
