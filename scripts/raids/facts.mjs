@@ -12,6 +12,7 @@ import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { MECHANICS } from "../../src/raids/mechanics.js";
 import { hasEvents, deriveLog } from "./derive.mjs";
+import { classifyRaids } from "../../src/raids/aggregate.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const DATA = path.join(ROOT, "src/raids/data");
@@ -76,10 +77,15 @@ const median = (l) => (l.length ? [...l].sort((a, b) => a - b)[Math.floor(l.leng
 // From every other night's KILL pulls of the same boss: deaths per ability per
 // kill, damage taken per ability per second, healing done to the boss per kill,
 // raid DPS. Damage numbers only exist for nights fetched with schema 4+.
-const allNights = fs
+// Compared like with like: guild raids against guild raids, PUG runs (the
+// Monday MC) against PUG runs. Other guilds' raids never count.
+const everyRaid = fs
   .readdirSync(path.join(DATA, "nights"))
-  .filter((f) => f.endsWith(".json") && f !== `${night}.json`)
+  .filter((f) => f.endsWith(".json"))
   .map((f) => read(path.join(DATA, "nights", f)));
+const kinds = classifyRaids(everyRaid);
+const myKind = kinds.get(night).kind;
+const allNights = everyRaid.filter((o) => o.night !== night && kinds.get(o.night).kind === myKind);
 function baseline(b) {
   const kills = [];
   for (const o of allNights) {
@@ -317,6 +323,10 @@ function pullMechanics(src, encounterId) {
 
 const facts = {
   night,
+  raidKind:
+    myKind === "pug"
+      ? `PUG run: mostly non-members (${kinds.get(night).regulars} of ${n.raiders.length} are Moist regulars). Every baseline and history here is from other PUG runs only; kill-time history and parse history come from guild raids, so don't compare against those.`
+      : myKind,
   zones: n.zones,
   raiders: n.raiders.length,
   roles: Object.fromEntries(["tank", "healer", "dps"].map((r) => [r, [...role.values()].filter((x) => x === r).length])),
@@ -327,7 +337,7 @@ const facts = {
   totals: n.totals,
   clearTimes: Object.fromEntries(
     Object.entries(summary.nights.find((x) => x.night === night)?.zoneTimes || {}).map(([z, t]) => {
-      const others = summary.nights.filter((x) => x.night !== night && x.zoneTimes?.[z]?.kills === t.kills).map((x) => x.zoneTimes[z].sec);
+      const others = summary.nights.filter((x) => x.night !== night && (x.kind || "guild") === myKind && x.zoneTimes?.[z]?.kills === t.kills).map((x) => x.zoneTimes[z].sec);
       return [z, { sec: t.sec, kills: t.kills, guildBest: others.length ? Math.min(...others) : null, guildMedian: median(others), comparableNights: others.length }];
     })
   ),

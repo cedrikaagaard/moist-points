@@ -4,7 +4,11 @@
 import { useEffect, useState } from "react";
 import summary from "./data/summary.json";
 
-export const NIGHTS = summary.nights; // newest first
+export const NIGHTS = summary.nights; // newest first, guild raids and PUG runs
+// The raids that count as the guild's own (PUG runs left out): for records,
+// averages, trends and comparisons. See classifyRaids in aggregate.js.
+export const GUILD_NIGHTS = NIGHTS.filter((n) => n.kind !== "pug");
+export const isPug = (n) => n?.kind === "pug";
 export const ALL_TIME = summary.allTime;
 export const CLASS_OF = new Map(ALL_TIME.players.map((p) => [p.name, p.class]));
 
@@ -22,7 +26,8 @@ export function lockoutOf(n) {
   const z = n.zoneIds?.length === 1 ? n.zoneIds[0] : null;
   if (!WEEKLY.has(z)) return { before: [], after: [] };
   const week = lockoutWeek(n.night);
-  const same = NIGHTS.filter((x) => x.night !== n.night && x.zoneIds.length === 1 && x.zoneIds[0] === z && lockoutWeek(x.night) === week).reverse();
+  // (a PUG run and the guild's raid are different lockouts)
+  const same = NIGHTS.filter((x) => x.night !== n.night && isPug(x) === isPug(n) && x.zoneIds.length === 1 && x.zoneIds[0] === z && lockoutWeek(x.night) === week).reverse();
   const at = n.start || n.night;
   return { before: same.filter((x) => (x.start || x.night) < at), after: same.filter((x) => (x.start || x.night) > at) };
 }

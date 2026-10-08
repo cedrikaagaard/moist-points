@@ -1,4 +1,4 @@
-import { NIGHTS, ALL_TIME, CLASS_OF, useBosses } from "./data.js";
+import { GUILD_NIGHTS as NIGHTS, ALL_TIME, CLASS_OF, useBosses } from "./data.js";
 import { bossImg, classColor, fmtDate, mmss, zoneImg, zoneOf } from "./assets.js";
 import { Banner, BarList, BossIcon, Panel, Player, SpellIcon, Tile, ZoneIcon, useTip } from "./components.jsx";
 import { ClearTrend, KillSparkline } from "./charts.jsx";

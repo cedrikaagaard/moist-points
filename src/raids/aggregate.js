@@ -184,15 +184,45 @@ const pick = (o, keys) => Object.fromEntries(keys.filter((k) => k in o).map((k) 
 // What the site loads up front (summary.json): one light row per night + the
 // all-time numbers. Per-boss detail comes back separately as `bosses`
 // (written to data/bosses/<id>.json and loaded by the boss/raid pages).
+// Whose raid is it? Moist also hosts a weekly PUG MC on Mondays (mostly
+// non-members), and members sometimes upload another guild's raid under Moist.
+// Decided from the roster: the share of raiders who are Moist regulars.
+//   guild  the real thing; counts for every guild stat
+//   pug    under 30% regulars: own page, labelled, left out of guild stats
+//   other  under 5% regulars: not a Moist raid, left out entirely
+// Regulars = in at least 20% of the guild's raids (two passes, so PUG
+// regulars don't count as guild regulars).
+export function classifyRaids(nights) {
+  const share = (n, reg) => n.raiders.filter((r) => reg.has(r.name)).length / Math.max(1, n.raiders.length);
+  const regulars = (raids, part) => {
+    const c = new Map();
+    for (const n of raids) for (const name of new Set(n.raiders.map((r) => r.name))) c.set(name, (c.get(name) || 0) + 1);
+    return new Set([...c].filter(([, v]) => v >= raids.length * part).map(([k]) => k));
+  };
+  let reg = regulars(nights, 0.15);
+  reg = regulars(nights.filter((n) => share(n, reg) >= 0.4), 0.2);
+  return new Map(
+    nights.map((n) => {
+      const s = share(n, reg);
+      return [n.night, { kind: s < 0.05 ? "other" : s < 0.3 ? "pug" : "guild", regulars: Math.round(s * n.raiders.length) }];
+    })
+  );
+}
+
 export function buildSummary(nights) {
-  const all = aggregate(nights);
+  const kinds = classifyRaids(nights);
+  const guild = nights.filter((n) => kinds.get(n.night).kind === "guild");
+  const all = aggregate(guild);
   const bosses = Object.fromEntries(all.bosses.map((b) => [b.id, b]));
   return {
     summary: {
       nights: nights
+        .filter((n) => kinds.get(n.night).kind !== "other")
         .map((n) => ({
           night: n.night, // the raid's id: <date>-<raid> (older files: just the date)
           start: n.start,
+          kind: kinds.get(n.night).kind, // "guild" or "pug"
+          regulars: kinds.get(n.night).regulars,
           zones: n.zones,
           zoneIds: nightZones(n),
           durationMin: n.durationMin,
@@ -210,6 +240,7 @@ export function buildSummary(nights) {
       },
     },
     bosses,
+    guild, // the raids that count for guild stats (players, bosses)
   };
 }
 

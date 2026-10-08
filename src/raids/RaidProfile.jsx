@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NIGHTS, ALL_TIME } from "./data.js";
+import { GUILD_NIGHTS as NIGHTS, ALL_TIME } from "./data.js";
 import { fmtDate, zoneOf } from "./assets.js";
 import { BossIcon, Panel, SpellIcon, Tabs, Tile, ZoneIcon, useTip } from "./components.jsx";
 import { zoneForEncounter } from "./aggregate.js";

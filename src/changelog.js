@@ -6,6 +6,15 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.2.0",
+    date: "2026-10-08",
+    changes: [
+      "PUG runs like the Monday MC are recognised from who was there: they keep their own pages, labelled PUG run, but no longer count toward guild records, averages, attendance or boss histories.",
+      "Raids from other guilds that a member happened to upload under Moist are left out.",
+      "Fixed a wrong statement in Claude's analysis of 7 October: the raid rebuffed Rallying Cry and Zandalar after the Sapphiron wipe.",
+    ],
+  },
+  {
     version: "2.1.0",
     date: "2026-10-08",
     changes: [

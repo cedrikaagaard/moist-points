@@ -97,6 +97,7 @@
 .rr-banner h1 { margin: 0; font-size: 30px; line-height: 1.15; }
 .rr-banner-sub { color: var(--text-2); margin-top: 4px; }
 .rr-banner-sub a { color: var(--gold-bright); text-decoration: none; } .rr-banner-sub a:hover { text-decoration: underline; }
+.rr-pug-chip { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-2); border: 1px solid var(--border-soft); background: var(--surface-3); border-radius: 999px; padding: 1px 8px; }
 .rr-banner-links { display: flex; flex-wrap: wrap; gap: 2px 16px; }
 .rr-banner-stats { display: flex; flex-wrap: wrap; gap: 10px 32px; margin-top: 18px; }
 .rr-banner-stats div { display: flex; flex-direction: column; }

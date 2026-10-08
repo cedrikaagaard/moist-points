@@ -21,7 +21,7 @@ export function readNights() {
 
 export function writeSummary() {
   const nights = readNights();
-  const { summary, bosses } = buildSummary(nights);
+  const { summary, bosses, guild } = buildSummary(nights);
   fs.writeFileSync(path.join(DATA, "summary.json"), JSON.stringify(summary) + "\n");
 
   // Per-boss detail, loaded by the boss and raid pages only.
@@ -36,7 +36,7 @@ export function writeSummary() {
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
   const roster = {};
-  for (const p of buildPlayers(nights)) {
+  for (const p of buildPlayers(guild)) {
     fs.writeFileSync(path.join(dir, `${fileName(p.name)}.json`), JSON.stringify(p) + "\n");
     roster[p.name] = { class: p.class, spec: p.spec, role: p.role, nights: p.nights.length, file: fileName(p.name) };
   }

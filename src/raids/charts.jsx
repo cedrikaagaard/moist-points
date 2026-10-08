@@ -184,7 +184,7 @@ export function ActivityCalendar({ nights }) {
               <g key={day}>
                 {segs.map(({ n, z }, i) => (
                   <a key={i} href={href("raids", n.night)} {...bind(<CalTip n={n} />)}>
-                    <rect x={X + i * w} y={Y} width={w - (i < segs.length - 1 ? 1 : 0)} height={C} rx="3" fill={zoneOf(z).color} />
+                    <rect x={X + i * w} y={Y} width={w - (i < segs.length - 1 ? 1 : 0)} height={C} rx="3" fill={zoneOf(z).color} opacity={n.kind === "pug" ? 0.35 : 1} />
                   </a>
                 ))}
               </g>
@@ -196,6 +196,7 @@ export function ActivityCalendar({ nights }) {
         {zonesSeen.map((z) => (
           <span key={z}><i style={{ background: zoneOf(z).color }} /> {zoneOf(z).short}</span>
         ))}
+        {nights.some((n) => n.kind === "pug") && <span><i style={{ background: "var(--text-2)", opacity: 0.35 }} /> PUG run (faded)</span>}
       </div>
       {tip}
     </div>
@@ -206,7 +207,7 @@ function CalTip({ n }) {
   return (
     <>
       <strong>{fmtDate(n.night)}</strong>
-      <div className="muted">{n.zoneIds.map((z) => zoneOf(z).short).join(" + ")}</div>
+      <div className="muted">{n.zoneIds.map((z) => zoneOf(z).short).join(" + ")}{n.kind === "pug" ? " · PUG run" : ""}</div>
       <div className="muted">{n.totals.kills} kills · {n.totals.wipes} wipes · {n.totals.deaths} deaths</div>
     </>
   );

@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { NIGHTS, ALL_TIME, CLASS_OF, useNight } from "./data.js";
+import { GUILD_NIGHTS, ALL_TIME, CLASS_OF, useNight } from "./data.js";
 import { fmtDate, hm, mmss, zoneOf } from "./assets.js";
 import { BossIcon, Panel, Player, SpellIcon, ZoneIcon } from "./components.jsx";
 import { NightTimeline } from "./charts.jsx";
@@ -9,7 +9,7 @@ import "./raids.css";
 
 // The raid half of the home page: the latest raid night.
 export default function HomeRaids() {
-  const latest = NIGHTS[0];
+  const latest = GUILD_NIGHTS[0];
   const { night: n } = useNight(latest?.night);
   if (!latest) return null;
   return (

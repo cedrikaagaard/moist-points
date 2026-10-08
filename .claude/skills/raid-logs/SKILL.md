@@ -125,8 +125,10 @@ wrong and why, not to describe the death list.
    Check `worldBuffsAtPull` too: world buffs are a big deal in vanilla. Note a
    Darkmoon Faire week (Sayge's Fortune), how buffed the raid came in, buffs
    running out over a long night (Songflower and Rend last 1 h), and above all
-   buffs lost on a wipe: Dire Maul and Sayge's buffs die with the player,
-   Rallying Cry and Spirit of Zandalar survive death (seen on 7 Oct). A slow
+   buffs lost on a wipe (world buffs are lost on death). Raids often rebuff
+   some of them before the next pull, so check per player: who died on the
+   wipe and which buffs they have again at the next pull (on 7 Oct Rallying
+   Cry and Zandalar were rebuffed, Dire Maul and Sayge's were not). A slow
    kill right after a wipe is often this.
 7. **Then write it.** For a wipe: the chain of events from the first thing
    that went wrong to the wipe, the root cause with the numbers that prove it,
@@ -140,6 +142,9 @@ The 7 Oct Sapphiron wipe is the cautionary example: the death list said
 never removed". Always go to the numbers.
 
 **Rules for the analysis**
+- Never state a game mechanic you inferred from totals ("this buff survives
+  death") as fact. Say what the log shows and verify it per player; if the
+  log can't tell, leave it out or say it's unclear.
 - Name people for good plays. When the log shows a moment where someone saved
   a pull or carried a job ("Birkler picked Maexxna back up within 3 seconds",
   "Etowa's battle rez on the tank kept the pull alive"), say who, with the

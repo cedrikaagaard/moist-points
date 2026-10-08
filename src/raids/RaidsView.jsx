@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { NIGHTS, ALL_TIME, CLASS_OF, useNight, lockoutOf } from "./data.js";
+import { NIGHTS, GUILD_NIGHTS, ALL_TIME, CLASS_OF, useNight, lockoutOf, isPug } from "./data.js";
 import { classColor, fmtDate, hm, mmss, zoneImg, zoneOf, ZONES } from "./assets.js";
 import { Banner, BarList, BossIcon, ClassIcon, Panel, Player, SpellIcon, Tabs, Tile, ZoneIcon } from "./components.jsx";
 import { ActivityCalendar, ClearTrend, KillSparkline, NightTimeline } from "./charts.jsx";
@@ -66,9 +66,9 @@ function Overview() {
         <Panel title="Raid calendar" sub="every logged raid">
           <ActivityCalendar nights={NIGHTS} />
         </Panel>
-        <Panel title="Recent raids" right={<span className="muted">{NIGHTS.length} total</span>}>
+        <Panel title="Recent raids" right={<span className="muted">{GUILD_NIGHTS.length} total</span>}>
           <div className="rr-night-list">
-            {NIGHTS.slice(0, 6).map((n) => (
+            {GUILD_NIGHTS.slice(0, 6).map((n) => (
               <NightRow key={n.night} n={n} />
             ))}
           </div>
@@ -79,7 +79,7 @@ function Overview() {
       <HallOfFame />
       <BossRecords />
 
-      <Panel title="All raids">
+      <Panel title="All raids" sub="PUG runs (mostly non-members, like the Monday MC) are listed but don't count for guild stats">
         <div className="rr-night-list rr-night-list-all">
           {NIGHTS.map((n) => (
             <NightRow key={n.night} n={n} />
@@ -94,7 +94,7 @@ function ZoneStrip() {
   const zones = Object.keys(ZONES)
     .map(Number)
     .map((id) => {
-      const nights = NIGHTS.filter((n) => n.zoneIds.includes(id));
+      const nights = GUILD_NIGHTS.filter((n) => n.zoneIds.includes(id));
       const bosses = ALL_TIME.bosses.filter((b) => b.zoneId === id);
       return { id, nights: nights.length, kills: bosses.reduce((t, b) => t + b.kills, 0), wipes: bosses.reduce((t, b) => t + b.wipes, 0) };
     })
@@ -121,12 +121,12 @@ function ZoneStrip() {
 function ClearTimes() {
   const zones = Object.keys(ZONES)
     .map(Number)
-    .filter((z) => NIGHTS.filter((n) => n.zoneTimes?.[z]).length >= 2);
+    .filter((z) => GUILD_NIGHTS.filter((n) => n.zoneTimes?.[z]).length >= 2);
   return (
     <Panel title="Clear times" sub="each dot a night · gold line = record so far">
       <div className="rr-multiples">
         {zones.map((z) => {
-          const rows = NIGHTS.filter((n) => n.zoneTimes?.[z]);
+          const rows = GUILD_NIGHTS.filter((n) => n.zoneTimes?.[z]);
           const full = Math.max(...rows.map((n) => n.zoneTimes[z].kills));
           const clears = rows.filter((n) => n.zoneTimes[z].kills === full);
           const best = Math.min(...clears.map((n) => n.zoneTimes[z].sec));
@@ -140,7 +140,7 @@ function ClearTimes() {
                   <b className="rr-gold">{mmss(best)}</b> <span className="muted">best · last {mmss(last)}</span>
                 </span>
               </div>
-              <ClearTrend nights={NIGHTS} zoneId={z} compact />
+              <ClearTrend nights={GUILD_NIGHTS} zoneId={z} compact />
             </a>
           );
         })}
@@ -161,6 +161,7 @@ function NightRow({ n }) {
         <div className="rr-night-title">
           <span>{n.zoneIds.map((z) => zoneOf(z).short).join(" + ")}</span>
           <span className="muted">{fmtDate(n.night)}</span>
+          {isPug(n) && <span className="rr-pug-chip">PUG run</span>}
         </div>
         <div className="rr-night-bosses">
           {n.bosses.map((b) => (
@@ -279,15 +280,19 @@ function NightPage({ night }) {
 
 function Night({ n }) {
   const zones = nightZones(n);
-  const idx = NIGHTS.findIndex((x) => x.night === n.night);
-  const newer = NIGHTS[idx - 1];
-  const older = NIGHTS[idx + 1];
+  // Prev/next stay within guild raids, or within PUG runs.
+  const entry = NIGHTS.find((x) => x.night === n.night);
+  const pug = isPug(entry);
+  const list = NIGHTS.filter((x) => isPug(x) === pug);
+  const idx = list.findIndex((x) => x.night === n.night);
+  const newer = list[idx - 1];
+  const older = list[idx + 1];
   const label = (x) => `${fmtDate(x.night, { day: "numeric", month: "short" })} · ${x.zoneIds.map((z) => zoneOf(z).short).join(" + ")}`;
   // The other raid(s) done the same evening.
-  const lockout = lockoutOf({ ...n, zoneIds: zones });
+  const lockout = lockoutOf({ ...n, zoneIds: zones, kind: entry?.kind });
   const sameNight = NIGHTS.filter((x) => x.night !== n.night && x.night.slice(0, 10) === n.night.slice(0, 10));
   const cards = useMemo(() => nightHighlights(n, CLASS_OF), [n]);
-  const recs = useMemo(() => records(n, ALL_TIME), [n]);
+  const recs = useMemo(() => (pug ? [] : records(n, ALL_TIME)), [n, pug]); // guild records only count guild raids
   const clean = useMemo(() => deathless(n), [n]);
   const ff = useMemo(() => friendlyFire(n, CLASS_OF), [n]);
   const specOf = new Map(n.raiders.map((r) => [r.name, r.spec || playerInfo.get(r.name)?.spec]));
@@ -300,7 +305,7 @@ function Night({ n }) {
         kind="night"
         accent={zoneOf(zones[0]).color}
         art={zones.map(zoneImg)}
-        kicker={`Raid night · ${fmtDate(n.night, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}`}
+        kicker={`${pug ? "PUG run" : "Raid night"} · ${fmtDate(n.night, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}`}
         title={zones.map((z) => zoneOf(z).name).join(" + ")}
         crumbs={[{ label: "Raid logs", href: href("raids") }, { label: label({ night: n.night, zoneIds: zones }) }]}
         nav={
@@ -309,8 +314,9 @@ function Night({ n }) {
             {newer && <a href={href("raids", newer.night)}>{label(newer)} ›</a>}
           </>
         }
-        sub={(sameNight.length > 0 || lockout.before.length > 0 || lockout.after.length > 0) && (
+        sub={(pug || sameNight.length > 0 || lockout.before.length > 0 || lockout.after.length > 0) && (
           <span className="rr-banner-links">
+            {pug && <span>Mostly non-members ({entry.regulars} of {n.raiders.length} are Moist regulars), so it doesn't count for guild stats.</span>}
             {lockout.before.length > 0 && (
               <span>
                 Continues the lockout from{" "}
