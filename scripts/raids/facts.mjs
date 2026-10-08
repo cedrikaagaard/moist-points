@@ -368,12 +368,21 @@ const facts = {
     topInterrupts: (n.interrupts || []).slice(0, 3).map((d) => `${d.player} ${d.total}`),
     battleRezzes: (n.rezzes || []).filter((r) => ["Rebirth", "Soulstone Resurrection"].includes(r.ability)).map((r) => `${r.by} > ${r.target} (${r.ability}${r.boss ? ` on ${r.boss}` : ""})`),
   },
+  // potions/runes and explosives used; buffs = raiders who had each up on a boss pull
   consumables: Object.fromEntries(
-    Object.entries(n.casts || {})
-      .filter(([, c]) => c.category === "consumable")
-      .map(([k, c]) => [k, Object.values(c.by).reduce((t, v) => t + v, 0)])
-      .sort((a, b) => b[1] - a[1])
+    ["potion", "explosive"].map((cat) => [
+      cat === "potion" ? "potionsAndRunesUsed" : "explosivesUsed",
+      Object.fromEntries(
+        Object.entries(n.casts || {})
+          .filter(([, c]) => c.category === cat || (cat === "potion" && c.category === "consumable"))
+          .map(([k, c]) => [c.label || k, Object.values(c.by).reduce((t, v) => t + v, 0)])
+          .sort((a, b) => b[1] - a[1])
+      ),
+    ])
   ),
+  consumableBuffs: n.consumeBuffs
+    ? Object.fromEntries(Object.entries(n.consumeBuffs.buffs).map(([k, b]) => [k, Object.keys(b.by).length]).sort((a, b) => b[1] - a[1]))
+    : "not available (no full log)",
 };
 
 console.log(JSON.stringify(facts, null, 1));

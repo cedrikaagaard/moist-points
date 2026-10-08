@@ -83,15 +83,24 @@ export function nightHighlights(n, classOf) {
     });
   }
 
-  // Came prepared: most consumables used.
-  const consumed = {};
+  // Came prepared: the most consumable buffs kept up on boss pulls (flasks,
+  // elixirs, food...), plus potions and runes used. Older nights only have the uses.
+  const prep = {};
+  const add = (p, k, v) => ((prep[p] ??= { buffs: 0, potions: 0 })[k] += v);
+  for (const b of Object.values(n.consumeBuffs?.buffs || {})) for (const [p, pulls] of Object.entries(b.by)) add(p, "buffs", pulls);
   for (const c of Object.values(n.casts || {})) {
-    if (c.category !== "consumable") continue;
-    for (const [name, count] of Object.entries(c.by)) consumed[name] = (consumed[name] || 0) + count;
+    if (c.category !== "potion" && c.category !== "consumable") continue;
+    for (const [p, count] of Object.entries(c.by)) add(p, "potions", count);
   }
-  const [chef, used] = top(consumed)[0] || [];
-  if (chef && used >= 10) {
-    push({ key: "consumes", title: "Came prepared", icon: "Restore Mana", player: chef, value: used, unit: "consumables", detail: "potions, runes, explosives & co" });
+  const pulls = n.consumeBuffs?.pulls || 0;
+  const [chef, got] = Object.entries(prep).sort((a, b) => b[1].buffs + b[1].potions - (a[1].buffs + a[1].potions))[0] || [];
+  if (chef && (got.buffs >= pulls * 3 && pulls >= 3 || got.potions >= 10)) {
+    const perPull = pulls ? Math.round((got.buffs / pulls) * 10) / 10 : 0;
+    push(
+      perPull >= 3
+        ? { key: "consumes", title: "Came prepared", icon: "Flask of the Titans", player: chef, value: perPull, unit: "consumable buffs per boss", detail: `and ${plural(got.potions, "potion")} & runes` }
+        : { key: "consumes", title: "Came prepared", icon: "Restore Mana", player: chef, value: got.potions, unit: "potions & runes", detail: "used during the raid" }
+    );
   }
 
   return cards;

@@ -145,12 +145,14 @@
 .rr-duty-body { min-width: 0; }
 .rr-duty-name { font-size: 13px; font-weight: 600; }
 .rr-duty-who { display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 12.5px; margin-top: 2px; }
-.rr-consumes { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
-.rr-consume { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 10px 6px; border-radius: var(--radius-sm); background: var(--surface-2); }
-.rr-consume-ic { position: relative; }
-.rr-consume-n { position: absolute; right: -6px; bottom: -4px; background: var(--bg); border: 1px solid var(--border); border-radius: 999px; font-size: 11px; font-weight: 700; padding: 0 5px; font-variant-numeric: tabular-nums; }
-.rr-consume-name { font-size: 11.5px; color: var(--text-2); line-height: 1.25; }
-.rr-consume-top { font-size: 11.5px; display: flex; gap: 4px; align-items: center; max-width: 100%; }
+.rr-consume-group + .rr-consume-group { margin-top: 18px; }
+.rr-consume-group h4 { font-family: var(--font); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-2); margin: 0 0 10px; }
+.rr-consume-group h4 .muted { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.rr-consumes { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 4px 18px; }
+.rr-consume { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid var(--border-soft); min-width: 0; }
+.rr-consume-name { font-size: 13px; color: var(--text); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rr-consume-top { font-size: 11.5px; color: var(--muted); display: flex; gap: 4px; align-items: center; white-space: nowrap; }
+.rr-consume-n { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--gold-bright); min-width: 26px; text-align: right; }
 .rr-ff { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-soft); font-size: 13px; display: grid; gap: 6px; }
 
 /* ---------- roster ---------- */

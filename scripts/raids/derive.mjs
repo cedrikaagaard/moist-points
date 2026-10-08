@@ -67,6 +67,7 @@ export function deriveLog(night, report, keep = null) {
       healing: {},
       perSec: { damage: {}, healing: {} }, // player -> amount in each second of the fight
       casts: {},
+      castIds: {}, // player -> spell id -> casts
       dispels: [],
       interrupts: [],
       resurrects: [],
@@ -75,6 +76,7 @@ export function deriveLog(night, report, keep = null) {
       bossBuffs: [],
       bossCasts: [],
       bossHp: [],
+      auras: {}, // player -> buffs at the pull (from the combatantinfo snapshot)
       recent: new Map(), // player -> last RECAP_MS of damage/heals, for death recaps
     });
   const bossIds = new Map();
@@ -130,6 +132,9 @@ export function deriveLog(night, report, keep = null) {
         const c = (s.casts[nameOf(e.sourceID)] ??= {});
         const name = spell(e.abilityGameID);
         c[name] = (c[name] || 0) + 1;
+        // Same name, different spell (Restore Mana: a mana potion or a mage's gem).
+        const ids = (s.castIds[nameOf(e.sourceID)] ??= {});
+        ids[e.abilityGameID] = (ids[e.abilityGameID] || 0) + 1;
         break;
       }
       case "dispel": {
@@ -172,6 +177,12 @@ export function deriveLog(night, report, keep = null) {
       case "begincast":
         if (enemy(e.sourceID)) s.bossCasts.push({ t, source: nameOf(e.sourceID), name: spell(e.abilityGameID) });
         break;
+      case "combatantinfo": {
+        // Buffs each raider had at the pull: [name, icon] (consumables, world buffs).
+        const p = nameOf(e.sourceID);
+        if (p && (e.auras || []).length) s.auras[p] = e.auras.map((x) => [x.name, x.icon]);
+        break;
+      }
       case "death": {
         if (!isPlayer(e.targetID) || e.feign) break; // Feign Death logs as a death
         const p = nameOf(e.targetID);

@@ -21,7 +21,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { gql, rateLimit } from "./wcl.mjs";
 import { writeSummary } from "./summary.mjs";
-import { GUILD, SITE_URL, DEFAULT_LOOKBACK_DAYS, TRACKED_CASTS } from "./config.mjs";
+import { GUILD, SITE_URL, DEFAULT_LOOKBACK_DAYS, TRACKED_CASTS, CONSUME_BUFFS } from "./config.mjs";
 import { nightOf, groupBy, stitch } from "./stitch.mjs";
 import { hasEvents, deriveLog } from "./derive.mjs";
 import { downloadEvents } from "./events.mjs";
@@ -602,7 +602,7 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
       const t = trackedCast(a);
       if (!t) continue;
       icon(t.name, a.abilityIcon);
-      const slot = (casts[t.name] ??= { category: t.category, by: {} });
+      const slot = (casts[t.name] ??= { category: t.category, ...(t.label && { label: t.label }), by: {} });
       const by = a.subentries?.length ? a.subentries.map((e) => [e.actorName, e.total]) : (a.sources || []).map((e) => [e.name, e.total]);
       for (const [name, total] of by) slot.by[name] = (slot.by[name] || 0) + total;
     }
@@ -704,6 +704,25 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
     }
   }
 
+  // Consumable buffs (flasks, elixirs, food...) from each raider's buff snapshot
+  // at the boss pulls: per buff, on how many pulls each raider had it.
+  const buffGroup = new Map(Object.entries(CONSUME_BUFFS).flatMap(([g, names]) => names.map((n) => [n, g])));
+  const consumeBuffs = { pulls: 0, buffs: {} };
+  for (const f of fights.filter((f) => f.encounterID)) {
+    const auras = evOf.get(f.report)?.fights[f.id]?.auras;
+    if (!auras || !Object.keys(auras).length) continue; // some pulls log no snapshot
+    consumeBuffs.pulls++;
+    for (const [player, list] of Object.entries(auras)) {
+      for (const [name, file] of list) {
+        const group = buffGroup.get(name);
+        if (!group) continue;
+        icon(name, file);
+        const b = (consumeBuffs.buffs[name] ??= { group, by: {} });
+        b.by[player] = (b.by[player] || 0) + 1;
+      }
+    }
+  }
+
   const kills = bosses.filter((b) => b.killed).length;
   return {
     // Not built from full logs yet: the next online run fetches them.
@@ -735,6 +754,7 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
     interrupts: sortTally(interrupts),
     rezzes,
     casts,
+    consumeBuffs: consumeBuffs.pulls ? consumeBuffs : null,
     icons,
   };
 }
@@ -768,16 +788,17 @@ function keepForMechanics(report) {
 // happened to stop a cast). Parses still come from the API.
 function extrasFromEvents(report, ev, own, rankings) {
   const iconOf = new Map((report.masterData.abilities || []).map((a) => [a.name, a.icon]));
-  const casts = new Map(); // ability -> player -> n
+  const ability = new Map((report.masterData.abilities || []).map((a) => [a.gameID, a]));
+  const casts = new Map(); // spell id -> player -> n
   const removals = { dispels: new Map(), interrupts: new Map() }; // what -> player -> n
   for (const f of own) {
     const d = ev.fights[f.id];
     if (!d) continue;
-    for (const [player, by] of Object.entries(d.casts)) {
-      for (const [name, n] of Object.entries(by)) {
-        const m = casts.get(name) || new Map();
+    for (const [player, by] of Object.entries(d.castIds)) {
+      for (const [id, n] of Object.entries(by)) {
+        const m = casts.get(+id) || new Map();
         m.set(player, (m.get(player) || 0) + n);
-        casts.set(name, m);
+        casts.set(+id, m);
       }
     }
     for (const k of ["dispels", "interrupts"]) {
@@ -794,7 +815,7 @@ function extrasFromEvents(report, ev, own, rankings) {
   const ids = own.map((f) => f.id);
   return {
     fightIDs: ids,
-    casts: { data: { entries: [...casts].map(([name, by]) => ({ name, abilityIcon: iconOf.get(name), subentries: [...by].map(([actorName, total]) => ({ actorName, total })) })) } },
+    casts: { data: { entries: [...casts].map(([id, by]) => ({ name: ability.get(id)?.name || `spell ${id}`, guid: id, abilityIcon: ability.get(id)?.icon, subentries: [...by].map(([actorName, total]) => ({ actorName, total })) })) } },
     dispels: table(removals.dispels),
     interrupts: table(removals.interrupts),
     events: ev.events,

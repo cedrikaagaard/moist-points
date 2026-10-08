@@ -566,29 +566,77 @@ function RaidDuties({ n, NP }) {
   );
 }
 
+// Consumables: buffs people brought (seen on the boss pulls, full logs only),
+// potions and runes used, and explosives - three different things.
+const BUFF_GROUPS = [
+  ["flask", "Flasks"],
+  ["elixir", "Elixirs, Juju & Zanza"],
+  ["food", "Food & drink"],
+];
 function Consumables({ n, NP }) {
-  const items = Object.entries(n.casts || {})
-    .filter(([, c]) => c.category === "consumable")
-    .map(([name, c]) => {
-      const by = Object.entries(c.by).sort((a, b) => b[1] - a[1]);
-      return { name, total: by.reduce((t, [, v]) => t + v, 0), top: by[0], users: by.length };
-    })
-    .sort((a, b) => b.total - a.total);
-  if (!items.length) return null;
+  const used = (cats) =>
+    Object.entries(n.casts || {})
+      .filter(([, c]) => cats.includes(c.category))
+      .map(([name, c]) => {
+        const by = Object.entries(c.by).sort((a, b) => b[1] - a[1]);
+        return { name, label: c.label || name, total: by.reduce((t, [, v]) => t + v, 0), top: by[0], users: by.length };
+      })
+      .sort((a, b) => b.total - a.total);
+  const potions = used(["potion", "consumable"]); // "consumable": nights built before the split
+  const explosives = used(["explosive"]);
+  const cb = n.consumeBuffs;
+  const buffs = Object.entries(cb?.buffs || {}).map(([name, b]) => {
+    const by = Object.entries(b.by).sort((x, y) => y[1] - x[1]);
+    return { name, group: b.group, raiders: by.length, top: by[0] };
+  });
+  if (!potions.length && !explosives.length && !buffs.length) return null;
+
+  // One compact row: icon, name, count (+ who used the most).
+  const Tile = ({ name, label, value, foot, title }) => (
+    <div className="rr-consume" title={title}>
+      <SpellIcon name={name} icons={n.icons} size={22} />
+      <span className="rr-consume-name">{label}</span>
+      {foot && <span className="rr-consume-top">{foot}</span>}
+      <b className="rr-consume-n">{value}</b>
+    </div>
+  );
+
   return (
-    <Panel title="Consumables" sub="used during the raid">
-      <div className="rr-consumes">
-        {items.map((it) => (
-          <div key={it.name} className="rr-consume" title={`${it.name}: ${it.total} used by ${it.users} raiders`}>
-            <div className="rr-consume-ic">
-              <SpellIcon name={it.name} icons={n.icons} size={40} />
-              <span className="rr-consume-n">{it.total}</span>
+    <Panel title="Consumables" sub={cb ? `buffs counted on ${cb.pulls} boss pulls` : "used during the raid"}>
+      {BUFF_GROUPS.map(([g, title]) => {
+        const list = buffs.filter((b) => b.group === g).sort((a, b) => b.raiders - a.raiders);
+        if (!list.length) return null;
+        return (
+          <section key={g} className="rr-consume-group">
+            <h4>{title} <span className="muted">· raiders who had it up</span></h4>
+            <div className="rr-consumes">
+              {list.map((b) => (
+                <Tile key={b.name} name={b.name} label={b.name} value={b.raiders} title={`${b.name}: up for ${b.raiders} raiders on at least one boss pull`} />
+              ))}
             </div>
-            <div className="rr-consume-name">{it.name}</div>
-            <div className="rr-consume-top"><NP name={it.top[0]} size={12} /> {it.top[1]}</div>
+          </section>
+        );
+      })}
+      {potions.length > 0 && (
+        <section className="rr-consume-group">
+          <h4>Potions & runes <span className="muted">· used</span></h4>
+          <div className="rr-consumes">
+            {potions.map((it) => (
+              <Tile key={it.name} name={it.name} label={it.label} value={it.total} title={`${it.label}: ${it.total} used by ${it.users} raiders`} foot={<><NP name={it.top[0]} size={12} /> {it.top[1]}</>} />
+            ))}
           </div>
-        ))}
-      </div>
+        </section>
+      )}
+      {explosives.length > 0 && (
+        <section className="rr-consume-group">
+          <h4>Explosives <span className="muted">· used</span></h4>
+          <div className="rr-consumes">
+            {explosives.map((it) => (
+              <Tile key={it.name} name={it.name} label={it.label} value={it.total} title={`${it.label}: ${it.total} used by ${it.users} raiders`} foot={<><NP name={it.top[0]} size={12} /> {it.top[1]}</>} />
+            ))}
+          </div>
+        </section>
+      )}
     </Panel>
   );
 }

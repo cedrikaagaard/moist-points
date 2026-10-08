@@ -21,20 +21,26 @@ export const DEFAULT_LOOKBACK_DAYS = 21;
 // feed the "quiet work" side of recaps: who brought the sappers, who kept
 // Sunders up, who landed every Tranquilizing Shot.
 export const TRACKED_CASTS = [
-  // Consumables
+  // Potions, runes and the like: used during the raid
+  // (label: the item's name when the log only has the spell's, e.g. "Restore Mana")
   ...[
-    "Goblin Sapper Charge", "Dense Dynamite", "Ez-Thro Dynamite", "Thorium Grenade", "Iron Grenade",
-    "Hi-Explosive Bomb", "Major Healthstone", "Dark Rune", "Demonic Rune", "Invulnerability",
-    "Free Action", "Mighty Rage", "Greater Stoneshield", "Stratholme Holy Water", "Restore Energy",
-    "Speed",
-  ].map((name) => ({ name, category: "consumable" })),
-  { name: "Restore Mana", category: "consumable", ids: [17531, 17530] }, // mana potions
-  { name: "Healing Potion", category: "consumable", ids: [17534, 17533] },
-  { name: "Frost Protection", category: "consumable", ids: [17544] },
-  { name: "Fire Protection", category: "consumable", ids: [17543] },
-  { name: "Nature Protection", category: "consumable", ids: [17546, 7254] },
-  { name: "Shadow Protection", category: "consumable", ids: [17548] },
-  { name: "Arcane Protection", category: "consumable", ids: [17549] },
+    ["Major Healthstone"], ["Dark Rune"], ["Demonic Rune"], ["Invulnerability", "Limited Invulnerability Potion"],
+    ["Free Action", "Free Action Potion"], ["Living Free Action", "Living Action Potion"], ["Mighty Rage", "Mighty Rage Potion"],
+    ["Greater Stoneshield", "Greater Stoneshield Potion"], ["Restore Energy", "Thistle Tea"], ["Speed", "Swiftness Potion"],
+    ["Restoration", "Restorative Potion"], ["Purification", "Purification Potion"],
+  ].map(([name, label]) => ({ name, label, category: "potion" })),
+  { name: "Restore Mana", label: "Mana Potion", category: "potion", ids: [17531, 17530] },
+  { name: "Healing Potion", category: "potion", ids: [17534, 17533] },
+  { name: "Frost Protection", label: "Frost Protection Potion", category: "potion", ids: [17544] },
+  { name: "Fire Protection", label: "Fire Protection Potion", category: "potion", ids: [17543] },
+  { name: "Nature Protection", label: "Nature Protection Potion", category: "potion", ids: [17546, 7254] },
+  { name: "Shadow Protection", label: "Shadow Protection Potion", category: "potion", ids: [17548] },
+  { name: "Arcane Protection", label: "Arcane Protection Potion", category: "potion", ids: [17549] },
+  // Engineering explosives
+  ...[
+    "Goblin Sapper Charge", "Dense Dynamite", "Ez-Thro Dynamite", "Ez-Thro Dynamite II", "Thorium Grenade",
+    "Iron Grenade", "Hi-Explosive Bomb", "Stratholme Holy Water",
+  ].map((name) => ({ name, category: "explosive" })),
   // Helping others / saving the pull
   ...[
     "Tranquilizing Shot", "Fear Ward", "Power Infusion", "Innervate", "Rebirth", "Soulstone Resurrection",
@@ -47,3 +53,22 @@ export const TRACKED_CASTS = [
     "Curse of Shadow", "Demoralizing Shout", "Hunter's Mark", "Thunder Clap",
   ].map((name) => ({ name, category: "debuff" })),
 ];
+
+// Consumable buffs people bring, seen in each raider's buff snapshot at a boss
+// pull (full combat log only). Name -> group.
+export const CONSUME_BUFFS = {
+  flask: ["Flask of the Titans", "Supreme Power", "Distilled Wisdom", "Chromatic Resistance", "Flask of Petrification"],
+  elixir: [
+    "Elixir of the Mongoose", "Elixir of the Giants", "Greater Arcane Elixir", "Greater Firepower", "Mageblood Elixir",
+    "Elixir of Fortitude", "Greater Armor", "Mighty Troll's Blood Elixir", "Greater Agility", "Shadow Power", "Frost Power",
+    "Greater Intellect", "Elixir of Brute Force", "Gift of Arthas", "Juju Power", "Juju Might", "Juju Flurry", "Juju Ember",
+    "Juju Chill", "Juju Guile", "Juju Escape", "Spirit of Zanza", "Swiftness of Zanza", "Sheen of Zanza",
+    "Strike of the Scorpok", "Rage of Ages", "Spiritual Domination", "Infallible Mind", "Spirit of the Boar",
+    "Winterfall Firewater", "Arcane Elixir", "Elixir of Greater Firepower",
+  ],
+  food: [
+    "Well Fed", "Mana Regeneration", "Increased Agility", "Increased Stamina", "Increased Intellect", "Increased Strength",
+    "Blessed Sunfruit", "Blessed Sunfruit Juice", "Gordok Green Grog", "Rumsey Rum Black Label", "Kreeg's Stout Beatdown",
+    "Rumsey Rum Dark",
+  ],
+};

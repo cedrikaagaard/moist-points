@@ -6,6 +6,17 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.1.0",
+    date: "2026-10-08",
+    changes: [
+      "Raid Logs now show one page per raid: an evening of BWL and MC is two raids, and a Naxx finished on Sunday links back to Wednesday's part of the lockout.",
+      "Claude's analysis: a clearly labelled, AI-written review on raid pages, with each wipe explained, a few notes per boss and shout-outs for good plays. It starts as a short preview you can open.",
+      "Consumables now show the flasks, elixirs, Juju, Zanza and food people had up on boss pulls, with potions, runes and explosives listed separately.",
+      "Raid numbers (damage, healing, deaths, mechanics, replays) are now worked out from each raid's full combat log, which makes them more exact.",
+      "Removed the Leeroy Jenkins easter egg.",
+    ],
+  },
+  {
     version: "2.0.0",
     date: "2026-10-08",
     changes: [
