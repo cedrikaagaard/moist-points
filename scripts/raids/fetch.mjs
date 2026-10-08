@@ -29,8 +29,9 @@ const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
 const RESERVE_POINTS = 130; // a big night costs ~55, the odd huge one 100+
-const SCHEMA = 4; // bump when the night file shape changes; older files get rebuilt
-// (4: per-pull damage taken by ability + healing done to enemies)
+const SCHEMA = 5; // bump when the night file shape changes; older files get rebuilt
+// (4: per-pull damage taken by ability + healing done to enemies;
+//  5: + raid damage/healing done per pull, boss Berserk/Vengeance buffs)
 const args = parseArgs(process.argv.slice(2));
 
 main().catch((e) => {
@@ -66,7 +67,7 @@ async function rebuildOffline() {
       out.archived = true;
       // Built without some newer per-pull data: keep the old schema so the next
       // online run fetches what's missing.
-      if (out.bosses.some((b) => b.pulls.some((p) => !p.taken))) out.schema = SCHEMA - 1;
+      if (out.bosses.some((b) => b.pulls.some((p) => p.damageDone == null))) out.schema = SCHEMA - 1;
       fs.writeFileSync(path.join(NIGHTS_DIR, `${night}.json`), JSON.stringify(out) + "\n");
       done++;
     } catch (e) {
@@ -307,11 +308,12 @@ async function rankings(code, kills) {
   }
 }
 
-// Per boss pull: damage the raid took by ability, and healing done to enemies
-// (Life Drain healing Sapphiron, Heal Brother, Great Heal...). ~1 API point per
-// table. Stored as data/wcl/fights/<code>-pull-<fight>.json.gz.
+// Per boss pull: damage the raid took by ability, healing done to enemies
+// (Life Drain healing Sapphiron, Heal Brother, Great Heal...), and the raid's
+// own damage and healing per player. ~1 API point per table.
+// Stored as data/wcl/fights/<code>-pullv2-<fight>.json.gz.
 async function pullTables(report, fightID) {
-  const rel = `fights/${report.code}-pull-${fightID}.json.gz`;
+  const rel = `fights/${report.code}-pullv2-${fightID}.json.gz`;
   const stored = readRaw(rel);
   if (stored) return stored;
   needApi("pull tables");
@@ -319,6 +321,8 @@ async function pullTables(report, fightID) {
     `query($code: String!, $end: Float!, $ids: [Int]!) { reportData { report(code: $code) {
       taken: table(dataType: DamageTaken, viewBy: Ability, startTime: 0, endTime: $end, fightIDs: $ids)
       enemyHealing: table(dataType: Healing, hostilityType: Enemies, startTime: 0, endTime: $end, fightIDs: $ids)
+      done: table(dataType: DamageDone, startTime: 0, endTime: $end, fightIDs: $ids)
+      healing: table(dataType: Healing, startTime: 0, endTime: $end, fightIDs: $ids)
     } } }`,
     { code: report.code, end: report.endTime - report.startTime, ids: [fightID] }
   );
@@ -329,7 +333,7 @@ async function pullTables(report, fightID) {
 
 // Boss casts worth checking interrupt coverage on, and boss buffs a raid must remove.
 const BOSS_CASTS = ["Frostbolt", "Great Heal", "Dark Mending", "Arcane Explosion", "Shadow Bolt Volley", "Heal", "Holy Fire", "Mend", "Flash Heal"];
-const BOSS_BUFFS = ["Frenzy", "Enrage"];
+const BOSS_BUFFS = ["Frenzy", "Enrage", "Berserk", "Berserker Rage", "Vengeance", "Heal Brother"];
 
 const quote = (list) => list.map((n) => `"${n.replace(/"/g, '\\"')}"`).join(", ");
 function eventFilter() {
@@ -682,9 +686,21 @@ async function pullSummary(f) {
       .slice(0, n)
       .map((a) => ({ name: a.name, total: a.total }));
   const healed = (t.enemyHealing?.data?.entries || []).flatMap((e) => (e.abilities || []).map((a) => ({ who: e.name, name: a.name, total: a.total })));
+  const players = (entries) =>
+    (entries || [])
+      .filter((e) => e.type !== "Pet" && e.type !== "NPC" && e.total > 0)
+      .sort((a, b) => b.total - a.total)
+      .map((e) => ({ name: e.name, total: e.total }));
+  const done = players(t.done?.data?.entries);
+  const heal = players(t.healing?.data?.entries);
   return {
-    taken: top(t.taken?.data?.entries, 8),
+    taken: top(t.taken?.data?.entries, 12),
+    takenTotal: (t.taken?.data?.entries || []).reduce((s, a) => s + (a.total || 0), 0),
     enemyHealed: healed.filter((h) => h.total > 0).sort((a, b) => b.total - a.total).slice(0, 5),
+    damageDone: done.reduce((s, p) => s + p.total, 0),
+    healingDone: heal.reduce((s, p) => s + p.total, 0),
+    topDamage: done.slice(0, 5),
+    topHealing: heal.slice(0, 5),
   };
 }
 

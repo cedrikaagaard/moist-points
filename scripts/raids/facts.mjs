@@ -66,6 +66,96 @@ const cls = new Map(n.raiders.map((r) => [r.name, r.spec || r.class]));
 const avg = (l) => (l.length ? Math.round(l.reduce((t, v) => t + v, 0) / l.length) : null);
 const median = (l) => (l.length ? [...l].sort((a, b) => a - b)[Math.floor(l.length / 2)] : null);
 
+// ---------- Baselines: how this guild normally does each boss ----------
+// From every other night's KILL pulls of the same boss: deaths per ability per
+// kill, damage taken per ability per second, healing done to the boss per kill,
+// raid DPS. Damage numbers only exist for nights fetched with schema 4+.
+const allNights = fs
+  .readdirSync(path.join(DATA, "nights"))
+  .filter((f) => f.endsWith(".json") && f !== `${night}.json`)
+  .map((f) => read(path.join(DATA, "nights", f)));
+function baseline(b) {
+  const kills = [];
+  for (const o of allNights) {
+    const ob = o.bosses.find((x) => x.encounterId === b.encounterId);
+    const k = ob?.pulls.find((p) => p.kill);
+    if (!k) continue;
+    const deaths = o.deaths.filter((d) => d.boss === ob.name && d.at >= k.at - 1 && d.at <= k.at + k.durationSec + 2);
+    kills.push({ k, deaths, raiders: (ob.present || o.raiders).length });
+  }
+  const deathsPerKill = {};
+  for (const { deaths } of kills) for (const d of deaths) deathsPerKill[d.killingBlow || "Unknown"] = (deathsPerKill[d.killingBlow || "Unknown"] || 0) + 1;
+  for (const k of Object.keys(deathsPerKill)) deathsPerKill[k] = Math.round((deathsPerKill[k] / Math.max(1, kills.length)) * 100) / 100;
+  const withDmg = kills.filter(({ k }) => k.taken?.length);
+  const takenRate = {}; // ability -> median damage per second across kills
+  const shares = {};
+  for (const { k } of withDmg) {
+    const total = k.takenTotal || k.taken.reduce((t, a) => t + a.total, 0);
+    const byName = {}; // same name can appear twice (e.g. KT's two Frostbolts)
+    for (const a of k.taken) byName[a.name] = (byName[a.name] || 0) + a.total;
+    for (const [name, amt] of Object.entries(byName)) {
+      (takenRate[name] ||= []).push(amt / k.durationSec);
+      (shares[name] ||= []).push(amt / total);
+    }
+  }
+  const med = (l) => (l?.length ? [...l].sort((x, y) => x - y)[Math.floor(l.length / 2)] : 0);
+  const healPerKill = withDmg.map(({ k }) => (k.enemyHealed || []).reduce((t, h) => t + h.total, 0));
+  const dps = withDmg.filter(({ k }) => k.damageDone).map(({ k }) => k.damageDone / k.durationSec);
+  return {
+    kills: kills.length,
+    killsWithDamageData: withDmg.length,
+    deathsPerKill,
+    takenPerSecond: Object.fromEntries(Object.entries(takenRate).map(([k, l]) => [k, Math.round(med(l.concat(Array(withDmg.length - l.length).fill(0))))])),
+    takenShare: Object.fromEntries(Object.entries(shares).map(([k, l]) => [k, Math.round(med(l.concat(Array(withDmg.length - l.length).fill(0))) * 1000) / 10])),
+    enemyHealingPerKill: healPerKill.length ? Math.round(med(healPerKill)) : null,
+    raidDps: dps.length ? Math.round(med(dps)) : null,
+  };
+}
+
+// Things that stand out in one pull vs the baseline, most severe first.
+function anomalies(b, p, base, deaths, extra) {
+  const out = [];
+  const add = (score, text) => out.push({ score, text });
+  // Damage from an ability far above normal (or from something that's normally ~0).
+  const total = p.takenTotal || (p.taken || []).reduce((t, a) => t + a.total, 0);
+  const mine = {};
+  for (const a of p.taken || []) mine[a.name] = (mine[a.name] || 0) + a.total;
+  for (const a of Object.entries(mine).map(([name, total]) => ({ name, total }))) {
+    const rate = a.total / p.durationSec;
+    const usual = base.takenPerSecond[a.name] ?? 0;
+    const share = (a.total / Math.max(1, total)) * 100;
+    if (share < 2 || !base.killsWithDamageData) continue;
+    if (usual < rate / 3) add(share * (usual ? Math.min(10, rate / usual) : 10), `${a.name} did ${Math.round(a.total / 1000)}k damage (${share.toFixed(1)}% of all damage taken, ${Math.round(rate)}/s); on a usual kill it's ${usual}/s (${base.takenShare[a.name] ?? 0}%)`);
+  }
+  // Healing the boss side shouldn't get.
+  const healed = (p.enemyHealed || []).reduce((t, h) => t + h.total, 0);
+  if (healed > 20000 && base.enemyHealingPerKill != null && healed > 2 * Math.max(base.enemyHealingPerKill, 1)) {
+    add(40 + Math.min(60, healed / Math.max(base.enemyHealingPerKill, 10000)), `Enemies were healed for ${Math.round(healed / 1000)}k (${(p.enemyHealed || []).map((h) => `${h.name} on ${h.who} ${Math.round(h.total / 1000)}k`).join(", ")}); a usual kill: ${Math.round(base.enemyHealingPerKill / 1000)}k`);
+  }
+  // Deaths to abilities that rarely kill anyone on this boss.
+  const by = {};
+  for (const d of deaths) by[d.by || "Unknown"] = (by[d.by || "Unknown"] || 0) + 1;
+  for (const [k, c] of Object.entries(by)) {
+    const usual = base.deathsPerKill[k] ?? 0;
+    if (c >= 2 && c >= 3 * Math.max(usual, 0.34)) add(c * 4, `${c} deaths to ${k}; a usual kill has ${usual}`);
+  }
+  // Boss buffs and casts.
+  if (extra?.bossFrenzy && extra.bossFrenzy.gained > extra.bossFrenzy.removedByTranq) add(30, `Boss Frenzy/Enrage gained ${extra.bossFrenzy.gained}x, removed by Tranquilizing Shot ${extra.bossFrenzy.removedByTranq}x`);
+  for (const [k, c] of Object.entries(extra?.bossCasts || {})) if (c.started - c.interrupted >= 2) add(10 + (c.started - c.interrupted) * 2, `Boss ${k}: started ${c.started}, interrupted ${c.interrupted}`);
+  for (const [k, v] of Object.entries(p.mechanics || {})) {
+    if (v.tone === "coverage" && v.neverRemoved >= 3) add(10 + v.neverRemoved * 2, `${k.replace(" (coverage)", "")}: ${v.neverRemoved} of ${v.applied} never removed (median ${v.medianSecondsToRemove}s to remove)`);
+  }
+  // Raid output.
+  if (p.damageDone && base.raidDps) {
+    const dps = p.damageDone / p.durationSec;
+    if (dps < base.raidDps * 0.85) add(15, `Raid DPS ${Math.round(dps)} vs ${base.raidDps} on a usual kill (${Math.round((dps / base.raidDps) * 100)}%)`);
+  }
+  // Early deaths, by role.
+  const early = deaths.filter((d) => d.t <= Math.min(60, p.durationSec * 0.3));
+  if (early.length >= 2) add(early.length * 3, `${early.length} deaths in the first ${Math.min(60, Math.round(p.durationSec * 0.3))}s: ${early.map((d) => `${d.player} (${d.role}) to ${d.by} at ${d.t}s`).join("; ")}`);
+  return out.sort((a, b) => b.score - a.score).map((a) => a.text);
+}
+
 // What hit each dead player in their last seconds (the WCL death recap).
 function deathRecaps(src) {
   if (!src) return [];
@@ -207,9 +297,11 @@ const facts = {
         return [k, prev.length ? Math.round((prev.reduce((t, x) => t + x.total / x.present, 0) / prev.length) * 100) / 100 : null];
       })
     );
+    const base = baseline(b);
     return {
       boss: b.name,
       encounterId: b.encounterId,
+      baseline: base,
       killed: b.killed,
       killTimeSec: b.killTimeSec,
       killTimeHistory: { kills: before.length, best: before.length ? Math.min(...before) : null, median: median(before) },
@@ -221,29 +313,7 @@ const facts = {
           return [m?.label || k, { tone: m?.tone, total, perRaider: b.present?.length ? Math.round((total / b.present.length) * 100) / 100 : null, historicalPerRaider: mechHist[k] ?? null, raidersAffected: Object.keys(by).length }];
         })
       ),
-      pulls: b.pulls.map((p, i) => {
-        const recaps = deathRecaps(p.src);
-        const used = new Set();
-        const deaths = n.deaths
-          .filter((d) => d.boss === b.name && d.at >= p.at - 1 && d.at <= p.at + p.durationSec + 2)
-          .map((d) => ({ t: d.at - p.at, player: d.player, role: role.get(d.player), by: d.killingBlow, killer: d.killer?.name, overkill: d.overkill, recap: recapFor(recaps, d.player, used) }));
-        const byAbility = {};
-        for (const d of deaths) byAbility[d.by || "Unknown"] = (byAbility[d.by || "Unknown"] || 0) + 1;
-        return {
-          pull: i + 1,
-          result: p.kill ? "kill" : `wipe at ${p.bossPctLeft}% boss health`,
-          durationSec: p.durationSec,
-          deaths: deaths.length,
-          firstDeaths: deaths.slice(0, 6),
-          deathsByAbility: byAbility,
-          tanksDead: deaths.filter((d) => d.role === "tank").map((d) => `${d.player} at ${d.t}s`),
-          healersDead: deaths.filter((d) => d.role === "healer").length,
-          mechanics: pullMechanics(p.src, b.encounterId),
-          damageTakenByAbility: p.taken,
-          healingDoneToEnemies: p.enemyHealed,
-          ...bossBuffsAndCasts(p.src),
-        };
-      }),
+      pulls: b.pulls.map((p, i) => withAnomalies(b, p, base, i)),
     };
   }),
   utility: {
@@ -260,3 +330,41 @@ const facts = {
 };
 
 console.log(JSON.stringify(facts, null, 1));
+
+// ---------- per pull ----------
+
+function withAnomalies(b, p, base, i) {
+  const pull = pullFacts(b, p, i);
+  pull.anomalies = anomalies(b, p, base, pull.allDeaths, pull);
+  delete pull.allDeaths;
+  return pull;
+}
+
+function pullFacts(b, p, i) {
+  const recaps = deathRecaps(p.src);
+  const used = new Set();
+  const deaths = n.deaths
+    .filter((d) => d.boss === b.name && d.at >= p.at - 1 && d.at <= p.at + p.durationSec + 2)
+    .map((d) => ({ t: d.at - p.at, player: d.player, role: role.get(d.player), by: d.killingBlow, killer: d.killer?.name, overkill: d.overkill, recap: recapFor(recaps, d.player, used) }));
+  const byAbility = {};
+  for (const d of deaths) byAbility[d.by || "Unknown"] = (byAbility[d.by || "Unknown"] || 0) + 1;
+  return {
+    pull: i + 1,
+    result: p.kill ? "kill" : `wipe at ${p.bossPctLeft}% boss health`,
+    durationSec: p.durationSec,
+    deaths: deaths.length,
+    firstDeaths: deaths.slice(0, 6),
+    allDeaths: deaths,
+    deathsByAbility: byAbility,
+    tanksDead: deaths.filter((d) => d.role === "tank").map((d) => `${d.player} at ${d.t}s`),
+    healersDead: deaths.filter((d) => d.role === "healer").length,
+    mechanics: pullMechanics(p.src, b.encounterId),
+    damageTakenByAbility: p.taken,
+    healingDoneToEnemies: p.enemyHealed,
+    raidDps: p.damageDone ? Math.round(p.damageDone / p.durationSec) : null,
+    raidHps: p.healingDone ? Math.round(p.healingDone / p.durationSec) : null,
+    topDamage: p.topDamage,
+    topHealing: p.topHealing,
+    ...bossBuffsAndCasts(p.src),
+  };
+}

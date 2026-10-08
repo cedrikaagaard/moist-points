@@ -76,6 +76,47 @@ only when asked, or for new nights after a fetch if the user wants it.
    `encounterId` ties an item to a boss (the night-boss page shows only its own).
 4. Build, open the night page, expand the panel, and read it once as a raider.
 
+**Analysis protocol: think like a raid leader reviewing the log.** Work
+through every boss pull in this order, in your head or in a scratch file,
+before writing a single sentence. The goal is to find out exactly what went
+wrong and why, not to describe the death list.
+
+1. **Anomalies first.** Each pull in the facts has `anomalies`: things far off
+   this guild's own baseline for that boss (from `baseline`), most severe
+   first. Every anomaly needs an explanation from the reference: what does
+   this ability do, who should take it, what does it mean that it's high?
+2. **Damage taken.** Read `damageTakenByAbility` against
+   `baseline.takenPerSecond` / `takenShare`. Unavoidable raid damage (Frost
+   Aura, Inevitable Doom, Chain Lightning) being high is a symptom of a long
+   fight. Avoidable damage (frontal cones, void zones, fire on the ground,
+   Blizzard) should be near zero on a clean pull; when it isn't, that's a
+   positioning failure, and the reference says what it implies (a boss
+   turning, a group standing wrong, a knockback into adds).
+3. **Healing done to enemies.** Any boss or add healing above baseline means a
+   mechanic that should have been stopped wasn't (undecursed drains, unkicked
+   heals, emperors not separated, zombies reaching Gluth).
+4. **Things that should never happen.** Boss Berserk/Enrage up, `bossFrenzy`
+   gained more often than removed, `bossCasts` started but not interrupted,
+   must-remove debuffs left running (`(coverage)` entries), boss melee on
+   non-tanks, Spirit/add damage on the wrong group.
+5. **Deaths.** Who died first, when, in what role, and to what. Read each early
+   death's `recap` (damage by ability in their last seconds, healing
+   received). A tank or healer dying early is the start of most cascades; deaths
+   after that are usually consequences. Compare `deathsByAbility` with
+   `baseline.deathsPerKill`.
+6. **Output.** `raidDps` vs `baseline.raidDps`, kill time vs history. A slow
+   kill with low DPS stretches every attrition mechanic.
+7. **Then write it.** For a wipe: the chain of events from the first thing
+   that went wrong to the wipe, the root cause with the numbers that prove it,
+   and the one or two things that would have prevented it. For kills: what was
+   cleaner or messier than usual, with numbers. If the data can't tell you
+   (mana, voice comms, intent), say what's missing instead of guessing.
+
+The 7 Oct Sapphiron wipe is the cautionary example: the death list said
+"Frost Aura, Chill, Life Drain, a bit of everything", while the numbers said
+"Life Drain healed Sapphiron 297k vs ~100k usual and 21 of 79 drains were
+never removed". Always go to the numbers.
+
 **Rules for the analysis**
 - Insight, not filler. Every sentence carries a fact from the facts pack (a
   number, a name, a time) or a cause explained by the reference. Cut anything
