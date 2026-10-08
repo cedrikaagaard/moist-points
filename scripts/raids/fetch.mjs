@@ -21,7 +21,10 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { gql, rateLimit } from "./wcl.mjs";
 import { writeSummary } from "./summary.mjs";
-import { GUILD, SITE_URL, TIMEZONE, NIGHT_CUTOFF_HOUR, DEFAULT_LOOKBACK_DAYS, TRACKED_CASTS } from "./config.mjs";
+import { GUILD, SITE_URL, DEFAULT_LOOKBACK_DAYS, TRACKED_CASTS } from "./config.mjs";
+import { nightOf, groupBy, stitch } from "./stitch.mjs";
+import { hasEvents, deriveLog } from "./derive.mjs";
+import { downloadEvents } from "./events.mjs";
 import { MECHANICS, mechanicAbilities } from "../../src/raids/mechanics.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -29,9 +32,10 @@ const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
 const RESERVE_POINTS = 130; // a big night costs ~55, the odd huge one 100+
-const SCHEMA = 5; // bump when the night file shape changes; older files get rebuilt
+const SCHEMA = 6; // bump when the night file shape changes; older files get rebuilt
 // (4: per-pull damage taken by ability + healing done to enemies;
-//  5: + raid damage/healing done per pull, boss Berserk/Vengeance buffs)
+//  5: + raid damage/healing done per pull, boss Berserk/Vengeance buffs;
+//  6: computed from the full combat log in data/events/)
 const args = parseArgs(process.argv.slice(2));
 
 main().catch((e) => {
@@ -49,7 +53,7 @@ main().catch((e) => {
 async function rebuildOffline() {
   const list = JSON.parse(fs.readFileSync(path.join(RAW_DIR, "reports.json"), "utf8"));
   const byNight = groupBy(list, (r) => nightOf(r.startTime));
-  const nights = fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)).sort();
+  const nights = fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)).filter((n) => !args.night || n === args.night).sort();
   let done = 0;
   let skipped = 0;
   for (const night of nights) {
@@ -67,7 +71,7 @@ async function rebuildOffline() {
       out.archived = true;
       // Built without some newer per-pull data: keep the old schema so the next
       // online run fetches what's missing.
-      if (out.bosses.some((b) => b.pulls.some((p) => p.damageDone == null))) out.schema = SCHEMA - 1;
+      if (out.bosses.some((b) => b.pulls.some((p) => p.damageDone == null))) out.schema = Math.min(out.schema, SCHEMA - 2);
       fs.writeFileSync(path.join(NIGHTS_DIR, `${night}.json`), JSON.stringify(out) + "\n");
       done++;
     } catch (e) {
@@ -398,30 +402,24 @@ const sortTally = (out) =>
 // ---------- Stitching a night together ----------
 
 async function buildNight(night, reports) {
-  // Most complete log first: most boss pulls, then longest.
-  const bossPulls = (r) => r.fights.filter((f) => f.encounterID).length;
-  reports = [...reports].sort(
-    (a, b) => bossPulls(b) - bossPulls(a) || b.endTime - b.startTime - (a.endTime - a.startTime)
-  );
-
-  const taken = []; // [absStart, absEnd] of fights already used
-  const fights = []; // accepted fights, with absolute times + their report
-  for (const r of reports) {
-    const mine = [];
-    for (const f of r.fights) {
-      const s = r.startTime + f.startTime;
-      const e = r.startTime + f.endTime;
-      const overlap = Math.max(0, ...taken.map(([ts, te]) => Math.min(e, te) - Math.max(s, ts)));
-      if (overlap > (e - s) / 2) continue; // someone else's log already has this pull
-      mine.push({ ...f, absStart: s, absEnd: e, report: r });
-    }
-    for (const f of mine) taken.push([f.absStart, f.absEnd]);
-    fights.push(...mine);
-  }
-  fights.sort((a, b) => a.absStart - b.absStart);
+  let fights;
+  ({ reports, fights } = stitch(reports));
 
   const used = reports.filter((r) => fights.some((f) => f.report === r));
-  for (const r of used) Object.assign(r, await reportHeavy(r));
+  // The full combat log of each used log is the source of truth (data/events/);
+  // everything below is computed from it. Logs still being uploaded (< 3 h old)
+  // fall back to Warcraft Logs' own tables and get redone on a later run.
+  const evOf = new Map();
+  for (const r of used) {
+    const ids = fights.filter((f) => f.report === r).map((f) => f.id);
+    const fresh = Date.now() - r.endTime < 3 * 3600e3;
+    if (!offline && !fresh && !(await downloadEvents(night, r, ids))) throw new BudgetError();
+    if (!fresh && hasEvents(night, r.code)) evOf.set(r, deriveLog(night, r, keepForMechanics(r)));
+    else {
+      if (fresh) skippedArchive = true;
+      Object.assign(r, await reportHeavy(r));
+    }
+  }
   const nightStart = fights[0]?.absStart ?? used[0]?.startTime ?? 0;
   const nightEnd = Math.max(...fights.map((f) => f.absEnd), nightStart);
   const sec = (ms) => Math.round(ms / 1000);
@@ -457,7 +455,23 @@ async function buildNight(night, reports) {
 
   // Deaths that happened inside accepted fights.
   const deaths = [];
-  for (const r of used) {
+  for (const [r, ev] of evOf) {
+    for (const f of fights.filter((f) => f.report === r)) {
+      for (const d of ev.fights[f.id]?.deaths || []) {
+        deaths.push({
+          player: d.player,
+          class: classOf.get(d.player) || null,
+          at: sec(f.absStart + d.t - nightStart),
+          boss: f.encounterID ? f.name : null,
+          pull: fights.indexOf(f),
+          killingBlow: d.killingBlow,
+          killer: d.topSource,
+          overkill: d.overkill,
+        });
+      }
+    }
+  }
+  for (const r of used.filter((r) => !evOf.has(r))) {
     const own = fights.filter((f) => f.report === r);
     for (const d of r.deaths?.data?.entries || []) {
       const abs = r.startTime + d.timestamp;
@@ -495,7 +509,7 @@ async function buildNight(night, reports) {
   const extrasOf = new Map();
   for (const r of used) {
     const own = fights.filter((f) => f.report === r);
-    const x = await reportExtras(r, own.map((f) => f.id));
+    const x = evOf.has(r) ? await extrasFromEvents(r, evOf.get(r), own) : await reportExtras(r, own.map((f) => f.id));
     extrasOf.set(r, x);
     for (const a of x.casts?.data?.entries || []) {
       const by = a.subentries?.length ? a.subentries.map((e) => [e.actorName, e.total]) : (a.sources || []).map((e) => [e.name, e.total]);
@@ -613,7 +627,7 @@ async function buildNight(night, reports) {
       bossPctLeft: f.kill ? 0 : f.fightPercentage != null ? Math.round(f.fightPercentage) : null,
       deaths: deaths.filter((d) => d.pull === pull).length,
       src: { code: f.report.code, fight: f.id }, // where to find this pull in data/wcl (replays)
-      ...(await pullSummary(f)),
+      ...(evOf.has(f.report) ? pullSummaryFromEvents(evOf.get(f.report).fights[f.id]) : await pullSummary(f)),
     });
     if (f.kill) b.killed = true;
   }
@@ -633,7 +647,8 @@ async function buildNight(night, reports) {
 
   const kills = bosses.filter((b) => b.killed).length;
   return {
-    schema: SCHEMA,
+    // Not built from full logs yet: the next online run fetches them.
+    schema: evOf.size === used.length ? SCHEMA : SCHEMA - 1,
     night,
     // Every log of the night: a combined "BWL/MC" log only carries one zone name.
     zones: [...new Set(reports.map((r) => r.zone?.name).filter(Boolean))],
@@ -669,6 +684,101 @@ async function buildNight(night, reports) {
 
 const HEAL_SPELLS = new Set(["Flash Heal", "Heal", "Greater Heal", "Lesser Heal", "Prayer of Healing", "Renew", "Holy Light", "Flash of Light", "Healing Touch", "Regrowth", "Rejuvenation", "Holy Shock", "Swiftmend", "Power Word: Shield", "Desperate Prayer"]);
 const TANK_SPELLS = new Set(["Taunt", "Shield Block", "Revenge", "Shield Slam", "Growl", "Maul", "Swipe", "Righteous Fury", "Mocking Blow", "Challenging Roar"]);
+
+class BudgetError extends Error {
+  constructor() {
+    super("failed: 429 (hourly API budget nearly spent)");
+  }
+}
+
+// Raw events the per-boss mechanics counting needs (see buildNight).
+function keepForMechanics(report) {
+  const m = mechanicAbilities();
+  const casts = new Set([...m.cast, "Rebirth", "Soulstone Resurrection"]);
+  const hits = new Set(m.hit);
+  const isPlayer = new Set(report.masterData.actors.filter((a) => a.type === "Player").map((a) => a.id));
+  return (e, name) =>
+    e.type === "dispel" || e.type === "interrupt" || e.type === "resurrect" ||
+    ((e.type === "applydebuff" || e.type === "applydebuffstack") && isPlayer.has(e.targetID)) ||
+    (e.type === "cast" && casts.has(name)) ||
+    (e.type === "damage" && isPlayer.has(e.targetID) && hits.has(name) && (e.amount || 0) + (e.absorbed || 0) > 0); // landed, not dodged/resisted
+}
+
+// The same shapes reportExtras gets from Warcraft Logs' tables, from the full log.
+// Interrupts are real kicks only (WCL's table also counts stuns and CC that
+// happened to stop a cast). Parses still come from the API.
+async function extrasFromEvents(report, ev, own) {
+  const iconOf = new Map((report.masterData.abilities || []).map((a) => [a.name, a.icon]));
+  const casts = new Map(); // ability -> player -> n
+  const removals = { dispels: new Map(), interrupts: new Map() }; // what -> player -> n
+  for (const f of own) {
+    const d = ev.fights[f.id];
+    if (!d) continue;
+    for (const [player, by] of Object.entries(d.casts)) {
+      for (const [name, n] of Object.entries(by)) {
+        const m = casts.get(name) || new Map();
+        m.set(player, (m.get(player) || 0) + n);
+        casts.set(name, m);
+      }
+    }
+    for (const k of ["dispels", "interrupts"]) {
+      for (const x of d[k]) {
+        const m = removals[k].get(x.what) || new Map();
+        m.set(x.by, (m.get(x.by) || 0) + 1);
+        removals[k].set(x.what, m);
+      }
+    }
+  }
+  const table = (map) => ({
+    data: { entries: [{ entries: [...map].map(([name, by]) => ({ name, abilityIcon: iconOf.get(name), details: [...by].map(([p, total]) => ({ name: p, total })) })) }] },
+  });
+  const ids = own.map((f) => f.id);
+  return {
+    fightIDs: ids,
+    casts: { data: { entries: [...casts].map(([name, by]) => ({ name, abilityIcon: iconOf.get(name), subentries: [...by].map(([actorName, total]) => ({ actorName, total })) })) } },
+    dispels: table(removals.dispels),
+    interrupts: table(removals.interrupts),
+    events: ev.events,
+    rankings: await reportRankings(report, own.filter((f) => f.encounterID && f.kill).map((f) => f.id), ids),
+  };
+}
+
+// Parses for the kills a night uses (~2 API points per kill). Older archives
+// have them inside the per-fight extras file.
+async function reportRankings(report, kills, fightIDs) {
+  if (!kills.length) return null;
+  const hash = crypto.createHash("sha1").update(fightIDs.join(",")).digest("hex").slice(0, 10);
+  const old = readRaw(`fights/${report.code}-${hash}.json.gz`);
+  if (old?.rankings) return old.rankings;
+  const rel = `fights/${report.code}-rankings-${hash}.json.gz`;
+  const stored = readRaw(rel);
+  if (stored) return stored;
+  if (offline) return null;
+  const x = await rankings(report.code, kills);
+  writeRaw(rel, x, report);
+  return x;
+}
+
+function pullSummaryFromEvents(d) {
+  if (!d) return {};
+  const top = (obj, n) =>
+    Object.entries(obj)
+      .filter(([, v]) => v > 0)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, n)
+      .map(([name, total]) => ({ name, total }));
+  const done = top(d.done, 999);
+  const heal = top(d.healing, 999);
+  return {
+    taken: top(Object.fromEntries(Object.entries(d.taken).map(([k, a]) => [k, a.total])), 12),
+    takenTotal: d.takenTotal,
+    enemyHealed: d.enemyHealed.slice(0, 5).map(({ who, name, total }) => ({ who, name, total })),
+    damageDone: done.reduce((s, p) => s + p.total, 0),
+    healingDone: heal.reduce((s, p) => s + p.total, 0),
+    topDamage: done.slice(0, 5),
+    topHealing: heal.slice(0, 5),
+  };
+}
 
 // Top damage taken by ability, and what healed the enemy side, for one pull.
 async function pullSummary(f) {
@@ -730,21 +840,6 @@ function topSource(sources) {
 }
 
 const REZ_SPELLS = { 20748: "Rebirth", 20765: "Soulstone Resurrection", 20770: "Resurrection", 20773: "Redemption" };
-
-function nightOf(ms) {
-  const shifted = new Date(ms - NIGHT_CUTOFF_HOUR * 3600e3);
-  return shifted.toLocaleDateString("sv-SE", { timeZone: TIMEZONE }); // YYYY-MM-DD
-}
-
-function groupBy(list, key) {
-  const m = new Map();
-  for (const x of list) {
-    const k = key(x);
-    if (!m.has(k)) m.set(k, []);
-    m.get(k).push(x);
-  }
-  return m;
-}
 
 function parseArgs(argv) {
   const out = {};

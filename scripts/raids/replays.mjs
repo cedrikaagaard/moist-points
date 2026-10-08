@@ -1,6 +1,7 @@
 // Fight replays: damage and healing over time for every boss kill, so the site
-// can play a fight back. Separate from raids:fetch because it's the expensive
-// part (two graph queries per kill) - run it whenever there's spare API budget.
+// can play a fight back. Computed from the full combat log (data/events/) when
+// it's on disk - free and exact. Older nights without one fall back to two graph
+// queries per kill (--offline: skip those).
 //
 //   npm run raids:replays                 newest nights first, until the budget runs low
 //   npm run raids:replays -- --night 2026-10-07
@@ -14,6 +15,7 @@ import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { gql, rateLimit } from "./wcl.mjs";
 import { MECHANICS } from "../../src/raids/mechanics.js";
+import { hasEvents, deriveLog } from "./derive.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const RAW = path.join(ROOT, "data/wcl");
@@ -21,7 +23,7 @@ const NIGHTS = path.join(ROOT, "src/raids/data/nights");
 const OUT = path.join(ROOT, "src/raids/data/replays");
 const RESERVE = 40;
 
-const args = { force: process.argv.includes("--force"), night: process.argv[process.argv.indexOf("--night") + 1] };
+const args = { force: process.argv.includes("--force"), offline: process.argv.includes("--offline"), night: process.argv[process.argv.indexOf("--night") + 1] };
 if (!process.argv.includes("--night")) args.night = null;
 
 main().catch((e) => {
@@ -53,8 +55,16 @@ async function main() {
       const file = path.join(OUT, `${night}-${b.encounterId}.json`);
       if (fs.existsSync(file) && !args.force) continue;
 
+      const log = fullLog(night, kill.src.code);
+      if (log) {
+        fs.writeFileSync(file, JSON.stringify(buildReplay(n, b, kill, null, log)) + "\n");
+        made++;
+        console.log(`${night}  ${b.name}`);
+        continue;
+      }
       const rawRel = `replays/${kill.src.code}-${kill.src.fight}.json.gz`;
       let raw = readRaw(rawRel);
+      if (args.offline && !raw) continue;
       if (!raw) {
         const rl = await rateLimit();
         if (rl.pointsSpentThisHour > rl.limitPerHour - RESERVE) {
@@ -107,16 +117,34 @@ function series(graph, players) {
   return { step: Math.round(step * 1000) / 1000, players: out.map(({ vals, total, ...p }) => p), series: out.map((x) => x.vals) };
 }
 
-function buildReplay(n, b, kill, raw) {
+// From the full log: exact amounts per second, bucketed so a fight has ~150 steps.
+function seriesFromLog(perSec, players, durationSec) {
+  const step = Math.max(1, Math.ceil(durationSec / 150));
+  const steps = Math.ceil(durationSec / step);
+  const out = [];
+  for (const [name, secs] of Object.entries(perSec)) {
+    const p = players.get(name);
+    if (!p) continue;
+    const vals = Array(steps).fill(0);
+    secs.forEach((v, i) => (vals[Math.min(steps - 1, Math.floor(i / step))] += v));
+    const total = vals.reduce((t, v) => t + v, 0);
+    if (total) out.push({ ...p, total, vals });
+  }
+  out.sort((a, b) => b.total - a.total);
+  return { step, players: out.map(({ vals, total, ...p }) => p), series: out.map((x) => x.vals) };
+}
+
+function buildReplay(n, b, kill, raw, log) {
   const players = new Map(n.raiders.map((r) => [r.name, { name: r.name, class: r.class, spec: r.spec }]));
-  const damage = series(raw.damage, players);
-  const healing = series(raw.healing, players);
+  const d = log?.fights[kill.src.fight];
+  const damage = d ? seriesFromLog(d.perSec.damage, players, kill.durationSec) : series(raw.damage, players);
+  const healing = d ? seriesFromLog(d.perSec.healing, players, kill.durationSec) : series(raw.healing, players);
 
   // Ticker: deaths and this boss's mechanics, seconds into the pull.
   const events = n.deaths
     .filter((d) => d.boss === b.name && d.at >= kill.at - 1 && d.at <= kill.at + kill.durationSec + 2)
     .map((d) => ({ t: Math.max(0, d.at - kill.at), kind: "death", player: d.player, text: `died · ${d.killingBlow || "Unknown"}`, icon: d.killingBlow || "Unknown" }));
-  for (const e of mechanicEvents(kill.src, b.encounterId)) events.push(e);
+  for (const e of mechanicEvents(kill.src, b.encounterId, log)) events.push(e);
   events.sort((a, c) => a.t - c.t);
 
   return {
@@ -131,15 +159,14 @@ function buildReplay(n, b, kill, raw) {
 }
 
 // Mechanic moments from the stored event stream (data/wcl/fights/*.json.gz).
-function mechanicEvents(src, encounterId) {
+function mechanicEvents(src, encounterId, log) {
   const list = MECHANICS[encounterId] || [];
   if (!list.length) return [];
   const dir = path.join(RAW, "fights");
-  if (!fs.existsSync(dir)) return [];
   const base = readRaw(`reports/${src.code}.json.gz`);
-  const file = fs.readdirSync(dir).find((f) => f.startsWith(`${src.code}-`) && readRaw(`fights/${f}`)?.fightIDs?.includes(src.fight));
-  if (!base || !file) return [];
-  const x = readRaw(`fights/${file}`);
+  const file = !log && fs.existsSync(dir) && fs.readdirSync(dir).find((f) => f.startsWith(`${src.code}-`) && !f.includes("-pull") && !f.includes("-rankings-") && readRaw(`fights/${f}`)?.fightIDs?.includes(src.fight));
+  if (!base || (!log && !file)) return [];
+  const x = log || readRaw(`fights/${file}`);
   const fight = base.fights.find((f) => f.id === src.fight);
   const actor = new Map(base.masterData.actors.map((a) => [a.id, a]));
   const ability = new Map((base.masterData.abilities || []).map((a) => [a.gameID, a.name]));
@@ -150,7 +177,7 @@ function mechanicEvents(src, encounterId) {
       const name = m.kind === "dispel" || m.kind === "kick" ? ability.get(e.extraAbilityGameID) : ability.get(e.abilityGameID);
       if (!m.abilities.includes(name)) continue;
       const ok =
-        (m.kind === "hit" && e.type === "damage") ||
+        (m.kind === "hit" && e.type === "damage" && (e.amount || 0) + (e.absorbed || 0) > 0) ||
         (m.kind === "debuff" && e.type === "applydebuff") ||
         (m.kind === "cast" && e.type === "cast") ||
         (m.kind === "dispel" && e.type === "dispel") ||
@@ -169,6 +196,19 @@ function mechanicEvents(src, encounterId) {
     seen.set(k, e.t);
     return true;
   });
+}
+
+// Full combat log of one report (data/events/), derived once per run.
+var logs; // var: main() runs before this line
+function fullLog(night, code) {
+  logs ||= new Map();
+  const KEEP = ["dispel", "interrupt", "applydebuff", "cast", "damage"];
+  const k = `${night}/${code}`;
+  if (!logs.has(k)) {
+    const base = readRaw(`reports/${code}.json.gz`);
+    logs.set(k, base && hasEvents(night, code) ? deriveLog(night, base, (e) => KEEP.includes(e.type)) : null);
+  }
+  return logs.get(k);
 }
 
 function readRaw(rel) {

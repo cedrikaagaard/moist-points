@@ -21,3 +21,4 @@ public/moistdb.sqlite
 
 # Full combat-log events per night (scripts/raids/events.mjs) - too big for git, kept locally
 data/events/
+local_logs/

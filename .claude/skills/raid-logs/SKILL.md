@@ -20,11 +20,13 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
 1. `npm run raids:fetch` fetches new nights from the last 3 weeks and rebuilds
    `src/raids/data/summary.json`. Options:
    - `-- --since 2025-02-01` to backfill. The free API key allows 720 points an
-     hour and a night costs about 10-40. The script stops on its own near the
-     limit (exit code 75); rerun it after the reset to continue.
+     hour. A night costs its full combat log (about 1 point per 10,000 events:
+     ~13 for ZG, 50+ for Naxx) plus ~2 per kill for parses. The script stops on
+     its own near the limit (exit code 75); rerun it after the reset to continue.
    - `-- --night <date> --force` rebuilds a night from cached logs (free).
-   - `-- --rebuild` rebuilds every night on disk from `data/wcl/` only, with no
-     API calls. Use it after changing how nights are built (stats, rules, fixes).
+   - `-- --rebuild` (optionally `--night <date>`) rebuilds nights from what's on
+     disk only, with no API calls. Use it after changing how nights are built
+     (stats, rules, fixes).
    - `-- --night <date> --refresh` re-downloads it, for example when someone
      uploaded their log late.
    - `-- --list` shows which logs make up each night.
@@ -55,7 +57,10 @@ only when asked, or for new nights after a fetch if the user wants it.
    sequence with time, player, inferred role, killing blow, who dealt it, deaths
    per ability, mechanic hits in that pull), trash deaths, utility and
    consumables. Roles are inferred from casts; specs from WCL can be wrong.
-   If you need more, query the raw archive in `data/wcl/` (never the API).
+   With the night's full log on disk it also has, per pull: who took each
+   damage ability (avoidable damage is usually a few players), landed hits,
+   death recaps with health on the way down. If you need more, compute it from
+   `data/events/` with `scripts/raids/derive.mjs` (never the API).
 3. **Write** `src/raids/data/analysis/<night>.json`:
 
    ```json
@@ -159,21 +164,27 @@ never removed". Always go to the numbers.
 
 ## How the data flows
 
-- **Full combat logs (source of truth):** `npm run raids:events` downloads every
-  event of every night (hits, heals, casts, buffs, deaths, mana and health via
-  `includeResources`) for exactly the fights each night uses, into
-  `data/events/<night>/<code>/page-NNN.json.gz` (local only, git-ignored, ~2-12
-  MB per night). New features should compute from these offline instead of
-  adding API queries. Mana for "healers ran out" analysis lives here too.
-
-- **Raw archive:** `data/wcl/` (committed) holds every API response gzipped -
+- **Full combat logs (source of truth):** for every night, every event of the
+  fights it uses (hits, heals, casts, buffs, debuffs, deaths, resource changes,
+  positions, health %) in `data/events/<night>/<code>/page-NNN.json.gz` (local
+  only, git-ignored, ~2-12 MB per night). `raids:fetch` downloads it for new
+  nights; `npm run raids:events` backfills nights that don't have it yet.
+  Current mana is NOT in it (the API leaves `classResources` empty).
+- `scripts/raids/derive.mjs` turns one log's events into per-fight numbers:
+  damage taken by ability (players only, friendly fire included, like WCL),
+  enemy healing, damage/healing per player (pets for their owner, absorbs as
+  healing), casts, dispels, real interrupts (WCL's own table also counts
+  stuns/CC), deaths with recaps, debuff on/off timelines, boss buffs/casts,
+  boss health, per-second damage/healing (replays). Validated against WCL's own
+  tables on 6 Oct 2026: identical apart from overkill on one-shots.
+- **Everything else from the API** is kept in `data/wcl/` (committed, gzipped):
   `reports.json` (the guild's report list), `reports/<code>.json.gz` (fights,
-  actors, abilities+icons, playerDetails specs/roles, rankings = parses, deaths
-  table) and `fights/<code>-<hash>.json.gz` (casts by ability, dispels,
-  interrupts, and a fight-tagged event stream: debuffs on raiders, dispels,
-  interrupts, rezzes, mechanic hits and casts). Night files are derived from
-  this; `--force` rebuilds them offline. Only new logs (or `--refresh`) cost API
-  points. If you need a new kind of data, add it to the queries, then refetch.
+  actors, abilities+icons), parses in `fights/<code>-rankings-<hash>.json.gz`.
+  Older nights also have WCL tables there (`-detail`, `fights/<code>-<hash>`,
+  `-pull-`), used only when a night has no full log.
+- **Adding a stat:** compute it in `derive.mjs`, use it in `buildNight`
+  (`fetch.mjs`) or `facts.mjs`, bump `SCHEMA`, then `raids:fetch -- --rebuild`.
+  No API calls.
 - `src/raids/mechanics.js`: per-boss mechanics (hit / debuff / cast / dispel /
   kick, tone good/bad/info). The fetcher asks for exactly these abilities; the
   boss pages show them. Ability names must match the logs exactly - check
@@ -184,7 +195,8 @@ never removed". Always go to the numbers.
 
 - `scripts/raids/fetch.mjs`: for each night, picks the most complete log, then
   adds pulls only other logs caught (several people log every raid). Writes
-  `src/raids/data/nights/<night>.json` (schema 2): bosses and pulls, deaths
+  `src/raids/data/nights/<night>.json` (schema 6 = built from the full log):
+  bosses and pulls, deaths
   (with killing blow, killer and first-of-pull), dispels, interrupts, rezzes,
   tracked casts (consumables, utility, raid debuffs) and spell icons.
 - `scripts/raids/config.mjs`: guild, timezone and `TRACKED_CASTS` (which casts
@@ -219,12 +231,10 @@ never removed". Always go to the numbers.
 
 ## Extending
 
-- **A new stat from the logs:** add a `table(dataType: ...)` or
-  `events(filterExpression: ...)` to `reportExtras` in `fetch.mjs`, shape it in
-  `buildNight`, and bump `schema`. To rebuild every night, rerun with `--force`
-  (extras are cached per report and fight list; use `--refresh` if the query
-  changed). Introspect the API when unsure:
-  `{ __type(name: "TableDataType") { enumValues { name } } }`.
+- **A new stat from the logs:** compute it from the events in `derive.mjs` (see
+  "How the data flows"), never with a new API query. Introspect the API only for
+  things the event stream can't hold (parses):
+  `{ __type(name: "ReportData") { fields { name } } }`.
 - **A new award:** add a rule in `highlights.js`. Keep the tone positive and
   recognise useful work that's easy to miss. Give every card a real number,
   and set a threshold so it isn't noise.

@@ -4,13 +4,14 @@
 //
 //   npm run raids:facts -- --night 2026-09-23
 //
-// Reads the night file, the all-time summary/boss files, and the raw archive
-// in data/wcl/ for per-pull detail (who died when, to what; mechanic hits per pull).
+// Reads the night file, the all-time summary/boss files, and for per-pull detail
+// the full combat log in data/events/ (older nights: the raw archive in data/wcl/).
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { MECHANICS } from "../../src/raids/mechanics.js";
+import { hasEvents, deriveLog } from "./derive.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const DATA = path.join(ROOT, "src/raids/data");
@@ -32,36 +33,31 @@ const readRaw = (rel) => {
   const p = path.join(RAW, rel);
   return fs.existsSync(p) ? JSON.parse(zlib.gunzipSync(fs.readFileSync(p)).toString("utf8")) : null;
 };
+// The full combat log (data/events/) when we have it: per-fight numbers plus
+// the raw events the mechanic counting below walks through.
+const KEEP = new Set(["dispel", "interrupt", "applydebuff", "cast", "begincast", "applybuff", "refreshbuff"]);
+const logs = new Map();
+function fullLog(code) {
+  if (!logs.has(code)) {
+    const base = readRaw(`reports/${code}.json.gz`);
+    logs.set(code, base && hasEvents(night, code) ? { base, ...deriveLog(night, base, (e) => KEEP.has(e.type) || (e.type === "damage" && (e.amount || 0) + (e.absorbed || 0) > 0)) } : null);
+  }
+  return logs.get(code);
+}
+// { events } of one pull: from the full log, else the older filtered stream in data/wcl/fights.
+function pullEvents(src) {
+  const log = fullLog(src.code);
+  if (log) return { events: log.events.filter((e) => e.fight === src.fight) };
+  const dir = path.join(RAW, "fights");
+  if (!fs.existsSync(dir)) return null;
+  const file = fs.readdirSync(dir).find((f) => f.startsWith(`${src.code}-`) && !f.includes("-pull") && !f.includes("-rankings-") && readRaw(`fights/${f}`)?.fightIDs?.includes(src.fight));
+  return file ? readRaw(`fights/${file}`) : null;
+}
+
 // Roles from what people actually cast (Warcraft Logs' own role/spec guess is
 // unreliable for Classic Era): mostly heals -> healer, tank tools -> tank.
-const HEALS = new Set(["Flash Heal", "Heal", "Greater Heal", "Lesser Heal", "Prayer of Healing", "Renew", "Holy Light", "Flash of Light", "Healing Touch", "Regrowth", "Rejuvenation", "Holy Shock", "Swiftmend", "Power Word: Shield", "Desperate Prayer"]);
-const TANK = new Set(["Taunt", "Shield Block", "Revenge", "Shield Slam", "Growl", "Maul", "Swipe", "Righteous Fury", "Mocking Blow", "Challenging Roar"]);
-function inferRoles() {
-  const casts = new Map(); // name -> { heal, tank, total }
-  const dir = path.join(RAW, "fights");
-  for (const s of n.sources) {
-    if (!fs.existsSync(dir)) break;
-    for (const f of fs.readdirSync(dir).filter((f) => f.startsWith(`${s.code}-`))) {
-      for (const a of readRaw(`fights/${f}`)?.casts?.data?.entries || []) {
-        const by = a.subentries?.length ? a.subentries.map((e) => [e.actorName, e.total]) : (a.sources || []).map((e) => [e.name, e.total]);
-        for (const [name, c] of by) {
-          const t = casts.get(name) || { heal: 0, tank: 0, total: 0 };
-          t.total += c;
-          if (HEALS.has(a.name)) t.heal += c;
-          if (TANK.has(a.name)) t.tank += c;
-          casts.set(name, t);
-        }
-      }
-    }
-  }
-  const out = new Map();
-  for (const r of n.raiders) {
-    const c = casts.get(r.name);
-    out.set(r.name, !c ? r.role : c.heal > c.total * 0.5 ? "healer" : c.tank >= 15 ? "tank" : "dps");
-  }
-  return out;
-}
-const role = inferRoles();
+// Roles are inferred from casts when the night is built (see fetch.mjs).
+const role = new Map(n.raiders.map((r) => [r.name, r.role]));
 const cls = new Map(n.raiders.map((r) => [r.name, r.spec || r.class]));
 const avg = (l) => (l.length ? Math.round(l.reduce((t, v) => t + v, 0) / l.length) : null);
 const median = (l) => (l.length ? [...l].sort((a, b) => a - b)[Math.floor(l.length / 2)] : null);
@@ -159,6 +155,8 @@ function anomalies(b, p, base, deaths, extra) {
 // What hit each dead player in their last seconds (the WCL death recap).
 function deathRecaps(src) {
   if (!src) return [];
+  const log = fullLog(src.code);
+  if (log) return (log.fights[src.fight]?.deaths || []).map((d) => ({ name: d.player, full: d }));
   const detail = readRaw(`reports/${src.code}-detail.json.gz`) || readRaw(`reports/${src.code}.json.gz`);
   return (detail?.deaths?.data?.entries || []).filter((d) => d.fight === src.fight);
 }
@@ -167,6 +165,16 @@ function recapFor(recaps, player, used) {
   if (i < 0) return undefined;
   used.add(i);
   const d = recaps[i];
+  if (d.full) {
+    const r = d.full.recap;
+    return {
+      lastSecondsDamage: r.damage.slice(0, 4).map((a) => `${a.ability} (${a.source}) ${a.total}`),
+      healingReceived: r.healed,
+      windowMs: 10000,
+      // health % on the way down, seconds before death
+      health: r.hp.slice(-8).map(([t, hp]) => `${t}s ${hp}%`).join(", "),
+    };
+  }
   return {
     lastSecondsDamage: (d.damage?.abilities || []).slice(0, 3).map((a) => `${a.name} ${a.total}`),
     healingReceived: d.healing?.total ?? 0,
@@ -178,21 +186,19 @@ function recapFor(recaps, player, used) {
 // started vs interrupted - only for nights fetched after these were added.
 function bossBuffsAndCasts(src) {
   const base = src && readRaw(`reports/${src.code}.json.gz`);
-  const dir = path.join(RAW, "fights");
-  if (!base || !fs.existsSync(dir)) return undefined;
-  const file = fs.readdirSync(dir).find((f) => f.startsWith(`${src.code}-`) && !f.includes("-pull-") && readRaw(`fights/${f}`)?.fightIDs?.includes(src.fight));
-  const x = file && readRaw(`fights/${file}`);
+  const x = base && pullEvents(src);
   if (!x) return undefined;
   const ability = new Map((base.masterData.abilities || []).map((a) => [a.gameID, a.name]));
   const ev = (x.events || []).filter((e) => e.fight === src.fight);
   const out = {};
-  const frenzies = ev.filter((e) => (e.type === "applybuff" || e.type === "refreshbuff") && ["Frenzy", "Enrage"].includes(ability.get(e.abilityGameID)));
+  const npc = new Set(base.masterData.actors.filter((a) => a.type === "NPC").map((a) => a.id));
+  const frenzies = ev.filter((e) => (e.type === "applybuff" || e.type === "refreshbuff") && npc.has(e.targetID) && ["Frenzy", "Enrage"].includes(ability.get(e.abilityGameID)));
   if (frenzies.length) {
     const removed = ev.filter((e) => e.type === "dispel" && ["Frenzy", "Enrage"].includes(ability.get(e.extraAbilityGameID))).length;
     out.bossFrenzy = { gained: frenzies.length, removedByTranq: removed };
   }
   const casts = {};
-  for (const e of ev.filter((e) => e.type === "begincast")) {
+  for (const e of ev.filter((e) => e.type === "begincast" && npc.has(e.sourceID) && BOSS_CASTS.has(ability.get(e.abilityGameID)))) {
     const n = ability.get(e.abilityGameID);
     (casts[n] ||= { started: 0, interrupted: 0 }).started++;
   }
@@ -204,16 +210,15 @@ function bossBuffsAndCasts(src) {
   return Object.keys(out).length ? out : undefined;
 }
 
+const BOSS_CASTS = new Set(["Frostbolt", "Great Heal", "Dark Mending", "Arcane Explosion", "Shadow Bolt Volley", "Heal", "Holy Fire", "Mend", "Flash Heal"]);
+
 // Raw per-pull detail: mechanic hits per player for one fight.
 function pullMechanics(src, encounterId) {
   const list = MECHANICS[encounterId] || [];
   if (!src || !list.length) return {};
   const base = readRaw(`reports/${src.code}.json.gz`);
-  const dir = path.join(RAW, "fights");
-  if (!base || !fs.existsSync(dir)) return {};
-  const file = fs.readdirSync(dir).find((f) => f.startsWith(`${src.code}-`) && readRaw(`fights/${f}`)?.fightIDs?.includes(src.fight));
-  if (!file) return {};
-  const x = readRaw(`fights/${file}`);
+  const x = base && pullEvents(src);
+  if (!x) return {};
   const fight = base.fights.find((f) => f.id === src.fight);
   const actor = new Map(base.masterData.actors.map((a) => [a.id, a]));
   const ability = new Map((base.masterData.abilities || []).map((a) => [a.gameID, a.name]));
@@ -224,7 +229,7 @@ function pullMechanics(src, encounterId) {
       const name = m.kind === "dispel" || m.kind === "kick" ? ability.get(e.extraAbilityGameID) : ability.get(e.abilityGameID);
       if (!m.abilities.includes(name)) continue;
       const ok =
-        (m.kind === "hit" && e.type === "damage") ||
+        (m.kind === "hit" && e.type === "damage" && (e.amount || 0) + (e.absorbed || 0) > 0) ||
         (m.kind === "debuff" && e.type === "applydebuff") ||
         (m.kind === "cast" && e.type === "cast") ||
         (m.kind === "dispel" && e.type === "dispel") ||
@@ -340,6 +345,24 @@ function withAnomalies(b, p, base, i) {
   return pull;
 }
 
+// Damage taken by ability; from the full log also who took it (avoidable
+// damage is usually a few players standing in it) and how many hits landed.
+function takenDetail(p) {
+  const d = p.src && fullLog(p.src.code)?.fights[p.src.fight];
+  if (!d) return p.taken;
+  return Object.entries(d.taken)
+    .sort((a, b) => b[1].total - a[1].total)
+    .slice(0, 12)
+    .map(([name, a]) => ({
+      name,
+      total: a.total,
+      hits: a.hits,
+      players: Object.keys(a.by).length,
+      most: Object.entries(a.by).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([pl, v]) => `${pl} ${v}`),
+      from: Object.keys(a.from).slice(0, 3),
+    }));
+}
+
 function pullFacts(b, p, i) {
   const recaps = deathRecaps(p.src);
   const used = new Set();
@@ -359,7 +382,7 @@ function pullFacts(b, p, i) {
     tanksDead: deaths.filter((d) => d.role === "tank").map((d) => `${d.player} at ${d.t}s`),
     healersDead: deaths.filter((d) => d.role === "healer").length,
     mechanics: pullMechanics(p.src, b.encounterId),
-    damageTakenByAbility: p.taken,
+    damageTakenByAbility: takenDetail(p),
     healingDoneToEnemies: p.enemyHealed,
     raidDps: p.damageDone ? Math.round(p.damageDone / p.durationSec) : null,
     raidHps: p.healingDone ? Math.round(p.healingDone / p.durationSec) : null,

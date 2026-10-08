@@ -201,7 +201,8 @@ moistdb.sqlite        a local snapshot, used only for `npm run dev` (offline)
 netlify.toml          hosting config for the app itself
 src/raids/            the Raid Logs pages (separate from SR points - see below)
 scripts/raids/        fetches the guild's Warcraft Logs into src/raids/data/
-data/wcl/             every Warcraft Logs API response, gzipped (the raw archive)
+data/wcl/             Warcraft Logs report data and parses, gzipped (in git)
+data/events/          the full combat log of every night (local only, not in git)
 ```
 
 ---
@@ -284,24 +285,23 @@ from the Warcraft Logs API and committed to the repo as JSON
 2. `npm run raids:fetch` - pulls new raid nights from the last 3 weeks
    (`-- --since 2025-02-01` to go further back, `-- --list` to just see what's
    there). Several people log every raid, so each night is stitched together from
-   all the logs with the overlap removed. The free API allows ~720 points an hour
-   (a night costs ~10-40); the script stops cleanly near the limit - run it again
-   after the hour to continue.
+   all the logs with the overlap removed, and the full combat log of the fights
+   it uses is downloaded. The free API allows ~720 points an hour (a night costs
+   ~15-70); the script stops cleanly near the limit - run it again after the hour
+   to continue.
 3. `npm run raids:history` prints an all-time summary to sanity-check, then
    build/deploy as usual.
 
-**The full combat log of every night** is downloaded by `npm run raids:events`
-into `data/events/` (local only, not in git, a few GB in total) - every hit,
-heal, buff and death including mana/health, so new features can be computed
-offline without asking Warcraft Logs again.
-
-**Everything Warcraft Logs gives us is kept** in `data/wcl/` (gzipped JSON, in
-git): the report list, each report's fights/actors/abilities/player specs/
-parses/deaths, and per-night casts, dispels, interrupts and an event stream of
-debuffs, mechanic hits and rezzes. `npm run raids:fetch -- --force` rebuilds
-every night from that archive without touching the API - so new stats or page
-changes never need re-downloading. Boss mechanics are configured in
-`src/raids/mechanics.js`.
+**The full combat log of every night is the source of truth.** It lives in
+`data/events/` (local only, not in git, a few GB in total): every hit, heal,
+cast, buff, debuff and death. Everything on the pages (damage taken, deaths,
+dispels, mechanics, replays...) is computed from it by
+`scripts/raids/derive.mjs`, so new stats never need re-downloading:
+`npm run raids:fetch -- --rebuild` rebuilds every night offline.
+`npm run raids:events` fills in the log for nights fetched before this existed.
+The rest of what the API gives (report list, fights, players, abilities,
+parses) is kept in `data/wcl/` (gzipped JSON, in git). Boss mechanics are
+configured in `src/raids/mechanics.js`.
 
 In Claude Code, **`/raid-logs`** runs this whole routine (the skill lives in
 `.claude/skills/raid-logs/`). Everything on the pages is computed from the data -
