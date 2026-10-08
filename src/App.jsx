@@ -9,7 +9,6 @@ import Me from "./views/Me.jsx";
 import Item from "./views/Item.jsx";
 import Changelog from "./views/Changelog.jsx";
 import Home from "./views/Home.jsx";
-import Leeroy from "./components/Leeroy.jsx";
 import Loader from "./components/Loader.jsx";
 import { GitHubIcon } from "./components/common.jsx";
 import { useMe } from "./identity.js";
@@ -54,7 +53,6 @@ export default function App() {
 
   return (
     <div className="app">
-      <Leeroy />
       <header className="topbar">
         <a className="brand" href="#/">
           <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="Moist" className="brand-logo" />

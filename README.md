@@ -157,10 +157,6 @@ Cosmetic only - everything else still works.
 Install [Node.js](https://nodejs.org) (LTS), then **close and reopen** the
 terminal. `node -v` should print v20+.
 
-**Leeroy shows up too much / I want him gone**
-`src/components/Leeroy.jsx` → set `ENABLED = false` (or lower `CHARGE_ODDS`).
-See [Easter eggs](#easter-eggs-).
-
 Still stuck? Copy the error from the F12 console and send it to **Cedrik/Drikkle**.
 
 ---
@@ -306,27 +302,6 @@ configured in `src/raids/mechanics.js`.
 In Claude Code, **`/raid-logs`** runs this whole routine (the skill lives in
 `.claude/skills/raid-logs/`). Everything on the pages is computed from the data -
 the "standout" cards come from fixed rules in `src/raids/highlights.js`.
-
----
-
-## Easter eggs 🐔
-
-Leeroy Jenkins is in here. It's all in `src/components/Leeroy.jsx`, configurable
-via three constants at the top:
-
-| What | How to trigger | Notes |
-|------|----------------|-------|
-| **The charge** | Random, on page load | Leeroy sprints *along* a random on-screen bar or line of text, trailing chicken. |
-| **The battle cry** | Type `leeroy` anywhere | Full-screen "LEEEEEROY JENKINS!", raining chicken, screen shake. |
-| **Force it (for testing)** | Add `?leeroy=charge` or `?leeroy` to the URL | e.g. `yoursite.com/?leeroy=charge` |
-
-```js
-const ENABLED = true;      // set false to turn the whole thing off
-const CHARGE_ODDS = 1 / 20; // chance per page load of the random charge
-const CODE = "leeroy";     // the word you type for the battle cry
-```
-
-It respects `prefers-reduced-motion`.
 
 ---
 
