@@ -1,0 +1,161 @@
+{
+  "night": "2026-10-06-zg",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-08T13:40:00Z",
+  "headline": "A tidy 45 minute Zul'Gurub with a record Hakkar and Mar'li, and only two boss deaths",
+  "overview": [
+    "9 of 9 bosses in 44:47 with no wipes, the 7th fastest of the guild's 19 full ZG clears (best 39:28, median 50:03). Only 4 people died all night, two of them on trash.",
+    "Damage was the story: raid DPS was above the guild's usual on 7 of the 8 bosses with a comparison, by 20% on Mar'li and 38% on Hakkar, and the median parse beat the guild's history on 7 of 9 bosses."
+  ],
+  "wipes": [],
+  "wentWell": [
+    {
+      "encounterId": 50793,
+      "text": "Hakkar in 1:27, the fastest kill in the logs (previous best 1:28, median 2:01). He died before his first Blood Siphon, so the poison clouds never mattered."
+    },
+    {
+      "encounterId": 50786,
+      "text": "Mar'li in 0:41, also a new best (previous 0:44, median 0:50)."
+    },
+    {
+      "encounterId": 50785,
+      "text": "Jeklik down in 0:41 before she cast a single heal. On the guild's usual kill she heals herself for about 5k."
+    },
+    {
+      "encounterId": 50792,
+      "text": "Jin'do in 0:37 (median 0:46) with a median parse of 72, well up from the usual 60, and nobody died to the Shades or the skeleton pit."
+    }
+  ],
+  "bosses": [
+    {
+      "encounterId": 50785,
+      "name": "High Priestess Jeklik",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:41, three seconds off the guild best. Raid DPS 8.1k against a usual 7.5k."
+        },
+        {
+          "tone": "good",
+          "text": "She cast no heals at all, so healing on the boss was 0 (usually about 5k). Damage taken was also below normal: almost all of it was melee on the tank."
+        }
+      ]
+    },
+    {
+      "encounterId": 50784,
+      "name": "High Priest Venoxis",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "One Ancient Power burst at 0:26 hit 12 raiders for 19k in total and killed Deeno (4.6k in one hit, with no healing in his last 10 seconds). On earlier kills Ancient Power is close to nothing, so something about positioning was different this time."
+        },
+        {
+          "tone": "bad",
+          "text": "Poison Cloud landed 42 times on 10 raiders, 2.1 per raider against the guild's usual 1.7. Together with the burst, damage taken ran at 2.1k per second against a usual 1.3k."
+        },
+        {
+          "tone": "info",
+          "text": "Still a quick kill at 0:41 (median 0:46) with a median parse of 73."
+        }
+      ]
+    },
+    {
+      "encounterId": 50786,
+      "name": "High Priestess Mar'li",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:41 is the fastest Mar'li in the logs. Raid DPS 9.2k against a usual 7.7k, and three parses of 91 or higher."
+        },
+        {
+          "tone": "info",
+          "text": "Poison Bolt Volley was 61% of all damage taken, which is normal for her (5.4 hits per raider, usually 6.1). Her Drain Life healed her for 12.5k, about the usual amount."
+        }
+      ]
+    },
+    {
+      "encounterId": 50787,
+      "name": "Bloodlord Mandokir",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "Alanakos got Threatening Gaze at 0:23 and was executed by Guillotine six seconds later, the usual sign of acting while watched. That one death gave Mandokir a level up. Holiphucheal did it right on the second gaze at 1:01: stood still and survived."
+        },
+        {
+          "tone": "good",
+          "text": "Whirlwind hit 10 raiders 14 times, 0.7 per raider against the guild's usual 0.9. The two tanks took about two thirds of all damage, mostly melee from Mandokir and Ohgan."
+        },
+        {
+          "tone": "info",
+          "text": "1:09 against a median of 1:16, with raid DPS 8.1k (usually 7.2k)."
+        }
+      ]
+    },
+    {
+      "encounterId": 50788,
+      "name": "Edge of Madness (Hazza'rah)",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Hazza'rah died in 0:31 against a median of 0:45. Chain Burn only reached 3 people for 4k in total."
+        }
+      ]
+    },
+    {
+      "encounterId": 50789,
+      "name": "High Priest Thekal",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Marellina counterspelled the one Great Heal Zealot Lor'Khan started, and nobody died through all three phases."
+        },
+        {
+          "tone": "info",
+          "text": "1:23, right on the guild median (1:25), and the only boss of the night where raid DPS was not above normal (6.0k, usually 6.1k). Damage taken was low: 950 per second against a usual 1.3k."
+        }
+      ]
+    },
+    {
+      "encounterId": 50791,
+      "name": "High Priestess Arlokk",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:24, one second off the guild best, with 12.4k raid DPS (usually 10.9k) and a median parse of 77."
+        },
+        {
+          "tone": "info",
+          "text": "Shadow Word: Pain ticked on Deeno and Alanakos for 6k between them before Sandomin dispelled it. It never threatened anyone."
+        }
+      ]
+    },
+    {
+      "encounterId": 50792,
+      "name": "Jin'do the Hexxer",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:37 with no deaths. Raid DPS 9.3k against a usual 7.9k, and Fluffycatto and Eduard parsed 98 and 95."
+        },
+        {
+          "tone": "bad",
+          "text": "A Powerful Healing Ward was up for about 9 seconds and healed Jin'do for 20k (two ticks). On the guild's usual kill the wards heal him for nothing, so it was killed later than usual."
+        }
+      ]
+    },
+    {
+      "encounterId": 50793,
+      "name": "Hakkar",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:27 is the fastest Hakkar in the logs, led by Eduard and Fluffycatto (parses 96 and 96). Raid DPS 8.3k against a usual 6.0k, and he died before his first Blood Siphon."
+        },
+        {
+          "tone": "info",
+          "text": "Corrupted Blood was 55% of the damage taken (82k across 12 raiders). Its spread was in line with normal (2 per raider, usually 2.05). Four mind controls and nobody died; Sandomin dispelled all three Polymorphs the mind-controlled players cast."
+        }
+      ]
+    }
+  ]
+}

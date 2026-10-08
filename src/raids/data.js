@@ -8,13 +8,40 @@ export const NIGHTS = summary.nights; // newest first
 export const ALL_TIME = summary.allTime;
 export const CLASS_OF = new Map(ALL_TIME.players.map((p) => [p.name, p.class]));
 
+// Weekly raids (MC, BWL, AQ40, Naxx) reset on Wednesday on EU realms, so a raid
+// can be split over two evenings: Naxx on Wednesday, Sapphiron and Kel'Thuzad on
+// Sunday. Same instance, same lockout week = one lockout.
+const WEEKLY = new Set([2000, 2002, 2005, 2006]);
+function lockoutWeek(night) {
+  const d = new Date(`${night.slice(0, 10)}T12:00:00`);
+  d.setDate(d.getDate() - ((d.getDay() + 4) % 7)); // back to Wednesday
+  return d.toISOString().slice(0, 10);
+}
+// The other raids in this raid's lockout, oldest first: { before: [...], after: [...] }.
+export function lockoutOf(n) {
+  const z = n.zoneIds?.length === 1 ? n.zoneIds[0] : null;
+  if (!WEEKLY.has(z)) return { before: [], after: [] };
+  const week = lockoutWeek(n.night);
+  const same = NIGHTS.filter((x) => x.night !== n.night && x.zoneIds.length === 1 && x.zoneIds[0] === z && lockoutWeek(x.night) === week).reverse();
+  const at = n.start || n.night;
+  return { before: same.filter((x) => (x.start || x.night) < at), after: same.filter((x) => (x.start || x.night) > at) };
+}
+
 const nightFiles = import.meta.glob("./data/nights/*.json", { import: "default" });
 
 export function useNight(night) {
   const [state, setState] = useState({ night: null, error: null });
   useEffect(() => {
     const load = nightFiles[`./data/nights/${night}.json`];
-    if (!load) return setState({ night: null, error: "missing" });
+    if (!load) {
+      // An old link to a date (before raids were split): open that date's first raid.
+      const first = NIGHTS.filter((n) => n.night.startsWith(`${night}-`)).at(-1);
+      if (first) {
+        window.location.replace(window.location.hash.replace(`/${night}`, `/${first.night}`));
+        return;
+      }
+      return setState({ night: null, error: "missing" });
+    }
     let live = true;
     load().then((n) => live && setState({ night: n, error: null }));
     return () => {

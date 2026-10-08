@@ -16,10 +16,19 @@ import { hasEvents, deriveLog } from "./derive.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const DATA = path.join(ROOT, "src/raids/data");
 const RAW = path.join(ROOT, "data/wcl");
-const night = process.argv[process.argv.indexOf("--night") + 1];
+// A raid id (2026-10-02-bwl), or a date when that date had only one raid.
+let night = process.argv[process.argv.indexOf("--night") + 1];
 if (!process.argv.includes("--night") || !night) {
-  console.error("usage: npm run raids:facts -- --night YYYY-MM-DD");
+  console.error("usage: npm run raids:facts -- --night <raid id, e.g. 2026-10-02-bwl>");
   process.exit(1);
+}
+{
+  const ids = fs.readdirSync(path.join(ROOT, "src/raids/data/nights")).filter((f) => f === `${night}.json` || f.startsWith(`${night}-`)).map((f) => f.slice(0, -5));
+  if (ids.length !== 1 && !ids.includes(night)) {
+    console.error(ids.length ? `${night} had several raids: ${ids.join(", ")}` : `no raid ${night}`);
+    process.exit(1);
+  }
+  night = ids.includes(night) ? night : ids[0];
 }
 
 const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
@@ -40,7 +49,8 @@ const logs = new Map();
 function fullLog(code) {
   if (!logs.has(code)) {
     const base = readRaw(`reports/${code}.json.gz`);
-    logs.set(code, base && hasEvents(night, code) ? { base, ...deriveLog(night, base, (e) => KEEP.has(e.type) || (e.type === "damage" && (e.amount || 0) + (e.absorbed || 0) > 0)) } : null);
+    const date = n.date || night.slice(0, 10); // full logs are stored per date
+    logs.set(code, base && hasEvents(date, code) ? { base, ...deriveLog(date, base, (e) => KEEP.has(e.type) || (e.type === "damage" && (e.amount || 0) + (e.absorbed || 0) > 0)) } : null);
   }
   return logs.get(code);
 }

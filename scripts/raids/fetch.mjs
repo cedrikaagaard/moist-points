@@ -26,16 +26,18 @@ import { nightOf, groupBy, stitch } from "./stitch.mjs";
 import { hasEvents, deriveLog } from "./derive.mjs";
 import { downloadEvents } from "./events.mjs";
 import { MECHANICS, mechanicAbilities } from "../../src/raids/mechanics.js";
+import { zoneForEncounter } from "../../src/raids/aggregate.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
 const RESERVE_POINTS = 130; // a big night costs ~55, the odd huge one 100+
-const SCHEMA = 6; // bump when the night file shape changes; older files get rebuilt
+const SCHEMA = 7; // bump when the night file shape changes; older files get rebuilt
 // (4: per-pull damage taken by ability + healing done to enemies;
 //  5: + raid damage/healing done per pull, boss Berserk/Vengeance buffs;
-//  6: computed from the full combat log in data/events/)
+//  6: computed from the full combat log in data/events/;
+//  7: one file per raid - <date>-<raid>.json - instead of per date)
 const args = parseArgs(process.argv.slice(2));
 
 main().catch((e) => {
@@ -53,7 +55,7 @@ main().catch((e) => {
 async function rebuildOffline() {
   const list = JSON.parse(fs.readFileSync(path.join(RAW_DIR, "reports.json"), "utf8"));
   const byNight = groupBy(list, (r) => nightOf(r.startTime));
-  const nights = fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)).filter((n) => !args.night || n === args.night).sort();
+  const nights = [...new Set(fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, 10)))].filter((n) => !args.night || n === args.night).sort();
   let done = 0;
   let skipped = 0;
   for (const night of nights) {
@@ -67,12 +69,14 @@ async function rebuildOffline() {
       if (!details.length || details.length < reports.length) throw new Error("missing raw");
       offline = true;
       skippedArchive = false;
-      const out = await buildNight(night, details);
-      out.archived = true;
-      // Built without some newer per-pull data: keep the old schema so the next
-      // online run fetches what's missing.
-      if (out.bosses.some((b) => b.pulls.some((p) => p.damageDone == null))) out.schema = Math.min(out.schema, SCHEMA - 2);
-      fs.writeFileSync(path.join(NIGHTS_DIR, `${night}.json`), JSON.stringify(out) + "\n");
+      const raids = await buildNight(night, details);
+      for (const out of raids) {
+        out.archived = true;
+        // Built without some newer per-pull data: keep the old schema so the next
+        // online run fetches what's missing.
+        if (out.bosses.some((b) => b.pulls.some((p) => p.damageDone == null))) out.schema = Math.min(out.schema, SCHEMA - 2);
+      }
+      writeRaids(night, raids);
       done++;
     } catch (e) {
       skipped++;
@@ -109,11 +113,11 @@ async function main() {
 
   fs.mkdirSync(NIGHTS_DIR, { recursive: true });
   for (const night of nights) {
-    const file = path.join(NIGHTS_DIR, `${night}.json`);
     // Skip nights already built with the current schema; older ones get upgraded.
-    if (fs.existsSync(file) && !args.force && !args.refresh) {
-      const old = JSON.parse(fs.readFileSync(file, "utf8"));
-      if ((old.schema || 1) >= SCHEMA && old.archived !== false) continue;
+    const existing = raidFiles(night);
+    if (existing.length && !args.force && !args.refresh) {
+      const old = existing.map((f) => JSON.parse(fs.readFileSync(path.join(NIGHTS_DIR, f), "utf8")));
+      if (old.every((o) => (o.schema || 1) >= SCHEMA && o.archived !== false)) continue;
     }
     // Stop before the hourly API budget runs out; the next run picks up here.
     const rl = await rateLimit();
@@ -125,19 +129,32 @@ async function main() {
     const details = [];
     for (const r of byNight.get(night)) details.push({ ...(await reportDetails(r.code)), zone: r.zone });
     skippedArchive = false;
-    const out = await buildNight(night, details);
-    out.archived = !skippedArchive;
-    fs.writeFileSync(file, JSON.stringify(out) + "\n");
-    const t = out.totals;
-    console.log(
-      `${night}  ${out.zones.join(" + ") || "?"}: ${t.kills} kills, ${t.wipes} wipes, ` +
-        `${t.deaths} deaths, ${out.raiders.length} raiders  ->  ${path.relative(ROOT, file)}`
-    );
+    const raids = await buildNight(night, details);
+    for (const out of raids) out.archived = !skippedArchive;
+    writeRaids(night, raids);
+    for (const out of raids) {
+      const t = out.totals;
+      console.log(
+        `${out.night}  ${out.zones.join(" + ") || "?"}: ${t.kills} kills, ${t.wipes} wipes, ` +
+          `${t.deaths} deaths, ${out.raiders.length} raiders`
+      );
+    }
   }
 
   writeSummary();
   const rl = await rateLimit();
   console.log(`(API points used this hour: ${Math.round(rl.pointsSpentThisHour)}/${rl.limitPerHour})`);
+}
+
+// The raid files of one date: <date>.json (before raids were split) or <date>-<raid>.json.
+function raidFiles(date) {
+  return fs.readdirSync(NIGHTS_DIR).filter((f) => f === `${date}.json` || (f.startsWith(`${date}-`) && f.endsWith(".json")));
+}
+// Write a date's raids and drop any older file for that date that they replace.
+function writeRaids(date, raids) {
+  const keep = new Set(raids.map((r) => `${r.night}.json`));
+  for (const f of raidFiles(date)) if (!keep.has(f)) fs.rmSync(path.join(NIGHTS_DIR, f));
+  for (const r of raids) fs.writeFileSync(path.join(NIGHTS_DIR, `${r.night}.json`), JSON.stringify(r) + "\n");
 }
 
 // ---------- API ----------
@@ -401,7 +418,10 @@ const sortTally = (out) =>
 
 // ---------- Stitching a night together ----------
 
-async function buildNight(night, reports) {
+// One date's logs -> one record per raid (BWL and MC on the same evening are
+// two raids). Logs, full combat logs and parses are handled per date; each
+// raid is then built from its own fights.
+async function buildNight(date, reports) {
   let fights;
   ({ reports, fights } = stitch(reports));
 
@@ -413,13 +433,52 @@ async function buildNight(night, reports) {
   for (const r of used) {
     const ids = fights.filter((f) => f.report === r).map((f) => f.id);
     const fresh = Date.now() - r.endTime < 3 * 3600e3;
-    if (!offline && !fresh && !(await downloadEvents(night, r, ids))) throw new BudgetError();
-    if (!fresh && hasEvents(night, r.code)) evOf.set(r, deriveLog(night, r, keepForMechanics(r)));
+    if (!offline && !fresh && !(await downloadEvents(date, r, ids))) throw new BudgetError();
+    if (!fresh && hasEvents(date, r.code)) evOf.set(r, deriveLog(date, r, keepForMechanics(r)));
     else {
       if (fresh) skippedArchive = true;
       Object.assign(r, await reportHeavy(r));
     }
   }
+  // Parses per log, for all its fights that night (same cache key as before the split).
+  const rankingsOf = new Map();
+  for (const r of used.filter((r) => evOf.has(r))) {
+    const own = fights.filter((f) => f.report === r);
+    rankingsOf.set(r, await reportRankings(r, own.filter((f) => f.encounterID && f.kill).map((f) => f.id), own.map((f) => f.id)));
+  }
+  const out = [];
+  for (const part of splitByRaid(fights)) out.push(await buildRaid(date, part, reports, evOf, rankingsOf));
+  return out;
+}
+
+// Fights -> [{ zoneId, fights }], one per raid. A boss pull belongs to its
+// boss's raid; trash to the raid of the next boss pull (or the last one before it).
+const ZONE_SLUG = { 2000: "mc", 2001: "ony", 2002: "bwl", 2003: "zg", 2004: "aq20", 2005: "aq40", 2006: "naxx" };
+const ZONE_NAME = { 2000: "Molten Core", 2001: "Onyxia", 2002: "Blackwing Lair", 2003: "Zul'Gurub", 2004: "Ruins of Ahn'Qiraj", 2005: "Temple of Ahn'Qiraj", 2006: "Naxxramas" };
+function splitByRaid(fights) {
+  const zone = fights.map((f) => (f.encounterID ? zoneForEncounter(f.encounterID) : null));
+  for (let i = 0; i < fights.length; i++) {
+    if (zone[i] != null) continue;
+    let j = i + 1;
+    while (j < fights.length && (fights[j].encounterID == null || zone[j] == null)) j++;
+    let k = i - 1;
+    while (k >= 0 && (fights[k].encounterID == null || zone[k] == null)) k--;
+    zone[i] = j < fights.length ? zone[j] : k >= 0 ? zone[k] : fights[i].report.zone?.id ?? null;
+  }
+  const parts = new Map();
+  fights.forEach((f, i) => {
+    if (!parts.has(zone[i])) parts.set(zone[i], { zoneId: zone[i], fights: [] });
+    parts.get(zone[i]).fights.push(f);
+  });
+  // A raid with no boss pulls (someone logged a trash clear) isn't a raid.
+  const list = [...parts.values()];
+  return list.some((p) => p.fights.some((f) => f.encounterID)) ? list.filter((p) => p.fights.some((f) => f.encounterID)) : list.slice(0, 1);
+}
+
+async function buildRaid(date, part, reports, evOf, rankingsOf) {
+  const { fights, zoneId } = part;
+  const night = `${date}-${ZONE_SLUG[zoneId] || "raid"}`; // the raid's id, e.g. 2026-10-02-bwl
+  const used = reports.filter((r) => fights.some((f) => f.report === r));
   const nightStart = fights[0]?.absStart ?? used[0]?.startTime ?? 0;
   const nightEnd = Math.max(...fights.map((f) => f.absEnd), nightStart);
   const sec = (ms) => Math.round(ms / 1000);
@@ -509,7 +568,7 @@ async function buildNight(night, reports) {
   const extrasOf = new Map();
   for (const r of used) {
     const own = fights.filter((f) => f.report === r);
-    const x = evOf.has(r) ? await extrasFromEvents(r, evOf.get(r), own) : await reportExtras(r, own.map((f) => f.id));
+    const x = evOf.has(r) ? extrasFromEvents(r, evOf.get(r), own, rankingsOf.get(r)) : await reportExtras(r, own.map((f) => f.id));
     extrasOf.set(r, x);
     for (const a of x.casts?.data?.entries || []) {
       const by = a.subentries?.length ? a.subentries.map((e) => [e.actorName, e.total]) : (a.sources || []).map((e) => [e.name, e.total]);
@@ -648,11 +707,11 @@ async function buildNight(night, reports) {
   const kills = bosses.filter((b) => b.killed).length;
   return {
     // Not built from full logs yet: the next online run fetches them.
-    schema: evOf.size === used.length ? SCHEMA : SCHEMA - 1,
-    night,
-    // Every log of the night: a combined "BWL/MC" log only carries one zone name.
-    zones: [...new Set(reports.map((r) => r.zone?.name).filter(Boolean))],
-    zoneIds: [...new Set(reports.map((r) => r.zone?.id).filter(Boolean))],
+    schema: used.every((r) => evOf.has(r)) ? SCHEMA : SCHEMA - 1,
+    night, // the raid's id: <date>-<raid>
+    date,
+    zones: zoneId ? [ZONE_NAME[zoneId]] : [...new Set(reports.map((r) => r.zone?.name).filter(Boolean))],
+    zoneIds: zoneId ? [zoneId] : [...new Set(reports.map((r) => r.zone?.id).filter(Boolean))],
     start: new Date(nightStart).toISOString(),
     durationMin: Math.round((nightEnd - nightStart) / 60000),
     sources: used.map((r) => ({
@@ -707,7 +766,7 @@ function keepForMechanics(report) {
 // The same shapes reportExtras gets from Warcraft Logs' tables, from the full log.
 // Interrupts are real kicks only (WCL's table also counts stuns and CC that
 // happened to stop a cast). Parses still come from the API.
-async function extrasFromEvents(report, ev, own) {
+function extrasFromEvents(report, ev, own, rankings) {
   const iconOf = new Map((report.masterData.abilities || []).map((a) => [a.name, a.icon]));
   const casts = new Map(); // ability -> player -> n
   const removals = { dispels: new Map(), interrupts: new Map() }; // what -> player -> n
@@ -739,7 +798,7 @@ async function extrasFromEvents(report, ev, own) {
     dispels: table(removals.dispels),
     interrupts: table(removals.interrupts),
     events: ev.events,
-    rankings: await reportRankings(report, own.filter((f) => f.encounterID && f.kill).map((f) => f.id), ids),
+    rankings,
   };
 }
 

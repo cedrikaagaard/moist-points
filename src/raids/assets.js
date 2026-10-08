@@ -108,6 +108,7 @@ export function mmss(s) {
   return s >= 3600 ? `${Math.floor(s / 3600)}:${pad(Math.floor((s % 3600) / 60))}:${pad(s % 60)}` : `${Math.floor(s / 60)}:${pad(s % 60)}`;
 }
 export const hm = (min) => `${Math.floor(min / 60)}h ${String(min % 60).padStart(2, "0")}m`;
+// night: a raid id (2026-10-02-bwl) or a date.
 export function fmtDate(night, opts = { weekday: "short", day: "numeric", month: "short" }) {
-  return new Date(`${night}T12:00:00`).toLocaleDateString("en-GB", opts);
+  return new Date(`${night.slice(0, 10)}T12:00:00`).toLocaleDateString("en-GB", opts);
 }

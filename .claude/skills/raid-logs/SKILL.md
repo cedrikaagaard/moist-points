@@ -5,7 +5,7 @@ description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs 
 
 # Raid logs
 
-The **Raid Logs** pages (`#/raids`, `#/raids/<night>`, `#/raids/<night>/<boss>`,
+The **Raid Logs** pages (`#/raids`, `#/raids/<raid>`, `#/raids/<raid>/<boss>`,
 `#/raid-zone/<id>`, `#/raid-boss/<id>`) are built from the guild's Warcraft Logs (Moist,
 EU-Firemaw, Classic Era). Everything on them is **computed from data**: stats,
 charts, and award cards from fixed rules. The only prose is the "Claude's analysis" panel (see below),
@@ -37,11 +37,11 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
    a night with 60+ raiders (two groups logged under the guild) or deaths
    counted twice.
 3. Run `npm run build` and open the new night in the dev server
-   (`npm run dev`, `#/raids/<date>`).
+   (`npm run dev`, `#/raids/<date>-<raid>`, e.g. `#/raids/2026-10-02-bwl`).
 4. Report what came in (nights, kills, anything notable from the numbers).
    Commit only if asked.
 
-## Claude's analysis (optional, per night)
+## Claude's analysis (optional, per raid)
 
 Each night can have an AI-written analysis, shown on the night page (and the
 boss's part on each night-boss page) as a faded preview, clearly labelled
@@ -51,7 +51,7 @@ only when asked, or for new nights after a fetch if the user wants it.
 1. **Read the reference first**: `reference/classes-and-log-reading.md` and the
    file for the night's raid(s) in `reference/` (molten-core-onyxia,
    blackwing-lair-zulgurub, ahnqiraj, naxxramas). Don't analyse from memory.
-2. **Build the facts**: `npm run raids:facts -- --night <date>` prints JSON with
+2. **Build the facts**: `npm run raids:facts -- --night <raid id>` (e.g. `2026-10-02-bwl`; a plain date works when there was one raid that day) prints JSON with
    every boss (kill time vs guild best/median, parse medians vs history,
    mechanics per raider vs the guild's usual rate), every wipe pull (death
    sequence with time, player, inferred role, killing blow, who dealt it, deaths
@@ -61,7 +61,7 @@ only when asked, or for new nights after a fetch if the user wants it.
    damage ability (avoidable damage is usually a few players), landed hits,
    death recaps with health on the way down. If you need more, compute it from
    `data/events/` with `scripts/raids/derive.mjs` (never the API).
-3. **Write** `src/raids/data/analysis/<night>.json`:
+3. **Write** `src/raids/data/analysis/<raid id>.json`:
 
    ```json
    {
@@ -210,8 +210,13 @@ never removed". Always go to the numbers.
 
 - `scripts/raids/fetch.mjs`: for each night, picks the most complete log, then
   adds pulls only other logs caught (several people log every raid). Writes
-  `src/raids/data/nights/<night>.json` (schema 6 = built from the full log):
-  bosses and pulls, deaths
+  one file per raid, `src/raids/data/nights/<date>-<raid>.json` (raid = mc, ony,
+  bwl, zg, aq20, aq40, naxx; BWL + MC on one evening are two raids, trash goes
+  with the next boss pull). Schema 7 = per raid, from the full log. Files named
+  just `<date>.json` are older multi-raid nights waiting for the backfill. Full
+  logs (`data/events/`) and `--night` options stay per date. The pages link
+  raids of the same weekly lockout (Naxx Wednesday + Sapphiron/KT Sunday).
+  Each file has bosses and pulls, deaths
   (with killing blow, killer and first-of-pull), dispels, interrupts, rezzes,
   tracked casts (consumables, utility, raid debuffs) and spell icons.
 - `scripts/raids/config.mjs`: guild, timezone and `TRACKED_CASTS` (which casts
@@ -228,7 +233,7 @@ never removed". Always go to the numbers.
   overview, `BossPages.jsx` zone and boss) hold the all-time stats. Don't mix
   all-time panels into night pages.
 - `Analysis.jsx`: the Claude's analysis panel (faded preview until opened) (data in
-  `src/raids/data/analysis/<night>.json`, written by this skill).
+  `src/raids/data/analysis/<raid id>.json`, written by this skill).
 - Other files: `charts.jsx` (timeline, calendar, clear-time trend, sparklines),
   `components.jsx` and `assets.js` (WCL CDN art: zones, bosses, specs, spells).
 

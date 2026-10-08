@@ -41,10 +41,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 async function main() {
   const list = JSON.parse(fs.readFileSync(path.join(RAW, "reports.json"), "utf8"));
   const byNight = groupBy(list, (r) => nightOf(r.startTime));
-  const nights = fs
-    .readdirSync(NIGHTS)
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => f.slice(0, -5))
+  const nights = [...new Set(fs.readdirSync(NIGHTS).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, 10)))] // dates
     .filter((n) => !only || n === only)
     .sort()
     .reverse();

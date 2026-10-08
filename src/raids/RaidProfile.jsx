@@ -70,24 +70,24 @@ function Record({ p }) {
   return (
     <div className="rr rr-profile">
       <div className="stat-row rr-stat-row">
-        <Tile value={nights.length} label="Raid nights" sub={`${Math.round((nights.length / Math.max(1, guildNights)) * 100)}% of guild nights since ${fmtDate(first, { day: "numeric", month: "short" })}`} />
+        <Tile value={nights.length} label="Raids" sub={`${Math.round((nights.length / Math.max(1, guildNights)) * 100)}% of guild raids since ${fmtDate(first, { day: "numeric", month: "short" })}`} />
         <Tile value={parses.length} label="Boss kills" sub="with a parse on Warcraft Logs" />
         <Tile value={best ? best.pct : "-"} label="Best parse" accent={parseColor(best?.pct)} sub={best && `${best.boss} · ${fmtDate(best.night, { day: "numeric", month: "short" })}`} />
-        <Tile value={clean} label="Deathless nights" sub={`${(deaths / nights.length).toFixed(1)} deaths per night`} />
+        <Tile value={clean} label="Deathless raids" sub={`${(deaths / nights.length).toFixed(1)} deaths per raid`} />
       </div>
 
       {parses.length > 0 && <Parses parses={parses} />}
 
       <div className="grid-2">
-        <Panel title="Utility" sub="all nights">
+        <Panel title="Utility" sub="all raids">
           <QuietWork p={p} me={me} dispels={dispels} kicks={kicks} />
         </Panel>
-        <Panel title="Mechanics" sub="boss by boss, all nights">
+        <Panel title="Mechanics" sub="boss by boss, all raids">
           <Mechanics p={p} />
         </Panel>
       </div>
 
-      <Panel title="Raid nights" sub="most recent first">
+      <Panel title="Raids" sub="most recent first">
         <div className="rr-night-list">
           {[...nights].reverse().slice(0, 12).map((n) => (
             <a key={n.night} className="rr-night-row rr-night-row-sm rr-prof-night" href={href("raids", n.night)}>
@@ -200,7 +200,7 @@ function NightParseChart({ nights }) {
   const every = Math.max(1, Math.ceil(nights.length / 10));
   return (
     <div className="rr-timeline">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average parse per raid night">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average parse per raid">
         <Bands x0={pad.l} x1={W - pad.r} y={y} />
         {[25, 50, 75, 95].map((t) => (
           <text key={t} x={pad.l - 6} y={y(t) + 4} textAnchor="end" className="rr-axis">{t}</text>

@@ -13,11 +13,14 @@ export function zoneForEncounter(id) {
   return null;
 }
 
+// Raids in the order they happened (two raids can share a date).
+export const byStart = (a, b) => (a.start || a.night).localeCompare(b.start || b.night);
+
 // Battle rezzes, as opposed to the after-the-wipe kind.
 export const COMBAT_REZ = new Set(["Rebirth", "Soulstone Resurrection"]);
 
 export function aggregate(nights) {
-  nights = [...nights].sort((a, b) => a.night.localeCompare(b.night));
+  nights = [...nights].sort(byStart);
   const players = new Map();
   const bosses = new Map();
   const killers = {};
@@ -188,7 +191,8 @@ export function buildSummary(nights) {
     summary: {
       nights: nights
         .map((n) => ({
-          night: n.night,
+          night: n.night, // the raid's id: <date>-<raid> (older files: just the date)
+          start: n.start,
           zones: n.zones,
           zoneIds: nightZones(n),
           durationMin: n.durationMin,
@@ -197,7 +201,7 @@ export function buildSummary(nights) {
           bosses: n.bosses.map((b) => ({ id: b.encounterId, name: b.name, killed: b.killed, wipes: b.wipes, killTimeSec: b.killTimeSec })),
           zoneTimes: zoneTimes(n),
         }))
-        .sort((a, b) => b.night.localeCompare(a.night)),
+        .sort((a, b) => byStart(b, a)),
       allTime: {
         ...all,
         bosses: all.bosses.map((b) => pick(b, BOSS_LIGHT)),
@@ -235,7 +239,7 @@ export function zoneTimes(n) {
 // Everything about one raider, night by night - written to
 // src/raids/data/players/<name>.json and loaded on their profile.
 export function buildPlayers(nights) {
-  nights = [...nights].sort((a, b) => a.night.localeCompare(b.night));
+  nights = [...nights].sort(byStart);
   const out = new Map();
   const get = (name, cls) => {
     if (!out.has(name)) out.set(name, { name, class: cls || null, spec: null, role: null, nights: [] });

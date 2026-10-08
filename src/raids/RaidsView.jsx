@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { NIGHTS, ALL_TIME, CLASS_OF, useNight } from "./data.js";
+import { NIGHTS, ALL_TIME, CLASS_OF, useNight, lockoutOf } from "./data.js";
 import { classColor, fmtDate, hm, mmss, zoneImg, zoneOf, ZONES } from "./assets.js";
 import { Banner, BarList, BossIcon, ClassIcon, Panel, Player, SpellIcon, Tabs, Tile, ZoneIcon } from "./components.jsx";
 import { ActivityCalendar, ClearTrend, KillSparkline, NightTimeline } from "./charts.jsx";
@@ -20,7 +20,7 @@ export default function RaidsView({ view, param, sub }) {
   if (!NIGHTS.length) {
     return (
       <div className="view">
-        <div className="empty">No raid nights yet. Run <code>npm run raids:fetch</code>.</div>
+        <div className="empty">No raids yet. Run <code>npm run raids:fetch</code>.</div>
       </div>
     );
   }
@@ -47,26 +47,26 @@ function Overview() {
           <div className="rr-kicker"><span className="rr-kicker-dot" aria-hidden="true">♜</span>Guild history · all time</div>
           <h1>Raid logs</h1>
           <p className="muted">
-            {a.nights} nights from {fmtDate(a.firstNight, { day: "numeric", month: "short", year: "numeric" })} to{" "}
+            {a.nights} raids from {fmtDate(a.firstNight, { day: "numeric", month: "short", year: "numeric" })} to{" "}
             {fmtDate(a.lastNight, { day: "numeric", month: "short", year: "numeric" })}, from the guild's Warcraft Logs
           </p>
         </div>
       </div>
 
       <div className="stat-row rr-stat-row">
-        <Tile value={a.nights} label="Raid nights" sub={`${Math.round(a.totals.minutes / 60)} hours in raids`} />
+        <Tile value={a.nights} label="Raids" sub={`${Math.round(a.totals.minutes / 60)} hours in raids`} />
         <Tile value={a.totals.kills} label="Boss kills" accent="var(--gold-bright)" sub={`${a.totals.wipes} wipes`} />
-        <Tile value={`${Math.round(a.totals.minutes / 60)}h`} label="In raids" sub={`${Math.round(a.totals.minutes / a.nights)} min per night`} />
-        <Tile value={a.totals.deaths.toLocaleString()} label="Deaths" sub={`${(a.totals.deaths / a.nights).toFixed(1)} per night`} />
+        <Tile value={`${Math.round(a.totals.minutes / 60)}h`} label="In raids" sub={`${Math.round(a.totals.minutes / a.nights)} min per raid`} />
+        <Tile value={a.totals.deaths.toLocaleString()} label="Deaths" sub={`${(a.totals.deaths / a.nights).toFixed(1)} per raid`} />
       </div>
 
       <ZoneStrip />
 
       <div className="rr-grid-main">
-        <Panel title="Raid calendar" sub="every logged night">
+        <Panel title="Raid calendar" sub="every logged raid">
           <ActivityCalendar nights={NIGHTS} />
         </Panel>
-        <Panel title="Recent nights" right={<span className="muted">{NIGHTS.length} total</span>}>
+        <Panel title="Recent raids" right={<span className="muted">{NIGHTS.length} total</span>}>
           <div className="rr-night-list">
             {NIGHTS.slice(0, 6).map((n) => (
               <NightRow key={n.night} n={n} />
@@ -79,7 +79,7 @@ function Overview() {
       <HallOfFame />
       <BossRecords />
 
-      <Panel title="All nights">
+      <Panel title="All raids">
         <div className="rr-night-list rr-night-list-all">
           {NIGHTS.map((n) => (
             <NightRow key={n.night} n={n} />
@@ -108,7 +108,7 @@ function ZoneStrip() {
           <div>
             <div className="rr-zone-name">{zoneOf(z.id).name}</div>
             <div className="rr-zone-meta">
-              <b>{z.nights}</b> nights · <b>{z.kills}</b> kills · <b>{z.wipes}</b> wipes
+              <b>{z.nights}</b> raids · <b>{z.kills}</b> kills · <b>{z.wipes}</b> wipes
             </div>
           </div>
         </a>
@@ -182,7 +182,7 @@ function NightRow({ n }) {
 
 // All-time leaderboards: attendance, utility and raid debuffs.
 const BOARDS = [
-  { key: "nights", label: "Attendance", icon: "Hearthstone", get: (p) => p.nights, note: (p) => `last seen ${fmtDate(p.lastNight)}`, unit: "nights" },
+  { key: "nights", label: "Attendance", icon: "Hearthstone", get: (p) => p.nights, note: (p) => `last seen ${fmtDate(p.lastNight)}`, unit: "raids" },
   { key: "dispels", label: "Dispels", icon: "Decurse", get: (p) => p.dispels, unit: "dispels" },
   { key: "interrupts", label: "Interrupts", icon: "Kick", get: (p) => p.interrupts, unit: "interrupts" },
   { key: "rez", label: "Battle rezzes", icon: "Rebirth", get: (p) => p.combatRezzes, note: (p) => `${p.rezzes} rezzes in total`, unit: "battle rezzes" },
@@ -192,7 +192,7 @@ const BOARDS = [
   { key: "sappers", label: "Sappers", icon: "Goblin Sapper Charge", get: (p) => p.casts["Goblin Sapper Charge"] || 0, unit: "sappers" },
   { key: "tranq", label: "Tranq Shot", icon: "Tranquilizing Shot", get: (p) => p.casts["Tranquilizing Shot"] || 0, unit: "casts" },
   { key: "pi", label: "Power Infusion", icon: "Power Infusion", get: (p) => p.casts["Power Infusion"] || 0, unit: "casts" },
-  { key: "clean", label: "Deathless", icon: "Divine Intervention", get: (p) => p.cleanNights, note: (p) => `of ${p.nights} nights`, unit: "nights without dying" },
+  { key: "clean", label: "Deathless", icon: "Divine Intervention", get: (p) => p.cleanNights, note: (p) => `of ${p.nights} raids`, unit: "raids without dying" },
 ];
 
 function HallOfFame() {
@@ -282,6 +282,10 @@ function Night({ n }) {
   const idx = NIGHTS.findIndex((x) => x.night === n.night);
   const newer = NIGHTS[idx - 1];
   const older = NIGHTS[idx + 1];
+  const label = (x) => `${fmtDate(x.night, { day: "numeric", month: "short" })} · ${x.zoneIds.map((z) => zoneOf(z).short).join(" + ")}`;
+  // The other raid(s) done the same evening.
+  const lockout = lockoutOf({ ...n, zoneIds: zones });
+  const sameNight = NIGHTS.filter((x) => x.night !== n.night && x.night.slice(0, 10) === n.night.slice(0, 10));
   const cards = useMemo(() => nightHighlights(n, CLASS_OF), [n]);
   const recs = useMemo(() => records(n, ALL_TIME), [n]);
   const clean = useMemo(() => deathless(n), [n]);
@@ -298,13 +302,41 @@ function Night({ n }) {
         art={zones.map(zoneImg)}
         kicker={`Raid night · ${fmtDate(n.night, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}`}
         title={zones.map((z) => zoneOf(z).name).join(" + ")}
-        crumbs={[{ label: "Raid logs", href: href("raids") }, { label: fmtDate(n.night, { day: "numeric", month: "short" }) }]}
+        crumbs={[{ label: "Raid logs", href: href("raids") }, { label: label({ night: n.night, zoneIds: zones }) }]}
         nav={
           <>
-            {older && <a href={href("raids", older.night)}>‹ {fmtDate(older.night, { day: "numeric", month: "short" })}</a>}
-            {newer && <a href={href("raids", newer.night)}>{fmtDate(newer.night, { day: "numeric", month: "short" })} ›</a>}
+            {older && <a href={href("raids", older.night)}>‹ {label(older)}</a>}
+            {newer && <a href={href("raids", newer.night)}>{label(newer)} ›</a>}
           </>
         }
+        sub={(sameNight.length > 0 || lockout.before.length > 0 || lockout.after.length > 0) && (
+          <span className="rr-banner-links">
+            {lockout.before.length > 0 && (
+              <span>
+                Continues the lockout from{" "}
+                {lockout.before.map((x, i) => (
+                  <span key={x.night}>{i > 0 && ", "}<a href={href("raids", x.night)}>{fmtDate(x.night)}</a></span>
+                ))}
+              </span>
+            )}
+            {lockout.after.length > 0 && (
+              <span>
+                Continued on{" "}
+                {lockout.after.map((x, i) => (
+                  <span key={x.night}>{i > 0 && ", "}<a href={href("raids", x.night)}>{fmtDate(x.night)}</a></span>
+                ))}
+              </span>
+            )}
+            {sameNight.length > 0 && (
+              <span>
+                Same evening:{" "}
+                {sameNight.map((x, i) => (
+                  <span key={x.night}>{i > 0 && ", "}<a href={href("raids", x.night)}>{x.zoneIds.map((z) => zoneOf(z).name).join(" + ")}</a></span>
+                ))}
+              </span>
+            )}
+          </span>
+        )}
         stats={[
           { value: n.totals.kills, label: "kills" },
           { value: n.totals.wipes, label: "wipes", className: n.totals.wipes ? "rr-wipe-txt" : "" },
@@ -321,7 +353,7 @@ function Night({ n }) {
       </Panel>
 
       {(cards.length > 0 || recs.length > 0) && (
-        <Panel title="Standouts" sub="a few highlights from the night">
+        <Panel title="Standouts" sub="a few highlights from the raid">
           <div className="rr-awards">
             {recs.map((r) => (
               <div key={`rec-${r.boss.name}`} className="rr-award rr-award-record">
@@ -544,7 +576,7 @@ function Consumables({ n, NP }) {
     .sort((a, b) => b.total - a.total);
   if (!items.length) return null;
   return (
-    <Panel title="Consumables" sub="used during the night">
+    <Panel title="Consumables" sub="used during the raid">
       <div className="rr-consumes">
         {items.map((it) => (
           <div key={it.name} className="rr-consume" title={`${it.name}: ${it.total} used by ${it.users} raiders`}>

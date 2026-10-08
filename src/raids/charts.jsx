@@ -140,14 +140,19 @@ function PullTip({ p }) {
 }
 
 // ---------- Activity calendar ----------
-// One square per day for the logged period, filled with the colour of the zone
-// raided that night (two zones = split square). Click a night to open it.
+// One square per day for the logged period, filled with the colour of the raid
+// done that day (two raids = split square, each half opens its raid).
 export function ActivityCalendar({ nights }) {
   const [tip, bind] = useTip();
   if (!nights.length) return null;
-  const byDate = new Map(nights.map((n) => [n.night, n]));
-  const first = new Date(`${nights.at(-1).night}T12:00:00`);
-  const last = new Date(`${nights[0].night}T12:00:00`);
+  const byDate = new Map(); // date -> its raids, in the order they happened
+  for (const n of [...nights].reverse()) {
+    const d = n.night.slice(0, 10);
+    if (!byDate.has(d)) byDate.set(d, []);
+    byDate.get(d).push(n);
+  }
+  const first = new Date(`${nights.at(-1).night.slice(0, 10)}T12:00:00`);
+  const last = new Date(`${nights[0].night.slice(0, 10)}T12:00:00`);
   const start = new Date(first);
   start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // back to Monday
 
@@ -162,23 +167,27 @@ export function ActivityCalendar({ nights }) {
 
   return (
     <div className="rr-cal">
-      <svg viewBox={`0 0 ${30 + weeks.length * (C + G)} ${7 * (C + G) + 4}`} role="img" aria-label="Raid nights calendar">
+      <svg viewBox={`0 0 ${30 + weeks.length * (C + G)} ${7 * (C + G) + 4}`} role="img" aria-label="Raid calendar">
         {["Mon", "", "Wed", "", "Fri", "", "Sun"].map((l, i) => (
           <text key={i} x="0" y={i * (C + G) + C - 4} className="rr-axis">{l}</text>
         ))}
         {weeks.map((days, wi) =>
           days.map((day, di) => {
-            const n = byDate.get(day);
+            const raids = byDate.get(day);
             const X = 30 + wi * (C + G);
             const Y = di * (C + G);
-            if (!n) return <rect key={day} x={X} y={Y} width={C} height={C} rx="3" className="rr-cal-empty" />;
-            const zs = n.zoneIds.length ? n.zoneIds : [0];
+            if (!raids) return <rect key={day} x={X} y={Y} width={C} height={C} rx="3" className="rr-cal-empty" />;
+            // One segment per raid (older files can still hold two zones in one).
+            const segs = raids.flatMap((n) => (n.zoneIds.length ? n.zoneIds : [0]).map((z) => ({ n, z })));
+            const w = C / segs.length;
             return (
-              <a key={day} href={href("raids", day)} {...bind(<CalTip n={n} />)}>
-                {zs.map((z, i) => (
-                  <rect key={z} x={X + (i * C) / zs.length} y={Y} width={C / zs.length} height={C} rx="3" fill={zoneOf(z).color} />
+              <g key={day}>
+                {segs.map(({ n, z }, i) => (
+                  <a key={i} href={href("raids", n.night)} {...bind(<CalTip n={n} />)}>
+                    <rect x={X + i * w} y={Y} width={w - (i < segs.length - 1 ? 1 : 0)} height={C} rx="3" fill={zoneOf(z).color} />
+                  </a>
                 ))}
-              </a>
+              </g>
             );
           })
         )}
@@ -240,8 +249,8 @@ export function KillSparkline({ history, best }) {
 // drop is a new guild best. Compact mode drops the axes for small multiples.
 export function ClearTrend({ nights, zoneId, compact = false }) {
   const [tip, bind] = useTip();
-  const rows = nights.filter((n) => n.zoneTimes?.[zoneId]).slice().sort((a, b) => a.night.localeCompare(b.night));
-  if (rows.length < 2) return <div className="muted rr-empty-sm">Needs a couple of nights to show a trend.</div>;
+  const rows = nights.filter((n) => n.zoneTimes?.[zoneId]).slice().sort((a, b) => (a.start || a.night).localeCompare(b.start || b.night));
+  if (rows.length < 2) return <div className="muted rr-empty-sm">Needs a couple of raids to show a trend.</div>;
   const full = Math.max(...rows.map((n) => n.zoneTimes[zoneId].kills));
   const pts = rows.map((n) => ({ n, t: n.zoneTimes[zoneId], full: n.zoneTimes[zoneId].kills === full }));
 
@@ -271,7 +280,7 @@ export function ClearTrend({ nights, zoneId, compact = false }) {
   const ticks = compact ? [] : niceTicks(lo, hi);
   return (
     <div className="rr-timeline">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Clear time per night">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Clear time per raid">
         {ticks.map((t) => (
           <g key={t}>
             <line x1={pad.l} x2={W - pad.r} y1={y(t)} y2={y(t)} stroke="var(--border-soft)" />

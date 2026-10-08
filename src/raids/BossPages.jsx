@@ -37,7 +37,7 @@ export function ZonePage({ id }) {
         art={[zoneImg(id)]}
         kicker="Guild history · all time"
         title={`Moist in ${zone.name}`}
-        sub={`${nights.length} nights logged since ${fmtDate(nights[0].night, { day: "numeric", month: "short", year: "numeric" })}`}
+        sub={`${nights.length} raids logged since ${fmtDate(nights[0].night, { day: "numeric", month: "short", year: "numeric" })}`}
         crumbs={[{ label: "Raid logs", href: href("raids") }, { label: zone.name }]}
         stats={[
           { value: bosses.reduce((t, b) => t + b.kills, 0), label: "boss kills" },
@@ -47,7 +47,7 @@ export function ZonePage({ id }) {
         ]}
       />
 
-      <Panel title="Clear time" sub="first pull to last boss, night by night">
+      <Panel title="Clear time" sub="first pull to last boss, raid by raid">
         <ClearTrend nights={nights} zoneId={id} />
       </Panel>
 
@@ -130,7 +130,7 @@ function Boss({ b }) {
         art={[bossImg(b.id)]}
         kicker="Guild history · all time"
         title={`Moist vs ${b.name}`}
-        sub={`${b.pulls} pulls over ${new Set(b.attempts.map((a) => a.night)).size} nights`}
+        sub={`${b.pulls} pulls over ${new Set(b.attempts.map((a) => a.night)).size} raids`}
         crumbs={[
           { label: "Raid logs", href: href("raids") },
           { label: zone.name, href: href("raid-zone", b.zoneId) },
@@ -182,7 +182,7 @@ function Boss({ b }) {
         <Panel title="Floor time" sub="deaths on this boss">
           <BarList rows={playerBars(b.deathsBy, 10, (name) => `${b.firstDeathsBy[name] || 0} times first to die`)} empty="Nobody has died here." />
         </Panel>
-        <Panel title="Nights" sub="when we fought it">
+        <Panel title="Raids" sub="when we fought it">
           <div className="rr-night-list">
             {[...new Set(b.attempts.map((a) => a.night))].reverse().map((night) => {
               const tries = b.attempts.filter((a) => a.night === night);
@@ -240,7 +240,7 @@ function AttemptChart({ attempts, best }) {
 
   return (
     <div className="rr-timeline">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Kill time per attempt, grouped by night">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Kill time per attempt, grouped by raid">
         {bands.map((b, i) => (
           <rect key={b.night} x={b.col + 2} y={pad.t - 16} width={colW - 4} height={H - pad.t - pad.b + 16} rx="6" fill={i % 2 ? "var(--surface-2)" : "transparent"} opacity="0.7" />
         ))}

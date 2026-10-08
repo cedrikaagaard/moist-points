@@ -42,7 +42,7 @@ async function main() {
     .readdirSync(NIGHTS)
     .filter((f) => f.endsWith(".json"))
     .map((f) => f.slice(0, -5))
-    .filter((n) => !args.night || n === args.night)
+    .filter((n) => !args.night || n.startsWith(args.night)) // a raid id or a whole date
     .sort()
     .reverse();
 
@@ -55,7 +55,7 @@ async function main() {
       const file = path.join(OUT, `${night}-${b.encounterId}.json`);
       if (fs.existsSync(file) && !args.force) continue;
 
-      const log = fullLog(night, kill.src.code);
+      const log = fullLog(n.date || night.slice(0, 10), kill.src.code); // full logs are stored per date
       if (log) {
         fs.writeFileSync(file, JSON.stringify(buildReplay(n, b, kill, null, log)) + "\n");
         made++;

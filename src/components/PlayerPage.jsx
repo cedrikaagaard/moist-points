@@ -74,7 +74,7 @@ export default function PlayerPage({ data, name, player, isMe, onChangeMe }) {
           </div>
         </div>
         <div className="rr-banner-stats">
-          <div><b>{r?.nights ?? 0}</b><span>raid nights logged</span></div>
+          <div><b>{r?.nights ?? 0}</b><span>raids logged</span></div>
           <div><b>{player ? player.totalPoints.toLocaleString() : 0}</b><span>SR points</span></div>
           <div><b>{player ? player.srCount : 0}</b><span>soft-reserves</span></div>
         </div>

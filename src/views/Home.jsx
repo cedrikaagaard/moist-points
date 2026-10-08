@@ -92,7 +92,7 @@ export default function Home({ data }) {
           <div className="home-card-title" style={myRoster?.class ? { color: classColor(myRoster.class) } : undefined}>{me || "Who are you?"}</div>
           <div className="home-card-text muted">
             {me
-              ? `${myRoster?.nights ?? 0} raid nights logged${mine ? ` · ${mine.totalPoints.toLocaleString()} SR points` : ""}`
+              ? `${myRoster?.nights ?? 0} raids logged${mine ? ` · ${mine.totalPoints.toLocaleString()} SR points` : ""}`
               : "Pick your character to see your points, odds and raid record."}
           </div>
           <div className="home-card-go">{me ? "Open your page →" : "Set your character →"}</div>
