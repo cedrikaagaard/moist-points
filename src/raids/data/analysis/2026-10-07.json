@@ -1,7 +1,7 @@
 {
   "night": "2026-10-07",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-08T12:55:00Z",
+  "generatedAt": "2026-10-08T14:10:00Z",
   "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe that was lost in the first two Life Drain waves",
   "overview": [
     "15 of 15 bosses in 2h22m, about 10 minutes over the guild's usual Naxx night (median 2h11m). Most of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
@@ -49,31 +49,220 @@
       "text": "27 raiders drank a shadow protection potion on Loatheb, about three times the usual 9, and nobody died."
     }
   ],
-  "mechanics": [
-    {
-      "encounterId": 51116,
-      "verdict": "bad",
-      "text": "At 0:35 Maexxna left her tank for the off tank, and the Poison Shock she cast while turning hit 24 raiders instead of the tank alone (53k damage, about six times a usual kill). The Web Spray at 0:40 then stunned everyone while she killed a mage and the off tank. No taunt was cast during the fight."
-    },
+  "bosses": [
     {
       "encounterId": 51107,
-      "verdict": "bad",
-      "text": "Anub'Rekhan died in 0:48, a hair faster than ever, but Impale hit 29 raiders (34 hits, about two thirds more per raider than usual) and the landing from those throws added another 20k damage. Spreading out of each other's lines would cost nothing."
+      "name": "Anub'Rekhan",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:48, a second faster than the previous best (median 0:58), on 43k raid DPS against a usual 38k."
+        },
+        {
+          "tone": "bad",
+          "text": "Impale hit 29 raiders 34 times, about two thirds more per raider than usual, and the landings added another 20k of falling damage. Damage taken ran at 3.8k per second against a usual 2.6k. Spreading out of each other's lines would cost nothing."
+        }
+      ]
+    },
+    {
+      "encounterId": 51110,
+      "name": "Grand Widow Faerlina",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:49 with no deaths and only 13 Rain of Fire hits, about a fifth of the usual 65. Damage taken was 4.3k per second against a usual 5.9k."
+        },
+        {
+          "tone": "info",
+          "text": "Four Worshippers were mind controlled for her enrage, and raid DPS was 35k against a usual 30k."
+        }
+      ]
+    },
+    {
+      "encounterId": 51116,
+      "name": "Maexxna",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "At 0:35 Maexxna left her tank for the off tank, and the Poison Shock she cast while turning hit 24 raiders instead of the tank alone (53k, about six times a usual kill). The Web Spray at 0:40 then stunned everyone while she killed a mage and the off tank. No taunt was cast during the fight."
+        },
+        {
+          "tone": "info",
+          "text": "Apart from that a normal kill: 1:09 against a median of 1:08, raid DPS on par, and the Web Wraps (6) and poison cleanses at the usual rate."
+        }
+      ]
+    },
+    {
+      "encounterId": 51118,
+      "name": "Patchwerk",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "2:05 (median 2:13) with no deaths. Macharius and Fenhir soaked all 66 Hateful Strikes, 376k between them, while Birkler tanked 201k of melee."
+        },
+        {
+          "tone": "info",
+          "text": "Raid DPS 32k and healing right on the guild's usual numbers; Snotspat parsed 97."
+        }
+      ]
+    },
+    {
+      "encounterId": 51111,
+      "name": "Grobbulus",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:10 against a median of 1:25 and a median parse of 75, well up from the usual 60. Raid DPS 32k against a usual 27k."
+        },
+        {
+          "tone": "good",
+          "text": "Only 3 poison cloud hits (usually about 10) and 2 Slime Sprays, so damage taken was a third below normal."
+        }
+      ]
+    },
+    {
+      "encounterId": 51108,
+      "name": "Gluth",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "All 5 Frenzies were removed with Tranquilizing Shot, and the kill took 0:57 (median 1:06) on 29k raid DPS against a usual 25k."
+        },
+        {
+          "tone": "info",
+          "text": "Birkler took all but 10k of the melee, and nobody died."
+        }
+      ]
+    },
+    {
+      "encounterId": 51120,
+      "name": "Thaddius",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "2:42 against a median of 3:35, with only 6 wrong side polarity hits where the guild usually takes around 28. The median parse of 50 is well above the usual 37."
+        },
+        {
+          "tone": "info",
+          "text": "Chain Lightning was the biggest damage source (390k over 203 hits, normal for him). The one death, Eïnherjar at 1:59, came from Chain Lightning right after a polarity hit."
+        }
+      ]
+    },
+    {
+      "encounterId": 51113,
+      "name": "Instructor Razuvious",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:38 (median 1:46) with a median parse of 80 against the usual 70."
+        },
+        {
+          "tone": "bad",
+          "text": "Bruceli was hit directly by Razuvious and died to one Unbalancing Strike (6.6k) at 1:18, which usually means no Understudy held him for a moment, for example between taunts."
+        }
+      ]
+    },
+    {
+      "encounterId": 51109,
+      "name": "Gothik the Harvester",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "5:03, right on the guild median, and both Shadow Bolt Volleys from the Riders were interrupted."
+        },
+        {
+          "tone": "bad",
+          "text": "Three deaths on the dead side: Bruceli to a Spectral Horse at 2:48, then Krits at 3:20 and Thornhild at 4:14 to Spectral Death Knights, mostly Whirlwind. Those Knights hit 19 raiders with Whirlwind for 87k in total."
+        }
+      ]
     },
     {
       "encounterId": 51121,
-      "verdict": "bad",
-      "text": "Four players died at the same moment (1:50) to a Mark from the Spirit of Mograine. Spirits keep marking after the Horseman dies, so this is a group standing too close to the dead corner rather than a missed rotation."
+      "name": "The Four Horsemen",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "3:54 is the fastest kill in the logs (previous best 4:12, median 5:13). Raid DPS was 9.1k against a usual 7.2k, and Marks per raider dropped to 12.6 from a usual 15.8."
+        },
+        {
+          "tone": "bad",
+          "text": "Four players died at the same moment (1:50) to a Mark from the Spirit of Mograine. Spirits keep marking after the Horseman dies, so this is a group standing too close to the dead corner rather than a missed rotation. Lookdown died to a Void Zone at 2:18."
+        }
+      ]
     },
     {
-      "encounterId": 51114,
-      "verdict": "bad",
-      "text": "Two deaths to Shadow Fissures (1:02 and 2:19), and two to a Guardian of Icecrown at 2:15 and 2:30, which suggests one Guardian got loose briefly."
+      "encounterId": 51117,
+      "name": "Noth the Plaguebringer",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:58 against a median of 1:09, with no deaths and 30k raid DPS (usually 26k). The 20 curses were removed and almost all damage was melee on the tanks."
+        }
+      ]
+    },
+    {
+      "encounterId": 51112,
+      "name": "Heigan the Unclean",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:13 with no deaths and no Eruption damage on anyone. 32 Decrepit Fevers were cured."
+        },
+        {
+          "tone": "info",
+          "text": "Spell Disruption hit 7 raiders for 16k."
+        }
+      ]
+    },
+    {
+      "encounterId": 51115,
+      "name": "Loatheb",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "27 raiders drank a shadow protection potion, about three times the usual 9, and nobody died. 2:50 against a median of 3:00."
+        },
+        {
+          "tone": "info",
+          "text": "Spores were taken by 25 people, slightly fewer per raider than usual (0.9 against 1.2), and the median parse of 37 is below the usual 46 even though raid DPS was normal."
+        }
+      ]
     },
     {
       "encounterId": 51119,
-      "verdict": "good",
-      "text": "The kill pull was clean on Life Drain: all 79 removed, half within 2.7 seconds, and no deaths to it. It was still slow (4:37 vs a usual 3:53) with a median parse of 36, the lowest of the night."
+      "name": "Sapphiron",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "The kill pull was clean on Life Drain: all 79 removed, half within 2.7 seconds, and no deaths to it."
+        },
+        {
+          "tone": "bad",
+          "text": "It was slow (4:37 against a usual 3:53) because raid DPS was 76% of normal. The wipe had cost most world buffs: the raid had 77 Dire Maul buffs and 27 Sayge's buffs on the wipe and 4 and 1 on the kill. 22 people picked up Rallying Cry and Zandalar again in between."
+        },
+        {
+          "tone": "info",
+          "text": "The five deaths on the kill were all to Frost Aura or Blizzard, spread over the fight rather than in one chain."
+        }
+      ]
+    },
+    {
+      "encounterId": 51114,
+      "name": "Kel'Thuzad",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Down first try in 2:50. All 20 Frostbolt casts were interrupted, and there were only 2 Frost Blasts (usually about 29) and 5 mind controls (usually about 23)."
+        },
+        {
+          "tone": "bad",
+          "text": "Two deaths to Shadow Fissures (1:02 and 2:19), two to a Guardian of Icecrown at 2:15 and 2:30, which suggests one Guardian got loose briefly, and two to Frostbolt damage at 2:38."
+        },
+        {
+          "tone": "info",
+          "text": "Raid DPS was 88% of normal, likely the same lost world buffs as on Sapphiron."
+        }
+      ]
     }
   ]
 }

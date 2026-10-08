@@ -1,5 +1,5 @@
 // The "facts pack" for one raid night: everything an analysis may say, with the
-// numbers behind it. The /raid-logs skill writes the magic LLM analysis from
+// numbers behind it. The /raid-logs skill writes Claude's analysis (the AI analysis panel) from
 // this (src/raids/data/analysis/<night>.json) - never from memory or vibes.
 //
 //   npm run raids:facts -- --night 2026-09-23
@@ -97,6 +97,8 @@ function baseline(b) {
   const med = (l) => (l?.length ? [...l].sort((x, y) => x - y)[Math.floor(l.length / 2)] : 0);
   const healPerKill = withDmg.map(({ k }) => (k.enemyHealed || []).reduce((t, h) => t + h.total, 0));
   const dps = withDmg.filter(({ k }) => k.damageDone).map(({ k }) => k.damageDone / k.durationSec);
+  const hps = withDmg.filter(({ k }) => k.healingDone).map(({ k }) => k.healingDone / k.durationSec);
+  const takenPs = withDmg.map(({ k }) => (k.takenTotal || k.taken.reduce((t, a) => t + a.total, 0)) / k.durationSec);
   return {
     kills: kills.length,
     killsWithDamageData: withDmg.length,
@@ -105,6 +107,8 @@ function baseline(b) {
     takenShare: Object.fromEntries(Object.entries(shares).map(([k, l]) => [k, Math.round(med(l.concat(Array(withDmg.length - l.length).fill(0))) * 1000) / 10])),
     enemyHealingPerKill: healPerKill.length ? Math.round(med(healPerKill)) : null,
     raidDps: dps.length ? Math.round(med(dps)) : null,
+    raidHps: hps.length ? Math.round(med(hps)) : null,
+    damageTakenPerSecond: takenPs.length ? Math.round(med(takenPs)) : null,
   };
 }
 
@@ -390,6 +394,7 @@ function pullFacts(b, p, i) {
     healingDoneToEnemies: p.enemyHealed,
     raidDps: p.damageDone ? Math.round(p.damageDone / p.durationSec) : null,
     raidHps: p.healingDone ? Math.round(p.healingDone / p.durationSec) : null,
+    damageTakenPerSecond: p.takenTotal ? Math.round(p.takenTotal / p.durationSec) : null,
     topDamage: p.topDamage,
     topHealing: p.topHealing,
     ...bossBuffsAndCasts(p.src),

@@ -1,6 +1,6 @@
 ---
 name: raid-logs
-description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs - fetch new raid nights, sanity-check them, write the optional "magic LLM analysis" for a night, and extend the stats/charts. Use after a raid night, to backfill older nights, to analyse a night's wipes, or when asked for new raid stats.
+description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs - fetch new raid nights, sanity-check them, write the optional "Claude's analysis" for a night, and extend the stats/charts. Use after a raid night, to backfill older nights, to analyse a night's wipes, or when asked for new raid stats.
 ---
 
 # Raid logs
@@ -8,7 +8,7 @@ description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs 
 The **Raid Logs** pages (`#/raids`, `#/raids/<night>`, `#/raids/<night>/<boss>`,
 `#/raid-zone/<id>`, `#/raid-boss/<id>`) are built from the guild's Warcraft Logs (Moist,
 EU-Firemaw, Classic Era). Everything on them is **computed from data**: stats,
-charts, and award cards from fixed rules. The only prose is the opt-in "magic LLM analysis" (see below),
+charts, and award cards from fixed rules. The only prose is the "Claude's analysis" panel (see below),
 always collapsed and labelled as AI-written.
 
 This lives entirely in `scripts/raids/` and `src/raids/` (plus one nav link and
@@ -41,11 +41,11 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
 4. Report what came in (nights, kills, anything notable from the numbers).
    Commit only if asked.
 
-## Magic LLM analysis (optional, per night)
+## Claude's analysis (optional, per night)
 
 Each night can have an AI-written analysis, shown on the night page (and the
-boss's part on each night-boss page) in a collapsed, clearly labelled
-"✨ Magic LLM analysis" panel. It is the one place prose is allowed. Write it
+boss's part on each night-boss page) as a faded preview, clearly labelled
+"✨ Claude's analysis" panel. It is the one place prose is allowed. Write it
 only when asked, or for new nights after a fetch if the user wants it.
 
 1. **Read the reference first**: `reference/classes-and-log-reading.md` and the
@@ -74,11 +74,20 @@ only when asked, or for new nights after a fetch if the user wants it.
                  "whatHappened": "...", "likelyCause": "...",
                  "evidence": ["numbers from the facts"], "avoid": "..." }],
      "wentWell": [{ "encounterId": 51120, "text": "..." }],
-     "mechanics": [{ "encounterId": 51112, "verdict": "good", "text": "..." }]
+     "bosses": [{ "encounterId": 51112, "name": "Heigan the Unclean",
+                  "notes": [{ "tone": "good" | "bad" | "info", "text": "..." }] }]
    }
    ```
 
    `encounterId` ties an item to a boss (the night-boss page shows only its own).
+   `wentWell` is the short highlights list at the top (3-6 items). `bosses` is
+   the real body: **every boss of the night**, 1-4 notes each, in kill order.
+   Cover what's actually interesting for that boss: pace and raid DPS against
+   the guild's usual, damage taken against usual and who took the avoidable
+   part, healing the boss got, every death with its cause and timing, the
+   boss's mechanics against history, notable parses. One note is fine for a
+   boss where nothing stood out; never pad. (Older files have a `mechanics`
+   list instead; the panel still shows it.)
 4. Build, open the night page, expand the panel, and read it once as a raider.
 
 **Analysis protocol: think like a raid leader reviewing the log.** Work
@@ -212,7 +221,7 @@ never removed". Always go to the numbers.
   compact "vs other nights" line. **Guild history** pages (`RaidsView.jsx`
   overview, `BossPages.jsx` zone and boss) hold the all-time stats. Don't mix
   all-time panels into night pages.
-- `Analysis.jsx`: the collapsed magic LLM analysis panel (data in
+- `Analysis.jsx`: the Claude's analysis panel (faded preview until opened) (data in
   `src/raids/data/analysis/<night>.json`, written by this skill).
 - Other files: `charts.jsx` (timeline, calendar, clear-time trend, sparklines),
   `components.jsx` and `assets.js` (WCL CDN art: zones, bosses, specs, spells).
