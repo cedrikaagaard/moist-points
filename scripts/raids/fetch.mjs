@@ -28,12 +28,17 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
-const RESERVE_POINTS = 70; // a big night costs ~55
+const RESERVE_POINTS = 130; // a big night costs ~55, the odd huge one 100+
 const SCHEMA = 3; // bump when the night file shape changes; older files get rebuilt
 const args = parseArgs(process.argv.slice(2));
 
 main().catch((e) => {
   console.error(e.message);
+  // Hit the hourly limit mid-way: that's "come back later", not a failure.
+  if (/failed: 429/.test(e.message)) {
+    console.log("API budget used up mid-run; resets in 15 min. Run again then.");
+    process.exit(75);
+  }
   process.exit(1);
 });
 

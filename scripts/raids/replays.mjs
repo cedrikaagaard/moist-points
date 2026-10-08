@@ -26,6 +26,11 @@ if (!process.argv.includes("--night")) args.night = null;
 
 main().catch((e) => {
   console.error(e.message);
+  // Hit the hourly limit mid-way: that's "come back later", not a failure.
+  if (/failed: 429/.test(e.message)) {
+    console.log("API budget used up mid-run; resets in 15 min. Run again then.");
+    process.exit(75);
+  }
   process.exit(1);
 });
 
