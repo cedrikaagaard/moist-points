@@ -136,7 +136,8 @@ never removed". Always go to the numbers.
   a pull or carried a job ("Birkler picked Maexxna back up within 3 seconds",
   "Etowa's battle rez on the tank kept the pull alive"), say who, with the
   number or time that proves it. Credit by name; problems stay about the raid,
-  not a person. Keep dispel/decurse credit low-key (the site owner is a mage).
+  not a person. Dispels and decurses count as good plays too, except in the
+  2026-10-07 analysis (the site owner asked to leave his own night alone).
 - Insight, not filler. Every sentence carries a fact from the facts pack (a
   number, a name, a time) or a cause explained by the reference. Cut anything
   that would be true of any raid ("communication is key").
@@ -171,8 +172,8 @@ never removed". Always go to the numbers.
 - Name players for good things freely; for mistakes prefer the pattern ("19
   Blizzard hits from 8 raiders") over singling people out, unless one person's
   action clearly caused the wipe.
-- Don't spotlight dispels/decursing (the site owner is a mage and doesn't
-  want it to look self-promoting); mention only when it matters to a wipe.
+- Dispel/decurse work can be credited by name like any other good play
+  (not in the 2026-10-07 analysis).
 - Plain, low-key tone. No dashes as sentence breaks, no hype, no emojis.
 - Keep it short: overview 2-5 sentences, 3-6 "went well", each wipe ~4 lines.
 
