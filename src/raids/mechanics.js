@@ -203,6 +203,7 @@ export const MECHANICS = {
   ],
   51115: [ // Loatheb
     { key: "doom", kind: "hit", abilities: ["Inevitable Doom"], tone: "info", label: "Inevitable Doom", note: "the big shadow ticks" },
+    { key: "spores", kind: "debuff", abilities: ["Fungal Creep", "Fungal Bloom"], tone: "good", label: "Got a spore", note: "crit buff from killing the spores" },
     prot("Shadow"),
   ],
   51118: [ // Patchwerk
@@ -211,6 +212,7 @@ export const MECHANICS = {
   51111: [ // Grobbulus
     { key: "injection", kind: "debuff", abilities: ["Mutating Injection"], tone: "info", label: "Got Mutating Injection", note: "run to the edge" },
     { key: "spray", kind: "hit", abilities: ["Slime Spray"], tone: "bad", label: "Slime Sprayed", note: "stand behind him" },
+    { key: "cloud", kind: "hit", abilities: ["Poison"], tone: "bad", label: "Stood in a poison cloud", note: "the clouds he leaves behind" },
     { key: "cleanse", kind: "dispel", abilities: ["Mutating Injection"], tone: "info", label: "Injections dispelled", note: "" },
   ],
   51108: [ // Gluth
@@ -230,8 +232,8 @@ export const MECHANICS = {
     { key: "volley", kind: "hit", abilities: ["Shadow Bolt Volley", "Shadow Mark"], tone: "info", label: "Shadow hits", note: "from the undead side" },
   ],
   51121: [ // Four Horsemen
-    { key: "marks", kind: "debuff", abilities: ["Mark of Korth'azz", "Mark of Blaumeux", "Mark of Mograine", "Mark of Zeliek"], tone: "info", label: "Marks taken", note: "rotating before the stacks kill you" },
-    { key: "void", kind: "hit", abilities: ["Void Zone"], tone: "bad", label: "Stood in a Void Zone", note: "" },
+    { key: "marks", kind: "debuff", abilities: ["Mark of Korth'azz", "Mark of Blaumeux", "Mark of Rivendare", "Mark of Mograine", "Mark of Zeliek"], tone: "info", label: "Marks taken", note: "rotating before the stacks kill you" },
+    { key: "void", kind: "hit", abilities: ["Consumption", "Void Zone"], tone: "bad", label: "Stood in a Void Zone", note: "logged as Consumption" },
     { key: "meteor", kind: "hit", abilities: ["Meteor"], tone: "good", label: "Meteors soaked", note: "share the damage" },
     { key: "wrath", kind: "hit", abilities: ["Holy Wrath"], tone: "info", label: "Holy Wrath hits", note: "Zeliek's chain" },
   ],
