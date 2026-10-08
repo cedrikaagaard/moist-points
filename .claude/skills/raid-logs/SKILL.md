@@ -23,6 +23,8 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
      hour and a night costs about 10-40. The script stops on its own near the
      limit (exit code 75); rerun it after the reset to continue.
    - `-- --night <date> --force` rebuilds a night from cached logs (free).
+   - `-- --rebuild` rebuilds every night on disk from `data/wcl/` only, with no
+     API calls. Use it after changing how nights are built (stats, rules, fixes).
    - `-- --night <date> --refresh` re-downloads it, for example when someone
      uploaded their log late.
    - `-- --list` shows which logs make up each night.
@@ -133,6 +135,18 @@ only when asked, or for new nights after a fetch if the user wants it.
   `src/raids/data/analysis/<night>.json`, written by this skill).
 - Other files: `charts.jsx` (timeline, calendar, clear-time trend, sparklines),
   `components.jsx` and `assets.js` (WCL CDN art: zones, bosses, specs, spells).
+
+## Data caveats (from the reference research)
+
+- Warcraft Logs has no talent data for Classic Era: its spec/role labels are
+  guesses. Nights store `spec: null` and a `role` inferred from casts (mostly
+  heals = healer, tank abilities = tank). Parses where WCL ranked someone in
+  the wrong role are dropped.
+- Tranquilizing Shot removing Frenzy shows as a dispel of "Enrage": excluded
+  from dispels.
+- Some boss mechanics are credited to random players (Ragnaros Lava Burst,
+  Eruption): never treat those as friendly fire.
+- More quirks per boss in `reference/*.md` ("Analysis notes").
 
 ## Extending
 
