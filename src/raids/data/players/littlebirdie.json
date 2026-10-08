@@ -1,0 +1,1 @@
+{"name":"Littlebirdie","class":"Hunter","spec":"Hunter-Marksmanship","role":"dps","nights":[{"night":"2026-07-07","zones":[2001],"role":"dps","spec":"Hunter-Marksmanship","deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":28,"amount":203,"role":"dps"}],"mech":{"51084:fear":3},"casts":{"Hunter's Mark":3}}]}

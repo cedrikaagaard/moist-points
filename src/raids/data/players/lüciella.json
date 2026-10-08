@@ -1,0 +1,1 @@
+{"name":"Lüciella","class":"Priest","spec":"Priest-Shadow","role":"dps","nights":[{"night":"2026-07-07","zones":[2001],"role":"dps","spec":"Priest-Shadow","deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":22,"amount":128,"role":"dps"}],"mech":{"51084:fear":3,"51084:eruption":2},"casts":{"Restore Mana":1}}]}

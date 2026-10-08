@@ -1,0 +1,1 @@
+{"name":"Jamiggs","class":"Rogue","spec":"Rogue-Assassination","role":"dps","nights":[{"night":"2026-07-07","zones":[2001],"role":"dps","spec":"Rogue-Assassination","deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":72,"amount":333,"role":"dps"}],"mech":{"51084:breath":1,"51084:fear":2,"51084:eruption":2},"casts":{}}]}
