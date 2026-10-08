@@ -141,6 +141,12 @@ The 7 Oct Sapphiron wipe is the cautionary example: the death list said
 "Life Drain healed Sapphiron 297k vs ~100k usual and 21 of 79 drains were
 never removed". Always go to the numbers.
 
+**PUG runs.** Raids are classified from the roster (`classifyRaids` in
+`src/raids/aggregate.js`): guild, pug (under 30% Moist regulars, e.g. the
+Monday MC) or other (another guild's raid, hidden). The facts say `raidKind`;
+for a PUG run every baseline is from other PUG runs. Compare kill times with
+other PUG runs too (summary.json `kind: "pug"`), never with the guild's.
+
 **Rules for the analysis**
 - Never state a game mechanic you inferred from totals ("this buff survives
   death") as fact. Say what the log shows and verify it per player; if the
