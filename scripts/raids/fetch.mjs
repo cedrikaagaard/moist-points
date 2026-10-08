@@ -7,7 +7,7 @@
 //
 //   npm run raids:fetch                      new nights from the last few weeks
 //   npm run raids:fetch -- --since 2026-09-01
-//   npm run raids:fetch -- --force           rebuild every night from data/wcl (free)
+//   npm run raids:fetch -- --rebuild         rebuild every night on disk from data/wcl only (no API)
 //   npm run raids:fetch -- --night 2026-10-04 --refresh  re-download that night's logs
 //   npm run raids:fetch -- --list            just show nights + reports found
 //   npm run raids:fetch -- --since 2025-01-01 --newest-first   backfill, today backwards
@@ -42,7 +42,40 @@ main().catch((e) => {
   process.exit(1);
 });
 
+// Rebuild every night already on disk from the raw archive only - no API calls.
+// Nights whose raw files are missing are left alone.
+async function rebuildOffline() {
+  const list = JSON.parse(fs.readFileSync(path.join(RAW_DIR, "reports.json"), "utf8"));
+  const byNight = groupBy(list, (r) => nightOf(r.startTime));
+  const nights = fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)).sort();
+  let done = 0;
+  let skipped = 0;
+  for (const night of nights) {
+    const reports = byNight.get(night) || [];
+    const details = [];
+    for (const r of reports) {
+      const d = readRaw(`reports/${r.code}.json.gz`);
+      if (d) details.push({ ...d, zone: r.zone });
+    }
+    try {
+      if (!details.length || details.length < reports.length) throw new Error("missing raw");
+      offline = true;
+      skippedArchive = false;
+      const out = await buildNight(night, details);
+      out.archived = true;
+      fs.writeFileSync(path.join(NIGHTS_DIR, `${night}.json`), JSON.stringify(out) + "\n");
+      done++;
+    } catch (e) {
+      skipped++;
+      if (e.message !== "missing raw") console.log(`${night}  skipped: ${e.message}`);
+    }
+  }
+  writeSummary();
+  console.log(`Rebuilt ${done} nights offline, ${skipped} left as they were (raw archive incomplete).`);
+}
+
 async function main() {
+  if (args.rebuild) return rebuildOffline();
   const guildId = await findGuildId();
   const since = args.night
     ? new Date(`${args.night}T00:00:00Z`).getTime() - 86400e3
@@ -156,7 +189,11 @@ function readRaw(rel) {
 // Only finished logs are stored - one still being uploaded would go stale.
 // A night built from a too-fresh log is marked `archived: false` and fetched
 // again on a later run.
-let skippedArchive = false;
+var skippedArchive = false; // var: main() runs before this line
+var offline = false; // --rebuild: never call the API
+function needApi(what) {
+  if (offline) throw new Error(`raw ${what} missing`);
+}
 function writeRaw(rel, data, report) {
   if (Date.now() - report.endTime < 3 * 3600e3) {
     skippedArchive = true;
@@ -200,6 +237,7 @@ async function reportHeavy(report) {
   const rel = `reports/${report.code}-detail.json.gz`;
   const stored = readRaw(rel);
   if (stored) return stored;
+  needApi("detail");
   // One field per request: together they're heavy enough to make the API 500.
   const code = report.code;
   const span = { code, end: report.endTime - report.startTime };
@@ -225,6 +263,7 @@ async function reportExtras(report, fightIDs) {
   const rel = `fights/${report.code}-${hash}.json.gz`;
   const stored = readRaw(rel);
   if (stored) return stored;
+  needApi("fights");
 
   const end = report.endTime - report.startTime;
   const d = await gql(
@@ -300,8 +339,13 @@ function trackedCast(a) {
 }
 
 // Sum a Dispels/Interrupts table per player: { player: { total, what: { spell: n } } }.
+// Tranquilizing Shot removing a boss Frenzy shows up as "dispelling" Enrage/Frenzy;
+// that's a hunter job (counted as Tranq casts), not a dispel.
+const NOT_DISPELS = new Set(["Enrage", "Frenzy"]);
+
 function tallyRemovals(out, table, icon) {
   for (const spell of table?.data?.entries?.[0]?.entries || []) {
+    if (NOT_DISPELS.has(spell.name)) continue;
     icon(spell.name, spell.abilityIcon);
     for (const p of spell.details || []) for (const a of p.abilities || []) icon(a.name, a.abilityIcon || a.icon);
     for (const p of spell.details || []) {
@@ -411,6 +455,30 @@ async function buildNight(night, reports) {
     seenPull.add(d.pull);
   }
 
+  // Roles from what people actually cast. Warcraft Logs has no talent data for
+  // Classic Era, so its spec/role labels are guesses (holy paladins as Ret...).
+  const castsBy = new Map(); // name -> { heal, tank, total }
+  const extrasOf = new Map();
+  for (const r of used) {
+    const own = fights.filter((f) => f.report === r);
+    const x = await reportExtras(r, own.map((f) => f.id));
+    extrasOf.set(r, x);
+    for (const a of x.casts?.data?.entries || []) {
+      const by = a.subentries?.length ? a.subentries.map((e) => [e.actorName, e.total]) : (a.sources || []).map((e) => [e.name, e.total]);
+      for (const [name, c] of by) {
+        const t = castsBy.get(name) || { heal: 0, tank: 0, total: 0 };
+        t.total += c;
+        if (HEAL_SPELLS.has(a.name)) t.heal += c;
+        if (TANK_SPELLS.has(a.name)) t.tank += c;
+        castsBy.set(name, t);
+      }
+    }
+  }
+  for (const name of present) {
+    const c = castsBy.get(name);
+    if (c?.total) roleOf.set(name, c.heal > c.total * 0.5 ? "healer" : c.tank >= 15 ? "tank" : "dps");
+  }
+
   // Quiet work: dispels, interrupts, resurrections and tracked casts - plus the
   // per-boss mechanics, from each report's fight-tagged event stream.
   const dispels = {};
@@ -420,7 +488,7 @@ async function buildNight(night, reports) {
   const perBoss = new Map(); // encounterID -> { mech, dispels, kicks, present }
   for (const r of used) {
     const own = fights.filter((f) => f.report === r);
-    const x = await reportExtras(r, own.map((f) => f.id));
+    const x = extrasOf.get(r);
     tallyRemovals(dispels, x.dispels, icon);
     tallyRemovals(interrupts, x.interrupts, icon);
     for (const a of x.casts?.data?.entries || []) {
@@ -455,7 +523,7 @@ async function buildNight(night, reports) {
       const pb = bossSlot(perBoss, fight.encounterID);
       const src = actor.get(e.sourceID)?.name;
       const tgt = actor.get(e.targetID)?.name;
-      if (e.type === "dispel" && isPlayer(e.sourceID)) bump(pb.dispels, src, spell(e.extraAbilityGameID));
+      if (e.type === "dispel" && isPlayer(e.sourceID) && !NOT_DISPELS.has(spell(e.extraAbilityGameID))) bump(pb.dispels, src, spell(e.extraAbilityGameID));
       if (e.type === "interrupt" && isPlayer(e.sourceID)) bump(pb.kicks, src, spell(e.extraAbilityGameID));
       for (const m of MECHANICS[fight.encounterID] || []) {
         const name = m.kind === "dispel" || m.kind === "kick" ? spell(e.extraAbilityGameID) : spell(e.abilityGameID);
@@ -481,10 +549,14 @@ async function buildNight(night, reports) {
       for (const [role, group] of Object.entries(rk.roles || {})) {
         for (const c of group.characters || []) {
           if (c.rankPercent == null || pb.parses.some((x) => x.player === c.name)) continue;
+          const ranked = role === "healers" ? "healer" : role === "tanks" ? "tank" : "dps";
+          // A healer ranked on damage (or the other way round) is a meaningless parse.
+          const played = roleOf.get(c.name);
+          if (played && (played === "healer") !== (ranked === "healer")) continue;
           pb.parses.push({
             player: c.name,
-            role: role === "healers" ? "healer" : role === "tanks" ? "tank" : "dps",
-            spec: c.class && c.spec ? `${c.class}-${c.spec}` : null,
+            role: ranked,
+            spec: null,
             pct: Math.round(c.rankPercent),
             amount: Math.round(c.amount || 0),
           });
@@ -539,7 +611,8 @@ async function buildNight(night, reports) {
       owner: r.owner?.name ?? null,
       url: `${SITE_URL}/reports/${r.code}`,
     })),
-    raiders: [...present].sort().map((name) => ({ name, class: classOf.get(name) || null, spec: specOf.get(name) || null, role: roleOf.get(name) || null })),
+    // No spec: Warcraft Logs only guesses it for Classic Era (no talent data).
+    raiders: [...present].sort().map((name) => ({ name, class: classOf.get(name) || null, spec: null, role: roleOf.get(name) || null })),
     totals: {
       pulls: bosses.reduce((n, b) => n + b.pulls.length, 0),
       kills,
@@ -558,6 +631,9 @@ async function buildNight(night, reports) {
 }
 
 // ---------- helpers ----------
+
+const HEAL_SPELLS = new Set(["Flash Heal", "Heal", "Greater Heal", "Lesser Heal", "Prayer of Healing", "Renew", "Holy Light", "Flash of Light", "Healing Touch", "Regrowth", "Rejuvenation", "Holy Shock", "Swiftmend", "Power Word: Shield", "Desperate Prayer"]);
+const TANK_SPELLS = new Set(["Taunt", "Shield Block", "Revenge", "Shield Slam", "Growl", "Maul", "Swipe", "Righteous Fury", "Mocking Blow", "Challenging Roar"]);
 
 function bossSlot(map, id) {
   if (!map.has(id)) map.set(id, { mech: {}, dispels: {}, kicks: {}, present: new Set(), parses: [] });
@@ -605,7 +681,7 @@ function parseArgs(argv) {
   const out = {};
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (["--force", "--refresh", "--list", "--newest-first"].includes(a)) out[a.slice(2)] = true;
+    if (["--force", "--refresh", "--list", "--newest-first", "--rebuild"].includes(a)) out[a.slice(2)] = true;
     else if (a === "--since" || a === "--night") out[a.slice(2)] = argv[++i];
     else throw new Error(`Unknown option ${a}`);
   }

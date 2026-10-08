@@ -25,7 +25,7 @@ export const MECHANICS = {
   50664: [ // Magmadar
     tranq,
     { key: "panic", kind: "debuff", abilities: ["Panic"], tone: "info", label: "Feared by Panic", note: "running around screaming" },
-    { key: "lava", kind: "hit", abilities: ["Lava Bomb"], tone: "bad", label: "Stood in Lava Bomb", note: "move out of the fire" },
+    { key: "lava", kind: "hit", abilities: ["Lava Bomb", "Conflagration"], tone: "bad", label: "Stood in Lava Bomb fire", note: "move out of the fire" },
   ],
   50665: [ // Gehennas
     { key: "curse", kind: "dispel", abilities: ["Gehennas' Curse"], tone: "good", label: "Gehennas' Curse removed", note: "healing back to full strength" },

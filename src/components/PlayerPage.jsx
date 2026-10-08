@@ -31,8 +31,9 @@ export default function PlayerPage({ data, name, player, isMe, onChangeMe }) {
     }
   };
   const display = r?.name || player?.name || name;
-  const spec = r?.spec?.split("-")[1];
-  const who = [spec, r?.class].filter(Boolean).join(" ");
+  // Class + the role they actually play (inferred from casts; Warcraft Logs
+  // can't tell specs apart in Classic Era).
+  const who = r?.class || "";
 
   return (
     <div className="view">
@@ -60,7 +61,7 @@ export default function PlayerPage({ data, name, player, isMe, onChangeMe }) {
               <span className="rr-kicker-dot" aria-hidden="true">◆</span>
               {isMe ? "Your page" : "Raider"}
               {who && ` · ${who}`}
-              {r?.role && ` · ${r.role}`}
+              {r?.role && ` · ${r.role === "dps" ? "DPS" : r.role === "healer" ? "Healer" : "Tank"}`}
             </div>
             <h1 style={r?.class ? { color: classColor(r.class) } : undefined}>{display}</h1>
             {player && (

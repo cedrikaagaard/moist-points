@@ -4,6 +4,7 @@
 // Mostly utility and teamwork (kicks, battle rezzes, keeping debuffs up),
 // each with a threshold so a card only appears when it means something.
 import { COMBAT_REZ } from "./aggregate.js";
+import { MECHANICS } from "./mechanics.js";
 
 const top = (byPlayer) => Object.entries(byPlayer || {}).sort((a, b) => b[1] - a[1]);
 const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
@@ -117,6 +118,18 @@ export function records(n, allTime) {
 }
 
 // Deaths dealt by a raid member (mind control, a friendly Whirlwind...).
+// Some boss mechanics get credited to a random player in the logs (Ragnaros'
+// Lava Burst, Onyxia/Firesworn Eruption...), so only player-ish killing blows
+// count: melee, or an ability that isn't one of the night's boss mechanics.
+const MISCREDITED = new Set(["Lava Burst", "Eruption", "Fire", "Conflagration", "Elemental Fire"]);
 export function friendlyFire(n, classOf) {
-  return n.deaths.filter((d) => d.killer && d.killer.name !== d.player && classOf.has(d.killer.name));
+  const bossAbilities = new Set(n.bosses.flatMap((b) => (MECHANICS[b.encounterId] || []).flatMap((m) => m.abilities)));
+  return n.deaths.filter(
+    (d) =>
+      d.killer &&
+      d.killer.name !== d.player &&
+      classOf.has(d.killer.name) &&
+      !MISCREDITED.has(d.killingBlow) &&
+      !bossAbilities.has(d.killingBlow)
+  );
 }

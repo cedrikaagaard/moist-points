@@ -1,1 +1,1 @@
-{"name":"Lalababaa","class":"Warlock","spec":"Warlock-Destruction","role":"dps","nights":[{"night":"2026-08-17","zones":[2000],"role":"dps","spec":"Warlock-Destruction","deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[],"mech":{},"casts":{"Curse of the Elements":9}}]}
+{"name":"Lalababaa","class":"Warlock","spec":null,"role":"dps","nights":[{"night":"2026-08-17","zones":[2000],"role":"dps","spec":null,"deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[],"mech":{},"casts":{"Curse of the Elements":9}}]}
