@@ -1,7 +1,7 @@
 {
   "night": "2026-10-07",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-08T10:20:00Z",
+  "generatedAt": "2026-10-08T10:40:00Z",
   "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe from Life Drains left running",
   "overview": [
     "15 of 15 bosses in 2h22m, about 16 minutes slower than the guild's usual Naxx night. A good part of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
@@ -15,10 +15,10 @@
       "whatHappened": "21 of the 79 Life Drains were never removed and ran their full course, draining raiders and healing Sapphiron. People started dying at 0:40, 10 were dead by 1:45 (three healers and a tank among them), and once tanks went down the rest followed: 29 deaths in 4:05.",
       "likelyCause": "Life Drain not being decursed. On the kill pull, with the same 79 Life Drains, every single one was removed. Everything else on the wipe (Frost Aura deaths, Blizzard, the Cleave deaths when a tank died) is what happens once healers are losing that race.",
       "evidence": [
+        "Life Drain healed Sapphiron for about 297k on the wipe (roughly a tenth of his health) vs 38k on the kill",
         "Life Drain: 79 applied, 21 never removed on the wipe vs 0 never removed on the kill",
-        "7 deaths directly to Life Drain on the wipe, none on the kill",
-        "8 of 11 healers and 4 of 5 tanks died on the wipe",
-        "17 Blizzard hits and 22 frost protection potions on the wipe vs 5 and 34 on the kill"
+        "Life Drain dealt 165k to the raid on the wipe vs 59k on the kill, with 7 deaths directly to it",
+        "8 of 11 healers and 4 of 5 tanks died on the wipe"
       ],
       "avoid": "Decurse assignments by area that cover the whole raid from the first Life Drain (it lands on about 10 people every 24 seconds), with a backup decurser for each group. The kill pull shows the raid can do it: zero missed."
     }

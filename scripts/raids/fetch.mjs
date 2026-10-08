@@ -29,7 +29,8 @@ const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
 const RESERVE_POINTS = 130; // a big night costs ~55, the odd huge one 100+
-const SCHEMA = 3; // bump when the night file shape changes; older files get rebuilt
+const SCHEMA = 4; // bump when the night file shape changes; older files get rebuilt
+// (4: per-pull damage taken by ability + healing done to enemies)
 const args = parseArgs(process.argv.slice(2));
 
 main().catch((e) => {
@@ -63,6 +64,9 @@ async function rebuildOffline() {
       skippedArchive = false;
       const out = await buildNight(night, details);
       out.archived = true;
+      // Built without some newer per-pull data: keep the old schema so the next
+      // online run fetches what's missing.
+      if (out.bosses.some((b) => b.pulls.some((p) => !p.taken))) out.schema = SCHEMA - 1;
       fs.writeFileSync(path.join(NIGHTS_DIR, `${night}.json`), JSON.stringify(out) + "\n");
       done++;
     } catch (e) {
@@ -303,6 +307,30 @@ async function rankings(code, kills) {
   }
 }
 
+// Per boss pull: damage the raid took by ability, and healing done to enemies
+// (Life Drain healing Sapphiron, Heal Brother, Great Heal...). ~1 API point per
+// table. Stored as data/wcl/fights/<code>-pull-<fight>.json.gz.
+async function pullTables(report, fightID) {
+  const rel = `fights/${report.code}-pull-${fightID}.json.gz`;
+  const stored = readRaw(rel);
+  if (stored) return stored;
+  needApi("pull tables");
+  const d = await gql(
+    `query($code: String!, $end: Float!, $ids: [Int]!) { reportData { report(code: $code) {
+      taken: table(dataType: DamageTaken, viewBy: Ability, startTime: 0, endTime: $end, fightIDs: $ids)
+      enemyHealing: table(dataType: Healing, hostilityType: Enemies, startTime: 0, endTime: $end, fightIDs: $ids)
+    } } }`,
+    { code: report.code, end: report.endTime - report.startTime, ids: [fightID] }
+  );
+  const x = d.reportData.report;
+  writeRaw(rel, x, report);
+  return x;
+}
+
+// Boss casts worth checking interrupt coverage on, and boss buffs a raid must remove.
+const BOSS_CASTS = ["Frostbolt", "Great Heal", "Dark Mending", "Arcane Explosion", "Shadow Bolt Volley", "Heal", "Holy Fire", "Mend", "Flash Heal"];
+const BOSS_BUFFS = ["Frenzy", "Enrage"];
+
 const quote = (list) => list.map((n) => `"${n.replace(/"/g, '\\"')}"`).join(", ");
 function eventFilter() {
   const m = mechanicAbilities();
@@ -312,6 +340,8 @@ function eventFilter() {
     `(type in ("applydebuff", "applydebuffstack") and target.type = "player")`,
     `(type = "cast" and ability.name in (${quote(casts)}))`,
     `(type = "damage" and target.type = "player" and ability.name in (${quote(m.hit)}))`,
+    `(type in ("applybuff", "refreshbuff") and target.type = "npc" and ability.name in (${quote(BOSS_BUFFS)}))`,
+    `(type = "begincast" and source.type = "npc" and ability.name in (${quote(BOSS_CASTS)}))`,
   ].join(" or ");
 }
 
@@ -579,6 +609,7 @@ async function buildNight(night, reports) {
       bossPctLeft: f.kill ? 0 : f.fightPercentage != null ? Math.round(f.fightPercentage) : null,
       deaths: deaths.filter((d) => d.pull === pull).length,
       src: { code: f.report.code, fight: f.id }, // where to find this pull in data/wcl (replays)
+      ...(await pullSummary(f)),
     });
     if (f.kill) b.killed = true;
   }
@@ -634,6 +665,28 @@ async function buildNight(night, reports) {
 
 const HEAL_SPELLS = new Set(["Flash Heal", "Heal", "Greater Heal", "Lesser Heal", "Prayer of Healing", "Renew", "Holy Light", "Flash of Light", "Healing Touch", "Regrowth", "Rejuvenation", "Holy Shock", "Swiftmend", "Power Word: Shield", "Desperate Prayer"]);
 const TANK_SPELLS = new Set(["Taunt", "Shield Block", "Revenge", "Shield Slam", "Growl", "Maul", "Swipe", "Righteous Fury", "Mocking Blow", "Challenging Roar"]);
+
+// Top damage taken by ability, and what healed the enemy side, for one pull.
+async function pullSummary(f) {
+  let t;
+  try {
+    t = await pullTables(f.report, f.id);
+  } catch (e) {
+    if (offline) return {};
+    throw e;
+  }
+  const top = (entries, n) =>
+    (entries || [])
+      .filter((a) => a.total > 0)
+      .sort((a, b) => b.total - a.total)
+      .slice(0, n)
+      .map((a) => ({ name: a.name, total: a.total }));
+  const healed = (t.enemyHealing?.data?.entries || []).flatMap((e) => (e.abilities || []).map((a) => ({ who: e.name, name: a.name, total: a.total })));
+  return {
+    taken: top(t.taken?.data?.entries, 8),
+    enemyHealed: healed.filter((h) => h.total > 0).sort((a, b) => b.total - a.total).slice(0, 5),
+  };
+}
 
 function bossSlot(map, id) {
   if (!map.has(id)) map.set(id, { mech: {}, dispels: {}, kicks: {}, present: new Set(), parses: [] });

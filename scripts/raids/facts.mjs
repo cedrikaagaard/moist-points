@@ -66,6 +66,54 @@ const cls = new Map(n.raiders.map((r) => [r.name, r.spec || r.class]));
 const avg = (l) => (l.length ? Math.round(l.reduce((t, v) => t + v, 0) / l.length) : null);
 const median = (l) => (l.length ? [...l].sort((a, b) => a - b)[Math.floor(l.length / 2)] : null);
 
+// What hit each dead player in their last seconds (the WCL death recap).
+function deathRecaps(src) {
+  if (!src) return [];
+  const detail = readRaw(`reports/${src.code}-detail.json.gz`) || readRaw(`reports/${src.code}.json.gz`);
+  return (detail?.deaths?.data?.entries || []).filter((d) => d.fight === src.fight);
+}
+function recapFor(recaps, player, used) {
+  const i = recaps.findIndex((d, j) => !used.has(j) && d.name === player);
+  if (i < 0) return undefined;
+  used.add(i);
+  const d = recaps[i];
+  return {
+    lastSecondsDamage: (d.damage?.abilities || []).slice(0, 3).map((a) => `${a.name} ${a.total}`),
+    healingReceived: d.healing?.total ?? 0,
+    windowMs: d.deathWindow,
+  };
+}
+
+// Boss Frenzy/Enrage gained vs removed (Tranquilizing Shot), and boss casts
+// started vs interrupted - only for nights fetched after these were added.
+function bossBuffsAndCasts(src) {
+  const base = src && readRaw(`reports/${src.code}.json.gz`);
+  const dir = path.join(RAW, "fights");
+  if (!base || !fs.existsSync(dir)) return undefined;
+  const file = fs.readdirSync(dir).find((f) => f.startsWith(`${src.code}-`) && !f.includes("-pull-") && readRaw(`fights/${f}`)?.fightIDs?.includes(src.fight));
+  const x = file && readRaw(`fights/${file}`);
+  if (!x) return undefined;
+  const ability = new Map((base.masterData.abilities || []).map((a) => [a.gameID, a.name]));
+  const ev = (x.events || []).filter((e) => e.fight === src.fight);
+  const out = {};
+  const frenzies = ev.filter((e) => (e.type === "applybuff" || e.type === "refreshbuff") && ["Frenzy", "Enrage"].includes(ability.get(e.abilityGameID)));
+  if (frenzies.length) {
+    const removed = ev.filter((e) => e.type === "dispel" && ["Frenzy", "Enrage"].includes(ability.get(e.extraAbilityGameID))).length;
+    out.bossFrenzy = { gained: frenzies.length, removedByTranq: removed };
+  }
+  const casts = {};
+  for (const e of ev.filter((e) => e.type === "begincast")) {
+    const n = ability.get(e.abilityGameID);
+    (casts[n] ||= { started: 0, interrupted: 0 }).started++;
+  }
+  for (const e of ev.filter((e) => e.type === "interrupt")) {
+    const n = ability.get(e.extraAbilityGameID);
+    if (casts[n]) casts[n].interrupted++;
+  }
+  if (Object.keys(casts).length) out.bossCasts = casts;
+  return Object.keys(out).length ? out : undefined;
+}
+
 // Raw per-pull detail: mechanic hits per player for one fight.
 function pullMechanics(src, encounterId) {
   const list = MECHANICS[encounterId] || [];
@@ -174,9 +222,11 @@ const facts = {
         })
       ),
       pulls: b.pulls.map((p, i) => {
+        const recaps = deathRecaps(p.src);
+        const used = new Set();
         const deaths = n.deaths
           .filter((d) => d.boss === b.name && d.at >= p.at - 1 && d.at <= p.at + p.durationSec + 2)
-          .map((d) => ({ t: d.at - p.at, player: d.player, spec: cls.get(d.player), role: role.get(d.player), by: d.killingBlow, killer: d.killer?.name, overkill: d.overkill }));
+          .map((d) => ({ t: d.at - p.at, player: d.player, role: role.get(d.player), by: d.killingBlow, killer: d.killer?.name, overkill: d.overkill, recap: recapFor(recaps, d.player, used) }));
         const byAbility = {};
         for (const d of deaths) byAbility[d.by || "Unknown"] = (byAbility[d.by || "Unknown"] || 0) + 1;
         return {
@@ -189,6 +239,9 @@ const facts = {
           tanksDead: deaths.filter((d) => d.role === "tank").map((d) => `${d.player} at ${d.t}s`),
           healersDead: deaths.filter((d) => d.role === "healer").length,
           mechanics: pullMechanics(p.src, b.encounterId),
+          damageTakenByAbility: p.taken,
+          healingDoneToEnemies: p.enemyHealed,
+          ...bossBuffsAndCasts(p.src),
         };
       }),
     };

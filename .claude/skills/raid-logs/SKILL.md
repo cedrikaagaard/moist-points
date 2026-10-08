@@ -80,6 +80,19 @@ only when asked, or for new nights after a fetch if the user wants it.
 - Insight, not filler. Every sentence carries a fact from the facts pack (a
   number, a name, a time) or a cause explained by the reference. Cut anything
   that would be true of any raid ("communication is key").
+- Start every wipe from the numbers, not the death list: per pull the facts
+  give `damageTakenByAbility` (what actually hurt the raid) and
+  `healingDoneToEnemies` (Life Drain, Heal Brother, Great Heal...). Compare
+  them with the kill pull or the guild's usual. On 7 Oct Sapphiron, Life Drain
+  healed the boss for ~297k on the wipe vs 38k on the kill: that alone names
+  the cause. Each death also has a `recap` (damage by ability in the death
+  window, healing received).
+- `bossFrenzy` (Frenzy/Enrage gained vs removed by Tranquilizing Shot) and
+  `bossCasts` (key boss casts started vs interrupted) exist for nights fetched
+  after 8 Oct 2026; older nights don't have them, so say so instead of guessing.
+- There is no mana data. Never claim "healers ran out of mana" as fact; at most
+  "most likely" with the evidence (long fight, late healer deaths with low
+  healing received).
 - Bosses with a debuff the raid must remove (Life Drain, Lucifron's/Gehennas'
   curses, Curse of the Plaguebringer, Necrotic Poison, Veil of Shadow...):
   check the "(coverage)" entries per pull first (applied / removed / never
