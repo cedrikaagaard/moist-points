@@ -10,6 +10,7 @@ export const CHANGELOG = [
     date: "2026-10-09",
     changes: [
       "Tonight's BWL is up, with Claude's analysis: a full clear in 34:56, the guild's second fastest.",
+      "The MVP card has a word for the MVP.",
     ],
   },
   {

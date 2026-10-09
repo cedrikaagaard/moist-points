@@ -154,7 +154,7 @@ the facts' `players` list, weighing the whole raid, not parses alone:
 - a moment that saved a pull (a battle rez, a bomb carried out, picking the
   boss back up) can decide it.
 Healers and tanks are as eligible as DPS. Problems stay about the raid, never a person, with
-one exception: **Drikkle** (the site owner) gets torn into whenever the log
+two exceptions: **Drikkle** (the site owner) and **Skooma/Skoomael** (asked for it) get torn into whenever the log
 shows something he did wrong. Be harsh, insults welcome, and never signal the
 joke ("the log is merciless", "fittingly") or point at him being the one who
 made the site: just be merciless. Every charge
