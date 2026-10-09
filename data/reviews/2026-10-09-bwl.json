@@ -819,7 +819,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "generatedAt": "2026-10-09T23:09:40.425Z",
     "grade": "B-",
     "verdict": "Five personal bests and Curse of Recklessness all raid, on the thinnest consumables here",
     "summary": "A 69 average against your usual 49, with personal bests on Razorgore (76), Vaelastrasz (77), Firemaw (86), Ebonroc (76) and Nefarian (85). You kept Curse of Recklessness up (77 casts), drank the only Fire Protection Potion on Firemaw and used 4 healthstones. Consumables were the thinnest of the DPS: 1.8 buffs a pull. Chromaggus (36) is partly the boss: his weakness rotates through schools.",
@@ -1915,7 +1915,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "generatedAt": "2026-10-09T23:09:40.425Z",
     "grade": "B-",
     "verdict": "Four personal bests and Faerie Fire all raid, but low on the meter",
     "summary": "Your eighth raid with us: a 72 average against your usual 64 and personal bests on Firemaw (91), Nefarian (82), Razorgore (61) and Vaelastrasz (58), with 49 Faerie Fires and no deaths. In raw damage you were in the bottom six on most bosses, and the consumables are thin.",
@@ -2463,7 +2463,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.419Z",
+    "generatedAt": "2026-10-09T23:09:40.424Z",
     "grade": "C",
     "verdict": "Second in raid damage on Vaelastrasz, then he turned on you, and the rest of the raid was bare",
     "summary": "You started strong: Razorgore 84 (third in damage) and Vaelastrasz 91 (second, equal to your best). At 0:26 on Vaelastrasz he turned from Birkler to you, killed you in three swings and went straight back: you'd passed the tank on threat. After that death the log shows none of your world buffs, elixirs or Zanza for the rest of the raid, and you were the last or second-to-last warrior on Firemaw, Ebonroc, Chromaggus and Nefarian.",
@@ -3012,7 +3012,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "generatedAt": "2026-10-09T23:09:40.425Z",
     "grade": "B+",
     "verdict": "A Firemaw personal best and top rogue on seven bosses, after a slow first three",
     "summary": "Firemaw 98 (a personal best), Chromaggus 97 (equal to your best), Flamegor 96 (fourth in raid damage) and Nefarian 95, the best rogue on seven of eight bosses, with 18 Expose Armors and 8 kicks. Razorgore (46), Vaelastrasz (49) and Broodlord (37) were all well under your usual.",
@@ -8131,7 +8131,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "generatedAt": "2026-10-09T23:09:40.425Z",
     "grade": "C+",
     "verdict": "Frenzy duty done again, on the same bare consumables as Wednesday",
     "summary": "You put 2 Tranquilizing Shots each on Flamegor and Chromaggus and didn't die, and Vaelastrasz 85 and Firemaw 94 are personal bests. Otherwise it was a weak night: Ebonroc 39 and Flamegor 26 against a usual of about 80, last or close to it in raid damage on five bosses. You came with Mageblood and Mongoose and nothing else, 2 buffs a pull against 4, and no world buffs at all.",
@@ -9479,10 +9479,10 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "generatedAt": "2026-10-09T23:09:40.425Z",
     "grade": "B",
-    "verdict": "A good first BWL: fourth on Firemaw, fifth on Chromaggus",
-    "summary": "Your first raid in our logs, with no deaths and a 70 average: Firemaw 95 (fourth in raid damage), Chromaggus 93 (fifth) and Ebonroc 89. Razorgore (27) and Broodlord (44, last of the warriors) are where the rest of the damage is.",
+    "verdict": "A good BWL in your second raid with us: fourth on Firemaw, fifth on Chromaggus",
+    "summary": "Your second raid in our logs (after ZG on Tuesday), with no deaths and a 70 average: Firemaw 95 (fourth in raid damage), Chromaggus 93 (fifth) and Ebonroc 89. Razorgore (27) and Broodlord (44, last of the warriors) are where the rest of the damage is.",
     "good": [
      {
       "title": "Firemaw 95",
@@ -10605,7 +10605,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "generatedAt": "2026-10-09T23:09:40.425Z",
     "grade": "B",
     "verdict": "Thirty points over your usual on the best consumables in the raid, and standing in Chromaggus's breath",
     "summary": "A 71 average against your usual 41, with personal bests on Firemaw (94), Ebonroc (88) and Flamegor (70), and 8 consumable buffs a pull, more than anyone in the raid. Two things to fix: Razorgore (13, last of the DPS) and five breath hits on Chromaggus, which as DPS you shouldn't take.",
