@@ -478,6 +478,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "C-",
+    "verdict": "177 Sunders and every consumable, but 10% active on Heigan",
+    "summary": "Titans, Juju Power, Mongoose, Zanza, Firewater and food on every pull, and 177 Sunder Armors, the most of any DPS. The parses averaged 39 against your usual 62: Kel'Thuzad 60 and Gluth 46 were the best, and Heigan was 10, with nothing from 0:29 for 48 seconds. His melee killed you on Kel'Thuzad at 2:46.",
+    "good": [
+     {
+      "title": "Sunders",
+      "text": "177, the most of any DPS."
+     },
+     {
+      "title": "Prepared",
+      "text": "Six consumable buffs on every pull."
+     },
+     {
+      "title": "Kel'Thuzad and Gluth",
+      "text": "60 and 46, both well over your usual there."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Heigan",
+      "impact": "high",
+      "boss": 51112,
+      "text": "10, 10% active, 48 seconds idle from 0:29. A few raiders had a similar gap from about 0:40, so some of it may be where you were standing; the log can't show that."
+     },
+     {
+      "title": "Noth",
+      "impact": "medium",
+      "boss": 51117,
+      "text": "35, last warrior."
+     },
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Killed by his melee at 2:46."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "bad",
+      "text": "10, 48 seconds idle."
+     },
+     "51114": {
+      "tone": "good",
+      "text": "60, fifth in damage."
+     }
+    }
    }
   },
   "Apoutchou": {
@@ -485,7 +536,7 @@
     "class": "Priest",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -892,6 +943,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.367Z",
+    "grade": "A-",
+    "verdict": "Top healer on Faerlina, Grobbulus, Heigan and Kel'Thuzad",
+    "summary": "The most healing in the raid on four bosses: Faerlina, Grobbulus (17%), Heigan (16%) and Kel'Thuzad, and second on Anub'Rekhan, Thaddius and Gothik. 5 Fear Wards and 15 Mana Potions over the night, Mageblood, Gordok and food on every pull. Sapphiron was the quiet one: fourth in healing, but 39% active.",
+    "good": [
+     {
+      "title": "Top healer four times",
+      "text": "Faerlina 13%, Grobbulus 17%, Heigan 16%, Kel'Thuzad 12%."
+     },
+     {
+      "title": "Second healer three times",
+      "text": "Anub'Rekhan, Thaddius and Gothik."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mageblood, Gordok, Kreeg's and food every pull, Distilled Wisdom on ten, 15 Mana Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "39% active against a median of 82."
+     },
+     {
+      "title": "Noth",
+      "impact": "low",
+      "boss": 51117,
+      "text": "Ninth healer, 67% overheal."
+     }
+    ],
+    "bosses": {
+     "51111": {
+      "tone": "good",
+      "text": "Top healer, 17%."
+     },
+     "51112": {
+      "tone": "good",
+      "text": "Top healer, 16%."
+     },
+     "51114": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Avekinho": {
@@ -1314,6 +1414,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.330Z",
+    "grade": "C+",
+    "verdict": "Third raid in the logs, third in damage on Loatheb, four personal bests",
+    "summary": "Your third raid in the guild's logs, with personal bests on Loatheb (59, third in raid damage), Anub'Rekhan (58), Kel'Thuzad (54) and the Horsemen (50). Gluth (33) and Patchwerk (40) were well under your first time. On Kel'Thuzad you were the last death of the kill, a Frost Blast at 2:53 with no healing on you. Consumables were Mongoose, Zanza and Juju Power with no flask.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Loatheb 59 (before: 51), Anub'Rekhan 58 (46), Kel'Thuzad 54 (53), Horsemen 50 (27)."
+     },
+     {
+      "title": "Loatheb",
+      "text": "Third in raid damage, second warrior.",
+      "boss": 51115
+     },
+     {
+      "title": "Sunders",
+      "text": "97 Sunder Armors."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Frost Blast (6,319) killed you at 2:53 with no healing on you."
+     },
+     {
+      "title": "Gluth and Patchwerk",
+      "impact": "medium",
+      "text": "33 and 40, against 77 and 58 on your first kills."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "No flask. 4.3 buffs a pull against 5.2."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Frost Blast death at 2:53."
+     },
+     "51115": {
+      "tone": "good",
+      "text": "59, personal best, third in damage."
+     }
+    }
    }
   },
   "Birdiebird": {
@@ -1721,6 +1871,54 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.252Z",
+    "grade": "A-",
+    "verdict": "The highest average parse in the raid, top hunter on fourteen bosses, on one elixir",
+    "summary": "An 83 average against your usual 64, the best of anyone in the raid, and the top hunter on every boss but the Horsemen. Eight personal bests, Gluth 95 the biggest, and 3 Tranquilizing Shots on Gluth. No deaths. The only thing missing is the consumables: Mongoose on every pull, agility food on six, nothing else.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Gluth 95 (before: 88), Noth 88 (85), Maexxna 87 (82), Kel'Thuzad 87 (84), Grobbulus 84 (80), Razuvious 82 (75), Sapphiron 78 (77), Thaddius 72 (59)."
+     },
+     {
+      "title": "Top hunter",
+      "text": "On fourteen of fifteen bosses."
+     },
+     {
+      "title": "Gluth",
+      "text": "3 Tranquilizing Shots, and 95.",
+      "boss": 51108
+     },
+     {
+      "title": "Protection potions",
+      "text": "2 Frost Protection on Sapphiron, 1 on Kel'Thuzad, Shadow Protection on the Horsemen and Loatheb."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "1.4 buffs a pull against 5.2 for the other DPS. A flask and Juju on top of what you're already doing would put you in the 90s."
+     },
+     {
+      "title": "Thaddius and Razuvious",
+      "impact": "low",
+      "text": "63% and 66% active against medians of 72 and 90. Both still personal bests, so there was more there."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "95, personal best, 3 Tranquilizing Shots."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "72, personal best."
+     }
+    }
    }
   },
   "Birkler": {
@@ -1728,7 +1926,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 48,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": 47,
     "bosses": [
      {
@@ -1834,7 +2032,7 @@
       "name": "Instructor Razuvious",
       "parse": 14,
       "own": 28,
-      "best": 47,
+      "best": 63,
       "perSec": 242,
       "rank": "26/26 dps",
       "healShare": null,
@@ -1847,7 +2045,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 30,
-      "own": 43,
+      "own": 37,
       "best": 95,
       "perSec": 111,
       "rank": "5/6 tanks",
@@ -2137,6 +2335,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "B-",
+    "verdict": "Tanked fourteen bosses, 153 Sunders, no boss deaths",
+    "summary": "You tanked every boss but Razuvious, with the top tank parse on Maexxna, Patchwerk, Grobbulus, Gluth, Noth, Heigan, Loatheb and Sapphiron, kept Demoralizing Shout up (52) and put out 153 Sunders. Six Greater Stoneshield Potions. Your tank parses averaged 48 against your usual 69, and Razuvious as DPS was last in the raid. Two deaths to Infectious Skitterers on spider trash.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "Fourteen bosses, no boss deaths."
+     },
+     {
+      "title": "Debuffs",
+      "text": "153 Sunder Armors and 52 Demoralizing Shouts."
+     },
+     {
+      "title": "Prepared",
+      "text": "Flask of the Titans, Mongoose and Giants every pull, 6 Greater Stoneshield Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razuvious",
+      "impact": "low",
+      "boss": 51113,
+      "text": "14, last in raid damage, 66% active against 90."
+     },
+     {
+      "title": "Loatheb and Sapphiron",
+      "impact": "low",
+      "text": "24 and 19 tank parses, against your usual 52 and 30."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "good",
+      "text": "70 tanking."
+     },
+     "51113": {
+      "tone": "bad",
+      "text": "14, last in damage."
+     }
+    }
    }
   },
   "Blues": {
@@ -2144,7 +2386,7 @@
     "class": "Mage",
     "role": "dps",
     "avgParse": 46,
-    "ownAvgParseBefore": 67,
+    "ownAvgParseBefore": 66,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -2531,6 +2773,60 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "C-",
+    "verdict": "Twice in a Void Zone 20 seconds into the Horsemen, and dead",
+    "summary": "On the Horsemen a Void Zone hit you twice, the most in the raid, and killed you at 0:20: a 1 parse. On Gothik the Unrelenting Death Knight's Shadow Mark killed you at 3:53. In between, you did a lot of the decursing (13 Life Drains on Sapphiron, 67 dispels in all) and owned the Ignite on Faerlina, Patchwerk and Heigan, which is why the meter shows you first there. By parse, Thaddius 72 and Kel'Thuzad 75 were your best.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "67 over the night, 13 Life Drains on Sapphiron, 4 Plaguebringer curses on Noth."
+     },
+     {
+      "title": "Thaddius and Kel'Thuzad",
+      "text": "72 and 75."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mageblood and Greater Firepower every pull, Supreme Power on eleven."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Horsemen Void Zone",
+      "impact": "high",
+      "boss": 51121,
+      "text": "Two hits, 7,477 for the kill at 0:20. Move out the moment one lands under you."
+     },
+     {
+      "title": "Gothik",
+      "impact": "medium",
+      "boss": 51109,
+      "text": "Killed at 3:53 by a Death Knight's Shadow Mark and melee."
+     },
+     {
+      "title": "Sapphiron and Loatheb",
+      "impact": "low",
+      "text": "11 and 28."
+     }
+    ],
+    "bosses": {
+     "51110": {
+      "tone": "info",
+      "text": "You owned 102k of Ignite: collective fire-mage damage."
+     },
+     "51118": {
+      "tone": "info",
+      "text": "You owned 257k of Ignite."
+     },
+     "51121": {
+      "tone": "bad",
+      "text": "Killed by a Void Zone at 0:20."
+     }
+    }
    }
   },
   "Bruceli": {
@@ -2538,14 +2834,14 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 47,
-    "ownAvgParseBefore": 63,
+    "ownAvgParseBefore": 64,
     "raidMedianParse": 47,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 77,
-      "own": 52,
+      "own": 53,
       "best": 77,
       "perSec": 2169,
       "rank": "2/25 dps",
@@ -2559,7 +2855,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 66,
-      "own": 54,
+      "own": 53,
       "best": 89,
       "perSec": 1513,
       "rank": "4/23 dps",
@@ -2574,7 +2870,7 @@
       "name": "Maexxna",
       "parse": 63,
       "own": 55,
-      "best": 71,
+      "best": 80,
       "perSec": 1213,
       "rank": "3/26 dps",
       "healShare": null,
@@ -2615,7 +2911,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 11,
-      "own": 62,
+      "own": 54,
       "best": 97,
       "perSec": 173,
       "rank": "26/27 dps",
@@ -2629,7 +2925,7 @@
       "id": 51120,
       "name": "Thaddius",
       "parse": 23,
-      "own": 30,
+      "own": 29,
       "best": 79,
       "perSec": 1250,
       "rank": "17/25 dps",
@@ -2643,8 +2939,8 @@
       "id": 51113,
       "name": "Instructor Razuvious",
       "parse": 80,
-      "own": 70,
-      "best": 86,
+      "own": 69,
+      "best": 90,
       "perSec": 1001,
       "rank": "7/26 dps",
       "healShare": null,
@@ -2658,7 +2954,7 @@
       "name": "Gothik the Harvester",
       "parse": 31,
       "own": 24,
-      "best": 47,
+      "best": 57,
       "perSec": 171,
       "rank": "11/22 dps",
       "healShare": null,
@@ -2685,7 +2981,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 38,
-      "own": 39,
+      "own": 37,
       "best": 86,
       "perSec": 1042,
       "rank": "9/25 dps",
@@ -2949,6 +3245,65 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "D+",
+    "verdict": "Top warrior on Anub'Rekhan, Maexxna and Patchwerk, then four boss deaths",
+    "summary": "The start was excellent: Anub'Rekhan 77 (equal to your best) and Patchwerk 76, the top DPS parse on both and second in raid damage, and Maexxna top warrior. Then you died on Gluth at 0:11, on Razuvious at 1:20, on Sapphiron at 0:42 and on Kel'Thuzad at 2:36, plus once on trash, against your usual 1.8 deaths a raid. No world buffs from Thaddius on.",
+    "good": [
+     {
+      "title": "Anub'Rekhan and Patchwerk",
+      "text": "77 (equal to your best) and 76, the top DPS parses of both fights."
+     },
+     {
+      "title": "Maexxna",
+      "text": "63, top warrior.",
+      "boss": 51116
+     },
+     {
+      "title": "Explosives",
+      "text": "22 Dense Dynamite and 8 Sappers. Titans, Mongoose, Giants and Greater Armor every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Gluth",
+      "impact": "high",
+      "boss": 51108,
+      "text": "Dead 11 seconds in: the log shows a fall and Toxic Tunnel gas, then Gluth hit you for 7,711. That cost you your world buffs for the rest of the night."
+     },
+     {
+      "title": "Sapphiron",
+      "impact": "high",
+      "boss": 51119,
+      "text": "Blizzard hit you twice, tied for the most, and killed you at 0:42."
+     },
+     {
+      "title": "Razuvious and Kel'Thuzad",
+      "impact": "medium",
+      "text": "Killed by the boss's own melee on both, Razuvious for 7,019 at 1:20 with no healing on you."
+     }
+    ],
+    "bosses": {
+     "51107": {
+      "tone": "good",
+      "text": "77, top DPS parse."
+     },
+     "51108": {
+      "tone": "bad",
+      "text": "Dead at 0:11."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "76, top DPS parse."
+     },
+     "51119": {
+      "tone": "bad",
+      "text": "Killed by the Blizzard at 0:42."
+     }
+    }
    }
   },
   "Caesartje": {
@@ -2956,7 +3311,7 @@
     "class": "Mage",
     "role": "dps",
     "avgParse": 55,
-    "ownAvgParseBefore": 50,
+    "ownAvgParseBefore": 49,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -3005,7 +3360,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 67,
-      "own": 62,
+      "own": 43,
       "best": 96,
       "perSec": 751,
       "rank": "23/25 dps",
@@ -3019,7 +3374,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 55,
-      "own": 50,
+      "own": 47,
       "best": 96,
       "perSec": 2363,
       "rank": "1/26 dps",
@@ -3033,7 +3388,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 43,
-      "own": 53,
+      "own": 48,
       "best": 86,
       "perSec": 618,
       "rank": "23/27 dps",
@@ -3047,7 +3402,7 @@
       "id": 51120,
       "name": "Thaddius",
       "parse": 71,
-      "own": 23,
+      "own": 18,
       "best": 93,
       "perSec": 980,
       "rank": "23/25 dps",
@@ -3061,7 +3416,7 @@
       "id": 51113,
       "name": "Instructor Razuvious",
       "parse": 84,
-      "own": 68,
+      "own": 59,
       "best": 94,
       "perSec": 877,
       "rank": "13/26 dps",
@@ -3103,7 +3458,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 41,
-      "own": 33,
+      "own": 30,
       "best": 76,
       "perSec": 974,
       "rank": "15/25 dps",
@@ -3117,7 +3472,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 40,
-      "own": 41,
+      "own": 35,
       "best": 96,
       "perSec": 534,
       "rank": "21/27 dps",
@@ -3132,7 +3487,7 @@
       "name": "Loatheb",
       "parse": 36,
       "own": 44,
-      "best": 91,
+      "best": 95,
       "perSec": 2298,
       "rank": "1/27 dps",
       "healShare": null,
@@ -3328,6 +3683,63 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "C+",
+    "verdict": "Top mage on Razuvious, then Noth hit you once and the world buffs were gone",
+    "summary": "Your damage meter numbers are hard to read tonight because you owned the fire mages' Ignite on Grobbulus (143k) and Loatheb (280k), which put you top of the meter on both. By parse, Razuvious 84 (top mage) and Gothik 69 were your best. On Noth you owned the Ignite too, and Ignite threat goes to its owner: Noth turned and killed you with one 9,281 hit at 0:59, and you had no world buffs from Heigan on. A Necro Stalker killed you on trash as well.",
+    "good": [
+     {
+      "title": "Razuvious",
+      "text": "84, top mage.",
+      "boss": 51113
+     },
+     {
+      "title": "Sapphiron decursing",
+      "text": "11 Life Drains removed.",
+      "boss": 51119
+     },
+     {
+      "title": "Consumables",
+      "text": "Mageblood, Greater Firepower and Greater Arcane on thirteen pulls, Supreme Power on eleven."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Noth",
+      "impact": "high",
+      "boss": 51117,
+      "text": "Killed by a single Noth melee at 0:59, the only death of the kill. You owned 27k of Ignite on him, and all its threat is yours. Watch threat when the Ignite is yours."
+     },
+     {
+      "title": "Sapphiron",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "19, 31 seconds without casting from 0:45."
+     },
+     {
+      "title": "Heigan",
+      "impact": "low",
+      "boss": 51112,
+      "text": "40, 70% active against a median of 94."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "84, top mage."
+     },
+     "51115": {
+      "tone": "info",
+      "text": "You owned 280k of Ignite: collective fire-mage damage."
+     },
+     "51117": {
+      "tone": "bad",
+      "text": "Killed by Noth's melee: Ignite threat."
+     }
+    }
    }
   },
   "Corvere": {
@@ -3335,14 +3747,14 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 59,
-    "ownAvgParseBefore": 66,
+    "ownAvgParseBefore": 64,
     "raidMedianParse": 54,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 57,
-      "own": 75,
+      "own": 72,
       "best": 97,
       "perSec": 1189,
       "rank": "17/25 dps",
@@ -3356,7 +3768,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 65,
-      "own": 76,
+      "own": 71,
       "best": 94,
       "perSec": 1193,
       "rank": "13/23 dps",
@@ -3370,7 +3782,7 @@
       "id": 51116,
       "name": "Maexxna",
       "parse": 62,
-      "own": 76,
+      "own": 74,
       "best": 95,
       "perSec": 963,
       "rank": "11/26 dps",
@@ -3384,7 +3796,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 52,
-      "own": 60,
+      "own": 49,
       "best": 97,
       "perSec": 1123,
       "rank": "17/25 dps",
@@ -3398,7 +3810,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 47,
-      "own": 52,
+      "own": 49,
       "best": 95,
       "perSec": 990,
       "rank": "13/26 dps",
@@ -3412,7 +3824,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 53,
-      "own": 56,
+      "own": 46,
       "best": 92,
       "perSec": 873,
       "rank": "14/27 dps",
@@ -3426,7 +3838,7 @@
       "id": 51120,
       "name": "Thaddius",
       "parse": 36,
-      "own": 39,
+      "own": 37,
       "best": 94,
       "perSec": 1268,
       "rank": "16/25 dps",
@@ -3440,7 +3852,7 @@
       "id": 51113,
       "name": "Instructor Razuvious",
       "parse": 82,
-      "own": 73,
+      "own": 72,
       "best": 93,
       "perSec": 890,
       "rank": "11/26 dps",
@@ -3454,7 +3866,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 66,
-      "own": 78,
+      "own": 75,
       "best": 96,
       "perSec": 251,
       "rank": "5/22 dps",
@@ -3468,7 +3880,7 @@
       "id": 51121,
       "name": "The Four Horsemen",
       "parse": 53,
-      "own": 69,
+      "own": 61,
       "best": 95,
       "perSec": 271,
       "rank": "12/21 dps",
@@ -3482,7 +3894,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 52,
-      "own": 52,
+      "own": 49,
       "best": 92,
       "perSec": 1038,
       "rank": "10/25 dps",
@@ -3496,7 +3908,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 59,
-      "own": 59,
+      "own": 57,
       "best": 98,
       "perSec": 1046,
       "rank": "9/27 dps",
@@ -3510,7 +3922,7 @@
       "id": 51115,
       "name": "Loatheb",
       "parse": 64,
-      "own": 65,
+      "own": 60,
       "best": 98,
       "perSec": 1127,
       "rank": "14/27 dps",
@@ -3749,6 +4161,58 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "B-",
+    "verdict": "Seven of Kel'Thuzad's Frostbolts interrupted, the best rogue parse there",
+    "summary": "On Kel'Thuzad you interrupted 7 Frostbolts, the most in the raid, and still parsed 79, the highest DPS parse of the fight. 18 interrupts over the night, 7 Sappers, 9 Dense Dynamite, and every consumable on nearly every pull. The rest averaged under your usual: Thaddius 36 with 35 seconds idle, and three Eruption hits on Heigan, tied for the most.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "7 Frostbolts interrupted, the most in the raid, and the top DPS parse (79).",
+      "boss": 51114
+     },
+     {
+      "title": "Interrupts",
+      "text": "18 over the night, Shadow Bolt Volleys on Gothik too."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Giants, Zanza and Gordok every pull, Titans on ten, 7 Sappers, 9 Dense Dynamite."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Thaddius",
+      "impact": "medium",
+      "boss": 51120,
+      "text": "36, last rogue, 35 seconds idle from 1:02 and 5 Chain Lightning hits."
+     },
+     {
+      "title": "Heigan",
+      "impact": "medium",
+      "boss": 51112,
+      "text": "Eruption hit you 3 times, tied for the most in the raid."
+     },
+     {
+      "title": "Anub'Rekhan",
+      "impact": "low",
+      "boss": 51107,
+      "text": "57, last rogue."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "bad",
+      "text": "3 Eruption hits."
+     },
+     "51114": {
+      "tone": "good",
+      "text": "7 Frostbolts kicked, 79."
+     }
+    }
    }
   },
   "Donatelios": {
@@ -3756,7 +4220,7 @@
     "class": "Warlock",
     "role": "dps",
     "avgParse": 71,
-    "ownAvgParseBefore": 80,
+    "ownAvgParseBefore": 73,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -4169,6 +4633,58 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "C+",
+    "verdict": "94 on Kel'Thuzad, last in damage on Noth",
+    "summary": "Mostly your first time on these bosses in the logs, and a 71 average. Kel'Thuzad 94 was the highlight, top warlock and 11th in raid damage. Noth was last of 25, Razuvious 56, and the Horsemen 39 with 70 seconds of nothing from 3:20.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "94, top warlock, 11th of 26 in damage.",
+      "boss": 51114
+     },
+     {
+      "title": "Heigan and Loatheb",
+      "text": "84 and 77, top warlock on both."
+     },
+     {
+      "title": "Consumables",
+      "text": "Greater Firepower and Greater Arcane every pull, Supreme Power on eleven."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Noth",
+      "impact": "medium",
+      "boss": 51117,
+      "text": "Last in damage, 77% active against a median of 93."
+     },
+     {
+      "title": "The Horsemen",
+      "impact": "medium",
+      "boss": 51121,
+      "text": "39, 70 seconds without casting from 3:20."
+     },
+     {
+      "title": "Razuvious",
+      "impact": "low",
+      "boss": 51113,
+      "text": "56, 60% active against 90."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "94, top warlock."
+     },
+     "51117": {
+      "tone": "bad",
+      "text": "Last in damage."
+     }
+    }
    }
   },
   "Drikkle": {
@@ -5079,6 +5595,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "B-",
+    "verdict": "8.6 consumable buffs a pull, 14 Sappers, 20 Mighty Rage Potions, alive all night",
+    "summary": "No DPS brought more: Fortitude, Greater Armor, Mongoose, Juju Power and Firewater on every pull, 14 Sappers, 20 Mighty Rage Potions and 8 Limited Invulnerability Potions. Third in raid damage on Noth, Heigan and Sapphiron, a personal best on Sapphiron (51), and no deaths. The parses averaged 48 against your usual 58; Razuvious (36) and Gluth (36) were the low ones. Your hits on Mornie on Kel'Thuzad were while he had you mind-controlled.",
+    "good": [
+     {
+      "title": "Consumables",
+      "text": "8.6 buffs a pull against 5.2 for the other DPS, the most of any DPS."
+     },
+     {
+      "title": "Third in raid damage",
+      "text": "Noth, Heigan and Sapphiron."
+     },
+     {
+      "title": "Sapphiron personal best",
+      "text": "51 (before: 48).",
+      "boss": 51119
+     },
+     {
+      "title": "No deaths",
+      "text": "Against your usual 1.5."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razuvious and Gluth",
+      "impact": "medium",
+      "text": "36 on both, 11th and 8th warrior."
+     },
+     {
+      "title": "Faerlina",
+      "impact": "low",
+      "boss": 51110,
+      "text": "51, ninth of ten warriors."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Mind-controlled; the hits on Mornie weren't you."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "51, personal best."
+     }
+    }
    }
   },
   "Etowa": {
@@ -5086,7 +5651,7 @@
     "class": "Druid",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 62,
+    "ownAvgParseBefore": 64,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -5261,8 +5826,8 @@
       "id": 51115,
       "name": "Loatheb",
       "parse": null,
-      "own": 71,
-      "best": 78,
+      "own": 70,
+      "best": 87,
       "perSec": 62,
       "rank": "4/12 healers",
       "healShare": 10,
@@ -5497,6 +6062,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "B-",
+    "verdict": "Two battle rezzes, nine Innervates, 43 dispels, and no healing on Heigan",
+    "summary": "The utility was all there: 2 Rebirths (one on Gertggs during Gothik), 9 Innervates, and 43 dispels including 10 Life Drains on Sapphiron and 3 Plaguebringer curses on Noth. Third healer on Maexxna and Gluth. On Heigan you did no healing and were 6% active, with nothing from 0:11 for 66 seconds. Drikkle has the exact same gap there, so it may have been where you were standing; the log can't show that.",
+    "good": [
+     {
+      "title": "Rebirth",
+      "text": "2 battle resurrections, one on Gertggs during Gothik."
+     },
+     {
+      "title": "Innervate",
+      "text": "9 out."
+     },
+     {
+      "title": "Dispels",
+      "text": "43 over the night, 10 Life Drains on Sapphiron.",
+      "boss": 51119
+     },
+     {
+      "title": "Maexxna and Gluth",
+      "text": "Third healer on both."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Heigan",
+      "impact": "high",
+      "boss": 51112,
+      "text": "No healing, 6% active, 66 seconds idle from 0:11."
+     },
+     {
+      "title": "Noth",
+      "impact": "low",
+      "boss": 51117,
+      "text": "11th healer, 88% overheal."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "good",
+      "text": "Battle-rezzed Gertggs."
+     },
+     "51112": {
+      "tone": "bad",
+      "text": "No healing."
+     }
+    }
    }
   },
   "Eïnherjar": {
@@ -5929,6 +6544,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "C",
+    "verdict": "7.9 consumable buffs a pull and 19 Dense Dynamite, four trash deaths",
+    "summary": "Prepared as well as anyone: Juju Power, Mongoose, Fortitude, Zanza, Gordok and food on every pull, 19 Dense Dynamite, 8 Sappers and 11 Mighty Rage Potions. Razuvious 81 and Grobbulus 52 (third in raid damage) were the best. But you died four times on trash and once on Kel'Thuzad (his melee at 2:11), where you parsed 29.",
+    "good": [
+     {
+      "title": "Prepared",
+      "text": "7.9 buffs a pull against 5.2, 19 Dense Dynamite, 8 Sappers."
+     },
+     {
+      "title": "Razuvious and Grobbulus",
+      "text": "81, and 52 for third in raid damage."
+     },
+     {
+      "title": "Meteor soaks",
+      "text": "3 on the Horsemen.",
+      "boss": 51121
+     }
+    ],
+    "fix": [
+     {
+      "title": "Trash deaths",
+      "impact": "medium",
+      "text": "Two Infectious Skitterers at 18 minutes, a Dread Creeper at 20, an Unstoppable Abomination at 123."
+     },
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "29, 24th of 26, killed by his melee at 2:11."
+     },
+     {
+      "title": "Sapphiron Blizzard",
+      "impact": "low",
+      "boss": 51119,
+      "text": "Hit twice, tied for the most."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "81."
+     },
+     "51114": {
+      "tone": "bad",
+      "text": "29, killed by his melee."
+     }
+    }
    }
   },
   "Farlopo": {
@@ -5936,14 +6602,14 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 54,
-    "ownAvgParseBefore": 49,
+    "ownAvgParseBefore": 55,
     "raidMedianParse": 54,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 61,
-      "own": 55,
+      "own": 48,
       "best": 75,
       "perSec": 1814,
       "rank": "7/25 dps",
@@ -5957,7 +6623,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 65,
-      "own": 59,
+      "own": 56,
       "best": 89,
       "perSec": 1498,
       "rank": "5/23 dps",
@@ -5971,7 +6637,7 @@
       "id": 51116,
       "name": "Maexxna",
       "parse": 42,
-      "own": 63,
+      "own": 59,
       "best": 71,
       "perSec": 865,
       "rank": "15/26 dps",
@@ -5985,7 +6651,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 49,
-      "own": 48,
+      "own": 42,
       "best": 83,
       "perSec": 1364,
       "rank": "5/25 dps",
@@ -5999,7 +6665,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 50,
-      "own": 47,
+      "own": 39,
       "best": 81,
       "perSec": 1283,
       "rank": "4/26 dps",
@@ -6013,7 +6679,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 45,
-      "own": 53,
+      "own": 38,
       "best": 82,
       "perSec": 1189,
       "rank": "5/27 dps",
@@ -6042,7 +6708,7 @@
       "name": "Instructor Razuvious",
       "parse": 82,
       "own": 51,
-      "best": 79,
+      "best": 88,
       "perSec": 1040,
       "rank": "5/26 dps",
       "healShare": null,
@@ -6055,7 +6721,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 47,
-      "own": 36,
+      "own": 38,
       "best": 58,
       "perSec": 231,
       "rank": "6/22 dps",
@@ -6083,7 +6749,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 41,
-      "own": 46,
+      "own": 37,
       "best": 64,
       "perSec": 1129,
       "rank": "6/25 dps",
@@ -6097,7 +6763,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 44,
-      "own": 45,
+      "own": 36,
       "best": 72,
       "perSec": 1067,
       "rank": "8/27 dps",
@@ -6355,6 +7021,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "B",
+    "verdict": "No deaths where you usually have two, 82 on Razuvious, every consumable",
+    "summary": "A 54 average, right on your usual, but alive all night where you usually die 2.4 times. Razuvious 82 and the Horsemen 72 (third in damage) were the highlights, Thaddius 60 a personal best. 6.7 consumable buffs a pull against 5.2, 7 Sappers, 4 Dense Dynamite. Maexxna (42) was the low one.",
+    "good": [
+     {
+      "title": "Alive all night",
+      "text": "Against your usual 2.4 deaths."
+     },
+     {
+      "title": "Razuvious and Horsemen",
+      "text": "82 and 72, third in raid damage on the Horsemen, 3 Meteors soaked."
+     },
+     {
+      "title": "Thaddius personal best",
+      "text": "60 (before: 53).",
+      "boss": 51120
+     },
+     {
+      "title": "Consumables",
+      "text": "Juju Power, Mongoose and Zanza every pull, Firewater on twelve."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Maexxna",
+      "impact": "low",
+      "boss": 51116,
+      "text": "42, 11th of 14 warriors, web-wrapped once."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "82."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "60, personal best."
+     }
+    }
    }
   },
   "Fenhir": {
@@ -6792,6 +7502,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "C+",
+    "verdict": "313 Sunders and the most consumables in the raid, low when on DPS",
+    "summary": "Nobody in the raid used more consumables (8.7 buffs a pull) or put out more Sunders (313). You soaked 23 Hateful Strikes on Patchwerk and tanked Anub'Rekhan, Faerlina, Patchwerk, Grobbulus, Razuvious, Gothik, the Horsemen and Noth without dying. On the bosses where you were DPS you were near the bottom: last warrior on Maexxna, Thaddius, Loatheb and Kel'Thuzad.",
+    "good": [
+     {
+      "title": "Sunders",
+      "text": "313, the most in the raid."
+     },
+     {
+      "title": "Consumables",
+      "text": "8.7 buffs a pull, the most in the raid."
+     },
+     {
+      "title": "Patchwerk",
+      "text": "23 Hateful Strikes soaked.",
+      "boss": 51118
+     },
+     {
+      "title": "No deaths",
+      "text": "Against your usual 1.2."
+     }
+    ],
+    "fix": [
+     {
+      "title": "DPS bosses",
+      "impact": "medium",
+      "text": "Last warrior on Maexxna (37), Thaddius (21), Loatheb (23) and Kel'Thuzad (24)."
+     },
+     {
+      "title": "Heigan",
+      "impact": "low",
+      "boss": 51112,
+      "text": "19, 52% active, 37 seconds idle from 0:40."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "24, last in raid damage."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "23 Hateful Strikes soaked."
+     }
+    }
    }
   },
   "Fitthake": {
@@ -6799,7 +7558,7 @@
     "class": "Priest",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -6891,7 +7650,7 @@
       "name": "Thaddius",
       "parse": null,
       "own": 50,
-      "best": 50,
+      "best": 61,
       "perSec": 249,
       "rank": "9/12 healers",
       "healShare": 6,
@@ -6946,7 +7705,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": null,
-      "own": 73,
+      "own": 64,
       "best": 92,
       "perSec": 32,
       "rank": "12/12 healers",
@@ -7167,6 +7926,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "C",
+    "verdict": "Nine Fear Wards, last healer three times, killed by our own warriors on Kel'Thuzad",
+    "summary": "You handed out 9 Fear Wards and dispelled 24 times (7 Cripples on Noth, 4 Decrepit Fevers on Heigan), and were third healer on Razuvious. The rest was low: last healer on the Horsemen, Noth and Kel'Thuzad, under 60% active on Maexxna, Gluth and Razuvious. On Kel'Thuzad you were the first death, at 0:44, killed by Farlopo, Tochopolvo and Birkler's melee, which means he had you mind-controlled.",
+    "good": [
+     {
+      "title": "Fear Ward",
+      "text": "9 out, the most in the raid."
+     },
+     {
+      "title": "Dispels",
+      "text": "24, 7 Cripples on Noth and 4 Decrepit Fevers on Heigan."
+     },
+     {
+      "title": "Razuvious",
+      "text": "Third healer, 14%.",
+      "boss": 51113
+     }
+    ],
+    "fix": [
+     {
+      "title": "Activity",
+      "impact": "medium",
+      "text": "Maexxna 51%, Gluth 57%, Razuvious 44%, against medians of 71 to 86."
+     },
+     {
+      "title": "Last healer",
+      "impact": "medium",
+      "text": "Horsemen, Noth and Kel'Thuzad."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "2.4 buffs a pull against 4.4, two world buffs."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "First death, mind-controlled and killed by the raid."
+     },
+     "51117": {
+      "tone": "info",
+      "text": "7 Cripples dispelled."
+     }
+    }
    }
   },
   "Foggiie": {
@@ -7597,6 +8405,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "B",
+    "verdict": "18 Power Infusions, second healer on Patchwerk, Gluth and Razuvious",
+    "summary": "You handed out 18 Power Infusions and were second in healing on Patchwerk, Gluth (16%) and Razuvious (20%). 5 Decrepit Fevers cured on Heigan, 5 Cripples on Noth. On Kel'Thuzad a Guardian of Icecrown and a Frostbolt killed you at 2:28.",
+    "good": [
+     {
+      "title": "Power Infusion",
+      "text": "18 over the night."
+     },
+     {
+      "title": "Second healer",
+      "text": "Patchwerk 11%, Gluth 16%, Razuvious 20%."
+     },
+     {
+      "title": "Prepared",
+      "text": "Gordok and Kreeg's every pull, Mageblood on thirteen."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "A Guardian of Icecrown (4,279) and a Frostbolt (3,409) at 2:28."
+     },
+     {
+      "title": "Faerlina and Noth",
+      "impact": "low",
+      "text": "Tenth healer on both."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "Second healer, 16%."
+     },
+     "51114": {
+      "tone": "bad",
+      "text": "Killed by a Guardian at 2:28."
+     }
+    }
    }
   },
   "Gallahan": {
@@ -7604,7 +8456,7 @@
     "class": "Paladin",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 78,
+    "ownAvgParseBefore": 79,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -8017,6 +8869,46 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "C",
+    "verdict": "Two deaths where you usually have none, low healing most of the night",
+    "summary": "You usually die once every three raids; this time twice. On Kel'Thuzad a Guardian of Icecrown and a Frostbolt killed you at 2:09 with no healing on you, and on Sapphiron Frost Aura finished you at 2:53, the last death of the kill. The healing was mostly near the bottom: last on Sapphiron, 11th on Faerlina, Maexxna and Kel'Thuzad. Patchwerk (fourth) was the best.",
+    "good": [
+     {
+      "title": "Patchwerk",
+      "text": "Fourth healer, 10%.",
+      "boss": 51118
+     },
+     {
+      "title": "Prepared",
+      "text": "Mageblood every pull, Gordok, Zanza and food on nearly all."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Deaths",
+      "impact": "high",
+      "text": "Kel'Thuzad at 2:09, Sapphiron at 2:53 (an Icebolt and Frost Aura)."
+     },
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "text": "Last on Sapphiron, 11th on Faerlina, Maexxna and Kel'Thuzad."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Died at 2:09."
+     },
+     "51119": {
+      "tone": "bad",
+      "text": "Last healer, died at 2:53."
+     }
+    }
    }
   },
   "Gertggs": {
@@ -8024,7 +8916,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 58,
-    "ownAvgParseBefore": 73,
+    "ownAvgParseBefore": 72,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -8449,6 +9341,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "B",
+    "verdict": "Most damage in the raid on Noth, top warrior five times, killed tanking on Gothik",
+    "summary": "Naxxramas parses run lower than your MC ones, and this was a 58 average against a usual 72, but the damage itself was near the top all night: most in the raid on Noth, second on Grobbulus and Loatheb, third on Anub'Rekhan, Thaddius and Kel'Thuzad. Flask of the Titans, Mongoose, Firewater and food on every pull, 9 Sappers, 5 Dense Dynamite. You tanked on Gothik and a Spectral Horse killed you at 2:45.",
+    "good": [
+     {
+      "title": "Damage",
+      "text": "Most in the raid on Noth; second on Grobbulus and Loatheb; third on Anub'Rekhan, Thaddius and Kel'Thuzad."
+     },
+     {
+      "title": "Top warrior",
+      "text": "Grobbulus, Thaddius, Noth, Loatheb and Kel'Thuzad."
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans, Mongoose, Firewater and food on all fifteen pulls, Juju Power on thirteen, 9 Sappers."
+     },
+     {
+      "title": "Meteor soaks",
+      "text": "3 on the Horsemen.",
+      "boss": 51121
+     }
+    ],
+    "fix": [
+     {
+      "title": "Gothik death",
+      "impact": "medium",
+      "boss": 51109,
+      "text": "Spectral Horse melee (4,192) and the Rider's Unholy Aura at 2:45, with 207 healing on you in the last ten seconds. A tank dying to dead-side adds is usually a healing problem as much as yours."
+     },
+     {
+      "title": "Gluth",
+      "impact": "low",
+      "boss": 51108,
+      "text": "43, fifth warrior."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "bad",
+      "text": "Killed by a Spectral Horse while tanking."
+     },
+     "51117": {
+      "tone": "good",
+      "text": "Most damage in the raid."
+     }
+    }
    }
   },
   "Groomz": {
@@ -8871,6 +9813,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "B",
+    "verdict": "Most damage in the raid on Sapphiron, top DPS parse on Gluth, three personal bests",
+    "summary": "Between tanking Faerlina, Gothik and the Horsemen you did the most damage in the raid on Sapphiron (53, a personal best) and the top DPS parse on Gluth (57). Razuvious 79 and Thaddius 36 are personal bests too. Full tank consumables every pull and 15 Sappers. Kel'Thuzad hit you for 9,898 at 2:28 through 7,463 healing.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "53, most damage in the raid, personal best (before: 40).",
+      "boss": 51119
+     },
+     {
+      "title": "Gluth",
+      "text": "57, top DPS parse, second in damage.",
+      "boss": 51108
+     },
+     {
+      "title": "Personal bests",
+      "text": "Razuvious 79 (before: 76), Thaddius 36 (34)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans, Juju Power, Mongoose, Greater Armor, Fortitude and Zanza every pull, 15 Sappers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "His melee (9,898) and a Frostbolt killed you at 2:28 through heavy healing."
+     },
+     {
+      "title": "Grobbulus",
+      "impact": "low",
+      "boss": 51111,
+      "text": "31, 12th of 13 warriors."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "57, top DPS parse."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "53, most damage in the raid."
+     }
+    }
    }
   },
   "Harrylarry": {
@@ -8878,7 +9871,7 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 50,
-    "ownAvgParseBefore": 68,
+    "ownAvgParseBefore": 65,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -9292,6 +10285,59 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "C",
+    "verdict": "Twice in a Void Zone on the Horsemen, the second one killed you",
+    "summary": "A 50 average against your usual 65. Gluth 68 (top rogue) and Razuvious 79 were the good ones. On the Horsemen you stood in a Void Zone twice, the most in the raid, and the second one killed you at 2:36. You also died to an Unholy Staff's Whirlwind on trash, and had no world buffs from Noth on. Kel'Thuzad killed you with a Frostbolt at 2:51.",
+    "good": [
+     {
+      "title": "Gluth",
+      "text": "68, top rogue.",
+      "boss": 51108
+     },
+     {
+      "title": "Prepared",
+      "text": "Seven world buffs, Flask of the Titans, Juju Power and Mongoose every pull, 5 Sappers."
+     },
+     {
+      "title": "Meteor soaks",
+      "text": "3 on the Horsemen.",
+      "boss": 51121
+     }
+    ],
+    "fix": [
+     {
+      "title": "Void Zones",
+      "impact": "high",
+      "boss": 51121,
+      "text": "Hit twice, the most in the raid. Consumption (5,684) killed you at 2:36."
+     },
+     {
+      "title": "Loatheb",
+      "impact": "medium",
+      "boss": 51115,
+      "text": "28, last rogue, 19 seconds idle from 0:47."
+     },
+     {
+      "title": "Rain of Fire",
+      "impact": "low",
+      "boss": 51110,
+      "text": "4 hits on Faerlina, tied for the most."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "68, top rogue."
+     },
+     "51121": {
+      "tone": "bad",
+      "text": "Killed by a Void Zone at 2:36."
+     }
+    }
    }
   },
   "Hjärterkung": {
@@ -9710,6 +10756,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "C+",
+    "verdict": "The only Necrotic Poison cleanse and the most Plaguebringer curses, but low healing",
+    "summary": "You did the druid jobs: the raid's only Necrotic Poison cleanse on Maexxna, 5 Curses of the Plaguebringer on Noth (the most), 7 Life Drains on Sapphiron, 56 dispels in all, and 3 Innervates. The healing was low: last on Anub'Rekhan and Maexxna, 11th on Thaddius, the Horsemen and Sapphiron. Noth and Heigan (fourth) were the best.",
+    "good": [
+     {
+      "title": "Necrotic Poison",
+      "text": "The only cleanse of it in the raid.",
+      "boss": 51116
+     },
+     {
+      "title": "Noth curses",
+      "text": "5 Plaguebringer curses removed, the most.",
+      "boss": 51117
+     },
+     {
+      "title": "Dispels",
+      "text": "56 over the night."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "text": "Last on Anub'Rekhan and Maexxna, 11th on Thaddius, the Horsemen and Sapphiron."
+     },
+     {
+      "title": "Overhealing",
+      "impact": "low",
+      "text": "50 to 65% on most bosses."
+     }
+    ],
+    "bosses": {
+     "51116": {
+      "tone": "good",
+      "text": "The only Necrotic Poison cleanse."
+     },
+     "51117": {
+      "tone": "good",
+      "text": "5 curses removed, most in the raid."
+     }
+    }
    }
   },
   "Krits": {
@@ -9717,14 +10808,14 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 54,
-    "ownAvgParseBefore": 52,
+    "ownAvgParseBefore": 50,
     "raidMedianParse": 54,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 65,
-      "own": 65,
+      "own": 60,
       "best": 95,
       "perSec": 1334,
       "rank": "14/25 dps",
@@ -9738,7 +10829,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 80,
-      "own": 65,
+      "own": 61,
       "best": 96,
       "perSec": 1352,
       "rank": "10/23 dps",
@@ -9752,7 +10843,7 @@
       "id": 51116,
       "name": "Maexxna",
       "parse": 74,
-      "own": 62,
+      "own": 61,
       "best": 81,
       "perSec": 1103,
       "rank": "6/26 dps",
@@ -9766,7 +10857,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 57,
-      "own": 50,
+      "own": 45,
       "best": 95,
       "perSec": 1168,
       "rank": "16/25 dps",
@@ -9780,7 +10871,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 39,
-      "own": 50,
+      "own": 41,
       "best": 87,
       "perSec": 896,
       "rank": "17/26 dps",
@@ -9794,7 +10885,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 39,
-      "own": 46,
+      "own": 38,
       "best": 88,
       "perSec": 738,
       "rank": "19/27 dps",
@@ -9808,7 +10899,7 @@
       "id": 51120,
       "name": "Thaddius",
       "parse": 57,
-      "own": 36,
+      "own": 35,
       "best": 54,
       "perSec": 1691,
       "rank": "11/25 dps",
@@ -9836,8 +10927,8 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 31,
-      "own": 32,
-      "best": 68,
+      "own": 34,
+      "best": 79,
       "perSec": 147,
       "rank": "14/22 dps",
       "healShare": null,
@@ -9878,7 +10969,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 30,
-      "own": 44,
+      "own": 43,
       "best": 94,
       "perSec": 501,
       "rank": "23/27 dps",
@@ -9892,7 +10983,7 @@
       "id": 51115,
       "name": "Loatheb",
       "parse": 60,
-      "own": 51,
+      "own": 49,
       "best": 88,
       "perSec": 1093,
       "rank": "15/27 dps",
@@ -10154,6 +11245,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "C+",
+    "verdict": "Faerlina 80, Razuvious 84, top rogue on Thaddius, and a Frost Blast death",
+    "summary": "A 54 average against your usual 50, with Faerlina 80, Razuvious 84 and Maexxna 74 the good part, and Thaddius 57 a personal best and the top rogue. Seven world buffs and 6.4 consumable buffs a pull. Heigan was 30 with 37 seconds of nothing from 0:40, and on Kel'Thuzad a Frost Blast (6,095) killed you with 102 healing on you.",
+    "good": [
+     {
+      "title": "Thaddius personal best",
+      "text": "57 (before: 54), top rogue.",
+      "boss": 51120
+     },
+     {
+      "title": "Faerlina and Razuvious",
+      "text": "80 and 84."
+     },
+     {
+      "title": "Prepared",
+      "text": "Seven world buffs, Juju Power, Mongoose, Fortitude and Sunfruit every pull, 11 Thistle Teas."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Heigan",
+      "impact": "medium",
+      "boss": 51112,
+      "text": "30, 42% active, nothing from 0:40 for 37 seconds. Soulchained had the exact same gap, so it may have been where you were standing; the log can't show that."
+     },
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Frost Blast killed you at 2:22 with almost no healing on you. Frost Blast is a healer call as much as yours, but a healthstone or bandage before the next one helps."
+     },
+     {
+      "title": "Grobbulus and Gluth",
+      "impact": "low",
+      "text": "39 on both, last rogue on both."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "bad",
+      "text": "37 seconds idle."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "57, personal best."
+     }
+    }
    }
   },
   "Macharius": {
@@ -10161,7 +11303,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 40,
-    "ownAvgParseBefore": 65,
+    "ownAvgParseBefore": 64,
     "raidMedianParse": 47,
     "bosses": [
      {
@@ -10584,6 +11726,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "B-",
+    "verdict": "42 Hateful Strikes soaked on Patchwerk, top tank on Anub'Rekhan and Thaddius",
+    "summary": "You took 42 Hateful Strikes on Patchwerk, the most in the raid, tanked Anub'Rekhan to 91 and Thaddius to a personal best 79. 6 Challenging Shouts and 5 Limited Invulnerability Potions. Tank parses in Naxxramas are low across the board, and yours averaged 40. Kel'Thuzad's Frost Blast killed you for 12,509 at 2:53 with 45 healing on you.",
+    "good": [
+     {
+      "title": "Patchwerk",
+      "text": "42 Hateful Strikes soaked, the most in the raid.",
+      "boss": 51118
+     },
+     {
+      "title": "Top tank",
+      "text": "Anub'Rekhan 91, Thaddius 79 (personal best, before: 69), Kel'Thuzad 64, Razuvious."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Greater Armor, Giants and Zanza every pull, 5 LIPs, 6 Challenging Shouts."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Frost Blast for 12,509 at 2:53, with almost no healing on you."
+     },
+     {
+      "title": "DPS bosses",
+      "impact": "low",
+      "text": "Grobbulus 26 (last warrior), Maexxna 38 and Loatheb 29 (13th warrior on both)."
+     }
+    ],
+    "bosses": {
+     "51118": {
+      "tone": "good",
+      "text": "42 Hateful Strikes soaked."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "79 tanking, personal best."
+     }
+    }
    }
   },
   "Mercîless": {
@@ -11011,6 +12198,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "B-",
+    "verdict": "Top tank on Faerlina, 8.4 consumables a pull, no deaths",
+    "summary": "You tanked Faerlina (84, top tank), Thaddius, Gothik and the Horsemen, with 8.4 consumable buffs a pull, 210 Sunders, 6 Sappers and 8 Dense Dynamite, and didn't die. As DPS the numbers were low: Patchwerk 35 (last warrior), Razuvious 25. Gluth was 2 with 32 damage per second; if you were kiting zombies that's the job, the log doesn't say.",
+    "good": [
+     {
+      "title": "Faerlina",
+      "text": "84, the top tank parse.",
+      "boss": 51110
+     },
+     {
+      "title": "Prepared",
+      "text": "8.4 buffs a pull against 7 for the tanks."
+     },
+     {
+      "title": "No deaths",
+      "text": "Alive on all fifteen."
+     }
+    ],
+    "fix": [
+     {
+      "title": "DPS bosses",
+      "impact": "medium",
+      "text": "Patchwerk 35 (last warrior), Razuvious 25, Sapphiron 27."
+     },
+     {
+      "title": "Gluth",
+      "impact": "low",
+      "boss": 51108,
+      "text": "2, last in the raid. Fine if you were on zombies."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "info",
+      "text": "2: zombie duty?"
+     },
+     "51110": {
+      "tone": "good",
+      "text": "84, top tank."
+     }
+    }
    }
   },
   "Miniwrecker": {
@@ -11018,7 +12250,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 38,
-    "ownAvgParseBefore": 66,
+    "ownAvgParseBefore": 67,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -11454,6 +12686,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.331Z",
+    "grade": "C-",
+    "verdict": "Seven personal bests, the only raider in a Shadow Fissure, and Titans once",
+    "summary": "Only your third Naxxramas in the logs, and personal bests on Heigan (48), Razuvious (63), Faerlina, Anub'Rekhan, Thaddius, Gothik and Sapphiron. 12 Sappers and 11 Dense Dynamite. But on Kel'Thuzad you were the only raider to stand in a Shadow Fissure, and it killed you at 2:42. Two Unholy weapons killed you on trash, and you had Flask of the Titans on one pull of fourteen.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Razuvious 63 (before: 55), Heigan 48 (39), Faerlina 43 (38), Anub'Rekhan 42 (41), Sapphiron 34 (30), Thaddius 31 (27), Gothik 26 (18)."
+     },
+     {
+      "title": "Explosives",
+      "text": "12 Sappers, 11 Dense Dynamite, 7 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Shadow Fissure",
+      "impact": "high",
+      "boss": 51114,
+      "text": "The only one in the raid caught by it: Void Blast for 6,468 at 2:42. Move the moment it appears under you."
+     },
+     {
+      "title": "Flask of the Titans: 1 of 14 pulls",
+      "impact": "medium",
+      "text": "It happened again on 7 October."
+     },
+     {
+      "title": "Sapphiron Blizzard",
+      "impact": "low",
+      "boss": 51119,
+      "text": "Hit twice, tied for the most."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "good",
+      "text": "48, personal best."
+     },
+     "51114": {
+      "tone": "bad",
+      "text": "Killed by a Shadow Fissure, the only one hit."
+     }
+    }
    }
   },
   "Mohg": {
@@ -11871,6 +13149,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "B",
+    "verdict": "Top healer on Patchwerk and Razuvious, 7 Blessings of Protection",
+    "summary": "The most healing in the raid on Patchwerk (13%) and Razuvious (28%), second on Faerlina, third on Heigan. 7 Blessings of Protection and a Lay on Hands, and you were at or above the healers' median activity on most bosses. Grobbulus and Gothik were last of the healers.",
+    "good": [
+     {
+      "title": "Top healer",
+      "text": "Patchwerk 13%, Razuvious 28%."
+     },
+     {
+      "title": "Blessing of Protection",
+      "text": "7 over the night, and a Lay on Hands."
+     },
+     {
+      "title": "Faerlina and Heigan",
+      "text": "Second and third healer."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Grobbulus and Gothik",
+      "impact": "medium",
+      "text": "Last healer on both; Gothik 36% active with 48 seconds idle from 0:33."
+     },
+     {
+      "title": "Overhealing",
+      "impact": "low",
+      "text": "81% on Grobbulus, 83% on Noth."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "Top healer, 28%."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Mornie": {
@@ -11878,7 +13199,7 @@
     "class": "Priest",
     "role": "healer",
     "avgParse": 58,
-    "ownAvgParseBefore": 72,
+    "ownAvgParseBefore": 71,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -11942,7 +13263,7 @@
       "name": "Grobbulus",
       "parse": null,
       "own": 75,
-      "best": 75,
+      "best": 85,
       "perSec": 280,
       "rank": "4/12 healers",
       "healShare": 10,
@@ -11970,7 +13291,7 @@
       "name": "Thaddius",
       "parse": null,
       "own": 50,
-      "best": 85,
+      "best": 96,
       "perSec": 510,
       "rank": "1/12 healers",
       "healShare": 13,
@@ -11997,7 +13318,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": null,
-      "own": 61,
+      "own": 62,
       "best": 86,
       "perSec": 173,
       "rank": "7/12 healers",
@@ -12053,7 +13374,7 @@
       "id": 51115,
       "name": "Loatheb",
       "parse": 58,
-      "own": 58,
+      "own": 55,
       "best": 71,
       "perSec": 80,
       "rank": "3/12 healers",
@@ -12293,6 +13614,60 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "B+",
+    "verdict": "22 Power Infusions, both Understudies controlled, top healer three times",
+    "summary": "You did the most healing in the raid on Anub'Rekhan, Thaddius and the Horsemen, mind-controlled the Understudies on Razuvious, shackled 8 times, and handed out 22 Power Infusions. Patchwerk was last of the healers with 81% overheal, and on Kel'Thuzad you were mind-controlled, then a mind-controlled Eduard and a Guardian hit you and a Frostbolt finished it at 2:26.",
+    "good": [
+     {
+      "title": "Top healer",
+      "text": "Anub'Rekhan (15%), Thaddius (13%) and the Horsemen (12%)."
+     },
+     {
+      "title": "Razuvious",
+      "text": "Both Understudy mind controls; the near-zero healing there is the job.",
+      "boss": 51113
+     },
+     {
+      "title": "Power Infusion",
+      "text": "22 over the night."
+     },
+     {
+      "title": "Consumables",
+      "text": "5.9 buffs a pull against 4.4 for the other healers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Patchwerk",
+      "impact": "medium",
+      "boss": 51118,
+      "text": "Last healer, 4% of the healing and 81% overheal."
+     },
+     {
+      "title": "Grobbulus",
+      "impact": "low",
+      "boss": 51111,
+      "text": "45% active, 19 seconds idle from the pull."
+     }
+    ],
+    "bosses": {
+     "51107": {
+      "tone": "good",
+      "text": "Top healer."
+     },
+     "51113": {
+      "tone": "good",
+      "text": "Understudies mind-controlled."
+     },
+     "51114": {
+      "tone": "info",
+      "text": "Killed at 2:26 after a mind control."
+     }
+    }
    }
   },
   "Punintended": {
@@ -12690,6 +14065,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "C+",
+    "verdict": "First raid in the logs, Gluth Tranquilizing Shots done, Faerlina and Maexxna rough",
+    "summary": "Your first raid in the guild's logs and a 67 average. You and Birdiebird handled Gluth's Frenzy with 3 Tranquilizing Shots each. Faerlina (33) and Maexxna (48, last in damage, web-wrapped twice) were the low ones, and a Venom Stalker's Poison Charge killed you on trash 20 minutes in.",
+    "good": [
+     {
+      "title": "Gluth",
+      "text": "3 Tranquilizing Shots.",
+      "boss": 51108
+     },
+     {
+      "title": "Horsemen",
+      "text": "81, top hunter.",
+      "boss": 51121
+     },
+     {
+      "title": "No boss deaths",
+      "text": "Alive on all fifteen."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Faerlina",
+      "impact": "medium",
+      "boss": 51110,
+      "text": "33, 72% active with 9 seconds idle from 0:07."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mongoose and agility food: 1.4 a pull against 5.2."
+     },
+     {
+      "title": "Trash death",
+      "impact": "low",
+      "text": "Poison Charge from a Venom Stalker, 20:17 into the raid."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "3 Tranquilizing Shots."
+     },
+     "51116": {
+      "tone": "info",
+      "text": "Web-wrapped twice."
+     }
+    }
    }
   },
   "Rannek": {
@@ -12704,7 +14130,7 @@
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 93,
-      "own": 82,
+      "own": 71,
       "best": 97,
       "perSec": 1933,
       "rank": "6/25 dps",
@@ -12718,7 +14144,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 92,
-      "own": 77,
+      "own": 72,
       "best": 96,
       "perSec": 1565,
       "rank": "3/23 dps",
@@ -12732,7 +14158,7 @@
       "id": 51116,
       "name": "Maexxna",
       "parse": 86,
-      "own": 85,
+      "own": 83,
       "best": 95,
       "perSec": 1270,
       "rank": "2/26 dps",
@@ -12746,7 +14172,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 72,
-      "own": 61,
+      "own": 57,
       "best": 92,
       "perSec": 1276,
       "rank": "10/25 dps",
@@ -12760,7 +14186,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 66,
-      "own": 60,
+      "own": 52,
       "best": 92,
       "perSec": 1180,
       "rank": "8/26 dps",
@@ -12774,7 +14200,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 55,
-      "own": 62,
+      "own": 51,
       "best": 95,
       "perSec": 889,
       "rank": "13/27 dps",
@@ -12803,7 +14229,7 @@
       "name": "Instructor Razuvious",
       "parse": 96,
       "own": 69,
-      "best": 89,
+      "best": 94,
       "perSec": 1234,
       "rank": "2/26 dps",
       "healShare": null,
@@ -12816,7 +14242,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 74,
-      "own": 39,
+      "own": 44,
       "best": 95,
       "perSec": 273,
       "rank": "2/22 dps",
@@ -12830,7 +14256,7 @@
       "id": 51121,
       "name": "The Four Horsemen",
       "parse": 66,
-      "own": 69,
+      "own": 67,
       "best": 95,
       "perSec": 329,
       "rank": "8/21 dps",
@@ -12844,7 +14270,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 52,
-      "own": 51,
+      "own": 49,
       "best": 88,
       "perSec": 1038,
       "rank": "11/25 dps",
@@ -12858,7 +14284,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 54,
-      "own": 52,
+      "own": 44,
       "best": 95,
       "perSec": 968,
       "rank": "12/27 dps",
@@ -13106,6 +14532,62 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "B-",
+    "verdict": "Personal best on Razuvious, 10 Sappers, and caught by Frost Breath",
+    "summary": "A strong first half: Razuvious 96 (personal best), Anub'Rekhan 93, Faerlina 92 and Maexxna 86, top rogue on all four, and second in raid damage on Maexxna and Razuvious. 10 Goblin Sapper Charges and 7 Dense Dynamite. Then the late game went wrong: Loatheb 32, and you were the only raider caught by Sapphiron's Frost Breath, which killed you at 2:51.",
+    "good": [
+     {
+      "title": "Razuvious personal best",
+      "text": "96 (before: 94), second in raid damage.",
+      "boss": 51113
+     },
+     {
+      "title": "Anub'Rekhan, Faerlina, Maexxna",
+      "text": "93, 92 and 86, top rogue on each."
+     },
+     {
+      "title": "Explosives and kicks",
+      "text": "10 Sappers, 7 Dense Dynamite, 8 interrupts (4 Frostbolts on Kel'Thuzad)."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Frost Breath",
+      "impact": "high",
+      "boss": 51119,
+      "text": "The only raider hit by it (7,327), and it killed you at 2:51. Be behind an ice block before the breath lands."
+     },
+     {
+      "title": "Loatheb",
+      "impact": "medium",
+      "boss": 51115,
+      "text": "32, with 42 seconds of nothing from the pull."
+     },
+     {
+      "title": "Kel'Thuzad death",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Frost Blast (7,469) then a Frostbolt at 2:25."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "96, personal best."
+     },
+     "51115": {
+      "tone": "bad",
+      "text": "42 seconds idle from the pull."
+     },
+     "51119": {
+      "tone": "bad",
+      "text": "Killed by Frost Breath, the only one hit."
+     }
+    }
    }
   },
   "Sixto": {
@@ -13113,7 +14595,7 @@
     "class": "Paladin",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 71,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -13233,7 +14715,7 @@
       "name": "Gothik the Harvester",
       "parse": null,
       "own": 50,
-      "best": 71,
+      "best": 83,
       "perSec": 150,
       "rank": "9/12 healers",
       "healShare": 7,
@@ -13261,7 +14743,7 @@
       "name": "Noth the Plaguebringer",
       "parse": null,
       "own": 60,
-      "best": 69,
+      "best": 70,
       "perSec": 201,
       "rank": "1/12 healers",
       "healShare": 13,
@@ -13289,7 +14771,7 @@
       "name": "Loatheb",
       "parse": null,
       "own": 30,
-      "best": 54,
+      "best": 55,
       "perSec": 57,
       "rank": "6/12 healers",
       "healShare": 9,
@@ -13518,6 +15000,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "B",
+    "verdict": "Top healer on Noth with 10 Cripples dispelled, 51 dispels in all",
+    "summary": "On Noth you did the most healing and dispelled 10 Cripples. Second healer on the Horsemen and Kel'Thuzad, 51 dispels over the night, 4 Blessings of Protection and a Lay on Hands. Gluth shows no healing from you and melee hitting you; if you were on zombies, that's the job. Mageblood and Distilled Wisdom only.",
+    "good": [
+     {
+      "title": "Noth",
+      "text": "Top healer (13%), 10 Cripples dispelled.",
+      "boss": 51117
+     },
+     {
+      "title": "Horsemen and Kel'Thuzad",
+      "text": "Second healer on both."
+     },
+     {
+      "title": "Dispels",
+      "text": "51 over the night."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Grobbulus and Maexxna",
+      "impact": "low",
+      "text": "Tenth healer on both."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "2.4 buffs a pull against 4.4."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "info",
+      "text": "No healing: zombie duty?"
+     },
+     "51117": {
+      "tone": "good",
+      "text": "Top healer, 10 Cripples dispelled."
+     }
+    }
    }
   },
   "Snotspat": {
@@ -13525,14 +15051,14 @@
     "class": "Warlock",
     "role": "dps",
     "avgParse": 80,
-    "ownAvgParseBefore": 72,
+    "ownAvgParseBefore": 68,
     "raidMedianParse": 54,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 85,
-      "own": 88,
+      "own": 86,
       "best": 95,
       "perSec": 826,
       "rank": "19/25 dps",
@@ -13546,7 +15072,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 79,
-      "own": 79,
+      "own": 77,
       "best": 96,
       "perSec": 679,
       "rank": "18/23 dps",
@@ -13560,7 +15086,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 91,
-      "own": 90,
+      "own": 85,
       "best": 98,
       "perSec": 981,
       "rank": "18/25 dps",
@@ -13574,7 +15100,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 81,
-      "own": 80,
+      "own": 79,
       "best": 99,
       "perSec": 799,
       "rank": "19/26 dps",
@@ -13588,7 +15114,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 85,
-      "own": 82,
+      "own": 75,
       "best": 96,
       "perSec": 832,
       "rank": "16/27 dps",
@@ -13602,7 +15128,7 @@
       "id": 51120,
       "name": "Thaddius",
       "parse": 75,
-      "own": 62,
+      "own": 59,
       "best": 79,
       "perSec": 1192,
       "rank": "18/25 dps",
@@ -13616,7 +15142,7 @@
       "id": 51113,
       "name": "Instructor Razuvious",
       "parse": 76,
-      "own": 75,
+      "own": 65,
       "best": 92,
       "perSec": 519,
       "rank": "22/26 dps",
@@ -13630,7 +15156,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 65,
-      "own": 72,
+      "own": 61,
       "best": 91,
       "perSec": 136,
       "rank": "19/22 dps",
@@ -13644,7 +15170,7 @@
       "id": 51121,
       "name": "The Four Horsemen",
       "parse": 80,
-      "own": 81,
+      "own": 79,
       "best": 95,
       "perSec": 282,
       "rank": "11/21 dps",
@@ -13658,7 +15184,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 78,
-      "own": 67,
+      "own": 60,
       "best": 94,
       "perSec": 778,
       "rank": "20/25 dps",
@@ -13672,7 +15198,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 83,
-      "own": 75,
+      "own": 70,
       "best": 95,
       "perSec": 813,
       "rank": "18/27 dps",
@@ -13909,6 +15435,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "B+",
+    "verdict": "Top warlock on nine bosses, no deaths where you usually have two or three",
+    "summary": "An 80 average against your usual 68 and the top warlock on nine of the fourteen bosses you were in. You usually die 2.5 times a raid; this time not once, with 6 Major Healthstones and protection potions on Loatheb, Sapphiron and Kel'Thuzad doing their part. Curse of Recklessness all night and a soulstone out. Loatheb (68, 26th of 27 in damage) was the weak one.",
+    "good": [
+     {
+      "title": "No deaths",
+      "text": "Against your usual 2.5 a raid. 6 Major Healthstones used."
+     },
+     {
+      "title": "Top warlock",
+      "text": "Anub'Rekhan, Faerlina, Patchwerk (91), Grobbulus, Gluth, Thaddius, the Horsemen, Noth and Sapphiron."
+     },
+     {
+      "title": "Curses",
+      "text": "Curse of Recklessness up all night (286 applications), a soulstone out."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Loatheb",
+      "impact": "medium",
+      "boss": 51115,
+      "text": "68, 26th of 27 in damage, with 14 seconds idle from 1:06."
+     },
+     {
+      "title": "Thaddius",
+      "impact": "low",
+      "boss": 51120,
+      "text": "34 seconds idle from 0:21 and 5 Chain Lightning hits."
+     }
+    ],
+    "bosses": {
+     "51115": {
+      "tone": "bad",
+      "text": "68, 26th of 27."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "91, top warlock."
+     }
+    }
    }
   },
   "Soulchained": {
@@ -13916,7 +15487,7 @@
     "class": "Warlock",
     "role": "dps",
     "avgParse": 64,
-    "ownAvgParseBefore": 54,
+    "ownAvgParseBefore": 50,
     "raidMedianParse": 54,
     "bosses": [
      {
@@ -14323,6 +15894,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.259Z",
+    "grade": "B-",
+    "verdict": "Seven personal bests and Curse of the Elements all night, but Heigan at 43% active",
+    "summary": "A 64 average against your usual 50, with personal bests on Gluth (82), Anub'Rekhan (81), Grobbulus (81), Razuvious (79), Thaddius (67), the Horsemen (64) and Sapphiron (58). You kept Curse of the Elements up all night and handed out a soulstone. Heigan was the problem: 31, 43% active, 37 seconds without a cast from 0:40.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Gluth 82 (before: 69), Anub'Rekhan 81 (74), Grobbulus 81 (72), Razuvious 79 (74), Thaddius 67 (65), Horsemen 64 (61), Sapphiron 58 (53)."
+     },
+     {
+      "title": "Curse of the Elements",
+      "text": "315 applications."
+     },
+     {
+      "title": "Consumables",
+      "text": "Mageblood, Greater Firepower and Greater Arcane every pull, Supreme Power on eleven."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Heigan",
+      "impact": "high",
+      "boss": 51112,
+      "text": "31, 43% active against a median of 94, 37 seconds idle from 0:40."
+     },
+     {
+      "title": "Loatheb and Patchwerk",
+      "impact": "low",
+      "text": "Last in raid damage on both."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "82, personal best."
+     },
+     "51112": {
+      "tone": "bad",
+      "text": "37 seconds idle."
+     }
+    }
    }
   },
   "Thornhild": {
@@ -14729,6 +16344,62 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "C",
+    "verdict": "Most damage in the raid on Razuvious, and five deaths",
+    "summary": "Razuvious 90 was the most damage in the raid and a personal best, and on the Horsemen you were the top parse (80) until you died. The rest of the night had a lot of dying: twice to Infectious Skitterers on spider trash, a Spectral Horse on Gothik, a Void Zone and Mark on the Horsemen at 4:01, and Kel'Thuzad's melee at 2:40. 9 Sappers, 15 Dense Dynamite and 13 Mighty Rage Potions, but only three world buffs to start.",
+    "good": [
+     {
+      "title": "Razuvious",
+      "text": "90, most damage in the raid, personal best (before: 80).",
+      "boss": 51113
+     },
+     {
+      "title": "Horsemen",
+      "text": "80, the top parse there, 3 Meteors soaked.",
+      "boss": 51121
+     },
+     {
+      "title": "Explosives",
+      "text": "9 Sappers, 15 Dense Dynamite, 13 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Deaths",
+      "impact": "high",
+      "text": "Three boss deaths and two on trash, against your usual 4.3, so it's your normal night, and your normal night has too many."
+     },
+     {
+      "title": "Horsemen",
+      "impact": "medium",
+      "boss": 51121,
+      "text": "A Void Zone (4,138) and Blaumeux's melee and Mark at 4:01."
+     },
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Kel'Thuzad's own melee (6,767) killed you at 2:40. Birkler was mind-controlled twice on that fight, and while a tank is controlled he goes to whoever is next on threat."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "bad",
+      "text": "Killed by a Spectral Horse."
+     },
+     "51113": {
+      "tone": "good",
+      "text": "90, most damage in the raid."
+     },
+     "51121": {
+      "tone": "bad",
+      "text": "Died to a Void Zone and Mark at 4:01."
+     }
+    }
    }
   },
   "Tizanidin": {
@@ -14736,7 +16407,7 @@
     "class": "Paladin",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 78,
+    "ownAvgParseBefore": 79,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -15115,6 +16786,53 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "C",
+    "verdict": "6 Decrepit Fevers cured, the most, and 4 Sappers from a healer",
+    "summary": "Your fifth raid in the logs. You cured 6 Decrepit Fevers on Heigan, the most in the raid, and found time for 4 Goblin Sapper Charges and a Dense Dynamite. The healing was low: last on Thaddius, 11th on Grobbulus and Heigan, and on Grobbulus you did nothing for the first 31 seconds.",
+    "good": [
+     {
+      "title": "Heigan",
+      "text": "6 Decrepit Fevers cured, the most in the raid.",
+      "boss": 51112
+     },
+     {
+      "title": "Utility",
+      "text": "4 Blessings of Protection, 2 Lays on Hands, 4 Sappers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Grobbulus",
+      "impact": "medium",
+      "boss": 51111,
+      "text": "31 seconds idle from the pull, 11th healer."
+     },
+     {
+      "title": "Thaddius",
+      "impact": "medium",
+      "boss": 51120,
+      "text": "Last healer, 3%."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "2.4 buffs a pull against 4.4."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "good",
+      "text": "6 Decrepit Fevers cured."
+     },
+     "51120": {
+      "tone": "bad",
+      "text": "Last healer."
+     }
+    }
    }
   },
   "Tochopolvo": {
@@ -15122,14 +16840,14 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 56,
-    "ownAvgParseBefore": 67,
+    "ownAvgParseBefore": 66,
     "raidMedianParse": 47,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 67,
-      "own": 64,
+      "own": 60,
       "best": 90,
       "perSec": 1949,
       "rank": "5/25 dps",
@@ -15143,7 +16861,7 @@
       "id": 51110,
       "name": "Grand Widow Faerlina",
       "parse": 72,
-      "own": 64,
+      "own": 59,
       "best": 89,
       "perSec": 1599,
       "rank": "2/23 dps",
@@ -15157,7 +16875,7 @@
       "id": 51116,
       "name": "Maexxna",
       "parse": 55,
-      "own": 56,
+      "own": 53,
       "best": 67,
       "perSec": 1084,
       "rank": "7/26 dps",
@@ -15171,7 +16889,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 61,
-      "own": 48,
+      "own": 43,
       "best": 90,
       "perSec": 1492,
       "rank": "3/25 dps",
@@ -15185,7 +16903,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 45,
-      "own": 43,
+      "own": 40,
       "best": 91,
       "perSec": 1218,
       "rank": "6/26 dps",
@@ -15199,7 +16917,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 24,
-      "own": 50,
+      "own": 44,
       "best": 91,
       "perSec": 728,
       "rank": "20/27 dps",
@@ -15227,7 +16945,7 @@
       "id": 51113,
       "name": "Instructor Razuvious",
       "parse": 71,
-      "own": 56,
+      "own": 50,
       "best": 80,
       "perSec": 924,
       "rank": "9/26 dps",
@@ -15241,8 +16959,8 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 24,
-      "own": 24,
-      "best": 36,
+      "own": 25,
+      "best": 54,
       "perSec": 138,
       "rank": "18/22 dps",
       "healShare": null,
@@ -15255,7 +16973,7 @@
       "id": 51121,
       "name": "The Four Horsemen",
       "parse": 84,
-      "own": 73,
+      "own": 72,
       "best": 95,
       "perSec": 331,
       "rank": "1/7 tanks",
@@ -15269,7 +16987,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 52,
-      "own": 41,
+      "own": 37,
       "best": 85,
       "perSec": 1348,
       "rank": "2/25 dps",
@@ -15283,7 +17001,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 53,
-      "own": 41,
+      "own": 40,
       "best": 83,
       "perSec": 1258,
       "rank": "2/27 dps",
@@ -15297,7 +17015,7 @@
       "id": 51115,
       "name": "Loatheb",
       "parse": 59,
-      "own": 43,
+      "own": 36,
       "best": 90,
       "perSec": 1564,
       "rank": "4/27 dps",
@@ -15544,6 +17262,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.294Z",
+    "grade": "B+",
+    "verdict": "Top tank on the Horsemen, top warrior on Faerlina and Heigan, 15 Sappers",
+    "summary": "You tanked the Horsemen (84, the top tank parse there) and were DPS the rest of the night, second in raid damage on Faerlina, Noth, Heigan and Sapphiron. Thaddius 59 is a personal best. 15 Goblin Sapper Charges, 7 Dense Dynamite, 8 Mighty Rage Potions, Juju Power and Mongoose on every pull. Gluth was the one miss: 24, with 17 seconds of nothing from 0:50.",
+    "good": [
+     {
+      "title": "Horsemen",
+      "text": "84, the top tank parse, and 3 Meteors soaked.",
+      "boss": 51121
+     },
+     {
+      "title": "Second in raid damage",
+      "text": "Faerlina, Noth, Heigan and Sapphiron. Top warrior on Faerlina and Heigan."
+     },
+     {
+      "title": "Thaddius personal best",
+      "text": "59 (before: 50).",
+      "boss": 51120
+     },
+     {
+      "title": "Explosives",
+      "text": "15 Sappers and 7 Dense Dynamite."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Gluth",
+      "impact": "medium",
+      "boss": 51108,
+      "text": "24, 66% active with 17 seconds idle from 0:50."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "bad",
+      "text": "24, 17 seconds idle."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "59, personal best."
+     },
+     "51121": {
+      "tone": "good",
+      "text": "84, top tank."
+     }
+    }
    }
   },
   "Utzemekanism": {
@@ -15551,14 +17318,14 @@
     "class": "Mage",
     "role": "dps",
     "avgParse": 51,
-    "ownAvgParseBefore": 50,
+    "ownAvgParseBefore": 47,
     "raidMedianParse": 54,
     "bosses": [
      {
       "id": 51107,
       "name": "Anub'Rekhan",
       "parse": 41,
-      "own": 50,
+      "own": 52,
       "best": 90,
       "perSec": 475,
       "rank": "25/25 dps",
@@ -15586,7 +17353,7 @@
       "id": 51116,
       "name": "Maexxna",
       "parse": 24,
-      "own": 48,
+      "own": 46,
       "best": 79,
       "perSec": 266,
       "rank": "25/26 dps",
@@ -15600,7 +17367,7 @@
       "id": 51118,
       "name": "Patchwerk",
       "parse": 63,
-      "own": 59,
+      "own": 44,
       "best": 97,
       "perSec": 726,
       "rank": "24/25 dps",
@@ -15614,7 +17381,7 @@
       "id": 51111,
       "name": "Grobbulus",
       "parse": 35,
-      "own": 35,
+      "own": 28,
       "best": 95,
       "perSec": 491,
       "rank": "26/26 dps",
@@ -15628,7 +17395,7 @@
       "id": 51108,
       "name": "Gluth",
       "parse": 48,
-      "own": 49,
+      "own": 43,
       "best": 82,
       "perSec": 621,
       "rank": "22/27 dps",
@@ -15642,7 +17409,7 @@
       "id": 51120,
       "name": "Thaddius",
       "parse": 64,
-      "own": 21,
+      "own": 18,
       "best": 88,
       "perSec": 4004,
       "rank": "2/25 dps",
@@ -15656,7 +17423,7 @@
       "id": 51113,
       "name": "Instructor Razuvious",
       "parse": 65,
-      "own": 48,
+      "own": 39,
       "best": 89,
       "perSec": 539,
       "rank": "21/26 dps",
@@ -15670,7 +17437,7 @@
       "id": 51109,
       "name": "Gothik the Harvester",
       "parse": 70,
-      "own": 48,
+      "own": 45,
       "best": 86,
       "perSec": 270,
       "rank": "3/22 dps",
@@ -15684,7 +17451,7 @@
       "id": 51121,
       "name": "The Four Horsemen",
       "parse": 62,
-      "own": 47,
+      "own": 46,
       "best": 88,
       "perSec": 381,
       "rank": "6/21 dps",
@@ -15698,7 +17465,7 @@
       "id": 51117,
       "name": "Noth the Plaguebringer",
       "parse": 35,
-      "own": 28,
+      "own": 27,
       "best": 68,
       "perSec": 1134,
       "rank": "5/25 dps",
@@ -15712,7 +17479,7 @@
       "id": 51112,
       "name": "Heigan the Unclean",
       "parse": 56,
-      "own": 52,
+      "own": 39,
       "best": 95,
       "perSec": 814,
       "rank": "17/27 dps",
@@ -15726,7 +17493,7 @@
       "id": 51115,
       "name": "Loatheb",
       "parse": 47,
-      "own": 48,
+      "own": 41,
       "best": 95,
       "perSec": 771,
       "rank": "21/27 dps",
@@ -15937,6 +17704,59 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.295Z",
+    "grade": "C+",
+    "verdict": "49 dispels and no deaths, top mage on Gothik and Kel'Thuzad",
+    "summary": "You did the decursing: 13 Life Drains on Sapphiron, 4 Plaguebringer curses on Noth, 49 dispels over the night. You owned the Ignite on Thaddius (506k, one tick for 57,849), which is why the meter shows you second there. By parse, Gothik 70 and Kel'Thuzad 75 were top mage. No deaths against your usual 2.8. But you were the last mage on Anub'Rekhan, Maexxna, Patchwerk, Grobbulus, Razuvious and Noth.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "49 over the night, 13 Life Drains on Sapphiron.",
+      "boss": 51119
+     },
+     {
+      "title": "Top mage",
+      "text": "Gothik 70 and Kel'Thuzad 75."
+     },
+     {
+      "title": "No deaths",
+      "text": "Against your usual 2.8."
+     },
+     {
+      "title": "Consumables",
+      "text": "Mageblood, Greater Firepower, Greater Arcane, Gordok and food every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Last mage six times",
+      "impact": "medium",
+      "text": "Anub'Rekhan 41, Maexxna 24, Patchwerk 63, Grobbulus 35, Razuvious 65, Noth 35."
+     },
+     {
+      "title": "Razuvious",
+      "impact": "low",
+      "boss": 51113,
+      "text": "53% active against a median of 90."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "75, top mage."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "13 Life Drains removed."
+     },
+     "51120": {
+      "tone": "info",
+      "text": "You owned 506k of Ignite: collective fire-mage damage."
+     }
+    }
    }
   },
   "Yulefuel": {
@@ -15944,7 +17764,7 @@
     "class": "Priest",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 69,
+    "ownAvgParseBefore": 70,
     "raidMedianParse": 58,
     "bosses": [
      {
@@ -16092,7 +17912,7 @@
       "name": "Noth the Plaguebringer",
       "parse": null,
       "own": 50,
-      "best": 72,
+      "best": 75,
       "perSec": 198,
       "rank": "2/12 healers",
       "healShare": 13,
@@ -16351,6 +18171,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "A-",
+    "verdict": "Both Understudies, all four Worshippers, 14 Shackles, 12 Power Infusions",
+    "summary": "You did the priest jobs: mind-controlled 4 Worshippers on Faerlina (the only one to do it), the Understudies on Razuvious, 14 Shackles and 12 Power Infusions. You still were top healer on Loatheb and second on Grobbulus, Noth and Sapphiron. No deaths against your usual 2.2.",
+    "good": [
+     {
+      "title": "Faerlina",
+      "text": "4 Worshippers mind-controlled, the only one in the raid.",
+      "boss": 51110
+     },
+     {
+      "title": "Razuvious",
+      "text": "Both Understudy mind controls.",
+      "boss": 51113
+     },
+     {
+      "title": "Shackles and PI",
+      "text": "14 Shackle Undeads, 4 on Kel'Thuzad, and 12 Power Infusions."
+     },
+     {
+      "title": "Healing",
+      "text": "Top on Loatheb, second on Grobbulus, Noth and Sapphiron."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Gothik",
+      "impact": "low",
+      "boss": 51109,
+      "text": "11th healer, 43 seconds idle from 0:30."
+     }
+    ],
+    "bosses": {
+     "51110": {
+      "tone": "good",
+      "text": "4 Worshippers mind-controlled."
+     },
+     "51115": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Zuzul": {
@@ -16761,6 +18626,45 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:30:03.368Z",
+    "grade": "A-",
+    "verdict": "Top healer on Maexxna, Gluth, Gothik and Sapphiron, the most consumables of the healers",
+    "summary": "The most healing in the raid on four bosses: Maexxna (13%), Gluth (20%), Gothik and Sapphiron, and third on five more. 7.6 consumable buffs a pull, the most of any healer. Faerlina (70% active) and Patchwerk (eighth) were the weaker ones.",
+    "good": [
+     {
+      "title": "Top healer four times",
+      "text": "Maexxna 13%, Gluth 20%, Gothik 13%, Sapphiron 12%."
+     },
+     {
+      "title": "Third healer",
+      "text": "Anub'Rekhan, Grobbulus, Thaddius, Noth and Kel'Thuzad."
+     },
+     {
+      "title": "Consumables",
+      "text": "7.6 buffs a pull against 4.4 for the healers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Patchwerk",
+      "impact": "low",
+      "boss": 51118,
+      "text": "Eighth healer, 74% overheal."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "Top healer, 20%."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   }
  }
