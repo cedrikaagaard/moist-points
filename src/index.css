@@ -760,7 +760,7 @@ h1, h2 {
 .bnet-privacy ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; line-height: 1.45; }
 .bnet-privacy b { color: var(--text); font-weight: 600; }
 
-.acct-wrap { padding-bottom: 0; }
+.acct-wrap { padding-bottom: 0; display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px; }
 .acct-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; background: var(--surface-1); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 10px 14px; }
 .acct-state { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-2); }
 .acct-state b { color: var(--text); }

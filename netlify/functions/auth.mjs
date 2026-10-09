@@ -7,13 +7,17 @@
 //   /api/auth/callback  <- Blizzard sends the user back here
 //   /api/auth/logout    -> forget the session
 //   /api/me             -> { verified, characters: [{ name, realm, class, level, faction }] }
+//   /api/reviews        -> the private raid reviews of your own characters (data/reviews/)
 //
 // Needs BNET_CLIENT_ID, BNET_CLIENT_SECRET and SESSION_SECRET in Netlify's
 // environment variables, and https://<site>/api/auth/callback registered as a
 // redirect URL on the Blizzard client (develop.battle.net).
 import crypto from "node:crypto";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-export const config = { path: ["/api/auth/login", "/api/auth/callback", "/api/auth/logout", "/api/me"] };
+export const config = { path: ["/api/auth/login", "/api/auth/callback", "/api/auth/logout", "/api/me", "/api/reviews"] };
 
 const AUTHORIZE = "https://oauth.battle.net/authorize";
 const TOKEN = "https://oauth.battle.net/token";
@@ -32,6 +36,7 @@ export default async (req) => {
     if (route === "/api/auth/callback") return await callback(req, url);
     if (route === "/api/auth/logout") return redirect("/#/me", [clear(SESSION)]);
     if (route === "/api/me") return me(req);
+    if (route === "/api/reviews") return reviews(req);
   } catch (e) {
     console.error(e);
     return redirect(`/?bnet=error&reason=${encodeURIComponent(e.message.slice(0, 80))}#/me`, [clear(STATE)]);
@@ -88,6 +93,40 @@ function me(req) {
   const s = verify(readCookie(req, SESSION));
   const body = s ? { verified: true, characters: s.characters } : { verified: false, characters: [] };
   return new Response(JSON.stringify(body), { headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
+}
+
+// Reviews live in data/reviews/<raid id>.json (bundled with this function via
+// netlify.toml's included_files), never in the site bundle: only the verified
+// owner of a character gets that character's reviews.
+const REALM = "firemaw";
+function reviewDir() {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const tries = [process.cwd(), process.env.LAMBDA_TASK_ROOT, here, path.resolve(here, ".."), path.resolve(here, "../..")].filter(Boolean).map((d) => path.join(d, "data/reviews"));
+  return tries.find((d) => fs.existsSync(d)) || null;
+}
+let cache = null;
+function allReviews() {
+  if (cache) return cache;
+  const dir = reviewDir();
+  cache = dir ? fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"))) : [];
+  return cache;
+}
+function reviews(req) {
+  const s = verify(readCookie(req, SESSION));
+  if (!s) return json({ verified: false, reviews: [], raidsWithReviews: allReviews().length }, 401);
+  const mine = new Set(s.characters.filter((c) => c.realm === REALM).map((c) => c.name.toLowerCase()));
+  const out = [];
+  for (const raid of allReviews()) {
+    for (const [name, p] of Object.entries(raid.players || {})) {
+      if (!p.review || !mine.has(name.toLowerCase())) continue;
+      out.push({ night: raid.night, date: raid.date, zones: raid.zones, zoneIds: raid.zoneIds, icons: raid.icons, kind: raid.kind, raiders: raid.raiders, durationMin: raid.durationMin, player: name, stats: p.stats, review: p.review });
+    }
+  }
+  out.sort((a, b) => (a.night < b.night ? 1 : -1));
+  return json({ verified: true, reviews: out });
+}
+function json(body, status = 200) {
+  return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } });
 }
 
 // ---- signed cookie: base64url(json).hmac ----

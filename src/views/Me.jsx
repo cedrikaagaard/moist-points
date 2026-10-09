@@ -1,8 +1,12 @@
+import { lazy, Suspense } from "react";
 import PlayerPage from "../components/PlayerPage.jsx";
 import IdentityPicker from "../components/IdentityPicker.jsx";
 import { useMe, useIdentity, setMe } from "../identity.js";
 import { allRaiders } from "../lib/roster.js";
 import { BnetLogin, AccountBar } from "../components/BnetVerify.jsx";
+
+// Private reviews: only loaded for people logged in with Battle.net.
+const MyReviews = lazy(() => import("../raids/MyReviews.jsx"));
 
 // SR raiders first, then anyone the raid logs know who hasn't soft-reserved yet.
 function pickable(players) {
@@ -43,7 +47,14 @@ export default function Me({ data }) {
   // Chosen: the same page as their raider profile, framed as "yours".
   return (
     <>
-      <div className="view acct-wrap"><AccountBar /></div>
+      <div className="view acct-wrap">
+        <AccountBar />
+        {verified && (
+          <Suspense fallback={null}>
+            <MyReviews />
+          </Suspense>
+        )}
+      </div>
       <PlayerPage data={data} name={me} player={player} isMe onChangeMe={verified ? null : () => setMe(null)} />
     </>
   );

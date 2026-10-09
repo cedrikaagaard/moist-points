@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.0",
+    date: "2026-10-09",
+    changes: [
+      "Personal raid reviews: log in with Battle.net and My Page shows Claude's review of each of your recent raids. A grade, what went well, what to fix (with how much it mattered), boss by boss parses against your own usual, deaths, your world buffs pull by pull and your consumables.",
+      "Only you can see your own reviews; they never ship with the site. Reviews are being written for the most recent raids, starting with 7 October Naxxramas.",
+    ],
+  },
+  {
     version: "2.4.1",
     date: "2026-10-09",
     changes: [

@@ -9,3 +9,7 @@
 [build.environment]
   # Pin Node so a future release can't silently change the build.
   NODE_VERSION = "20"
+
+# The private player reviews are read by the auth function (never shipped in the site).
+[functions]
+  included_files = ["data/reviews/**"]
