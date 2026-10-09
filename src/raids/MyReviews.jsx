@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import { useIdentity, setMe } from "../identity.js";
+import { useMyReviews, reviewsOf } from "../reviews.js";
+import { LockedReviews } from "../components/BnetVerify.jsx";
 import { BossIcon, ZoneIcon, SpellIcon } from "./components.jsx";
 import { parseColor } from "./RaidProfile.jsx";
 import { fmtDate, zoneOf } from "./assets.js";
@@ -14,52 +15,32 @@ import "./raids.css";
 //             fix: [{ title, text, impact: high|medium|low, boss? }],
 //             bosses: { <encounterId>: { tone, text } } }
 
-let loaded = null;
-function useReviews(verified) {
-  const [data, setData] = useState(loaded);
-  useEffect(() => {
-    if (!verified || loaded) return;
-    fetch("/api/reviews", { credentials: "same-origin" })
-      .then((r) => (r.ok ? r.json() : { reviews: [] }))
-      .catch(() => ({ reviews: [] }))
-      .then((d) => {
-        loaded = d.reviews || [];
-        setData(loaded);
-      });
-  }, [verified]);
-  return data;
-}
-
 const GRADE_COLOR = { S: "#ff8000", A: "#a335ee", B: "#3b8eea", C: "#1eff00", D: "#9d9d9d", F: "#e0525f" };
 const gradeColor = (g) => GRADE_COLOR[g?.[0]] || "var(--muted)";
 
-export default function MyReviews() {
-  const { me, verified, owned } = useIdentity();
-  const all = useReviews(verified);
-  const [open, setOpen] = useState(null);
-  if (!verified || !all) return null;
-  const mine = all.filter((r) => r.player === me);
-  const others = owned.filter((n) => n !== me && all.some((r) => r.player === n));
-  const current = mine.find((r) => r.night === open) || mine[0];
+// The Reviews tab on My Page. night: the raid to show (#/me/reviews/<raid id>).
+export default function MyReviews({ night, locked }) {
+  const { me, owned } = useIdentity();
+  const all = useMyReviews();
+  if (locked) return <LockedReviews />;
+  if (!all) return <div className="muted rr-loading">Loading your reviews…</div>;
+  const mine = reviewsOf(all, me);
+  const others = owned.filter((n) => n !== me && reviewsOf(all, n).length);
+  const current = mine.find((r) => r.night === night) || mine[0];
 
   return (
-    <section className="rv">
-      <header className="rv-head">
-        <div>
-          <div className="rv-kicker">✨ Claude's review of you</div>
-          <h2>Your raid reviews</h2>
-        </div>
-        <p className="rv-private">
-          <span aria-hidden="true">🔒</span> Only you can see these. Written by Claude from the logs, so it can be wrong; the numbers come straight from the log.
-        </p>
-      </header>
+    <div className="rv">
+      <p className="rv-private">
+        <span aria-hidden="true">🔒</span> Only you can see these. Claude reads the logs of each raid you were in and writes you a
+        review; it can be wrong, the numbers come straight from the log.
+      </p>
 
       {!mine.length && (
         <div className="rv-empty">
           No reviews for {me} yet. Claude writes them for recent raids, so check back after the next one.
           {others.length > 0 && (
             <span>
-              {" "}You do have reviews on{" "}
+              {" "}Your other characters have some:{" "}
               {others.map((n, i) => (
                 <span key={n}>
                   {i > 0 && ", "}
@@ -72,30 +53,23 @@ export default function MyReviews() {
         </div>
       )}
 
-      {mine.length > 0 && (
+      {mine.length > 1 && (
         <div className="rv-raids" role="tablist">
           {mine.map((r) => (
-            <button
-              key={r.night}
-              type="button"
-              role="tab"
-              aria-selected={r === current}
-              className={`rv-raid${r === current ? " active" : ""}`}
-              onClick={() => setOpen(r.night)}
-            >
+            <a key={r.night} role="tab" aria-selected={r === current} className={`rv-raid${r === current ? " active" : ""}`} href={`#/me/reviews/${r.night}`}>
               <ZoneIcon id={r.zoneIds?.[0]} size={30} />
               <span className="rv-raid-text">
                 <b>{zoneOf(r.zoneIds?.[0]).short || r.zones?.[0]}</b>
                 <small>{fmtDate(r.date || r.night.slice(0, 10))}</small>
               </span>
               <span className="rv-grade-sm" style={{ "--g": gradeColor(r.review.grade) }}>{r.review.grade}</span>
-            </button>
+            </a>
           ))}
         </div>
       )}
 
       {current && <Review r={current} />}
-    </section>
+    </div>
   );
 }
 

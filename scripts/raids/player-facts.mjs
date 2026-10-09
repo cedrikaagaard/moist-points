@@ -158,7 +158,7 @@ function bossFacts(b, players) {
         perPlayer[name].activePct = r.activePct;
         if (r.longestIdle && r.activePct < 90) perPlayer[name].longestIdle = r.longestIdle;
         (actByRole[roleOf(name)] ??= []).push(r.activePct);
-        if (a.ignite > 20000) perPlayer[name].ignite = `${Math.round(a.ignite / 1000)}k Ignite damage owned (biggest tick ${a.igniteMaxTick}); its threat is yours even when others' crits refresh it`;
+        if (a.ignite > 20000) perPlayer[name].ignite = `${Math.round(a.ignite / 1000)}k Ignite damage owned (biggest tick ${a.igniteMaxTick}); collective fire-mage damage credited to the owner, with all its threat: the owner's DPS is inflated, other fire mages' deflated`;
         if (a.heal + a.over > 20000) perPlayer[name].overhealPct = Math.round((100 * a.over) / (a.heal + a.over));
       }
       for (const name of players) if (perPlayer[name].activePct != null) perPlayer[name].raidMedianActivePctForRole = median(actByRole[roleOf(name)]);

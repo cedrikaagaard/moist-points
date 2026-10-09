@@ -6,6 +6,15 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.2",
+    date: "2026-10-09",
+    changes: [
+      "Raid reviews moved into their own Reviews tab on My Page, next to Raid record and SR points, instead of sitting on top of the page. Raids with a review get a small \"review\" link in your raid list.",
+      "The login bar on My Page is a single quiet line now when you're not logged in.",
+      "Reviews treat a rolling Ignite as what it is: the fire mages' combined damage, credited (with all its threat) to whoever owns it.",
+    ],
+  },
+  {
     version: "2.5.1",
     date: "2026-10-09",
     changes: [

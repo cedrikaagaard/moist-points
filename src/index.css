@@ -784,3 +784,7 @@ h1, h2 {
   .acct-end { margin-left: 0; }
 }
 .me-chip-ok { color: #3fcf8e; font-size: 11px; }
+.acct-bar-quiet { padding: 7px 14px; }
+.acct-dot.off { background: var(--muted); box-shadow: none; }
+.acct-login { color: #6cb6ff; font-weight: 600; }
+.page-tab-badge { font-size: 11px; background: var(--surface-3); color: var(--text-2); border-radius: 999px; padding: 0 7px; margin-left: 2px; line-height: 18px; }

@@ -6,6 +6,7 @@ import { href } from "../router.js";
 import "../raids/raids.css";
 
 const RaidProfile = lazy(() => import("../raids/RaidProfile.jsx"));
+const MyReviews = lazy(() => import("../raids/MyReviews.jsx"));
 
 const TAB_KEY = "moist.profileTab";
 const readTab = () => {
@@ -17,12 +18,20 @@ const readTab = () => {
 };
 
 // One page per raider - used by Raiders (#/players/<name>) and My Page.
-// Two tabs: their raid record (from Warcraft Logs) and their SR points.
+// Tabs: their raid record (from Warcraft Logs) and their SR points, plus on
+// My Page their private raid reviews (#/me/reviews[/<raid id>]).
 // `player` is their SR data (null if they've never soft-reserved).
-export default function PlayerPage({ data, name, player, isMe, onChangeMe }) {
+// reviews (My Page only): { active, night, locked, count, nights: Set }
+export default function PlayerPage({ data, name, player, isMe, onChangeMe, reviews }) {
   const r = rosterOf(name);
   const [tab, setTabState] = useState(readTab);
+  const current = reviews?.active ? "reviews" : tab;
   const setTab = (t) => {
+    if (t === "reviews") {
+      window.location.hash = "#/me/reviews";
+      return;
+    }
+    if (reviews?.active) window.location.hash = "#/me";
     setTabState(t);
     try {
       localStorage.setItem(TAB_KEY, t);
@@ -84,17 +93,23 @@ export default function PlayerPage({ data, name, player, isMe, onChangeMe }) {
         {[
           { key: "raids", label: "Raid record", icon: "https://assets.rpglogs.com/img/warcraft/zones/zone-2006.png" },
           { key: "sr", label: "SR points", icon: "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_coin_02.jpg" },
+          ...(reviews ? [{ key: "reviews", label: "Reviews", icon: "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_note_06.jpg", badge: reviews.locked ? "🔒" : reviews.count || null }] : []),
         ].map((t) => (
-          <button key={t.key} role="tab" aria-selected={tab === t.key} className={`page-tab${tab === t.key ? " active" : ""}`} onClick={() => setTab(t.key)}>
+          <button key={t.key} role="tab" aria-selected={current === t.key} className={`page-tab${current === t.key ? " active" : ""}`} onClick={() => setTab(t.key)}>
             <img src={t.icon} alt="" width="20" height="20" />
             {t.label}
+            {t.badge != null && <span className="page-tab-badge">{t.badge}</span>}
           </button>
         ))}
       </div>
 
-      {tab === "raids" ? (
+      {current === "reviews" ? (
+        <Suspense fallback={<div className="muted rr-loading">Loading your reviews…</div>}>
+          <MyReviews night={reviews.night} locked={reviews.locked} />
+        </Suspense>
+      ) : current === "raids" ? (
         <Suspense fallback={<div className="muted rr-loading">Loading raid record…</div>}>
-          <RaidProfile name={display} />
+          <RaidProfile name={display} reviews={reviews?.nights} />
         </Suspense>
       ) : player ? (
         <ProfileBody data={data} player={player} />

@@ -5,7 +5,8 @@ import { rosterOf, classColor, specIcon } from "../lib/roster.js";
 // Battle.net login on My Page. Three states:
 // - <BnetLogin /> on the "who are you?" screen: log in, or pick by hand below it
 // - <AccountBar /> above your page: logged in (your characters, switcher, log out)
-//   or, when you only picked a name, a call to log in to unlock your reviews.
+//   or one quiet line when you only picked a name
+// - <LockedReviews /> in the Reviews tab until you log in
 
 const BNET_BLUE = "#148eff";
 
@@ -78,7 +79,18 @@ export function BnetLogin() {
 export function AccountBar() {
   const id = useIdentity();
   if (id.loading) return null;
-  if (!id.verified) return <LockedReviews />;
+  if (!id.verified)
+    return (
+      <div className="acct-bar acct-bar-quiet">
+        <div className="acct-state">
+          <span className="acct-dot off" aria-hidden="true" />
+          <span>Picked on this device, not logged in</span>
+        </div>
+        <div className="acct-end">
+          <a href="/api/auth/login" className="acct-login">Log in with Battle.net</a>
+        </div>
+      </div>
+    );
 
   const others = id.allFiremaw.filter((n) => !id.owned.includes(n));
   return (
@@ -119,7 +131,7 @@ export function AccountBar() {
   );
 }
 
-function LockedReviews() {
+export function LockedReviews() {
   const error = loginError();
   return (
     <div className="acct-locked">

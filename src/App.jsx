@@ -86,7 +86,7 @@ export default function App() {
         )}
         {error && !standalone && <div className="empty error">Couldn’t load data: {error}</div>}
         {!data && !error && !standalone && <Loader step={step} />}
-        {data && view === "me" && <Me data={data} />}
+        {data && view === "me" && <Me data={data} param={param} sub={sub} />}
         {data && view === "stats" && <Overview data={data} />}
         {data && view === "points" && <Points data={data} raid={param} />}
         {data && view === "players" && <Players data={data} name={param} />}

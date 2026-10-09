@@ -2250,7 +2250,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:48:37.160Z",
+    "generatedAt": "2026-10-09T14:51:45.372Z",
     "grade": "A-",
     "verdict": "Main tank on most of Naxxramas, zero deaths, and 202 Sunder Armors",
     "summary": "You took every boss melee hit on Patchwerk and Heigan and the large majority on Maexxna, Grobbulus, Gluth, Loatheb and Sapphiron, plus the biggest share on Anub'Rekhan and Kel'Thuzad, and you didn't die once in 16 boss pulls. For a tank the parses are a bonus, but Gluth 95, Razuvious 88, Noth 88 and Grobbulus 82 are all well over your own usual on those bosses.",
@@ -3107,7 +3107,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:48:37.159Z",
+    "generatedAt": "2026-10-09T14:51:45.371Z",
     "grade": "C+",
     "verdict": "Owned a rolling Ignite on Maexxna, died to its threat, and played eleven bosses without a world buff",
     "summary": "You came in with seven world buffs and kept them for three bosses. On Maexxna you owned the raid's Ignite: from 0:21 it rolled at five stacks for 4,508 every two seconds, kept alive by everyone's fire crits, and in Classic all of that threat lands on the Ignite's owner. At 0:42 she turned on you and two hits later Fengus, Mol'dar, Slip'kik, Rallying Cry, Zandalar, Songflower and Sayge's were gone. From Patchwerk to the Sapphiron wipe you had none of them, and your parses show it: 54 on average against your usual 79. Sapphiron, where you removed more Life Drains than anyone, saves the grade.",
@@ -3133,7 +3133,7 @@
       "title": "A rolling Ignite is your threat, not just your damage",
       "impact": "high",
       "boss": 51116,
-      "text": "59.6k of your 92.7k damage to Maexxna before you died was Ignite, rolling at 4,508 a tick for twenty seconds while Paiyro's and Osinir's crits kept refreshing it. All of that threat was yours. You can't stop other mages refreshing it, but you can see it coming: when your Ignite has been rolling at five stacks for ten seconds, stop casting and tell the other mages to hold a second so it drops. That death cost you all seven world buffs for the next eleven bosses."
+      "text": "You owned the Ignite: 59.6k of the 92.7k damage credited to you on Maexxna before you died was Ignite, rolling at 4,508 a tick for twenty seconds on the fire mages' crits (Paiyro's and Osinir's included). That's collective damage, but every point of its threat lands on the owner. When your Ignite has been rolling at five stacks for a while, stop casting and get the other fire mages to hold a second so it drops. That death cost you all seven world buffs for the next eleven bosses."
      },
      {
       "title": "Kel'Thuzad: you died to 990 damage",
@@ -3154,7 +3154,7 @@
      },
      "51116": {
       "tone": "bad",
-      "text": "Killed by Maexxna's melee at 0:42, the first death of the kill. Threat from a rolling Ignite you owned (59.6k of your damage)."
+      "text": "Killed by Maexxna's melee at 0:42, the first death of the kill: threat from the raid's Ignite, which you owned (59.6k of the damage credited to you)."
      },
      "51117": {
       "tone": "good",
@@ -8075,7 +8075,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:48:37.160Z",
+    "generatedAt": "2026-10-09T14:51:45.372Z",
     "grade": "B",
     "verdict": "Soaked 44 Hateful Strikes on the best consumables in the raid, but died on the first trash pull",
     "summary": "You switched between tanking and DPS all night: off-tank on Anub'Rekhan, Faerlina, Thaddius, Gothik and the Horsemen, Hateful Strike soaker on Patchwerk, DPS on Maexxna, Grobbulus, Gluth, Heigan, Loatheb and Sapphiron. As DPS you beat your own numbers on Gluth (50, your best before was 38) and tied your best on Grobbulus. Nobody came better prepared: 8 consumable buffs per boss pull, with Flask of the Titans on all 15.",
@@ -8572,6 +8572,66 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T14:50:12.119Z",
+    "grade": "A-",
+    "verdict": "A 98 on the Horsemen and 88 or better almost everywhere, but Thaddius never saw you",
+    "summary": "Consistent as usual: an 82 average against your normal 83, with the Four Horsemen at 98 (your best before was 89) and Faerlina 95. You and the other hunters handled Gluth's Frenzy. Two things stand out: the log has nothing from you on Thaddius, and you were the second death of the Sapphiron wipe.",
+    "good": [
+     {
+      "title": "Four Horsemen 98",
+      "text": "Fourth highest damage in the raid on the Horsemen and a new personal best by nine points.",
+      "boss": 51121
+     },
+     {
+      "title": "Consistent",
+      "text": "88 or better on Anub'Rekhan, Faerlina, Maexxna, Patchwerk, Grobbulus, Gluth, Razuvious, Noth and Heigan. Best hunter in the raid on most bosses."
+     },
+     {
+      "title": "Tranquilizing Shot on Gluth",
+      "text": "2 Tranquilizing Shots on Gluth's Frenzy, as many as any hunter.",
+      "boss": 51108
+     },
+     {
+      "title": "Protection potions",
+      "text": "4 Frost, 3 Nature and 2 Shadow Protection Potions over the night, each where it belongs."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Thaddius: absent from the log",
+      "impact": "medium",
+      "boss": 51120,
+      "text": "For the whole 2:42 the log has no shot, no damage taken and no Chain Lightning on you, and Warcraft Logs gave you 0 DPS. Either you disconnected or you were nowhere near the raid. If you know it was a logging gap, ignore this."
+     },
+     {
+      "title": "Second death on the Sapphiron wipe",
+      "impact": "low",
+      "boss": 51119,
+      "text": "Life Drain did 3,863 to you in your last ten seconds and killed you at 0:41. Removing Life Drain is the decursers' job, so this is mostly on them, but a healthstone or bandage when you see the curse on you buys the time."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "4.6 buffs per pull against 5.9 for the other DPS. Flask of the Titans on 10 of 15 pulls and Zanza on 4; no Juju or Firewater at all."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "bad",
+      "text": "Second to die on the wipe (Life Drain), and died late on the kill to Frost Aura."
+     },
+     "51120": {
+      "tone": "bad",
+      "text": "Nothing from you in the log for the whole fight, 0 DPS."
+     },
+     "51121": {
+      "tone": "good",
+      "text": "98, your best Horsemen by nine points."
+     }
+    }
    }
   },
   "Miniwrecker": {
@@ -12121,6 +12181,64 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T14:50:12.119Z",
+    "grade": "A",
+    "verdict": "Top-five damage on nearly every boss, four personal bests, and no deaths",
+    "summary": "An 81 average against your usual 63, top-five damage on ten bosses and the top damage of the raid on the Four Horsemen. Patchwerk, Grobbulus, Noth and Thaddius were all personal bests, Thaddius by 41 points. You usually die almost three times a raid; tonight not once.",
+    "good": [
+     {
+      "title": "Four personal bests",
+      "text": "Thaddius 90 (best before: 49), Grobbulus 95 (92), Noth 94 (88), Patchwerk 94 (92)."
+     },
+     {
+      "title": "Highest damage on the Horsemen",
+      "text": "First of 23 DPS on the Four Horsemen with a 96 parse.",
+      "boss": 51121
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths in 16 boss pulls; your usual is 2.8 a raid."
+     },
+     {
+      "title": "Kicked Kel'Thuzad's Frostbolts",
+      "text": "2 Frostbolts interrupted on Kel'Thuzad, plus a Shadow Bolt Volley kicked on Gothik.",
+      "boss": 51114
+     },
+     {
+      "title": "Engineering",
+      "text": "9 Goblin Sapper Charges and 10 Dense Dynamite over the night."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron's Blizzard",
+      "impact": "low",
+      "boss": 51119,
+      "text": "One Chill hit for 3,208. Small, but Sapphiron is a healing fight."
+     },
+     {
+      "title": "Elixir gaps",
+      "impact": "low",
+      "text": "Giants on 4 of 15 pulls and Titans on 8. You're already above the other DPS (6.1 buffs a pull against 5.9), so this is polish."
+     }
+    ],
+    "bosses": {
+     "51112": {
+      "tone": "info",
+      "text": "The log loses you from 0:11 (with Macharius at the same second). Most likely the teleport out of the logger's range, so no blame."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "90, your best Thaddius by 41 points."
+     },
+     "51121": {
+      "tone": "good",
+      "text": "Top damage of the raid, 96."
+     }
+    }
    }
   },
   "Sabrina": {
@@ -13016,6 +13134,60 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T14:50:12.119Z",
+    "grade": "B",
+    "verdict": "Nine shackles on Kel'Thuzad and Fear Ward duty, but a lot of Heals into full health",
+    "summary": "You carried two jobs: Fear Ward (13 over the night) and shackling on Kel'Thuzad, where your 9 Shackle Undead were three times anyone else's. Your healing share was solid on Faerlina, Razuvious and Sapphiron. On the trash-light bosses most of your Heals landed on people already at full health.",
+    "good": [
+     {
+      "title": "Kel'Thuzad shackles",
+      "text": "9 Shackle Undead cast, the most in the raid (the other shacklers had a median of 3). Your low healing there is the price of that job.",
+      "boss": 51114
+     },
+     {
+      "title": "Fear Ward",
+      "text": "13 Fear Wards over the night."
+     },
+     {
+      "title": "Razuvious",
+      "text": "27% of all healing on Razuvious, the most of the 11 healers.",
+      "boss": 51113
+     },
+     {
+      "title": "Sapphiron",
+      "text": "746 HPS with only 10% overheal on the kill, 11% of the raid's healing.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overhealing",
+      "impact": "medium",
+      "text": "77 to 88% of your healing was overheal on Anub'Rekhan, Maexxna, Patchwerk, Grobbulus, Noth and Heigan, mostly from Heal. That's casting on people who were topped up before it landed. Cancel the cast when your target is full, or start later."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Zanza on 3 of 15 pulls and food on 7. Flask of Distilled Wisdom 12 of 15 and Mageblood every pull are good."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "Top healer, 27% of the healing."
+     },
+     "51114": {
+      "tone": "good",
+      "text": "9 shackles, most in the raid."
+     },
+     "51119": {
+      "tone": "info",
+      "text": "Died 27th of 29 on the wipe, after it was lost."
+     }
+    }
    }
   },
   "Sixto": {
@@ -13878,6 +14050,65 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T14:50:12.118Z",
+    "grade": "A",
+    "verdict": "Zero deaths, 90+ on seven bosses, and 334 Curses of Recklessness",
+    "summary": "Your best Naxxramas in a while: an 86 average against your usual 72, and you didn't die once on a night where you usually die about twice. Patchwerk 97, Grobbulus 96, Gluth 95 and Kel'Thuzad 95 are all at or near your best, and you did it while keeping Curse of Recklessness up all night.",
+    "good": [
+     {
+      "title": "Never died",
+      "text": "Zero deaths in 16 boss pulls, including the Sapphiron wipe that killed 29. You average two deaths a raid."
+     },
+     {
+      "title": "Curse duty",
+      "text": "334 Curses of Recklessness over the raid, recast every time Loatheb stripped it (5 on him alone)."
+     },
+     {
+      "title": "Top-end parses",
+      "text": "Patchwerk 97, Grobbulus 96, Gluth 95, Kel'Thuzad 95, Heigan 94, Noth 91, Razuvious 90. Kel'Thuzad 95 beats your previous best there (94).",
+      "boss": 51114
+     },
+     {
+      "title": "Used your healthstones",
+      "text": "9 Major Healthstones over the night, mostly on Loatheb, the Horsemen, Sapphiron and Kel'Thuzad. That's why you're alive in every one of them."
+     }
+    ],
+    "fix": [
+     {
+      "title": "No food buff",
+      "impact": "medium",
+      "text": "Food on 1 of 15 boss pulls. You had 4.7 consumable buffs per pull against 5.9 for the other DPS, and food is the cheapest part of the gap."
+     },
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "61 against your usual 76 there, with 16 seconds without a cast from 4:03. Everything else on the night was at or above your usual."
+     },
+     {
+      "title": "Maexxna gap",
+      "impact": "low",
+      "boss": 51116,
+      "text": "Nothing from 0:29 until Web Spray stunned everyone at 0:40, 12 seconds of no casts on a 70 second fight."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "95, a new personal best."
+     },
+     "51115": {
+      "tone": "good",
+      "text": "Curse of Recklessness reapplied 5 times after Loatheb stripped it."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "97, one off your best."
+     }
+    }
    }
   },
   "Speldosan": {

@@ -1,12 +1,9 @@
-import { lazy, Suspense } from "react";
 import PlayerPage from "../components/PlayerPage.jsx";
 import IdentityPicker from "../components/IdentityPicker.jsx";
 import { useMe, useIdentity, setMe } from "../identity.js";
 import { allRaiders } from "../lib/roster.js";
 import { BnetLogin, AccountBar } from "../components/BnetVerify.jsx";
-
-// Private reviews: only loaded for people logged in with Battle.net.
-const MyReviews = lazy(() => import("../raids/MyReviews.jsx"));
+import { useMyReviews, reviewsOf } from "../reviews.js";
 
 // SR raiders first, then anyone the raid logs know who hasn't soft-reserved yet.
 function pickable(players) {
@@ -14,9 +11,10 @@ function pickable(players) {
   return [...players, ...allRaiders().filter((r) => !known.has(r.name.toLowerCase()))];
 }
 
-export default function Me({ data }) {
+export default function Me({ data, param, sub }) {
   const me = useMe();
   const { verified, loading } = useIdentity();
+  const all = useMyReviews();
   const player = me ? data.playerByName.get(me.toLowerCase()) : null;
 
   // Not chosen yet: log in with Battle.net, or pick a character by hand.
@@ -49,13 +47,22 @@ export default function Me({ data }) {
     <>
       <div className="view acct-wrap">
         <AccountBar />
-        {verified && (
-          <Suspense fallback={null}>
-            <MyReviews />
-          </Suspense>
-        )}
       </div>
-      <PlayerPage data={data} name={me} player={player} isMe onChangeMe={verified ? null : () => setMe(null)} />
+      <PlayerPage
+        data={data}
+        name={me}
+        player={player}
+        isMe
+        onChangeMe={verified ? null : () => setMe(null)}
+        reviews={{
+          // #/me/reviews[/<raid id>]: the Reviews tab (locked until logged in with Battle.net)
+          active: param === "reviews",
+          night: param === "reviews" ? sub : null,
+          locked: !verified,
+          count: reviewsOf(all, me).length,
+          nights: new Set(reviewsOf(all, me).map((r) => r.night)),
+        }}
+      />
     </>
   );
 }

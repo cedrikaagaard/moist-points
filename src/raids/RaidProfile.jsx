@@ -44,7 +44,7 @@ export const ParseBadge = ({ pct }) => (
   <span className="rr-parse" style={{ color: parseColor(pct), borderColor: parseColor(pct) }}>{pct ?? "-"}</span>
 );
 
-export default function RaidProfile({ name }) {
+export default function RaidProfile({ name, reviews }) {
   const p = usePlayerRaids(name);
   if (p === undefined) return <div className="muted rr-loading">Loading raid record…</div>;
   if (!p) {
@@ -54,10 +54,10 @@ export default function RaidProfile({ name }) {
       </div>
     );
   }
-  return <Record p={p} />;
+  return <Record p={p} reviews={reviews} />;
 }
 
-function Record({ p }) {
+function Record({ p, reviews }) {
   const nights = p.nights;
   const first = nights[0].night;
   const guildNights = NIGHTS.filter((n) => n.night >= first).length;
@@ -105,6 +105,20 @@ function Record({ p }) {
               <span className="rr-night-stats-sm muted">
                 {n.deaths ? `${n.deaths} ☠` : "deathless"}
               </span>
+              {reviews?.has(n.night) && (
+                <span
+                  className="rr-review-chip"
+                  role="link"
+                  title="Claude's review of your raid (only you can see it)"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.location.hash = `#/me/reviews/${n.night}`;
+                  }}
+                >
+                  ✨ review
+                </span>
+              )}
             </a>
           ))}
         </div>
