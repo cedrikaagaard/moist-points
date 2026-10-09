@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.11",
+    date: "2026-10-09",
+    changes: [
+      "Wording fix in Claude's analysis of the 2 October BWL.",
+    ],
+  },
+  {
     version: "2.3.10",
     date: "2026-10-09",
     changes: [
@@ -30,7 +37,7 @@ export const CHANGELOG = [
     version: "2.3.7",
     date: "2026-10-09",
     changes: [
-      "Claude's analysis of the 2 October BWL now names the guilty party for the Firemaw wipe. It was the guy who made this website.",
+      "Claude's analysis of the 2 October BWL now names who caused the Firemaw wipe.",
     ],
   },
   {
