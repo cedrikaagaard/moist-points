@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.11",
+    date: "2026-10-09",
+    changes: [
+      "Every raider of 7 October Naxxramas now has a personal review (log in with Battle.net to read yours).",
+      "Reviews now check what was going on before calling anyone idle: debuffs on the player and boss buff changes during the gap.",
+    ],
+  },
+  {
     version: "2.5.10",
     date: "2026-10-09",
     changes: [

@@ -504,6 +504,69 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:49:50.658Z",
+    "grade": "B",
+    "verdict": "Personal bests on Grobbulus and Thaddius, second in raid damage on Sapphiron and Kel'Thuzad, every consumable every pull",
+    "summary": "Your average (46) is under your usual 62, but boss by boss it was mostly a good night: Thaddius 56 (best before: 38), Grobbulus 54 (50), Anub'Rekhan 62 (55), Kel'Thuzad 65 (equal to your best), and second highest damage in the raid on Sapphiron and Kel'Thuzad. You also had Titans, Mongoose, Juju Power, Zanza, Firewater and food on all 15 pulls. Maexxna (25) and Gluth (37) dragged the average down.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Thaddius 56 (before: 38), Grobbulus 54 (50), Anub'Rekhan 62 (55), Kel'Thuzad 65 (equal)."
+     },
+     {
+      "title": "Second in raid damage",
+      "text": "On Sapphiron and Kel'Thuzad, with two Frost Protection Potions on each."
+     },
+     {
+      "title": "Fully prepared",
+      "text": "Six consumable buffs on every single boss pull: Titans, Mongoose, Juju Power, Zanza, Firewater and food."
+     },
+     {
+      "title": "Meteor soaks",
+      "text": "3 Meteors soaked on the Horsemen.",
+      "boss": 51121
+     }
+    ],
+    "fix": [
+     {
+      "title": "Maexxna",
+      "impact": "medium",
+      "boss": 51116,
+      "text": "25, the lowest warrior. You were web-wrapped for part of it, but the parse is still well under your usual 37."
+     },
+     {
+      "title": "Sapphiron wipe",
+      "impact": "low",
+      "boss": 51119,
+      "text": "9th of 29 deaths, at 1:33, to Frost Aura with 150 healing on you in your last ten seconds."
+     },
+     {
+      "title": "Gluth and Loatheb",
+      "impact": "low",
+      "text": "Gluth 37 (your usual) and Loatheb 41 with 18 seconds without a swing from 0:37."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "Second in raid damage, 65."
+     },
+     "51116": {
+      "tone": "info",
+      "text": "Web-wrapped for part of the fight."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "Second in raid damage."
+     },
+     "51120": {
+      "tone": "good",
+      "text": "56, personal best."
+     }
+    }
    }
   },
   "Amima": {
@@ -947,6 +1010,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.480Z",
+    "grade": "B",
+    "verdict": "Poison duty on Faerlina, top healer on Loatheb, no deaths, and a lot of overhealing on the easy ones",
+    "summary": "You cleansed 3 Poison Bolt Volleys on Faerlina (the most), 4 Cripples on Noth, and were the top healer on Loatheb, where every heal counts. Second of the healers on the Horsemen, third on Patchwerk, no deaths and good consumables. On Grobbulus (92% overheal) and Gluth (87%) you mostly healed full health bars.",
+    "good": [
+     {
+      "title": "Loatheb",
+      "text": "Top healer, 13% of the healing on the fight with one heal a minute.",
+      "boss": 51115
+     },
+     {
+      "title": "Faerlina poisons",
+      "text": "3 Poison Bolt Volleys cleansed, the most.",
+      "boss": 51110
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths, with 2 Frost Protection Potions on each of Sapphiron and Kel'Thuzad."
+     },
+     {
+      "title": "Consumables",
+      "text": "4.4 buffs a pull against 3.5 for the other healers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Heigan's Decrepit Fever",
+      "impact": "medium",
+      "boss": 51112,
+      "text": "4 cured against 11 each for Mornie and Vallon."
+     },
+     {
+      "title": "Overhealing",
+      "impact": "low",
+      "text": "92% overheal on Grobbulus and 87% on Gluth, under 5% of the healing on both."
+     }
+    ],
+    "bosses": {
+     "51110": {
+      "tone": "good",
+      "text": "3 poisons cleansed, most in the raid."
+     },
+     "51115": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Apoutchou": {
@@ -1388,7 +1501,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:56:57.558Z",
+    "generatedAt": "2026-10-09T20:49:50.622Z",
     "grade": "A-",
     "verdict": "One of the raid's top healers on almost every boss, on 30 Mana Potions",
     "summary": "First or second of the 11 healers on Anub'Rekhan, Faerlina, Grobbulus, Thaddius, the Horsemen, Noth and Heigan, with low overheal on most of them. You drank 30 Mana Potions and used 7 Dark Runes to do it, plus 8 Fear Wards. Your death on Kel'Thuzad was a loose Guardian of Icecrown, not you.",
@@ -1862,7 +1975,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:56:57.558Z",
+    "generatedAt": "2026-10-09T20:49:50.622Z",
     "grade": "C+",
     "verdict": "Top damage of the raid on Kel'Thuzad, but a Spirit's Mark took your world buffs on the Horsemen",
     "summary": "You finished strong: first of all DPS on Kel'Thuzad with a 71, a personal best by 17 points, and third on Gluth. In between, a Mark from the Spirit of Mograine killed you at 1:49 on the Four Horsemen, at the same second as Harrylarry, and your six world buffs went with it. The Blizzard on Sapphiron got you too.",
@@ -1891,7 +2004,7 @@
       "title": "Dead to a Spirit's Mark",
       "impact": "high",
       "boss": 51121,
-      "text": "4,897 from \"Mark\" by the Spirit of Mograine killed you at 1:49. Mograine was already dead; his spirit keeps marking anyone near it. You lost all six world buffs for Noth, Heigan, Loatheb and Sapphiron."
+      "text": "4,897 from \"Mark\" by the Spirit of Mograine killed you at 1:49. Mograine was already dead and his spirit keeps marking anyone near it. Four raiders died to it in the same second (Harrylarry, Avekinho, Osinir and Eïnherjar), so it was a group in the wrong place rather than one person, but you were in that group. You lost all six world buffs for Noth, Heigan, Loatheb and Sapphiron."
      },
      {
       "title": "Sapphiron's Blizzard",
@@ -2825,6 +2938,71 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:50:37.746Z",
+    "grade": "C",
+    "verdict": "Five Kel'Thuzad kicks, but five deaths, and your world buffs gone from Patchwerk on",
+    "summary": "On Kel'Thuzad you interrupted 5 Frostbolts, the second most in the raid, and Faerlina 73 was third in raid damage. Everything else was dying. Maexxna killed you at 0:47 while you held her with Necrotic Poison on you, which took your world buffs for the rest of the night. Then Razuvious's Unbalancing Strike (the only death of that kill), a Spectral Horse on Gothik, early Frost Aura on the Sapphiron wipe, and a Deathcharger Steed on trash.",
+    "good": [
+     {
+      "title": "Kel'Thuzad kicks",
+      "text": "5 Frostbolts interrupted, second most in the raid.",
+      "boss": 51114
+     },
+     {
+      "title": "Faerlina 73",
+      "text": "Third in raid damage, against your usual 53.",
+      "boss": 51110
+     },
+     {
+      "title": "Explosives",
+      "text": "9 Goblin Sapper Charges and 11 Dense Dynamite."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Maexxna",
+      "impact": "high",
+      "boss": 51116,
+      "text": "She switched to you at 0:35 with Necrotic Poison, it was cleansed at 0:39, landed again at 0:46.9, and two hits for 3,787 killed you 0.2 seconds later, right after Web Spray (10,368 of her melee in your last ten seconds, 4,386 healing). Nobody can heal during the Spray, so going into it on a tank swap is how Maexxna kills tanks. It cost you all seven world buffs."
+     },
+     {
+      "title": "Razuvious",
+      "impact": "medium",
+      "boss": 51113,
+      "text": "Unbalancing Strike (6,629) killed you at 1:18, the only death of the kill. The log doesn't show why you were the one he hit."
+     },
+     {
+      "title": "Gothik and Sapphiron",
+      "impact": "medium",
+      "text": "A Spectral Horse killed you at 2:48 on Gothik (first death of the kill), and Frost Aura at 0:49 on the Sapphiron wipe (third death), with 110 healing on you."
+     },
+     {
+      "title": "Trash",
+      "impact": "low",
+      "text": "A Deathcharger Steed's Trample at 46:46."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "bad",
+      "text": "First death of the kill, Spectral Horse."
+     },
+     "51113": {
+      "tone": "bad",
+      "text": "The only death: Unbalancing Strike."
+     },
+     "51114": {
+      "tone": "good",
+      "text": "5 Frostbolts kicked."
+     },
+     "51116": {
+      "tone": "bad",
+      "text": "Killed while tanking with Necrotic Poison, right after Web Spray."
+     }
+    }
    }
   },
   "Drikkle": {
@@ -3739,7 +3917,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:56:57.558Z",
+    "generatedAt": "2026-10-09T20:49:50.622Z",
     "grade": "C+",
     "verdict": "A Gluth personal best, then Sapphiron killed you twice: Cleave on the wipe, his own swing on the kill",
     "summary": "Plenty of effort: 17 Mighty Rage Potions, 14 Sapper Charges and 7.1 consumable buffs per pull. Gluth 80 (second in the raid) and the Horsemen 70 were the high points. Sapphiron was the low one. On the wipe his Cleave killed you; on the kill he turned on you for a single swing at 0:28 and you were the first death.",
@@ -4203,7 +4381,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:55:44.445Z",
+    "generatedAt": "2026-10-09T20:49:50.580Z",
     "grade": "A-",
     "verdict": "34 Life Drains, 260 Faerie Fires, 10 Innervates and no deaths",
     "summary": "A night of jobs done well. On Sapphiron you removed 34 Life Drains, second most in the raid; on Noth 4 curses. You kept Faerie Fire on the bosses all night (260 casts), handed out 10 Innervates and used a Rebirth, and you didn't die once. Your healing share was on the low side on most bosses, which with that much utility is the trade.",
@@ -4640,6 +4818,67 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:49:50.659Z",
+    "grade": "D+",
+    "verdict": "Dead on trash five minutes in, and the rest of Naxxramas without a world buff",
+    "summary": "At 4:54 into the raid a Carrion Spinner killed you on Spider Wing trash, and all seven of your world buffs went with it: from Faerlina to the Sapphiron wipe you had none. Then you died three more times: Thaddius (the only death of that kill), the Horsemen (with three others, to Mograine's spirit) and the Sapphiron wipe, plus an Unholy Axe on trash. Five deaths against your usual 1.4, and a 38 average against your usual 61.",
+    "good": [
+     {
+      "title": "Razuvious 78 and Anub'Rekhan 73",
+      "text": "Both well over your usual (46 and 47), fourth and sixth in raid damage."
+     },
+     {
+      "title": "Sapphiron",
+      "text": "Fourth highest damage in the raid on the kill.",
+      "boss": 51119
+     },
+     {
+      "title": "Consumables",
+      "text": "6.8 buffs a pull against 5.9: Titans, Mongoose, Fortitude, Firewater and Gordok on nearly every pull, 10 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "The trash death that cost everything",
+      "impact": "high",
+      "text": "A Carrion Spinner killed you 4:54 into the raid. Fengus, Mol'dar, Rallying Cry, Warchief's, Zandalar, Songflower and Sayge's, gone before the second boss. That's the whole night's damage."
+     },
+     {
+      "title": "Thaddius polarity",
+      "impact": "high",
+      "boss": 51120,
+      "text": "You were the only death of the kill, at 1:58: a Negative Charge from Birkler (2,200) and Chain Lightning (3,993) in your last ten seconds. The charge hit means you were on the wrong side after a Polarity Shift."
+     },
+     {
+      "title": "Icebolt",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "Icebolt (3,229) killed you at 1:01 on the wipe, 5th of 29, with no healing on you. Spread 10 yards before the air phase."
+     },
+     {
+      "title": "The Horsemen",
+      "impact": "medium",
+      "boss": 51121,
+      "text": "Killed by the Spirit of Mograine's Mark at 1:49. Four raiders died to it in the same second (Harrylarry, Avekinho, Osinir and Eïnherjar), so it was a group in the wrong place rather than one person, but you were in that group."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "78, well over your usual."
+     },
+     "51120": {
+      "tone": "bad",
+      "text": "The only death of the kill: wrong side of the polarity."
+     },
+     "51121": {
+      "tone": "bad",
+      "text": "One of four killed by the Spirit of Mograine at 1:49."
+     }
+    }
    }
   },
   "Fenhir": {
@@ -5101,6 +5340,60 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:50:37.745Z",
+    "grade": "B+",
+    "verdict": "The best-prepared raider of the night, soaking Hateful Strikes and tanking the Horsemen",
+    "summary": "8.9 consumable buffs per boss pull, the most of anyone in the raid: Titans, Mongoose, Greater Armor, Giants, Fortitude, Zanza, Firewater and more on all 15 pulls. You off-tanked Anub'Rekhan, Faerlina, Grobbulus, Thaddius, Noth and Kel'Thuzad, soaked 22 Hateful Strikes on Patchwerk and tanked a corner of the Horsemen for a 77. One death, late in the Sapphiron wipe.",
+    "good": [
+     {
+      "title": "Best prepared in the raid",
+      "text": "8.9 buffs per boss pull against 6.5 for the other tanks, the most in the raid, and 4 Frost Protection Potions on Sapphiron, tied for the most."
+     },
+     {
+      "title": "Patchwerk soaker",
+      "text": "22 Hateful Strikes taken without dying, a 51 parse equal to your best.",
+      "boss": 51118
+     },
+     {
+      "title": "Horsemen 77",
+      "text": "Your best Horsemen by 19 points, with 3 Meteors soaked.",
+      "boss": 51121
+     },
+     {
+      "title": "Over your usual",
+      "text": "Grobbulus 62 (best before: 45), Thaddius 63 (60), Gluth 42 and Heigan 38, both over your usual."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Void Zone and polarity",
+      "impact": "low",
+      "text": "One Void Zone tick on the Horsemen (4,167) and one Negative Charge hit on Thaddius."
+     },
+     {
+      "title": "Sapphiron wipe",
+      "impact": "low",
+      "boss": 51119,
+      "text": "15th of 29 deaths, to Frost Aura at 2:47, after the pull was going down."
+     }
+    ],
+    "bosses": {
+     "51111": {
+      "tone": "good",
+      "text": "62, personal best."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "22 Hateful Strikes soaked."
+     },
+     "51121": {
+      "tone": "good",
+      "text": "77 tanking, personal best."
+     }
+    }
    }
   },
   "Flaggermus": {
@@ -6065,7 +6358,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:56:57.557Z",
+    "generatedAt": "2026-10-09T20:49:50.621Z",
     "grade": "C+",
     "verdict": "The best prepared rogue in the raid, undone by a Shadow Fissure and a lot of standing in things",
     "summary": "8.1 consumable buffs per boss pull, 12 Sapper Charges and 17 Dense Dynamite: nobody brought more. But your average (54) was well under your usual 70, and the avoidable damage tells you why: two Impales on Anub'Rekhan, a Void Zone on the Horsemen, and on Kel'Thuzad a Shadow Fissure that made you the first death of the kill.",
@@ -7090,7 +7383,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:55:44.445Z",
+    "generatedAt": "2026-10-09T20:49:50.580Z",
     "grade": "C-",
     "verdict": "Four deaths, and the one on the Horsemen cost you eight world buffs",
     "summary": "You started well (Anub'Rekhan 91, Gluth 89, Patchwerk 77, all over your usual) and came in with eight world buffs. At 1:49 on the Four Horsemen, a Mark from Mograine's spirit killed you, the first death of the kill, and you played Noth, Heigan, Loatheb and the Sapphiron wipe with none of those buffs. Add two trash deaths and the Sapphiron wipe and it's four deaths against your usual one.",
@@ -7115,7 +7408,7 @@
       "title": "Dead to a Spirit's Mark",
       "impact": "high",
       "boss": 51121,
-      "text": "4,763 from \"Mark\" by the Spirit of Mograine killed you at 1:49, with no healing in your last ten seconds. Mograine was already dead; his spirit keeps marking anyone near it. You lost Fengus, Mol'dar, Slip'kik, Rallying Cry, Warchief's, Zandalar, Songflower and Sayge's for the rest of the night."
+      "text": "4,763 from \"Mark\" by the Spirit of Mograine killed you at 1:49, with no healing in your last ten seconds. Mograine was already dead and his spirit keeps marking anyone near it. Four raiders died to it in the same second (Harrylarry, Avekinho, Osinir and Eïnherjar), so it was a group in the wrong place rather than one person, but you were in that group. You lost Fengus, Mol'dar, Slip'kik, Rallying Cry, Warchief's, Zandalar, Songflower and Sayge's for the rest of the night."
      },
      {
       "title": "Impale",
@@ -8129,7 +8422,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:56:57.558Z",
+    "generatedAt": "2026-10-09T20:49:50.622Z",
     "grade": "C+",
     "verdict": "Six Frostbolt kicks on Kel'Thuzad, the most in the raid, but a Void Zone cost you eight world buffs",
     "summary": "On Kel'Thuzad you interrupted 6 Frostbolts, more than anyone, and that's the most important kick job of the night. On the Four Horsemen, though, you stood in Blaumeux's Void Zone for two ticks (7,500) and died at 2:18, and with that went all eight of your world buffs for Noth, Heigan, Loatheb and Sapphiron. You were the lowest rogue on most bosses.",
@@ -9656,6 +9949,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:49:50.659Z",
+    "grade": "B-",
+    "verdict": "Seven Naxxramas personal bests, but Flask of the Titans once and three Blizzard ticks",
+    "summary": "Only your fourth time on most of these bosses, and it shows in the right way: personal bests on Anub'Rekhan (64), Faerlina, Grobbulus, Thaddius, Gothik, the Horsemen (50), Noth and Heigan. The average (43) looks low only next to your usual from other raids. Two things to fix: one flask in fifteen pulls, and Sapphiron's Blizzard.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Anub'Rekhan 64 (before: 42), Horsemen 50 (41), Noth 50 (46), Faerlina 49 (43), Heigan 49 (48), Thaddius 39 (31), Grobbulus 39 (35), Gothik 30 (26)."
+     },
+     {
+      "title": "Explosives and rage",
+      "text": "8 Goblin Sapper Charges, 5 Dense Dynamite, 7 Mighty Rage Potions."
+     },
+     {
+      "title": "Meteor soaks",
+      "text": "3 Meteors soaked on the Horsemen.",
+      "boss": 51121
+     }
+    ],
+    "fix": [
+     {
+      "title": "Flask of the Titans: 1 of 15 pulls",
+      "impact": "medium",
+      "text": "Mongoose, Zanza, Firewater, Juju Power and food on nearly every pull, but the flask only once. 5 buffs a pull against 5.9 for the other DPS."
+     },
+     {
+      "title": "Sapphiron's Blizzard",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "Three Chill ticks for 8,782, the second most in the raid, and it killed you on the wipe at 2:55."
+     }
+    ],
+    "bosses": {
+     "51107": {
+      "tone": "good",
+      "text": "64, personal best."
+     },
+     "51119": {
+      "tone": "bad",
+      "text": "Three Blizzard ticks, killed by it on the wipe."
+     }
+    }
    }
   },
   "Mohg": {
@@ -10107,6 +10445,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.480Z",
+    "grade": "B-",
+    "verdict": "Big on Razuvious, quiet on Patchwerk and Gluth, and an early Sapphiron death",
+    "summary": "Second of the healers on Razuvious with 26% of the healing, solid on Anub'Rekhan, Noth and Heigan, and useful dispels: 4 Cripples on Noth and 2 Drain Lifes on Gothik. Patchwerk (last of 11 healers, 83% overheal) and Gluth (3%) were weak, and Life Drain killed you 10th on the Sapphiron wipe.",
+    "good": [
+     {
+      "title": "Razuvious",
+      "text": "26% of all healing, second of the healers.",
+      "boss": 51113
+     },
+     {
+      "title": "Dispels",
+      "text": "4 Cripples on Noth, 2 Drain Lifes on Gothik, a Widow's Embrace on Faerlina."
+     },
+     {
+      "title": "Consistent elsewhere",
+      "text": "Third or fourth healer on Anub'Rekhan, the Horsemen, Noth and Heigan."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Patchwerk and Gluth",
+      "impact": "medium",
+      "text": "Last of the healers on Patchwerk (4%, 83% overheal) and 3% on Gluth."
+     },
+     {
+      "title": "Sapphiron wipe",
+      "impact": "low",
+      "boss": 51119,
+      "text": "Life Drain (4,030) killed you at 1:44, 10th of 29. Mostly on the decursers, but you usually die about half as often as tonight."
+     }
+    ],
+    "bosses": {
+     "51113": {
+      "tone": "good",
+      "text": "26% of the healing."
+     },
+     "51118": {
+      "tone": "bad",
+      "text": "Last of the healers, 83% overheal."
+     }
+    }
    }
   },
   "Mornie": {
@@ -11036,6 +11419,66 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:49:50.659Z",
+    "grade": "C",
+    "verdict": "Decursing done, but the Horsemen took your world buffs and your parse",
+    "summary": "You did your share of the jobs: 22 Life Drains on Sapphiron, 3 Plaguebringer curses on Noth, 56 dispels over the night. Your damage numbers are hard to read because you owned the fire mages' Ignite on Faerlina, Patchwerk, Grobbulus, Thaddius, Gothik and Kel'Thuzad (327k of it on Thaddius alone), and your parses averaged 41 against your usual 51. Then at 1:49 on the Horsemen a Mark from Mograine's spirit killed you, along with three others in the same second, and you played Noth to Sapphiron without your seven world buffs.",
+    "good": [
+     {
+      "title": "Sapphiron decursing",
+      "text": "22 Life Drains removed, the median of the five decursers.",
+      "boss": 51119
+     },
+     {
+      "title": "Noth curses",
+      "text": "3 Curses of the Plaguebringer removed.",
+      "boss": 51117
+     },
+     {
+      "title": "Maexxna and Gothik",
+      "text": "73 and 65, your best numbers of the night."
+     },
+     {
+      "title": "Consumables",
+      "text": "Supreme Power, Greater Arcane and Mageblood on every pull, Firepower on 14."
+     }
+    ],
+    "fix": [
+     {
+      "title": "The Horsemen",
+      "impact": "high",
+      "boss": 51121,
+      "text": "A Mark from the Spirit of Mograine (3,250) killed you at 1:49. Four raiders died to it in the same second (Harrylarry, Avekinho, Osinir and Eïnherjar), so it was a group in the wrong place rather than one person, but you were in that group. Your 9 parse and the seven world buffs gone for the rest of the night came with it."
+     },
+     {
+      "title": "Icebolt on the Sapphiron wipe",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "Icebolt (2,712) killed you at 2:23, 12th of 29 deaths. Icebolt hits everyone within 10 yards of its target, so spread before the air phase."
+     },
+     {
+      "title": "Juju",
+      "impact": "low",
+      "text": "Juju Power on 5 of 15 pulls."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "22 Life Drains removed."
+     },
+     "51120": {
+      "tone": "info",
+      "text": "You owned the Ignite: 327k, collective fire-mage damage."
+     },
+     "51121": {
+      "tone": "bad",
+      "text": "One of four killed by the Spirit of Mograine at 1:49."
+     }
+    }
    }
   },
   "Paiyro": {
@@ -11478,6 +11921,53 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:50:37.746Z",
+    "grade": "C+",
+    "verdict": "Alive all night and on Life Drain duty, but your parses were the lowest of the mages",
+    "summary": "No deaths, which on your past raids is a first worth noting (you've averaged four). You removed 21 Life Drains on Sapphiron and 3 curses on Noth, and came with Supreme Power, Greater Arcane, Mageblood and Zanza on every pull. The parses averaged 39 against your usual 53. Your raw damage looks better because you owned the fire mages' Ignite on Anub'Rekhan, Patchwerk, Razuvious, Heigan, Loatheb (273k there) and Sapphiron, which credits their crits to you.",
+    "good": [
+     {
+      "title": "No deaths",
+      "text": "Zero deaths in 16 boss pulls."
+     },
+     {
+      "title": "Decursing",
+      "text": "21 Life Drains removed on Sapphiron and 3 Plaguebringer curses on Noth, 48 dispels in all."
+     },
+     {
+      "title": "Kel'Thuzad and Grobbulus",
+      "text": "72 on both, your best numbers of the night."
+     },
+     {
+      "title": "Consumables",
+      "text": "6.5 buffs a pull against 5.9 for the other DPS."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Parses",
+      "impact": "medium",
+      "text": "Faerlina 17, Sapphiron 7, Horsemen 22, Thaddius 26. Even counting the decursing on Sapphiron, you were the lowest or second lowest mage on 11 of 15 bosses."
+     },
+     {
+      "title": "Rain of Fire and Impale",
+      "impact": "low",
+      "text": "A Rain of Fire tick on Faerlina (2,053) and an Impale (3,078)."
+     }
+    ],
+    "bosses": {
+     "51115": {
+      "tone": "info",
+      "text": "You owned the Ignite: 273k, collective fire-mage damage."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "21 Life Drains removed."
+     }
+    }
    }
   },
   "Palastino": {
@@ -11922,6 +12412,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.480Z",
+    "grade": "C+",
+    "verdict": "Gothik was good, most of the rest was quiet, and an early death on the Sapphiron wipe",
+    "summary": "Only your fourth raid with us. Gothik was your best fight (third healer, 12%) and Patchwerk and Heigan were solid, but you were last or close to it on Anub'Rekhan, Maexxna, Razuvious and the Horsemen, and Icebolt plus Frost Aura made you the fourth death of the Sapphiron wipe at 0:57.",
+    "good": [
+     {
+      "title": "Gothik",
+      "text": "Third of the healers with 12% of the healing.",
+      "boss": 51109
+     },
+     {
+      "title": "Patchwerk and Heigan",
+      "text": "452 HPS on Patchwerk and 10% of the healing on Heigan."
+     },
+     {
+      "title": "Lay on Hands",
+      "text": "2 Lay on Hands used where they counted."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron wipe",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "4th death of 29, at 0:57: Icebolt (2,637) and Frost Aura. Spread 10 yards before the air phase."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mageblood every pull and Distilled Wisdom on 11, but no Zanza: 2.5 buffs a pull against 3.5 for the other healers."
+     },
+     {
+      "title": "Low share on four bosses",
+      "impact": "low",
+      "text": "Last or second to last healer on Anub'Rekhan, Maexxna, Razuvious and the Horsemen."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "good",
+      "text": "Third healer, 12%."
+     },
+     "51119": {
+      "tone": "bad",
+      "text": "4th death of the wipe."
+     }
+    }
    }
   },
   "Punintended": {
@@ -13377,6 +13917,58 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:49:50.659Z",
+    "grade": "B-",
+    "verdict": "Nine personal bests, good consumables, and a Gothik you barely took part in",
+    "summary": "Personal bests on nine bosses, from Anub'Rekhan (55) and Faerlina (56) to Noth (49) and Heigan (44), and 6.6 consumable buffs a pull against 5.9 for the other DPS. Your Kel'Thuzad death was a loose Guardian of Icecrown, not you. Gothik is the odd one: 111 seconds without a swing from the pull.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Anub'Rekhan 55 (before: 42), Faerlina 56 (48), Patchwerk 48 (35), Noth 49 (34), Heigan 44 (32), Grobbulus 40 (33), Loatheb 31 (23), Sapphiron 25 (23), Thaddius 38 (37)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans every pull, Mongoose 14, Firewater 11, Zanza 10."
+     },
+     {
+      "title": "Meteor soaks",
+      "text": "3 Meteors soaked on the Horsemen.",
+      "boss": 51121
+     }
+    ],
+    "fix": [
+     {
+      "title": "Gothik",
+      "impact": "medium",
+      "boss": 51109,
+      "text": "17 parse and nothing for the first 111 seconds, where the other DPS averaged 34% active. The log can't tell which side you were on; if your side had nothing to hit, fine."
+     },
+     {
+      "title": "Thaddius polarity",
+      "impact": "low",
+      "boss": 51120,
+      "text": "One Negative Charge hit (2,200): on the wrong side once after a Polarity Shift."
+     },
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "A loose Guardian of Icecrown and a Frostbolt killed you at 2:31. The Guardian isn't your fault; the 2,835 Frostbolt on top of it is the kind of hit to have a healthstone ready for."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "bad",
+      "text": "No swings for the first 111 seconds."
+     },
+     "51114": {
+      "tone": "info",
+      "text": "Killed by a loose Guardian of Icecrown."
+     }
+    }
    }
   },
   "Shadowtelia": {
@@ -14280,6 +14872,60 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.480Z",
+    "grade": "A-",
+    "verdict": "The only Necrotic Poison cleanser, the Grobbulus injections, 8 Cripples, and the top healer on Patchwerk",
+    "summary": "You handled the cleansing jobs: both Necrotic Poisons removed from the tank on Maexxna (nobody else did), 4 Mutating Injections on Grobbulus (that's why your healing there is zero) and 8 Cripples on Noth, the most of anyone. You were also the top healer on Patchwerk (14%) and Heigan (13%), used 3 Lay on Hands, and didn't die.",
+    "good": [
+     {
+      "title": "Necrotic Poison",
+      "text": "Both cleanses on Maexxna came from you.",
+      "boss": 51116
+     },
+     {
+      "title": "Grobbulus injections",
+      "text": "4 Mutating Injections dispelled.",
+      "boss": 51111
+     },
+     {
+      "title": "Cripple on Noth",
+      "text": "8 removed, the most in the raid.",
+      "boss": 51117
+     },
+     {
+      "title": "Top healer",
+      "text": "Patchwerk 14% and Heigan 13% of the healing, no deaths, 3 Lay on Hands."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mageblood and Distilled Wisdom are there, but Zanza on 1 of 15 pulls: 2.6 buffs a pull against 3.5 for the other healers."
+     },
+     {
+      "title": "Razuvious and Kel'Thuzad",
+      "impact": "low",
+      "text": "3% of the healing on Razuvious with 19 seconds without a cast from the pull, and tenth of eleven healers on Kel'Thuzad."
+     }
+    ],
+    "bosses": {
+     "51116": {
+      "tone": "good",
+      "text": "Both Necrotic Poisons cleansed."
+     },
+     "51117": {
+      "tone": "good",
+      "text": "8 Cripples removed, most in the raid."
+     },
+     "51118": {
+      "tone": "good",
+      "text": "Top healer, 14%."
+     }
+    }
    }
   },
   "Snotspat": {
@@ -15771,7 +16417,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:55:44.444Z",
+    "generatedAt": "2026-10-09T20:49:50.573Z",
     "grade": "B+",
     "verdict": "Eight personal bests and top damage on four bosses, and five deaths",
     "summary": "On damage this was your night: first in the raid on Anub'Rekhan, Gluth and Sapphiron, and personal bests on Anub'Rekhan (91), Faerlina, Maexxna, Patchwerk, Grobbulus, Gluth (89), Noth and Heigan. You also tanked a corner of the Horsemen for a 96. But you died five times: twice on the first trash packs, then on Gothik, Sapphiron and Kel'Thuzad.",
@@ -16300,7 +16946,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:55:44.445Z",
+    "generatedAt": "2026-10-09T20:49:50.580Z",
     "grade": "A-",
     "verdict": "Top DPS on Noth and Loatheb, zombie duty on Gluth, and four Kel'Thuzad kicks",
     "summary": "A tank who out-damaged nearly everyone when not tanking: first of all DPS on Noth (84) and Loatheb (79, second in raw damage), second on Heigan, top five on Anub'Rekhan, Patchwerk and Grobbulus. On Thaddius you tanked for a 92, and on Kel'Thuzad you interrupted 4 Frostbolts, the second most. Gluth looks terrible on paper, but the log shows why.",
@@ -16782,7 +17428,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:55:44.445Z",
+    "generatedAt": "2026-10-09T20:49:50.580Z",
     "grade": "C+",
     "verdict": "Frenzy duty done, but bottom of the hunters and barely any consumables",
     "summary": "You did your Tranquilizing Shots on Gluth and kept Hunter's Mark up all night (14 casts), and your average (65) was right on your usual. But you were the lowest hunter on 10 of 15 bosses and near the bottom of all DPS on most, and you came with 2.8 consumable buffs per pull against 5.9 for the other DPS.",
@@ -17252,7 +17898,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:56:57.558Z",
+    "generatedAt": "2026-10-09T20:49:50.622Z",
     "grade": "B-",
     "verdict": "Noth curses and Life Drains decursed, right on your usual, no world buffs for the first three bosses",
     "summary": "Your 51 average sits on your usual 50. You did the decursing: 5 Plaguebringer curses on Noth (joint most) and 19 Life Drains on Sapphiron. You came in without world buffs and had six of them from Patchwerk on. Two caveats on the numbers: you owned the rolling Ignite on Grobbulus, Thaddius and Gothik, so your damage there includes the other fire mages' crits, and your only death was Sapphiron's Cleave.",
@@ -17774,7 +18420,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:55:44.445Z",
+    "generatedAt": "2026-10-09T20:49:50.580Z",
     "grade": "B",
     "verdict": "Top damage on Faerlina and Grobbulus with the best consumables in the raid, but a Shadow Fissure",
     "summary": "Nobody came better prepared: 8 consumable buffs per boss pull, everything on every pull. It paid off on Faerlina and Grobbulus, where you did the most damage in the raid, and on Thaddius and the Horsemen (second). Your average (58) is below your usual, dragged down by Maexxna, Gluth and Sapphiron, and you died standing in a Shadow Fissure on Kel'Thuzad.",
@@ -18260,6 +18906,61 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.479Z",
+    "grade": "A",
+    "verdict": "Top healer of the raid on six bosses, on 18 Mana Potions",
+    "summary": "First of the 11 healers on Faerlina, Maexxna, Grobbulus (20% of all healing), Gluth (25%), Thaddius and Kel'Thuzad, second on Anub'Rekhan, Patchwerk and Sapphiron, mostly with modest overheal. You drank 18 Mana Potions to do it and cured 11 Decrepit Fevers on Heigan, tied for the most. The only blot is the Sapphiron wipe, where you died twice.",
+    "good": [
+     {
+      "title": "Top healer six times",
+      "text": "Faerlina 15%, Maexxna 17%, Grobbulus 20%, Gluth 25%, Thaddius 17%, Kel'Thuzad 14% of the raid's healing."
+     },
+     {
+      "title": "Mana management",
+      "text": "18 Mana Potions and 2 Healthstones over the night."
+     },
+     {
+      "title": "Heigan's Decrepit Fever",
+      "text": "11 cured, tied for the most.",
+      "boss": 51112
+     },
+     {
+      "title": "Sapphiron kill",
+      "text": "842 HPS with 21% overheal, second of the healers.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron wipe",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "Icebolt killed you at 2:23, and after a resurrection Frost Breath did at 2:42. Spread 10 yards before the air phase and get fully behind an ice block before the breath."
+     },
+     {
+      "title": "Noth",
+      "impact": "low",
+      "boss": 51117,
+      "text": "89% overheal, 4% of the healing. Fine to let the others have that one."
+     }
+    ],
+    "bosses": {
+     "51108": {
+      "tone": "good",
+      "text": "Top healer, 25% of the healing."
+     },
+     "51111": {
+      "tone": "good",
+      "text": "Top healer, 20%."
+     },
+     "51112": {
+      "tone": "good",
+      "text": "11 Decrepit Fevers cured."
+     }
+    }
    }
   },
   "Woness": {
@@ -18695,6 +19396,51 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.480Z",
+    "grade": "B",
+    "verdict": "A strong first raid, top healer on Gothik, and the first death of the Sapphiron wipe",
+    "summary": "Your first raid in the logs, and a good one: top healer on Gothik (16%), second on Gluth, third on Grobbulus and Thaddius, with low overheal on most bosses and 8 Power Infusions handed out. The Sapphiron wipe started with you: Frost Aura, a Blizzard tick and Life Drain together killed you at 0:40, the first death of the pull.",
+    "good": [
+     {
+      "title": "Gothik",
+      "text": "Top healer, 16% of the healing with 20% overheal.",
+      "boss": 51109
+     },
+     {
+      "title": "Gluth, Grobbulus, Thaddius",
+      "text": "Second, third and third of 11 healers."
+     },
+     {
+      "title": "Power Infusion",
+      "text": "8 Power Infusions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "First death of the Sapphiron wipe",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "At 0:40: Frost Aura 2,700, Chill (Blizzard) 2,209 and Life Drain 2,051 in your last ten seconds, despite 3,621 healing. The Blizzard tick is the avoidable part."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Zanza on 1 of 15 pulls; 2.9 buffs a pull against 3.5 for the other healers."
+     }
+    ],
+    "bosses": {
+     "51109": {
+      "tone": "good",
+      "text": "Top healer."
+     },
+     "51119": {
+      "tone": "bad",
+      "text": "First death of the wipe."
+     }
+    }
    }
   },
   "Yulefuel": {
@@ -19139,6 +19885,60 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:51:42.480Z",
+    "grade": "A-",
+    "verdict": "Every Faerlina sacrifice, both Razuvious mind controls, 15 Power Infusions and the top healer on Sapphiron",
+    "summary": "You carried the mind-control jobs: all 4 Worshipper mind controls on Faerlina and 2 Understudies on Razuvious, which is why your healing on those two is near zero. On top of that, 15 Power Infusions, 3 shackles on Kel'Thuzad, 6 Decrepit Fevers cured, and the top healing of the raid on Sapphiron (13%, 14% overheal) and Noth. One trash death, to the same Unholy Axe that killed two other healers.",
+    "good": [
+     {
+      "title": "Faerlina's Worshippers",
+      "text": "All 4 mind controls on the Worshippers came from you.",
+      "boss": 51110
+     },
+     {
+      "title": "Razuvious",
+      "text": "2 Understudies mind-controlled.",
+      "boss": 51113
+     },
+     {
+      "title": "Top healer on Sapphiron and Noth",
+      "text": "876 HPS with 14% overheal on Sapphiron; 17% of all healing on Noth."
+     },
+     {
+      "title": "Power Infusion and shackles",
+      "text": "15 Power Infusions and 3 Shackle Undead on Kel'Thuzad."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Trash death",
+      "impact": "low",
+      "text": "An Unholy Axe's Whirlwind at 52:08, along with Mornie and Apoutchou."
+     },
+     {
+      "title": "Heigan",
+      "impact": "low",
+      "boss": 51112,
+      "text": "4% of the healing and 33 seconds without a cast from 0:40. 6 Fevers cured against 11 each for Mornie and Vallon."
+     }
+    ],
+    "bosses": {
+     "51110": {
+      "tone": "good",
+      "text": "All 4 Worshippers mind-controlled."
+     },
+     "51113": {
+      "tone": "good",
+      "text": "2 Understudies mind-controlled."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "Top healer of the raid."
+     }
+    }
    }
   }
  }
