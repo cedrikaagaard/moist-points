@@ -1,0 +1,1 @@
+{"name":"Boswellia","class":"Hunter","spec":null,"role":"dps","nights":[{"night":"2026-02-10-ony","zones":[2001],"role":"dps","spec":null,"deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":81,"amount":343,"role":"dps"}],"mech":{"51084:breath":1,"51084:fear":4},"casts":{"Restore Mana":2,"Goblin Sapper Charge":1}}]}
