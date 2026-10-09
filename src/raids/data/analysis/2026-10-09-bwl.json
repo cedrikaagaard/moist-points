@@ -1,7 +1,7 @@
 {
   "night": "2026-10-09-bwl",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-09T18:45:00Z",
+  "generatedAt": "2026-10-10T00:10:00Z",
   "headline": "8 of 8 in 34:56, the guild's second fastest BWL, without a single wipe",
   "mvp": {
     "player": "Skoomael",
@@ -26,8 +26,9 @@
     ]
   },
   "overview": [
-    "A full clear in 34:56, eight kills from eight pulls, second only to the 33:23 on 11 September and almost ten minutes under the guild's usual BWL (44:26). Every boss died at or under the guild's median kill time, Firemaw two seconds off the record.",
-    "Six deaths all night, two of them on trash. The parse medians tell the same story as the clock: 91 on Firemaw against a usual 85, 84 on Chromaggus against 75, 80 on Vaelastrasz against 67."
+    "A full clear in 34:56, eight kills from eight pulls, second only to the 33:23 on 11 September and almost ten minutes under the guild's usual BWL (44:47). Every boss died at or under the guild's median kill time, Firemaw two seconds off the record.",
+    "A heavily buffed raid: from Firemaw on, Rallying Cry and Zandalar were on 36 of the 39 raiders, Mol'dar's Moxie on 33, Songflower and Fengus' Ferocity on 30, and with the Darkmoon Faire in town 16 had a Sayge's fortune.",
+    "Six deaths all night, two of them on trash. The parse medians tell the same story as the clock: 91 on Firemaw against a usual 84, 84 on Chromaggus against 75, 80 on Vaelastrasz against 67."
   ],
   "wipes": [],
   "wentWell": [
@@ -37,7 +38,7 @@
     },
     {
       "encounterId": 50616,
-      "text": "Chromaggus in 1:20 (median 1:44), breaths hitting half as often as usual, 65 Brood Afflictions cleansed (Allipalli 16, Pinkcheese 10) and 6 Tranquilizing Shots."
+      "text": "Chromaggus in 1:20 (median 1:46), breaths hitting half as often as usual, 65 Brood Afflictions cleansed (Allipalli 16, Pinkcheese 10) and 6 Tranquilizing Shots."
     },
     {
       "encounterId": 50617,
@@ -69,7 +70,7 @@
         },
         {
           "tone": "bad",
-          "text": "Two deaths: Flame Breath killed a mage at 0:17, and his melee killed a DPS warrior at 0:28, two seconds before the kill. Boss melee did 47k, about four times its usual share of the damage."
+          "text": "Two deaths: Flame Breath killed a mage at 0:17, and at 0:26 he turned from his tank to a DPS warrior and killed him in three swings, two seconds before the kill. Boss melee did 47k, about four times its usual share of the damage."
         }
       ]
     },
@@ -99,7 +100,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "1:04, just under the median 1:07, no deaths. Skoomael 99, Drikkle 97, Tochopolvo 96."
+          "text": "1:04, just under the median 1:08, no deaths. Skoomael 99, Drikkle 97, Tochopolvo 96."
         },
         {
           "tone": "info",
@@ -123,7 +124,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "1:20 against a median of 1:44 with no deaths. Breaths hit 5 raiders 18 times, half the usual rate, and 65 afflictions were cleansed."
+          "text": "1:20 against a median of 1:46 with no deaths. Breaths hit 5 raiders 18 times, half the usual rate, and 65 afflictions were cleansed."
         },
         {
           "tone": "info",
