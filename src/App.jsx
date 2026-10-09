@@ -11,7 +11,7 @@ import Changelog from "./views/Changelog.jsx";
 import Home from "./views/Home.jsx";
 import Loader from "./components/Loader.jsx";
 import { GitHubIcon } from "./components/common.jsx";
-import { useMe } from "./identity.js";
+import { useMe, useIdentity } from "./identity.js";
 import { allRaiders } from "./lib/roster.js";
 import { VERSION, REPO_URL } from "./changelog.js";
 
@@ -160,7 +160,7 @@ function timeAgo(dateStr) {
 }
 
 function MeChip({ active }) {
-  const me = useMe();
+  const { me, verified } = useIdentity();
   if (!me) {
     return (
       <a className={`me-chip me-chip-empty${active ? " active" : ""}`} href={href("me")}>
@@ -170,9 +170,10 @@ function MeChip({ active }) {
     );
   }
   return (
-    <a className={`me-chip${active ? " active" : ""}`} href={href("me")} title="Your page">
+    <a className={`me-chip${active ? " active" : ""}`} href={href("me")} title={verified ? "Your page (verified with Battle.net)" : "Your page"}>
       <span className="me-chip-avatar">{me.slice(0, 2).toUpperCase()}</span>
       {me}
+      {verified && <span className="me-chip-ok" aria-label="verified">✓</span>}
     </a>
   );
 }

@@ -305,6 +305,23 @@ the "standout" cards come from fixed rules in `src/raids/highlights.js`.
 
 ---
 
+## Battle.net verification (My Page)
+
+Raiders can prove which characters they own by logging in with Battle.net.
+Blizzard returns the Classic Era characters on their account (namespace
+`profile-classic1x-eu`); the site keeps that list in a signed cookie, nothing
+else is stored and no password or email ever reaches us. Once verified, "me"
+is their main (most raids), all their Firemaw characters count as them, and
+the manual "Set your character" no longer applies.
+
+- Code: `netlify/functions/auth.mjs` (`/api/auth/login`, `/api/auth/callback`,
+  `/api/auth/logout`, `/api/me`) and `src/identity.js`.
+- Setup: a client at <https://develop.battle.net> with the redirect URL
+  `https://<site>/api/auth/callback`, and three Netlify environment variables:
+  `BNET_CLIENT_ID`, `BNET_CLIENT_SECRET`, `SESSION_SECRET` (any long random
+  string). Redeploy after adding them.
+- Locally (`npm run dev`) there's no `/api`, so the site just stays unverified.
+
 ## Customising the look
 
 No CSS framework, no chart library - just plain CSS and hand-rolled SVG. Theme

@@ -740,3 +740,15 @@ h1, h2 {
 .page-tab:hover { color: var(--text); }
 .page-tab:hover img, .page-tab.active img { opacity: 1; }
 .page-tab.active { color: var(--gold-bright); border-bottom-color: var(--gold); }
+
+/* ---------- Battle.net verification (My Page) ---------- */
+.bnet-wrap { padding-bottom: 0; }
+.bnet-line { font-size: 12.5px; color: var(--text-2); display: flex; flex-wrap: wrap; gap: 4px; align-items: baseline; margin-top: 10px; }
+.bnet-line a { color: var(--frost-bright); }
+.bnet-ok { color: var(--gold-bright); font-weight: 600; }
+.bnet-error { color: #f08791; }
+.bnet-chars { display: inline-flex; flex-wrap: wrap; gap: 4px 6px; align-items: baseline; }
+.bnet-char { background: none; border: 0; padding: 0; color: var(--text-2); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.bnet-char.active { color: var(--gold-bright); font-weight: 600; text-decoration: none; }
+.me-chip-ok { color: var(--gold-bright); font-size: 11px; }
+.me-hero .bnet-line { justify-content: center; }

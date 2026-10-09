@@ -1,7 +1,8 @@
 import PlayerPage from "../components/PlayerPage.jsx";
 import IdentityPicker from "../components/IdentityPicker.jsx";
-import { useMe, setMe } from "../identity.js";
+import { useMe, useIdentity, setMe } from "../identity.js";
 import { allRaiders } from "../lib/roster.js";
+import BnetVerify from "../components/BnetVerify.jsx";
 
 // SR raiders first, then anyone the raid logs know who hasn't soft-reserved yet.
 function pickable(players) {
@@ -11,6 +12,7 @@ function pickable(players) {
 
 export default function Me({ data }) {
   const me = useMe();
+  const { verified } = useIdentity();
   const player = me ? data.playerByName.get(me.toLowerCase()) : null;
 
   // Not chosen yet → prompt to pick a character.
@@ -23,7 +25,7 @@ export default function Me({ data }) {
           </h1>
           <p className="hero-sub">
             Pick your character to see your points, your best bets, and get your rows highlighted
-            across the site. No login, it's just saved on this device.
+            across the site. It's saved on this device, or verify with Battle.net below to prove which characters are yours.
           </p>
           <div className="me-hero-pick">
             <IdentityPicker
@@ -33,11 +35,17 @@ export default function Me({ data }) {
               onPick={setMe}
             />
           </div>
+          <BnetVerify />
         </section>
       </div>
     );
   }
 
   // Chosen: the same page as their raider profile, framed as "yours".
-  return <PlayerPage data={data} name={me} player={player} isMe onChangeMe={() => setMe(null)} />;
+  return (
+    <>
+      <div className="view bnet-wrap"><BnetVerify /></div>
+      <PlayerPage data={data} name={me} player={player} isMe onChangeMe={verified ? null : () => setMe(null)} />
+    </>
+  );
 }

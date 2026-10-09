@@ -48,7 +48,7 @@ export default function PlayerPage({ data, name, player, isMe, onChangeMe }) {
               </span>
             )}
           </nav>
-          {isMe && (
+          {isMe && onChangeMe && (
             <button className="link-btn" onClick={onChangeMe}>
               Not you? Change
             </button>

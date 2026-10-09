@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.4.0",
+    date: "2026-10-09",
+    changes: [
+      "You can now verify your characters with Battle.net on My Page. Blizzard confirms which characters are on your account; your password and email never reach this site.",
+      "Once verified, the site knows it's you: your main is picked automatically, all your characters on Firemaw count as you and get highlighted everywhere, and you can switch between them on My Page.",
+    ],
+  },
+  {
     version: "2.3.12",
     date: "2026-10-09",
     changes: [
