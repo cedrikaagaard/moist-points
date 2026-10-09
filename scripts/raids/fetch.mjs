@@ -574,7 +574,7 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
       const by = a.subentries?.length ? a.subentries.map((e) => [e.actorName, e.total]) : (a.sources || []).map((e) => [e.name, e.total]);
       for (const [name, c] of by) {
         const t = castsBy.get(name) || { heal: 0, tank: 0, total: 0 };
-        t.total += c;
+        if (!NEUTRAL_CASTS.has(a.name)) t.total += c; // wands, Faerie Fire and dispels say nothing about the role
         if (HEAL_SPELLS.has(a.name)) t.heal += c;
         if (TANK_SPELLS.has(a.name)) t.tank += c;
         castsBy.set(name, t);
@@ -761,8 +761,14 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
 
 // ---------- helpers ----------
 
-const HEAL_SPELLS = new Set(["Flash Heal", "Heal", "Greater Heal", "Lesser Heal", "Prayer of Healing", "Renew", "Holy Light", "Flash of Light", "Healing Touch", "Regrowth", "Rejuvenation", "Holy Shock", "Swiftmend", "Power Word: Shield", "Desperate Prayer"]);
-const TANK_SPELLS = new Set(["Taunt", "Shield Block", "Revenge", "Shield Slam", "Growl", "Maul", "Swipe", "Righteous Fury", "Mocking Blow", "Challenging Roar"]);
+// Role from casts. Names as Warcraft Logs shows them for Classic Era, which
+// often uses a later expansion's name: bear Swipe is "Swipe (Bear)", Holy
+// Shield rank 1 is "Sacred Shield" (Righteous Fury lasts 30 min, so a prot
+// paladin casts it about once a night).
+const HEAL_SPELLS = new Set(["Flash Heal", "Heal", "Greater Heal", "Lesser Heal", "Prayer of Healing", "Renew", "Holy Light", "Flash of Light", "Healing Touch", "Regrowth", "Rejuvenation", "Holy Shock", "Swiftmend", "Power Word: Shield", "Desperate Prayer", "Holy Nova", "Tranquility"]);
+const TANK_SPELLS = new Set(["Taunt", "Shield Block", "Revenge", "Shield Slam", "Growl", "Maul", "Swipe (Bear)", "Righteous Fury", "Mocking Blow", "Challenging Roar", "Holy Shield", "Sacred Shield", "Frenzied Regeneration", "Demoralizing Roar"]);
+// Casts any role makes that would drown out a healer's heal share.
+const NEUTRAL_CASTS = new Set(["Shoot", "Faerie Fire", "Cleanse", "Purify", "Dispel Magic", "Remove Curse", "Remove Corruption", "Abolish Poison", "Abolish Disease", "Cure Poison", "Cure Disease"]);
 
 class BudgetError extends Error {
   constructor() {

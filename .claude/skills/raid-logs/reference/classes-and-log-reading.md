@@ -182,3 +182,39 @@ Root cause vs cascade:
 - https://bittsguides.com/consumables-for-naxxramas/ (via search summary)
 - https://www.wowhead.com/news/how-important-is-nature-resistance-gear-in-classic-temple-of-ahnqiraj-317307
 - https://www.icy-veins.com/wow-classic/warrior-tank-nature-resistance-gear
+
+
+## Warcraft Logs name traps (Classic Era, verified against the guild's logs)
+WCL often shows a *later expansion's* name for a reused spell ID. Read these as the Classic spell:
+| In the log | Is actually |
+|---|---|
+| Vanguard | Defensive Stance |
+| Sweeping Strikes (12328) | Death Wish; real Sweeping Strikes shows as "Bloodbath" |
+| Chakra | Inner Focus |
+| Judgment | the Judgement cast (debuffs keep "Judgement of ...") |
+| Hand of Protection / Hand of Salvation | Blessing of Protection / Blessing of Salvation |
+| Sacred Shield | Holy Shield rank 1 (prot paladin tell) |
+| Swipe (Bear), Wild Charge | bear Swipe, Feral Charge |
+| Remove Curse (by a mage) / Remove Corruption (by a druid) | Remove Lesser Curse / druid Remove Curse |
+| Dispel Magic (528) / Purify (527) | priest Cure Disease / Dispel Magic rank 1 |
+| Cure Poison (26677) | usually Elixir of Poison Resistance, any class: not a druid dispel |
+| Critical Mass | Fire Vulnerability (Improved Scorch) |
+| Shadow and Flame / Shadow Mastery | Improved Shadow Bolt's Shadow Vulnerability |
+| Agony (17941) | Shadow Trance (Nightfall talent proc) |
+| Spell Vulnerability | Nightfall axe proc (+15% spell damage, 5 s): not Shadow Weaving |
+| Cold Snap (11958) / Icy Veins | Ice Block / Cold Snap |
+| Enrage (on a boss) | the Frenzy that Tranquilizing Shot removes |
+| Explosion (source: a player) | Baron Geddon's Living Bomb on that player |
+| Ancient Power (Venoxis) | his Holy Wrath chain |
+| Mighty Troll's Blood Elixir (24361) | the Major (20 hp5) elixir |
+
+## Hard facts that are easy to get wrong
+- **No world buff survives death in Classic Era** (Spirit of Zandalar stopped surviving in 1.11). Flasks do persist. Someone who died and has world buffs again rebuffed: a head turned in while the raid stood in town, or a **Chronoboon Displacer** release (stores RC, Rend, DM buffs, Songflower, DMF, ZG for one player; 1 h cooldown after releasing).
+- World buff durations: RC, Zandalar, DM buffs, DMF fortunes 2 h; Warchief's Blessing and Songflower 1 h.
+- Era keeps the **16 debuff slot** limit per target; raids prioritise Sunder, Faerie Fire, curses, Fire Vulnerability, Winter's Chill, Shadow Weaving / Shadow Vulnerability, Judgements, Demoralizing Shout, Thunder Clap, Hunter's Mark.
+- **Threat**: a player pulls aggro at 110% of the tank's threat in melee range, 130% at range. Salvation -30%. Feign Death and Vanish wipe threat, Fade and Feint lower it. Bosses with threat resets: Twin Emperors (teleport), likely Broodlord, Princess Yauj.
+- Blessing of Sacrifice moves a flat 45-55 damage per hit, not a percentage. Stoneform = 8 s immunity to poison, disease and bleed.
+- **No current mana in the logs** (Era clients never write it): never say someone went out of mana. Player health is a percentage, boss health absolute.
+- Elixirs: whether they persist through death is uncertain (77-91% are still up at the next pull after a death); don't claim either way.
+
+Full sourced research: `reference/research/` (era-vs-vanilla, classes, consumables, bosses).

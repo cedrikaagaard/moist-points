@@ -538,7 +538,7 @@ function RaidDuties({ n, NP }) {
       {groups.map((g) => {
         const abilities = Object.entries(n.casts || {})
           .filter(([, c]) => c.category === g.cat)
-          .map(([name, c]) => ({ name, by: Object.entries(c.by).sort((a, b) => b[1] - a[1]), total: Object.values(c.by).reduce((t, v) => t + v, 0) }))
+          .map(([name, c]) => ({ name, label: c.label || name, by: Object.entries(c.by).sort((a, b) => b[1] - a[1]), total: Object.values(c.by).reduce((t, v) => t + v, 0) }))
           .sort((a, b) => b.total - a.total);
         return (
           <Panel key={g.cat} title={g.title} sub={g.sub}>
@@ -549,7 +549,7 @@ function RaidDuties({ n, NP }) {
                     <SpellIcon name={a.name} icons={n.icons} size={30} />
                     <div className="rr-duty-body">
                       <div className="rr-duty-name">
-                        {a.name} <span className="muted">· {a.total}</span>
+                        {a.label} <span className="muted">· {a.total}</span>
                       </div>
                       <div className="rr-duty-who">
                         {a.by.slice(0, 3).map(([name, c]) => (
@@ -576,8 +576,11 @@ function RaidDuties({ n, NP }) {
 // potions and runes used, and explosives - three different things.
 const BUFF_GROUPS = [
   ["flask", "Flasks"],
-  ["elixir", "Elixirs, Juju & Zanza"],
-  ["food", "Food & drink"],
+  ["elixir", "Elixirs"],
+  ["juju", "Juju"],
+  ["zanza", "Zanza & Blasted Lands"],
+  ["food", "Food"],
+  ["drink", "Drinks"],
 ];
 function Consumables({ n, NP }) {
   const used = (cats) =>

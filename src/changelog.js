@@ -6,6 +6,16 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.1",
+    date: "2026-10-09",
+    changes: [
+      "Tanks and healers are recognised better: protection paladins and bear druids now count as tanks, and holy priests and resto druids who use their wand or Faerie Fire a lot count as healers.",
+      "Fixed several boss mechanics that never counted (Twin Emperors' exploding bugs, Nefarian's class calls) and added Venoxis' Holy Wrath chain.",
+      "Consumables pick up Superior Healing, Greater Mana, Rage and Great Rage potions, Solid Dynamite and more, and buffs are grouped into flasks, elixirs, Juju, Zanza and Blasted Lands, food and drinks.",
+      "Spells that Warcraft Logs shows under a later expansion's name are shown under their Classic name, like Blessing of Protection.",
+    ],
+  },
+  {
     version: "2.3.0",
     date: "2026-10-09",
     changes: [

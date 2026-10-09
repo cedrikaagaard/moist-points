@@ -92,6 +92,7 @@ General traps that apply to every boss here:
 - **Analysis notes**: "Antimagic Pulse" dispel counts are Garr removing player buffs, not player dispels. Firesworn are separate enemies; boss damage done to Firesworn counts as useful damage. Ancient Core Hound abilities (Withering Heat, Cauterizing Flames, Ancient Dread/Hysteria) in this window mean nearby trash got pulled.
 
 ## Baron Geddon
+- **Log name trap**: Living Bomb damage is logged as **"Explosion" (20476)** with the **bomb carrier as the source** (a player). It is not friendly fire: the carrier didn't get out of the raid in time.
 - **Fight in one line**: Single target; Inferno (melee out), Ignite Mana (dispel), Living Bomb (run out); explodes at low HP; no enrage timer. Some fire resistance helps.
 - **Mechanics**:
   - "Inferno" (19695 cast, damage logged as 19698): Geddon roots himself and pulses increasing Fire damage to everything near him for ~8 sec. All melee including the tank must run out. Top killer in local logs (77 of 111 killing blows).

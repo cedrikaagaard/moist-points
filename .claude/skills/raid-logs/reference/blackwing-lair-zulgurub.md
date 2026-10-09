@@ -162,6 +162,7 @@ General log-reading rules that apply to every boss below:
 - **Analysis notes**: Boss healing events reveal missed interrupts.
 
 ## High Priest Venoxis
+- **Log name trap**: his Holy Wrath chain is logged as **"Ancient Power" (23979)**. It jumps between nearby players and grows about 30% per jump (270 up to 5k+), so many hits and big late hits mean the raid was stacked.
 - **Fight in one line**: Phase 1 priest form with four Razzashi Cobras; Phase 2 serpent form at 50% (poison clouds); Parasitic Serpents at 25%.
 - **Mechanics**:
   - P1: "Holy Nova" (875-1125, heals him/adds), "Holy Fire" (2200 + DoT), "Holy Wrath" (chain, +30% per jump), "Renew", "Dispel Magic" (removes CC on adds).

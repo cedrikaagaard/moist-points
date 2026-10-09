@@ -50,7 +50,7 @@ boss's part on each night-boss page) as a faded preview, clearly labelled
 "✨ Claude's analysis" panel. It is the one place prose is allowed. Write it
 only when asked, or for new nights after a fetch if the user wants it.
 
-1. **Read the reference first**: `reference/classes-and-log-reading.md` and the
+1. **Read the reference first** (when unsure of a mechanic, also `reference/research/*.md`, sourced): `reference/classes-and-log-reading.md` and the
    file for the night's raid(s) in `reference/` (molten-core-onyxia,
    blackwing-lair-zulgurub, ahnqiraj, naxxramas). Don't analyse from memory.
 2. **Build the facts**: `npm run raids:facts -- --night <raid id>` (e.g. `2026-10-02-bwl`; a plain date works when there was one raid that day) prints JSON with

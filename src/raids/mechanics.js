@@ -42,7 +42,7 @@ export const MECHANICS = {
     { key: "ae", kind: "hit", abilities: ["Arcane Explosion"], tone: "info", label: "Arcane Explosion hits", note: "after every Blink" },
   ],
   50669: [ // Sulfuron
-    { key: "kick", kind: "kick", abilities: ["Dark Mending", "Shadow Word: Pain", "Immolate"], tone: "good", label: "Priest heals interrupted", note: "no Dark Mending allowed" },
+    { key: "kick", kind: "kick", abilities: ["Dark Mending"], tone: "good", label: "Priest heals interrupted", note: "no Dark Mending allowed" },
   ],
   50672: [ // Ragnaros
     { key: "wrath", kind: "hit", abilities: ["Wrath of Ragnaros"], tone: "info", label: "Knocked back", note: "melee get thrown by Wrath of Ragnaros" },
@@ -55,7 +55,7 @@ export const MECHANICS = {
   51084: [
     { key: "breath", kind: "hit", abilities: ["Flame Breath"], tone: "bad", label: "Stood in front", note: "stay at her sides" },
     { key: "deep", kind: "hit", abilities: ["Deep Breath", "Breath"], tone: "bad", label: "Caught by Deep Breath", note: "phase 2, get out of the line" },
-    { key: "eruption", kind: "hit", abilities: ["Eruption"], tone: "bad", label: "Lava cracks", note: "Eruption in phase 2" },
+    { key: "eruption", kind: "hit", abilities: ["Eruption"], tone: "bad", label: "Lava cracks", note: "Eruption in phase 3" },
     { key: "fear", kind: "debuff", abilities: ["Bellowing Roar"], tone: "info", label: "Feared", note: "Bellowing Roar in phase 3" },
     prot("Fire"),
   ],
@@ -97,13 +97,14 @@ export const MECHANICS = {
   50617: [ // Nefarian
     { key: "shadowflame", kind: "hit", abilities: ["Shadow Flame"], tone: "info", label: "Shadow Flame hits", note: "Onyxia Scale Cloak saves lives" },
     { key: "fear", kind: "debuff", abilities: ["Bellowing Roar"], tone: "info", label: "Feared", note: "Fear Ward and Tremor help" },
-    { key: "classcall", kind: "debuff", abilities: ["Corrupted Healing", "Wild Polymorph", "Involuntary Transformation", "Curse of Shadows", "Shadow Command", "Hunter's Call", "Druid's Call", "Wild Magic", "Bone Construct", "Burning Adrenaline"], tone: "info", label: "Class calls", note: "Nefarian picking on a class" },
+    { key: "classcall", kind: "debuff", abilities: ["Corrupted Healing", "Wild Polymorph", "Wild Magic", "Involuntary Transformation", "Shadow Command"], tone: "info", label: "Class calls", note: "Nefarian picking on a class" },
     { key: "veil", kind: "dispel", abilities: ["Veil of Shadow"], tone: "good", label: "Veil of Shadow removed", note: "so the tank can be healed" },
     { key: "fw", kind: "cast", abilities: ["Fear Ward"], tone: "good", label: "Fear Wards", note: "keeping the tank in place" },
   ],
 
   // ---------------- Zul'Gurub ----------------
   50784: [ // Venoxis
+    { key: "chain", kind: "hit", abilities: ["Ancient Power"], tone: "bad", label: "Hit by the Holy Wrath chain", note: "it grows with every jump: spread out (logged as Ancient Power)" },
     { key: "cloud", kind: "hit", abilities: ["Poison Cloud"], tone: "bad", label: "Stood in Poison Cloud", note: "" },
     { key: "fire", kind: "dispel", abilities: ["Holy Fire"], tone: "good", label: "Holy Fire dispelled", note: "" },
   ],
@@ -166,7 +167,7 @@ export const MECHANICS = {
   50715: [ // Twin Emperors
     { key: "burst", kind: "hit", abilities: ["Arcane Burst"], tone: "bad", label: "Hit by Arcane Burst", note: "too close to Vek'lor" },
     { key: "blizzard", kind: "hit", abilities: ["Blizzard"], tone: "bad", label: "Stood in Blizzard", note: "" },
-    { key: "bugs", kind: "hit", abilities: ["Explode Bug"], tone: "bad", label: "Hit by exploding bugs", note: "" },
+    { key: "bugs", kind: "hit", abilities: ["Explode"], tone: "bad", label: "Hit by exploding bugs", note: "" },
   ],
   50716: [ // Ouro
     { key: "sweep", kind: "hit", abilities: ["Sweep"], tone: "info", label: "Swept", note: "knocked back" },

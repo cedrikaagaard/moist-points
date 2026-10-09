@@ -26,30 +26,37 @@ export const TRACKED_CASTS = [
   ...[
     ["Major Healthstone"], ["Dark Rune"], ["Demonic Rune"], ["Invulnerability", "Limited Invulnerability Potion"],
     ["Free Action", "Free Action Potion"], ["Living Free Action", "Living Action Potion"], ["Mighty Rage", "Mighty Rage Potion"],
-    ["Greater Stoneshield", "Greater Stoneshield Potion"], ["Restore Energy", "Thistle Tea"], ["Speed", "Swiftness Potion"],
-    ["Restoration", "Restorative Potion"], ["Purification", "Purification Potion"],
+    ["Greater Stoneshield", "Greater Stoneshield Potion"], ["Restore Energy", "Thistle Tea"],
+    ["Restoration", "Restorative Potion"], ["Rejuvenation Potion", "Major Rejuvenation Potion"],
+    ["Greater Healthstone"],
   ].map(([name, label]) => ({ name, label, category: "potion" })),
-  { name: "Restore Mana", label: "Mana Potion", category: "potion", ids: [17531, 17530] },
-  { name: "Healing Potion", category: "potion", ids: [17534, 17533] },
-  { name: "Frost Protection", label: "Frost Protection Potion", category: "potion", ids: [17544] },
+  // Same name, other spells: limited to the potions' spell ids (from the guild's own logs).
+  { name: "Restore Mana", label: "Mana Potion", category: "potion", ids: [17531, 17530, 11903] },
+  { name: "Healing Potion", category: "potion", ids: [17534, 4042] },
+  { name: "Speed", label: "Swiftness Potion", category: "potion", ids: [2379] },
+  { name: "Great Rage", label: "Great Rage Potion", category: "potion", ids: [6613] },
+  { name: "Rage", label: "Rage Potion", category: "potion", ids: [6612] },
+  { name: "Frost Protection", label: "Frost Protection Potion", category: "potion", ids: [17544, 7239] },
   { name: "Fire Protection", label: "Fire Protection Potion", category: "potion", ids: [17543] },
   { name: "Nature Protection", label: "Nature Protection Potion", category: "potion", ids: [17546, 7254] },
-  { name: "Shadow Protection", label: "Shadow Protection Potion", category: "potion", ids: [17548] },
+  { name: "Shadow Protection", label: "Shadow Protection Potion", category: "potion", ids: [17548, 7242] }, // not the priest buff
   { name: "Arcane Protection", label: "Arcane Protection Potion", category: "potion", ids: [17549] },
   // Engineering explosives
   ...[
-    "Goblin Sapper Charge", "Dense Dynamite", "Ez-Thro Dynamite", "Ez-Thro Dynamite II", "Thorium Grenade",
-    "Iron Grenade", "Hi-Explosive Bomb", "Stratholme Holy Water",
+    "Goblin Sapper Charge", "Dense Dynamite", "Solid Dynamite", "Ez-Thro Dynamite", "Thorium Grenade",
+    "Iron Grenade", "Mithril Frag Bomb", "Hi-Explosive Bomb", "Stratholme Holy Water",
   ].map((name) => ({ name, category: "explosive" })),
   // Helping others / saving the pull
   ...[
     "Tranquilizing Shot", "Fear Ward", "Power Infusion", "Innervate", "Rebirth", "Soulstone Resurrection",
-    "Blessing of Sacrifice", "Hand of Protection", "Blessing of Protection", "Lay on Hands",
+    "Blessing of Sacrifice", "Lay on Hands", "Blessing of Freedom",
     "Divine Intervention", "Challenging Shout", "Shackle Undead", "Mind Control", "Intimidating Shout",
   ].map((name) => ({ name, category: "utility" })),
+  // Warcraft Logs shows these under a later expansion's name.
+  { name: "Hand of Protection", label: "Blessing of Protection", category: "utility" },
   // Raid debuffs that make everyone else hit harder
   ...[
-    "Sunder Armor", "Expose Armor", "Faerie Fire", "Curse of Recklessness", "Curse of the Elements",
+    "Sunder Armor", "Expose Armor", "Faerie Fire", "Faerie Fire (Feral)", "Curse of Recklessness", "Curse of the Elements",
     "Curse of Shadow", "Demoralizing Shout", "Hunter's Mark", "Thunder Clap",
   ].map((name) => ({ name, category: "debuff" })),
 ];
@@ -57,18 +64,15 @@ export const TRACKED_CASTS = [
 // Consumable buffs people bring, seen in each raider's buff snapshot at a boss
 // pull (full combat log only). Name -> group.
 export const CONSUME_BUFFS = {
-  flask: ["Flask of the Titans", "Supreme Power", "Distilled Wisdom", "Chromatic Resistance", "Flask of Petrification"],
+  flask: ["Flask of the Titans", "Supreme Power", "Distilled Wisdom", "Chromatic Resistance", "Petrification"],
   elixir: [
-    "Elixir of the Mongoose", "Elixir of the Giants", "Greater Arcane Elixir", "Greater Firepower", "Mageblood Elixir",
-    "Elixir of Fortitude", "Greater Armor", "Mighty Troll's Blood Elixir", "Greater Agility", "Shadow Power", "Frost Power",
-    "Greater Intellect", "Elixir of Brute Force", "Gift of Arthas", "Juju Power", "Juju Might", "Juju Flurry", "Juju Ember",
-    "Juju Chill", "Juju Guile", "Juju Escape", "Spirit of Zanza", "Swiftness of Zanza", "Sheen of Zanza",
-    "Strike of the Scorpok", "Rage of Ages", "Spiritual Domination", "Infallible Mind", "Spirit of the Boar",
-    "Winterfall Firewater", "Arcane Elixir", "Elixir of Greater Firepower",
+    "Elixir of the Mongoose", "Elixir of the Giants", "Greater Agility", "Elixir of Brute Force", "Greater Arcane Elixir",
+    "Greater Firepower", "Shadow Power", "Frost Power", "Greater Intellect", "Elixir of the Sages", "Arcane Elixir",
+    "Mageblood Elixir", "Elixir of Fortitude", "Greater Armor", "Mighty Troll's Blood Elixir", "Gift of Arthas",
   ],
-  food: [
-    "Well Fed", "Mana Regeneration", "Increased Agility", "Increased Stamina", "Increased Intellect", "Increased Strength",
-    "Blessed Sunfruit", "Blessed Sunfruit Juice", "Gordok Green Grog", "Rumsey Rum Black Label", "Kreeg's Stout Beatdown",
-    "Rumsey Rum Dark",
-  ],
+  juju: ["Juju Power", "Juju Might", "Juju Flurry", "Juju Ember", "Juju Chill", "Juju Guile", "Juju Escape"],
+  // Zanza and the Blasted Lands buffs share one slot.
+  zanza: ["Spirit of Zanza", "Swiftness of Zanza", "Sheen of Zanza", "Rage of Ages", "Strike of the Scorpok", "Spirit of Boar", "Infallible Mind", "Spiritual Domination"],
+  food: ["Well Fed", "Mana Regeneration", "Increased Agility", "Increased Stamina", "Increased Intellect", "Blessed Sunfruit", "Blessed Sunfruit Juice"],
+  drink: ["Gordok Green Grog", "Rumsey Rum Black Label", "Kreeg's Stout Beatdown", "Winterfall Firewater"],
 };

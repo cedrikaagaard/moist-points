@@ -115,13 +115,13 @@ General AQ notes:
 - **Analysis notes**: Boss "damage taken" is misleading. Count frost hits (number of casts like Frostbolt and Shoot with frost wands on Viscidus) and melee hits in frozen windows. Glob kills are the real progress. Frost resists on the boss do not count as hits. Classic 2020 fixed a bug where frost wands did not count.
 
 ## Princess Huhuran
-- **Fight in one line**: Tank-and-spank race. At **30% HP or after 5 min** she goes **Berserk** and spams **Poison Bolt Volley** on the 15 closest players every few seconds. That needs about 15 high-NR soakers (often 200-300 NR) plus a burn phase. **Frenzy** must be removed with Tranquilizing Shot.
+- **Fight in one line**: Tank-and-spank race. At **30% HP** she goes **Berserk** and spams **Poison Bolt** (log name, 26052) on the 15 closest players every few seconds (the extra 5 min trigger exists only in private-server scripts). That needs about 15 high-NR soakers (often 200-300 NR) plus a burn phase. **Frenzy** must be removed with Tranquilizing Shot.
 - **Mechanics**:
-  - **Frenzy**: every 25-35 s, big melee damage increase. Hunters must remove it with **Tranquilizing Shot** within seconds or tank damage spikes, and per some sources volleys start.
+  - **Frenzy** (logged as "Enrage", 26051): every 25-35 s, big melee damage increase. Hunters must remove it with **Tranquilizing Shot** within seconds or tank damage spikes, and per some sources volleys start.
   - **Acid Spit**: stacking nature DoT on the current tank (about 220-280 per 2 s per stack, unresistable). Tanks swap at around 8-12 stacks. She is taunt-immune, so swaps use threat, Limited Invulnerability Potion or Blessing of Protection on the old tank.
   - **Noxious Poison**: random target, about 2.9k nature over 8 s plus silence, spreads to nearby players. Not dispellable. Spread out.
   - **Wyvern Sting**: sleeps players near her (several targets). Dispelling it deals about 3k+ nature damage. Usually only dispel tanks or key healers.
-  - **Berserk** (30% or 5 min): double attack speed plus **Poison Bolt Volley** (about 2000 nature) on the 15 closest every about 3 s. Hunter and warlock pets do not count.
+  - **Berserk** (30%): double attack speed plus **Poison Bolt** (about 2000 nature, log name "Poison Bolt") on the 15 closest every about 3 s. Hunter and warlock pets do not count.
 - **Jobs by class/role**:
   - Hunters: Tranquilizing Shot rotation (2-3 hunters in order). Pets do not count toward the 15 volley targets.
   - Tanks: 2-3 NR-geared warriors rotating on Acid Spit.
