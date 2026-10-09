@@ -1,0 +1,76 @@
+{
+  "night": "2026-10-02-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-09T16:10:00Z",
+  "headline": "8 of 8 BWL in 43 minutes, with one costly wipe on the trash in Firemaw's room",
+  "mvp": {
+    "player": "Gertggs",
+    "headline": "top damage in the raid and 86 or better on every boss",
+    "why": [
+      "Most damage of anyone, parsing 86 to 97 on all eight bosses",
+      "Never died, including the wipe in Firemaw's room that killed 12"
+    ],
+    "also": [
+      { "player": "Macharius", "text": "main tank on Firemaw, Flamegor, Chromaggus and Nefarian, no deaths" },
+      { "player": "Ishilly", "text": "29 of the 96 Brood Afflictions cleansed on Chromaggus, 15 Fear Wards" },
+      { "player": "Drikkle", "text": "94 or better on seven of eight bosses, 99 on Nefarian" }
+    ]
+  },
+  "overview": [
+    "All eight bosses dead in 42:46, a little under the guild's usual BWL (median 43:33, best 33:23), and every boss at or under the guild's median kill time. Nefarian went down in 1:44 with nobody dying, and Firemaw's kill (0:57) was half a minute under the usual.",
+    "The one wipe was not really a boss wipe: at 20:02 Firemaw joined the trash pack in his room (Blackwing Warlocks with their Felguards, Technicians, a Spellbinder and a Death Talon Overseer). Technician bombs did 50k to 15 raiders and Warlock Shadow Bolts another 27k, a tank and four healers died in the first 34 seconds, and 12 people died in all with Firemaw still at 98%.",
+    "That wipe also cost world buffs: 10 of the 12 who died lost all of theirs (Rallying Cry, Zandalar, Songflower, Dire Maul) and nobody rebuffed, so Rallying Cry was on 36 raiders before it and 28 for the rest of the raid. Damage held up anyway: raid DPS was above the guild's usual on every boss after it."
+  ],
+  "wipes": [
+    {
+      "encounterId": 50613,
+      "pull": 1,
+      "title": "Firemaw's room, pull 1 (Firemaw at 98%)",
+      "whatHappened": "The raid was fighting the Blackwing trash pack in front of Firemaw when Firemaw joined the fight. Drikkle died to a bomb and a Shadow Bolt at 0:10, Birkler (tank) at 0:18, then four healers between 0:25 and 0:34 (Etowa, Ishilly, Vallon, Thormund), mostly to Technician bombs. With the healing gone, 12 died in 1:24.",
+      "likelyCause": "Firemaw being pulled while the trash pack was still up, so the raid had his Flame Buffet and Wing Buffet on top of bombs and Shadow Bolts. The log can't say how he got pulled (a body pull, a knockback or someone running in).",
+      "evidence": [
+        "The fight contains Firemaw plus Blackwing Warlocks, Felguards, Technicians, a Spellbinder and a Death Talon Overseer",
+        "Bomb (Blackwing Technician) 50k on 15 raiders and Shadow Bolt (Blackwing Warlock) 27k: on a usual Firemaw kill both are 0",
+        "A tank and four healers dead in the first 34 seconds",
+        "10 of the 12 dead lost every world buff they had and didn't get them back"
+      ],
+      "avoid": "Clear the trash pack well away from Firemaw before engaging him, and kill or crowd control the Technicians first: their bombs did the most damage."
+    }
+  ],
+  "wentWell": [
+    { "encounterId": 50617, "text": "Nefarian in 1:44 (median 2:03) with no deaths and a median parse of 87, well up from the usual 78. Drikkle parsed 99, Gertggs and Terrora 97 and 96." },
+    { "encounterId": 50613, "text": "After the wipe, Firemaw died in 0:57, almost half a minute faster than the guild median of 1:26, with raid DPS almost half again above usual." },
+    { "encounterId": 50616, "text": "Chromaggus in 1:27 (median 1:42) with no deaths, his breaths landing 18 times on just four people (half the usual rate), and 96 Brood Afflictions cleansed." },
+    { "encounterId": 50615, "text": "All five of Flamegor's Frenzies removed: Speldosan, Punintended and Darkestnight landed seven Tranquilizing Shots between them." }
+  ],
+  "bosses": [
+    { "encounterId": 50610, "name": "Razorgore the Untamed", "notes": [
+      { "tone": "info", "text": "0:28 once Razorgore himself was pulled, right on the median. Farlomaker died to his melee at 0:27." }
+    ] },
+    { "encounterId": 50611, "name": "Vaelastrasz the Corrupt", "notes": [
+      { "tone": "good", "text": "0:30 against a median of 0:39, with raid DPS 33k (usually 26k) and a median parse of 80 against the usual 70. Birkler took all ten Flame Breaths and nobody died." }
+    ] },
+    { "encounterId": 50612, "name": "Broodlord Lashlayer", "notes": [
+      { "tone": "good", "text": "0:39 against a median of 0:47. Blast Wave hit 22 raiders, 0.55 per raider against the usual 0.88. Skoomael and Drikkle parsed 98." }
+    ] },
+    { "encounterId": 50613, "name": "Firemaw", "notes": [
+      { "tone": "bad", "text": "The first pull was the wipe described above: Firemaw joined the trash pack in his room, and 12 died with him at 98%." },
+      { "tone": "good", "text": "The kill took 0:57 against a median of 1:26, on 17.5k raid DPS against a usual 12k, with no deaths. Flame Buffet stacked to the usual 11 per raider; only two people drank a Fire Protection potion." }
+    ] },
+    { "encounterId": 50614, "name": "Ebonroc", "notes": [
+      { "tone": "good", "text": "0:55 against a median of 1:06, no deaths. Shadow of Ebonroc landed four times, about half the usual." }
+    ] },
+    { "encounterId": 50615, "name": "Flamegor", "notes": [
+      { "tone": "good", "text": "All five Frenzies removed (Speldosan 3, Punintended 2, Darkestnight 2 Tranquilizing Shots). 0:58, two seconds under the median, no deaths." },
+      { "tone": "info", "text": "Fire Nova hit every raider about seven times, a bit more than the usual 5.6, for 136k in total." }
+    ] },
+    { "encounterId": 50616, "name": "Chromaggus", "notes": [
+      { "tone": "good", "text": "1:27 against a median of 1:42, no deaths. His breaths hit only four people, 18 times (half the usual rate per raider), and 96 Brood Afflictions were cleansed, Ishilly 29 and Allipalli 22." },
+      { "tone": "bad", "text": "He gained his Frenzy six times and Tranquilizing Shot removed five of them (Speldosan 3, Punintended 2)." }
+    ] },
+    { "encounterId": 50617, "name": "Nefarian", "notes": [
+      { "tone": "good", "text": "1:44 with no deaths, against a median of 2:03. Raid DPS 23.5k (usually 20k) and a median parse of 87." },
+      { "tone": "info", "text": "Shadow Flame hit 24 raiders 33 times, the usual amount; Künigünde, Ishilly and Thormund put up seven Fear Wards." }
+    ] }
+  ]
+}
