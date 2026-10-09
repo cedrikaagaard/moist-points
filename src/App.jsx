@@ -165,7 +165,7 @@ function MeChip({ active }) {
     return (
       <a className={`me-chip me-chip-empty${active ? " active" : ""}`} href={href("me")}>
         <span className="me-chip-avatar">?</span>
-        Set your character
+        Log in
       </a>
     );
   }

@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.4.1",
+    date: "2026-10-09",
+    changes: [
+      "My Page has a proper login now: log in with Battle.net to get all your characters at once (with a short note on what the site gets from Blizzard and why), or just pick your character by hand.",
+      "When you're logged in, a bar at the top of your page shows it, with all your characters to switch between and a log out link.",
+    ],
+  },
+  {
     version: "2.4.0",
     date: "2026-10-09",
     changes: [
