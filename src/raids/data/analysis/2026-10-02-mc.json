@@ -1,0 +1,67 @@
+{
+  "night": "2026-10-02-mc",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-09T17:05:00Z",
+  "headline": "A 33 minute MC with only two deaths, a record-tying Golemagg and a quick Ragnaros",
+  "mvp": {
+    "player": "Macharius",
+    "headline": "main tank on 8 of the 10 bosses without a single death",
+    "why": [
+      "Took the boss on Lucifron, Magmadar, Gehennas, Geddon, Shazzrah, Sulfuron, Golemagg and Ragnaros, including 44k of Elemental Fire on Ragnaros",
+      "Parsed 81 to 98 while tanking, and never died"
+    ],
+    "also": [
+      { "player": "Drikkle", "text": "92 to 99 on every boss, 99 on six of them" },
+      { "player": "Gertggs", "text": "the most damage in the raid" },
+      { "player": "Thormund", "text": "134 dispels, with Gallahan on 125" }
+    ]
+  },
+  "overview": [
+    "All ten bosses in 32:58, six minutes under the guild's usual MC (median 39:03, best 29:44), with nine of them faster than the guild median and only two deaths all raid.",
+    "This was the second raid of the evening, straight after BWL, so about half the raid still had world buffs up (Rallying Cry and Zandalar on 24 of 40, Songflower on 19); ten raiders had lost theirs in the BWL wipe.",
+    "The two things that cost healing: a Core Hound pack pulled into Magmadar, with the raid in front of his Lava Breath twice, and five Dark Mendings on Sulfuron that went through and healed the priests for 92k."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50670, "text": "Golemagg in 0:35, tying the guild's fastest kill (11 Sep), on 29k raid DPS against a usual 21k." },
+    { "encounterId": 50672, "text": "Ragnaros in 0:46 (median 0:58) with nobody dead, Lava Burst hitting 1.3 times per raider against a usual 2.2 and Elemental Fire on the tanks well below normal." },
+    { "encounterId": 50663, "text": "Lucifron in 0:27 and Gehennas in 0:22, both five seconds under the median, with no deaths." }
+  ],
+  "bosses": [
+    { "encounterId": 50663, "name": "Lucifron", "notes": [
+      { "tone": "good", "text": "0:27 against a median of 0:32. Impending Doom still went off on 15 raiders (27k), about the usual rate; Thormund and Ishilly dispelled six each." }
+    ] },
+    { "encounterId": 50664, "name": "Magmadar", "notes": [
+      { "tone": "bad", "text": "A Core Hound pack came along with him (85 Serrated Bites on 10 raiders). His Lava Breath, a frontal cone, then hit 28 raiders at 0:12 and again at 0:16 for 43k, although Macharius kept him the whole fight, so most of the raid was standing in front of him for those seconds." },
+      { "tone": "bad", "text": "His first Frenzy (0:08) was never shot off and ran its full 8 seconds. Speldosan removed the second one. Lava Bomb fire hit 16 raiders 168 times, more than twice the usual rate." },
+      { "tone": "info", "text": "Still a 0:38 kill (median 0:40) without deaths." }
+    ] },
+    { "encounterId": 50665, "name": "Gehennas", "notes": [
+      { "tone": "good", "text": "0:22 against a median of 0:27, and Rain of Fire hit fewer people than usual (1.1 per raider against 1.4). Cladá and Elozia removed 13 of the curses." }
+    ] },
+    { "encounterId": 50666, "name": "Garr", "notes": [
+      { "tone": "info", "text": "0:35, two seconds under the median. Birkler tanked him (39k of melee) and nobody died." }
+    ] },
+    { "encounterId": 50668, "name": "Baron Geddon", "notes": [
+      { "tone": "bad", "text": "Gertggs' Living Bomb went off next to Barnstoker and killed him at 0:21. Grilled's bomb hurt nobody." },
+      { "tone": "good", "text": "0:35 against a median of 0:40, with Inferno hitting fewer people than usual and Gallahan dispelling ten Ignite Manas." }
+    ] },
+    { "encounterId": 50667, "name": "Shazzrah", "notes": [
+      { "tone": "info", "text": "0:17, a second under the median. His three Arcane Explosions hit 29 raiders, slightly fewer per raider than usual." }
+    ] },
+    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [
+      { "tone": "bad", "text": "Only three of the eight Dark Mendings were interrupted (Stinkycat, Deeno and Fatwhaleirl one each). The five that went through healed the Flamewaker Priests for 92k, where a usual kill sees none, and the kill took 0:46 against a median of 0:44." }
+    ] },
+    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [
+      { "tone": "good", "text": "0:35 ties the guild record. Raid DPS 29k against a usual 21k; Skoomael and Drikkle parsed 99, Macharius 98 while tanking." }
+    ] },
+    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [
+      { "tone": "bad", "text": "The Flamewaker Elites' Blast Wave hit 32 raiders for 58k, about two and a half times the usual share of damage, and Pinguwan died at 0:32." },
+      { "tone": "info", "text": "0:51 against a median of 0:57, with the Flamewaker Healers' Shadow Shock the main damage (157k), as usual." }
+    ] },
+    { "encounterId": 50672, "name": "Ragnaros", "notes": [
+      { "tone": "good", "text": "0:46 against a median of 0:58 with no deaths. Lava Burst hit 1.3 times per raider (usually 2.2), and Elemental Fire landed on the tanks 58 times against a usual rate of 90 or so." },
+      { "tone": "info", "text": "Drikkle parsed 99, Skoomael 98 and Fluffycatto 96." }
+    ] }
+  ]
+}

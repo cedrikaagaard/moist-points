@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.5",
+    date: "2026-10-09",
+    changes: [
+      "Claude's analysis for the 2 October MC, the second raid of that evening.",
+    ],
+  },
+  {
     version: "2.3.4",
     date: "2026-10-09",
     changes: [
