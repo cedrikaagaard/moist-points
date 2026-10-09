@@ -2312,6 +2312,63 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T16:46:03.815Z",
+    "grade": "A",
+    "verdict": "99 on six bosses, no deaths, and the decursing of someone who only decurses when it doesn't cost a Frostbolt",
+    "summary": "Annoyingly clean: Lucifron, Gehennas, Geddon, Shazzrah, Golemagg and Ragnaros all 99, a 98 average, and you didn't die once, which after BWL the same evening is a personal record of its own. Majordomo 92 and Sulfuron 96 are personal bests. The weak spot is the job mages are actually in MC for.",
+    "good": [
+     {
+      "title": "Six 99s",
+      "text": "Lucifron, Gehennas, Baron Geddon, Shazzrah, Golemagg and Ragnaros. Second highest damage in the raid on Geddon."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Majordomo 92 (best before: 85) and Sulfuron 96 (91)."
+     },
+     {
+      "title": "Alive",
+      "text": "Zero deaths. After dying three times in BWL an hour earlier, worth writing down."
+     },
+     {
+      "title": "Consumables",
+      "text": "Supreme Power, Greater Arcane and Mageblood on all 10 boss pulls, 4.8 buffs a pull against 3.8 for the other DPS."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Decursing",
+      "impact": "medium",
+      "text": "2 Gehennas' Curses removed while the median decurser did 4 and the best did 7, and 1 Shazzrah's Curse. Six 99 parses come a lot easier when somebody else spends their globals on Remove Curse."
+     },
+     {
+      "title": "Rain of Fire",
+      "impact": "low",
+      "boss": 50665,
+      "text": "One tick on Gehennas (1,060)."
+     },
+     {
+      "title": "No Zanza",
+      "impact": "low",
+      "text": "Zanza on none of the 10 boss pulls."
+     }
+    ],
+    "bosses": {
+     "50665": {
+      "tone": "bad",
+      "text": "2 curses removed (median 4)."
+     },
+     "50668": {
+      "tone": "good",
+      "text": "99, second highest damage in the raid."
+     },
+     "50671": {
+      "tone": "good",
+      "text": "92, personal best."
+     }
+    }
    }
   },
   "Elozia": {

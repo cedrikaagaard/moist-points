@@ -1978,6 +1978,66 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T16:46:03.851Z",
+    "grade": "B",
+    "verdict": "No deaths, Sartura 96 and Ouro 95, and Huhuran where you spent eight seconds silenced",
+    "summary": "A 77 average against your usual 80 and, for once, no deaths at all. Sartura 96, Ouro 95 and Skeram 90 were the highlights. The two big drops have reasons in the log: on Fankriss you were blowing up bugs with Arcane Explosion, and on Huhuran Noxious Poison silenced you for eight seconds of a 41 second kill.",
+    "good": [
+     {
+      "title": "No deaths",
+      "text": "Zero deaths over nine bosses."
+     },
+     {
+      "title": "Sartura 96, Ouro 95, Skeram 90",
+      "text": "Skeram 90 is well over your usual 64 there; Sartura and Ouro are at your best."
+     },
+     {
+      "title": "Fankriss bugs",
+      "text": "9 Arcane Explosions on the adds: fourth in the raid counting all targets, which is why the parse (boss damage only) dropped to 65.",
+      "boss": 50712
+     },
+     {
+      "title": "Consumables",
+      "text": "Supreme Power, Zanza, Greater Arcane, Firepower and Mageblood on all 9 boss pulls: 5.9 a pull against 4.7 for the other DPS."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran",
+      "impact": "low",
+      "boss": 50714,
+      "text": "47 against your usual 92. Noxious Poison silenced you from 0:14 to 0:22 of a 41 second kill, which is most of it. It spreads to people nearby, so give yourself a few yards."
+     },
+     {
+      "title": "Twin Emperors' bug",
+      "impact": "low",
+      "boss": 50715,
+      "text": "An exploding bug hit you for 3,103, the most of the three people it caught."
+     },
+     {
+      "title": "Royalty",
+      "impact": "low",
+      "boss": 50710,
+      "text": "76, under your usual 77 with two fears from Yauj and 14 Toxic Volley hits."
+     }
+    ],
+    "bosses": {
+     "50711": {
+      "tone": "good",
+      "text": "96, equal to your best."
+     },
+     "50712": {
+      "tone": "info",
+      "text": "On bug duty with Arcane Explosion."
+     },
+     "50714": {
+      "tone": "info",
+      "text": "Silenced by Noxious Poison 0:14 to 0:22."
+     }
+    }
    }
   },
   "Eufrasia": {

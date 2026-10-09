@@ -1927,6 +1927,60 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T16:46:03.775Z",
+    "grade": "C-",
+    "verdict": "Parsed 96 on average and still managed to be the first corpse of three different pulls",
+    "summary": "The parses were excellent: Nefarian 99, Broodlord and Ebonroc 98, Chromaggus 97, a 96 average against your usual 77. It's a shame you spent so much of the raid dead. You body pulled Firemaw while techie-tanking, died ten seconds into that pull and set off a wipe that killed twelve. Then you went back to the Technicians, took more of their hits than anyone (20) and died to a Bomb, first death of that pull. Then a Death Talon Overseer hit you twice and you were dead five seconds into the next pull, first again. A 99 parser who can't stay alive on trash.",
+    "good": [
+     {
+      "title": "Nefarian 99",
+      "text": "Third highest damage in the raid on Nefarian, with Broodlord 98, Ebonroc 98 and Chromaggus 97 next to it.",
+      "boss": 50617
+     },
+     {
+      "title": "Personal bests",
+      "text": "Flamegor 95 (best before: 88), Chromaggus 97 (equal to your best), Vaelastrasz 88 (usual 70)."
+     },
+     {
+      "title": "Consumables",
+      "text": "Supreme Power, Greater Arcane and Mageblood on every pull, 5.1 buffs a pull against 3.7 for the other DPS. Shame about the part where you kept dying with them on."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Firemaw: you pulled it",
+      "impact": "high",
+      "boss": 50613,
+      "text": "Every Technician attack in the 20 seconds before the pull went to you, and you were 19 yards from Firemaw, 13 yards closer than anyone else. He woke up, you died at 0:10, and with nobody holding the Technicians, twelve people died. Techie-tank in the open, nowhere near a sleeping dragon."
+     },
+     {
+      "title": "Then the Technicians killed you again",
+      "impact": "high",
+      "text": "At 25:44 the Technicians hit you 20 times, more than anyone in the raid, and a Bomb killed you: first death of the pull. Same job, same result, five minutes later."
+     },
+     {
+      "title": "And then a Death Talon Overseer",
+      "impact": "medium",
+      "text": "At 33:16 an Overseer hit you twice and you were dead 4.9 seconds into the pull, the first death again. Three pulls, three times first to die."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "good",
+      "text": "98."
+     },
+     "50613": {
+      "tone": "bad",
+      "text": "Body pulled him while techie-tanking, first death of the wipe at 0:10."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "99."
+     }
+    }
    }
   },
   "Elozia": {
