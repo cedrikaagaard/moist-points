@@ -9,7 +9,7 @@ export const CHANGELOG = [
     version: "2.5.13",
     date: "2026-10-09",
     changes: [
-      "Every raider of tonight's MC now has a personal review too (39 of them; two who don't appear in any boss fight are left out).",
+      "Every raider of tonight's MC now has a personal review too (39 of them; three who don't appear in any boss fight are left out).",
     ],
   },
   {
