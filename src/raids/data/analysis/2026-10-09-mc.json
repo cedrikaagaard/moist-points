@@ -1,7 +1,7 @@
 {
   "night": "2026-10-09-mc",
   "model": "Claude (Opus 5.5)",
-  "generatedAt": "2026-10-09T19:40:00Z",
+  "generatedAt": "2026-10-10T00:10:00Z",
   "headline": "10 of 10 in 31:38, the second fastest MC the guild has logged, every boss under the median",
   "mvp": {
     "player": "Drikkle",
@@ -26,23 +26,24 @@
     ]
   },
   "overview": [
-    "A full clear in 31:38, second only to the 29:44 on 7 August and nine minutes under the guild's usual MC (40:48). All ten bosses died faster than the guild's median, from Shazzrah (0:17 against 0:18) to Majordomo (0:45 against 1:02), and nobody wiped.",
+    "A full clear in 31:38, second only to the 29:44 on 7 August and almost eleven minutes under the guild's usual MC (42:18). All ten bosses died faster than the guild's median, from Shazzrah (0:17 against 0:19) to Majordomo (0:45 against 1:04), and nobody wiped.",
     "Nine deaths, five of them on trash between bosses. Raid DPS was above the guild's usual on every boss, most of all on Majordomo (22k against 15k) and Sulfuron (21k against 16k).",
-    "Skoomael, coming off a 97 average in BWL an hour earlier, managed 86 here, with 61 on Gehennas and 73 on Lucifron, and was exactly as good as the average raider at not standing in Inferno, Arcane Explosion and Lava Burst: three hits of each. The 99 on Ragnaros only proves he knew how all along."
+    "World buffs held up through the raid: Rallying Cry and Zandalar on 31 to 33 of the 39 raiders on every boss, Mol'dar's Moxie on 27 or more. Songflower and Rend ran out as the evening went on (Songflower on 27 at Lucifron, 7 by Majordomo).",
+    "Skoomael, coming off a 97 average in BWL an hour earlier, managed 86 here, with 61 on Gehennas and 73 on Lucifron, and was exactly as good as the average raider at not standing in Inferno, Arcane Explosion and Lava Burst. He also played the first eight bosses with no world buffs at all: all seven reappeared on the trash before Majordomo, where he promptly parsed 96 and then 99 on Ragnaros."
   ],
   "wipes": [],
   "wentWell": [
     {
       "encounterId": 50671,
-      "text": "Majordomo in 0:45 against a median of 1:02, five seconds off the guild record. Drikkle 99, Yulepunch 97, Hjärterkung 96."
+      "text": "Majordomo in 0:45 against a median of 1:04, five seconds off the guild record. Drikkle 99, Yulepunch 97, Hjärterkung 96."
     },
     {
       "encounterId": 50672,
-      "text": "Ragnaros in 0:50 (median 1:00) with nobody dead. Skoomael and Drikkle 99."
+      "text": "Ragnaros in 0:50 (median 1:01) with nobody dead. Skoomael and Drikkle 99."
     },
     {
       "encounterId": 50668,
-      "text": "Baron Geddon in 0:33 against a median of 0:41. Living Bomb caught only two other raiders, a quarter of the usual."
+      "text": "Baron Geddon in 0:33 against a median of 0:42. Living Bomb caught only two other raiders, a quarter of the usual."
     },
     {
       "encounterId": 50664,
@@ -84,7 +85,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "0:22 against a median of 0:29. Rain of Fire hit 33 raiders 52 times, a little under the usual rate; 20 curses removed. Hjärterkung and Drikkle 99."
+          "text": "0:22 against a median of 0:30. Rain of Fire hit 33 raiders 52 times, a little under the usual rate; 20 curses removed. Hjärterkung and Drikkle 99."
         }
       ]
     },
@@ -94,7 +95,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "0:35 against a median of 0:40, no deaths, and less damage taken than usual."
+          "text": "0:35 against a median of 0:41, no deaths, and less damage taken than usual."
         }
       ]
     },
@@ -104,7 +105,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "0:33 against a median of 0:41. 12 Ignite Manas dispelled; the Living Bomb caught two people."
+          "text": "0:33 against a median of 0:42. 12 Ignite Manas dispelled; the Living Bomb caught two people."
         },
         {
           "tone": "bad",
@@ -118,7 +119,7 @@
       "notes": [
         {
           "tone": "info",
-          "text": "0:17, a second under the median. His Arcane Explosions hit 24 raiders 87 times, slightly more per raider than usual, and only 4 of his curses were removed."
+          "text": "0:17, two seconds under the median. His Arcane Explosions hit 24 raiders 87 times, slightly more per raider than usual, and only 4 of his curses were removed."
         }
       ]
     },
@@ -128,7 +129,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "0:38 against a median of 0:46, and a median parse of 77 against the usual 65. Osinir 98."
+          "text": "0:38 against a median of 0:47, and a median parse of 77 against the usual 61. Osinir 98."
         },
         {
           "tone": "bad",
@@ -152,11 +153,11 @@
       "notes": [
         {
           "tone": "good",
-          "text": "0:45 against a median of 1:02 on 22k raid DPS (usually 15k)."
+          "text": "0:45 against a median of 1:04 on 22k raid DPS (usually 15k)."
         },
         {
           "tone": "bad",
-          "text": "Two casters died to Blast Wave at 0:12, and Blast Wave did 52k, more than three times its usual share. Shadow Shock from the Flamewaker Healers was the big damage, 205k, as usual."
+          "text": "Two raiders died to Blast Wave at 0:11, and Blast Wave did 52k, more than three times its usual share. Shadow Shock from the Flamewaker Healers was the big damage, 205k, as usual."
         }
       ]
     },
@@ -166,7 +167,7 @@
       "notes": [
         {
           "tone": "good",
-          "text": "0:50 against a median of 1:00 with no deaths, and a median parse of 83."
+          "text": "0:50 against a median of 1:01 with no deaths, and a median parse of 83."
         },
         {
           "tone": "info",

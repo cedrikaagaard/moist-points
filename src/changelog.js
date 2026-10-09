@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.14",
+    date: "2026-10-10",
+    changes: [
+      "Follow-up on Friday's BWL and MC analyses from the final logs: guild averages updated (they moved a little as older raids came in), world buffs added for both raids, the Vaelastrasz death described properly (he turned on a DPS from his tank), and one wrong detail fixed (the two Majordomo deaths weren't both casters).",
+    ],
+  },
+  {
     version: "2.5.13",
     date: "2026-10-09",
     changes: [
