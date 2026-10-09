@@ -10,6 +10,7 @@
 //   npm run raids:fetch -- --rebuild         rebuild every night on disk from data/wcl only (no API)
 //   npm run raids:fetch -- --night 2026-10-04 --refresh  re-download that night's logs
 //   npm run raids:fetch -- --list            just show nights + reports found
+//   npm run raids:fetch -- --night <today> --refresh --reserve 20   during a raid: rebuild tonight from the growing logs
 //   npm run raids:fetch -- --since 2025-01-01 --newest-first   backfill, today backwards
 //
 // Several people log the same raid, so each night is stitched from the reports
@@ -32,7 +33,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 const NIGHTS_DIR = path.join(ROOT, "src/raids/data/nights");
 const RAW_DIR = path.join(ROOT, "data/wcl"); // raw API responses, committed
 
-const RESERVE_POINTS = 130; // a big night costs ~55, the odd huge one 100+
+// a big night costs ~55, the odd huge one 100+; --reserve N lowers it for a live night
+const RESERVE_POINTS = process.argv.includes("--reserve") ? +process.argv[process.argv.indexOf("--reserve") + 1] : 130;
 const SCHEMA = 7; // bump when the night file shape changes; older files get rebuilt
 // (4: per-pull damage taken by ability + healing done to enemies;
 //  5: + raid damage/healing done per pull, boss Berserk/Vengeance buffs;
@@ -932,7 +934,7 @@ function parseArgs(argv) {
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (["--force", "--refresh", "--list", "--newest-first", "--rebuild"].includes(a)) out[a.slice(2)] = true;
-    else if (a === "--since" || a === "--night") out[a.slice(2)] = argv[++i];
+    else if (a === "--since" || a === "--night" || a === "--reserve") out[a.slice(2)] = argv[++i];
     else throw new Error(`Unknown option ${a}`);
   }
   return out;
