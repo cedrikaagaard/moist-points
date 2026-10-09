@@ -45,8 +45,16 @@ function log(code) {
   const abil = new Map((base.masterData.abilities || []).map((a) => [a.gameID, a.name]));
   // per fight: player -> sorted activity times (s), overheal, raw heal
   const act = {};
+  const ctx = {}; // fight -> { debuffs: player -> [[t, on, name]], boss: [[t, on, name]] }
   for (const e of readEvents(date, code)) {
     if (!start.has(e.fight)) continue;
+    // Context for idle stretches: every debuff on a player, every buff on an enemy.
+    if ((e.type === "applydebuff" || e.type === "removedebuff") && actor.get(e.targetID)?.type === "Player") {
+      ((ctx[e.fight] ??= { debuffs: {}, boss: [] }).debuffs[actor.get(e.targetID).name] ??= []).push([(e.timestamp - start.get(e.fight)) / 1000, e.type === "applydebuff", abil.get(e.abilityGameID)]);
+    }
+    if ((e.type === "applybuff" || e.type === "removebuff") && actor.get(e.targetID) && actor.get(e.targetID).type !== "Player" && actor.get(e.targetID).petOwner == null) {
+      (ctx[e.fight] ??= { debuffs: {}, boss: [] }).boss.push([(e.timestamp - start.get(e.fight)) / 1000, e.type === "applybuff", `${abil.get(e.abilityGameID)} (${e.abilityGameID}) on ${actor.get(e.targetID).name}`]);
+    }
     if (e.type === "applydebuff" || e.type === "removedebuff") {
       const tgt = actor.get(e.targetID);
       const name = abil.get(e.abilityGameID);
@@ -73,7 +81,7 @@ function log(code) {
       me.over += e.overheal || 0;
     }
   }
-  return logs.set(code, { base, fights, act }).get(code);
+  return logs.set(code, { base, fights, act, ctx }).get(code);
 }
 
 // Can't act: stuns, fears, mind control, ice blocks, cocoons, Nefarian's mage call
@@ -91,7 +99,7 @@ function activity(times, endSec) {
     if (g >= 3) idle += g;
     if (g > longest[0]) longest = [g, ts[i - 1]];
   }
-  return { activePct: endSec > 0 ? Math.round(100 * (1 - idle / endSec)) : null, longestIdle: longest[0] >= 3 ? `${Math.round(longest[0])}s from ${mmss(longest[1])}` : null };
+  return { activePct: endSec > 0 ? Math.round(100 * (1 - idle / endSec)) : null, longestIdle: longest[0] >= 3 ? `${Math.round(longest[0])}s from ${mmss(longest[1])}` : null, idleWindow: longest[0] >= 3 ? [longest[1], longest[1] + longest[0]] : null };
 }
 
 const potionIds = new Map();
@@ -157,7 +165,15 @@ function bossFacts(b, players) {
         const ccTicks = (a.cc || []).flatMap(([on, off]) => { const l = []; for (let t = on; t <= (off ?? on + 10); t += 1) l.push(t); return l; });
         const r = activity([...a.t, ...ccTicks], end);
         perPlayer[name].activePct = r.activePct;
-        if (r.longestIdle && r.activePct < 90) perPlayer[name].longestIdle = r.longestIdle;
+        if (r.longestIdle && r.activePct < 90) {
+          perPlayer[name].longestIdle = r.longestIdle;
+          // What was going on then: check these before calling it idling.
+          const [a0, a1] = r.idleWindow;
+          const c = L.ctx[killPull.src.fight] || { debuffs: {}, boss: [] };
+          const mine = [...new Set((c.debuffs[name] || []).filter(([t]) => t >= a0 - 5 && t <= a1).map(([, , n]) => n))];
+          const boss = [...new Set(c.boss.filter(([t]) => t >= a0 - 5 && t <= a1).map(([, on, n]) => `${on ? "+" : "-"}${n}`))].slice(0, 8);
+          if (mine.length || boss.length) perPlayer[name].duringIdle = `debuffs on you: ${mine.join(", ") || "none"}; boss/add buffs changing: ${boss.join(", ") || "none"}`;
+        }
         (actByRole[roleOf(name)] ??= []).push(r.activePct);
         if (a.ignite > 20000) perPlayer[name].ignite = `${Math.round(a.ignite / 1000)}k Ignite damage owned (biggest tick ${a.igniteMaxTick}); collective fire-mage damage credited to the owner, with all its threat: the owner's DPS is inflated, other fire mages' deflated`;
         if (a.heal + a.over > 20000) perPlayer[name].overhealPct = Math.round((100 * a.over) / (a.heal + a.over));
