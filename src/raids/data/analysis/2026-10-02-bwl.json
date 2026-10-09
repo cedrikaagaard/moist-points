@@ -27,7 +27,7 @@
   },
   "overview": [
     "All eight bosses dead in 42:46, a little under the guild's usual BWL (median 43:33, best 33:23), and every boss at or under the guild's median kill time. Nefarian went down in 1:44 with nobody dying, and Firemaw's kill (0:57) was half a minute under the usual.",
-    "The one wipe wasn't a boss wipe. It was Drikkle. At 20:02 the raid was clearing the trash pack in Firemaw's room (Blackwing Warlocks with their Felguards, Technicians, a Spellbinder and a Death Talon Overseer), and Drikkle tanked the Technicians 19 yards from a sleeping black dragon. Firemaw woke up. Technician bombs did 50k to 15 raiders, Warlock Shadow Bolts another 27k, a tank and four healers died in the first 34 seconds, and 12 people died with Firemaw still at 98%. Drikkle died first, which is the only thing he got right.",
+    "The one wipe wasn't a boss wipe. It was Drikkle. At 20:02 the raid was clearing the trash pack in Firemaw's room, and Drikkle had one job: techie-tank the Blackwing Technicians, keeping them on himself out in the open while the casters burned them down. He did it 19 yards from a sleeping black dragon. Firemaw woke up, and ten seconds later Drikkle was dead. With nobody holding them, the Technicians bombed the tank and the healers for 40k in the next 30 seconds, a tank and four healers died by 0:34, and 12 people died in all with Firemaw still at 98% and not one Technician dead.",
     "That wipe also cost world buffs: 10 of the 12 who died lost all of theirs (Rallying Cry, Zandalar, Songflower, Dire Maul) and nobody rebuffed, so Rallying Cry was on 36 raiders before it and 28 for the rest of the raid. Damage held up anyway: raid DPS was above the guild's usual on every boss after it."
   ],
   "wipes": [
@@ -35,16 +35,15 @@
       "encounterId": 50613,
       "pull": 1,
       "title": "Firemaw's room, pull 1 (Firemaw at 98%, Drikkle at fault)",
-      "whatHappened": "The raid was fighting the Blackwing trash pack in front of Firemaw when Firemaw joined the fight. Drikkle died to a bomb and a Shadow Bolt at 0:10, Birkler (tank) at 0:18, then four healers between 0:25 and 0:34 (Etowa, Ishilly, Vallon, Thormund), mostly to Technician bombs. With the healing gone, 12 died in 1:24.",
-      "likelyCause": "Drikkle. Nobody touched Firemaw before he engaged, so he was body pulled. In the 20 seconds before, every single Technician attack went to Drikkle (6 melee hits, 7 bombs, 2 poison bottles), he had more hits on the Technicians than anyone (57), and 0.9 seconds before the pull he was standing 19 yards from Firemaw, 13 yards closer than any other raider. Twelve people died for it, and ten of them lost every world buff they had, because one mage couldn't count to twenty yards.",
+      "whatHappened": "Drikkle was techie-tanking the Technicians when Firemaw joined the fight. For ten seconds the Technicians hit nothing but him (4.5k of their 5k). He died at 0:10 to a bomb and a Shadow Bolt, and the Technicians went loose: 40k of bombs over the next 30 seconds, mostly on Birkler (tank, 9.3k) and the healers (Ishilly 6.4k, Etowa 5.1k, Vallon 3.9k). Birkler died at 0:18, then Etowa, Ishilly, Vallon and Thormund between 0:25 and 0:34, and with the healing gone 12 died in 1:24.",
+      "likelyCause": "Drikkle. Nobody touched Firemaw before he engaged, so he was body pulled. In the 20 seconds before, every single Technician attack went to Drikkle (6 melee hits, 7 bombs, 2 poison bottles), and 0.9 seconds before the pull he stood 19 yards from Firemaw, 13 yards closer than any other raider. Then he lasted ten seconds, and once the techie tank was dead, the Technicians took the raid apart. Twelve dead, ten of them stripped of every world buff they had, because one mage couldn't count to twenty yards and then couldn't stay alive.",
       "evidence": [
         "Last 20 s before the pull: all 15 Technician attacks on Drikkle; Drikkle 19 yards from Firemaw, the next closest raider 32",
-        "The fight contains Firemaw plus Blackwing Warlocks, Felguards, Technicians, a Spellbinder and a Death Talon Overseer",
-        "Bomb (Blackwing Technician) 50k on 15 raiders and Shadow Bolt (Blackwing Warlock) 27k: on a usual Firemaw kill both are 0",
-        "A tank and four healers dead in the first 34 seconds",
+        "0 to 10 s: Technicians did 5k, 4.5k of it on Drikkle. 10 to 40 s, after he died: 40k, mostly on the tank and healers who then died",
+        "Not a single Technician died during the pull",
         "10 of the 12 dead lost every world buff they had and didn't get them back"
       ],
-      "avoid": "Drikkle tanks the Technicians somewhere that isn't Firemaw's face. The entrance, the corridor, the next zone over. Then kill or crowd control the Technicians first: their bombs did the most damage."
+      "avoid": "Techie-tank the Technicians out in the open, well away from Firemaw (the entrance works), keep moving while the casters AoE them down, and have a second mage ready to pick them up if the first one dies. Ideally the first one doesn't die in ten seconds."
     }
   ],
   "wentWell": [

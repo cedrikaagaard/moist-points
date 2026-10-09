@@ -292,3 +292,10 @@ General log-reading rules that apply to every boss below:
 - https://www.warcrafttavern.com/wow-classic/guides/zg/
 - https://www.warcrafttavern.com/wow-classic/guides/bwl/
 - https://www.icy-veins.com/wow-classic/high-priestess-mar-li-guide-strategy-abilities-loot (search snippet only)
+
+## Trash: Blackwing Technicians ("techie-tanking")
+- Goblins in the Crimson Laboratories and the packs in Firemaw's room, logged with "Bomb" (22334, fire AoE at a location) and "Bottle of Poison" (22335, poison DoT). Low HP, move as a clump, and together they can kill a tank in seconds.
+- Standard job: a hunter pulls them, a designated mage **techie-tanks** them (Arcane Explosion to take aggro, then keeps moving) in an open area while casters AoE them down. Their damage landing on one mage is the job working, not a mistake.
+- What goes wrong: tanking them too close to Firemaw (body pull), or the techie tank dying, after which the clump bombs whoever is near (healers and tanks). Check who the Technicians hit before and after the techie tank's death.
+- Sources: https://wowwiki-archive.fandom.com/wiki/Blackwing_Lair_Lab_Packs , https://warcraft.wiki.gg/wiki/Blackwing_Technician
+

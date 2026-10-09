@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.12",
+    date: "2026-10-09",
+    changes: [
+      "Claude's analysis of the 2 October BWL now gets the Technicians right: techie-tanking them is a mage's job, and the wipe came from doing it next to Firemaw and then dying, which set the Technicians loose on the tank and healers.",
+    ],
+  },
+  {
     version: "2.3.11",
     date: "2026-10-09",
     changes: [
