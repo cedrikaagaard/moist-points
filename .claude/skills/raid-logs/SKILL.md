@@ -43,6 +43,18 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
    version, including new or corrected analyses: add an entry at the top of
    `src/changelog.js` and keep `package.json` and `package-lock.json` in sync.
 
+## Raid night: two passes
+
+1. **Right after each raid (immediate):** watch the live log
+   (`node --env-file=.env.local scripts/raids/watch-live.mjs --until <last boss id>`),
+   then `raids:fetch -- --night <today> --refresh --done` (the logs are final once
+   the raid is over; add `--reserve 20` if the hourly budget is tight), push, write
+   Claude's analysis, push. Pause the backfill while a raid is on.
+2. **Follow-up (later that night or the next morning):** rebuild the facts from
+   the full log, recheck every claim in the analysis (world buffs, consumables,
+   deaths, anything written from the summary tables) and correct or add to it.
+   Say in the changelog what changed.
+
 ## Claude's analysis (optional, per raid)
 
 Each night can have an AI-written analysis, shown on the night page (and the
