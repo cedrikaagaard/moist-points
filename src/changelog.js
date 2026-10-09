@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.1",
+    date: "2026-10-09",
+    changes: [
+      "Raid reviews now account for Ignite: a fire mage owning a rolling Ignite takes all its threat, even when other mages' crits keep it going. One review blamed a Maexxna death on the mage's own casting; the log shows it was the Ignite, and the review is corrected.",
+    ],
+  },
+  {
     version: "2.5.0",
     date: "2026-10-09",
     changes: [

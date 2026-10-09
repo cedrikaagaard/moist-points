@@ -42,15 +42,32 @@ function log(code) {
   const fights = deriveLog(date, base);
   const actor = new Map(base.masterData.actors.map((a) => [a.id, a]));
   const start = new Map(base.fights.map((f) => [f.id, f.startTime]));
+  const abil = new Map((base.masterData.abilities || []).map((a) => [a.gameID, a.name]));
   // per fight: player -> sorted activity times (s), overheal, raw heal
   const act = {};
   for (const e of readEvents(date, code)) {
+    if (!start.has(e.fight)) continue;
+    if (e.type === "applydebuff" || e.type === "removedebuff") {
+      const tgt = actor.get(e.targetID);
+      const name = abil.get(e.abilityGameID);
+      if (tgt?.type === "Player" && CC.test(name || "")) {
+        const m = ((act[e.fight] ??= {})[tgt.name] ??= { t: [], heal: 0, over: 0 });
+        const t = (e.timestamp - start.get(e.fight)) / 1000;
+        if (e.type === "applydebuff") (m.cc ??= []).push([t, null]);
+        else { const open = (m.cc || []).findLast((x) => x[1] == null); if (open) open[1] = t; }
+      }
+    }
     const a = actor.get(e.sourceID);
-    if (a?.type !== "Player" || !start.has(e.fight)) continue;
+    if (a?.type !== "Player") continue;
     const f = (act[e.fight] ??= {});
     const me = (f[a.name] ??= { t: [], heal: 0, over: 0 });
     const t = (e.timestamp - start.get(e.fight)) / 1000;
     if (e.type === "cast" || e.type === "begincast" || ((e.type === "damage" || e.type === "heal") && !e.tick)) me.t.push(t);
+    // Ignite: its threat goes to the owner even while other mages refresh it.
+    if (e.type === "damage" && abil.get(e.abilityGameID) === "Ignite") {
+      me.ignite = (me.ignite || 0) + (e.amount || 0) + (e.absorbed || 0);
+      me.igniteMaxTick = Math.max(me.igniteMaxTick || 0, e.amount || 0);
+    }
     if (e.type === "heal") {
       me.heal += e.amount || 0;
       me.over += e.overheal || 0;
@@ -58,6 +75,9 @@ function log(code) {
   }
   return logs.set(code, { base, fights, act }).get(code);
 }
+
+// Can't act: stuns, fears, mind control, ice blocks, cocoons.
+const CC = /^(Web Spray|Web Wrap|Icebolt|Frost Blast|Chains of Kel'Thuzad|Panic|Bellowing Roar|Terrifying Roar|Fear|Psychic Scream|Dominate Mind|True Fulfillment|Cause Insanity|Mind Control|War Stomp|Locust Swarm|Silence|Polymorph|Sleep|Hex|Wing Buffet|Entomb)$/;
 
 // Idle time: gaps of 3+ seconds with no cast, swing, shot or direct heal, from
 // the pull until death or the end of the fight.
@@ -88,7 +108,7 @@ const rank = (list, v, desc = true) => (v == null ? null : `${[...list].sort((a,
 function bossFacts(b, players) {
   const mech = MECHANICS[b.encounterId] || [];
   const killPull = b.pulls.find((p) => p.kill);
-  const parses = (b.parses || []).filter((x) => !(x.role === "healer" && !x.amount));
+  const parses = (b.parses || []).filter((x) => !(x.role === "healer" && (x.amount || 0) < 50));
   const roleOf = (pl) => parses.find((x) => x.player === pl)?.role || role.get(pl);
   const perPlayer = {};
   for (const name of players) perPlayer[name] = { boss: b.name, encounterId: b.encounterId, pulls: b.pulls.length, wipes: b.pulls.filter((p) => !p.kill).length };
@@ -133,10 +153,12 @@ function bossFacts(b, players) {
         const a = act[name];
         if (!a) continue;
         const end = Math.min(killPull.durationSec, deathAt.get(name) ?? Infinity);
-        const r = activity(a.t, end);
+        const ccTicks = (a.cc || []).flatMap(([on, off]) => { const l = []; for (let t = on; t <= (off ?? on + 10); t += 1) l.push(t); return l; });
+        const r = activity([...a.t, ...ccTicks], end);
         perPlayer[name].activePct = r.activePct;
         if (r.longestIdle && r.activePct < 90) perPlayer[name].longestIdle = r.longestIdle;
         (actByRole[roleOf(name)] ??= []).push(r.activePct);
+        if (a.ignite > 20000) perPlayer[name].ignite = `${Math.round(a.ignite / 1000)}k Ignite damage owned (biggest tick ${a.igniteMaxTick}); its threat is yours even when others' crits refresh it`;
         if (a.heal + a.over > 20000) perPlayer[name].overhealPct = Math.round((100 * a.over) / (a.heal + a.over));
       }
       for (const name of players) if (perPlayer[name].activePct != null) perPlayer[name].raidMedianActivePctForRole = median(actByRole[roleOf(name)]);

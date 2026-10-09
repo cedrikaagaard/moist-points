@@ -214,6 +214,7 @@ WCL often shows a *later expansion's* name for a reused spell ID. Read these as 
 - Era keeps the **16 debuff slot** limit per target; raids prioritise Sunder, Faerie Fire, curses, Fire Vulnerability, Winter's Chill, Shadow Weaving / Shadow Vulnerability, Judgements, Demoralizing Shout, Thunder Clap, Hunter's Mark.
 - **Threat**: a player pulls aggro at 110% of the tank's threat in melee range, 130% at range. Salvation -30%. Feign Death and Vanish wipe threat, Fade and Feint lower it. Bosses with threat resets: Twin Emperors (teleport), likely Broodlord, Princess Yauj.
 - Blessing of Sacrifice moves a flat 45-55 damage per hit, not a percentage. Stoneform = 8 s immunity to poison, disease and bleed.
+- **Ignite threat (fire mages)**: a rolling Ignite belongs to the mage who applied it, and every tick's damage and threat goes to that owner, even while other mages' crits keep refreshing it (5 stacks, 4k+ a tick in BWL/Naxx gear). A fire mage dying to boss melee is very often this, not their own casting: sum the dead mage's "Ignite" damage on the boss before the death (2026-10-07 Maexxna: Drikkle's Ignite did 59.6k of his 92.7k, rolling 20 s). Never call it "you kept casting" without checking.
 - **No current mana in the logs** (Era clients never write it): never say someone went out of mana. Player health is a percentage, boss health absolute.
 - Elixirs: whether they persist through death is uncertain (77-91% are still up at the next pull after a death); don't claim either way.
 
