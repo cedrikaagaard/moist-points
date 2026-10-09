@@ -1,0 +1,1 @@
+{"name":"Bingles","class":"Mage","spec":null,"role":"dps","nights":[{"night":"2025-12-16-ony","zones":[2001],"role":"dps","spec":null,"deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":81,"amount":294,"role":"dps"}],"mech":{"51084:eruption":1},"casts":{}}]}
