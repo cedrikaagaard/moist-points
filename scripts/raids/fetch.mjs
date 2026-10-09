@@ -11,6 +11,7 @@
 //   npm run raids:fetch -- --night 2026-10-04 --refresh  re-download that night's logs
 //   npm run raids:fetch -- --list            just show nights + reports found
 //   npm run raids:fetch -- --night <today> --refresh --reserve 20   during a raid: rebuild tonight from the growing logs
+//   npm run raids:fetch -- --night <today> --refresh --done    right after the raid: full logs now, no 3 hour wait
 //   npm run raids:fetch -- --since 2025-01-01 --newest-first   backfill, today backwards
 //
 // Several people log the same raid, so each night is stitched from the reports
@@ -223,7 +224,7 @@ function needApi(what) {
   if (offline) throw new Error(`raw ${what} missing`);
 }
 function writeRaw(rel, data, report) {
-  if (Date.now() - report.endTime < 3 * 3600e3) {
+  if (!args.done && Date.now() - report.endTime < 3 * 3600e3) {
     skippedArchive = true;
     return;
   }
@@ -434,7 +435,7 @@ async function buildNight(date, reports) {
   const evOf = new Map();
   for (const r of used) {
     const ids = fights.filter((f) => f.report === r).map((f) => f.id);
-    const fresh = Date.now() - r.endTime < 3 * 3600e3;
+    const fresh = !args.done && Date.now() - r.endTime < 3 * 3600e3; // --done: tonight's raid is over, the logs are final
     if (!offline && !fresh && !(await downloadEvents(date, r, ids))) throw new BudgetError();
     if (!fresh && hasEvents(date, r.code)) evOf.set(r, deriveLog(date, r, keepForMechanics(r)));
     else {
@@ -933,7 +934,7 @@ function parseArgs(argv) {
   const out = {};
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (["--force", "--refresh", "--list", "--newest-first", "--rebuild"].includes(a)) out[a.slice(2)] = true;
+    if (["--force", "--refresh", "--list", "--newest-first", "--rebuild", "--done"].includes(a)) out[a.slice(2)] = true;
     else if (a === "--since" || a === "--night" || a === "--reserve") out[a.slice(2)] = argv[++i];
     else throw new Error(`Unknown option ${a}`);
   }
