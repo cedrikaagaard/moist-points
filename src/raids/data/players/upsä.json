@@ -1,0 +1,1 @@
+{"name":"Upsä","class":"Priest","spec":null,"role":"healer","nights":[{"night":"2025-10-14-ony","zones":[2001],"role":"healer","spec":null,"deaths":0,"firstDeaths":0,"dispels":1,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":82,"amount":24,"role":"healer"}],"mech":{"51084:breath":1,"51084:fear":2,"51084:eruption":2},"casts":{"Power Infusion":2,"Fear Ward":3}}]}
