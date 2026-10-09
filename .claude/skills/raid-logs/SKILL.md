@@ -163,6 +163,9 @@ for a PUG run every baseline is from other PUG runs. Compare kill times with
 other PUG runs too (summary.json `kind: "pug"`), never with the guild's.
 
 **Rules for the analysis**
+- Counts in the facts are usually *events* (debuffs landed, casts), not
+  distinct targets: 15 shackles can be one Guardian recast 8 times. Before
+  writing "N of M <targets>", count the distinct targets in the log.
 - Never state a game mechanic you inferred from totals ("this buff survives
   death") as fact. Say what the log shows and verify it per player; if the
   log can't tell, leave it out or say it's unclear.

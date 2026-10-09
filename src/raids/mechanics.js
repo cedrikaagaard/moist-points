@@ -251,7 +251,7 @@ export const MECHANICS = {
     { key: "chains", kind: "debuff", abilities: ["Chains of Kel'Thuzad"], tone: "info", label: "Mind-controlled", note: "Chains of Kel'Thuzad" },
     { key: "detonate", kind: "debuff", abilities: ["Detonate Mana", "Mana Detonation"], tone: "info", label: "Mana Detonation", note: "run out of the raid" },
     { key: "fissure", kind: "hit", abilities: ["Shadow Fissure", "Void Blast"], tone: "bad", label: "Stood in a Shadow Fissure", note: "move!" },
-    { key: "shackle", kind: "cast", abilities: ["Shackle Undead"], tone: "good", label: "Guardians shackled", note: "phase 3" },
+    { key: "shackle", kind: "cast", abilities: ["Shackle Undead"], tone: "good", label: "Shackles cast", note: "on the Guardians in phase 3; a broken shackle has to be recast" },
     prot("Frost"),
   ],
 };

@@ -281,15 +281,19 @@
       "notes": [
         {
           "tone": "good",
-          "text": "Down first try in 2:50. All 20 Frostbolt casts were interrupted, mostly by Lookdown (6), Bruceli (5) and Tochopolvo (4). Shadowtelia shackled 9 of the 15 Guardians, and there were only 2 Frost Blasts (usually about 29) and 5 mind controls (usually about 23)."
+          "text": "Down first try in 2:50. All 20 Frostbolt casts were interrupted, mostly by Lookdown (6), Bruceli (5) and Tochopolvo (4). There were only 2 Frost Blasts (usually about 29) and 5 mind controls (usually about 23)."
         },
         {
           "tone": "bad",
-          "text": "Two deaths to Shadow Fissures (1:02 and 2:19), two to a Guardian of Icecrown at 2:15 and 2:30, which suggests one Guardian got loose briefly, and two to Frostbolt damage at 2:38."
+          "text": "Two of the five Guardians got loose. One kept breaking free because a warrior's Deep Wounds bleed was ticking on it, and every tick breaks a shackle: Shadowtelia recast Shackle Undead on it eight times in 14 seconds (2:08 to 2:22), and it still killed Sabrina at 2:30. The other wasn't shackled until 2:41 and killed Apoutchou at 2:15. Keeping bleeds and DoTs off shackled Guardians would have fixed the first one."
         },
         {
           "tone": "info",
           "text": "Raid DPS was 88% of normal. No buff snapshot was logged for this pull, but most of the raid had lost its Dire Maul and Sayge's buffs on the Sapphiron wipe just before."
+        },
+        {
+          "tone": "bad",
+          "text": "Two deaths to Shadow Fissures (1:02 and 2:19) and two to Frostbolt damage at 2:38."
         }
       ]
     }

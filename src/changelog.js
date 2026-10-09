@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.3",
+    date: "2026-10-09",
+    changes: [
+      "Fixed Claude's analysis of 7 October on Kel'Thuzad: there were five Guardians, not fifteen. A bleed kept breaking the shackle on one of them, which is why it was recast so often, and a second one was loose too.",
+      "The shackle counter on boss pages now says what it counts: shackles cast, including recasts after a shackle breaks.",
+    ],
+  },
+  {
     version: "2.3.2",
     date: "2026-10-09",
     changes: [
