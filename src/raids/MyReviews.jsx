@@ -32,7 +32,8 @@ export default function MyReviews({ night, locked }) {
     <div className="rv">
       <p className="rv-private">
         <span aria-hidden="true">🔒</span> Only you can see these. Claude reads the logs of each raid you were in and writes you a
-        review; it can be wrong, the numbers come straight from the log.
+        review. The numbers come straight from the log, but Claude often gets vanilla mechanics wrong, so if an explanation
+        doesn't match what you remember, you're probably right.
       </p>
 
       {!mine.length && (
@@ -138,7 +139,7 @@ function Review({ r }) {
       {s.consumes && <Consumes c={s.consumes} icons={r.icons} />}
 
       <footer className="rv-foot">
-        Written by {v.model || "Claude"} from the logs of {fmtDate(r.date || r.night.slice(0, 10))}. Only you can see this page.
+        Written by {v.model || "Claude"} from the logs of {fmtDate(r.date || r.night.slice(0, 10))}. Only you can see this page. Claude often gets vanilla mechanics wrong; trust the numbers more than the explanations.
       </footer>
     </article>
   );

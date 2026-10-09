@@ -54,7 +54,7 @@ export default function Analysis({ night, encounterId, bossName, raiders = [] })
     <div className={`rr-llm${open || short ? " open" : ""}`}>
       <div className="rr-llm-head">
         <span className="rr-llm-label">✨ Claude's analysis</span>
-        <span className="rr-llm-note">AI-written from the logs · may be wrong</span>
+        <span className="rr-llm-note">AI-written from the logs · Claude often gets vanilla mechanics wrong, so take the explanations with salt</span>
       </div>
       <h3 className="rr-llm-title">{encounterId == null ? a.headline : `What Claude made of ${bossName}`}</h3>
       <div ref={body} className="rr-llm-body" inert={open || short ? undefined : ""} onClick={open || short ? undefined : () => setOpen(true)}>
