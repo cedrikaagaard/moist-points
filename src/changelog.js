@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.4",
+    date: "2026-10-09",
+    changes: [
+      "One raider asked to be roasted in their reviews. Request granted.",
+    ],
+  },
+  {
     version: "2.5.3",
     date: "2026-10-09",
     changes: [

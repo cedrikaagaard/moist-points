@@ -6353,10 +6353,10 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:58:15.063Z",
+    "generatedAt": "2026-10-09T14:59:00.081Z",
     "grade": "A",
-    "verdict": "92 or better on six of eight bosses, no deaths, and Faerie Fire up all raid",
-    "summary": "A very clean BWL. Broodlord and Chromaggus 98, Firemaw and Nefarian 95, Flamegor 94, Ebonroc 92, an average of 93 against your usual 91, and you didn't die, not even in the Firemaw wipe that killed twelve. On top of the damage you kept Faerie Fire (Feral) on the bosses, 77 casts.",
+    "verdict": "Annoyingly good: 92 or better on six of eight bosses, and nothing to blame you for except your shopping",
+    "summary": "You asked to be roasted and then went and played a BWL with almost nothing to roast. Broodlord and Chromaggus 98, Firemaw and Nefarian 95, a 93 average, no deaths, alive through the Firemaw wipe while twelve people around you faceplanted. So we'll have to go after your bags: no flask, no Zanza, and a cat that parses 98 on Chromaggus while drinking Winterfall Firewater like it's a personality.",
     "good": [
      {
       "title": "Consistent at the top",
@@ -6374,9 +6374,9 @@
     ],
     "fix": [
      {
-      "title": "Consumables",
+      "title": "Consumables of a man who thinks he's too good for a flask",
       "impact": "low",
-      "text": "Mongoose, Juju Power and food on every pull, Firewater on five of seven. No flask and no Zanza. You're level with the other DPS (3.7 a pull), so this is where the last few parse points are."
+      "text": "Mongoose, Juju Power and food on every pull, Firewater on five of seven, and then nothing. No flask, no Zanza. You parsed 98 without them, which is exactly the problem: imagine the insufferable logs with them."
      },
      {
       "title": "Chromaggus breath",
@@ -6388,7 +6388,7 @@
       "title": "Razorgore",
       "impact": "low",
       "boss": 50610,
-      "text": "82, your lowest of the night and under your usual 89."
+      "text": "82, your worst of the night and seven under your usual. Out-parsed by your own average."
      }
     ],
     "bosses": {

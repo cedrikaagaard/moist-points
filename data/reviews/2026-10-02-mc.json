@@ -8305,10 +8305,10 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:58:15.107Z",
+    "generatedAt": "2026-10-09T14:58:48.610Z",
     "grade": "A-",
-    "verdict": "Golemagg 99, Garr, Majordomo and Ragnaros 98, and a Lucifron you spent mind-controlled",
-    "summary": "Nine of ten bosses at 87 or better, with Golemagg 99 and Garr, Majordomo and Ragnaros 98, and no deaths. The 0 on Lucifron isn't on you: a Flamewaker Protector mind-controlled you for most of a 27 second fight. The one thing to work on is the fire on the ground.",
+    "verdict": "Golemagg 99, Ragnaros 98, and a Lucifron where a Flamewaker had more control over your character than you did",
+    "summary": "Nine of ten bosses at 87 or better, Golemagg 99, Garr, Majordomo and Ragnaros 98, no deaths. Fine. But on Lucifron a Flamewaker Protector took your character for most of a 27 second fight and you parsed a clean 0, and then you spent Magmadar and Gehennas standing in fire like a cat that's never seen a stove.",
     "good": [
      {
       "title": "Top-end parses",
@@ -8328,13 +8328,13 @@
       "title": "Rain of Fire on Gehennas",
       "impact": "low",
       "boss": 50665,
-      "text": "Two Rain of Fire ticks (1,878), more than most of the raid (median 1,166)."
+      "text": "Two Rain of Fire ticks (1,878) when the raid's median was 1,166. It's a big red circle. It falls from the sky. Cats are supposed to have reflexes."
      },
      {
-      "title": "Lava Bomb fire on Magmadar",
+      "title": "Magmadar's fire",
       "impact": "low",
       "boss": 50664,
-      "text": "8 hits from the fire, a little under the raid's median of 10, but it's all avoidable."
+      "text": "8 hits from Lava Bomb fire. Under the raid's median of 10, which says more about the raid than about you."
      },
      {
       "title": "Geddon and Sulfuron",
@@ -8344,13 +8344,13 @@
      {
       "title": "Food",
       "impact": "low",
-      "text": "Well Fed on 3 of 10 boss pulls; 3 consumable buffs a pull against 3.8 for the other DPS."
+      "text": "Well Fed on 3 of 10 boss pulls. 3 consumable buffs a pull against 3.8 for the other DPS. Molten Core on an empty stomach, bold."
      }
     ],
     "bosses": {
      "50663": {
       "tone": "info",
-      "text": "Mind-controlled by a Flamewaker Protector: the 0 isn't on you."
+      "text": "Mind-controlled by a Flamewaker Protector for most of the fight. 0 parse, and honestly the Protector played you better."
      },
      "50670": {
       "tone": "good",

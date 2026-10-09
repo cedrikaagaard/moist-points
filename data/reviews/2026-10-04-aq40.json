@@ -7598,10 +7598,10 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T14:58:15.150Z",
+    "generatedAt": "2026-10-09T14:58:48.649Z",
     "grade": "B+",
-    "verdict": "Three personal bests and no deaths, on very few consumables",
-    "summary": "A 72 average against your usual 55, with personal bests on Silithid Royalty (76), Sartura (78) and Huhuran (89), and the fourth highest damage in the raid on the Twin Emperors. No deaths. The obvious next step is consumables: 3 buffs a boss pull against 4.7 for the other DPS.",
+    "verdict": "Three personal bests, no deaths, and the consumables of someone raiding AQ40 out of a starter bag",
+    "summary": "A 72 average against your usual 55, personal bests on Royalty, Sartura and Huhuran, fourth highest damage on the Twin Emperors, and you didn't die. Which makes it worse: you did all that on 3 consumable buffs a boss pull against 4.7 for the other DPS. No flask, no Zanza, no Juju, food on 3 of 9 pulls. You're not underperforming, you're under-eating.",
     "good": [
      {
       "title": "Personal bests",
@@ -7623,21 +7623,21 @@
     ],
     "fix": [
      {
-      "title": "Consumables",
+      "title": "Buy a flask",
       "impact": "medium",
-      "text": "3 buffs per boss pull against 4.7 for the other DPS: no flask, no Zanza, no Juju, food on 3 of 9 pulls."
+      "text": "3 buffs per boss pull against 4.7 for the other DPS: no flask, no Zanza, no Juju, and Well Fed on 3 of 9 pulls. Every other warrior showed up to AQ40 like it was AQ40. You showed up like it was a Tuesday in Westfall."
      },
      {
       "title": "Sartura's Whirlwind",
       "impact": "low",
       "boss": 50711,
-      "text": "Three Whirlwind hits for 4,815, more than most (raid median 3,946)."
+      "text": "Three Whirlwind hits for 4,815, more than most (raid median 3,946). She telegraphs it by spinning. You telegraphed standing still."
      },
      {
       "title": "Skeram",
       "impact": "low",
       "boss": 50709,
-      "text": "35, about your usual there, but the lowest of the night."
+      "text": "35. That's your usual there, which is the roast."
      }
     ],
     "bosses": {
