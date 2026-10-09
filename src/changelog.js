@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.8",
+    date: "2026-10-09",
+    changes: [
+      "The Firemaw blame on 2 October now rests on the log alone: who the Technicians were hitting and who stood closest to Firemaw when he woke up.",
+    ],
+  },
+  {
     version: "2.3.7",
     date: "2026-10-09",
     changes: [
