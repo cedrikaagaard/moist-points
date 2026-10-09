@@ -1,0 +1,9017 @@
+{
+ "night": "2026-10-09-bwl",
+ "zones": [
+  "Blackwing Lair"
+ ],
+ "zoneIds": [
+  2002
+ ],
+ "date": "2026-10-09",
+ "durationMin": 41,
+ "raiders": 39,
+ "icons": {
+  "Supreme Power": "inv_potion_41.jpg",
+  "Elixir of Fortitude": "inv_potion_43.jpg",
+  "Spirit of Zanza": "inv_potion_30.jpg",
+  "Mana Regeneration": "spell_nature_manaregentotem.jpg",
+  "Elixir of the Mongoose": "inv_potion_32.jpg",
+  "Elixir of the Giants": "inv_potion_61.jpg",
+  "Increased Agility": "inv_gauntlets_19.jpg",
+  "Strike of the Scorpok": "spell_nature_forceofnature.jpg",
+  "Kreeg's Stout Beatdown": "inv_drink_05.jpg",
+  "Winterfall Firewater": "inv_potion_92.jpg",
+  "Greater Arcane Elixir": "inv_potion_25.jpg",
+  "Gordok Green Grog": "inv_drink_03.jpg",
+  "Mighty Troll's Blood Elixir": "inv_potion_80.jpg",
+  "Greater Armor": "inv_potion_86.jpg",
+  "Blessed Sunfruit Juice": "spell_holy_layonhands.jpg",
+  "Frost Power": "inv_potion_03.jpg",
+  "Blessed Sunfruit": "spell_holy_devotion.jpg",
+  "Fengus' Ferocity": "spell_nature_undyingstrength.jpg",
+  "Mol'dar's Moxie": "spell_nature_massteleport.jpg",
+  "Slip'kik's Savvy": "spell_holy_lesserheal02.jpg",
+  "Rallying Cry of the Dragonslayer": "inv_misc_head_dragon_01.jpg",
+  "Spirit of Zandalar": "ability_creature_poison_05.jpg",
+  "Songflower Serenade": "spell_holy_mindvision.jpg",
+  "Sayge's Dark Fortune of Damage": "inv_misc_orb_02.jpg",
+  "Warchief's Blessing": "spell_arcane_teleportorgrimmar.jpg",
+  "Rage of Ages": "spell_nature_strength.jpg",
+  "Flask of the Titans": "inv_potion_62.jpg",
+  "Sayge's Dark Fortune of Intelligence": "inv_misc_orb_02.jpg",
+  "Distilled Wisdom": "inv_potion_97.jpg",
+  "Sayge's Dark Fortune of Resistance": "inv_misc_orb_02.jpg",
+  "Mageblood Elixir": "inv_potion_45.jpg",
+  "Well Fed": "spell_misc_food.jpg",
+  "Juju Might": "inv_misc_monsterscales_07.jpg",
+  "Juju Power": "inv_misc_monsterscales_11.jpg",
+  "Juju Ember": "inv_misc_monsterscales_15.jpg"
+ },
+ "players": {
+  "Alanakos": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 89,
+    "ownAvgParseBefore": 62,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 72,
+      "own": 76,
+      "best": 95,
+      "perSec": 735,
+      "rank": "6/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 84,
+      "own": 50,
+      "best": 82,
+      "perSec": 1881,
+      "rank": "5/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 92,
+      "own": 90,
+      "best": 96,
+      "perSec": 1253,
+      "rank": "4/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 87,
+      "own": 77,
+      "best": 95,
+      "perSec": 718,
+      "rank": "15/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 57,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 92,
+      "own": 86,
+      "best": 95,
+      "perSec": 1103,
+      "rank": "4/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 93,
+      "own": 86,
+      "best": 95,
+      "perSec": 1096,
+      "rank": "3/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 96,
+      "own": 90,
+      "best": 96,
+      "perSec": 1294,
+      "rank": "4/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 92,
+      "own": 87,
+      "best": 97,
+      "perSec": 1141,
+      "rank": "3/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "food": [
+       "Well Fed 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "drink": [
+       "Winterfall Firewater 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 3,
+     "raid debuff: Sunder Armor": 97
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Allipalli": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 77,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 141,
+      "rank": "5/11 healers",
+      "healShare": 8,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 329,
+      "rank": "10/11 healers",
+      "healShare": 6,
+      "overheal": 51,
+      "active": 100,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 117,
+      "rank": "11/11 healers",
+      "healShare": 5,
+      "overheal": 72,
+      "active": 79,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 129,
+      "rank": "8/11 healers",
+      "healShare": 5,
+      "overheal": 78,
+      "active": 92,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 84,
+      "rank": "6/11 healers",
+      "healShare": 8,
+      "overheal": 85,
+      "active": 73,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 171,
+      "rank": "8/11 healers",
+      "healShare": 7,
+      "overheal": 69,
+      "active": 84,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 75,
+      "best": 75,
+      "perSec": 80,
+      "rank": "5/11 healers",
+      "healShare": 6,
+      "overheal": 75,
+      "active": 73,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 155,
+      "rank": "3/11 healers",
+      "healShare": 12,
+      "overheal": 73,
+      "active": 97,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Elixir of Fortitude 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 6/6"
+      ],
+      "food": [
+       "Mana Regeneration 6/6"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Barnstoker": {
+   "stats": {
+    "class": "Warlock",
+    "role": "dps",
+    "avgParse": 69,
+    "ownAvgParseBefore": 49,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 76,
+      "own": 54,
+      "best": 64,
+      "perSec": 567,
+      "rank": "15/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 77,
+      "own": 29,
+      "best": 56,
+      "perSec": 542,
+      "rank": "23/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 49,
+      "own": 51,
+      "best": 71,
+      "perSec": 351,
+      "rank": "21/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 60,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 86,
+      "own": 60,
+      "best": 64,
+      "perSec": 347,
+      "rank": "24/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 76,
+      "own": 62,
+      "best": 73,
+      "perSec": 484,
+      "rank": "20/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 68,
+      "own": 61,
+      "best": 74,
+      "perSec": 434,
+      "rank": "20/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 36,
+      "own": 51,
+      "best": 86,
+      "perSec": 232,
+      "rank": "25/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 85,
+      "own": 69,
+      "best": 80,
+      "perSec": 588,
+      "rank": "20/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1.8,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Greater Arcane Elixir 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 2/6"
+      ],
+      "food": [
+       "Well Fed 3/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Fire Protection Potion": 1,
+     "potion: Major Healthstone": 4,
+     "raid debuff: Curse of Recklessness": 77
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Birkler": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 86,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": 78,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 76,
+      "own": 71,
+      "best": 87,
+      "perSec": 425,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 83,
+      "own": 83,
+      "best": 91,
+      "perSec": 767,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 80,
+      "own": 89,
+      "best": 98,
+      "perSec": 477,
+      "rank": "4/4 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 80,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 95,
+      "own": 90,
+      "best": 97,
+      "perSec": 626,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 91,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 87,
+      "own": 87,
+      "best": 96,
+      "perSec": 534,
+      "rank": "2/3 tanks",
+      "healShare": null,
+      "overheal": 0,
+      "active": 86,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 91,
+      "own": 85,
+      "best": 97,
+      "perSec": 654,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 86,
+      "own": 87,
+      "best": 98,
+      "perSec": 538,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 89,
+      "own": 92,
+      "best": 98,
+      "perSec": 585,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 97,
+      "activeMedian": 97,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2.3,
+     "roleMedian": 5,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 1/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6"
+      ],
+      "food": [
+       "Well Fed 1/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Challenging Shout": 1,
+     "potion: Greater Stoneshield Potion": 1,
+     "raid debuff: Sunder Armor": 86,
+     "raid debuff: Demoralizing Shout": 5
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     }
+    ]
+   }
+  },
+  "Cladá": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 44,
+    "ownAvgParseBefore": 35,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 52,
+      "own": 50,
+      "best": 50,
+      "perSec": 514,
+      "rank": "22/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 33,
+      "own": 63,
+      "best": 63,
+      "perSec": 303,
+      "rank": "26/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 8,
+      "own": 60,
+      "best": 60,
+      "perSec": 337,
+      "rank": "22/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 63,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 80,
+      "own": 38,
+      "best": 38,
+      "perSec": 317,
+      "rank": "25/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 45,
+      "own": 44,
+      "best": 44,
+      "perSec": 387,
+      "rank": "23/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 36,
+      "own": 55,
+      "best": 55,
+      "perSec": 337,
+      "rank": "24/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 27,
+      "own": 24,
+      "best": 24,
+      "perSec": 212,
+      "rank": "26/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 60,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 68,
+      "own": 30,
+      "best": 30,
+      "perSec": 534,
+      "rank": "21/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 88,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Nefarian",
+      "id": 50617,
+      "pull": "1 (kill)",
+      "at": "1:52",
+      "by": "Melee",
+      "killer": "Bone Construct"
+     }
+    ],
+    "consumes": {
+     "perPull": 4.3,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Frost Power 6/6",
+       "Elixir of Fortitude 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 5/6"
+      ],
+      "food": [
+       "Mana Regeneration 3/6"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Cokedog": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 77,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 62,
+      "own": null,
+      "best": null,
+      "perSec": 637,
+      "rank": "11/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 63,
+      "own": null,
+      "best": null,
+      "perSec": 1230,
+      "rank": "14/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 84,
+      "own": null,
+      "best": null,
+      "perSec": 954,
+      "rank": "5/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 92,
+      "own": null,
+      "best": null,
+      "perSec": 946,
+      "rank": "11/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 86,
+      "own": null,
+      "best": null,
+      "perSec": 948,
+      "rank": "10/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 71,
+      "own": null,
+      "best": null,
+      "perSec": 749,
+      "rank": "9/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 83,
+      "own": null,
+      "best": null,
+      "perSec": 791,
+      "rank": "14/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 77,
+      "own": null,
+      "best": null,
+      "perSec": 792,
+      "rank": "13/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4.5,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 6/6",
+       "Winterfall Firewater 4/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "food": [
+       "Increased Agility 5/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 3,
+     "potion: Great Rage Potion": 4,
+     "potion: Fire Protection Potion": 1,
+     "potion: Healing Potion": 1,
+     "raid debuff: Sunder Armor": 16
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Dramima": {
+   "stats": {
+    "class": "Druid",
+    "role": "dps",
+    "avgParse": 72,
+    "ownAvgParseBefore": 58,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 61,
+      "own": 54,
+      "best": 54,
+      "perSec": 352,
+      "rank": "26/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 58,
+      "own": 53,
+      "best": 53,
+      "perSec": 945,
+      "rank": "16/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 76,
+      "own": 81,
+      "best": 81,
+      "perSec": 472,
+      "rank": "19/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 91,
+      "own": 77,
+      "best": 77,
+      "perSec": 474,
+      "rank": "22/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 61,
+      "own": 64,
+      "best": 64,
+      "perSec": 389,
+      "rank": "22/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 76,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 60,
+      "own": 80,
+      "best": 80,
+      "perSec": 381,
+      "rank": "23/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 87,
+      "own": 88,
+      "best": 88,
+      "perSec": 525,
+      "rank": "22/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 82,
+      "own": 79,
+      "best": 79,
+      "perSec": 437,
+      "rank": "25/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3.2,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 1/6",
+       "Winterfall Firewater 4/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6"
+      ],
+      "food": [
+       "Increased Agility 2/6"
+      ]
+     }
+    },
+    "used": {
+     "raid debuff: Faerie Fire (Feral)": 49
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Drikkle": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 93,
+    "ownAvgParseBefore": 77,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 96,
+      "own": 94,
+      "best": 96,
+      "perSec": 895,
+      "rank": "2/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 89,
+      "own": 88,
+      "best": 94,
+      "perSec": 652,
+      "rank": "20/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 97,
+      "own": 99,
+      "best": 99,
+      "perSec": 772,
+      "rank": "10/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 69,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 99,
+      "own": 96,
+      "best": 99,
+      "perSec": 615,
+      "rank": "18/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 97,
+      "own": 98,
+      "best": 98,
+      "perSec": 763,
+      "rank": "13/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 92,
+      "own": 88,
+      "best": 95,
+      "perSec": 612,
+      "rank": "14/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 90,
+      "own": 97,
+      "best": 97,
+      "perSec": 680,
+      "rank": "17/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 66,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 84,
+      "own": 97,
+      "best": 99,
+      "perSec": 690,
+      "rank": "17/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 67,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5.7,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Frost Power 6/6",
+       "Greater Arcane Elixir 6/6"
+      ],
+      "flask": [
+       "Supreme Power 6/6"
+      ],
+      "food": [
+       "Mana Regeneration 4/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T19:26:51.294Z",
+    "grade": "A-",
+    "verdict": "Alive all raid for once, 93 average, and two bosses where you went quiet",
+    "summary": "No deaths in BWL, which after the three on 2 October counts as personal growth. Razorgore 96, Firemaw 99, Broodlord and Ebonroc 97, a 93 average against your usual 77. The two soft spots are Chromaggus (90, usually 97) and Nefarian (84, usually 97), where you spent a third of each fight not casting.",
+    "good": [
+     {
+      "title": "No deaths",
+      "text": "Zero deaths in eight boss pulls and the trash in between. On 2 October you managed three before Chromaggus."
+     },
+     {
+      "title": "Firemaw 99",
+      "text": "Equal to your best, and second highest damage of the raid on Razorgore with a 96."
+     },
+     {
+      "title": "Consumables",
+      "text": "Supreme Power, Zanza, Greater Arcane, Frost Power and Mageblood on every pull: 5.7 buffs a pull against 4 for the other DPS."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nefarian",
+      "impact": "medium",
+      "boss": 50617,
+      "text": "84 against your usual 97, active 67% of the fight against 88% for the other DPS, with 16 seconds of nothing from 1:21. The log shows three mage class calls on you, which explains part of it, not all."
+     },
+     {
+      "title": "Chromaggus",
+      "impact": "low",
+      "boss": 50616,
+      "text": "90 against your usual 97. You caught Bronze affliction and used two Hourglass Sands, and were active 66% of the fight against 86% for the others."
+     },
+     {
+      "title": "Food",
+      "impact": "low",
+      "text": "Mana Regeneration food on 4 of 6 pulls with a buff snapshot."
+     }
+    ],
+    "bosses": {
+     "50610": {
+      "tone": "good",
+      "text": "96, second in raid damage."
+     },
+     "50613": {
+      "tone": "good",
+      "text": "99."
+     },
+     "50617": {
+      "tone": "bad",
+      "text": "84, a third of the fight without a cast."
+     }
+    }
+   }
+  },
+  "Eduard": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 74,
+    "ownAvgParseBefore": 58,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 84,
+      "own": 62,
+      "best": 95,
+      "perSec": 890,
+      "rank": "3/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 91,
+      "own": 48,
+      "best": 91,
+      "perSec": 2246,
+      "rank": "2/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 1
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 84,
+      "own": 82,
+      "best": 95,
+      "perSec": 947,
+      "rank": "6/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 80,
+      "own": 77,
+      "best": 92,
+      "perSec": 575,
+      "rank": "20/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 67,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 51,
+      "own": 83,
+      "best": 94,
+      "perSec": 619,
+      "rank": "18/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 56,
+      "own": 69,
+      "best": 96,
+      "perSec": 660,
+      "rank": "12/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 81,
+      "own": 83,
+      "best": 95,
+      "perSec": 745,
+      "rank": "16/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 95,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 68,
+      "own": 82,
+      "best": 92,
+      "perSec": 693,
+      "rank": "16/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Vaelastrasz the Corrupt",
+      "id": 50611,
+      "pull": "1 (kill)",
+      "at": "0:28",
+      "by": "Melee",
+      "killer": "Vaelastrasz the Corrupt"
+     }
+    ],
+    "consumes": {
+     "perPull": 2.2,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 1/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/6",
+       "Winterfall Firewater 1/6"
+      ],
+      "elixir": [
+       "Elixir of Fortitude 1/6",
+       "Elixir of the Mongoose 1/6"
+      ],
+      "food": [
+       "Well Fed 1/6"
+      ],
+      "juju": [
+       "Juju Power 1/6"
+      ],
+      "flask": [
+       "Flask of the Titans 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 2,
+     "explosive: Goblin Sapper Charge": 4,
+     "potion: Mighty Rage Potion": 5,
+     "potion: Limited Invulnerability Potion": 1,
+     "raid debuff: Sunder Armor": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     }
+    ]
+   }
+  },
+  "Elozia": {
+   "stats": {
+    "class": "Druid",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 78,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 90,
+      "perSec": 57,
+      "rank": "11/11 healers",
+      "healShare": 3,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 90,
+      "best": 98,
+      "perSec": 756,
+      "rank": "1/11 healers",
+      "healShare": 14,
+      "overheal": 37,
+      "active": 100,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 97,
+      "perSec": 232,
+      "rank": "6/11 healers",
+      "healShare": 9,
+      "overheal": 49,
+      "active": 68,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 353,
+      "rank": "4/11 healers",
+      "healShare": 13,
+      "overheal": 68,
+      "active": 85,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 80,
+      "best": 99,
+      "perSec": 79,
+      "rank": "8/11 healers",
+      "healShare": 7,
+      "overheal": null,
+      "active": 47,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 80,
+      "best": 92,
+      "perSec": 169,
+      "rank": "9/11 healers",
+      "healShare": 7,
+      "overheal": 75,
+      "active": 72,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 70,
+      "best": 99,
+      "perSec": 11,
+      "rank": "10/11 healers",
+      "healShare": 1,
+      "overheal": null,
+      "active": 39,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 20,
+      "best": 90,
+      "perSec": 103,
+      "rank": "8/11 healers",
+      "healShare": 8,
+      "overheal": 73,
+      "active": 42,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2.5,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 4/6"
+      ],
+      "elixir": [
+       "Mageblood Elixir 5/6",
+       "Elixir of Fortitude 5/6"
+      ],
+      "food": [
+       "Mana Regeneration 1/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 1,
+     "utility: Innervate": 2,
+     "utility: Rebirth": 1,
+     "raid debuff: Faerie Fire": 90
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Fluffycatto": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 74,
+    "ownAvgParseBefore": 70,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 46,
+      "own": 69,
+      "best": 94,
+      "perSec": 550,
+      "rank": "17/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 49,
+      "own": 51,
+      "best": 88,
+      "perSec": 1127,
+      "rank": "15/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 37,
+      "own": 81,
+      "best": 96,
+      "perSec": 474,
+      "rank": "18/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 98,
+      "own": 85,
+      "best": 97,
+      "perSec": 1084,
+      "rank": "8/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 74,
+      "own": 89,
+      "best": 96,
+      "perSec": 695,
+      "rank": "15/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 96,
+      "own": 87,
+      "best": 98,
+      "perSec": 1046,
+      "rank": "4/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 71,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 97,
+      "own": 93,
+      "best": 97,
+      "perSec": 1039,
+      "rank": "7/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 95,
+      "own": 91,
+      "best": 96,
+      "perSec": 1010,
+      "rank": "6/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5.7,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 4/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6",
+       "Mighty Troll's Blood Elixir 6/6"
+      ],
+      "juju": [
+       "Juju Ember 6/6"
+      ],
+      "food": [
+       "Blessed Sunfruit 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 2,
+     "potion: Thistle Tea": 5,
+     "potion: Fire Protection Potion": 1,
+     "raid debuff: Expose Armor": 18
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Gallahan": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 78,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 140,
+      "rank": "8/11 healers",
+      "healShare": 8,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 545,
+      "rank": "5/11 healers",
+      "healShare": 10,
+      "overheal": 49,
+      "active": 88,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 122,
+      "rank": "10/11 healers",
+      "healShare": 5,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 88,
+      "rank": "10/11 healers",
+      "healShare": 3,
+      "overheal": null,
+      "active": 49,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 84,
+      "rank": "7/11 healers",
+      "healShare": 8,
+      "overheal": 84,
+      "active": 82,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 118,
+      "rank": "11/11 healers",
+      "healShare": 5,
+      "overheal": 76,
+      "active": 72,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 75,
+      "best": 92,
+      "perSec": 197,
+      "rank": "3/11 healers",
+      "healShare": 15,
+      "overheal": 66,
+      "active": 89,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 106,
+      "rank": "7/11 healers",
+      "healShare": 8,
+      "overheal": 74,
+      "active": 82,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6"
+      ],
+      "food": [
+       "Mana Regeneration 6/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Blessing of Protection": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     }
+    ]
+   }
+  },
+  "Gertggs": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 93,
+    "ownAvgParseBefore": 73,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 82,
+      "own": 80,
+      "best": 93,
+      "perSec": 847,
+      "rank": "5/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 88,
+      "own": 77,
+      "best": 94,
+      "perSec": 2028,
+      "rank": "3/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 95,
+      "own": 93,
+      "best": 98,
+      "perSec": 1464,
+      "rank": "1/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 98,
+      "own": 91,
+      "best": 96,
+      "perSec": 1684,
+      "rank": "1/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 96,
+      "own": 93,
+      "best": 97,
+      "perSec": 1357,
+      "rank": "2/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 95,
+      "own": 92,
+      "best": 97,
+      "perSec": 1159,
+      "rank": "1/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 97,
+      "own": 95,
+      "best": 99,
+      "perSec": 1463,
+      "rank": "2/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 93,
+      "own": 95,
+      "best": 97,
+      "perSec": 1165,
+      "rank": "2/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5.7,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "food": [
+       "Well Fed 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "drink": [
+       "Winterfall Firewater 6/6"
+      ],
+      "zanza": [
+       "Rage of Ages 5/6"
+      ],
+      "flask": [
+       "Flask of the Titans 5/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 3,
+     "explosive: Goblin Sapper Charge": 1,
+     "potion: Mighty Rage Potion": 5,
+     "explosive: Dense Dynamite": 1,
+     "raid debuff: Sunder Armor": 69
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Grenan": {
+   "stats": {
+    "class": "Hunter",
+    "role": "dps",
+    "avgParse": 87,
+    "ownAvgParseBefore": 57,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 90,
+      "own": 25,
+      "best": 83,
+      "perSec": 675,
+      "rank": "9/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 85,
+      "own": 27,
+      "best": 59,
+      "perSec": 592,
+      "rank": "22/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 92,
+      "own": 92,
+      "best": 92,
+      "perSec": 661,
+      "rank": "15/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 97,
+      "own": 37,
+      "best": 81,
+      "perSec": 615,
+      "rank": "17/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 70,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 91,
+      "own": 66,
+      "best": 76,
+      "perSec": 629,
+      "rank": "17/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 67,
+      "own": 40,
+      "best": 57,
+      "perSec": 449,
+      "rank": "19/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 61,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 95,
+      "own": 86,
+      "best": 92,
+      "perSec": 542,
+      "rank": "20/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 80,
+      "own": 70,
+      "best": 80,
+      "perSec": 467,
+      "rank": "23/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Elixir of the Mongoose 6/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Tranquilizing Shot": 4,
+     "raid debuff: Hunter's Mark": 5
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Ishilly": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 77,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 118,
+      "rank": "10/11 healers",
+      "healShare": 7,
+      "overheal": null,
+      "active": 71,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 513,
+      "rank": "6/11 healers",
+      "healShare": 9,
+      "overheal": 59,
+      "active": 42,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 90,
+      "perSec": 169,
+      "rank": "9/11 healers",
+      "healShare": 7,
+      "overheal": 63,
+      "active": 74,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 249,
+      "rank": "6/11 healers",
+      "healShare": 9,
+      "overheal": 63,
+      "active": 68,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 80,
+      "best": 86,
+      "perSec": 79,
+      "rank": "9/11 healers",
+      "healShare": 7,
+      "overheal": null,
+      "active": 53,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 225,
+      "rank": "4/11 healers",
+      "healShare": 9,
+      "overheal": null,
+      "active": 38,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 75,
+      "best": 90,
+      "perSec": 14,
+      "rank": "9/11 healers",
+      "healShare": 1,
+      "overheal": null,
+      "active": 30,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 60,
+      "best": 73,
+      "perSec": 81,
+      "rank": "9/11 healers",
+      "healShare": 6,
+      "overheal": 59,
+      "active": 48,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {}
+    },
+    "used": {
+     "utility: Fear Ward": 11,
+     "utility: Power Infusion": 6
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Künigünde": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 68,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 93,
+      "perSec": 165,
+      "rank": "3/11 healers",
+      "healShare": 10,
+      "overheal": 78,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 359,
+      "rank": "9/11 healers",
+      "healShare": 7,
+      "overheal": 75,
+      "active": 53,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 92,
+      "perSec": 306,
+      "rank": "2/11 healers",
+      "healShare": 12,
+      "overheal": 55,
+      "active": 94,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 320,
+      "rank": "5/11 healers",
+      "healShare": 12,
+      "overheal": 64,
+      "active": 72,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 94,
+      "rank": "4/11 healers",
+      "healShare": 9,
+      "overheal": 83,
+      "active": 42,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 278,
+      "rank": "2/11 healers",
+      "healShare": 12,
+      "overheal": 55,
+      "active": 66,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 75,
+      "best": 75,
+      "perSec": 65,
+      "rank": "7/11 healers",
+      "healShare": 5,
+      "overheal": 88,
+      "active": 60,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 50,
+      "best": 69,
+      "perSec": 158,
+      "rank": "2/11 healers",
+      "healShare": 12,
+      "overheal": 67,
+      "active": 68,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2.2,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 4/6",
+       "Kreeg's Stout Beatdown 4/6"
+      ],
+      "food": [
+       "Well Fed 5/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Fear Ward": 6,
+     "utility: Power Infusion": 7
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Resistance"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Resistance"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Resistance"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Resistance"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Resistance"
+      ]
+     }
+    ]
+   }
+  },
+  "Macharius": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 75,
+    "ownAvgParseBefore": 65,
+    "raidMedianParse": 78,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 52,
+      "own": 29,
+      "best": 44,
+      "perSec": 567,
+      "rank": "14/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 69,
+      "own": 44,
+      "best": 75,
+      "perSec": 1343,
+      "rank": "13/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 95,
+      "own": 90,
+      "best": 96,
+      "perSec": 871,
+      "rank": "1/4 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 80,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 46,
+      "own": 41,
+      "best": 96,
+      "perSec": 134,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 13,
+      "activeMedian": 91,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 81,
+      "own": 88,
+      "best": 95,
+      "perSec": 443,
+      "rank": "3/3 tanks",
+      "healShare": null,
+      "overheal": 4,
+      "active": 74,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 95,
+      "own": 86,
+      "best": 96,
+      "perSec": 823,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 96,
+      "own": 89,
+      "best": 98,
+      "perSec": 842,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 63,
+      "own": 43,
+      "best": 77,
+      "perSec": 653,
+      "rank": "19/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 5,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 3/6"
+      ],
+      "elixir": [
+       "Elixir of Fortitude 6/6",
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6",
+       "Greater Armor 6/6"
+      ],
+      "food": [
+       "Well Fed 3/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Challenging Shout": 1,
+     "potion: Greater Stoneshield Potion": 1,
+     "potion: Limited Invulnerability Potion": 1,
+     "raid debuff: Sunder Armor": 9,
+     "raid debuff: Demoralizing Shout": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Marellina": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 44,
+    "ownAvgParseBefore": 53,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 39,
+      "own": 65,
+      "best": 77,
+      "perSec": 404,
+      "rank": "23/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 3,
+      "own": 64,
+      "best": 91,
+      "perSec": 57,
+      "rank": "27/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 10,
+      "activeMedian": 100,
+      "deaths": 1
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 73,
+      "own": 80,
+      "best": 86,
+      "perSec": 716,
+      "rank": "13/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 43,
+      "own": 69,
+      "best": 76,
+      "perSec": 191,
+      "rank": "26/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 37,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 27,
+      "own": 45,
+      "best": 58,
+      "perSec": 320,
+      "rank": "25/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 34,
+      "own": 27,
+      "best": 68,
+      "perSec": 331,
+      "rank": "25/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 80,
+      "own": 87,
+      "best": 95,
+      "perSec": 550,
+      "rank": "19/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 53,
+      "own": 96,
+      "best": 99,
+      "perSec": 448,
+      "rank": "24/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 88,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Vaelastrasz the Corrupt",
+      "id": 50611,
+      "pull": "1 (kill)",
+      "at": "0:17",
+      "by": "Flame Breath",
+      "killer": "Vaelastrasz the Corrupt"
+     },
+     {
+      "boss": "Nefarian",
+      "id": 50617,
+      "pull": "1 (kill)",
+      "at": "1:37",
+      "by": "Melee",
+      "killer": "Bone Construct"
+     }
+    ],
+    "consumes": {
+     "perPull": 2.2,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 4/6"
+      ],
+      "flask": [
+       "Supreme Power 6/6"
+      ],
+      "food": [
+       "Well Fed 1/6",
+       "Blessed Sunfruit Juice 2/6"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     }
+    ]
+   }
+  },
+  "Mercîless": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 78,
+    "ownAvgParseBefore": 68,
+    "raidMedianParse": 78,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 50,
+      "own": 48,
+      "best": 94,
+      "perSec": 557,
+      "rank": "16/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 80,
+      "own": 59,
+      "best": 88,
+      "perSec": 1687,
+      "rank": "8/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 89,
+      "own": 86,
+      "best": 99,
+      "perSec": 639,
+      "rank": "3/4 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 80,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 95,
+      "own": 77,
+      "best": 96,
+      "perSec": 1215,
+      "rank": "3/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 84,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 92,
+      "own": 88,
+      "best": 98,
+      "perSec": 644,
+      "rank": "1/3 tanks",
+      "healShare": null,
+      "overheal": 0,
+      "active": 75,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 40,
+      "own": 30,
+      "best": 86,
+      "perSec": 564,
+      "rank": "17/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 91,
+      "own": 83,
+      "best": 95,
+      "perSec": 1007,
+      "rank": "9/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 83,
+      "own": 63,
+      "best": 89,
+      "perSec": 895,
+      "rank": "8/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 76,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5.7,
+     "roleMedian": 5,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/6",
+       "Winterfall Firewater 6/6"
+      ],
+      "elixir": [
+       "Elixir of Fortitude 6/6",
+       "Elixir of the Mongoose 6/6",
+       "Greater Armor 6/6"
+      ],
+      "juju": [
+       "Juju Power 3/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 1,
+     "explosive: Dense Dynamite": 1,
+     "utility: Challenging Shout": 1,
+     "potion: Limited Invulnerability Potion": 1,
+     "raid debuff: Sunder Armor": 89,
+     "raid debuff: Demoralizing Shout": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Mikhalion": {
+   "stats": {
+    "class": "Hunter",
+    "role": "dps",
+    "avgParse": 68,
+    "ownAvgParseBefore": 46,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 70,
+      "own": 43,
+      "best": 71,
+      "perSec": 517,
+      "rank": "21/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 56,
+      "own": 38,
+      "best": 74,
+      "perSec": 452,
+      "rank": "24/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 73,
+      "own": 55,
+      "best": 90,
+      "perSec": 528,
+      "rank": "17/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 96,
+      "own": 63,
+      "best": 96,
+      "perSec": 539,
+      "rank": "21/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 55,
+      "own": 37,
+      "best": 82,
+      "perSec": 417,
+      "rank": "21/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 63,
+      "own": 29,
+      "best": 82,
+      "perSec": 434,
+      "rank": "21/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 87,
+      "own": 54,
+      "best": 93,
+      "perSec": 430,
+      "rank": "23/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 44,
+      "own": 69,
+      "best": 92,
+      "perSec": 306,
+      "rank": "27/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Greater Arcane Elixir 6/6",
+       "Elixir of the Mongoose 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 3/6",
+       "Kreeg's Stout Beatdown 3/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Tranquilizing Shot": 3,
+     "raid debuff: Hunter's Mark": 4
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     }
+    ]
+   }
+  },
+  "Miniwrecker": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 89,
+    "ownAvgParseBefore": 67,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 64,
+      "own": 81,
+      "best": 92,
+      "perSec": 654,
+      "rank": "10/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 92,
+      "own": 63,
+      "best": 83,
+      "perSec": 2284,
+      "rank": "1/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 95,
+      "own": 90,
+      "best": 91,
+      "perSec": 1383,
+      "rank": "2/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 93,
+      "own": 81,
+      "best": 95,
+      "perSec": 996,
+      "rank": "10/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 95,
+      "own": 90,
+      "best": 95,
+      "perSec": 1238,
+      "rank": "3/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 90,
+      "own": 80,
+      "best": 89,
+      "perSec": 987,
+      "rank": "5/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 96,
+      "own": 91,
+      "best": 95,
+      "perSec": 1337,
+      "rank": "3/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 90,
+      "own": 89,
+      "best": 95,
+      "perSec": 1063,
+      "rank": "4/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "food": [
+       "Well Fed 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "drink": [
+       "Winterfall Firewater 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 1,
+     "explosive: Goblin Sapper Charge": 3,
+     "potion: Mighty Rage Potion": 6,
+     "explosive: Dense Dynamite": 1,
+     "potion: Healing Potion": 1,
+     "raid debuff: Sunder Armor": 100
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Necroshadow": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 57,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 13,
+      "own": null,
+      "best": null,
+      "perSec": 385,
+      "rank": "25/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 15,
+      "own": null,
+      "best": null,
+      "perSec": 715,
+      "rank": "19/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 9,
+      "own": null,
+      "best": null,
+      "perSec": 293,
+      "rank": "23/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 49,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 96,
+      "own": null,
+      "best": null,
+      "perSec": 891,
+      "rank": "12/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 76,
+      "own": null,
+      "best": null,
+      "perSec": 711,
+      "rank": "14/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 73,
+      "own": null,
+      "best": null,
+      "perSec": 714,
+      "rank": "11/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 95,
+      "own": null,
+      "best": null,
+      "perSec": 925,
+      "rank": "11/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 81,
+      "own": null,
+      "best": null,
+      "perSec": 687,
+      "rank": "18/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3.3,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 2/6"
+      ],
+      "juju": [
+       "Juju Might 2/6",
+       "Juju Power 4/6"
+      ],
+      "zanza": [
+       "Rage of Ages 4/6"
+      ],
+      "food": [
+       "Increased Agility 2/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Thistle Tea": 4
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Osinir": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 75,
+    "ownAvgParseBefore": 51,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 89,
+      "own": 50,
+      "best": 91,
+      "perSec": 693,
+      "rank": "8/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 47,
+      "own": 34,
+      "best": 44,
+      "perSec": 360,
+      "rank": "25/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 47,
+      "own": 62,
+      "best": 73,
+      "perSec": 714,
+      "rank": "14/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 99,
+      "own": 55,
+      "best": 70,
+      "perSec": 731,
+      "rank": "14/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 87,
+      "own": 52,
+      "best": 85,
+      "perSec": 575,
+      "rank": "19/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 84,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 56,
+      "own": 35,
+      "best": 49,
+      "perSec": 414,
+      "rank": "22/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 69,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 79,
+      "own": 16,
+      "best": 82,
+      "perSec": 541,
+      "rank": "21/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 60,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 96,
+      "own": 87,
+      "best": 94,
+      "perSec": 989,
+      "rank": "7/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Greater Arcane Elixir 6/6"
+      ],
+      "flask": [
+       "Supreme Power 6/6"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Palastino": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 72,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 140,
+      "rank": "7/11 healers",
+      "healShare": 8,
+      "overheal": 81,
+      "active": 100,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 298,
+      "rank": "11/11 healers",
+      "healShare": 5,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 306,
+      "rank": "3/11 healers",
+      "healShare": 12,
+      "overheal": 36,
+      "active": 91,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 190,
+      "rank": "7/11 healers",
+      "healShare": 7,
+      "overheal": 64,
+      "active": 91,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 152,
+      "rank": "2/11 healers",
+      "healShare": 14,
+      "overheal": 75,
+      "active": 92,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 150,
+      "rank": "10/11 healers",
+      "healShare": 6,
+      "overheal": 73,
+      "active": 85,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 75,
+      "best": 75,
+      "perSec": 258,
+      "rank": "2/11 healers",
+      "healShare": 20,
+      "overheal": 70,
+      "active": 96,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 75,
+      "rank": "10/11 healers",
+      "healShare": 6,
+      "overheal": 86,
+      "active": 86,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {}
+    },
+    "used": {
+     "utility: Blessing of Protection": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": null
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     }
+    ]
+   }
+  },
+  "Pinguwan": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 84,
+    "ownAvgParseBefore": 60,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 70,
+      "own": 64,
+      "best": 64,
+      "perSec": 711,
+      "rank": "7/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 83,
+      "own": 74,
+      "best": 74,
+      "perSec": 1810,
+      "rank": "7/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 80,
+      "own": 94,
+      "best": 94,
+      "perSec": 830,
+      "rank": "8/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 94,
+      "own": 92,
+      "best": 92,
+      "perSec": 1107,
+      "rank": "6/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 90,
+      "own": 91,
+      "best": 91,
+      "perSec": 1031,
+      "rank": "6/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 78,
+      "own": 54,
+      "best": 54,
+      "perSec": 809,
+      "rank": "7/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 93,
+      "own": 91,
+      "best": 91,
+      "perSec": 1068,
+      "rank": "6/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 80,
+      "own": 89,
+      "best": 89,
+      "perSec": 814,
+      "rank": "11/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3.7,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of Fortitude 6/6",
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6"
+      ],
+      "food": [
+       "Well Fed 4/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 1,
+     "potion: Mighty Rage Potion": 2,
+     "potion: Healing Potion": 1,
+     "raid debuff: Sunder Armor": 49
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Pinkcheese": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 132,
+      "rank": "9/11 healers",
+      "healShare": 8,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 598,
+      "rank": "3/11 healers",
+      "healShare": 11,
+      "overheal": 57,
+      "active": 100,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 265,
+      "rank": "4/11 healers",
+      "healShare": 10,
+      "overheal": 42,
+      "active": 66,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 122,
+      "rank": "9/11 healers",
+      "healShare": 5,
+      "overheal": null,
+      "active": 57,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 86,
+      "rank": "5/11 healers",
+      "healShare": 8,
+      "overheal": 89,
+      "active": 91,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 208,
+      "rank": "6/11 healers",
+      "healShare": 9,
+      "overheal": 66,
+      "active": 83,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 79,
+      "rank": "6/11 healers",
+      "healShare": 6,
+      "overheal": 75,
+      "active": 64,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 138,
+      "rank": "4/11 healers",
+      "healShare": 10,
+      "overheal": 76,
+      "active": 97,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 2,
+     "potion: Fire Protection Potion": 1,
+     "utility: Blessing of Protection": 1,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Intelligence"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Intelligence"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Intelligence"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Intelligence"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Intelligence"
+      ]
+     }
+    ]
+   }
+  },
+  "Shadowtelia": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 68,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 155,
+      "rank": "4/11 healers",
+      "healShare": 9,
+      "overheal": 87,
+      "active": 67,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 614,
+      "rank": "2/11 healers",
+      "healShare": 11,
+      "overheal": 79,
+      "active": 26,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 173,
+      "rank": "8/11 healers",
+      "healShare": 7,
+      "overheal": 74,
+      "active": 25,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 405,
+      "rank": "2/11 healers",
+      "healShare": 15,
+      "overheal": 68,
+      "active": 32,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 53,
+      "rank": "10/11 healers",
+      "healShare": 5,
+      "overheal": 94,
+      "active": 88,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 276,
+      "rank": "3/11 healers",
+      "healShare": 11,
+      "overheal": 74,
+      "active": 61,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 8,
+      "rank": "11/11 healers",
+      "healShare": 1,
+      "overheal": 99,
+      "active": 33,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 131,
+      "rank": "5/11 healers",
+      "healShare": 10,
+      "overheal": 84,
+      "active": 88,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0.2,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Kreeg's Stout Beatdown 1/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Fear Ward": 5
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Skoomael": {
+   "stats": {
+    "class": "Druid",
+    "role": "dps",
+    "avgParse": 97,
+    "ownAvgParseBefore": 90,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 90,
+      "own": 89,
+      "best": 96,
+      "perSec": 619,
+      "rank": "12/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 97,
+      "own": 76,
+      "best": 96,
+      "perSec": 1812,
+      "rank": "6/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 96,
+      "own": 96,
+      "best": 99,
+      "perSec": 828,
+      "rank": "9/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 99,
+      "own": 95,
+      "best": 99,
+      "perSec": 1029,
+      "rank": "9/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 99,
+      "own": 95,
+      "best": 98,
+      "perSec": 1037,
+      "rank": "5/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 98,
+      "own": 95,
+      "best": 98,
+      "perSec": 902,
+      "rank": "6/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 99,
+      "own": 96,
+      "best": 99,
+      "perSec": 965,
+      "rank": "10/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 95,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 99,
+      "own": 96,
+      "best": 98,
+      "perSec": 1044,
+      "rank": "5/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5.7,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "food": [
+       "Well Fed 6/6"
+      ],
+      "juju": [
+       "Juju Might 6/6",
+       "Juju Power 6/6"
+      ],
+      "zanza": [
+       "Strike of the Scorpok 6/6"
+      ],
+      "flask": [
+       "Distilled Wisdom 4/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 2,
+     "potion: Mana Potion": 1,
+     "utility: Innervate": 3,
+     "raid debuff: Faerie Fire (Feral)": 76
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T19:26:51.297Z",
+    "grade": "A",
+    "verdict": "99 on five bosses, which in a cat is worth fifth place on the meter",
+    "summary": "Firemaw, Ebonroc, Chromaggus and Nefarian 99, Flamegor 98, Vaelastrasz 97 (your usual there is 76), a 97 average, no deaths, all seven world buffs and a Juju on every pull. It's hard to find anything to complain about, so we'll settle for this: all those 99s added up to fifth on the damage meter on Ebonroc and Nefarian, behind four warriors who parsed lower.",
+    "good": [
+     {
+      "title": "Five 99s and a 98",
+      "text": "Firemaw, Ebonroc, Chromaggus, Nefarian 99, Flamegor 98. Vaelastrasz 97 is your best ever there (96 before)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Juju Power, Juju Might, Scorpok and food on all six pulls with a snapshot, 5.7 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Faerie Fire and Innervates",
+      "text": "76 Faerie Fire (Feral) casts and 3 Innervates."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razorgore",
+      "impact": "low",
+      "boss": 50610,
+      "text": "90. Your worst boss of the night and still over your usual 89. This is the fix list. That's how little there is."
+     },
+     {
+      "title": "Idle starts on the drakes",
+      "impact": "low",
+      "text": "10 to 14 seconds without a swing at the start of Firemaw, Ebonroc and Flamegor. Everyone else's start was about as slow, so it's the raid's opener, not you, but you asked for something."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "good",
+      "text": "97, your best Vaelastrasz."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "99, fifth in raid damage."
+     }
+    }
+   }
+  },
+  "Skybacon": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 73,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 180,
+      "rank": "2/11 healers",
+      "healShare": 11,
+      "overheal": 78,
+      "active": 100,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 90,
+      "best": 95,
+      "perSec": 425,
+      "rank": "8/11 healers",
+      "healShare": 8,
+      "overheal": 70,
+      "active": 100,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 362,
+      "rank": "1/11 healers",
+      "healShare": 14,
+      "overheal": 39,
+      "active": 72,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 94,
+      "perSec": 381,
+      "rank": "3/11 healers",
+      "healShare": 14,
+      "overheal": 52,
+      "active": 85,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 126,
+      "rank": "3/11 healers",
+      "healShare": 12,
+      "overheal": 87,
+      "active": 93,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 182,
+      "rank": "7/11 healers",
+      "healShare": 8,
+      "overheal": 76,
+      "active": 90,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": 75,
+      "best": 85,
+      "perSec": 383,
+      "rank": "1/11 healers",
+      "healShare": 29,
+      "overheal": 54,
+      "active": 100,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 72,
+      "rank": "11/11 healers",
+      "healShare": 5,
+      "overheal": 90,
+      "active": 94,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1.3,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/6"
+      ],
+      "food": [
+       "Well Fed 1/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 2,
+     "utility: Blessing of Protection": 2,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Speldosan": {
+   "stats": {
+    "class": "Hunter",
+    "role": "dps",
+    "avgParse": 71,
+    "ownAvgParseBefore": 72,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 81,
+      "own": 77,
+      "best": 79,
+      "perSec": 581,
+      "rank": "13/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 85,
+      "own": 60,
+      "best": 82,
+      "perSec": 595,
+      "rank": "21/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 86,
+      "own": 78,
+      "best": 88,
+      "perSec": 567,
+      "rank": "16/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 94,
+      "own": 66,
+      "best": 92,
+      "perSec": 439,
+      "rank": "23/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 65,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 39,
+      "own": 83,
+      "best": 95,
+      "perSec": 366,
+      "rank": "24/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 26,
+      "own": 78,
+      "best": 96,
+      "perSec": 309,
+      "rank": "26/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 84,
+      "own": 92,
+      "best": 93,
+      "perSec": 411,
+      "rank": "24/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 74,
+      "own": 90,
+      "best": 91,
+      "perSec": 425,
+      "rank": "26/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6",
+       "Elixir of the Mongoose 6/6"
+      ]
+     }
+    },
+    "used": {
+     "explosive: Goblin Sapper Charge": 1,
+     "utility: Tranquilizing Shot": 4,
+     "raid debuff: Hunter's Mark": 5
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     }
+    ]
+   }
+  },
+  "Stinkycat": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 53,
+    "ownAvgParseBefore": 27,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 44,
+      "own": 50,
+      "best": 50,
+      "perSec": 538,
+      "rank": "18/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 24,
+      "own": 27,
+      "best": 27,
+      "perSec": 859,
+      "rank": "18/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 34,
+      "own": 64,
+      "best": 64,
+      "perSec": 457,
+      "rank": "20/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 69,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 90,
+      "own": 60,
+      "best": 60,
+      "perSec": 613,
+      "rank": "19/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 65,
+      "own": 29,
+      "best": 29,
+      "perSec": 649,
+      "rank": "16/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 38,
+      "own": 22,
+      "best": 22,
+      "perSec": 547,
+      "rank": "18/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 78,
+      "own": 58,
+      "best": 58,
+      "perSec": 654,
+      "rank": "18/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 49,
+      "own": 43,
+      "best": 43,
+      "perSec": 518,
+      "rank": "22/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2.5,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6"
+      ],
+      "food": [
+       "Increased Agility 3/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Thistle Tea": 4,
+     "potion: Fire Protection Potion": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Terrora": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 60,
+    "ownAvgParseBefore": 59,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 40,
+      "own": 43,
+      "best": 79,
+      "perSec": 518,
+      "rank": "20/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 31,
+      "own": 29,
+      "best": 50,
+      "perSec": 942,
+      "rank": "17/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 0,
+      "own": 5,
+      "best": 90,
+      "perSec": 77,
+      "rank": "24/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 33,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 91,
+      "own": 63,
+      "best": 95,
+      "perSec": 643,
+      "rank": "16/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 58,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 84,
+      "own": 71,
+      "best": 94,
+      "perSec": 786,
+      "rank": "12/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 48,
+      "own": 49,
+      "best": 94,
+      "perSec": 592,
+      "rank": "16/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 71,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 94,
+      "own": 84,
+      "best": 95,
+      "perSec": 889,
+      "rank": "12/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 92,
+      "own": 82,
+      "best": 96,
+      "perSec": 871,
+      "rank": "9/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "zanza": [
+       "Strike of the Scorpok 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 1,
+     "explosive: Goblin Sapper Charge": 1,
+     "explosive: Iron Grenade": 3,
+     "potion: Healing Potion": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Thormund": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 77,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 140,
+      "rank": "6/11 healers",
+      "healShare": 8,
+      "overheal": null,
+      "active": 36,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 492,
+      "rank": "7/11 healers",
+      "healShare": 9,
+      "overheal": 66,
+      "active": 31,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 231,
+      "rank": "7/11 healers",
+      "healShare": 9,
+      "overheal": null,
+      "active": 36,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": 90,
+      "best": 90,
+      "perSec": 53,
+      "rank": "11/11 healers",
+      "healShare": 2,
+      "overheal": null,
+      "active": 15,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 22,
+      "rank": "11/11 healers",
+      "healShare": 2,
+      "overheal": null,
+      "active": 3,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 223,
+      "rank": "5/11 healers",
+      "healShare": 9,
+      "overheal": null,
+      "active": 42,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 21,
+      "rank": "8/11 healers",
+      "healShare": 2,
+      "overheal": null,
+      "active": 5,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 117,
+      "rank": "6/11 healers",
+      "healShare": 9,
+      "overheal": 64,
+      "active": 75,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1.3,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 6/6"
+      ],
+      "food": [
+       "Well Fed 1/6",
+       "Blessed Sunfruit Juice 1/6"
+      ]
+     }
+    },
+    "used": {
+     "utility: Fear Ward": 3
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   }
+  },
+  "Tochopolvo": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 93,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 87,
+      "own": 79,
+      "best": 93,
+      "perSec": 951,
+      "rank": "1/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 86,
+      "own": 75,
+      "best": 95,
+      "perSec": 1933,
+      "rank": "4/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 94,
+      "own": 91,
+      "best": 96,
+      "perSec": 1318,
+      "rank": "3/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 97,
+      "own": 83,
+      "best": 96,
+      "perSec": 1517,
+      "rank": "2/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 96,
+      "own": 86,
+      "best": 96,
+      "perSec": 1404,
+      "rank": "1/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 94,
+      "own": 83,
+      "best": 97,
+      "perSec": 1124,
+      "rank": "2/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 98,
+      "own": 93,
+      "best": 99,
+      "perSec": 1498,
+      "rank": "1/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 95,
+      "own": 91,
+      "best": 99,
+      "perSec": 1396,
+      "rank": "1/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5.8,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Greater Armor 5/6"
+      ],
+      "food": [
+       "Well Fed 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "drink": [
+       "Winterfall Firewater 6/6"
+      ],
+      "zanza": [
+       "Rage of Ages 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 3,
+     "explosive: Goblin Sapper Charge": 2,
+     "potion: Mighty Rage Potion": 3,
+     "utility: Intimidating Shout": 2,
+     "explosive: Dense Dynamite": 1,
+     "potion: Limited Invulnerability Potion": 1,
+     "raid debuff: Sunder Armor": 73
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Webcumvibe": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 70,
+    "ownAvgParseBefore": 51,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 27,
+      "own": null,
+      "best": null,
+      "perSec": 387,
+      "rank": "24/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 77,
+      "own": null,
+      "best": null,
+      "perSec": 1565,
+      "rank": "10/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 44,
+      "own": null,
+      "best": null,
+      "perSec": 763,
+      "rank": "11/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 95,
+      "own": null,
+      "best": null,
+      "perSec": 1116,
+      "rank": "4/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 89,
+      "own": null,
+      "best": null,
+      "perSec": 1009,
+      "rank": "7/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 52,
+      "own": null,
+      "best": null,
+      "perSec": 637,
+      "rank": "13/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 93,
+      "own": null,
+      "best": null,
+      "perSec": 1092,
+      "rank": "5/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 80,
+      "own": null,
+      "best": null,
+      "perSec": 852,
+      "rank": "10/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 84,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "food": [
+       "Well Fed 1/6",
+       "Increased Agility 5/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "drink": [
+       "Winterfall Firewater 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 3,
+     "explosive: Goblin Sapper Charge": 2,
+     "potion: Mighty Rage Potion": 4,
+     "raid debuff: Sunder Armor": 31
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Whorm": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 78,
+    "ownAvgParseBefore": 67,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 83,
+      "own": 73,
+      "best": 90,
+      "perSec": 882,
+      "rank": "4/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 74,
+      "own": 71,
+      "best": 84,
+      "perSec": 1487,
+      "rank": "11/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 80,
+      "own": 82,
+      "best": 96,
+      "perSec": 884,
+      "rank": "7/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 90,
+      "own": 83,
+      "best": 95,
+      "perSec": 833,
+      "rank": "13/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 67,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 89,
+      "own": 83,
+      "best": 95,
+      "perSec": 1000,
+      "rank": "8/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 45,
+      "own": 74,
+      "best": 96,
+      "perSec": 594,
+      "rank": "15/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 87,
+      "own": 86,
+      "best": 95,
+      "perSec": 870,
+      "rank": "13/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 96,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 79,
+      "own": 83,
+      "best": 95,
+      "perSec": 779,
+      "rank": "14/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3.3,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 1/6",
+       "Kreeg's Stout Beatdown 1/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6"
+      ],
+      "juju": [
+       "Juju Power 6/6"
+      ],
+      "zanza": [
+       "Strike of the Scorpok 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 3,
+     "potion: Great Rage Potion": 7,
+     "utility: Intimidating Shout": 1,
+     "utility: Challenging Shout": 1,
+     "raid debuff: Sunder Armor": 13
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     }
+    ]
+   }
+  },
+  "Youlloveme": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 345,
+      "rank": "1/11 healers",
+      "healShare": 20,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 570,
+      "rank": "4/11 healers",
+      "healShare": 10,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 244,
+      "rank": "5/11 healers",
+      "healShare": 10,
+      "overheal": null,
+      "active": 51,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 405,
+      "rank": "1/11 healers",
+      "healShare": 15,
+      "overheal": 56,
+      "active": 70,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 202,
+      "rank": "1/11 healers",
+      "healShare": 19,
+      "overheal": 67,
+      "active": 77,
+      "activeMedian": 77,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 404,
+      "rank": "1/11 healers",
+      "healShare": 17,
+      "overheal": 32,
+      "active": 80,
+      "activeMedian": 72,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 194,
+      "rank": "4/11 healers",
+      "healShare": 15,
+      "overheal": 68,
+      "active": 88,
+      "activeMedian": 64,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 194,
+      "rank": "1/11 healers",
+      "healShare": 15,
+      "overheal": 41,
+      "active": 76,
+      "activeMedian": 82,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3.8,
+     "roleMedian": 2,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "elixir": [
+       "Mageblood Elixir 6/6"
+      ],
+      "food": [
+       "Well Fed 3/6"
+      ],
+      "drink": [
+       "Kreeg's Stout Beatdown 3/6"
+      ],
+      "flask": [
+       "Distilled Wisdom 5/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 4
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": []
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  },
+  "Yulepunch": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 77,
+    "ownAvgParseBefore": 60,
+    "raidMedianParse": 78,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 47,
+      "own": 49,
+      "best": 82,
+      "perSec": 535,
+      "rank": "19/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 73,
+      "own": 53,
+      "best": 77,
+      "perSec": 1442,
+      "rank": "12/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 90,
+      "own": 83,
+      "best": 94,
+      "perSec": 675,
+      "rank": "2/4 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 80,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 94,
+      "own": 80,
+      "best": 96,
+      "perSec": 1111,
+      "rank": "5/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 76,
+      "own": 68,
+      "best": 95,
+      "perSec": 788,
+      "rank": "11/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 71,
+      "own": 60,
+      "best": 87,
+      "perSec": 753,
+      "rank": "8/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 91,
+      "own": 84,
+      "best": 89,
+      "perSec": 1008,
+      "rank": "8/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 72,
+      "own": 83,
+      "best": 93,
+      "perSec": 733,
+      "rank": "15/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3.2,
+     "roleMedian": 5,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/6"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 6/6",
+       "Elixir of the Giants 6/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 2,
+     "explosive: Goblin Sapper Charge": 1,
+     "explosive: Dense Dynamite": 2,
+     "utility: Challenging Shout": 1,
+     "potion: Limited Invulnerability Potion": 1,
+     "raid debuff: Sunder Armor": 17,
+     "raid debuff: Demoralizing Shout": 31
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T19:26:51.297Z",
+    "grade": "B+",
+    "verdict": "Seventeen points over your usual, 31 Demoralizing Shouts, and no flask",
+    "summary": "A 77 average against your usual 60, with Firemaw 94, Chromaggus 91 and Broodlord 90 the high points, and no deaths. You kept Demoralizing Shout up on the bosses (31 casts) and put Sunder Armor on too. The weak spots are Nefarian (72, usually 83) and Ebonroc, where you were the second lowest warrior.",
+    "good": [
+     {
+      "title": "Well over your usual",
+      "text": "Firemaw 94 (usual 80), Chromaggus 91 (84, a personal best), Broodlord 90 while tanking, Vaelastrasz 73 (53)."
+     },
+     {
+      "title": "Demoralizing Shout",
+      "text": "31 Demoralizing Shouts and 17 Sunder Armors over the raid."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths in eight boss pulls."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "3.2 buffs a boss pull against 5 for the other tanks: Zanza, Mongoose and Giants every pull, but no flask, no food and Gordok Green Grog once."
+     },
+     {
+      "title": "Nefarian and Ebonroc",
+      "impact": "medium",
+      "text": "Nefarian 72 against your usual 83, and Ebonroc 76 with 13 seconds of nothing at the start, tenth of eleven warriors."
+     },
+     {
+      "title": "Chromaggus breath",
+      "impact": "low",
+      "boss": 50616,
+      "text": "Frost Burn hit you for 2,125, more than anyone it caught."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "94."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "91, a personal best."
+     },
+     "50617": {
+      "tone": "bad",
+      "text": "72, under your usual 83."
+     }
+    }
+   }
+  },
+  "Zuzul": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 71,
+    "ownAvgParseBefore": 42,
+    "raidMedianParse": 74,
+    "bosses": [
+     {
+      "id": 50610,
+      "name": "Razorgore the Untamed",
+      "parse": 13,
+      "own": 23,
+      "best": 23,
+      "perSec": 335,
+      "rank": "27/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "parse": 79,
+      "own": 80,
+      "best": 81,
+      "perSec": 1653,
+      "rank": "9/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50612,
+      "name": "Broodlord Lashlayer",
+      "parse": 61,
+      "own": 71,
+      "best": 89,
+      "perSec": 718,
+      "rank": "12/24 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 83,
+      "deaths": 0
+     },
+     {
+      "id": 50613,
+      "name": "Firemaw",
+      "parse": 94,
+      "own": 69,
+      "best": 69,
+      "perSec": 1100,
+      "rank": "7/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50614,
+      "name": "Ebonroc",
+      "parse": 88,
+      "own": 26,
+      "best": 54,
+      "perSec": 980,
+      "rank": "9/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 81,
+      "deaths": 0
+     },
+     {
+      "id": 50615,
+      "name": "Flamegor",
+      "parse": 70,
+      "own": 26,
+      "best": 65,
+      "perSec": 744,
+      "rank": "10/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 73,
+      "deaths": 0
+     },
+     {
+      "id": 50616,
+      "name": "Chromaggus",
+      "parse": 81,
+      "own": 75,
+      "best": 84,
+      "perSec": 752,
+      "rank": "15/26 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 70,
+      "activeMedian": 86,
+      "deaths": 0
+     },
+     {
+      "id": 50617,
+      "name": "Nefarian",
+      "parse": 80,
+      "own": 73,
+      "best": 83,
+      "perSec": 800,
+      "rank": "12/27 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 88,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 8,
+     "roleMedian": 4,
+     "pulls": 6,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 6/6"
+      ],
+      "drink": [
+       "Gordok Green Grog 6/6",
+       "Winterfall Firewater 3/6",
+       "Kreeg's Stout Beatdown 6/6"
+      ],
+      "elixir": [
+       "Elixir of Fortitude 6/6",
+       "Elixir of the Mongoose 6/6",
+       "Greater Armor 6/6"
+      ],
+      "food": [
+       "Well Fed 5/6"
+      ],
+      "juju": [
+       "Juju Power 4/6"
+      ]
+     }
+    },
+    "used": {
+     "potion: Free Action Potion": 2,
+     "explosive: Mithril Frag Bomb": 3,
+     "raid debuff: Sunder Armor": 6
+    },
+    "worldBuffs": [
+     {
+      "id": 50611,
+      "boss": "Vaelastrasz the Corrupt",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50612,
+      "boss": "Broodlord Lashlayer",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50613,
+      "boss": "Firemaw",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50614,
+      "boss": "Ebonroc",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50615,
+      "boss": "Flamegor",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     },
+     {
+      "id": 50616,
+      "boss": "Chromaggus",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade",
+       "Sayge's Dark Fortune of Damage"
+      ]
+     }
+    ]
+   }
+  }
+ }
+}
