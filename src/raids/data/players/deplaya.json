@@ -1,0 +1,1 @@
+{"name":"Deplaya","class":"Rogue","spec":null,"role":"dps","nights":[{"night":"2025-12-27-ony","zones":[2001],"role":"dps","spec":null,"deaths":2,"firstDeaths":1,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":46,"amount":261,"role":"dps"}],"mech":{"51084:fear":3,"51084:eruption":1},"casts":{"Iron Grenade":1}}]}
