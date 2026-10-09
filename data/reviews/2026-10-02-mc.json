@@ -57,7 +57,7 @@
       "id": 50663,
       "name": "Lucifron",
       "parse": 82,
-      "own": 74,
+      "own": 73,
       "best": 95,
       "perSec": 1031,
       "rank": "8/26 dps",
@@ -99,7 +99,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 87,
-      "own": 81,
+      "own": 76,
       "best": 96,
       "perSec": 1039,
       "rank": "4/25 dps",
@@ -113,7 +113,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 92,
-      "own": 82,
+      "own": 79,
       "best": 96,
       "perSec": 890,
       "rank": "3/28 dps",
@@ -127,7 +127,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 84,
-      "own": 93,
+      "own": 94,
       "best": 99,
       "perSec": 1206,
       "rank": "3/27 dps",
@@ -141,7 +141,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 74,
-      "own": 67,
+      "own": 62,
       "best": 88,
       "perSec": 772,
       "rank": "6/25 dps",
@@ -155,7 +155,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 94,
-      "own": 80,
+      "own": 78,
       "best": 96,
       "perSec": 1563,
       "rank": "4/26 dps",
@@ -183,7 +183,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 95,
-      "own": 84,
+      "own": 83,
       "best": 96,
       "perSec": 1325,
       "rank": "4/28 dps",
@@ -351,6 +351,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B+",
+    "verdict": "84 average, 95 on Ragnaros, 95 Sunders, but 14 Lava Bomb hits on Magmadar",
+    "summary": "An 84 average against your usual 62, with Ragnaros 95, Golemagg 94 and Geddon 92 the highlights, and 95 Sunder Armors over the night, the most of any DPS warrior. Magmadar is where it went wrong: Lava Bomb fire hit you 14 times, among the most in the raid, and you parsed 73.",
+    "good": [
+     {
+      "title": "Ragnaros, Golemagg, Geddon",
+      "text": "95, 94 and 92, all well over your usual."
+     },
+     {
+      "title": "Sunders",
+      "text": "95 Sunder Armors."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Zanza, food and Juju Power, 5 buffs a pull against 3.8."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava Bomb on Magmadar",
+      "impact": "medium",
+      "boss": 50664,
+      "text": "14 hits from standing in the fire, against a raid median of 10. Your parse there was 73, under your usual 82."
+     },
+     {
+      "title": "Shazzrah",
+      "impact": "low",
+      "boss": 50667,
+      "text": "84, under your usual 94 on him."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "14 Lava Bomb fire hits."
+     },
+     "50672": {
+      "tone": "good",
+      "text": "95, fourth in raid damage."
+     }
+    }
    }
   },
   "Allipalli": {
@@ -664,6 +709,42 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "B+",
+    "verdict": "Second healer on Lucifron, twelve dispels, fully buffed",
+    "summary": "Second in healing on Lucifron (16%), third on Garr and Golemagg, and 12 dispels: Impending Doom, Ignite Mana, Immolate, Panic. Six world buffs and Fortitude and Mageblood on every pull. Shazzrah (ninth) and Magmadar (seventh) were the quiet ones.",
+    "good": [
+     {
+      "title": "Lucifron",
+      "text": "Second healer, 16%, and 3 Impending Dooms dispelled.",
+      "boss": 50663
+     },
+     {
+      "title": "Dispels",
+      "text": "12 over the night."
+     },
+     {
+      "title": "Prepared",
+      "text": "3.6 consumable buffs a pull against 2.9, six world buffs."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Shazzrah",
+      "impact": "low",
+      "boss": 50667,
+      "text": "Ninth healer, 5%."
+     }
+    ],
+    "bosses": {
+     "50663": {
+      "tone": "good",
+      "text": "Second healer."
+     }
+    }
    }
   },
   "Barnstoker": {
@@ -692,7 +773,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 9,
-      "own": 38,
+      "own": 40,
       "best": 59,
       "perSec": 179,
       "rank": "27/27 dps",
@@ -707,7 +788,7 @@
       "name": "Gehennas",
       "parse": 41,
       "own": 34,
-      "best": 82,
+      "best": 42,
       "perSec": 267,
       "rank": "24/26 dps",
       "healShare": null,
@@ -734,7 +815,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 19,
-      "own": 67,
+      "own": 79,
       "best": 85,
       "perSec": 221,
       "rank": "26/28 dps",
@@ -748,7 +829,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 79,
-      "own": 68,
+      "own": 70,
       "best": 73,
       "perSec": 331,
       "rank": "23/27 dps",
@@ -776,7 +857,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 56,
-      "own": 58,
+      "own": 65,
       "best": 84,
       "perSec": 423,
       "rank": "24/26 dps",
@@ -791,7 +872,7 @@
       "name": "Majordomo Executus",
       "parse": 83,
       "own": 9,
-      "best": 66,
+      "best": 62,
       "perSec": 446,
       "rank": "21/24 dps",
       "healShare": null,
@@ -804,7 +885,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 63,
-      "own": 49,
+      "own": 74,
       "best": 95,
       "perSec": 401,
       "rank": "25/28 dps",
@@ -914,6 +995,62 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.887Z",
+    "grade": "D+",
+    "verdict": "Curse of Recklessness up all night, killed by someone else's Living Bomb, 9 on Magmadar",
+    "summary": "A 54 average against your usual 48, with personal bests on Lucifron (71), Majordomo (83) and Shazzrah (79), and Curse of Recklessness kept on the bosses (101 applications). But Magmadar was 9, the lowest damage in the raid, and on Geddon at 0:21 Gertggs' Living Bomb went off next to you and killed you (4,260). After that: Majordomo at 41% active, Ragnaros 63.",
+    "good": [
+     {
+      "title": "Curse of Recklessness",
+      "text": "101 applications over the night."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Majordomo 83 (before: 62), Lucifron 71 (52), Shazzrah 79 (73)."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Living Bomb",
+      "impact": "high",
+      "boss": 50668,
+      "text": "Gertggs was the bomb and you were the only other person in range when it exploded at 0:21. When someone runs out with it, move away from where they're running."
+     },
+     {
+      "title": "Magmadar",
+      "impact": "medium",
+      "boss": 50664,
+      "text": "9, last of 27 in damage."
+     },
+     {
+      "title": "Majordomo",
+      "impact": "medium",
+      "boss": 50671,
+      "text": "41% active with 10 seconds of nothing from 0:32."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Gordok on four pulls and food on three: 0.7 buffs a pull against 3.8."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "9, lowest in the raid."
+     },
+     "50668": {
+      "tone": "bad",
+      "text": "Killed by Gertggs' Living Bomb at 0:21."
+     },
+     "50671": {
+      "tone": "good",
+      "text": "83, personal best."
+     }
+    }
    }
   },
   "Birkler": {
@@ -921,7 +1058,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 52,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": 84,
     "bosses": [
      {
@@ -942,8 +1079,8 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 33,
-      "own": 71,
-      "best": 91,
+      "own": 68,
+      "best": 92,
       "perSec": 502,
       "rank": "19/27 dps",
       "healShare": null,
@@ -956,7 +1093,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 58,
-      "own": 81,
+      "own": 80,
       "best": 96,
       "perSec": 410,
       "rank": "2/3 tanks",
@@ -970,7 +1107,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 54,
-      "own": 76,
+      "own": 73,
       "best": 99,
       "perSec": 290,
       "rank": "3/4 tanks",
@@ -984,7 +1121,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 46,
-      "own": 81,
+      "own": 75,
       "best": 90,
       "perSec": 395,
       "rank": "22/28 dps",
@@ -998,7 +1135,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 24,
-      "own": 71,
+      "own": 70,
       "best": 93,
       "perSec": 369,
       "rank": "22/27 dps",
@@ -1040,8 +1177,8 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 54,
-      "own": 78,
-      "best": 96,
+      "own": 76,
+      "best": 98,
       "perSec": 277,
       "rank": "4/5 tanks",
       "healShare": null,
@@ -1163,6 +1300,50 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.888Z",
+    "grade": "C-",
+    "verdict": "Tanked six bosses' adds, but bottom of the warriors when you didn't, with no world buffs",
+    "summary": "You tanked adds on Lucifron, Gehennas, Garr, Sulfuron, Golemagg and Majordomo, with 3 Challenging Shouts, 85 Sunders and 12 Demoralizing Shouts. When you were DPS the numbers were low: Shazzrah 24 and Magmadar 33 (last warrior on both), Geddon 46, Ragnaros 60. A 52 average against your usual 69, no world buffs, and 2.4 consumable buffs a pull against 6.8 for the other tanks.",
+    "good": [
+     {
+      "title": "Add tanking",
+      "text": "Six bosses, 3 Challenging Shouts."
+     },
+     {
+      "title": "Debuffs",
+      "text": "85 Sunder Armors and 12 Demoralizing Shouts."
+     }
+    ],
+    "fix": [
+     {
+      "title": "DPS bosses",
+      "impact": "medium",
+      "text": "Shazzrah 24 and Magmadar 33, 13th of 13 warriors on both. Geddon 46 with 9 seconds idle from 0:16."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Giants and Mongoose on nine pulls, Gordok on three: 2.4 a pull. The other tanks averaged 6.8."
+     },
+     {
+      "title": "Tank parses",
+      "impact": "low",
+      "text": "Garr 54 and Majordomo 54 against your usual 73 and 76."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "33, last warrior."
+     },
+     "50667": {
+      "tone": "bad",
+      "text": "24, last warrior."
+     }
+    }
    }
   },
   "Cladá": {
@@ -1459,6 +1640,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.888Z",
+    "grade": "C+",
+    "verdict": "Seven of the raid's Gehennas' Curses were yours, and it cost you a 6 parse",
+    "summary": "On Gehennas seven of your eight casts were Remove Curse, the most curses removed in the raid, and on Lucifron five of ten. That's the job and it explains the 6 and 43. Elsewhere you beat both of your earlier MCs by a lot: Sulfuron 78 (before: 33), Majordomo 78 (38), Ragnaros 75 (40), Geddon 70 (37). Garr (9, 40% active) is the one that isn't explained by decursing.",
+    "good": [
+     {
+      "title": "Decursing",
+      "text": "7 Gehennas' Curses (the most in the raid), 5 Lucifron's Curses, 2 Shazzrah's Curses."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Sulfuron 78, Majordomo 78, Ragnaros 75, Geddon 70, Golemagg 65, Shazzrah 65."
+     },
+     {
+      "title": "Consumables",
+      "text": "Mageblood, Greater Armor and Frost Power on every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Garr",
+      "impact": "medium",
+      "boss": 50666,
+      "text": "9, last in damage, 40% active with 8 seconds idle from 0:09 while Magma Shackles was on you."
+     },
+     {
+      "title": "Magmadar",
+      "impact": "low",
+      "boss": 50664,
+      "text": "13, last mage."
+     }
+    ],
+    "bosses": {
+     "50665": {
+      "tone": "info",
+      "text": "7 curses removed, the most in the raid."
+     },
+     "50666": {
+      "tone": "bad",
+      "text": "9, 40% active."
+     },
+     "50669": {
+      "tone": "good",
+      "text": "78, personal best."
+     }
+    }
    }
   },
   "Darkestnight": {
@@ -1690,6 +1920,52 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.888Z",
+    "grade": "D",
+    "verdict": "Last hunter on nine bosses, no consumables, no world buffs",
+    "summary": "A 35 average against 63 in your earlier MC, and the lowest damage in the raid on Majordomo and Ragnaros. You had nothing on: no elixir, no food, no world buff on any pull. Most of your damage was Auto Shot, with one or two Aimed Shots per fight. Garr (66) was the best of the night.",
+    "good": [
+     {
+      "title": "Garr",
+      "text": "66, your best of the night.",
+      "boss": 50666
+     },
+     {
+      "title": "Clean",
+      "text": "No deaths, one Lava Burst hit."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Rotation",
+      "impact": "high",
+      "text": "Ragnaros: 16 Auto Shots, 3 Multi-Shots, no Aimed Shot. Sulfuron: 16 Auto Shots and 1 Multi-Shot. Keep Aimed Shot and Multi-Shot on cooldown."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "None at all. Mongoose and food are the minimum."
+     },
+     {
+      "title": "Majordomo",
+      "impact": "medium",
+      "boss": 50671,
+      "text": "Last of 24, with 11 seconds of nothing from 0:40."
+     }
+    ],
+    "bosses": {
+     "50671": {
+      "tone": "bad",
+      "text": "21, last in the raid."
+     },
+     "50672": {
+      "tone": "bad",
+      "text": "21, last in the raid."
+     }
+    }
    }
   },
   "Deeno": {
@@ -1697,14 +1973,14 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 78,
-    "ownAvgParseBefore": 67,
+    "ownAvgParseBefore": 66,
     "raidMedianParse": 80,
     "bosses": [
      {
       "id": 50663,
       "name": "Lucifron",
       "parse": 65,
-      "own": 62,
+      "own": 57,
       "best": 79,
       "perSec": 597,
       "rank": "15/26 dps",
@@ -1718,7 +1994,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 96,
-      "own": 80,
+      "own": 77,
       "best": 95,
       "perSec": 1189,
       "rank": "5/27 dps",
@@ -1732,7 +2008,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 81,
-      "own": 71,
+      "own": 61,
       "best": 85,
       "perSec": 810,
       "rank": "13/26 dps",
@@ -1746,7 +2022,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 91,
-      "own": 86,
+      "own": 84,
       "best": 92,
       "perSec": 888,
       "rank": "8/25 dps",
@@ -1760,7 +2036,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 83,
-      "own": 75,
+      "own": 70,
       "best": 92,
       "perSec": 596,
       "rank": "15/28 dps",
@@ -1774,8 +2050,8 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 74,
-      "own": 70,
-      "best": 75,
+      "own": 64,
+      "best": 74,
       "perSec": 708,
       "rank": "14/27 dps",
       "healShare": null,
@@ -1788,7 +2064,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 31,
-      "own": 67,
+      "own": 56,
       "best": 90,
       "perSec": 405,
       "rank": "21/25 dps",
@@ -1802,7 +2078,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 92,
-      "own": 90,
+      "own": 84,
       "best": 96,
       "perSec": 1036,
       "rank": "16/26 dps",
@@ -1816,8 +2092,8 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 76,
-      "own": 70,
-      "best": 86,
+      "own": 61,
+      "best": 85,
       "perSec": 606,
       "rank": "16/24 dps",
       "healShare": null,
@@ -1830,7 +2106,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 93,
-      "own": 90,
+      "own": 87,
       "best": 93,
       "perSec": 903,
       "rank": "12/28 dps",
@@ -2002,6 +2278,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B-",
+    "verdict": "96 on Magmadar for a personal best, 31 on Sulfuron",
+    "summary": "A 78 average against your usual 66. Magmadar 96 is a personal best and Ragnaros 93 equals one, and you kicked a Dark Mending on Sulfuron. Sulfuron itself went badly (31, 65% active), and Rain of Fire hit you 4 times on Gehennas, the most in the raid.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Magmadar 96 (before: 95); Ragnaros 93 equals your best."
+     },
+     {
+      "title": "Dark Mending kicked",
+      "text": "One of three interrupts.",
+      "boss": 50669
+     },
+     {
+      "title": "Prepared",
+      "text": "Fortitude, Giants, Mongoose and Greater Armor on nine pulls, 3 Sappers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sulfuron",
+      "impact": "medium",
+      "boss": 50669,
+      "text": "31, 65% active, 21st of 25 in damage."
+     },
+     {
+      "title": "Rain of Fire",
+      "impact": "low",
+      "boss": 50665,
+      "text": "4 hits on Gehennas, the most in the raid. Lava Bomb fire 12 times on Magmadar too."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "good",
+      "text": "96, personal best."
+     },
+     "50665": {
+      "tone": "bad",
+      "text": "Rain of Fire 4 times."
+     },
+     "50669": {
+      "tone": "bad",
+      "text": "31."
+     }
+    }
    }
   },
   "Drikkle": {
@@ -2608,6 +2934,51 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "C",
+    "verdict": "Fourteen curses removed and five Innervates, but last healer on four bosses",
+    "summary": "You were the raid's curse remover: 6 Lucifron's Curses (tied for the most), 6 Gehennas' Curses and 2 on Shazzrah, plus 5 Innervates. The healing was the lowest of the healers on Lucifron, Gehennas, Shazzrah and Majordomo, and on Golemagg you cast one Healing Touch.",
+    "good": [
+     {
+      "title": "Decursing",
+      "text": "14 curses removed over three bosses."
+     },
+     {
+      "title": "Innervate",
+      "text": "5 out, the most in the raid."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Golemagg",
+      "impact": "high",
+      "boss": 50670,
+      "text": "One Healing Touch and three Faerie Fires, 25 seconds of nothing from 0:10."
+     },
+     {
+      "title": "Garr and Geddon",
+      "impact": "medium",
+      "text": "44% and 41% active."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood on eight pulls, nothing else."
+     }
+    ],
+    "bosses": {
+     "50665": {
+      "tone": "good",
+      "text": "6 curses removed."
+     },
+     "50670": {
+      "tone": "bad",
+      "text": "One Healing Touch all fight."
+     }
+    }
    }
   },
   "Etowa": {
@@ -2615,7 +2986,7 @@
     "class": "Druid",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 62,
+    "ownAvgParseBefore": 64,
     "raidMedianParse": null,
     "bosses": [
      {
@@ -2678,7 +3049,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": null,
-      "own": 95,
+      "own": 80,
       "best": 95,
       "perSec": 184,
       "rank": "6/11 healers",
@@ -2707,7 +3078,7 @@
       "name": "Sulfuron Harbinger",
       "parse": null,
       "own": 60,
-      "best": 60,
+      "best": 95,
       "perSec": 159,
       "rank": "5/11 healers",
       "healShare": 8,
@@ -2850,6 +3221,46 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "C+",
+    "verdict": "Nine curses removed and three Innervates, middling healing",
+    "summary": "You removed 9 curses (6 on Lucifron, tied for the most there) and handed out 3 Innervates. The healing was mid to low, sixth to tenth on most bosses, and on Garr and Golemagg you were barely casting: 53% and 58% active against a median of 89.",
+    "good": [
+     {
+      "title": "Decursing",
+      "text": "6 Lucifron's Curses (tied most), 2 Shazzrah's, 1 Gehennas'."
+     },
+     {
+      "title": "Innervate",
+      "text": "3 out."
+     },
+     {
+      "title": "Majordomo",
+      "text": "Fifth healer, 100% active.",
+      "boss": 50671
+     }
+    ],
+    "fix": [
+     {
+      "title": "Garr and Golemagg",
+      "impact": "medium",
+      "text": "53% and 58% active with 13 and 15 seconds of nothing."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood on seven pulls, food on four: 1.1 against 2.9."
+     }
+    ],
+    "bosses": {
+     "50666": {
+      "tone": "bad",
+      "text": "53% active."
+     }
+    }
    }
   },
   "Farlomaker": {
@@ -2857,14 +3268,14 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 90,
-    "ownAvgParseBefore": 76,
+    "ownAvgParseBefore": 70,
     "raidMedianParse": 80,
     "bosses": [
      {
       "id": 50663,
       "name": "Lucifron",
       "parse": 92,
-      "own": 77,
+      "own": 69,
       "best": 82,
       "perSec": 1374,
       "rank": "2/26 dps",
@@ -2878,7 +3289,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 91,
-      "own": 92,
+      "own": 82,
       "best": 96,
       "perSec": 1263,
       "rank": "4/27 dps",
@@ -2892,7 +3303,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 91,
-      "own": 82,
+      "own": 71,
       "best": 94,
       "perSec": 1446,
       "rank": "4/26 dps",
@@ -2906,7 +3317,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 95,
-      "own": 93,
+      "own": 92,
       "best": 95,
       "perSec": 1344,
       "rank": "1/25 dps",
@@ -2920,7 +3331,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 95,
-      "own": 84,
+      "own": 80,
       "best": 92,
       "perSec": 1128,
       "rank": "1/28 dps",
@@ -2934,7 +3345,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 79,
-      "own": 84,
+      "own": 83,
       "best": 95,
       "perSec": 1063,
       "rank": "6/27 dps",
@@ -2948,7 +3359,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 87,
-      "own": 85,
+      "own": 79,
       "best": 97,
       "perSec": 987,
       "rank": "4/25 dps",
@@ -2962,7 +3373,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 90,
-      "own": 80,
+      "own": 76,
       "best": 92,
       "perSec": 1387,
       "rank": "8/26 dps",
@@ -2976,7 +3387,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 81,
-      "own": 84,
+      "own": 83,
       "best": 93,
       "perSec": 896,
       "rank": "6/24 dps",
@@ -2990,7 +3401,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 96,
-      "own": 89,
+      "own": 78,
       "best": 95,
       "perSec": 1419,
       "rank": "1/28 dps",
@@ -3164,6 +3575,48 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "A",
+    "verdict": "Most damage in the raid on Garr, Geddon and Ragnaros, three personal bests",
+    "summary": "A 90 average against your usual 70. You did the most damage in the raid on Garr, Baron Geddon and Ragnaros, and set personal bests on Ragnaros (96), Geddon (95) and Lucifron (92). No deaths and 57 Sunders. Shazzrah (79) and Majordomo (81) were the soft spots.",
+    "good": [
+     {
+      "title": "Most damage in the raid",
+      "text": "Garr 95, Baron Geddon 95 and Ragnaros 96."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Ragnaros 96 (before: 95), Geddon 95 (92), Lucifron 92 (82). Garr 95 equals your best."
+     },
+     {
+      "title": "Rain of Fire",
+      "text": "Hit once on Gehennas, half the raid's median."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Shazzrah and Majordomo",
+      "impact": "low",
+      "text": "79 and 81, both under your usual 83, and sixth warrior on each."
+     }
+    ],
+    "bosses": {
+     "50666": {
+      "tone": "good",
+      "text": "95, most damage in the raid."
+     },
+     "50668": {
+      "tone": "good",
+      "text": "95, most damage in the raid, personal best."
+     },
+     "50672": {
+      "tone": "good",
+      "text": "96, most damage in the raid, personal best."
+     }
+    }
    }
   },
   "Fatwhaleirl": {
@@ -3449,6 +3902,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B+",
+    "verdict": "Personal bests on eight of ten bosses",
+    "summary": "An 81 average where your usual is 61, and personal bests on Lucifron (91), Magmadar, Gehennas (95, second in raid damage), Garr, Geddon, Golemagg, Majordomo (82, third in raid damage) and Ragnaros (90). You also interrupted a Dark Mending on Sulfuron, one of only three kicks in the raid. Shazzrah (54) and the Magmadar fire are the things to work on.",
+    "good": [
+     {
+      "title": "Eight personal bests",
+      "text": "Lucifron 91 (before: 71), Gehennas 95 (81), Ragnaros 90 (82), Magmadar 84 (82), Majordomo 82 (67), Geddon 82 (78), Golemagg 80 (66), Garr 75 (68)."
+     },
+     {
+      "title": "Dark Mending kicked",
+      "text": "One of three interrupts on the Flamewaker Priests' heal.",
+      "boss": 50669
+     },
+     {
+      "title": "Sappers",
+      "text": "4 Goblin Sapper Charges."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava Bomb",
+      "impact": "medium",
+      "boss": 50664,
+      "text": "15 fire hits on Magmadar, the most in the raid."
+     },
+     {
+      "title": "Shazzrah",
+      "impact": "low",
+      "boss": 50667,
+      "text": "54, tenth of thirteen warriors."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "15 Lava Bomb hits, the most in the raid."
+     },
+     "50665": {
+      "tone": "good",
+      "text": "95, personal best, second in raid damage."
+     }
+    }
    }
   },
   "Fluffycatto": {
@@ -3456,7 +3955,7 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 89,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -3533,7 +4032,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 89,
-      "own": 86,
+      "own": 84,
       "best": 99,
       "perSec": 968,
       "rank": "7/27 dps",
@@ -3561,7 +4060,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 95,
-      "own": 90,
+      "own": 89,
       "best": 96,
       "perSec": 1255,
       "rank": "9/26 dps",
@@ -3771,6 +4270,45 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "A-",
+    "verdict": "Top rogue on eight bosses, but Sulfuron got away from you",
+    "summary": "An 89 average against your usual 69, and the top rogue on eight of the ten bosses: Magmadar 98, Ragnaros 96 (equal to your best), Gehennas 95 (also equal). You had world buffs on every boss up to Majordomo and 6.2 consumable buffs a pull. Sulfuron at 59 is the one to look at.",
+    "good": [
+     {
+      "title": "Top rogue on eight bosses",
+      "text": "Magmadar 98, Ragnaros 96, Gehennas 95, Golemagg 95, Garr 94, Geddon 94, Majordomo 93, Lucifron 80."
+     },
+     {
+      "title": "Equal to your best",
+      "text": "Ragnaros 96 and Gehennas 95."
+     },
+     {
+      "title": "Consumables",
+      "text": "Giants, Mongoose and Troll's Blood on every pull, 5 Thistle Teas and 2 Fire Protection Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sulfuron",
+      "impact": "medium",
+      "boss": 50669,
+      "text": "59 against your usual 84, 15th in damage, 68% active with 6 seconds idle from 0:24."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "good",
+      "text": "98, top rogue."
+     },
+     "50669": {
+      "tone": "bad",
+      "text": "59, well under your usual 84."
+     }
+    }
    }
   },
   "Foggiie": {
@@ -4071,6 +4609,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "B",
+    "verdict": "Six Power Infusions and second healer on Shazzrah",
+    "summary": "You handed out 6 Power Infusions, dispelled 6 Ignite Manas and 3 Impending Dooms, and were second in healing on Shazzrah. 4.4 consumable buffs a pull against 2.9. Sulfuron was the weak one: tenth in healing, 48% active.",
+    "good": [
+     {
+      "title": "Power Infusion",
+      "text": "6 over the night."
+     },
+     {
+      "title": "Dispels",
+      "text": "6 Ignite Manas, 3 Impending Dooms, a Panic, an Incite Flames."
+     },
+     {
+      "title": "Consumables",
+      "text": "Fortitude, Mageblood and Gordok on most pulls."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sulfuron",
+      "impact": "low",
+      "boss": 50669,
+      "text": "Tenth healer, 48% active against a median of 68."
+     }
+    ],
+    "bosses": {
+     "50667": {
+      "tone": "good",
+      "text": "Second healer."
+     }
+    }
    }
   },
   "Gallahan": {
@@ -4339,6 +4912,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "B",
+    "verdict": "10 Ignite Manas dispelled, the most in the raid",
+    "summary": "On Geddon you spent the fight dispelling instead of healing: 10 Ignite Manas (the most in the raid) and 7 Incite Flames. 29 dispels over the night in all. Third healer on Shazzrah and Ragnaros. Only Mageblood and food on some pulls.",
+    "good": [
+     {
+      "title": "Geddon dispels",
+      "text": "10 Ignite Manas and 7 Incite Flames.",
+      "boss": 50668
+     },
+     {
+      "title": "29 dispels",
+      "text": "Impending Doom 5, Immolate 4, Shadow Word: Pain 3 on top of Geddon."
+     },
+     {
+      "title": "Shazzrah and Ragnaros",
+      "text": "Third healer on both."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood every pull, food on four: 1.4 against 2.9."
+     }
+    ],
+    "bosses": {
+     "50668": {
+      "tone": "good",
+      "text": "10 Ignite Manas dispelled, most in the raid."
+     }
+    }
    }
   },
   "Gertggs": {
@@ -4346,7 +4954,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 93,
-    "ownAvgParseBefore": 73,
+    "ownAvgParseBefore": 72,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -4367,7 +4975,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 92,
-      "own": 93,
+      "own": 92,
       "best": 98,
       "perSec": 1320,
       "rank": "2/27 dps",
@@ -4437,7 +5045,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 96,
-      "own": 93,
+      "own": 92,
       "best": 98,
       "perSec": 1476,
       "rank": "1/25 dps",
@@ -4451,7 +5059,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 97,
-      "own": 89,
+      "own": 88,
       "best": 97,
       "perSec": 1938,
       "rank": "1/26 dps",
@@ -4479,7 +5087,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 95,
-      "own": 93,
+      "own": 92,
       "best": 96,
       "perSec": 1312,
       "rank": "5/28 dps",
@@ -4657,6 +5265,61 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.842Z",
+    "grade": "A",
+    "verdict": "Most damage in the raid on five bosses, no deaths, and a Living Bomb that killed Barnstoker",
+    "summary": "A 93 average against your usual 72, never below 87. You did the most damage in the raid on Lucifron, Gehennas, Sulfuron, Golemagg and Majordomo. Golemagg 97 equals your best. 6.3 consumable buffs a pull against 3.8 for the other DPS. The one mark against the night is Geddon's Living Bomb: you were the bomb, and Barnstoker died in the explosion.",
+    "good": [
+     {
+      "title": "Most damage in the raid",
+      "text": "Lucifron (95), Gehennas (95), Sulfuron (96), Golemagg (97, equal to your best) and Majordomo (90)."
+     },
+     {
+      "title": "Consumables",
+      "text": "Mongoose and Winterfall Firewater on every pull, 5 Mighty Rage Potions, 3 Goblin Sapper Charges and a Dense Dynamite. 6.3 buffs a pull against 3.8."
+     },
+     {
+      "title": "Sunders",
+      "text": "67 Sunder Armors over the night."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Living Bomb",
+      "impact": "medium",
+      "boss": 50668,
+      "text": "You got the Living Bomb at about 0:15 and stopped attacking for 6 seconds, but the explosion still hit Barnstoker for 4,260 and killed him at 0:21. Run further, or toward the side nobody stands on."
+     }
+    ],
+    "bosses": {
+     "50663": {
+      "tone": "good",
+      "text": "95, most damage in the raid."
+     },
+     "50665": {
+      "tone": "good",
+      "text": "95, most damage in the raid."
+     },
+     "50668": {
+      "tone": "bad",
+      "text": "Your Living Bomb killed Barnstoker."
+     },
+     "50669": {
+      "tone": "good",
+      "text": "96, most damage in the raid."
+     },
+     "50670": {
+      "tone": "good",
+      "text": "97, most damage in the raid, equal to your best."
+     },
+     "50671": {
+      "tone": "good",
+      "text": "90, most damage in the raid."
+     }
+    }
    }
   },
   "Grilled": {
@@ -4672,7 +5335,7 @@
       "name": "Lucifron",
       "parse": 63,
       "own": 30,
-      "best": 78,
+      "best": 76,
       "perSec": 273,
       "rank": "22/26 dps",
       "healShare": null,
@@ -4784,7 +5447,7 @@
       "name": "Majordomo Executus",
       "parse": 97,
       "own": 73,
-      "best": 89,
+      "best": 82,
       "perSec": 819,
       "rank": "10/24 dps",
       "healShare": null,
@@ -4797,7 +5460,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 92,
-      "own": 81,
+      "own": 85,
       "best": 96,
       "perSec": 658,
       "rank": "17/28 dps",
@@ -4965,6 +5628,44 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B+",
+    "verdict": "Four personal bests, Curse of the Elements up all night, a soulstone out",
+    "summary": "An 84 average against your usual 64, the top warlock on nine bosses, and personal bests on Majordomo (97), Geddon (94), Shazzrah (91) and Sulfuron (83). You kept Curse of the Elements up (95 applications), handed out a soulstone, and had Mageblood, Greater Arcane and Shadow Power on every pull. Lucifron and Gehennas at 63 were the weak start.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Majordomo 97 (before: 82), Geddon 94 (91), Shazzrah 91 (87), Sulfuron 83 (75)."
+     },
+     {
+      "title": "Curse of the Elements",
+      "text": "95 applications over the night."
+     },
+     {
+      "title": "Consumables",
+      "text": "Mageblood, Greater Arcane and Shadow Power on all ten pulls, food on nine."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lucifron and Gehennas",
+      "impact": "low",
+      "text": "63 on both, 22nd in damage. Short fights where a slow start costs a lot."
+     }
+    ],
+    "bosses": {
+     "50668": {
+      "tone": "good",
+      "text": "94, personal best."
+     },
+     "50671": {
+      "tone": "good",
+      "text": "97, personal best."
+     }
+    }
    }
   },
   "Hjärterkung": {
@@ -5092,7 +5793,7 @@
       "name": "Majordomo Executus",
       "parse": 97,
       "own": 54,
-      "best": 93,
+      "best": 87,
       "perSec": 393,
       "rank": "3/5 tanks",
       "healShare": null,
@@ -5280,6 +5981,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B+",
+    "verdict": "Bear when needed, cat when not, and four personal bests",
+    "summary": "You tanked Magmadar, Garr, Shazzrah, Sulfuron and Majordomo and played cat on the rest, and still averaged 84. Personal bests on Shazzrah (98), Majordomo (97), Golemagg (90) and Ragnaros (93). The cat pulls at Lucifron (50) and Gehennas (75) started slowly, with 8 and 5 seconds of nothing near the pull.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Shazzrah 98 (before: 95), Majordomo 97 (87), Ragnaros 93 (86), Golemagg 90 (83)."
+     },
+     {
+      "title": "Two roles in one night",
+      "text": "Bear on five bosses, cat on five, Faerie Fire (Feral) up throughout, an Innervate out."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Slow cat starts",
+      "impact": "medium",
+      "text": "Lucifron 50 with 8 seconds idle from 0:01, Gehennas 75 with 5 from 0:08, Geddon 85 with 8 from 0:17. On fights this short the first ten seconds are a big share."
+     },
+     {
+      "title": "Lava Bomb",
+      "impact": "low",
+      "boss": 50664,
+      "text": "14 fire hits on Magmadar while tanking, against a raid median of 10."
+     }
+    ],
+    "bosses": {
+     "50663": {
+      "tone": "bad",
+      "text": "50, 8 seconds idle at the start."
+     },
+     "50667": {
+      "tone": "good",
+      "text": "98 tanking, personal best."
+     },
+     "50671": {
+      "tone": "good",
+      "text": "97 tanking, personal best."
+     }
+    }
    }
   },
   "Icyvains": {
@@ -5294,7 +6039,7 @@
       "id": 50663,
       "name": "Lucifron",
       "parse": 26,
-      "own": 24,
+      "own": 29,
       "best": 51,
       "perSec": 120,
       "rank": "25/26 dps",
@@ -5364,7 +6109,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 86,
-      "own": 41,
+      "own": 58,
       "best": 69,
       "perSec": 290,
       "rank": "25/27 dps",
@@ -5392,7 +6137,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 27,
-      "own": 13,
+      "own": 14,
       "best": 29,
       "perSec": 316,
       "rank": "26/26 dps",
@@ -5406,7 +6151,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 81,
-      "own": 20,
+      "own": 34,
       "best": 43,
       "perSec": 484,
       "rank": "19/24 dps",
@@ -5420,7 +6165,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 47,
-      "own": 17,
+      "own": 26,
       "best": 41,
       "perSec": 376,
       "rank": "26/28 dps",
@@ -5545,6 +6290,46 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.888Z",
+    "grade": "D+",
+    "verdict": "Better than your past MCs, still last mage on five bosses",
+    "summary": "A 34 average against 19 before, with Shazzrah (86), Majordomo (81), Ragnaros (47) and Magmadar (21) your best yet. Some of it is decursing (four Gehennas' Curses, two each on Lucifron and Shazzrah). But you were the last mage on Lucifron, Geddon, Sulfuron, Golemagg and Ragnaros, Gehennas was 41% active, and you had two world buffs and two elixirs.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Shazzrah 86 (before: 69), Majordomo 81 (43), Ragnaros 47 (41), Magmadar 21 (14)."
+     },
+     {
+      "title": "Decursing",
+      "text": "8 curses removed over three bosses."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Last mage on five bosses",
+      "impact": "high",
+      "text": "Lucifron, Geddon, Sulfuron, Golemagg and Ragnaros. On Golemagg, 26th of 26 with 13 Frostbolts and 100% active."
+     },
+     {
+      "title": "Gehennas",
+      "impact": "medium",
+      "boss": 50665,
+      "text": "9, 41% active, 5 seconds idle from 0:17 with Rain of Fire on you."
+     }
+    ],
+    "bosses": {
+     "50667": {
+      "tone": "good",
+      "text": "86, personal best."
+     },
+     "50670": {
+      "tone": "bad",
+      "text": "27, last in the raid."
+     }
+    }
    }
   },
   "Ishilly": {
@@ -5779,6 +6564,50 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "B-",
+    "verdict": "36 dispels, the most of any healer, and almost no healing",
+    "summary": "The raid's dispeller: 36 dispels, including 9 Immolates on Garr, 7 Ignite Manas and 6 Incite Flames on Geddon, 6 Impending Dooms (tied most) and a Dominate Mind on Lucifron. 5 Fear Wards too. The healing was low, ninth or lower on six bosses, and you came with no consumables and no world buffs.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "36 over the night, the most of any healer."
+     },
+     {
+      "title": "Fear Ward",
+      "text": "5 out."
+     },
+     {
+      "title": "Dominate Mind",
+      "text": "Dispelled on Lucifron.",
+      "boss": 50663
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "None at all, not even Mageblood."
+     },
+     {
+      "title": "Sulfuron and Ragnaros",
+      "impact": "low",
+      "text": "42% and 53% active with 15 and 12 seconds of nothing."
+     }
+    ],
+    "bosses": {
+     "50666": {
+      "tone": "good",
+      "text": "9 Immolates dispelled."
+     },
+     "50668": {
+      "tone": "good",
+      "text": "13 dispels."
+     }
+    }
    }
   },
   "Künigünde": {
@@ -5786,7 +6615,7 @@
     "class": "Priest",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 68,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": null,
     "bosses": [
      {
@@ -6073,6 +6902,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "B-",
+    "verdict": "Top healer on Majordomo, five Power Infusions, but last on Garr and Ragnaros",
+    "summary": "The most healing in the raid on Majordomo (912 per second, 15%), with 5 Power Infusions and 5 Fear Wards over the night. But you were last healer on Garr and Ragnaros, and 40% active or less on Gehennas, Sulfuron and Ragnaros.",
+    "good": [
+     {
+      "title": "Majordomo",
+      "text": "Top healer, 912 per second.",
+      "boss": 50671
+     },
+     {
+      "title": "Power Infusion and Fear Ward",
+      "text": "5 of each."
+     },
+     {
+      "title": "Geddon",
+      "text": "Third healer, 13%.",
+      "boss": 50668
+     }
+    ],
+    "fix": [
+     {
+      "title": "Activity",
+      "impact": "medium",
+      "text": "Gehennas 33%, Sulfuron 37% (18 seconds idle from the pull), Ragnaros 40%. The healers' median was 68 to 79%."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Food on seven pulls, nothing else."
+     }
+    ],
+    "bosses": {
+     "50671": {
+      "tone": "good",
+      "text": "Top healer."
+     },
+     "50672": {
+      "tone": "bad",
+      "text": "Last healer, 40% active."
+     }
+    }
    }
   },
   "Macharius": {
@@ -6080,7 +6954,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 91,
-    "ownAvgParseBefore": 65,
+    "ownAvgParseBefore": 64,
     "raidMedianParse": 84,
     "bosses": [
      {
@@ -6115,7 +6989,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 81,
-      "own": 80,
+      "own": 78,
       "best": 97,
       "perSec": 689,
       "rank": "1/3 tanks",
@@ -6129,7 +7003,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 91,
-      "own": 82,
+      "own": 79,
       "best": 94,
       "perSec": 675,
       "rank": "1/4 tanks",
@@ -6171,7 +7045,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 94,
-      "own": 75,
+      "own": 74,
       "best": 96,
       "perSec": 756,
       "rank": "1/4 tanks",
@@ -6185,7 +7059,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 98,
-      "own": 75,
+      "own": 71,
       "best": 93,
       "perSec": 1167,
       "rank": "1/3 tanks",
@@ -6380,6 +7254,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "A",
+    "verdict": "Top tank on every boss, with personal bests on Golemagg and Shazzrah",
+    "summary": "A 91 average against your usual 64, and the highest tank parse on all ten bosses. Golemagg 98 (best before: 93) and Shazzrah 82 (77) are personal bests, Geddon 97 and Majordomo 94 equal them. No deaths, every elixir on every pull.",
+    "good": [
+     {
+      "title": "Top tank all night",
+      "text": "The highest tank parse on every one of the ten bosses."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Golemagg 98 (before: 93), Shazzrah 82 (77); Geddon 97 and Majordomo 94 equal your best."
+     },
+     {
+      "title": "Prepared",
+      "text": "Fortitude, Giants, Mongoose and Greater Armor on all ten pulls, a Limited Invulnerability Potion on Majordomo."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Inferno",
+      "impact": "low",
+      "boss": 50668,
+      "text": "Hit by Inferno 4 times, the most in the raid. As the tank you may not have been able to move him far, but it's the one thing on the list."
+     }
+    ],
+    "bosses": {
+     "50667": {
+      "tone": "good",
+      "text": "82, personal best."
+     },
+     "50668": {
+      "tone": "good",
+      "text": "97, equal to your best."
+     },
+     "50670": {
+      "tone": "good",
+      "text": "98, personal best."
+     }
+    }
    }
   },
   "Marellina": {
@@ -6387,7 +7304,7 @@
     "class": "Mage",
     "role": "dps",
     "avgParse": 75,
-    "ownAvgParseBefore": 51,
+    "ownAvgParseBefore": 55,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -6618,6 +7535,51 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B-",
+    "verdict": "Top mage on Majordomo, four curses removed, but Magmadar at 27",
+    "summary": "Your third Molten Core in the logs and better than both before on Lucifron (86), Gehennas, Shazzrah (93), Majordomo (93, top mage) and Ragnaros (90). You removed 4 Lucifron's Curses and a Gehennas' Curse. Magmadar (27), Golemagg (66) and Garr (58) were well short, and you played without world buffs or much else: Mageblood on seven pulls, food on two.",
+    "good": [
+     {
+      "title": "Majordomo",
+      "text": "93, top mage, seventh in raid damage.",
+      "boss": 50671
+     },
+     {
+      "title": "Decursing",
+      "text": "4 Lucifron's Curses and 1 Gehennas' Curse removed."
+     },
+     {
+      "title": "Shazzrah and Ragnaros",
+      "text": "93 and 90."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Magmadar",
+      "impact": "medium",
+      "boss": 50664,
+      "text": "27, 22nd of 27 in damage."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "0.9 buffs a pull against 3.8: Mageblood on seven pulls, no Greater Arcane, no Frost Power."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "27."
+     },
+     "50671": {
+      "tone": "good",
+      "text": "93, top mage."
+     }
+    }
    }
   },
   "Mercîless": {
@@ -6625,14 +7587,14 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 74,
-    "ownAvgParseBefore": 51,
+    "ownAvgParseBefore": 50,
     "raidMedianParse": 80,
     "bosses": [
      {
       "id": 50663,
       "name": "Lucifron",
       "parse": 85,
-      "own": 73,
+      "own": 54,
       "best": 92,
       "perSec": 1137,
       "rank": "6/26 dps",
@@ -6646,7 +7608,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 85,
-      "own": 79,
+      "own": 73,
       "best": 95,
       "perSec": 1113,
       "rank": "7/27 dps",
@@ -6661,7 +7623,7 @@
       "name": "Gehennas",
       "parse": 71,
       "own": 75,
-      "best": 95,
+      "best": 93,
       "perSec": 843,
       "rank": "12/26 dps",
       "healShare": null,
@@ -6675,7 +7637,7 @@
       "name": "Garr",
       "parse": 62,
       "own": 76,
-      "best": 95,
+      "best": 91,
       "perSec": 676,
       "rank": "15/25 dps",
       "healShare": null,
@@ -6688,7 +7650,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 81,
-      "own": 62,
+      "own": 57,
       "best": 95,
       "perSec": 659,
       "rank": "12/28 dps",
@@ -6703,7 +7665,7 @@
       "name": "Shazzrah",
       "parse": 67,
       "own": 68,
-      "best": 88,
+      "best": 82,
       "perSec": 827,
       "rank": "10/27 dps",
       "healShare": null,
@@ -6716,7 +7678,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 38,
-      "own": 67,
+      "own": 63,
       "best": 83,
       "perSec": 478,
       "rank": "18/25 dps",
@@ -6730,8 +7692,8 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 92,
-      "own": 66,
-      "best": 92,
+      "own": 65,
+      "best": 90,
       "perSec": 1462,
       "rank": "6/26 dps",
       "healShare": null,
@@ -6870,6 +7832,47 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "C+",
+    "verdict": "Personal best on Ragnaros, but Sulfuron at 49% active",
+    "summary": "A 74 average against your usual 50, without world buffs, and personal bests on Ragnaros (92) and Golemagg (92). 4 Sappers and 5 Mighty Rage Potions. Sulfuron is where it fell apart: 38, last warrior, 49% active with 9 seconds of nothing from the pull. Lava Bomb hit you 14 times on Magmadar.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Ragnaros 92 (before: 87), Golemagg 92 (90)."
+     },
+     {
+      "title": "Explosives and rage",
+      "text": "4 Sappers, a Dense Dynamite, 5 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sulfuron",
+      "impact": "high",
+      "boss": 50669,
+      "text": "38, 11th of 11 warriors, 49% active with 9 seconds idle from the pull."
+     },
+     {
+      "title": "Lava Bomb",
+      "impact": "medium",
+      "boss": 50664,
+      "text": "14 fire hits on Magmadar, against a raid median of 10."
+     }
+    ],
+    "bosses": {
+     "50669": {
+      "tone": "bad",
+      "text": "38, 49% active."
+     },
+     "50672": {
+      "tone": "good",
+      "text": "92, personal best."
+     }
+    }
    }
   },
   "Miniwrecker": {
@@ -6877,7 +7880,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 88,
-    "ownAvgParseBefore": 65,
+    "ownAvgParseBefore": 66,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -6898,7 +7901,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 88,
-      "own": 82,
+      "own": 80,
       "best": 92,
       "perSec": 1169,
       "rank": "6/27 dps",
@@ -6926,7 +7929,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 93,
-      "own": 86,
+      "own": 85,
       "best": 95,
       "perSec": 1267,
       "rank": "2/25 dps",
@@ -6940,7 +7943,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 87,
-      "own": 88,
+      "own": 85,
       "best": 92,
       "perSec": 769,
       "rank": "5/28 dps",
@@ -6968,8 +7971,8 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 92,
-      "own": 80,
-      "best": 89,
+      "own": 79,
+      "best": 83,
       "perSec": 1132,
       "rank": "2/25 dps",
       "healShare": null,
@@ -6982,7 +7985,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 93,
-      "own": 86,
+      "own": 84,
       "best": 95,
       "perSec": 1540,
       "rank": "5/26 dps",
@@ -7010,7 +8013,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 95,
-      "own": 91,
+      "own": 88,
       "best": 95,
       "perSec": 1389,
       "rank": "2/28 dps",
@@ -7194,6 +8197,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "A-",
+    "verdict": "Two personal bests and second in raid damage on Garr, Sulfuron, Majordomo and Ragnaros",
+    "summary": "An 88 average against your usual 66, with personal bests on Lucifron (91) and Sulfuron (92) and Ragnaros 95 equal to your best. Second highest damage in the raid on four bosses. You had seven world buffs at Lucifron, 5 Goblin Sapper Charges, 3 Dense Dynamite and 7 Mighty Rage Potions. Shazzrah at 68 was the one weak pull.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Lucifron 91 (before: 83), Sulfuron 92 (83). Ragnaros 95 equals your best."
+     },
+     {
+      "title": "Second in raid damage",
+      "text": "Garr, Sulfuron, Majordomo and Ragnaros."
+     },
+     {
+      "title": "Everything used",
+      "text": "7 Mighty Rage Potions, 5 Sappers, 3 Dense Dynamite, 73 Sunders."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Shazzrah",
+      "impact": "low",
+      "boss": 50667,
+      "text": "68, under your usual 79, and seventh warrior."
+     }
+    ],
+    "bosses": {
+     "50663": {
+      "tone": "good",
+      "text": "91, personal best."
+     },
+     "50667": {
+      "tone": "info",
+      "text": "68, your weakest boss."
+     },
+     "50669": {
+      "tone": "good",
+      "text": "92, personal best, second in raid damage."
+     }
+    }
    }
   },
   "Mohg": {
@@ -7481,6 +8527,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "B+",
+    "verdict": "Second healer on Garr, Golemagg and Ragnaros, a Lay on Hands, almost no consumables",
+    "summary": "Solid all night: second in healing on Garr (15%), Golemagg (21%) and Ragnaros (16%), third on Magmadar and Sulfuron, at or above the healers' median activity on every boss. You used a Lay on Hands and dispelled an Ignite Mana. Consumables were Zanza on three pulls and nothing else.",
+    "good": [
+     {
+      "title": "Second healer three times",
+      "text": "Garr, Golemagg (21% of the raid's healing) and Ragnaros."
+     },
+     {
+      "title": "Always casting",
+      "text": "100% active on seven bosses."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Zanza on three pulls: 0.3 buffs a pull against 2.9. Mageblood would pay for itself."
+     },
+     {
+      "title": "Dispels",
+      "impact": "low",
+      "text": "One dispel all night. Paladins can cleanse Ignite Mana and Immolate."
+     }
+    ],
+    "bosses": {
+     "50670": {
+      "tone": "good",
+      "text": "21% of the raid's healing."
+     }
+    }
    }
   },
   "Pinguwan": {
@@ -7488,7 +8569,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 70,
-    "ownAvgParseBefore": 54,
+    "ownAvgParseBefore": 56,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -7783,6 +8864,42 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "C",
+    "verdict": "Steady middle of the pack, then dead on Majordomo",
+    "summary": "Your sixth raid in the logs, a 70 average, with Magmadar, Garr and Geddon all 81. The one death of the night on Majordomo was yours: at 0:32 a Fireball (2,339), Shadow Shock (1,898), Shadow Bolt (1,858) and a Damage Shield hit (1,064) inside ten seconds, and you went into Ragnaros without your world buffs.",
+    "good": [
+     {
+      "title": "Magmadar, Garr, Geddon",
+      "text": "81 on all three."
+     },
+     {
+      "title": "Prepared",
+      "text": "Fortitude, Giants and Mongoose on nine pulls, 41 Sunders."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Majordomo death",
+      "impact": "high",
+      "boss": 50671,
+      "text": "Killed at 0:32, the only death of the kill. The last ten seconds were mostly spell damage from the Elites and Healers, and 1,064 from hitting a Healer while its Damage Shield was up. Watch for the shield and switch away."
+     },
+     {
+      "title": "Lucifron and Majordomo",
+      "impact": "low",
+      "text": "48 and 47, last warrior on both."
+     }
+    ],
+    "bosses": {
+     "50671": {
+      "tone": "bad",
+      "text": "Died at 0:32, the kill's only death."
+     }
+    }
    }
   },
   "Punintended": {
@@ -8046,6 +9163,46 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B",
+    "verdict": "96 on Garr and Geddon on Zanza alone",
+    "summary": "Your third raid in the logs, and parses of 91 to 96 on six of the ten bosses: Garr and Geddon 96, Majordomo 95. Magmadar (19) and Lucifron (70) were the low ones. You had Zanza and nothing else: no elixirs, no food, no world buffs for the first three bosses.",
+    "good": [
+     {
+      "title": "Garr, Geddon, Majordomo",
+      "text": "96, 96 and 95."
+     },
+     {
+      "title": "Clean",
+      "text": "No deaths, one Rain of Fire hit, no Lava Burst."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Magmadar",
+      "impact": "medium",
+      "boss": 50664,
+      "text": "19, last hunter and 23rd of 27 in damage."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Spirit of Zanza only: 1 buff a pull against 3.8. Mongoose and food are cheap and you'd feel them."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "19."
+     },
+     "50666": {
+      "tone": "good",
+      "text": "96, top hunter."
+     }
+    }
    }
   },
   "Skoomael": {
@@ -8053,7 +9210,7 @@
     "class": "Druid",
     "role": "dps",
     "avgParse": 86,
-    "ownAvgParseBefore": 91,
+    "ownAvgParseBefore": 88,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -8074,7 +9231,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 95,
-      "own": 99,
+      "own": 97,
       "best": 99,
       "perSec": 738,
       "rank": "15/27 dps",
@@ -8088,7 +9245,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 97,
-      "own": 94,
+      "own": 92,
       "best": 96,
       "perSec": 744,
       "rank": "15/26 dps",
@@ -8102,7 +9259,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 98,
-      "own": 98,
+      "own": 96,
       "best": 98,
       "perSec": 858,
       "rank": "9/25 dps",
@@ -8116,7 +9273,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 88,
-      "own": 98,
+      "own": 95,
       "best": 98,
       "perSec": 434,
       "rank": "20/28 dps",
@@ -8130,7 +9287,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 95,
-      "own": 92,
+      "own": 91,
       "best": 96,
       "perSec": 825,
       "rank": "11/27 dps",
@@ -8144,7 +9301,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 87,
-      "own": 98,
+      "own": 93,
       "best": 98,
       "perSec": 419,
       "rank": "20/25 dps",
@@ -8158,7 +9315,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 99,
-      "own": 97,
+      "own": 89,
       "best": 99,
       "perSec": 1052,
       "rank": "15/26 dps",
@@ -8172,7 +9329,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 98,
-      "own": 94,
+      "own": 92,
       "best": 98,
       "perSec": 654,
       "rank": "14/24 dps",
@@ -8517,7 +9674,7 @@
     "class": "Hunter",
     "role": "dps",
     "avgParse": 79,
-    "ownAvgParseBefore": 71,
+    "ownAvgParseBefore": 72,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -8538,7 +9695,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 68,
-      "own": 88,
+      "own": 62,
       "best": 89,
       "perSec": 454,
       "rank": "20/27 dps",
@@ -8552,7 +9709,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 80,
-      "own": 72,
+      "own": 60,
       "best": 82,
       "perSec": 586,
       "rank": "16/26 dps",
@@ -8608,7 +9765,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 52,
-      "own": 67,
+      "own": 66,
       "best": 93,
       "perSec": 373,
       "rank": "22/25 dps",
@@ -8810,6 +9967,48 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B-",
+    "verdict": "The only Tranquilizing Shot on Magmadar, 97 on Geddon",
+    "summary": "A 79 average against your usual 72, with Geddon 97 and Shazzrah 90 the best of it. You were the only hunter to Tranquilizing Shot Magmadar. Lucifron (47), Sulfuron (52) and Majordomo (84 parse but 67% active) all had slow starts with idle from the pull.",
+    "good": [
+     {
+      "title": "Tranquilizing Shot",
+      "text": "The only one cast on Magmadar.",
+      "boss": 50664
+     },
+     {
+      "title": "Geddon",
+      "text": "97, top hunter.",
+      "boss": 50668
+     }
+    ],
+    "fix": [
+     {
+      "title": "Slow starts",
+      "impact": "medium",
+      "text": "Lucifron 47 (76% active), Sulfuron 52, Majordomo 67% active with 8 seconds idle from the pull."
+     },
+     {
+      "title": "Lava Burst",
+      "impact": "low",
+      "boss": 50672,
+      "text": "Hit 3 times on Ragnaros, the most in the raid."
+     }
+    ],
+    "bosses": {
+     "50663": {
+      "tone": "bad",
+      "text": "47, slow start."
+     },
+     "50664": {
+      "tone": "good",
+      "text": "The raid's only Tranquilizing Shot."
+     }
+    }
    }
   },
   "Stinkycat": {
@@ -9049,6 +10248,53 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.888Z",
+    "grade": "D-",
+    "verdict": "Nothing at all on Baron Geddon, and 19 seconds of nothing on Magmadar",
+    "summary": "Your third raid in the logs and a 20 average, last rogue on all ten bosses. On Baron Geddon the log has no action from you for the whole fight. On Magmadar you did nothing for the first 19 seconds, with a Serrated Bite on you, and Shazzrah and Gehennas were at about half activity. You had no world buffs and two elixirs. Ragnaros (51, 100% active) and a Dark Mending kick on Sulfuron show what it looks like when you're on the boss.",
+    "good": [
+     {
+      "title": "Dark Mending kicked",
+      "text": "One of three interrupts in the raid.",
+      "boss": 50669
+     },
+     {
+      "title": "Ragnaros",
+      "text": "51, 100% active, Adrenaline Rush and Blade Flurry used.",
+      "boss": 50672
+     }
+    ],
+    "fix": [
+     {
+      "title": "Baron Geddon",
+      "impact": "high",
+      "boss": 50668,
+      "text": "No attacks, no abilities, nothing in the log for the whole fight. If you were told to stay out, say so; otherwise that's a whole boss missing."
+     },
+     {
+      "title": "Late starts",
+      "impact": "high",
+      "text": "Magmadar 19 seconds idle from the pull, Shazzrah 9, Gehennas 7 from 0:07. Half of Magmadar, Gehennas and Shazzrah gone."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Giants and Mongoose only, no world buffs."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "bad",
+      "text": "19 seconds idle from the pull."
+     },
+     "50668": {
+      "tone": "bad",
+      "text": "Nothing in the log all fight."
+     }
+    }
    }
   },
   "Taurenlover": {
@@ -9349,6 +10595,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "A-",
+    "verdict": "Top healer on Gehennas, Garr and Shazzrah, second on three more",
+    "summary": "The most healing in the raid on Gehennas (17%), Garr (18%) and Shazzrah (15%), second on Magmadar, Geddon and Sulfuron. Five world buffs and Mageblood, Zanza and Gordok on every pull. Golemagg and Ragnaros were quieter (sixth and seventh).",
+    "good": [
+     {
+      "title": "Top healer on three bosses",
+      "text": "Gehennas, Garr and Shazzrah; second on Magmadar, Geddon and Sulfuron."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mageblood, Zanza and Gordok on all ten pulls, 4 Mana Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Shazzrah",
+      "impact": "low",
+      "boss": 50667,
+      "text": "Top healer but 46% active and 60% overheal, so the healing came in bursts."
+     }
+    ],
+    "bosses": {
+     "50665": {
+      "tone": "good",
+      "text": "Top healer, 17%."
+     },
+     "50666": {
+      "tone": "good",
+      "text": "Top healer, 18%."
+     }
+    }
    }
   },
   "Terrora": {
@@ -9356,14 +10637,14 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 88,
-    "ownAvgParseBefore": 60,
+    "ownAvgParseBefore": 58,
     "raidMedianParse": 80,
     "bosses": [
      {
       "id": 50663,
       "name": "Lucifron",
       "parse": 76,
-      "own": 58,
+      "own": 53,
       "best": 83,
       "perSec": 684,
       "rank": "12/26 dps",
@@ -9377,7 +10658,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 94,
-      "own": 83,
+      "own": 78,
       "best": 95,
       "perSec": 1000,
       "rank": "10/27 dps",
@@ -9391,7 +10672,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 90,
-      "own": 81,
+      "own": 80,
       "best": 93,
       "perSec": 1073,
       "rank": "9/26 dps",
@@ -9405,7 +10686,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 90,
-      "own": 79,
+      "own": 76,
       "best": 97,
       "perSec": 854,
       "rank": "10/25 dps",
@@ -9419,7 +10700,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 84,
-      "own": 72,
+      "own": 70,
       "best": 95,
       "perSec": 605,
       "rank": "14/28 dps",
@@ -9433,7 +10714,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 95,
-      "own": 77,
+      "own": 76,
       "best": 95,
       "perSec": 1172,
       "rank": "4/27 dps",
@@ -9447,7 +10728,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 75,
-      "own": 72,
+      "own": 69,
       "best": 95,
       "perSec": 671,
       "rank": "10/25 dps",
@@ -9461,7 +10742,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 95,
-      "own": 75,
+      "own": 68,
       "best": 96,
       "perSec": 1187,
       "rank": "10/26 dps",
@@ -9475,7 +10756,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 87,
-      "own": 68,
+      "own": 65,
       "best": 96,
       "perSec": 747,
       "rank": "12/24 dps",
@@ -9489,7 +10770,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 89,
-      "own": 77,
+      "own": 75,
       "best": 94,
       "perSec": 806,
       "rank": "14/28 dps",
@@ -9657,6 +10938,44 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B+",
+    "verdict": "88 average, 30 over your usual, on two elixirs and nothing else",
+    "summary": "A big night against your own history: 88 average where you usually sit at 58, top rogue on Shazzrah (95, equal to your best) and Sulfuron, and 94 to 95 on Magmadar and Golemagg. You did it on Giants and Mongoose only: 2 consumable buffs a pull against 3.8 for the other DPS, no food, no Juju, no potions besides a Free Action and a Healing Potion.",
+    "good": [
+     {
+      "title": "Well over your usual",
+      "text": "Every boss above your own median, most by 15 to 30 points: Golemagg 95 (usual 68), Majordomo 87 (65), Lucifron 76 (53)."
+     },
+     {
+      "title": "Top rogue",
+      "text": "Shazzrah 95 (equal to your best) and Sulfuron 75."
+     },
+     {
+      "title": "Rain of Fire",
+      "text": "Hit once on Gehennas, half the raid's median."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Giants and Mongoose only. No food, no Juju, no Thistle Tea: 2 buffs a pull against 3.8. With the parses you're putting out, the cheap stuff would push you higher."
+     }
+    ],
+    "bosses": {
+     "50667": {
+      "tone": "good",
+      "text": "95, top rogue, equal to your best."
+     },
+     "50670": {
+      "tone": "good",
+      "text": "95 against your usual 68."
+     }
+    }
    }
   },
   "Thormund": {
@@ -9898,6 +11217,47 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.925Z",
+    "grade": "D+",
+    "verdict": "22 dispels, then nothing at all on Golemagg",
+    "summary": "Your second raid in the logs. You dispelled 22 times (6 Impending Dooms, 6 Shadow Word: Pains on Sulfuron, 7 Immolates) and the healing on Shazzrah was fourth in the raid. On Golemagg the log has no action from you all fight, and Garr (14%), Magmadar and Geddon (26%) were mostly idle.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "22 over the night, 6 Impending Dooms tied for the most."
+     },
+     {
+      "title": "Shazzrah",
+      "text": "Fourth healer, 100% active.",
+      "boss": 50667
+     }
+    ],
+    "fix": [
+     {
+      "title": "Golemagg",
+      "impact": "high",
+      "boss": 50670,
+      "text": "No heals, no casts, nothing in the log for the whole fight."
+     },
+     {
+      "title": "Activity",
+      "impact": "high",
+      "text": "Garr 14% active, Magmadar and Geddon 26%, Ragnaros 39%. The healers' median was 75 to 89%."
+     }
+    ],
+    "bosses": {
+     "50666": {
+      "tone": "bad",
+      "text": "14% active."
+     },
+     "50670": {
+      "tone": "bad",
+      "text": "Nothing in the log all fight."
+     }
+    }
    }
   },
   "Tochopolvo": {
@@ -9905,14 +11265,14 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 80,
-    "ownAvgParseBefore": 71,
+    "ownAvgParseBefore": 68,
     "raidMedianParse": 80,
     "bosses": [
      {
       "id": 50663,
       "name": "Lucifron",
       "parse": 72,
-      "own": 85,
+      "own": 83,
       "best": 97,
       "perSec": 841,
       "rank": "9/26 dps",
@@ -9926,7 +11286,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 64,
-      "own": 90,
+      "own": 86,
       "best": 99,
       "perSec": 760,
       "rank": "14/27 dps",
@@ -9940,7 +11300,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 88,
-      "own": 86,
+      "own": 85,
       "best": 98,
       "perSec": 1286,
       "rank": "6/26 dps",
@@ -9954,7 +11314,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 59,
-      "own": 87,
+      "own": 83,
       "best": 98,
       "perSec": 655,
       "rank": "16/25 dps",
@@ -9968,7 +11328,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 88,
-      "own": 87,
+      "own": 83,
       "best": 99,
       "perSec": 782,
       "rank": "4/28 dps",
@@ -9982,7 +11342,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 81,
-      "own": 81,
+      "own": 76,
       "best": 95,
       "perSec": 1102,
       "rank": "5/27 dps",
@@ -9996,7 +11356,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 87,
-      "own": 88,
+      "own": 86,
       "best": 98,
       "perSec": 994,
       "rank": "3/25 dps",
@@ -10010,7 +11370,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 95,
-      "own": 85,
+      "own": 83,
       "best": 99,
       "perSec": 1721,
       "rank": "2/26 dps",
@@ -10024,7 +11384,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 82,
-      "own": 84,
+      "own": 83,
       "best": 97,
       "perSec": 931,
       "rank": "4/24 dps",
@@ -10038,7 +11398,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 85,
-      "own": 86,
+      "own": 84,
       "best": 97,
       "perSec": 949,
       "rank": "11/28 dps",
@@ -10146,6 +11506,50 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B",
+    "verdict": "No world buffs and still 95 and second in raid damage on Golemagg",
+    "summary": "You came in with no world buffs at all and averaged 80, above your usual 68. Golemagg 95 was second in raid damage, Sulfuron 87 third. 4 Sappers, 2 Dense Dynamite, 4 Mighty Rage Potions and 90 Sunders. Garr (59) and Magmadar (64) were well under your usual.",
+    "good": [
+     {
+      "title": "Golemagg",
+      "text": "95, second in raid damage, with no world buffs.",
+      "boss": 50670
+     },
+     {
+      "title": "Explosives and rage",
+      "text": "4 Sappers, 2 Dense Dynamite, 4 Mighty Rage Potions."
+     },
+     {
+      "title": "Sunders",
+      "text": "90 Sunder Armors."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Garr and Magmadar",
+      "impact": "medium",
+      "text": "59 and 64, against your usual 83 and 86 there."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Giants, Mongoose and Sunfruit: 3 a pull against 3.8."
+     }
+    ],
+    "bosses": {
+     "50666": {
+      "tone": "bad",
+      "text": "59, under your usual 83."
+     },
+     "50670": {
+      "tone": "good",
+      "text": "95, second in raid damage."
+     }
+    }
    }
   },
   "Vallon": {
@@ -10153,7 +11557,7 @@
     "class": "Priest",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 70,
+    "ownAvgParseBefore": 71,
     "raidMedianParse": null,
     "bosses": [
      {
@@ -10203,7 +11607,7 @@
       "name": "Garr",
       "parse": null,
       "own": 80,
-      "best": 80,
+      "best": 81,
       "perSec": 330,
       "rank": "4/11 healers",
       "healShare": 14,
@@ -10397,6 +11801,44 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.924Z",
+    "grade": "A",
+    "verdict": "Top healer on six of ten bosses, a quarter of the raid's healing on some",
+    "summary": "You did the most healing in the raid on Lucifron, Magmadar, Geddon, Sulfuron, Golemagg and Ragnaros, and were second on Gehennas and Majordomo. On Lucifron, Geddon and Sulfuron that was 25 to 26% of all the raid's healing. No world buffs, but Flask of Distilled Wisdom and Zanza on every pull. Overhealing ran high, 81% on Shazzrah.",
+    "good": [
+     {
+      "title": "Top healer on six bosses",
+      "text": "Lucifron 26% of the raid's healing, Sulfuron 26%, Geddon 25%, Golemagg 22%, Magmadar 19%, Ragnaros 16%."
+     },
+     {
+      "title": "Consumables",
+      "text": "Flask of Distilled Wisdom and Zanza every pull, Sunfruit on nine, 5 Mana Potions: 4.5 buffs a pull against 2.9."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overhealing",
+      "impact": "low",
+      "text": "81% on Shazzrah, 71% on Garr, 64% on Sulfuron. Some of that is the job on short fights, but cancelling late casts would save mana."
+     }
+    ],
+    "bosses": {
+     "50663": {
+      "tone": "good",
+      "text": "Top healer, 26% of the raid's healing."
+     },
+     "50668": {
+      "tone": "good",
+      "text": "Top healer, 25%."
+     },
+     "50669": {
+      "tone": "good",
+      "text": "Top healer, 26%."
+     }
+    }
    }
   },
   "Wellan": {
@@ -10649,6 +12091,52 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.888Z",
+    "grade": "C-",
+    "verdict": "111 Sunders and full tank consumables, but 11 on Geddon",
+    "summary": "You tanked adds on six bosses with 7 consumable buffs a pull (the tanks' median is 6.8), 2 Limited Invulnerability Potions, 2 Challenging Shouts and 111 Sunder Armors, the most in the raid. On the bosses where you were DPS it went badly: Geddon 11 (27th of 28), Ragnaros 26, Magmadar 39, Shazzrah 40. No world buffs all night.",
+    "good": [
+     {
+      "title": "Sunders",
+      "text": "111 Sunder Armors, the most in the raid."
+     },
+     {
+      "title": "Prepared",
+      "text": "Giants, Mongoose, Greater Armor and Troll's Blood every pull, 2 Limited Invulnerability Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Geddon",
+      "impact": "medium",
+      "boss": 50668,
+      "text": "11, 27th of 28, with 9 seconds idle from 0:15."
+     },
+     {
+      "title": "Ragnaros",
+      "impact": "medium",
+      "boss": 50672,
+      "text": "26, last warrior, against 84 in your earlier kills."
+     },
+     {
+      "title": "Tank parses",
+      "impact": "low",
+      "text": "Last tank on Lucifron, Gehennas, Garr, Sulfuron, Golemagg and Majordomo."
+     }
+    ],
+    "bosses": {
+     "50668": {
+      "tone": "bad",
+      "text": "11."
+     },
+     "50672": {
+      "tone": "bad",
+      "text": "26, last warrior."
+     }
+    }
    }
   },
   "Whorm": {
@@ -10656,15 +12144,15 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 81,
-    "ownAvgParseBefore": 68,
+    "ownAvgParseBefore": 62,
     "raidMedianParse": 80,
     "bosses": [
      {
       "id": 50663,
       "name": "Lucifron",
       "parse": 92,
-      "own": 75,
-      "best": 83,
+      "own": 68,
+      "best": 92,
       "perSec": 1365,
       "rank": "3/26 dps",
       "healShare": null,
@@ -10677,7 +12165,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 75,
-      "own": 79,
+      "own": 72,
       "best": 95,
       "perSec": 893,
       "rank": "11/27 dps",
@@ -10691,7 +12179,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 80,
-      "own": 71,
+      "own": 62,
       "best": 91,
       "perSec": 1010,
       "rank": "10/26 dps",
@@ -10705,7 +12193,7 @@
       "id": 50666,
       "name": "Garr",
       "parse": 84,
-      "own": 80,
+      "own": 76,
       "best": 94,
       "perSec": 956,
       "rank": "6/25 dps",
@@ -10719,7 +12207,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 71,
-      "own": 68,
+      "own": 63,
       "best": 93,
       "perSec": 538,
       "rank": "17/28 dps",
@@ -10733,7 +12221,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 94,
-      "own": 85,
+      "own": 82,
       "best": 95,
       "perSec": 1518,
       "rank": "1/27 dps",
@@ -10747,7 +12235,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 51,
-      "own": 72,
+      "own": 66,
       "best": 92,
       "perSec": 569,
       "rank": "13/25 dps",
@@ -10761,7 +12249,7 @@
       "id": 50670,
       "name": "Golemagg the Incinerator",
       "parse": 94,
-      "own": 80,
+      "own": 77,
       "best": 85,
       "perSec": 1564,
       "rank": "3/26 dps",
@@ -10775,7 +12263,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 82,
-      "own": 71,
+      "own": 51,
       "best": 87,
       "perSec": 925,
       "rank": "5/24 dps",
@@ -10789,7 +12277,7 @@
       "id": 50672,
       "name": "Ragnaros",
       "parse": 88,
-      "own": 79,
+      "own": 73,
       "best": 93,
       "perSec": 1004,
       "rank": "10/28 dps",
@@ -10951,6 +12439,62 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B",
+    "verdict": "Most damage in the raid on Shazzrah, a personal best on Golemagg, and a Sulfuron to forget",
+    "summary": "An 81 average against your usual 62. Shazzrah 94 was the most damage in the raid, Golemagg 94 is a personal best (before: 85) and third in damage, Lucifron 92 third too. Sulfuron (51) and Geddon (71) pulled the average down, both with 9 seconds of nothing in them.",
+    "good": [
+     {
+      "title": "Shazzrah",
+      "text": "94, the most damage in the raid.",
+      "boss": 50667
+     },
+     {
+      "title": "Golemagg personal best",
+      "text": "94 (before: 85), third in raid damage.",
+      "boss": 50670
+     },
+     {
+      "title": "Rage potions",
+      "text": "5 Great Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sulfuron",
+      "impact": "medium",
+      "boss": 50669,
+      "text": "51, 61% active with 9 seconds idle from the pull."
+     },
+     {
+      "title": "Geddon",
+      "impact": "low",
+      "boss": 50668,
+      "text": "71 with 9 seconds idle from 0:16, more than most of the warriors."
+     },
+     {
+      "title": "Sunders",
+      "impact": "low",
+      "text": "3 Sunder Armors all night, against 50 to 95 from most of the warriors."
+     }
+    ],
+    "bosses": {
+     "50667": {
+      "tone": "good",
+      "text": "94, most damage in the raid."
+     },
+     "50669": {
+      "tone": "bad",
+      "text": "51, 9 seconds idle from the pull."
+     },
+     "50670": {
+      "tone": "good",
+      "text": "94, personal best."
+     }
+    }
    }
   },
   "Yulepunch": {
@@ -10958,7 +12502,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 80,
-    "ownAvgParseBefore": 59,
+    "ownAvgParseBefore": 56,
     "raidMedianParse": 80,
     "bosses": [
      {
@@ -10979,7 +12523,7 @@
       "id": 50664,
       "name": "Magmadar",
       "parse": 93,
-      "own": 76,
+      "own": 74,
       "best": 95,
       "perSec": 1369,
       "rank": "1/27 dps",
@@ -10993,7 +12537,7 @@
       "id": 50665,
       "name": "Gehennas",
       "parse": 87,
-      "own": 76,
+      "own": 69,
       "best": 91,
       "perSec": 1244,
       "rank": "8/26 dps",
@@ -11021,7 +12565,7 @@
       "id": 50668,
       "name": "Baron Geddon",
       "parse": 74,
-      "own": 79,
+      "own": 55,
       "best": 91,
       "perSec": 566,
       "rank": "16/28 dps",
@@ -11035,7 +12579,7 @@
       "id": 50667,
       "name": "Shazzrah",
       "parse": 62,
-      "own": 83,
+      "own": 73,
       "best": 93,
       "perSec": 755,
       "rank": "13/27 dps",
@@ -11049,7 +12593,7 @@
       "id": 50669,
       "name": "Sulfuron Harbinger",
       "parse": 67,
-      "own": 58,
+      "own": 48,
       "best": 85,
       "perSec": 698,
       "rank": "9/25 dps",
@@ -11077,7 +12621,7 @@
       "id": 50671,
       "name": "Majordomo Executus",
       "parse": 83,
-      "own": 80,
+      "own": 63,
       "best": 90,
       "perSec": 517,
       "rank": "2/5 tanks",
@@ -11254,6 +12798,56 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "B",
+    "verdict": "Top damage on Magmadar, personal best on Ragnaros, and Geddon at 54% active",
+    "summary": "An 80 average against your usual 56. You did the most damage in the raid on Magmadar (93) and set personal bests on Ragnaros (95, third in damage) and Golemagg (91). You also off-tanked Majordomo's adds (83) with a Limited Invulnerability Potion. Geddon (74, 54% active with 9 seconds idle from the pull) and Shazzrah (62) were the low points.",
+    "good": [
+     {
+      "title": "Magmadar",
+      "text": "93, the most damage in the raid.",
+      "boss": 50664
+     },
+     {
+      "title": "Personal bests",
+      "text": "Ragnaros 95 (before: 91), Golemagg 91 (90)."
+     },
+     {
+      "title": "Majordomo",
+      "text": "Tanked the adds at 83, second highest tank parse there.",
+      "boss": 50671
+     }
+    ],
+    "fix": [
+     {
+      "title": "Geddon",
+      "impact": "medium",
+      "boss": 50668,
+      "text": "54% active, 9 seconds idle from the pull, 16th in damage."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Giants and Mongoose only, 2 a pull against 3.8. No food, no Juju."
+     }
+    ],
+    "bosses": {
+     "50664": {
+      "tone": "good",
+      "text": "93, most damage in the raid."
+     },
+     "50668": {
+      "tone": "bad",
+      "text": "9 seconds idle from the pull."
+     },
+     "50672": {
+      "tone": "good",
+      "text": "95, personal best."
+     }
+    }
    }
   },
   "Zuzul": {
@@ -11559,6 +13153,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:22:55.849Z",
+    "grade": "C+",
+    "verdict": "Better than your past MCs almost everywhere, 81 on Golemagg",
+    "summary": "Only your third Molten Core in the logs, and a 50 average against 40 before: Golemagg 81 (before: 27), Ragnaros 71 (55), Majordomo 57 (24), Sulfuron 51 (12). The parses are still the bottom third of the warriors, and three bosses had 4 to 7 seconds of nothing from the pull.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Golemagg 81, Ragnaros 71, Majordomo 57, Sulfuron 51, Gehennas 41, Magmadar 42, Shazzrah 27."
+     },
+     {
+      "title": "Clean",
+      "text": "No deaths, one Rain of Fire hit, one Lava Burst."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Starts",
+      "impact": "medium",
+      "text": "Lucifron 71% active and Magmadar 82%, both with idle from the pull. Be on the boss when the tank is."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Elixirs on only half the pulls."
+     }
+    ],
+    "bosses": {
+     "50670": {
+      "tone": "good",
+      "text": "81, personal best."
+     }
+    }
    }
   }
  }
