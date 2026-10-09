@@ -2,7 +2,8 @@ import { MECHANICS } from "./mechanics.js";
 import { ALL_TIME, CLASS_OF } from "./data.js";
 import { classColor, fmtDate } from "./assets.js";
 import { BarList, Panel, Player, SpellIcon, useTip } from "./components.jsx";
-import { parseColor, ParseBadge } from "./RaidProfile.jsx";
+import { parseColor, ParseBadge, Bands } from "./RaidProfile.jsx";
+import { HoverColumns, rollingMedian } from "./charts.jsx";
 
 const ranked = (obj) => Object.entries(obj || {}).sort((a, b) => b[1] - a[1]);
 const P = ({ name, size = 14 }) => {
@@ -185,10 +186,9 @@ function MechTrend({ nights }) {
   return (
     <span className="rr-mech-trend">
       <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-label="Hits per raider per night">
-        <polyline points={pts.map((p) => p.join(",")).join(" ")} fill="none" stroke="#e0525f" strokeWidth="1.5" />
-        {pts.map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="2.5" fill="#e0525f" {...bind(<>{fmtDate(nights[i].night)} · {nights[i].total} hits, {nights[i].raiders} raiders hit</>)} />
-        ))}
+        <polyline points={pts.map((p) => p.join(",")).join(" ")} fill="none" stroke="#e0525f" strokeWidth={pts.length > 12 ? 1 : 1.5} />
+        {pts.map(([x, y], i) => (pts.length <= 12 || i === pts.length - 1 ? <circle key={i} cx={x} cy={y} r="2.5" fill="#e0525f" /> : null))}
+        <HoverColumns xs={pts.map((p) => p[0])} top={0} bottom={H} bind={bind} tipFor={(i) => <>{fmtDate(nights[i].night)} · {nights[i].total} hits, {nights[i].raiders} raiders hit</>} />
       </svg>
       {tip}
     </span>
@@ -230,6 +230,30 @@ function MedianTrend({ medians }) {
   const pad = { l: 30, r: 10, t: 10, b: 24 };
   const x = (i) => pad.l + (i / (medians.length - 1)) * (W - pad.l - pad.r);
   const y = (v) => pad.t + (1 - v / 100) * (H - pad.t - pad.b);
+  // Many kills: parse-colour bands for meaning, a rolling median for the trend.
+  if (medians.length > 20) {
+    const med = rollingMedian(medians.map((m) => m.median));
+    const last = medians.at(-1);
+    return (
+      <div className="rr-timeline">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Median parse per kill">
+          <Bands x0={pad.l} x1={W - pad.r} y={y} />
+          {[25, 50, 75, 95].map((t) => (
+            <text key={t} x={pad.l - 6} y={y(t) + 4} textAnchor="end" className="rr-axis">{t}</text>
+          ))}
+          <polyline points={medians.map((m, i) => `${x(i)},${y(m.median)}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth="1" opacity="0.4" />
+          <polyline points={med.map((v, i) => `${x(i)},${y(v)}`).join(" ")} fill="none" stroke="var(--text)" strokeWidth="2.5" strokeLinejoin="round" />
+          <circle cx={x(medians.length - 1)} cy={y(last.median)} r="5" fill={parseColor(last.median)} stroke="var(--surface-1)" strokeWidth="1.5" />
+          <HoverColumns xs={medians.map((_, i) => x(i))} top={pad.t} bottom={H - pad.b} bind={bind} tipFor={(i) => <>{fmtDate(medians[i].night)} · median {medians[i].median} ({medians[i].count} ranked)</>} />
+        </svg>
+        <div className="rr-legend">
+          <span><i style={{ background: "var(--text)", height: 3, borderRadius: 0 }} /> Typical (median of 5 kills)</span>
+          <span><i style={{ background: "var(--text-2)", height: 1, borderRadius: 0, opacity: 0.6 }} /> Each kill</span>
+        </div>
+        {tip}
+      </div>
+    );
+  }
   return (
     <div className="rr-timeline">
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Median parse per kill">

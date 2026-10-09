@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { GUILD_NIGHTS as NIGHTS, ALL_TIME } from "./data.js";
 import { fmtDate, zoneOf } from "./assets.js";
 import { BossIcon, Panel, SpellIcon, Tabs, Tile, ZoneIcon, useTip } from "./components.jsx";
+import { HoverColumns, rollingMedian } from "./charts.jsx";
 import { zoneForEncounter } from "./aggregate.js";
 import { MECHANICS } from "./mechanics.js";
 import { rosterOf } from "../lib/roster.js";
@@ -183,7 +184,7 @@ function Parses({ parses }) {
   );
 }
 
-function Bands({ x0, x1, y }) {
+export function Bands({ x0, x1, y }) {
   return TIERS.map(([lo, hi]) => (
     <rect key={lo} x={x0} width={x1 - x0} y={y(hi)} height={y(lo) - y(hi)} fill={parseColor(lo)} opacity="0.07" />
   ));
@@ -198,6 +199,42 @@ function NightParseChart({ nights }) {
   const x = (i) => pad.l + (i / Math.max(1, nights.length - 1)) * (W - pad.l - pad.r);
   const y = (v) => pad.t + (1 - v / 100) * (H - pad.t - pad.b);
   const every = Math.max(1, Math.ceil(nights.length / 10));
+  // Many raids: the parse-colour bands carry the colour, a rolling median the trend.
+  const dense = nights.length > 20;
+  const med = dense ? rollingMedian(nights.map((n) => n.avg)) : null;
+  const tipFor = (i) => {
+    const n = nights[i];
+    return (
+      <>
+        <strong>{fmtDate(n.night)}</strong> · average {n.avg}
+        {n.list.map((k) => (
+          <div key={k.id} className="muted">{k.boss}: <span style={{ color: parseColor(k.pct) }}>{k.pct}</span></div>
+        ))}
+      </>
+    );
+  };
+  if (dense) {
+    return (
+      <div className="rr-timeline">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average parse per raid">
+          <Bands x0={pad.l} x1={W - pad.r} y={y} />
+          {[25, 50, 75, 95].map((t) => (
+            <text key={t} x={pad.l - 6} y={y(t) + 4} textAnchor="end" className="rr-axis">{t}</text>
+          ))}
+          <polyline points={nights.map((n, i) => `${x(i)},${y(n.avg)}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth="1" opacity="0.4" />
+          <polyline points={med.map((v, i) => `${x(i)},${y(v)}`).join(" ")} fill="none" stroke="var(--text)" strokeWidth="2.5" strokeLinejoin="round" />
+          <circle cx={x(nights.length - 1)} cy={y(nights.at(-1).avg)} r="6" fill={parseColor(nights.at(-1).avg)} stroke="var(--surface-1)" strokeWidth="2" />
+          <HoverColumns xs={nights.map((_, i) => x(i))} top={pad.t} bottom={H - pad.b} bind={bind} tipFor={tipFor} />
+          {nights.map((n, i) => (i % every === 0 ? <text key={n.night} x={x(i)} y={H - 8} textAnchor="middle" className="rr-axis">{fmtDate(n.night, { day: "numeric", month: "short" })}</text> : null))}
+        </svg>
+        <div className="rr-legend">
+          <span><i style={{ background: "var(--text)", height: 3, borderRadius: 0 }} /> Typical (median of 5 raids)</span>
+          <span><i style={{ background: "var(--text-2)", height: 1, borderRadius: 0, opacity: 0.6 }} /> Each raid</span>
+        </div>
+        {tip}
+      </div>
+    );
+  }
   return (
     <div className="rr-timeline">
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Average parse per raid">
@@ -242,9 +279,9 @@ function ParseDots({ kills }) {
   return (
     <svg className="rr-parsedots" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true">
       <Bands x0={0} x1={W} y={y} />
-      {kills.length > 1 && <polyline points={kills.map((k, i) => `${x(i)},${y(k.pct)}`).join(" ")} fill="none" stroke="var(--muted)" strokeWidth="1" />}
+      {kills.length > 1 && <polyline points={kills.map((k, i) => `${x(i)},${y(k.pct)}`).join(" ")} fill="none" stroke="var(--muted)" strokeWidth={kills.length > 15 ? 0.8 : 1} />}
       {kills.map((k, i) => (
-        <circle key={i} cx={kills.length > 1 ? x(i) : W / 2} cy={y(k.pct)} r="3" fill={parseColor(k.pct)}>
+        <circle key={i} cx={kills.length > 1 ? x(i) : W / 2} cy={y(k.pct)} r={kills.length > 15 ? 2 : 3} fill={parseColor(k.pct)}>
           <title>{`${fmtDate(k.night)}: ${k.pct}`}</title>
         </circle>
       ))}

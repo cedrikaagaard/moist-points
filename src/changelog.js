@@ -6,6 +6,15 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.2.1",
+    date: "2026-10-09",
+    changes: [
+      "Time charts all read the same way now: faster is lower, including the small kill-time trends on boss lists.",
+      "Charts with a long history stay readable: instead of a crowd of dots they show each raid as a faint line, a rolling median for the trend, and mark only records and the latest raid. Hover still shows every raid.",
+      "Fixed the header pushing the page sideways on medium-width screens.",
+    ],
+  },
+  {
     version: "2.2.0",
     date: "2026-10-08",
     changes: [

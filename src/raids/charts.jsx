@@ -215,6 +215,28 @@ function CalTip({ n }) {
 
 // ---------- Kill-time trend ----------
 // Kill durations over time for one boss; lower is better, the best is ringed.
+// ---------- Density ----------
+// Charts thin out as the history grows: past a few dozen raids, every point
+// as a dot just merges into a smear. Then draw a faint raw line, a rolling
+// median for the trend, and dots only where they mean something (record,
+// best, latest). Hover still reaches every point through invisible columns.
+export function rollingMedian(vals, k = 5) {
+  return vals.map((_, i) => {
+    const w = vals.slice(Math.max(0, i - (k >> 1)), i + (k >> 1) + 1).sort((a, b) => a - b);
+    return w[w.length >> 1];
+  });
+}
+// One invisible hover target per point: a full-height column around it.
+export function HoverColumns({ xs, top, bottom, tipFor, bind, hrefFor }) {
+  return xs.map((x, i) => {
+    const l = i ? (xs[i - 1] + x) / 2 : x - (xs[1] - x || 10) / 2;
+    const r = i < xs.length - 1 ? (x + xs[i + 1]) / 2 : x + (x - xs[i - 1] || 10) / 2;
+    const rect = <rect x={l} y={top} width={Math.max(1, r - l)} height={bottom - top} fill="transparent" {...bind(tipFor(i))} />;
+    return hrefFor ? <a key={i} href={hrefFor(i)}>{rect}</a> : <g key={i}>{rect}</g>;
+  });
+}
+
+// Kill times over time for one boss. Faster is lower, like every time chart.
 export function KillSparkline({ history, best }) {
   const [tip, bind] = useTip();
   if (history.length < 2) return <span className="muted rr-spark-none">-</span>;
@@ -223,21 +245,18 @@ export function KillSparkline({ history, best }) {
   const max = Math.max(...history.map((h) => h.sec));
   const min = Math.min(...history.map((h) => h.sec));
   const span = Math.max(1, max - min);
-  const pts = history.map((h, i) => [4 + (i / (history.length - 1)) * (W - 8), 4 + ((h.sec - min) / span) * (H - 8), h]);
+  const pts = history.map((h, i) => [4 + (i / (history.length - 1)) * (W - 8), 4 + ((max - h.sec) / span) * (H - 8), h]);
+  const dense = history.length > 12;
   return (
     <span className="rr-spark">
-      <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-label="Kill time trend">
-        <polyline points={pts.map(([x, y]) => `${x},${y}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth="1.5" />
-        {pts.map(([x, y, h]) => (
-          <circle
-            key={h.night}
-            cx={x}
-            cy={y}
-            r={h.sec === best ? 3.5 : 2}
-            fill={h.sec === best ? KILL : "var(--text-2)"}
-            {...bind(<>{fmtDate(h.night)} · {mmss(h.sec)}</>)}
-          />
-        ))}
+      <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-label="Kill time trend, faster is lower">
+        <polyline points={pts.map(([x, y]) => `${x},${y}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth={dense ? 1 : 1.5} opacity={dense ? 0.7 : 1} />
+        {pts.map(([x, y, h], i) =>
+          !dense || h.sec === best || i === pts.length - 1 ? (
+            <circle key={h.night} cx={x} cy={y} r={h.sec === best ? 3.5 : 2.5} fill={h.sec === best ? KILL : "var(--text-2)"} />
+          ) : null
+        )}
+        <HoverColumns xs={pts.map((p) => p[0])} top={0} bottom={H} bind={bind} tipFor={(i) => <>{fmtDate(pts[i][2].night)} · {mmss(pts[i][2].sec)}</>} />
       </svg>
       {tip}
     </span>
@@ -279,18 +298,38 @@ export function ClearTrend({ nights, zoneId, compact = false }) {
   if (steps.length) steps.push([x(pts.length - 1), y(best)]);
 
   const ticks = compact ? [] : niceTicks(lo, hi);
+  const dense = pts.length > (compact ? 14 : 30);
+  const med = dense ? rollingMedian(secs) : null;
+  const tipFor = (i) => {
+    const p = pts[i];
+    return (
+      <>
+        <strong>{fmtDate(p.n.night)}</strong>
+        <div className="muted">{mmss(p.t.sec)} · {p.t.kills}/{full} bosses</div>
+        {p.record && <div className="rr-gold">New record</div>}
+      </>
+    );
+  };
   return (
     <div className="rr-timeline">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Clear time per raid">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Clear time per raid, faster is lower">
         {ticks.map((t) => (
           <g key={t}>
             <line x1={pad.l} x2={W - pad.r} y1={y(t)} y2={y(t)} stroke="var(--border-soft)" />
             <text x={pad.l - 8} y={y(t) + 4} textAnchor="end" className="rr-axis">{mmss(t)}</text>
           </g>
         ))}
-        <polyline points={pts.map((p, i) => `${x(i)},${y(p.t.sec)}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth="1.5" opacity="0.5" />
+        <polyline points={pts.map((p, i) => `${x(i)},${y(p.t.sec)}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth={dense ? 1 : 1.5} opacity={dense ? 0.3 : 0.5} />
+        {dense && <polyline points={med.map((s, i) => `${x(i)},${y(s)}`).join(" ")} fill="none" stroke="var(--text-2)" strokeWidth="2.5" strokeLinejoin="round" />}
         {steps.length > 1 && <polyline points={steps.map((s) => s.join(",")).join(" ")} fill="none" stroke="#d4af5a" strokeWidth="2.5" />}
-        {pts.map((p, i) => (
+        {dense && <HoverColumns xs={pts.map((_, i) => x(i))} top={pad.t} bottom={H - pad.b} bind={bind} tipFor={tipFor} hrefFor={(i) => href("raids", pts[i].n.night)} />}
+        {dense &&
+          pts.map((p, i) =>
+            p.record || i === pts.length - 1 ? (
+              <circle key={p.n.night} cx={x(i)} cy={y(p.t.sec)} r={p.record ? 6 : 5} fill={p.record ? "#d4af5a" : "var(--surface-1)"} stroke={p.record ? "var(--surface-1)" : "var(--text)"} strokeWidth="2" pointerEvents="none" />
+            ) : null
+          )}
+        {!dense && pts.map((p, i) => (
           <a key={p.n.night} href={href("raids", p.n.night)} {...bind(
             <>
               <strong>{fmtDate(p.n.night)}</strong>
@@ -320,8 +359,17 @@ export function ClearTrend({ nights, zoneId, compact = false }) {
       </svg>
       {!compact && (
         <div className="rr-legend">
-          <span><i style={{ background: "#d4af5a", borderRadius: "50%" }} /> Full clear</span>
-          <span><i style={{ border: "2px solid var(--text-2)", borderRadius: "50%", background: "transparent" }} /> Partial night</span>
+          {dense ? (
+            <>
+              <span><i style={{ background: "var(--text-2)", height: 3, borderRadius: 0 }} /> Typical (median of 5 raids)</span>
+              <span><i style={{ background: "#d4af5a", borderRadius: "50%" }} /> New record</span>
+            </>
+          ) : (
+            <>
+              <span><i style={{ background: "#d4af5a", borderRadius: "50%" }} /> Full clear</span>
+              <span><i style={{ border: "2px solid var(--text-2)", borderRadius: "50%", background: "transparent" }} /> Partial raid</span>
+            </>
+          )}
           <span><i style={{ background: "#d4af5a", height: 3, borderRadius: 0 }} /> Record so far</span>
         </div>
       )}

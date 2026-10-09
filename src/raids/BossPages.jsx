@@ -237,11 +237,22 @@ function AttemptChart({ attempts, best }) {
   });
   // Date under every column that has room; otherwise every few.
   const every = Math.max(1, Math.ceil(48 / colW));
+  // Many raids: pulls side by side get too thin to read. Then one slim column
+  // per raid: the kill as a bar, each wipe as a red tick at its length.
+  const dense = bw < 7;
+  const raidTip = (b) => (
+    <>
+      <strong>{fmtDate(b.night)}</strong> <span className="muted">· {b.tries.length} {b.tries.length === 1 ? "pull" : "pulls"}</span>
+      {b.tries.map((a, i) => (
+        <div key={i} className="muted">{a.kill ? `Kill in ${mmss(a.durationSec)}` : `Wipe at ${a.bossPctLeft ?? "?"}% after ${mmss(a.durationSec)}`} · {a.deaths} deaths</div>
+      ))}
+    </>
+  );
 
   return (
     <div className="rr-timeline">
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Kill time per attempt, grouped by raid">
-        {bands.map((b, i) => (
+        {!dense && bands.map((b, i) => (
           <rect key={b.night} x={b.col + 2} y={pad.t - 16} width={colW - 4} height={H - pad.t - pad.b + 16} rx="6" fill={i % 2 ? "var(--surface-2)" : "transparent"} opacity="0.7" />
         ))}
         {ticks.map((t) => (
@@ -251,7 +262,25 @@ function AttemptChart({ attempts, best }) {
           </g>
         ))}
         {best != null && <line x1={pad.l} x2={W - pad.r} y1={y(best)} y2={y(best)} stroke="#d4af5a" strokeDasharray="4 4" opacity="0.6" />}
-        {bands.map((b, bi) => (
+        {dense && bands.map((b, bi) => {
+          const kill = b.tries.find((a) => a.kill);
+          const w = Math.max(1.5, colW - 2);
+          return (
+            <g key={b.night} {...bind(raidTip(b))}>
+              <rect x={b.col} y={pad.t} width={colW} height={H - pad.t - pad.b} fill="transparent" />
+              {kill && <rect x={b.col + 1} y={y(kill.durationSec)} width={w} height={H - pad.b - y(kill.durationSec)} rx={Math.min(2, w / 2)} fill="#d4af5a" opacity={kill.durationSec === best ? 1 : 0.7} />}
+              {b.tries.filter((a) => !a.kill).map((a, i) => (
+                <rect key={i} x={b.col + 1} y={y(a.durationSec) - 1.5} width={w} height="3" fill="#e0525f" />
+              ))}
+              {bi % every === 0 && (
+                <text x={b.col + colW / 2} y={H - 10} textAnchor="middle" className="rr-axis">
+                  {fmtDate(b.night, { day: "numeric", month: "short" })}
+                </text>
+              )}
+            </g>
+          );
+        })}
+        {!dense && bands.map((b, bi) => (
           <g key={b.night}>
             {b.tries.map((a, i) => {
               const x = b.x + i * bw + 1.5;
@@ -282,7 +311,7 @@ function AttemptChart({ attempts, best }) {
       </svg>
       <div className="rr-legend">
         <span><i style={{ background: "#d4af5a" }} /> Kill</span>
-        <span><i style={{ background: "#e0525f" }} /> Wipe</span>
+        <span><i style={{ background: "#e0525f", ...(dense && { height: 3, borderRadius: 0 }) }} /> Wipe{dense ? " (at its length)" : ""}</span>
         <span><i style={{ background: "transparent", borderTop: "2px dashed #d4af5a", borderRadius: 0, height: 0 }} /> Best kill</span>
       </div>
       {tip}
