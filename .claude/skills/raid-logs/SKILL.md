@@ -153,7 +153,9 @@ the facts' `players` list, weighing the whole raid, not parses alone:
   against; being taken out by mechanics (web wrap, mind control) is neutral
 - a moment that saved a pull (a battle rez, a bomb carried out, picking the
   boss back up) can decide it.
-Healers and tanks are as eligible as DPS. Never the site owner (Drikkle) on
+Healers and tanks are as eligible as DPS. Problems stay about the raid, never a person, with
+one exception: **Drikkle** (the site owner) can and should be blamed, comically
+and without mercy, whenever the log shows something he did wrong. Never the site owner (Drikkle) on
 2026-10-07. Two or three "also great" mentions with one fact each.
 
 **PUG runs.** Raids are classified from the roster (`classifyRaids` in
