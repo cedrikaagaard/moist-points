@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.16",
+    date: "2026-10-10",
+    changes: [
+      "Personal reviews for everyone in Sunday's AQ40 (4 October).",
+    ],
+  },
+  {
     version: "2.5.15",
     date: "2026-10-10",
     changes: [

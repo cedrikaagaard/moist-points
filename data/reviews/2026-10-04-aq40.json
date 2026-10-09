@@ -121,7 +121,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 88,
-    "ownAvgParseBefore": 84,
+    "ownAvgParseBefore": 82,
     "raidMedianParse": 85,
     "bosses": [
      {
@@ -184,7 +184,7 @@
       "id": 50713,
       "name": "Viscidus",
       "parse": 76,
-      "own": 78,
+      "own": 76,
       "best": 89,
       "perSec": 180,
       "rank": "10/27 dps",
@@ -198,7 +198,7 @@
       "id": 50714,
       "name": "Princess Huhuran",
       "parse": 95,
-      "own": 90,
+      "own": 84,
       "best": 95,
       "perSec": 1575,
       "rank": "2/28 dps",
@@ -240,7 +240,7 @@
       "id": 50717,
       "name": "C'Thun",
       "parse": 82,
-      "own": 80,
+      "own": 79,
       "best": 93,
       "perSec": 521,
       "rank": "4/27 dps",
@@ -388,6 +388,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.398Z",
+    "grade": "A-",
+    "verdict": "Tanked the Bug Trio, Sartura, the Twins and Ouro, and second in damage on Huhuran",
+    "summary": "An 88 average and no deaths. You tanked on the Bug Trio (94), Sartura (94), the Twins (94) and Ouro (93), and as DPS on Huhuran you were second in raid damage with a 95, equal to your best. Titans every pull. Kri's death cloud hit you four times, the most in the raid.",
+    "good": [
+     {
+      "title": "Huhuran 95",
+      "text": "Second in raid damage, equal to your best, with a Nature Protection Potion and 4 Poison Bolts soaked.",
+      "boss": 50714
+     },
+     {
+      "title": "Tanking",
+      "text": "Top tank parse on the Bug Trio, Sartura, the Twins and Ouro."
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans, Mongoose, Giants and Greater Armor every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Toxic Vapors",
+      "impact": "medium",
+      "boss": 50710,
+      "text": "Four ticks of Kri's death cloud for 6,300, the most in the raid."
+     },
+     {
+      "title": "Skeram",
+      "impact": "low",
+      "boss": 50709,
+      "text": "79 against your 90 last time."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Most Toxic Vapors damage."
+     },
+     "50714": {
+      "tone": "good",
+      "text": "95, second in raid damage."
+     }
+    }
    }
   },
   "Barnstoker": {
@@ -395,7 +441,7 @@
     "class": "Warlock",
     "role": "dps",
     "avgParse": 36,
-    "ownAvgParseBefore": 48,
+    "ownAvgParseBefore": 49,
     "raidMedianParse": 72,
     "bosses": [
      {
@@ -654,6 +700,31 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C",
+    "verdict": "Curse of Shadow and a Soulstone, last of the warlocks on eight bosses",
+    "summary": "You kept Curse of Shadow up, used a Soulstone and 6 healthstones, and didn't die. Otherwise a rough AQ: last of the three warlocks on eight bosses and last in raid damage on the Bug Trio, Fankriss and Ouro, with a 36 average against your usual 49.",
+    "good": [
+     {
+      "title": "Warlock jobs",
+      "text": "Curse of Shadow and a Soulstone."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths, 6 healthstones used."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "high",
+      "text": "Last of the warlocks on eight of nine bosses; last of all DPS on the Bug Trio, Fankriss and Ouro."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Caesartje": {
@@ -661,14 +732,14 @@
     "class": "Mage",
     "role": "dps",
     "avgParse": 65,
-    "ownAvgParseBefore": 51,
+    "ownAvgParseBefore": 50,
     "raidMedianParse": 72,
     "bosses": [
      {
       "id": 50709,
       "name": "The Prophet Skeram",
       "parse": 93,
-      "own": 89,
+      "own": 88,
       "best": 89,
       "perSec": 630,
       "rank": "4/26 dps",
@@ -682,7 +753,7 @@
       "id": 50710,
       "name": "Silithid Royalty",
       "parse": 48,
-      "own": 96,
+      "own": 72,
       "best": 96,
       "perSec": 667,
       "rank": "10/25 dps",
@@ -696,7 +767,7 @@
       "id": 50711,
       "name": "Battleguard Sartura",
       "parse": 84,
-      "own": 99,
+      "own": 94,
       "best": 99,
       "perSec": 514,
       "rank": "19/25 dps",
@@ -710,7 +781,7 @@
       "id": 50712,
       "name": "Fankriss the Unyielding",
       "parse": 76,
-      "own": 99,
+      "own": 78,
       "best": 99,
       "perSec": 667,
       "rank": "22/28 dps",
@@ -725,7 +796,7 @@
       "name": "Viscidus",
       "parse": 34,
       "own": 18,
-      "best": 18,
+      "best": 22,
       "perSec": 107,
       "rank": "19/27 dps",
       "healShare": null,
@@ -738,7 +809,7 @@
       "id": 50714,
       "name": "Princess Huhuran",
       "parse": 28,
-      "own": 99,
+      "own": 95,
       "best": 99,
       "perSec": 431,
       "rank": "25/28 dps",
@@ -752,7 +823,7 @@
       "id": 50715,
       "name": "Twin Emperors",
       "parse": 80,
-      "own": 94,
+      "own": 92,
       "best": 94,
       "perSec": 491,
       "rank": "8/26 dps",
@@ -766,7 +837,7 @@
       "id": 50716,
       "name": "Ouro",
       "parse": 92,
-      "own": 95,
+      "own": 94,
       "best": 95,
       "perSec": 1295,
       "rank": "2/25 dps",
@@ -780,7 +851,7 @@
       "id": 50717,
       "name": "C'Thun",
       "parse": 53,
-      "own": 92,
+      "own": 90,
       "best": 94,
       "perSec": 288,
       "rank": "15/27 dps",
@@ -896,6 +967,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C+",
+    "verdict": "Skeram 93, then Huhuran 28 and a Mind Flay death on C'Thun",
+    "summary": "Skeram 93 (fourth in damage, a personal best) and Ouro 92 were good, and one death against your usual three-plus is progress. Huhuran 28 (against a usual 95) and Sartura 84 (usual 94) were not, and an Eye Tentacle's Mind Flay plus two Ground Ruptures killed you at 4:20 on C'Thun.",
+    "good": [
+     {
+      "title": "Skeram 93",
+      "text": "Fourth in raid damage and a personal best.",
+      "boss": 50709
+     },
+     {
+      "title": "Fewer deaths",
+      "text": "One, against your usual 3.4."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran",
+      "impact": "medium",
+      "boss": 50714,
+      "text": "28 against your usual 95, active half the fight."
+     },
+     {
+      "title": "C'Thun",
+      "impact": "low",
+      "boss": 50717,
+      "text": "Mind Flay from an Eye Tentacle finished you at 4:20."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Firepower, Greater Arcane and Mageblood, food on 4: no flask."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "good",
+      "text": "93, personal best."
+     }
+    }
    }
   },
   "Cladá": {
@@ -1153,6 +1267,32 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C-",
+    "verdict": "Under 10 on four bosses",
+    "summary": "No deaths, and Ouro 84 and Sartura 68 were fine. Skeram 9, the Bug Trio 7, Fankriss 9 and Viscidus 3 were not; you were the lowest mage on seven bosses.",
+    "good": [
+     {
+      "title": "Ouro 84",
+      "text": "Your best of the night.",
+      "boss": 50716
+     },
+     {
+      "title": "Prepared",
+      "text": "Firepower, Mageblood, Fortitude and Greater Armor on most pulls."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "high",
+      "text": "Lowest mage on seven bosses; Viscidus 3, Bug Trio 7, Skeram and Fankriss 9."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Crownless": {
@@ -1454,6 +1594,48 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "D+",
+    "verdict": "Four deaths and no world buffs from the second boss on",
+    "summary": "Kri's Toxic Vapors killed you first on the Bug Trio at 0:21, taking your world buffs. Then Huhuran's Poison Bolt at 0:38, an Anubisath Defender's Thunderclap on trash (with Harrylarry and Eufrasia), and a Qiraji Slayer's Whirlwind. Viscidus 81 was the one good boss; Skeram, the Bug Trio, Fankriss, Huhuran and C'Thun were all 20 or under.",
+    "good": [
+     {
+      "title": "Viscidus 81",
+      "text": "Seventh in raid damage.",
+      "boss": 50713
+     },
+     {
+      "title": "Skeram kick",
+      "text": "An Arcane Explosion interrupted."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Toxic Vapors",
+      "impact": "high",
+      "boss": 50710,
+      "text": "First death of the kill at 0:21. Get out of Kri's cloud on the first tick."
+     },
+     {
+      "title": "Two trash deaths",
+      "impact": "medium",
+      "text": "Thunderclap at 35:08, Qiraji Slayer at 49:42."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mongoose and Giants on 7, food on 6: 2.3 a pull."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "First death: Toxic Vapors."
+     }
+    }
    }
   },
   "Dramima": {
@@ -1714,6 +1896,36 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C+",
+    "verdict": "88 Faerie Fires, last of the healers on four bosses, and an Explode",
+    "summary": "You kept Faerie Fire up (88) and cleansed 3 Toxic Volleys, but were last of the healers on Fankriss, Huhuran and the Twins, and an Anubisath Defender's Explode killed you on trash.",
+    "good": [
+     {
+      "title": "Faerie Fire",
+      "text": "88 casts."
+     },
+     {
+      "title": "Prepared",
+      "text": "Distilled Wisdom and Mageblood every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "text": "Last of the healers on Fankriss, Huhuran and the Twins."
+     },
+     {
+      "title": "Explode",
+      "impact": "low",
+      "text": "An Anubisath Defender's Explode at 38:07: run when it starts glowing."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Drikkle": {
@@ -2271,6 +2483,47 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C",
+    "verdict": "Two deaths before the halfway point and your world buffs with them",
+    "summary": "Toxic Volley and Kri's Toxic Vapors killed you at 0:22 on the Bug Trio (no world buffs from there on), and an Anubisath Defender's Thunderclap killed you on trash at 35:18, the same pull that killed Dispen and Harrylarry. Your average (64) is under your usual 72, with Skeram 76 and Viscidus 79 the best.",
+    "good": [
+     {
+      "title": "Skeram and Viscidus",
+      "text": "76 (sixth in damage) and 79."
+     },
+     {
+      "title": "Sunder Armor",
+      "text": "79 Sunders."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bug Trio",
+      "impact": "high",
+      "boss": 50710,
+      "text": "Toxic Vapors (5,280) and Toxic Volley killed you at 0:22."
+     },
+     {
+      "title": "Trash",
+      "impact": "medium",
+      "text": "Anubisath Defender's Thunderclap at 35:18."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mongoose every pull, food on 3, no flask: 3.2 a pull."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Died at 0:22 in Toxic Vapors."
+     }
+    }
    }
   },
   "Eînherjer": {
@@ -2510,6 +2763,31 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B-",
+    "verdict": "78 dispels, the most in the raid, and very little healing",
+    "summary": "You dispelled 78 times: 12 Volleys on Viscidus, 9 Toxic Volleys and 2 Fears on the Trio, 4 Wyvern Stings on Huhuran, poisons on the Twins. Your healing, though, was last of the healers on Skeram, the Bug Trio, Sartura and Ouro.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "78, the most in the raid."
+     },
+     {
+      "title": "Prepared",
+      "text": "Distilled Wisdom, Mageblood and Zanza every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "text": "Last of the healers on four bosses, 1 to 4%."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Eïnherjar": {
@@ -2778,6 +3056,58 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "C",
+    "verdict": "Top damage on Huhuran, then four deaths, one of them to your own Plague",
+    "summary": "Huhuran 95 was the top damage of the raid (equal to your best) and the Bug Trio 92 a personal best. Then the deaths: your own Plague Effect on trash at 36:26 (gone with it, your world buffs), Huhuran's Poison Bolt at 0:38 as a soaker, Ouro's melee at 1:12, and a Qiraji Slayer on trash. C'Thun was a 25 with nothing for the first 96 seconds.",
+    "good": [
+     {
+      "title": "Huhuran 95",
+      "text": "Top damage of the raid, equal to your best, a Nature Protection Potion.",
+      "boss": 50714
+     },
+     {
+      "title": "Bug Trio 92",
+      "text": "A personal best (90), third in damage.",
+      "boss": 50710
+     },
+     {
+      "title": "Explosives",
+      "text": "4 Sappers and 7 Dense Dynamite."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Your own Plague",
+      "impact": "high",
+      "text": "The Anubisath Defender's Plague on you killed you at 36:26, logged as your own Plague Effect. Plagued players run away from the raid. It cost all six world buffs for the Twins, Ouro and C'Thun."
+     },
+     {
+      "title": "Ouro's melee",
+      "impact": "medium",
+      "boss": 50716,
+      "text": "His melee (5,013) and a Sweep killed you at 1:12, the second death of the kill. Only tanks should be getting his melee."
+     },
+     {
+      "title": "C'Thun",
+      "impact": "medium",
+      "boss": 50717,
+      "text": "25, nothing for the first 96 seconds."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "95, top damage."
+     },
+     "50716": {
+      "tone": "bad",
+      "text": "Killed by Ouro's melee."
+     }
+    }
    }
   },
   "Fatwhaleirl": {
@@ -3013,6 +3343,44 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C",
+    "verdict": "Killed by Kri's death cloud, and Sartura to C'Thun without world buffs",
+    "summary": "On the Bug Trio you stood in Kri's Toxic Vapors for four ticks (7,637, the most in the raid) and died at 0:23, which took your six world buffs for the rest of the raid. Viscidus 88 (second in damage) and the Twins 81 were good after that; Ouro (36) and Huhuran (64) were not.",
+    "good": [
+     {
+      "title": "Viscidus 88",
+      "text": "Second in raid damage.",
+      "boss": 50713
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans, Mongoose, Giants and Fortitude every pull, 5 Sappers, 4 Solid Dynamite."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Toxic Vapors",
+      "impact": "high",
+      "boss": 50710,
+      "text": "Four ticks (7,637) killed you at 0:23. Kri's cloud spawns where he dies; step out on the first tick. It cost six world buffs."
+     },
+     {
+      "title": "Sand Blast",
+      "impact": "low",
+      "boss": 50716,
+      "text": "4,965, the most in the raid."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Died in Toxic Vapors."
+     }
+    }
    }
   },
   "Fluffycatto": {
@@ -3283,6 +3651,53 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.398Z",
+    "grade": "A-",
+    "verdict": "Top rogue on seven bosses, three kicks, 30 Expose Armors",
+    "summary": "An 87 average against your usual 70 and no deaths. Skeram 95 (second in raid damage, two Arcane Explosions kicked) and the Bug Trio 95 (a Great Heal kicked) were the highlights, and you were the best rogue on seven of nine bosses. 30 Expose Armors and 7.9 consumable buffs a pull, the most in the raid.",
+    "good": [
+     {
+      "title": "Skeram 95",
+      "text": "Second in raid damage, two Arcane Explosions kicked.",
+      "boss": 50709
+     },
+     {
+      "title": "Bug Trio",
+      "text": "95 and a Great Heal kicked.",
+      "boss": 50710
+     },
+     {
+      "title": "Prepared",
+      "text": "7.9 buffs a pull, the most in the raid."
+     },
+     {
+      "title": "Expose Armor",
+      "text": "30 casts."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "low",
+      "boss": 50715,
+      "text": "76, seventeenth in raid damage."
+     },
+     {
+      "title": "Huhuran",
+      "impact": "low",
+      "boss": 50714,
+      "text": "Active 56% of the fight; a Wyvern Sting took part of it."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "good",
+      "text": "95, two kicks."
+     }
+    }
    }
   },
   "Foggiie": {
@@ -3544,6 +3959,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "A-",
+    "verdict": "Top healer on Ouro and C'Thun, 8 Power Infusions",
+    "summary": "First of the healers on Ouro (17%) and C'Thun (15%), second on Fankriss, third on Huhuran, with 8 Power Infusions and Mageblood and Fortitude every pull.",
+    "good": [
+     {
+      "title": "Top healer",
+      "text": "Ouro and C'Thun."
+     },
+     {
+      "title": "Power Infusion",
+      "text": "8."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Skeram",
+      "impact": "low",
+      "boss": 50709,
+      "text": "56% overheal, sixth of the healers."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "good",
+      "text": "Top healer."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Gertggs": {
@@ -3820,6 +4270,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.398Z",
+    "grade": "A",
+    "verdict": "Top damage on C'Thun, a Great Heal kicked, 7 Poison Bolt Volleys cleansed off yourself",
+    "summary": "An 89 average and no deaths. Most damage in the raid on C'Thun (91) and second on the Bug Trio and Fankriss. You kicked a Great Heal from Yauj and an Arcane Explosion on Skeram, cleansed Volleys on Viscidus, and drank Nature Protection for Huhuran and C'Thun. Sartura's Whirlwind hit you six times.",
+    "good": [
+     {
+      "title": "C'Thun 91",
+      "text": "Top damage in the raid, seven trips to the stomach.",
+      "boss": 50717
+     },
+     {
+      "title": "Kicks",
+      "text": "A Great Heal on the Bug Trio and an Arcane Explosion on Skeram."
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans, Mongoose, Juju Power, Firewater and food on nearly every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura's Whirlwind",
+      "impact": "medium",
+      "boss": 50711,
+      "text": "Six hits for 8,153, fourth most."
+     },
+     {
+      "title": "Ouro",
+      "impact": "low",
+      "boss": 50716,
+      "text": "86 against your usual 91."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "good",
+      "text": "Kicked a Great Heal."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "91, top damage."
+     }
+    }
    }
   },
   "Grilled": {
@@ -4085,6 +4581,47 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "B+",
+    "verdict": "Curse of the Elements, a Soulstone, and personal bests on Huhuran and Skeram",
+    "summary": "A 77 average against your usual 65 and no deaths: Huhuran 94 (best before 85), Skeram 79 (77), Sartura 92 (equal) and Ouro 92. You kept Curse of the Elements up, used a Soulstone, and brought Supreme Power, Shadow Power, Greater Arcane, Mageblood and Zanza on every pull. The Twins (53) and Viscidus (48) were the weak spots.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Huhuran 94 (85), Skeram 79 (77), Sartura 92 (equal)."
+     },
+     {
+      "title": "Warlock jobs",
+      "text": "Curse of the Elements and a Soulstone."
+     },
+     {
+      "title": "Prepared",
+      "text": "6 buffs a pull against 4.7 for the other DPS, plus Shadow and Arcane Protection Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "medium",
+      "boss": 50715,
+      "text": "53, 24th of 26."
+     },
+     {
+      "title": "Bug Trio",
+      "impact": "low",
+      "boss": 50710,
+      "text": "70 against your usual 87, feared twice by Yauj."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "94, personal best."
+     }
+    }
    }
   },
   "Harrylarry": {
@@ -4092,14 +4629,14 @@
     "class": "Rogue",
     "role": "dps",
     "avgParse": 79,
-    "ownAvgParseBefore": 68,
+    "ownAvgParseBefore": 65,
     "raidMedianParse": 72,
     "bosses": [
      {
       "id": 50709,
       "name": "The Prophet Skeram",
       "parse": 73,
-      "own": 62,
+      "own": 57,
       "best": 90,
       "perSec": 445,
       "rank": "10/26 dps",
@@ -4113,7 +4650,7 @@
       "id": 50710,
       "name": "Silithid Royalty",
       "parse": 95,
-      "own": 80,
+      "own": 75,
       "best": 96,
       "perSec": 1060,
       "rank": "6/25 dps",
@@ -4127,7 +4664,7 @@
       "id": 50711,
       "name": "Battleguard Sartura",
       "parse": 95,
-      "own": 83,
+      "own": 81,
       "best": 96,
       "perSec": 822,
       "rank": "8/25 dps",
@@ -4141,7 +4678,7 @@
       "id": 50712,
       "name": "Fankriss the Unyielding",
       "parse": 90,
-      "own": 81,
+      "own": 74,
       "best": 99,
       "perSec": 1326,
       "rank": "9/28 dps",
@@ -4169,7 +4706,7 @@
       "id": 50714,
       "name": "Princess Huhuran",
       "parse": 96,
-      "own": 82,
+      "own": 71,
       "best": 96,
       "perSec": 1259,
       "rank": "6/28 dps",
@@ -4183,7 +4720,7 @@
       "id": 50715,
       "name": "Twin Emperors",
       "parse": 75,
-      "own": 84,
+      "own": 81,
       "best": 98,
       "perSec": 451,
       "rank": "13/26 dps",
@@ -4197,7 +4734,7 @@
       "id": 50716,
       "name": "Ouro",
       "parse": 89,
-      "own": 88,
+      "own": 87,
       "best": 97,
       "perSec": 850,
       "rank": "10/25 dps",
@@ -4211,7 +4748,7 @@
       "id": 50717,
       "name": "C'Thun",
       "parse": 18,
-      "own": 24,
+      "own": 35,
       "best": 96,
       "perSec": 188,
       "rank": "23/27 dps",
@@ -4336,6 +4873,53 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "B",
+    "verdict": "Three Skeram kicks and a Great Heal kicked, then a trash death took your world buffs",
+    "summary": "The kicks were excellent: 3 Arcane Explosions on Skeram (the most in the raid) and a Great Heal on the Bug Trio. Bug Trio 95, Sartura 95 and Huhuran 96 (equal to your best) followed. Then an Anubisath Defender's Thunderclap killed you on trash at 35:14 and you played the Twins, Ouro and C'Thun without your seven world buffs; C'Thun was an 18 with nothing from you for the first 105 seconds.",
+    "good": [
+     {
+      "title": "Skeram kicks",
+      "text": "3 Arcane Explosions interrupted, the most in the raid.",
+      "boss": 50709
+     },
+     {
+      "title": "Bug Trio",
+      "text": "95 and a Great Heal kicked.",
+      "boss": 50710
+     },
+     {
+      "title": "Huhuran 96",
+      "text": "Equal to your best, with a Nature Protection Potion.",
+      "boss": 50714
+     }
+    ],
+    "fix": [
+     {
+      "title": "Trash death",
+      "impact": "high",
+      "text": "An Anubisath Defender's Thunderclap at 35:14. Seven world buffs gone for the last three bosses."
+     },
+     {
+      "title": "C'Thun",
+      "impact": "medium",
+      "boss": 50717,
+      "text": "18, with no swings for the first 105 seconds."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "good",
+      "text": "3 Arcane Explosions kicked."
+     },
+     "50717": {
+      "tone": "bad",
+      "text": "18, nothing for 105 seconds."
+     }
+    }
    }
   },
   "Hjärterkung": {
@@ -4608,6 +5192,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "A-",
+    "verdict": "Tanked five bosses in bear form and still parsed 94 on Huhuran as DPS",
+    "summary": "You tanked on Skeram, the Bug Trio, Sartura, the Twins and Ouro (96, equal to your best), then went cat for Huhuran (94, a personal best by 16) and Fankriss (81, another). No deaths, Titans and food every pull, an Innervate and 3 Volley cleanses on Viscidus. C'Thun's Eye Beam hit you for the most damage in the raid.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "Five bosses, Ouro 96 equal to your best."
+     },
+     {
+      "title": "Personal bests as DPS",
+      "text": "Huhuran 94 (before: 78) and Fankriss 81 (62)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans and food every pull, Greater Armor on 7, a Nature Protection Potion for Huhuran."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Eye Beam",
+      "impact": "low",
+      "boss": 50717,
+      "text": "Two Eye Beam hits for 9,653, the most damage from it in the raid. It chains between people within about 10 yards."
+     },
+     {
+      "title": "Bug Trio",
+      "impact": "low",
+      "boss": 50710,
+      "text": "72 against your usual 90."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "94 as DPS, personal best."
+     },
+     "50716": {
+      "tone": "good",
+      "text": "96 tanking, equal to your best."
+     }
+    }
    }
   },
   "Ishilly": {
@@ -4849,6 +5478,37 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B-",
+    "verdict": "25 Fear Wards and 8 Power Infusions, low healing, no consumables",
+    "summary": "25 Fear Wards and 8 Power Infusions, and top three on Viscidus (12%, 11% overheal). Healing was low on most bosses, active a third to half of several fights, and the log shows no consumables.",
+    "good": [
+     {
+      "title": "Fear Ward",
+      "text": "25 over the raid."
+     },
+     {
+      "title": "Viscidus",
+      "text": "Third healer, 11% overheal.",
+      "boss": 50713
+     }
+    ],
+    "fix": [
+     {
+      "title": "Activity",
+      "impact": "medium",
+      "text": "Active 26 to 46% on Fankriss, Skeram, Huhuran and the Twins."
+     },
+     {
+      "title": "No consumables",
+      "impact": "low",
+      "text": "None on any pull."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Künigünde": {
@@ -5108,6 +5768,37 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B+",
+    "verdict": "14 Power Infusions, 13 Fear Wards, top healer on Viscidus",
+    "summary": "First of the healers on Viscidus (13%, 18% overheal), second on C'Thun, third on Sartura and Ouro, and 14 Power Infusions and 13 Fear Wards on top. Huhuran (87% overheal, 4%) was the weak one.",
+    "good": [
+     {
+      "title": "Viscidus",
+      "text": "Top healer, 18% overheal.",
+      "boss": 50713
+     },
+     {
+      "title": "Power Infusion and Fear Ward",
+      "text": "14 and 13."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran and Fankriss",
+      "impact": "low",
+      "text": "87% and 86% overheal."
+     }
+    ],
+    "bosses": {
+     "50713": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Macharius": {
@@ -5115,7 +5806,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 90,
-    "ownAvgParseBefore": 66,
+    "ownAvgParseBefore": 65,
     "raidMedianParse": 85,
     "bosses": [
      {
@@ -5164,7 +5855,7 @@
       "id": 50712,
       "name": "Fankriss the Unyielding",
       "parse": 91,
-      "own": 88,
+      "own": 87,
       "best": 95,
       "perSec": 703,
       "rank": "1/1 tanks",
@@ -5372,6 +6063,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.398Z",
+    "grade": "A",
+    "verdict": "Tanked Huhuran, Viscidus and C'Thun, a 90 average, best prepared tank",
+    "summary": "You held all of Huhuran's melee (95), almost all of Viscidus's, Fankriss, a Sartura's Guard and a Giant Claw on C'Thun (95), plus a Twin. A 90 average against your usual 65 and no deaths, on Titans, Mongoose, Giants, Fortitude and Greater Armor nearly every pull. Skeram 90 is a personal best.",
+    "good": [
+     {
+      "title": "Main tank",
+      "text": "100% of Huhuran's melee, 95% of Viscidus's, Fankriss with Mortal Wound swaps at 4 stacks."
+     },
+     {
+      "title": "Skeram 90",
+      "text": "A personal best (84 before).",
+      "boss": 50709
+     },
+     {
+      "title": "Best prepared tank",
+      "text": "7.7 buffs a pull against 6.1 for the other tanks."
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun Eye Beam",
+      "impact": "low",
+      "boss": 50717,
+      "text": "Four Eye Beam hits for 9,517, the most in the raid. The beam chains between people standing close."
+     },
+     {
+      "title": "Toxic Vapors",
+      "impact": "low",
+      "boss": 50710,
+      "text": "Three ticks of Kri's death cloud (5,400)."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "Main tank, 95."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "95 tanking."
+     }
+    }
    }
   },
   "Makkeren": {
@@ -5623,6 +6360,44 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C+",
+    "verdict": "11 Power Infusions, then Sand Blast and a Sweep on Ouro",
+    "summary": "Second healer on Huhuran (13%), 11 Power Infusions, 9 Fear Wards and 2 Fear dispels. On Ouro, Sand Blast and Sweep killed you at 0:26, the first death: healers belong outside his frontal cone and out of melee.",
+    "good": [
+     {
+      "title": "Huhuran",
+      "text": "Second healer, 31% overheal.",
+      "boss": 50714
+     },
+     {
+      "title": "Power Infusion and Fear Ward",
+      "text": "11 and 9."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Ouro",
+      "impact": "medium",
+      "boss": 50716,
+      "text": "Sand Blast (3,010) and Sweep (2,757) killed you at 0:26. Sweep only hits players near him."
+     },
+     {
+      "title": "Fankriss",
+      "impact": "low",
+      "boss": 50712,
+      "text": "4% of the healing."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "bad",
+      "text": "First death, Sand Blast and Sweep."
+     }
+    }
    }
   },
   "Miniwrecker": {
@@ -5630,7 +6405,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 81,
-    "ownAvgParseBefore": 66,
+    "ownAvgParseBefore": 67,
     "raidMedianParse": 72,
     "bosses": [
      {
@@ -5897,6 +6672,46 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "B+",
+    "verdict": "Third on Fankriss, fourth on Ouro, and fully buffed all night",
+    "summary": "An 81 average against your usual 67 and no deaths: Fankriss 85 (third in raid damage), Ouro 88 (fourth), Huhuran 91 and Sartura 89. Mongoose, Zanza, Juju Power, Firewater and food on every pull, plus Nature Protection for Viscidus and Huhuran. Skeram mind-controlled you once.",
+    "good": [
+     {
+      "title": "Fankriss and Ouro",
+      "text": "Third and fourth in raid damage."
+     },
+     {
+      "title": "Prepared",
+      "text": "Every consumable on every pull, 5 Limited Invulnerability Potions."
+     },
+     {
+      "title": "Huhuran 91",
+      "text": "Fifth in raid damage, with a Nature Protection Potion."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Skeram",
+      "impact": "low",
+      "boss": 50709,
+      "text": "61, mind-controlled once."
+     },
+     {
+      "title": "Viscidus and the Twins",
+      "impact": "low",
+      "text": "74 and 82, both under your best."
+     }
+    ],
+    "bosses": {
+     "50712": {
+      "tone": "good",
+      "text": "85, third in raid damage."
+     }
+    }
    }
   },
   "Mohg": {
@@ -6154,6 +6969,40 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "A-",
+    "verdict": "Top healer on Skeram and the Bug Trio, and 35 dispels",
+    "summary": "First of the healers on Skeram (17%) and the Bug Trio, third on Fankriss, with 35 dispels (6 Volleys on Viscidus, Toxic Volley and Fear on the Trio), a Lay on Hands and 2 Blessings of Protection. The overheal climbed late (76 to 84% on Huhuran, the Twins and Ouro).",
+    "good": [
+     {
+      "title": "Top healer",
+      "text": "Skeram 17%, Bug Trio 13%."
+     },
+     {
+      "title": "Dispels",
+      "text": "35 over the raid."
+     },
+     {
+      "title": "Saves",
+      "text": "Lay on Hands, 2 Blessings of Protection."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overheal",
+      "impact": "low",
+      "text": "76 to 84% on Huhuran, the Twins and Ouro."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Osinir": {
@@ -6161,7 +7010,7 @@
     "class": "Mage",
     "role": "dps",
     "avgParse": 53,
-    "ownAvgParseBefore": 52,
+    "ownAvgParseBefore": 51,
     "raidMedianParse": 72,
     "bosses": [
      {
@@ -6422,6 +7271,43 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C+",
+    "verdict": "Killed by a mind-controlled Miniwrecker on Skeram, then personal bests",
+    "summary": "On Skeram a mind-controlled Miniwrecker killed you at 0:20, the only death of the kill: that's a crowd-control miss, not you. After that, personal bests on Sartura (91), Viscidus (54), the Twins (79) and the Bug Trio (51), and Ouro 90 equals your best. Huhuran (19) was the low point.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Sartura 91 (before: 63), Twins 79 (73), Viscidus 54 (19), Bug Trio 51 (41)."
+     },
+     {
+      "title": "Ouro 90",
+      "text": "Equal to your best."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran",
+      "impact": "medium",
+      "boss": 50714,
+      "text": "19, 25th of 28, active 57% of the fight."
+     },
+     {
+      "title": "Skeram",
+      "impact": "low",
+      "boss": 50709,
+      "text": "Killed by a mind-controlled raider at 0:20: on the raid's CC, not you."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "info",
+      "text": "Killed by a mind-controlled Miniwrecker."
+     }
+    }
    }
   },
   "Pinguwan": {
@@ -6429,7 +7315,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 69,
-    "ownAvgParseBefore": 57,
+    "ownAvgParseBefore": 58,
     "raidMedianParse": 72,
     "bosses": [
      {
@@ -6685,6 +7571,42 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "A-",
+    "verdict": "A personal best on every boss, Titans on every pull",
+    "summary": "Nine bosses, nine personal bests: Skeram 41, the Bug Trio 68, Sartura 70, Fankriss 55, Viscidus 74, Huhuran 77, the Twins 84, Ouro 88 (fourth in damage) and C'Thun 62. No deaths, and Titans, Mongoose, Giants and Fortitude every pull.",
+    "good": [
+     {
+      "title": "Nine personal bests",
+      "text": "Huhuran 77 (before: 28), C'Thun 62 (19), Fankriss 55 (21), the Bug Trio 68 (30)."
+     },
+     {
+      "title": "Ouro 88",
+      "text": "Fourth in raid damage.",
+      "boss": 50716
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans and four elixirs every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura",
+      "impact": "low",
+      "boss": 50711,
+      "text": "Active 36% of the fight against 63% for the others."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "good",
+      "text": "88, fourth in damage, personal best."
+     }
+    }
    }
   },
   "Pinkcheese": {
@@ -6941,6 +7863,32 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B",
+    "verdict": "Fear and Toxic Volley dispels on the Bug Trio, steady elsewhere",
+    "summary": "19 dispels, including 4 Fears and 4 Toxic Volleys on the Bug Trio, 3 Blessings of Protection and a Freedom, third healer on the Twins. A lot of overheal (82 to 87% on Fankriss and Huhuran).",
+    "good": [
+     {
+      "title": "Bug Trio dispels",
+      "text": "4 Fears and 4 Toxic Volleys removed.",
+      "boss": 50710
+     },
+     {
+      "title": "Blessings",
+      "text": "3 Protection, 1 Freedom."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overheal",
+      "impact": "low",
+      "text": "82% on Fankriss, 87% on Huhuran."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Punintended": {
@@ -7187,6 +8135,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.070Z",
+    "grade": "B-",
+    "verdict": "Twins 90 and Sartura 85, on four world buffs and thin consumables",
+    "summary": "No deaths and a 70 average, with the Twin Emperors 90 and Sartura 85 the best. You came with four world buffs where most had six, and Mageblood, Mongoose and some Zanza. Viscidus (32) and Fankriss (53) were the weak ones, and you made eight trips to C'Thun's stomach.",
+    "good": [
+     {
+      "title": "Twins and Sartura",
+      "text": "90 and 85, top hunter on Sartura and the Bug Trio."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Viscidus and Fankriss",
+      "impact": "medium",
+      "text": "32 and 53."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "3.2 buffs a pull against 4.7."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "good",
+      "text": "90."
+     }
+    }
    }
   },
   "Sandomin": {
@@ -7194,7 +8177,7 @@
     "class": "Paladin",
     "role": "healer",
     "avgParse": null,
-    "ownAvgParseBefore": 68,
+    "ownAvgParseBefore": 69,
     "raidMedianParse": null,
     "bosses": [
      {
@@ -7243,8 +8226,8 @@
       "id": 50712,
       "name": "Fankriss the Unyielding",
       "parse": null,
-      "own": 60,
-      "best": 70,
+      "own": 73,
+      "best": 86,
       "perSec": 158,
       "rank": "4/11 healers",
       "healShare": 12,
@@ -7257,8 +8240,8 @@
       "id": 50713,
       "name": "Viscidus",
       "parse": null,
-      "own": 71,
-      "best": 73,
+      "own": 73,
+      "best": 78,
       "perSec": 318,
       "rank": "8/11 healers",
       "healShare": 7,
@@ -7313,7 +8296,7 @@
       "id": 50717,
       "name": "C'Thun",
       "parse": null,
-      "own": 81,
+      "own": 76,
       "best": 85,
       "perSec": 171,
       "rank": "3/11 healers",
@@ -7437,6 +8420,37 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B+",
+    "verdict": "Top healer on the Twins, second on Sartura",
+    "summary": "First of the healers on the Twin Emperors (13%), second on Sartura, third on Skeram, the Bug Trio and C'Thun, 12 dispels, no deaths.",
+    "good": [
+     {
+      "title": "Twin Emperors",
+      "text": "Top healer.",
+      "boss": 50715
+     },
+     {
+      "title": "Consistent",
+      "text": "Top three on five bosses."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood and Zanza only."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "good",
+      "text": "Top healer."
+     }
+    }
    }
   },
   "Skooma": {
@@ -7717,14 +8731,14 @@
     "class": "Druid",
     "role": "dps",
     "avgParse": 96,
-    "ownAvgParseBefore": 90,
+    "ownAvgParseBefore": 88,
     "raidMedianParse": 72,
     "bosses": [
      {
       "id": 50716,
       "name": "Ouro",
       "parse": 96,
-      "own": 96,
+      "own": 84,
       "best": 96,
       "perSec": 822,
       "rank": "11/25 dps",
@@ -7738,7 +8752,7 @@
       "id": 50717,
       "name": "C'Thun",
       "parse": 96,
-      "own": 99,
+      "own": 90,
       "best": 99,
       "perSec": 409,
       "rank": "10/27 dps",
@@ -7847,6 +8861,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.397Z",
+    "grade": "B+",
+    "verdict": "Turned up for the last two bosses, parsed 96 on both, and expects applause",
+    "summary": "Seven bosses into the raid, you arrived for Ouro and C'Thun, parsed 96 on each, battle-rezzed Taurenlover on C'Thun and left with the loot table cleared. A part-timer's raid. On the two pulls you did attend you had Mongoose, food, Juju and Firewater, so at least the part-time was well fed.",
+    "good": [
+     {
+      "title": "96 and 96",
+      "text": "Ouro and C'Thun, the top druid on C'Thun."
+     },
+     {
+      "title": "Rebirth",
+      "text": "Battle-rezzed Taurenlover on C'Thun.",
+      "boss": 50717
+     },
+     {
+      "title": "Faerie Fire",
+      "text": "28 casts in two bosses' worth of raid."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Attendance",
+      "impact": "medium",
+      "text": "Two of nine bosses. Skeram, the Bug Trio, Sartura, Fankriss, Viscidus, Huhuran and the Twins happened without you."
+     },
+     {
+      "title": "Sand Blast",
+      "impact": "low",
+      "boss": 50716,
+      "text": "4,417 from Sand Blast, fourth most. Everyone takes one; you took a big one."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "good",
+      "text": "96."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "96 and a Rebirth on Taurenlover."
+     }
+    }
    }
   },
   "Snoillim": {
@@ -8107,6 +9166,42 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B-",
+    "verdict": "37 dispels and 12 Demonic Runes, but Viscidus's Toxin killed you",
+    "summary": "You worked hard: 37 dispels (12 Volleys on Viscidus, 7 Toxic Volleys on the Trio), 91 Faerie Fires, 3 Innervates, 9 Mana Potions and 12 Demonic Runes. On Viscidus a Toxin cloud killed you at 1:38, the only death of the kill. Healing share was low on most bosses.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "37 over the raid."
+     },
+     {
+      "title": "Utility",
+      "text": "91 Faerie Fires, 3 Innervates."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Viscidus's Toxin",
+      "impact": "medium",
+      "boss": 50713,
+      "text": "4,093 from the Toxin cloud killed you at 1:38, the only death. Move out of it."
+     },
+     {
+      "title": "Healing share",
+      "impact": "low",
+      "text": "Last of the healers on Viscidus and C'Thun."
+     }
+    ],
+    "bosses": {
+     "50713": {
+      "tone": "bad",
+      "text": "The only death: Toxin."
+     }
+    }
    }
   },
   "Snotspat": {
@@ -8114,7 +9209,7 @@
     "class": "Warlock",
     "role": "dps",
     "avgParse": 76,
-    "ownAvgParseBefore": 72,
+    "ownAvgParseBefore": 68,
     "raidMedianParse": 72,
     "bosses": [
      {
@@ -8135,7 +9230,7 @@
       "id": 50710,
       "name": "Silithid Royalty",
       "parse": 95,
-      "own": 79,
+      "own": 80,
       "best": 98,
       "perSec": 632,
       "rank": "13/25 dps",
@@ -8149,7 +9244,7 @@
       "id": 50711,
       "name": "Battleguard Sartura",
       "parse": 84,
-      "own": 88,
+      "own": 81,
       "best": 98,
       "perSec": 552,
       "rank": "17/25 dps",
@@ -8163,7 +9258,7 @@
       "id": 50712,
       "name": "Fankriss the Unyielding",
       "parse": 96,
-      "own": 92,
+      "own": 88,
       "best": 96,
       "perSec": 946,
       "rank": "16/28 dps",
@@ -8177,7 +9272,7 @@
       "id": 50713,
       "name": "Viscidus",
       "parse": 53,
-      "own": 50,
+      "own": 44,
       "best": 79,
       "perSec": 68,
       "rank": "23/27 dps",
@@ -8191,7 +9286,7 @@
       "id": 50714,
       "name": "Princess Huhuran",
       "parse": 88,
-      "own": 92,
+      "own": 89,
       "best": 97,
       "perSec": 659,
       "rank": "17/28 dps",
@@ -8205,7 +9300,7 @@
       "id": 50715,
       "name": "Twin Emperors",
       "parse": 0,
-      "own": 43,
+      "own": 28,
       "best": 76,
       "perSec": 0,
       "rank": "26/26 dps",
@@ -8219,7 +9314,7 @@
       "id": 50716,
       "name": "Ouro",
       "parse": 97,
-      "own": 93,
+      "own": 89,
       "best": 96,
       "perSec": 926,
       "rank": "6/25 dps",
@@ -8233,7 +9328,7 @@
       "id": 50717,
       "name": "C'Thun",
       "parse": 82,
-      "own": 84,
+      "own": 78,
       "best": 97,
       "perSec": 319,
       "rank": "14/27 dps",
@@ -8358,6 +9453,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "B",
+    "verdict": "158 Curses of Recklessness and an Ouro personal best, and a blank on the Twins",
+    "summary": "No deaths (you average more than two a raid), 158 Curses of Recklessness, and strong parses: Ouro 97 (a personal best), Fankriss 96 (equal), the Bug Trio 95 and Skeram 86. On the Twin Emperors the log has nothing from you at all for the whole fight. If you were tanking Vek'lor out of the logger's range, that explains it; otherwise it's a 0.",
+    "good": [
+     {
+      "title": "No deaths",
+      "text": "Zero deaths; your usual is 2.4 a raid."
+     },
+     {
+      "title": "Curse duty",
+      "text": "158 Curses of Recklessness."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Ouro 97 (96 before), Fankriss 96 (equal)."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "medium",
+      "boss": 50715,
+      "text": "Nothing from you in the log for 205 seconds, 0 parse."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Supreme Power, Firepower and Greater Arcane every pull, nothing else: 3 buffs a pull against 4.7."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "info",
+      "text": "Nothing from you in the log."
+     },
+     "50716": {
+      "tone": "good",
+      "text": "97, personal best."
+     }
+    }
    }
   },
   "Speldosan": {
@@ -8616,6 +9755,44 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:11:38.987Z",
+    "grade": "C+",
+    "verdict": "The only Tranquilizing Shot on Huhuran, and Mageblood and Mongoose again",
+    "summary": "On Huhuran you cast the only Tranquilizing Shot in the raid, and the Twins 95 is a personal best. Your average (75) is about your usual, with Skeram 30 and Sartura 67 the low points. Consumables are the same two as every raid this week: Mageblood and Mongoose.",
+    "good": [
+     {
+      "title": "Huhuran's Frenzy",
+      "text": "The raid's only Tranquilizing Shot.",
+      "boss": 50714
+     },
+     {
+      "title": "Twin Emperors 95",
+      "text": "A personal best (93).",
+      "boss": 50715
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "high",
+      "text": "Mageblood and Mongoose, food once: 2.1 buffs a pull against 4.7, four raids running."
+     },
+     {
+      "title": "Sand Blast",
+      "impact": "low",
+      "boss": 50716,
+      "text": "4,518 from Sand Blast, third most."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "The raid's only Tranquilizing Shot."
+     }
+    }
    }
   },
   "Tanknarok": {
@@ -8623,7 +9800,7 @@
     "class": "Warrior",
     "role": "dps",
     "avgParse": 21,
-    "ownAvgParseBefore": 27,
+    "ownAvgParseBefore": 25,
     "raidMedianParse": 72,
     "bosses": [
      {
@@ -8835,6 +10012,37 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "D",
+    "verdict": "Last or second to last of the warriors on every boss, no world buffs",
+    "summary": "No world buffs on any pull and the lowest or second-lowest warrior on all nine bosses, with Huhuran's Poison Bolt making you the first death of that kill at 0:36. 37 Sunder Armors.",
+    "good": [
+     {
+      "title": "Sunder Armor",
+      "text": "37 Sunders."
+     },
+     {
+      "title": "Viscidus 49",
+      "text": "Your best parse of the night."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "high",
+      "text": "Last of the warriors on six bosses and second to last on the other three."
+     },
+     {
+      "title": "Huhuran",
+      "impact": "medium",
+      "boss": 50714,
+      "text": "First death of the kill at 0:36, Poison Bolt and Noxious Poison."
+     }
+    ],
+    "bosses": {}
    }
   },
   "Taurenlover": {
@@ -9102,6 +10310,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "A-",
+    "verdict": "Top healer on Sartura, Fankriss and Huhuran, then a Dark Glare",
+    "summary": "First of the healers on Sartura, Fankriss (18%) and Huhuran (20%), second on Skeram, the Bug Trio (11% overheal), Viscidus, the Twins and Ouro, on 10 Mana Potions. On C'Thun, Dark Glare killed you at 0:55, the first death; Skoomael brought you back with a Rebirth.",
+    "good": [
+     {
+      "title": "Top healer three times",
+      "text": "Huhuran 20%, Fankriss 18%, Sartura 13%."
+     },
+     {
+      "title": "Efficient",
+      "text": "11% overheal on the Bug Trio, 18% on Viscidus, 21% on Ouro."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Dark Glare",
+      "impact": "medium",
+      "boss": 50717,
+      "text": "First death on C'Thun at 0:55: move with the sweep."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "Top healer, 20%."
+     },
+     "50717": {
+      "tone": "bad",
+      "text": "Dark Glare at 0:55, rezzed."
+     }
+    }
    }
   },
   "Tsome": {
@@ -9379,6 +10622,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.398Z",
+    "grade": "A",
+    "verdict": "Top damage on five bosses, no deaths, thirty-three points over your usual",
+    "summary": "A 92 average against your usual 59 and no deaths: most damage in the raid on Skeram, Sartura, Fankriss, Viscidus and the Twin Emperors (96), second on Ouro and C'Thun. Viscidus 96 and C'Thun 88 are huge personal bests. Sartura's Whirlwind found you six times, the second most damage from it in the raid.",
+    "good": [
+     {
+      "title": "Top damage five times",
+      "text": "Skeram, Sartura, Fankriss, Viscidus and the Twin Emperors."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Viscidus 96 (before: 71), C'Thun 88 (77), Sartura 93 (92), Ouro 95 (93), Twins 96 (equal)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose and food every pull, Juju Power and Firewater on 8, 7 Mighty Rage Potions, 6 Sappers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura's Whirlwind",
+      "impact": "medium",
+      "boss": 50711,
+      "text": "Six hits for 12,084, second most in the raid. Back out when she or a Guard spins."
+     },
+     {
+      "title": "Huhuran",
+      "impact": "low",
+      "boss": 50714,
+      "text": "88, under your usual 92; Wyvern Sting and Noxious Poison took 10 seconds."
+     }
+    ],
+    "bosses": {
+     "50711": {
+      "tone": "bad",
+      "text": "Six Whirlwind hits."
+     },
+     "50713": {
+      "tone": "good",
+      "text": "96, top damage, personal best."
+     },
+     "50715": {
+      "tone": "good",
+      "text": "96, top damage."
+     }
+    }
    }
   },
   "Valethia": {
@@ -9649,6 +10941,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:10:47.398Z",
+    "grade": "A",
+    "verdict": "Top damage on the Bug Trio and Ouro, 95 or better on four bosses",
+    "summary": "A 90 average and no deaths. Most damage in the raid on Silithid Royalty (95) and Ouro (95), second on the Twin Emperors, third on Skeram, Viscidus, Huhuran and C'Thun, with a Nature Protection Potion for Huhuran's soak. Best prepared DPS in the raid with 6.6 buffs a pull.",
+    "good": [
+     {
+      "title": "Top damage",
+      "text": "Silithid Royalty 95 and Ouro 95."
+     },
+     {
+      "title": "Consistent",
+      "text": "Top three in damage on seven of nine bosses."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Giants, Greater Armor and food on every pull, 6 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura's Whirlwind",
+      "impact": "low",
+      "boss": 50711,
+      "text": "Four hits for 5,180, more than most."
+     },
+     {
+      "title": "C'Thun",
+      "impact": "low",
+      "boss": 50717,
+      "text": "83 against your usual 90, three trips to the stomach."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "good",
+      "text": "95, top damage."
+     },
+     "50716": {
+      "tone": "good",
+      "text": "95, top damage."
+     }
+    }
    }
   },
   "Wellan": {
@@ -9916,6 +11253,48 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B",
+    "verdict": "Personal bests on six bosses and an Arcane Explosion kicked",
+    "summary": "A 59 average against your usual 49, no deaths, and personal bests on the Bug Trio (72), Sartura (77), Viscidus (67), Ouro (82), C'Thun (72) and Skeram, where you also kicked an Arcane Explosion. Fankriss (14) was spent partly webbed in an alcove.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "C'Thun 72 (before: 17), Ouro 82 (51), Viscidus 67 (33), Sartura 77 (65), Bug Trio 72 (67)."
+     },
+     {
+      "title": "Skeram kick",
+      "text": "An Arcane Explosion interrupted.",
+      "boss": 50709
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose and Giants every pull, Greater Armor and food on 7."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Fankriss",
+      "impact": "low",
+      "boss": 50712,
+      "text": "14; you were Entangled into an alcove for part of it."
+     },
+     {
+      "title": "Huhuran",
+      "impact": "low",
+      "boss": 50714,
+      "text": "48 against your 72 last time."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "72, personal best."
+     }
+    }
    }
   },
   "Wrenn": {
@@ -9923,7 +11302,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 53,
-    "ownAvgParseBefore": 53,
+    "ownAvgParseBefore": null,
     "raidMedianParse": 85,
     "bosses": [
      {
@@ -10179,6 +11558,36 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B-",
+    "verdict": "Four personal bests, C'Thun up from 26 to 68",
+    "summary": "No deaths, a 53 average and personal bests on C'Thun (68, ninth in damage), Sartura (77), the Twins (76) and Viscidus (68), with Mongoose, Giants, Fortitude and Greater Armor every pull. Fankriss (21, Entangled) and the Bug Trio (36) were the low ones.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "C'Thun 68 (before: 26), Sartura 77 (70), Twins 76 (74), Viscidus 68 (63)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Four elixirs every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bug Trio and Fankriss",
+      "impact": "medium",
+      "text": "36 and 21."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "68, personal best."
+     }
+    }
    }
   },
   "Yulepunch": {
@@ -10186,7 +11595,7 @@
     "class": "Warrior",
     "role": "tank",
     "avgParse": 56,
-    "ownAvgParseBefore": 59,
+    "ownAvgParseBefore": 55,
     "raidMedianParse": 85,
     "bosses": [
      {
@@ -10451,6 +11860,43 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "B-",
+    "verdict": "Tanked the Bug Trio, Sartura and Ouro without dying, quiet on the rest",
+    "summary": "You tanked on the Bug Trio (82), Sartura (83) and Ouro (87) with Titans every pull, and didn't die. As DPS the night was weak: Skeram 18 (mind-controlled once), Fankriss 3, the Twins 31 with 45 seconds of nothing at the start.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "Bug Trio, Sartura and Ouro, no deaths."
+     },
+     {
+      "title": "Titans",
+      "text": "On all nine pulls."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "medium",
+      "boss": 50715,
+      "text": "31, nothing for the first 45 seconds."
+     },
+     {
+      "title": "Fankriss",
+      "impact": "low",
+      "boss": 50712,
+      "text": "3; you took 13% of his melee, so you were tanking something."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "good",
+      "text": "87 tanking."
+     }
+    }
    }
   },
   "Zuzul": {
@@ -10718,6 +12164,47 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T23:13:39.071Z",
+    "grade": "C-",
+    "verdict": "Huhuran's Poison Bolt, then C'Thun's stomach",
+    "summary": "Two deaths against your usual 0.3: Huhuran's Poison Bolt (8,566) killed you at 0:40 while soaking, the last of four soaker deaths, which took your world buffs, and on C'Thun the stomach's Digestive Acid got you at 3:06. Viscidus, Huhuran, Ouro and C'Thun (1) were all near the bottom.",
+    "good": [
+     {
+      "title": "Prepared",
+      "text": "Mongoose and Fortitude every pull, Titans, Nature Protection Potions for Huhuran."
+     },
+     {
+      "title": "Bug Trio 67",
+      "text": "Over your usual."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran soak",
+      "impact": "medium",
+      "boss": 50714,
+      "text": "Poison Bolt killed you at 0:40. Soakers need nature resistance and healing; this one cost your world buffs."
+     },
+     {
+      "title": "C'Thun's stomach",
+      "impact": "medium",
+      "boss": 50717,
+      "text": "Digestive Acid killed you at 3:06. Leave before the stacks get high."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "bad",
+      "text": "Died soaking."
+     },
+     "50717": {
+      "tone": "bad",
+      "text": "Died in the stomach."
+     }
+    }
    }
   }
  }
