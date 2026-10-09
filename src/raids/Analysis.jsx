@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { lazyJson } from "./lazyJson.js";
 import { BossIcon, Player } from "./components.jsx";
 import { CLASS_OF } from "./data.js";
 
@@ -12,7 +13,7 @@ import { CLASS_OF } from "./data.js";
 //     bosses: [{ encounterId, name, notes: [{ tone: "good"|"bad"|"info", text }] }],
 //     mvp: { player, headline, why: [..], also: [{ player, text }] },
 //     mechanics: [{ encounterId, verdict: "good"|"bad", text }] (older files) }
-const files = import.meta.glob("./data/analysis/*.json", { import: "default" });
+const files = lazyJson(import.meta.glob("./data/analysis/*.json", { query: "?url", import: "default", eager: true }));
 
 export function useAnalysis(night) {
   const [a, setA] = useState(null);

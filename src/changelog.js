@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.9",
+    date: "2026-10-09",
+    changes: [
+      "Fixed the site failing to publish: with months of raid logs added, building the site ran out of memory. Raid data now loads as separate files when a page needs it, which also makes building about five times faster.",
+    ],
+  },
+  {
     version: "2.3.8",
     date: "2026-10-09",
     changes: [

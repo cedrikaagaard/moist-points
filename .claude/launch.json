@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "moist", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 5173 }
+    { "name": "moist", "runtimeExecutable": "/Users/cedrik/.nvm/versions/node/v20.19.3/bin/npm", "runtimeArgs": ["run", "dev"], "port": 5173 },
+    { "name": "moist-build", "runtimeExecutable": "/Users/cedrik/.nvm/versions/node/v20.19.3/bin/npx", "runtimeArgs": ["vite", "preview", "--port", "4173", "--strictPort"], "port": 4173 }
   ]
 }

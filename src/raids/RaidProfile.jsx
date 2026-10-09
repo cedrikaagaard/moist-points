@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { lazyJson } from "./lazyJson.js";
 import { GUILD_NIGHTS as NIGHTS, ALL_TIME } from "./data.js";
 import { fmtDate, zoneOf } from "./assets.js";
 import { BossIcon, Panel, SpellIcon, Tabs, Tile, ZoneIcon, useTip } from "./components.jsx";
@@ -11,7 +12,7 @@ import "./raids.css";
 
 // A raider's raid record, for their profile / My Page. Loads their own file
 // (src/raids/data/players/<name>.json) so the page stays light.
-const files = import.meta.glob("./data/players/*.json", { import: "default" });
+const files = lazyJson(import.meta.glob("./data/players/*.json", { query: "?url", import: "default", eager: true }));
 
 export function usePlayerRaids(name) {
   const r = rosterOf(name);

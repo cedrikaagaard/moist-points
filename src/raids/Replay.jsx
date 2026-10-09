@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { lazyJson } from "./lazyJson.js";
 import { CLASS_OF } from "./data.js";
 import { classColor, mmss } from "./assets.js";
 import { Panel, Player, SpellIcon, Tabs } from "./components.jsx";
@@ -9,7 +10,7 @@ import { Panel, Player, SpellIcon, Tabs } from "./components.jsx";
 // `npm run raids:replays`:
 //   { durationSec, step, damage|healing: { players: [{ name, class, spec }],
 //     series: [[amount per step], ...] }, events: [{ t, kind, player, text, icon }] }
-const files = import.meta.glob("./data/replays/*.json", { import: "default" });
+const files = lazyJson(import.meta.glob("./data/replays/*.json", { query: "?url", import: "default", eager: true }));
 const keyOf = (night, id) => `./data/replays/${night}-${id}.json`;
 export const hasReplay = (night, id) => Boolean(files[keyOf(night, id)]);
 

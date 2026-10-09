@@ -2,6 +2,7 @@
 // ships with the page; each night's full file is its own chunk, loaded on open.
 // All produced by `npm run raids:fetch` - independent of the SR-points database.
 import { useEffect, useState } from "react";
+import { lazyJson } from "./lazyJson.js";
 import summary from "./data/summary.json";
 
 export const NIGHTS = summary.nights; // newest first, guild raids and PUG runs
@@ -32,7 +33,7 @@ export function lockoutOf(n) {
   return { before: same.filter((x) => (x.start || x.night) < at), after: same.filter((x) => (x.start || x.night) > at) };
 }
 
-const nightFiles = import.meta.glob("./data/nights/*.json", { import: "default" });
+const nightFiles = lazyJson(import.meta.glob("./data/nights/*.json", { query: "?url", import: "default", eager: true }));
 
 export function useNight(night) {
   const [state, setState] = useState({ night: null, error: null });
@@ -58,7 +59,7 @@ export function useNight(night) {
 
 // Per-boss detail (attempts, mechanics, parses, who was there) lives in
 // data/bosses/<id>.json and only loads on the boss and raid pages.
-const bossFiles = import.meta.glob("./data/bosses/*.json", { import: "default" });
+const bossFiles = lazyJson(import.meta.glob("./data/bosses/*.json", { query: "?url", import: "default", eager: true }));
 
 // Full detail for several bosses: { [id]: boss } once loaded, null while loading.
 export function useBosses(ids) {
