@@ -287,6 +287,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:52:52.064Z",
+    "grade": "A-",
+    "verdict": "An 89 average, a Vaelastrasz personal best and 97 Sunder Armors",
+    "summary": "Twenty-seven points over your usual (89 against 62), top-five damage on six of eight bosses, Vaelastrasz 84 a personal best, and 97 Sunder Armors. No deaths. Firemaw was the one dip.",
+    "good": [
+     {
+      "title": "Vaelastrasz 84",
+      "text": "A personal best (82 before), fifth in raid damage.",
+      "boss": 50611
+     },
+     {
+      "title": "Consistent",
+      "text": "Chromaggus 96, Flamegor 93, Broodlord, Ebonroc and Nefarian 92."
+     },
+     {
+      "title": "Sunder Armor",
+      "text": "97 Sunders over the raid."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Firemaw",
+      "impact": "medium",
+      "boss": 50613,
+      "text": "87, eleventh of twelve warriors, and active 57% of the fight against 75% for the other DPS, with 10 seconds without a swing from 0:34."
+     },
+     {
+      "title": "No flask",
+      "impact": "low",
+      "text": "Titans on none of the six snapshots; everything else was there every pull."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "good",
+      "text": "84, personal best."
+     },
+     "50613": {
+      "tone": "bad",
+      "text": "87, 57% active."
+     }
+    }
    }
   },
   "Allipalli": {
@@ -511,6 +556,42 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "B+",
+    "verdict": "The most afflictions cleansed on Chromaggus, and the best-prepared healer",
+    "summary": "16 Brood Afflictions cleansed on Chromaggus, the most in the raid (Red, Green and Blue), third healer on Nefarian (12%), and 5 consumable buffs a pull, the most of the healers. Your healing share elsewhere was modest with a lot of overheal.",
+    "good": [
+     {
+      "title": "Chromaggus",
+      "text": "16 afflictions cleansed, the most.",
+      "boss": 50616
+     },
+     {
+      "title": "Nefarian",
+      "text": "Third healer, 12%.",
+      "boss": 50617
+     },
+     {
+      "title": "Prepared",
+      "text": "Zanza, Mageblood, Fortitude and Gordok every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overheal",
+      "impact": "medium",
+      "text": "72 to 85% overheal on Broodlord, Firemaw, Ebonroc and Chromaggus, and last of the healers on Broodlord."
+     }
+    ],
+    "bosses": {
+     "50616": {
+      "tone": "good",
+      "text": "16 afflictions cleansed, most in the raid."
+     }
+    }
    }
   },
   "Barnstoker": {
@@ -735,6 +816,50 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "grade": "B-",
+    "verdict": "Five personal bests and Curse of Recklessness all raid, on the thinnest consumables here",
+    "summary": "A 69 average against your usual 49, with personal bests on Razorgore (76), Vaelastrasz (77), Firemaw (86), Ebonroc (76) and Nefarian (85). You kept Curse of Recklessness up (77 casts), drank the only Fire Protection Potion on Firemaw and used 4 healthstones. Consumables were the thinnest of the DPS: 1.8 buffs a pull. Chromaggus (36) is partly the boss: his weakness rotates through schools.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Nefarian 85 (before: 80), Firemaw 86 (64), Vaelastrasz 77 (56), Razorgore 76 (64), Ebonroc 76 (73)."
+     },
+     {
+      "title": "Curse duty",
+      "text": "77 Curses of Recklessness."
+     },
+     {
+      "title": "Fire Protection on Firemaw",
+      "text": "The only one drunk in the raid."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "high",
+      "text": "Greater Arcane every pull, food on 3, Gordok on 2, and nothing else: 1.8 buffs a pull against 4, the least of the DPS."
+     },
+     {
+      "title": "Broodlord",
+      "impact": "low",
+      "boss": 50612,
+      "text": "49, active 60% of the fight against 83% for the others."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "86, personal best, Fire Protection Potion."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "85, personal best."
+     }
+    }
    }
   },
   "Birkler": {
@@ -956,6 +1081,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:52:52.064Z",
+    "grade": "A-",
+    "verdict": "Main tank on Razorgore, Vaelastrasz, Firemaw and Nefarian, no deaths, on almost no consumables",
+    "summary": "You took the boss on Razorgore, Vaelastrasz (all ten Flame Breaths, as the tank should), Firemaw and Nefarian and shared Ebonroc, Flamegor and Chromaggus, without dying. 86 Sunder Armors. The consumables are the problem: 2.3 buffs a pull against 5 for the other tanks.",
+    "good": [
+     {
+      "title": "Main tank",
+      "text": "57 to 87% of the boss's melee on Razorgore, Vaelastrasz, Firemaw, Flamegor and Nefarian, and no deaths of your own."
+     },
+     {
+      "title": "Firemaw 95",
+      "text": "Over your usual 90, with 11 Flame Buffet stacks and two Shadow Flames taken.",
+      "boss": 50613
+     },
+     {
+      "title": "Sunder Armor",
+      "text": "86 Sunders."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mongoose and Giants every pull, food once, no flask, no Zanza: 2.3 buffs a pull against 5 for the other tanks. Four world buffs against the raid's usual six or seven, too."
+     },
+     {
+      "title": "Broodlord",
+      "impact": "low",
+      "boss": 50612,
+      "text": "80 against your usual 89."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "good",
+      "text": "Main tank, all the Flame Breaths."
+     },
+     "50613": {
+      "tone": "good",
+      "text": "Main tank, 95."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "Main tank, 71% of the melee."
+     }
+    }
    }
   },
   "Cladá": {
@@ -1173,6 +1347,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:37.962Z",
+    "grade": "C",
+    "verdict": "Decursed the Black affliction on Chromaggus, then the skeletons got you",
+    "summary": "On Chromaggus you removed 6 Black afflictions, and Nefarian 68 is well over your usual 30. The rest was rough: last or second to last of the DPS on Vaelastrasz, Firemaw and Chromaggus, Broodlord 8, a trash death to a Blackwing Warlock, and a Bone Construct killed you at 1:52 on Nefarian.",
+    "good": [
+     {
+      "title": "Chromaggus decursing",
+      "text": "6 Brood Affliction: Black removed. Chromaggus's weakness also rotates through schools mages can't use, so the 27 isn't all you.",
+      "boss": 50616
+     },
+     {
+      "title": "Nefarian 68",
+      "text": "More than double your usual 30.",
+      "boss": 50617
+     },
+     {
+      "title": "Consumables",
+      "text": "Mageblood, Frost Power and Fortitude every pull: 4.3 buffs a pull against 4."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bone Construct on Nefarian",
+      "impact": "medium",
+      "boss": 50617,
+      "text": "Killed at 1:52 (4,703 melee and Exploit Weakness in your last ten seconds), with 562 healing on you."
+     },
+     {
+      "title": "Trash death",
+      "impact": "low",
+      "text": "A Blackwing Warlock at 25:15."
+     },
+     {
+      "title": "Vaelastrasz and Broodlord",
+      "impact": "medium",
+      "text": "33 (26th of 27) and 8."
+     }
+    ],
+    "bosses": {
+     "50616": {
+      "tone": "good",
+      "text": "6 Black afflictions removed."
+     },
+     "50617": {
+      "tone": "bad",
+      "text": "Killed by a Bone Construct at 1:52."
+     }
+    }
    }
   },
   "Cokedog": {
@@ -1410,6 +1635,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:53:43.822Z",
+    "grade": "B",
+    "verdict": "A solid first BWL in our logs, fifth in damage on Broodlord",
+    "summary": "Your first raid in our logs: no deaths, a 77 average, fifth highest damage on Broodlord (84) and Firemaw 92. Good consumables for a first night (4.5 a pull against 4). Vaelastrasz, last of the warriors, is the one to improve.",
+    "good": [
+     {
+      "title": "Broodlord 84",
+      "text": "Fifth in raid damage.",
+      "boss": 50612
+     },
+     {
+      "title": "Firemaw 92",
+      "text": "Your best of the night.",
+      "boss": 50613
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Juju Power and Gordok every pull, food on 5 of 6, 4 Great Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Vaelastrasz",
+      "impact": "medium",
+      "boss": 50611,
+      "text": "63, last of the thirteen warriors."
+     },
+     {
+      "title": "No flask or Zanza",
+      "impact": "low",
+      "text": "Neither on any pull with a snapshot."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "bad",
+      "text": "63, last of the warriors."
+     },
+     "50612": {
+      "tone": "good",
+      "text": "84, fifth in raid damage."
+     }
+    }
    }
   },
   "Dramima": {
@@ -1641,6 +1912,45 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "grade": "B-",
+    "verdict": "Four personal bests and Faerie Fire all raid, but low on the meter",
+    "summary": "Your eighth raid with us: a 72 average against your usual 64 and personal bests on Firemaw (91), Nefarian (82), Razorgore (61) and Vaelastrasz (58), with 49 Faerie Fires and no deaths. In raw damage you were in the bottom six on most bosses, and the consumables are thin.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Firemaw 91 (before: 77), Nefarian 82 (79), Razorgore 61 (54), Vaelastrasz 58 (53)."
+     },
+     {
+      "title": "Faerie Fire",
+      "text": "49 Faerie Fire (Feral) casts."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mongoose and Giants every pull, Firewater on 4, food on 2, no Juju, Zanza or flask: 3.2 buffs a pull against 4."
+     },
+     {
+      "title": "Flamegor and Ebonroc",
+      "impact": "low",
+      "text": "Flamegor 60 (best before: 80) and Ebonroc 61."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "91, personal best."
+     }
+    }
    }
   },
   "Drikkle": {
@@ -2150,6 +2460,52 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.419Z",
+    "grade": "C",
+    "verdict": "Second in raid damage on Vaelastrasz, then he turned on you, and the rest of the raid was bare",
+    "summary": "You started strong: Razorgore 84 (third in damage) and Vaelastrasz 91 (second, equal to your best). At 0:26 on Vaelastrasz he turned from Birkler to you, killed you in three swings and went straight back: you'd passed the tank on threat. After that death the log shows none of your world buffs, elixirs or Zanza for the rest of the raid, and you were the last or second-to-last warrior on Firemaw, Ebonroc, Chromaggus and Nefarian.",
+    "good": [
+     {
+      "title": "Vaelastrasz 91",
+      "text": "Second in raid damage, equal to your best.",
+      "boss": 50611
+     },
+     {
+      "title": "Razorgore 84",
+      "text": "Third in raid damage, well over your usual 62.",
+      "boss": 50610
+     },
+     {
+      "title": "Explosives",
+      "text": "4 Goblin Sapper Charges and 5 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Threat on Vaelastrasz",
+      "impact": "high",
+      "boss": 50611,
+      "text": "At 0:26 Vaelastrasz switched from Birkler to you, hit you for 4,409 and 3,599, and switched back the moment you died. Only the top of the threat table gets that. Ease off when you're close to the tank, two seconds before the kill isn't worth eight world buffs."
+     },
+     {
+      "title": "Nothing on you after it",
+      "impact": "high",
+      "text": "From Broodlord to Nefarian the log shows no world buffs, no elixirs and no Zanza on you: 2.2 consumable buffs a pull against 4 for the other DPS. Last of the warriors on Firemaw, Ebonroc and Chromaggus followed."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "bad",
+      "text": "Pulled threat at 0:26 and died."
+     },
+     "50614": {
+      "tone": "bad",
+      "text": "51, last of the warriors."
+     }
+    }
    }
   },
   "Elozia": {
@@ -2371,6 +2727,61 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "A-",
+    "verdict": "Top healer on Vaelastrasz, the only Veil of Shadow removals, and 90 Faerie Fires",
+    "summary": "Top healer on Vaelastrasz (14%) and fourth on Firemaw, plus jobs all night: 11 Black afflictions removed on Chromaggus (which is why your healing there is near zero), both Veil of Shadow removals on Nefarian, 90 Faerie Fires, 2 Innervates and a Rebirth. No deaths.",
+    "good": [
+     {
+      "title": "Vaelastrasz",
+      "text": "Top healer, 14% with 37% overheal.",
+      "boss": 50611
+     },
+     {
+      "title": "Chromaggus decursing",
+      "text": "11 Black and 2 Green afflictions removed.",
+      "boss": 50616
+     },
+     {
+      "title": "Veil of Shadow",
+      "text": "Both Veils removed on Nefarian came from you.",
+      "boss": 50617
+     },
+     {
+      "title": "Utility",
+      "text": "90 Faerie Fires, 2 Innervates, a Rebirth."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razorgore",
+      "impact": "low",
+      "boss": 50610,
+      "text": "Last of the healers, 3%."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Zanza on 4 of 6, Mageblood on 5, food once."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "good",
+      "text": "Top healer."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "11 Black afflictions removed."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "Both Veil of Shadow removals."
+     }
+    }
    }
   },
   "Fluffycatto": {
@@ -2598,6 +3009,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "grade": "B+",
+    "verdict": "A Firemaw personal best and top rogue on seven bosses, after a slow first three",
+    "summary": "Firemaw 98 (a personal best), Chromaggus 97 (equal to your best), Flamegor 96 (fourth in raid damage) and Nefarian 95, the best rogue on seven of eight bosses, with 18 Expose Armors and 8 kicks. Razorgore (46), Vaelastrasz (49) and Broodlord (37) were all well under your usual.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Firemaw 98 (before: 97) and Chromaggus 97 (equal)."
+     },
+     {
+      "title": "Flamegor and Nefarian",
+      "text": "96 (fourth in raid damage) and 95."
+     },
+     {
+      "title": "Rogue jobs",
+      "text": "18 Expose Armors and 8 kicks."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Giants, Troll's Blood and Juju Ember every pull: 5.7 buffs a pull against 4."
+     }
+    ],
+    "fix": [
+     {
+      "title": "The first three bosses",
+      "impact": "medium",
+      "text": "Razorgore 46 (usual 69), Vaelastrasz 49 and Broodlord 37 (usual 81)."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "bad",
+      "text": "37, under your usual 81."
+     },
+     "50613": {
+      "tone": "good",
+      "text": "98, personal best."
+     },
+     "50615": {
+      "tone": "good",
+      "text": "96, fourth in raid damage."
+     }
+    }
    }
   },
   "Gallahan": {
@@ -2797,6 +3254,43 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "B-",
+    "verdict": "Third healer on Chromaggus and four polymorphs dispelled, quiet elsewhere",
+    "summary": "Third healer on Chromaggus (15%) and 4 Wild Polymorphs dispelled during the Nefarian mage call. Otherwise a quiet night: last or second-to-last healer on Firemaw, Flamegor and Broodlord.",
+    "good": [
+     {
+      "title": "Chromaggus",
+      "text": "Third healer, 15%.",
+      "boss": 50616
+     },
+     {
+      "title": "Wild Polymorph",
+      "text": "4 dispelled on Nefarian.",
+      "boss": 50617
+     }
+    ],
+    "fix": [
+     {
+      "title": "Firemaw and Flamegor",
+      "impact": "medium",
+      "text": "3% and 5% of the healing, tenth and eleventh of 11."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood and food every pull, nothing else."
+     }
+    ],
+    "bosses": {
+     "50617": {
+      "tone": "good",
+      "text": "4 Wild Polymorphs dispelled."
+     }
+    }
    }
   },
   "Gertggs": {
@@ -3045,6 +3539,54 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:52:52.063Z",
+    "grade": "A",
+    "verdict": "Top damage on three bosses, second on three more, and a Firemaw personal best",
+    "summary": "A 93 average against your usual 73 and no deaths. Most damage in the raid on Broodlord, Firemaw and Flamegor, second on Ebonroc, Chromaggus and Nefarian, and Firemaw 98 is a personal best (96 before). Fully buffed on every pull, 69 Sunder Armors.",
+    "good": [
+     {
+      "title": "Top of the meter",
+      "text": "First on Broodlord (95), Firemaw (98) and Flamegor (95); second on Ebonroc, Chromaggus and Nefarian."
+     },
+     {
+      "title": "Firemaw 98",
+      "text": "A personal best.",
+      "boss": 50613
+     },
+     {
+      "title": "Prepared",
+      "text": "Titans, Mongoose, Juju Power, Firewater and food on every pull, 5 Mighty Rage Potions: 5.7 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Sunder Armor",
+      "text": "69 Sunders over the raid."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razorgore",
+      "impact": "low",
+      "boss": 50610,
+      "text": "82, your lowest of the night, around your usual 80. That's the whole list."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "good",
+      "text": "Top damage of the raid."
+     },
+     "50613": {
+      "tone": "good",
+      "text": "98, personal best, top damage."
+     },
+     "50615": {
+      "tone": "good",
+      "text": "Top damage of the raid."
+     }
+    }
    }
   },
   "Grenan": {
@@ -3273,6 +3815,54 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:52:52.064Z",
+    "grade": "A-",
+    "verdict": "Seven personal bests in eight bosses, and both Frenzy jobs done",
+    "summary": "Only your ninth raid with us and your best by a distance: an 87 average against your usual 57, with personal bests on Razorgore (90), Vaelastrasz (85), Firemaw (97), Ebonroc (91), Flamegor and Chromaggus (95), and Nefarian equal to your best. You also put 2 Tranquilizing Shots each on Flamegor and Chromaggus.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Firemaw 97 (before: 81), Ebonroc 91 (76), Razorgore 90 (83), Vaelastrasz 85 (59), Chromaggus 95 (92), Flamegor 67 (57)."
+     },
+     {
+      "title": "Tranquilizing Shots",
+      "text": "2 on Flamegor and 2 on Chromaggus, as many as any hunter."
+     },
+     {
+      "title": "Best hunter",
+      "text": "Top hunter on seven of eight bosses."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Zanza, Mageblood and Mongoose every pull, but no flask and no food: 3 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Flamegor",
+      "impact": "low",
+      "boss": 50615,
+      "text": "67, your lowest, with 13 seconds without a shot at the start. Some of that is Tranquilizing Shot duty."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "97, personal best."
+     },
+     "50615": {
+      "tone": "good",
+      "text": "2 Tranquilizing Shots."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "2 Tranquilizing Shots, 95."
+     }
+    }
    }
   },
   "Ishilly": {
@@ -3486,6 +4076,45 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "B",
+    "verdict": "Eleven Fear Wards and six Power Infusions, on no consumables",
+    "summary": "You handed out 11 Fear Wards and 6 Power Infusions, cleansed 8 afflictions on Chromaggus and dispelled 3 Wild Polymorphs on Nefarian. Your healing share was low on most bosses, and the log shows no consumable buffs at all.",
+    "good": [
+     {
+      "title": "Fear Ward",
+      "text": "11 Fear Wards over the raid."
+     },
+     {
+      "title": "Power Infusion",
+      "text": "6 Power Infusions."
+     },
+     {
+      "title": "Dispels",
+      "text": "8 afflictions on Chromaggus, 3 Wild Polymorphs on Nefarian."
+     }
+    ],
+    "fix": [
+     {
+      "title": "No consumables",
+      "impact": "medium",
+      "text": "No consumable buffs on any boss pull."
+     },
+     {
+      "title": "Healing share",
+      "impact": "low",
+      "text": "Ninth or tenth of 11 healers on Razorgore, Broodlord, Ebonroc and Nefarian."
+     }
+    ],
+    "bosses": {
+     "50617": {
+      "tone": "good",
+      "text": "3 Wild Polymorphs dispelled, 2 Fear Wards."
+     }
+    }
    }
   },
   "Künigünde": {
@@ -3707,6 +4336,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "A-",
+    "verdict": "Second healer on Broodlord, Flamegor and Nefarian, with Fear Wards and Power Infusions",
+    "summary": "Second of the 11 healers on Broodlord, Flamegor and Nefarian (12% each), 6 Fear Wards (3 on Nefarian, the most), 7 Power Infusions and 10 Blue afflictions dispelled on Chromaggus. No deaths.",
+    "good": [
+     {
+      "title": "Second healer three times",
+      "text": "Broodlord, Flamegor and Nefarian, 12% of the healing on each."
+     },
+     {
+      "title": "Fear Ward",
+      "text": "6 Fear Wards, 3 of them on Nefarian, the most there."
+     },
+     {
+      "title": "Power Infusion and dispels",
+      "text": "7 Power Infusions, 10 Blue afflictions dispelled."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overheal on the drakes",
+      "impact": "low",
+      "text": "83% on Ebonroc, 88% on Chromaggus, 75% on Vaelastrasz."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Food and drinks, no Mageblood, Zanza or flask."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "good",
+      "text": "Second healer."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "Second healer, 3 Fear Wards."
+     }
+    }
    }
   },
   "Macharius": {
@@ -3943,6 +4615,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:53:43.822Z",
+    "grade": "A-",
+    "verdict": "Main tank on Chromaggus, the top tank parses on Broodlord and Flamegor, no deaths",
+    "summary": "You held Chromaggus on your own (all of his melee, and six breaths that landed on you while tanking), and topped the tanks on Broodlord (95) and Flamegor (95). As DPS, Razorgore 52 and Vaelastrasz 69 are well over your usual. Firemaw's low numbers are backup-tank time, not idling.",
+    "good": [
+     {
+      "title": "Chromaggus tank",
+      "text": "100% of his melee, a 96 parse, no deaths.",
+      "boss": 50616
+     },
+     {
+      "title": "Broodlord and Flamegor",
+      "text": "95 on both, top tank of the raid."
+     },
+     {
+      "title": "As DPS",
+      "text": "Razorgore 52 (usual 29) and Vaelastrasz 69 (usual 44)."
+     },
+     {
+      "title": "Consumables",
+      "text": "Fortitude, Mongoose, Giants and Greater Armor every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nefarian",
+      "impact": "low",
+      "boss": 50617,
+      "text": "63, last of the warriors, with 11 seconds without a swing from 0:05."
+     },
+     {
+      "title": "Food and flask",
+      "impact": "low",
+      "text": "Food on 3 of 6 pulls, no flask."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "info",
+      "text": "Backup tank: little to do, not idling."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "Main tank, 96."
+     }
+    }
    }
   },
   "Marellina": {
@@ -4156,6 +4877,61 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:37.962Z",
+    "grade": "D",
+    "verdict": "Three deaths: in front of Vaelastrasz, to a Wyrmguard, and first to the Nefarian skeletons",
+    "summary": "Vaelastrasz's Flame Breath killed you 17 seconds in, the first death of the raid, because you were standing in front of him. A Death Talon Wyrmguard killed you on trash, and a Bone Construct made you the first death on Nefarian at 1:37. In between you were the lowest mage on Firemaw (43), Ebonroc (27) and Flamegor (34). Chromaggus 80 and Broodlord 73 were the bright spots.",
+    "good": [
+     {
+      "title": "Broodlord and Chromaggus",
+      "text": "73 and 80, the second-best mage on both."
+     },
+     {
+      "title": "Supreme Power",
+      "text": "On all six pulls."
+     },
+     {
+      "title": "Kicks",
+      "text": "3 interrupts."
+     }
+    ],
+    "fix": [
+     {
+      "title": "In front of Vaelastrasz",
+      "impact": "high",
+      "boss": 50611,
+      "text": "Flame Breath (3,349) killed you at 0:17, the first death of the raid. Only the tank stands in front of him."
+     },
+     {
+      "title": "Nefarian skeletons",
+      "impact": "medium",
+      "boss": 50617,
+      "text": "First death of the kill at 1:37: a Bone Construct's melee (5,122) with no healing on you."
+     },
+     {
+      "title": "Trash",
+      "impact": "medium",
+      "text": "A Death Talon Wyrmguard at 28:56."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Supreme Power every pull, Mageblood on 4, food on 3: 2.2 buffs a pull against 4."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "bad",
+      "text": "First death of the raid: Flame Breath."
+     },
+     "50617": {
+      "tone": "bad",
+      "text": "First death: Bone Construct."
+     }
+    }
    }
   },
   "Mercîless": {
@@ -4402,6 +5178,61 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:53:43.822Z",
+    "grade": "B+",
+    "verdict": "Tanked Ebonroc to a 92 and put 89 Sunders up, but Flamegor was rough",
+    "summary": "A 78 average against your usual 68 and no deaths. You tanked Ebonroc (92) and helped on Broodlord, and as DPS Firemaw 95 was third in raid damage. 89 Sunder Armors and full consumables. Flamegor (40, last of the warriors) was the low point.",
+    "good": [
+     {
+      "title": "Firemaw 95",
+      "text": "Third highest damage in the raid, against your usual 77.",
+      "boss": 50613
+     },
+     {
+      "title": "Ebonroc tank",
+      "text": "92 while taking 39% of his melee.",
+      "boss": 50614
+     },
+     {
+      "title": "Sunder Armor and consumables",
+      "text": "89 Sunders; Zanza, Firewater, Fortitude, Mongoose and Greater Armor on every pull."
+     },
+     {
+      "title": "Vaelastrasz and Nefarian",
+      "text": "80 and 83, well over your usual 59 and 63."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Ebonroc's healing",
+      "impact": "medium",
+      "boss": 50614,
+      "text": "Ebonroc healed himself 187,500 from hits on you while you had Shadow of Ebonroc, about seven hits at 25,000 each (150,000 off Birkler). The other tank is meant to taunt as soon as Shadow lands, so those swaps came late."
+     },
+     {
+      "title": "Flamegor",
+      "impact": "medium",
+      "boss": 50615,
+      "text": "40, last of twelve warriors."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "95, third in raid damage."
+     },
+     "50614": {
+      "tone": "info",
+      "text": "Tanked; Ebonroc healed 187k off hits on you during Shadow of Ebonroc."
+     },
+     "50615": {
+      "tone": "bad",
+      "text": "40, last of the warriors."
+     }
+    }
    }
   },
   "Mikhalion": {
@@ -4626,6 +5457,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:37.961Z",
+    "grade": "B",
+    "verdict": "Firemaw 96 and three Tranquilizing Shots, but last on Nefarian",
+    "summary": "A 68 average against your usual 46 and no deaths. Firemaw 96 equals your best, Chromaggus 87 and Broodlord 73 are well over your usual, and you put 3 Tranquilizing Shots on Flamegor and Chromaggus. Nefarian (44) was last of all 27 DPS.",
+    "good": [
+     {
+      "title": "Firemaw 96",
+      "text": "Equal to your best.",
+      "boss": 50613
+     },
+     {
+      "title": "Tranquilizing Shots",
+      "text": "1 on Flamegor and 2 on Chromaggus."
+     },
+     {
+      "title": "Over your usual",
+      "text": "Chromaggus 87 (54), Flamegor 63 (29), Broodlord 73 (55), Razorgore 70 (43)."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nefarian",
+      "impact": "medium",
+      "boss": 50617,
+      "text": "44, last of the 27 DPS, against your usual 69."
+     },
+     {
+      "title": "No flask, Zanza or food",
+      "impact": "low",
+      "text": "Mageblood, Greater Arcane and Mongoose every pull and a drink on half."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "96, equal to your best."
+     },
+     "50617": {
+      "tone": "bad",
+      "text": "44, last of the DPS."
+     }
+    }
    }
   },
   "Miniwrecker": {
@@ -4878,6 +5754,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:52:52.064Z",
+    "grade": "A",
+    "verdict": "Top damage on Vaelastrasz and four personal bests",
+    "summary": "An 89 average against your usual 66 and no deaths. Most damage in the raid on Vaelastrasz with a 92 (a personal best by nine points), and personal bests on Broodlord, Flamegor and Chromaggus too. 100 Sunder Armors, the most in the raid.",
+    "good": [
+     {
+      "title": "Vaelastrasz 92",
+      "text": "Top damage of the raid and a personal best (83 before).",
+      "boss": 50611
+     },
+     {
+      "title": "Personal bests",
+      "text": "Broodlord 95 (91), Chromaggus 96 (95), Flamegor 90 (89)."
+     },
+     {
+      "title": "Sunder Armor",
+      "text": "100 Sunders over the raid."
+     },
+     {
+      "title": "Prepared",
+      "text": "Zanza, Mongoose, Juju Power, Firewater and food every pull, 6 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razorgore",
+      "impact": "low",
+      "boss": 50610,
+      "text": "64 against your usual 81."
+     },
+     {
+      "title": "No flask",
+      "impact": "low",
+      "text": "Titans on none of the six snapshots."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "good",
+      "text": "Top damage, 92, personal best."
+     },
+     "50612": {
+      "tone": "good",
+      "text": "95, personal best."
+     }
+    }
    }
   },
   "Necroshadow": {
@@ -5102,6 +6027,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:37.962Z",
+    "grade": "B-",
+    "verdict": "Firemaw 96 and Chromaggus 95 in your first raid with us, after a rough first three",
+    "summary": "Your first raid in our logs, no deaths, and the second half was very good: Firemaw 96, Chromaggus 95, Nefarian 81. The first three were not: Razorgore 13, Vaelastrasz 15, Broodlord 9 (active half the fight there).",
+    "good": [
+     {
+      "title": "Firemaw 96 and Chromaggus 95",
+      "text": "Second-best rogue on both."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths in your first BWL with us."
+     }
+    ],
+    "fix": [
+     {
+      "title": "The first three bosses",
+      "impact": "medium",
+      "text": "Razorgore 13, Vaelastrasz 15 and Broodlord 9, the last with half the fight spent not attacking."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mongoose every pull, Juju and Rage of Ages on most, food on 2: 3.3 buffs a pull against 4."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "bad",
+      "text": "9, active half the fight."
+     },
+     "50613": {
+      "tone": "good",
+      "text": "96."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "95."
+     }
+    }
    }
   },
   "Osinir": {
@@ -5320,6 +6288,62 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:53:43.822Z",
+    "grade": "B+",
+    "verdict": "Firemaw 99 and Nefarian 96, both personal bests, and a slow start on Vaelastrasz",
+    "summary": "A 75 average against your usual 50 and no deaths, with two big personal bests: Firemaw 99 (70 before) and Nefarian 96 (94). Razorgore 89 is near your best too. Vaelastrasz (47, 25th in damage) and Broodlord (47) pulled the average down. Chromaggus 79 needs the usual caveat: his weakness spent about half the fight on a school mages can't use.",
+    "good": [
+     {
+      "title": "Firemaw 99",
+      "text": "A personal best by 29 points, top mage.",
+      "boss": 50613
+     },
+     {
+      "title": "Nefarian 96",
+      "text": "A personal best, top mage, seventh in raid damage.",
+      "boss": 50617
+     },
+     {
+      "title": "Razorgore 89",
+      "text": "Near your best of 91."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Vaelastrasz",
+      "impact": "medium",
+      "boss": 50611,
+      "text": "47, 25th of 27 in raid damage, against your usual 34 there; still the weakest boss of your night."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Supreme Power, Greater Arcane and Mageblood every pull, but no Zanza, no Firepower, no food: 3 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Broodlord",
+      "impact": "low",
+      "boss": 50612,
+      "text": "47 against your usual 62."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "99, personal best."
+     },
+     "50616": {
+      "tone": "info",
+      "text": "79: half the fight his weakness wasn't fire or frost."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "96, personal best."
+     }
+    }
    }
   },
   "Palastino": {
@@ -5527,6 +6551,43 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "B",
+    "verdict": "Second healer on Chromaggus and Ebonroc, with no consumables at all",
+    "summary": "Second of the healers on Chromaggus (20%) and Ebonroc (14%), third on Broodlord, and two Blessings of Protection. No deaths. The log shows no consumable buffs on you on any boss pull.",
+    "good": [
+     {
+      "title": "Chromaggus",
+      "text": "20% of the healing, second healer.",
+      "boss": 50616
+     },
+     {
+      "title": "Ebonroc and Broodlord",
+      "text": "Second and third of the healers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "No consumables",
+      "impact": "medium",
+      "text": "No Mageblood, no flask, no food on any of the six pulls with a snapshot."
+     },
+     {
+      "title": "Vaelastrasz",
+      "impact": "low",
+      "boss": 50611,
+      "text": "Last of the healers, 5%."
+     }
+    ],
+    "bosses": {
+     "50616": {
+      "tone": "good",
+      "text": "Second healer, 20%."
+     }
+    }
    }
   },
   "Pinguwan": {
@@ -5764,6 +6825,49 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:53:43.821Z",
+    "grade": "A-",
+    "verdict": "Five personal bests in your eighth raid with us",
+    "summary": "An 84 average against your usual 58 and no deaths, with personal bests on Razorgore (70), Vaelastrasz (83), Firemaw (94), Flamegor (78, up from 54) and Chromaggus (93). Top-seven damage on six bosses. The consumables are the easy upgrade.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Flamegor 78 (before: 54), Vaelastrasz 83 (74), Razorgore 70 (64), Firemaw 94 (92), Chromaggus 93 (91)."
+     },
+     {
+      "title": "Top seven",
+      "text": "Sixth or seventh in raid damage on Razorgore, Vaelastrasz, Firemaw, Ebonroc, Flamegor and Chromaggus."
+     },
+     {
+      "title": "Sunder Armor",
+      "text": "49 Sunders."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Fortitude, Mongoose and Giants every pull, food on 4 of 6, but no flask, Zanza or Juju: 3.7 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Broodlord and Nefarian",
+      "impact": "low",
+      "text": "Broodlord 80 against your best of 94, Nefarian 80 against 89."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "94, personal best."
+     },
+     "50615": {
+      "tone": "good",
+      "text": "78, personal best by 24 points."
+     }
+    }
    }
   },
   "Pinkcheese": {
@@ -5983,6 +7087,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "B+",
+    "verdict": "The only Fire Protection Potion on Vaelastrasz, 10 afflictions and 3 polymorphs dispelled",
+    "summary": "Third healer on Vaelastrasz (with the only Fire Protection Potion there), 10 afflictions cleansed on Chromaggus, 3 Wild Polymorphs dispelled during the Nefarian mage call, and a Lay on Hands. No deaths. Very thin on consumables: Mageblood only.",
+    "good": [
+     {
+      "title": "Vaelastrasz",
+      "text": "Third healer, 11%, and a Fire Protection Potion.",
+      "boss": 50611
+     },
+     {
+      "title": "Dispels",
+      "text": "10 afflictions on Chromaggus, 3 Wild Polymorphs on Nefarian."
+     },
+     {
+      "title": "Saves",
+      "text": "A Lay on Hands and a Blessing of Protection."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mageblood every pull and nothing else: 1 buff a pull against 2."
+     },
+     {
+      "title": "Ebonroc overheal",
+      "impact": "low",
+      "boss": 50614,
+      "text": "89% overheal."
+     }
+    ],
+    "bosses": {
+     "50611": {
+      "tone": "good",
+      "text": "Fire Protection Potion, third healer."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "3 Wild Polymorphs dispelled."
+     }
+    }
    }
   },
   "Shadowtelia": {
@@ -6194,6 +7343,45 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "B-",
+    "verdict": "Second healer on Firemaw and Vaelastrasz, then 94 to 99% overheal on the next two",
+    "summary": "Second of the healers on Firemaw (15%) and Vaelastrasz (11%), third on Flamegor, and 5 Fear Wards. On Ebonroc (94% overheal) and Chromaggus (99%, last of the healers) almost nothing you cast landed on anyone who needed it, and you came with no consumables.",
+    "good": [
+     {
+      "title": "Firemaw and Vaelastrasz",
+      "text": "Second healer on both."
+     },
+     {
+      "title": "Fear Ward",
+      "text": "5 Fear Wards."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Overheal",
+      "impact": "medium",
+      "text": "94% on Ebonroc and 99% on Chromaggus."
+     },
+     {
+      "title": "No consumables",
+      "impact": "medium",
+      "text": "A Kreeg's once, nothing else."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "Second healer, 15%."
+     },
+     "50616": {
+      "tone": "bad",
+      "text": "99% overheal."
+     }
+    }
    }
   },
   "Skoomael": {
@@ -6710,6 +7898,52 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "A-",
+    "verdict": "29% of all healing on Chromaggus, top on Broodlord too",
+    "summary": "On Chromaggus you did 29% of the raid's healing, the most of anyone on any boss tonight, and you were top healer on Broodlord and second on Razorgore. A Lay on Hands and two Blessings of Protection where they counted. Nefarian (last of the healers, 90% overheal) and the thin consumables are the notes.",
+    "good": [
+     {
+      "title": "Chromaggus",
+      "text": "29% of all healing, top healer.",
+      "boss": 50616
+     },
+     {
+      "title": "Broodlord",
+      "text": "Top healer, 14%, with 39% overheal.",
+      "boss": 50612
+     },
+     {
+      "title": "Saves",
+      "text": "1 Lay on Hands and 2 Blessings of Protection."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nefarian",
+      "impact": "low",
+      "boss": 50617,
+      "text": "Last of the healers, 5% of the healing at 90% overheal."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood every pull, food once: 1.3 buffs a pull against 2."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "good",
+      "text": "Top healer."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "Top healer, 29%."
+     }
+    }
    }
   },
   "Speldosan": {
@@ -6894,6 +8128,53 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "grade": "C+",
+    "verdict": "Frenzy duty done again, on the same bare consumables as Wednesday",
+    "summary": "You put 2 Tranquilizing Shots each on Flamegor and Chromaggus and didn't die, and Vaelastrasz 85 and Firemaw 94 are personal bests. Otherwise it was a weak night: Ebonroc 39 and Flamegor 26 against a usual of about 80, last or close to it in raid damage on five bosses. You came with Mageblood and Mongoose and nothing else, 2 buffs a pull against 4, and no world buffs at all.",
+    "good": [
+     {
+      "title": "Tranquilizing Shots",
+      "text": "2 on Flamegor and 2 on Chromaggus."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Vaelastrasz 85 (before: 82) and Firemaw 94 (92)."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "high",
+      "text": "Mageblood and Mongoose, nothing else, on every pull: 2 buffs a pull against 4 for the other DPS, and no world buffs on any snapshot. Same story as 7 October."
+     },
+     {
+      "title": "Ebonroc and Flamegor",
+      "impact": "medium",
+      "text": "39 and 26, against your usual 83 and 78. Flamegor has the Tranquilizing Shot duty, Ebonroc doesn't."
+     }
+    ],
+    "bosses": {
+     "50614": {
+      "tone": "bad",
+      "text": "39, usual 83."
+     },
+     "50615": {
+      "tone": "good",
+      "text": "2 Tranquilizing Shots."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "2 Tranquilizing Shots."
+     }
+    }
    }
   },
   "Stinkycat": {
@@ -7108,6 +8389,41 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:37.962Z",
+    "grade": "C+",
+    "verdict": "Five personal bests in your fourth raid, still last of the rogues on four bosses",
+    "summary": "A 53 average against your usual 27, with personal bests on Firemaw (90), Ebonroc (65), Flamegor (38), Chromaggus (78) and Nefarian (49), and no deaths. You were also the lowest of the four rogues on Firemaw, Ebonroc, Flamegor, Chromaggus and Nefarian, on 2.5 consumable buffs a pull.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Firemaw 90 (before: 60), Ebonroc 65 (29), Chromaggus 78 (58), Nefarian 49 (43), Flamegor 38 (22)."
+     },
+     {
+      "title": "Fire Protection on Flamegor",
+      "text": "One of only two Fire Protection Potions drunk tonight."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mongoose and Giants every pull, food on 3, nothing else: 2.5 buffs a pull against 4."
+     },
+     {
+      "title": "Vaelastrasz and Broodlord",
+      "impact": "low",
+      "text": "24 and 34, both under your usual."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "90, personal best."
+     }
+    }
    }
   },
   "Terrora": {
@@ -7326,6 +8642,57 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:37.962Z",
+    "grade": "C+",
+    "verdict": "Nefarian 92 and Chromaggus 94, and a zero on Broodlord",
+    "summary": "Right on your usual average (60 against 59) and no deaths. Nefarian 92 (eighth in raid damage), Chromaggus 94 and Firemaw 91 were good. Broodlord was a 0: 77 DPS and active a third of the fight. The log can't say why; if you were stuck somewhere, that's your answer.",
+    "good": [
+     {
+      "title": "Nefarian 92",
+      "text": "Eighth in raid damage, over your usual 82.",
+      "boss": 50617
+     },
+     {
+      "title": "Chromaggus 94 and Firemaw 91",
+      "text": "Both well over your usual."
+     },
+     {
+      "title": "Ebonroc",
+      "text": "84, the top rogue on the boss."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Broodlord",
+      "impact": "high",
+      "boss": 50612,
+      "text": "0 parse, 77 DPS, active 33% of the fight against 83% for the other DPS."
+     },
+     {
+      "title": "Firemaw start",
+      "impact": "low",
+      "boss": 50613,
+      "text": "19 seconds without a swing from the pull."
+     },
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mongoose, Juju Power and Scorpok every pull, nothing else: 3 buffs a pull against 4."
+     }
+    ],
+    "bosses": {
+     "50612": {
+      "tone": "bad",
+      "text": "0 parse, 77 DPS."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "92."
+     }
+    }
    }
   },
   "Thormund": {
@@ -7531,6 +8898,42 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.091Z",
+    "grade": "C+",
+    "verdict": "Seven polymorphs dispelled on Nefarian, the most, and very little healing elsewhere",
+    "summary": "On Nefarian you dispelled 7 Wild Polymorphs, the most in the raid, and put out 3 Fear Wards. On Firemaw, Ebonroc and Chromaggus you did 2% of the healing each, last of the healers on the first two.",
+    "good": [
+     {
+      "title": "Wild Polymorph",
+      "text": "7 dispelled during the mage call, the most.",
+      "boss": 50617
+     },
+     {
+      "title": "Fear Ward",
+      "text": "3 Fear Wards."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing on the drakes",
+      "impact": "medium",
+      "text": "2% of the healing on Firemaw, Ebonroc and Chromaggus."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Mageblood every pull, food twice."
+     }
+    ],
+    "bosses": {
+     "50617": {
+      "tone": "good",
+      "text": "7 Wild Polymorphs dispelled, most in the raid."
+     }
+    }
    }
   },
   "Tochopolvo": {
@@ -7779,6 +9182,58 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:52:52.064Z",
+    "grade": "A",
+    "verdict": "Top damage of the raid on four bosses, including Nefarian",
+    "summary": "Most damage in the raid on Razorgore, Ebonroc, Chromaggus and Nefarian, second on Firemaw and Flamegor, a 93 average against your usual 69, and no deaths. Firemaw 97 is a personal best and Ebonroc 96 equals it.",
+    "good": [
+     {
+      "title": "Top of the meter four times",
+      "text": "Razorgore 87, Ebonroc 96, Chromaggus 98, Nefarian 95: first in raid damage on all four."
+     },
+     {
+      "title": "Personal bests",
+      "text": "Firemaw 97 (before: 96) and Ebonroc 96 (equal)."
+     },
+     {
+      "title": "Prepared",
+      "text": "Mongoose, Juju Power, Rage of Ages, Firewater and food on every pull."
+     }
+    ],
+    "fix": [
+     {
+      "title": "No flask",
+      "impact": "low",
+      "text": "Flask of the Titans on none of the six pulls with a snapshot. You topped the meter without it, which says what it's worth."
+     },
+     {
+      "title": "Vaelastrasz",
+      "impact": "low",
+      "boss": 50611,
+      "text": "86, fourth in damage. Your one boss outside the top two."
+     }
+    ],
+    "bosses": {
+     "50610": {
+      "tone": "good",
+      "text": "Top damage of the raid."
+     },
+     "50614": {
+      "tone": "good",
+      "text": "Top damage of the raid, 96."
+     },
+     "50616": {
+      "tone": "good",
+      "text": "Top damage of the raid, 98."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "Top damage of the raid, 95."
+     }
+    }
    }
   },
   "Webcumvibe": {
@@ -8021,6 +9476,47 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "grade": "B",
+    "verdict": "A good first BWL: fourth on Firemaw, fifth on Chromaggus",
+    "summary": "Your first raid in our logs, with no deaths and a 70 average: Firemaw 95 (fourth in raid damage), Chromaggus 93 (fifth) and Ebonroc 89. Razorgore (27) and Broodlord (44, last of the warriors) are where the rest of the damage is.",
+    "good": [
+     {
+      "title": "Firemaw 95",
+      "text": "Fourth highest damage in the raid.",
+      "boss": 50613
+     },
+     {
+      "title": "Chromaggus 93",
+      "text": "Fifth highest damage.",
+      "boss": 50616
+     },
+     {
+      "title": "Warrior work",
+      "text": "31 Sunder Armors, 2 kicks, 2 Sapper Charges, 4 Mighty Rage Potions."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Razorgore and Broodlord",
+      "impact": "medium",
+      "text": "27 and 44, the second of them last of the ten warriors."
+     },
+     {
+      "title": "No flask or Zanza",
+      "impact": "low",
+      "text": "Mongoose, Juju Power, Firewater and food every pull, but no flask or Zanza."
+     }
+    ],
+    "bosses": {
+     "50613": {
+      "tone": "good",
+      "text": "95, fourth in raid damage."
+     }
+    }
    }
   },
   "Whorm": {
@@ -8246,6 +9742,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:53:43.822Z",
+    "grade": "B",
+    "verdict": "Twelve points over your usual on four world buffs and no flask",
+    "summary": "A 78 average against your usual 66 and no deaths, with Razorgore 83 (fourth in raid damage), Firemaw 90 and Ebonroc 89. You did it with four world buffs where most of the raid had six or seven, and 3.3 consumable buffs a pull. Flamegor (45) was the dip.",
+    "good": [
+     {
+      "title": "Razorgore",
+      "text": "83, fourth in raid damage, against your usual 69.",
+      "boss": 50610
+     },
+     {
+      "title": "Over your usual",
+      "text": "Firemaw 90 (82), Ebonroc 89 (82), Chromaggus 87 (83)."
+     },
+     {
+      "title": "Great Rage Potions",
+      "text": "7 used over the raid, plus 2 kicks."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Consumables",
+      "impact": "medium",
+      "text": "Mongoose, Juju Power and Scorpok every pull, but no flask and no food: 3.3 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Flamegor",
+      "impact": "low",
+      "boss": 50615,
+      "text": "45 against your usual 72."
+     }
+    ],
+    "bosses": {
+     "50610": {
+      "tone": "good",
+      "text": "83, fourth in raid damage."
+     },
+     "50615": {
+      "tone": "bad",
+      "text": "45, under your usual 72."
+     }
+    }
    }
   },
   "Youlloveme": {
@@ -8484,6 +10025,53 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:56:41.090Z",
+    "grade": "A",
+    "verdict": "Top healer of the raid on five of eight bosses, in your first raid with us",
+    "summary": "Your first raid in our logs, and you led the healing on Razorgore (20%), Firemaw, Ebonroc (19%), Flamegor (17%) and Nefarian (15%), with low overheal on Flamegor (32%) and Nefarian (41%). You also came with Zanza and Mageblood on every pull.",
+    "good": [
+     {
+      "title": "Top healer five times",
+      "text": "Razorgore, Firemaw, Ebonroc, Flamegor and Nefarian."
+     },
+     {
+      "title": "Efficient",
+      "text": "32% overheal on Flamegor and 41% on Nefarian while doing the most healing."
+     },
+     {
+      "title": "Prepared",
+      "text": "Zanza and Mageblood every pull, 4 Mana Potions: 3.8 buffs a pull against 2 for the other healers."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Broodlord",
+      "impact": "low",
+      "boss": 50612,
+      "text": "Your one quiet boss: active half the fight, fifth of the healers."
+     }
+    ],
+    "bosses": {
+     "50610": {
+      "tone": "good",
+      "text": "Top healer, 20%."
+     },
+     "50614": {
+      "tone": "good",
+      "text": "Top healer, 19%."
+     },
+     "50615": {
+      "tone": "good",
+      "text": "Top healer, 17%."
+     },
+     "50617": {
+      "tone": "good",
+      "text": "Top healer, 15%."
+     }
+    }
    }
   },
   "Yulepunch": {
@@ -9014,6 +10602,55 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-10-09T20:55:01.421Z",
+    "grade": "B",
+    "verdict": "Thirty points over your usual on the best consumables in the raid, and standing in Chromaggus's breath",
+    "summary": "A 71 average against your usual 41, with personal bests on Firemaw (94), Ebonroc (88) and Flamegor (70), and 8 consumable buffs a pull, more than anyone in the raid. Two things to fix: Razorgore (13, last of the DPS) and five breath hits on Chromaggus, which as DPS you shouldn't take.",
+    "good": [
+     {
+      "title": "Personal bests",
+      "text": "Firemaw 94 (before: 69), Ebonroc 88 (54), Flamegor 70 (65)."
+     },
+     {
+      "title": "Best prepared in the raid",
+      "text": "8 buffs per boss pull: Zanza, Fortitude, Mongoose, Gordok, Kreeg's and more every pull."
+     },
+     {
+      "title": "No deaths",
+      "text": "Zero deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Chromaggus's breaths",
+      "impact": "medium",
+      "boss": 50616,
+      "text": "Five breath hits, including the most Ignite Flesh damage in the raid (3,888). Only the tank is meant to take the breaths; the raid hides out of his line of sight."
+     },
+     {
+      "title": "Razorgore",
+      "impact": "medium",
+      "boss": 50610,
+      "text": "13, last of the 27 DPS."
+     }
+    ],
+    "bosses": {
+     "50610": {
+      "tone": "bad",
+      "text": "13, last of the DPS."
+     },
+     "50613": {
+      "tone": "good",
+      "text": "94, personal best."
+     },
+     "50616": {
+      "tone": "bad",
+      "text": "Five breath hits."
+     }
+    }
    }
   }
  }
