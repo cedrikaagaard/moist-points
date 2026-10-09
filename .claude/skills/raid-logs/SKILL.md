@@ -141,6 +141,21 @@ The 7 Oct Sapphiron wipe is the cautionary example: the death list said
 "Life Drain healed Sapphiron 297k vs ~100k usual and 21 of 79 drains were
 never removed". Always go to the numbers.
 
+**MVP.** Every analysis names one MVP (`mvp: { player, headline, why: [2-3
+facts], also: [{ player, text }] }`, shown at the top of the panel). Pick from
+the facts' `players` list, weighing the whole raid, not parses alone:
+- consistency of parses across all bosses (one great boss is not an MVP)
+- jobs carried: soaks, kicks, dispels and decurses, Tranqs, shackles, rezzes,
+  Power Infusions, tanking (most melee taken per boss)
+- parses that are low *because* of a job (a mage decursing all fight, a tank's
+  parse means nothing) count for them, not against them
+- deaths, especially ones that cost world buffs, and avoidable damage count
+  against; being taken out by mechanics (web wrap, mind control) is neutral
+- a moment that saved a pull (a battle rez, a bomb carried out, picking the
+  boss back up) can decide it.
+Healers and tanks are as eligible as DPS. Never the site owner (Drikkle) on
+2026-10-07. Two or three "also great" mentions with one fact each.
+
 **PUG runs.** Raids are classified from the roster (`classifyRaids` in
 `src/raids/aggregate.js`): guild, pug (under 30% Moist regulars, e.g. the
 Monday MC) or other (another guild's raid, hidden). The facts say `raidKind`;

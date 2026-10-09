@@ -352,7 +352,7 @@ function Night({ n }) {
         ]}
       />
 
-      <Analysis night={n.night} />
+      <Analysis night={n.night} raiders={n.raiders} />
 
       <Panel title="The night at a glance" sub="pulls and deaths over time">
         <NightTimeline n={n} />

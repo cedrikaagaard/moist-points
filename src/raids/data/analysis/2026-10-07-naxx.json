@@ -3,6 +3,29 @@
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-10-08T15:20:00Z",
   "headline": "Full clear with a record Four Horsemen, one Sapphiron wipe that was lost in the first two Life Drain waves",
+  "mvp": {
+    "player": "Birkler",
+    "headline": "main tank on 11 of 15 bosses and never died, not even on the Sapphiron wipe",
+    "why": [
+      "Took the most melee on 11 bosses, from Patchwerk (201k) and Loatheb (101k) to Kel'Thuzad (126k), without a single death all night",
+      "Tanked Sapphiron for the full 4:05 of the wipe while 29 people died around him, then again on the kill",
+      "Had Maexxna back for good by 0:50 after she left the tanks and killed two people"
+    ],
+    "also": [
+      {
+        "player": "Rannek",
+        "text": "parses of 90+ on 10 bosses, 7 kicks and 19 sappers, no deaths"
+      },
+      {
+        "player": "Mornie",
+        "text": "22 Power Infusions, 6 shackles, 11 Fevers cured"
+      },
+      {
+        "player": "Macharius",
+        "text": "44 of the 66 Hateful Strikes"
+      }
+    ]
+  },
   "overview": [
     "15 of 15 bosses in 2h22m, about 10 minutes over the guild's usual Naxx night (median 2h11m). Most of that is the Sapphiron wipe (4:05 plus the run back) and a slow Sapphiron kill.",
     "Fourteen bosses went down first try. The Four Horsemen kill (3:54) is the fastest in the logs, and Thaddius, Faerlina and Grobbulus were all well above the guild's usual standard on their key mechanics.",

@@ -393,9 +393,93 @@ const facts = {
   consumableBuffs: n.consumeBuffs
     ? Object.fromEntries(Object.entries(n.consumeBuffs.buffs).map(([k, b]) => [k, Object.keys(b.by).length]).sort((a, b) => b[1] - a[1]))
     : "not available (no full log)",
+  players: playerFacts(),
 };
 
 console.log(JSON.stringify(facts, null, 1));
+
+// ---------- per player (for the MVP pick) ----------
+// Everything one raider did across the raid: output and parses per boss, deaths
+// (and the world buffs they cost), the jobs they carried, what took them out of
+// the fight, avoidable damage, consumables. The MVP is chosen from this, not
+// from parses alone.
+function playerFacts() {
+  const WB_NAMES = ["Rallying Cry of the Dragonslayer", "Warchief's Blessing", "Spirit of Zandalar", "Songflower Serenade", "Fengus' Ferocity", "Mol'dar's Moxie", "Slip'kik's Savvy"];
+  const out = new Map(n.raiders.map((r) => [r.name, { name: r.name, class: r.class, role: role.get(r.name) || r.role, parses: {}, damage: 0, healing: 0, deaths: [], jobs: {}, caught: {}, avoidableTaken: {}, dispels: 0, kicks: 0, rezzes: 0, potions: 0, explosives: 0, consumeBuffsPerPull: null, worldBuffsAtStart: [], worldBuffsLostOnDeath: [] }]));
+  const get = (name) => out.get(name);
+  let firstAuras = null;
+  for (const b of n.bosses) {
+    for (const p of b.parses || []) if (get(p.player)) get(p.player).parses[b.name] = p.pct;
+    const mech = MECHANICS[b.encounterId] || [];
+    for (const [key, by] of Object.entries(b.mech || {})) {
+      const m = mech.find((x) => x.key === key);
+      if (!m) continue;
+      for (const [pl, c] of Object.entries(by)) {
+        const me = get(pl);
+        if (!me) continue;
+        const bucket = m.tone === "good" ? me.jobs : me.caught; // "info" = happened to them (web wrap, MC, gaze)
+        bucket[`${b.name}: ${m.label}`] = (bucket[`${b.name}: ${m.label}`] || 0) + c;
+      }
+    }
+    for (const p of b.pulls) {
+      const d = p.src && fullLog(p.src.code)?.fights[p.src.fight];
+      if (!d) continue;
+      for (const [pl, v] of Object.entries(d.done)) if (get(pl)) get(pl).damage += v;
+      for (const [pl, v] of Object.entries(d.healing)) if (get(pl)) get(pl).healing += v;
+      if (!firstAuras && Object.keys(d.auras || {}).length) firstAuras = d.auras;
+      // Avoidable boss damage: the abilities this boss's mechanics list marks "bad".
+      const bad = new Set(mech.filter((m) => m.tone === "bad" && m.kind === "hit").flatMap((m) => m.abilities));
+      for (const [ability, a] of Object.entries(d.taken)) {
+        if (!bad.has(ability)) continue;
+        for (const [pl, v] of Object.entries(a.by)) if (get(pl)) get(pl).avoidableTaken[`${b.name}: ${ability}`] = (get(pl).avoidableTaken[`${b.name}: ${ability}`] || 0) + v;
+      }
+    }
+  }
+  for (const d of n.deaths) {
+    const me = get(d.player);
+    if (!me) continue;
+    me.deaths.push(`${d.boss || "trash"} at ${Math.floor(d.at / 60)}m into the raid, to ${d.killingBlow || "?"}`);
+  }
+  for (const t of n.dispels || []) if (get(t.player)) get(t.player).dispels = t.total;
+  for (const t of n.interrupts || []) if (get(t.player)) get(t.player).kicks = t.total;
+  for (const r of n.rezzes || []) if (r.boss && get(r.by)) get(r.by).rezzes++;
+  for (const c of Object.values(n.casts || {})) {
+    for (const [pl, v] of Object.entries(c.by)) {
+      const me = get(pl);
+      if (!me) continue;
+      if (c.category === "potion" || c.category === "consumable") me.potions += v;
+      else if (c.category === "explosive") me.explosives += v;
+      else if (c.category === "utility") me.jobs[c.label || Object.keys(n.casts).find((k) => n.casts[k] === c)] = v;
+    }
+  }
+  if (n.consumeBuffs?.pulls) {
+    const per = {};
+    for (const b of Object.values(n.consumeBuffs.buffs)) for (const [pl, pulls] of Object.entries(b.by)) per[pl] = (per[pl] || 0) + pulls;
+    for (const [pl, v] of Object.entries(per)) if (get(pl)) get(pl).consumeBuffsPerPull = Math.round((v / n.consumeBuffs.pulls) * 10) / 10;
+  }
+  // World buffs at the first boss, and which of them each death cost (had them at the first pull, gone at the last pull with a snapshot).
+  if (firstAuras) {
+    let lastAuras = null;
+    for (const b of n.bosses) for (const p of b.pulls) { const a = p.src && fullLog(p.src.code)?.fights[p.src.fight]?.auras; if (a && Object.keys(a).length > 20) lastAuras = a; }
+    for (const me of out.values()) {
+      const had = (firstAuras[me.name] || []).map(([x]) => x).filter((x) => WB_NAMES.includes(x) || x.startsWith("Sayge's"));
+      me.worldBuffsAtStart = had;
+      if (me.deaths.length && lastAuras?.[me.name]) {
+        const now = new Set(lastAuras[me.name].map(([x]) => x));
+        me.worldBuffsLostOnDeath = had.filter((x) => !now.has(x));
+      }
+    }
+  }
+  return [...out.values()].map((p) => {
+    const pcts = Object.values(p.parses);
+    return {
+      ...p,
+      avgParse: pcts.length ? Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length) : null,
+      damage: Math.round(p.damage),
+      healing: Math.round(p.healing),
+    };
+  }).sort((a, b) => (b.avgParse ?? -1) - (a.avgParse ?? -1));
+}
 
 // ---------- per pull ----------
 

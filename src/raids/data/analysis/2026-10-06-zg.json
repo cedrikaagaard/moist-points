@@ -3,6 +3,24 @@
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-10-08T13:40:00Z",
   "headline": "A tidy 45 minute Zul'Gurub with a record Hakkar and Mar'li, and only two boss deaths",
+  "mvp": {
+    "player": "Fluffycatto",
+    "headline": "82 or better on every boss, 98 on Jin'do",
+    "why": [
+      "Parsed 82 to 98 on all nine bosses (average 92), the most consistent of the raid",
+      "Second in total damage behind Eduard, with no deaths and three kicks"
+    ],
+    "also": [
+      {
+        "player": "Macharius",
+        "text": "tanked through the night without a death"
+      },
+      {
+        "player": "Mohg",
+        "text": "31 dispels"
+      }
+    ]
+  },
   "overview": [
     "9 of 9 bosses in 44:47 with no wipes, the 7th fastest of the guild's 19 full ZG clears (best 39:28, median 50:03). Only 4 people died all night, two of them on trash.",
     "Damage was the story: raid DPS was above the guild's usual on 7 of the 8 bosses with a comparison, by 20% on Mar'li and 38% on Hakkar, and the median parse beat the guild's history on 7 of 9 bosses. All of it without world buffs: nobody had any up, which is usual for ZG."

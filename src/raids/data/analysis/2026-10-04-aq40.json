@@ -3,6 +3,24 @@
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-10-08T18:20:00Z",
   "headline": "A clean 9 of 9 AQ40 in 1h07 with no wipes and Sartura's Whirlwind halved",
+  "mvp": {
+    "player": "Tsome",
+    "headline": "top damage all night with 88 or better on every boss",
+    "why": [
+      "Most damage in the raid, parsing 88 to 96 on all nine bosses",
+      "Soaked four of Huhuran's Poison Bolts and used 10 sappers, with no deaths"
+    ],
+    "also": [
+      {
+        "player": "Skoomael",
+        "text": "the battle rez on C'Thun, parses of 96"
+      },
+      {
+        "player": "Macharius",
+        "text": "average parse of 90 while tanking, no deaths"
+      }
+    ]
+  },
   "overview": [
     "All 9 bosses first try in 1h07m, a few minutes under the guild's usual AQ40 (median 1h10m, best 1h02m), with only 21 deaths all night, 7 of them on trash.",
     "Nobody had world buffs, and consumables were solid: Elixir of the Mongoose and Spirit of Zanza on 23 raiders, Mageblood on 17, 18 raiders with a flask, plus 42 mana potions, 28 Limited Invulnerability Potions and 62 sappers.",
@@ -10,47 +28,149 @@
   ],
   "wipes": [],
   "wentWell": [
-    { "encounterId": 50711, "text": "Sartura's Whirlwind hit 1.95 times per raider, half the guild's usual 4.0, and she went down in 0:54 (median 1:01). Drikkle, Harrylarry and Hjärterkung parsed 94 to 96." },
-    { "encounterId": 50717, "text": "Skoomael's Rebirth brought Taurenlover back after a Dark Glare at 0:55, and Eye Beam hit only 12 times, 0.3 per raider against a usual 0.77." },
-    { "encounterId": 50709, "text": "Harrylarry (3) and Fluffycatto (2) led the kicks on Skeram: 8 of his 11 Arcane Explosions were interrupted." },
-    { "encounterId": 50715, "text": "No deaths on the Twin Emperors, with Barnstoker and Grilled tanking Vek'lor's Shadow Bolts (77k and 62k)." }
+    {
+      "encounterId": 50711,
+      "text": "Sartura's Whirlwind hit 1.95 times per raider, half the guild's usual 4.0, and she went down in 0:54 (median 1:01). Drikkle, Harrylarry and Hjärterkung parsed 94 to 96."
+    },
+    {
+      "encounterId": 50717,
+      "text": "Skoomael's Rebirth brought Taurenlover back after a Dark Glare at 0:55, and Eye Beam hit only 12 times, 0.3 per raider against a usual 0.77."
+    },
+    {
+      "encounterId": 50709,
+      "text": "Harrylarry (3) and Fluffycatto (2) led the kicks on Skeram: 8 of his 11 Arcane Explosions were interrupted."
+    },
+    {
+      "encounterId": 50715,
+      "text": "No deaths on the Twin Emperors, with Barnstoker and Grilled tanking Vek'lor's Shadow Bolts (77k and 62k)."
+    }
   ],
   "bosses": [
-    { "encounterId": 50709, "name": "The Prophet Skeram", "notes": [
-      { "tone": "good", "text": "8 of 11 Arcane Explosions interrupted (Harrylarry 3, Fluffycatto 2, Gertggs, Wellan and Dispen one each). 1:06, right on the median." },
-      { "tone": "bad", "text": "The one death was Osinir at 0:20, killed by a mind-controlled Miniwrecker." }
-    ] },
-    { "encounterId": 50710, "name": "Silithid Royalty", "notes": [
-      { "tone": "bad", "text": "Three deaths in two seconds (0:22 to 0:24), all to Toxic Vapors: the poison cloud hit 14 raiders 27 times for 55k, where a usual kill has about one death to it every two kills." },
-      { "tone": "good", "text": "Fluffycatto, Gertggs and Harrylarry kicked three of Princess Yauj's four Great Heals. The one that landed healed her for 37k." },
-      { "tone": "info", "text": "Toxic Volley hit all 40 raiders 400 times, 10 per raider against a usual 7.5." }
-    ] },
-    { "encounterId": 50711, "name": "Battleguard Sartura", "notes": [
-      { "tone": "good", "text": "Whirlwind hits per raider halved compared with the guild's usual (1.95 against 4.0), so damage taken was a third lower than normal. 0:54 against a median of 1:01." },
-      { "tone": "info", "text": "Drikkle (96), Harrylarry (95) and Hjärterkung (94) had the top parses." }
-    ] },
-    { "encounterId": 50712, "name": "Fankriss the Unyielding", "notes": [
-      { "tone": "info", "text": "0:44 against a median of 0:37, on normal raid DPS. Macharius tanked him and nobody died." }
-    ] },
-    { "encounterId": 50713, "name": "Viscidus", "notes": [
-      { "tone": "good", "text": "1:47 against a median of 1:56, with Poison Bolt Volley hits down to 11.9 per raider from a usual 14.1." },
-      { "tone": "bad", "text": "Snoillim died to the Toxin clouds at 1:38 after four hits. Only 3 raiders drank a nature protection potion, half the usual number." }
-    ] },
-    { "encounterId": 50714, "name": "Princess Huhuran", "notes": [
-      { "tone": "good", "text": "Speldosan's Tranquilizing Shot removed her Enrage within a second, at 0:18." },
-      { "tone": "bad", "text": "She went Berserk at 30% (0:32) and died 9 seconds later, but Poison Bolt killed four people in that window (Tanknarok, Dispen, Eïnherjar and Zuzul), against fewer than one on a usual kill. Raid DPS was 83% of normal." }
-    ] },
-    { "encounterId": 50715, "name": "Twin Emperors", "notes": [
-      { "tone": "good", "text": "No deaths. Barnstoker and Grilled took Vek'lor's Shadow Bolts (77k and 62k), and only one Arcane Burst hit anyone." },
-      { "tone": "info", "text": "3:25 against a median of 3:19 on 77% of the usual raid DPS. Blizzard hit 10 raiders 20 times, the usual amount." }
-    ] },
-    { "encounterId": 50716, "name": "Ouro", "notes": [
-      { "tone": "bad", "text": "Sand Blast hit 23 raiders (0.57 per raider against a usual 0.32) and, together with a Sweep, killed Makkeren at 0:26. Eïnherjar died to Ouro's melee at 1:12." },
-      { "tone": "info", "text": "1:31 against a median of 1:34. Snotspat, Hjärterkung and Skoomael parsed 96 or higher." }
-    ] },
-    { "encounterId": 50717, "name": "C'Thun", "notes": [
-      { "tone": "good", "text": "Eye Beam hit only 12 times (0.3 per raider against a usual 0.77), and Skoomael battle rezzed Taurenlover after the one Dark Glare death at 0:55." },
-      { "tone": "info", "text": "4:58 against a median of 4:45. Zuzul died to Digestive Acid in the stomach at 3:06, and Caesartje to tentacles at 4:20." }
-    ] }
+    {
+      "encounterId": 50709,
+      "name": "The Prophet Skeram",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "8 of 11 Arcane Explosions interrupted (Harrylarry 3, Fluffycatto 2, Gertggs, Wellan and Dispen one each). 1:06, right on the median."
+        },
+        {
+          "tone": "bad",
+          "text": "The one death was Osinir at 0:20, killed by a mind-controlled Miniwrecker."
+        }
+      ]
+    },
+    {
+      "encounterId": 50710,
+      "name": "Silithid Royalty",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "Three deaths in two seconds (0:22 to 0:24), all to Toxic Vapors: the poison cloud hit 14 raiders 27 times for 55k, where a usual kill has about one death to it every two kills."
+        },
+        {
+          "tone": "good",
+          "text": "Fluffycatto, Gertggs and Harrylarry kicked three of Princess Yauj's four Great Heals. The one that landed healed her for 37k."
+        },
+        {
+          "tone": "info",
+          "text": "Toxic Volley hit all 40 raiders 400 times, 10 per raider against a usual 7.5."
+        }
+      ]
+    },
+    {
+      "encounterId": 50711,
+      "name": "Battleguard Sartura",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Whirlwind hits per raider halved compared with the guild's usual (1.95 against 4.0), so damage taken was a third lower than normal. 0:54 against a median of 1:01."
+        },
+        {
+          "tone": "info",
+          "text": "Drikkle (96), Harrylarry (95) and Hjärterkung (94) had the top parses."
+        }
+      ]
+    },
+    {
+      "encounterId": 50712,
+      "name": "Fankriss the Unyielding",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "0:44 against a median of 0:37, on normal raid DPS. Macharius tanked him and nobody died."
+        }
+      ]
+    },
+    {
+      "encounterId": 50713,
+      "name": "Viscidus",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:47 against a median of 1:56, with Poison Bolt Volley hits down to 11.9 per raider from a usual 14.1."
+        },
+        {
+          "tone": "bad",
+          "text": "Snoillim died to the Toxin clouds at 1:38 after four hits. Only 3 raiders drank a nature protection potion, half the usual number."
+        }
+      ]
+    },
+    {
+      "encounterId": 50714,
+      "name": "Princess Huhuran",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Speldosan's Tranquilizing Shot removed her Enrage within a second, at 0:18."
+        },
+        {
+          "tone": "bad",
+          "text": "She went Berserk at 30% (0:32) and died 9 seconds later, but Poison Bolt killed four people in that window (Tanknarok, Dispen, Eïnherjar and Zuzul), against fewer than one on a usual kill. Raid DPS was 83% of normal."
+        }
+      ]
+    },
+    {
+      "encounterId": 50715,
+      "name": "Twin Emperors",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "No deaths. Barnstoker and Grilled took Vek'lor's Shadow Bolts (77k and 62k), and only one Arcane Burst hit anyone."
+        },
+        {
+          "tone": "info",
+          "text": "3:25 against a median of 3:19 on 77% of the usual raid DPS. Blizzard hit 10 raiders 20 times, the usual amount."
+        }
+      ]
+    },
+    {
+      "encounterId": 50716,
+      "name": "Ouro",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "Sand Blast hit 23 raiders (0.57 per raider against a usual 0.32) and, together with a Sweep, killed Makkeren at 0:26. Eïnherjar died to Ouro's melee at 1:12."
+        },
+        {
+          "tone": "info",
+          "text": "1:31 against a median of 1:34. Snotspat, Hjärterkung and Skoomael parsed 96 or higher."
+        }
+      ]
+    },
+    {
+      "encounterId": 50717,
+      "name": "C'Thun",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Eye Beam hit only 12 times (0.3 per raider against a usual 0.77), and Skoomael battle rezzed Taurenlover after the one Dark Glare death at 0:55."
+        },
+        {
+          "tone": "info",
+          "text": "4:58 against a median of 4:45. Zuzul died to Digestive Acid in the stomach at 3:06, and Caesartje to tentacles at 4:20."
+        }
+      ]
+    }
   ]
 }

@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.0",
+    date: "2026-10-09",
+    changes: [
+      "Claude's analysis now names an MVP for each raid, picked from everything the logs show: consistent parses, the jobs someone carried (tanking, soaks, kicks, dispels, battle rezzes), deaths and the world buffs they cost, not just the meters. With a couple of honourable mentions.",
+    ],
+  },
+  {
     version: "2.2.1",
     date: "2026-10-09",
     changes: [

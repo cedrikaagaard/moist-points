@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { BossIcon } from "./components.jsx";
+import { BossIcon, Player } from "./components.jsx";
+import { CLASS_OF } from "./data.js";
 
 // "Claude's analysis": optional, AI-written commentary on a raid night,
 // written by the /raid-logs skill from `npm run raids:facts` and stored in
@@ -9,6 +10,7 @@ import { BossIcon } from "./components.jsx";
 //     wentWell: [{ text, encounterId? }], wipes: [{ encounterId, pull, title,
 //     whatHappened, likelyCause, evidence: [..], avoid }],
 //     bosses: [{ encounterId, name, notes: [{ tone: "good"|"bad"|"info", text }] }],
+//     mvp: { player, headline, why: [..], also: [{ player, text }] },
 //     mechanics: [{ encounterId, verdict: "good"|"bad", text }] (older files) }
 const files = import.meta.glob("./data/analysis/*.json", { import: "default" });
 
@@ -26,7 +28,8 @@ export function useAnalysis(night) {
 }
 
 // encounterId: only show what's about that boss (night-boss page).
-export default function Analysis({ night, encounterId, bossName }) {
+// raiders: the raid's own roster, for class colours (PUG-only players aren't in the guild roster).
+export default function Analysis({ night, encounterId, bossName, raiders = [] }) {
   const a = useAnalysis(night);
   const [open, setOpen] = useState(false);
   const [short, setShort] = useState(false); // fits without a preview: just show it
@@ -36,6 +39,7 @@ export default function Analysis({ night, encounterId, bossName }) {
     if (body.current) setShort(body.current.scrollHeight <= 190);
   }, [a, encounterId]);
   if (!a) return null;
+  const clsOf = (name) => raiders.find((r) => r.name === name)?.class || CLASS_OF.get(name);
   const forBoss = (x) => encounterId == null || x.encounterId === encounterId;
   const wins = (a.wentWell || []).filter(forBoss);
   const wipes = (a.wipes || []).filter(forBoss);
@@ -53,6 +57,25 @@ export default function Analysis({ night, encounterId, bossName }) {
       </div>
       <h3 className="rr-llm-title">{encounterId == null ? a.headline : `What Claude made of ${bossName}`}</h3>
       <div ref={body} className="rr-llm-body" inert={open || short ? undefined : ""} onClick={open || short ? undefined : () => setOpen(true)}>
+        {encounterId == null && a.mvp && (
+          <div className="rr-llm-mvp">
+            <span className="rr-llm-mvp-badge">🏆 MVP</span>
+            <div className="rr-llm-mvp-body">
+              <div className="rr-llm-mvp-name">
+                <Player name={a.mvp.player} cls={clsOf(a.mvp.player)} size={18} /> <span className="muted">· {a.mvp.headline}</span>
+              </div>
+              {a.mvp.why?.length > 0 && <ul>{a.mvp.why.map((w, i) => <li key={i}>{w}</li>)}</ul>}
+              {a.mvp.also?.length > 0 && (
+                <div className="rr-llm-mvp-also">
+                  Also great:{" "}
+                  {a.mvp.also.map((x, i) => (
+                    <span key={x.player}>{i > 0 && " · "}<Player name={x.player} cls={clsOf(x.player)} size={13} /> <span className="muted">{x.text}</span></span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
         {encounterId == null && a.overview?.map((p, i) => <p key={i}>{p}</p>)}
 
         {wins.length > 0 && (

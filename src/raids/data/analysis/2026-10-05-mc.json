@@ -3,6 +3,25 @@
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-10-08T17:45:00Z",
   "headline": "Monday PUG MC: 9 of 10, a rough start on trash and a long Majordomo, no Ragnaros",
+  "mvp": {
+    "player": "Tullimage",
+    "headline": "did the jobs that don't show on a meter",
+    "why": [
+      "Carried his Living Bomb out of the raid on Geddon (3k damage) where the other two bombs killed five people",
+      "Removed 40 curses on Lucifron, Gehennas and Shazzrah and kicked a Dark Mending on Sulfuron",
+      "His parses (6 to 38) are what that kind of work costs a mage"
+    ],
+    "also": [
+      {
+        "player": "Eînherjer",
+        "text": "163 dispels, parses of 70 to 90, no deaths"
+      },
+      {
+        "player": "Ænema",
+        "text": "52 curses removed on bosses, no deaths"
+      }
+    ]
+  },
   "overview": [
     "The weekly Monday PUG run, so everything here is compared with the other Monday MCs, not the guild's own raids. It is the first of 22 Monday MCs in the logs that didn't kill Ragnaros: the raid ended after Majordomo, 67 minutes in, which is about how long a whole Monday MC usually takes.",
     "Most bosses went at the usual Monday pace (Garr, Geddon and Sulfuron a little faster than the PUG median), so the time went elsewhere: a wipe on the first trash packs, and a Majordomo that took twice as long as normal.",
@@ -10,44 +29,136 @@
   ],
   "wipes": [],
   "wentWell": [
-    { "encounterId": 50668, "text": "Tullimage got his Living Bomb on Geddon clear of the raid: it did 3k in total, where the other two bombs did 32k and 107k and killed five people." },
-    { "encounterId": 50664, "text": "Birdiebird and Grenan removed all four of Magmadar's Frenzies with Tranquilizing Shot." },
-    { "encounterId": 50663, "text": "Ænema, Tullimage and Orclover kept up with the curses on Lucifron and Gehennas: 55 and 56 removed." },
-    { "encounterId": 50669, "text": "Six of the seven Dark Mendings on Sulfuron were interrupted, two of them by Sneakycatto." },
-    { "text": "Uniity (180), Eînherjer (163) and Bonjour (154) dispelled nearly 500 effects between them over the night, most of them Incite Flames and Cauterizing Flames on trash." }
+    {
+      "encounterId": 50668,
+      "text": "Tullimage got his Living Bomb on Geddon clear of the raid: it did 3k in total, where the other two bombs did 32k and 107k and killed five people."
+    },
+    {
+      "encounterId": 50664,
+      "text": "Birdiebird and Grenan removed all four of Magmadar's Frenzies with Tranquilizing Shot."
+    },
+    {
+      "encounterId": 50663,
+      "text": "Ænema, Tullimage and Orclover kept up with the curses on Lucifron and Gehennas: 55 and 56 removed."
+    },
+    {
+      "encounterId": 50669,
+      "text": "Six of the seven Dark Mendings on Sulfuron were interrupted, two of them by Sneakycatto."
+    },
+    {
+      "text": "Uniity (180), Eînherjer (163) and Bonjour (154) dispelled nearly 500 effects between them over the night, most of them Incite Flames and Cauterizing Flames on trash."
+    }
   ],
   "bosses": [
-    { "encounterId": 50663, "name": "Lucifron", "notes": [
-      { "tone": "bad", "text": "Impending Doom went off 30 times on 23 raiders for 53k, ten times the usual Monday amount, even though 43 were dispelled (Uniity 10, Eînherjer 9, Palome 8). Only dispelling more of them before they run out brings that down." },
-      { "tone": "info", "text": "0:52 against a PUG median of 0:48, with three mind controls." }
-    ] },
-    { "encounterId": 50664, "name": "Magmadar", "notes": [
-      { "tone": "good", "text": "All four Frenzies were removed by Birdiebird and Grenan (two Tranquilizing Shots each)." },
-      { "tone": "bad", "text": "Lava Bomb fire hit 14 raiders 125 times for 45k, Youlloveme 16 times. 1:15 against a PUG median of 1:05." }
-    ] },
-    { "encounterId": 50665, "name": "Gehennas", "notes": [
-      { "tone": "good", "text": "Ænema removed 24 of the 56 Gehennas' Curses." },
-      { "tone": "bad", "text": "Rain of Fire hit 32 raiders 117 times for 105k, and killed Megi at 0:29." }
-    ] },
-    { "encounterId": 50666, "name": "Garr", "notes": [
-      { "tone": "good", "text": "0:52, faster than the PUG median of 0:57, with Fenhir taking 69k of melee and nobody dying." }
-    ] },
-    { "encounterId": 50668, "name": "Baron Geddon", "notes": [
-      { "tone": "bad", "text": "Two of the three Living Bombs went off inside the raid. Megi's (0:13) did 32k and killed Wrenn and Broimtiny; Tankygnomy's (0:45) did 107k and killed Palome, Myysha and Crashmatt. A bomb has to be carried away from everyone before it explodes." },
-      { "tone": "good", "text": "Tullimage took his bomb (0:25) out of the raid: 3k in total. The kill itself was quick, 0:56 against a PUG median of 1:03." }
-    ] },
-    { "encounterId": 50667, "name": "Shazzrah", "notes": [
-      { "tone": "info", "text": "0:26, exactly the PUG median. Arcane Explosion hit 16 people for 87k, and 30 curses were removed." }
-    ] },
-    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [
-      { "tone": "good", "text": "Six of seven Dark Mendings interrupted (Sneakycatto 2, Orclover, Megi, Nessla and Tullimage one each). The one that got through healed a priest for 30k. 1:04 against a PUG median of 1:08." }
-    ] },
-    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [
-      { "tone": "info", "text": "1:20 against a PUG median of 1:11. Fenhir tanked 45k of Golemagg's melee and nobody died." }
-    ] },
-    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [
-      { "tone": "bad", "text": "2:59, more than twice the PUG median of 1:25 and almost a minute slower than any other Monday Majordomo (the slowest before was 2:02). Raid DPS was half the usual Monday number." },
-      { "tone": "bad", "text": "The Flamewaker Healers' Shadow Shock did 42k and killed Djakizzwar, Bonjour and Daki at 1:21, 1:37 and 2:06." }
-    ] }
+    {
+      "encounterId": 50663,
+      "name": "Lucifron",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "Impending Doom went off 30 times on 23 raiders for 53k, ten times the usual Monday amount, even though 43 were dispelled (Uniity 10, Eînherjer 9, Palome 8). Only dispelling more of them before they run out brings that down."
+        },
+        {
+          "tone": "info",
+          "text": "0:52 against a PUG median of 0:48, with three mind controls."
+        }
+      ]
+    },
+    {
+      "encounterId": 50664,
+      "name": "Magmadar",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "All four Frenzies were removed by Birdiebird and Grenan (two Tranquilizing Shots each)."
+        },
+        {
+          "tone": "bad",
+          "text": "Lava Bomb fire hit 14 raiders 125 times for 45k, Youlloveme 16 times. 1:15 against a PUG median of 1:05."
+        }
+      ]
+    },
+    {
+      "encounterId": 50665,
+      "name": "Gehennas",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Ænema removed 24 of the 56 Gehennas' Curses."
+        },
+        {
+          "tone": "bad",
+          "text": "Rain of Fire hit 32 raiders 117 times for 105k, and killed Megi at 0:29."
+        }
+      ]
+    },
+    {
+      "encounterId": 50666,
+      "name": "Garr",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:52, faster than the PUG median of 0:57, with Fenhir taking 69k of melee and nobody dying."
+        }
+      ]
+    },
+    {
+      "encounterId": 50668,
+      "name": "Baron Geddon",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "Two of the three Living Bombs went off inside the raid. Megi's (0:13) did 32k and killed Wrenn and Broimtiny; Tankygnomy's (0:45) did 107k and killed Palome, Myysha and Crashmatt. A bomb has to be carried away from everyone before it explodes."
+        },
+        {
+          "tone": "good",
+          "text": "Tullimage took his bomb (0:25) out of the raid: 3k in total. The kill itself was quick, 0:56 against a PUG median of 1:03."
+        }
+      ]
+    },
+    {
+      "encounterId": 50667,
+      "name": "Shazzrah",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "0:26, exactly the PUG median. Arcane Explosion hit 16 people for 87k, and 30 curses were removed."
+        }
+      ]
+    },
+    {
+      "encounterId": 50669,
+      "name": "Sulfuron Harbinger",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "Six of seven Dark Mendings interrupted (Sneakycatto 2, Orclover, Megi, Nessla and Tullimage one each). The one that got through healed a priest for 30k. 1:04 against a PUG median of 1:08."
+        }
+      ]
+    },
+    {
+      "encounterId": 50670,
+      "name": "Golemagg the Incinerator",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "1:20 against a PUG median of 1:11. Fenhir tanked 45k of Golemagg's melee and nobody died."
+        }
+      ]
+    },
+    {
+      "encounterId": 50671,
+      "name": "Majordomo Executus",
+      "notes": [
+        {
+          "tone": "bad",
+          "text": "2:59, more than twice the PUG median of 1:25 and almost a minute slower than any other Monday Majordomo (the slowest before was 2:02). Raid DPS was half the usual Monday number."
+        },
+        {
+          "tone": "bad",
+          "text": "The Flamewaker Healers' Shadow Shock did 42k and killed Djakizzwar, Bonjour and Daki at 1:21, 1:37 and 2:06."
+        }
+      ]
+    }
   ]
 }
