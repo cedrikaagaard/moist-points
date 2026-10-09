@@ -39,9 +39,9 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
 3. Run `npm run build` and open the new night in the dev server
    (`npm run dev`, `#/raids/<date>-<raid>`, e.g. `#/raids/2026-10-02-bwl`).
 4. Report what came in (nights, kills, anything notable from the numbers).
-   Commit only if asked. When a change alters what users see (pages, features,
-   not just new data), bump the version: add an entry at the top of
-   `src/changelog.js` and keep `package.json` "version" in sync.
+   Commit only if asked. Every change except pure backfill data bumps the
+   version, including new or corrected analyses: add an entry at the top of
+   `src/changelog.js` and keep `package.json` and `package-lock.json` in sync.
 
 ## Claude's analysis (optional, per raid)
 

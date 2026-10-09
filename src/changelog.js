@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.2",
+    date: "2026-10-09",
+    changes: [
+      "Claude's analysis is now up for 4 October (AQ40) and the 5 October Monday PUG MC, which is compared with other PUG runs.",
+    ],
+  },
+  {
     version: "2.3.1",
     date: "2026-10-09",
     changes: [
