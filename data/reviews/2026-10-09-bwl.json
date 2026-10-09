@@ -1876,10 +1876,10 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T19:26:51.294Z",
-    "grade": "A-",
-    "verdict": "Alive all raid for once, 93 average, and two bosses where you went quiet",
-    "summary": "No deaths in BWL, which after the three on 2 October counts as personal growth. Razorgore 96, Firemaw 99, Broodlord and Ebonroc 97, a 93 average against your usual 77. The two soft spots are Chromaggus (90, usually 97) and Nefarian (84, usually 97), where you spent a third of each fight not casting.",
+    "generatedAt": "2026-10-09T19:30:58.653Z",
+    "grade": "A",
+    "verdict": "Alive all raid for once, 93 average, and the two lower parses were the bosses' doing",
+    "summary": "No deaths in BWL, which after the three on 2 October counts as personal growth. Razorgore 96, Firemaw 99, Broodlord and Ebonroc 97, a 93 average against your usual 77. Chromaggus (90) and Nefarian (84) look like soft spots but aren't: on Chromaggus his weakness was a school you can't use for half the fight and you switched to Fireball whenever it turned to fire, and on Nefarian the mage call made casting a liability for 30 seconds.",
     "good": [
      {
       "title": "No deaths",
@@ -1892,25 +1892,24 @@
      {
       "title": "Consumables",
       "text": "Supreme Power, Zanza, Greater Arcane, Frost Power and Mageblood on every pull: 5.7 buffs a pull against 4 for the other DPS."
+     },
+     {
+      "title": "Chromaggus: played the weakness",
+      "text": "Whenever his Elemental Shield turned to fire (0:17 to 0:41 and from 1:05) you switched to Fireball for 5 to 9k a hit; the rest of the fight Frostbolt did about 400. The 90 is the boss, not you.",
+      "boss": 50616
      }
     ],
     "fix": [
      {
-      "title": "Nefarian",
-      "impact": "medium",
-      "boss": 50617,
-      "text": "84 against your usual 97, active 67% of the fight against 88% for the other DPS, with 16 seconds of nothing from 1:21. The log shows three mage class calls on you, which explains part of it, not all."
-     },
-     {
-      "title": "Chromaggus",
-      "impact": "low",
-      "boss": 50616,
-      "text": "90 against your usual 97. You caught Bronze affliction and used two Hourglass Sands, and were active 66% of the fight against 86% for the others."
-     },
-     {
       "title": "Food",
       "impact": "low",
-      "text": "Mana Regeneration food on 4 of 6 pulls with a buff snapshot."
+      "text": "Mana Regeneration food on 4 of 6 pulls with a buff snapshot. That's the whole list: the two lower parses were mechanics."
+     },
+     {
+      "title": "Vaelastrasz",
+      "impact": "low",
+      "boss": 50611,
+      "text": "89 and twentieth in raid damage, about your usual 88 there."
      }
     ],
     "bosses": {
@@ -1922,9 +1921,13 @@
       "tone": "good",
       "text": "99."
      },
+     "50616": {
+      "tone": "good",
+      "text": "Switched to Fireball on each fire weakness."
+     },
      "50617": {
-      "tone": "bad",
-      "text": "84, a third of the fight without a cast."
+      "tone": "info",
+      "text": "Wild Magic (the mage call) from 1:19 to 1:49: not casting was the job."
      }
     }
    }
@@ -6439,7 +6442,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T19:26:51.297Z",
+    "generatedAt": "2026-10-09T19:30:58.654Z",
     "grade": "A",
     "verdict": "99 on five bosses, which in a cat is worth fifth place on the meter",
     "summary": "Firemaw, Ebonroc, Chromaggus and Nefarian 99, Flamegor 98, Vaelastrasz 97 (your usual there is 76), a 97 average, no deaths, all seven world buffs and a Juju on every pull. It's hard to find anything to complain about, so we'll settle for this: all those 99s added up to fifth on the damage meter on Ebonroc and Nefarian, behind four warriors who parsed lower.",
@@ -8720,7 +8723,7 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-09T19:26:51.297Z",
+    "generatedAt": "2026-10-09T19:30:58.654Z",
     "grade": "B+",
     "verdict": "Seventeen points over your usual, 31 Demoralizing Shouts, and no flask",
     "summary": "A 77 average against your usual 60, with Firemaw 94, Chromaggus 91 and Broodlord 90 the high points, and no deaths. You kept Demoralizing Shout up on the bosses (31 casts) and put Sunder Armor on too. The weak spots are Nefarian (72, usually 83) and Ebonroc, where you were the second lowest warrior.",

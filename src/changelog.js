@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.10",
+    date: "2026-10-09",
+    changes: [
+      "Reviews now know two more BWL mechanics: Chromaggus's rotating weakness (a caster's parse depends on how long their school was the weak one) and Nefarian's mage call (Wild Magic, when not casting is the job). One review that blamed a mage for both is corrected.",
+    ],
+  },
+  {
     version: "2.5.9",
     date: "2026-10-09",
     changes: [

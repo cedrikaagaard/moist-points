@@ -76,8 +76,9 @@ function log(code) {
   return logs.set(code, { base, fights, act }).get(code);
 }
 
-// Can't act: stuns, fears, mind control, ice blocks, cocoons.
-const CC = /^(Web Spray|Web Wrap|Icebolt|Frost Blast|Chains of Kel'Thuzad|Panic|Bellowing Roar|Terrifying Roar|Fear|Psychic Scream|Dominate Mind|True Fulfillment|Cause Insanity|Mind Control|War Stomp|Locust Swarm|Silence|Polymorph|Sleep|Hex|Wing Buffet|Entomb)$/;
+// Can't act: stuns, fears, mind control, ice blocks, cocoons, Nefarian's mage call
+// (Wild Magic: a mage's spells polymorph the raid, so not casting is the job).
+const CC = /^(Web Spray|Web Wrap|Icebolt|Frost Blast|Chains of Kel'Thuzad|Panic|Bellowing Roar|Terrifying Roar|Fear|Psychic Scream|Dominate Mind|True Fulfillment|Cause Insanity|Mind Control|War Stomp|Locust Swarm|Silence|Polymorph|Sleep|Hex|Wing Buffet|Entomb|Wild Magic|Wild Polymorph)$/;
 
 // Idle time: gaps of 3+ seconds with no cast, swing, shot or direct heal, from
 // the pull until death or the end of the fight.

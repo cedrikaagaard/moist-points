@@ -88,6 +88,10 @@ General log-reading rules that apply to every boss below:
 - **What good looks like**: 1-2 min, Ebonroc self-healing low.
 - **Analysis notes**: Check boss healing events from Shadow of Ebonroc; large totals mean slow swaps.
 
+## Notes from the guild's own logs (verified 2026-10-09)
+- **Chromaggus's weakness rotates**: his "Elemental Shield" buff changes about every 24 s (0:17, 0:41, 1:05 on 9 Oct). Spell id 22277 = fire weakness (Fireballs hit 5-9k during it, Frostbolts ~400 outside it); 22280 = a school mages can't use (Nature, per the raid). A caster's Chromaggus parse depends on how much of the fight their school was the weakness; switching school when it changes is a good play. Never call a caster's lower Chromaggus parse a mistake without checking the shield windows.
+- **Nefarian class calls**: the mage call is "Wild Magic" (30 s debuff on mages, 1:19 to 1:49 on 9 Oct) during which their spells polymorph allies ("Wild Polymorph"). Mages not casting then is correct. Check class-call debuffs before calling anyone idle on Nefarian.
+
 ## Flamegor
 - **Fight in one line**: Third drake; same tanking as Firemaw, plus "Frenzy" that must be removed with Tranquilizing Shot or Flamegor casts Fire Nova on the raid. Onyxia Scale Cloak for tanks. No enrage.
 - **Mechanics**:
