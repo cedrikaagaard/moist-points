@@ -1,0 +1,149 @@
+{
+  "night": "2026-10-09-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-09T18:45:00Z",
+  "headline": "8 of 8 in 34:56, the guild's second fastest BWL, without a single wipe",
+  "mvp": {
+    "player": "Skoomael",
+    "headline": "97 average parse, 99 on four bosses, no deaths",
+    "why": [
+      "99 on Firemaw, Ebonroc, Chromaggus and Nefarian, 98 on Flamegor and never below 90",
+      "Never died, and handed out 3 Innervates"
+    ],
+    "also": [
+      {
+        "player": "Tochopolvo",
+        "text": "top damage of the raid on Razorgore, Ebonroc, Chromaggus and Nefarian"
+      },
+      {
+        "player": "Youlloveme",
+        "text": "top healer on five of the eight bosses"
+      },
+      {
+        "player": "Allipalli",
+        "text": "16 Brood Afflictions cleansed on Chromaggus, the most in the raid"
+      }
+    ]
+  },
+  "overview": [
+    "A full clear in 34:56, eight kills from eight pulls, second only to the 33:23 on 11 September and almost ten minutes under the guild's usual BWL (44:26). Every boss died at or under the guild's median kill time, Firemaw two seconds off the record.",
+    "Six deaths all night, two of them on trash. The parse medians tell the same story as the clock: 91 on Firemaw against a usual 85, 84 on Chromaggus against 75, 80 on Vaelastrasz against 67."
+  ],
+  "wipes": [],
+  "wentWell": [
+    {
+      "encounterId": 50613,
+      "text": "Firemaw in 0:45 against a guild median of 1:28 and a record of 0:43, so Flame Buffet only stacked to 6 per raider instead of the usual 11. Median parse 91; Skoomael, Osinir and Drikkle 99."
+    },
+    {
+      "encounterId": 50616,
+      "text": "Chromaggus in 1:20 (median 1:44), breaths hitting half as often as usual, 65 Brood Afflictions cleansed (Allipalli 16, Pinkcheese 10) and 6 Tranquilizing Shots."
+    },
+    {
+      "encounterId": 50617,
+      "text": "Nefarian in 1:54 (median 2:06). Only 8 people feared all fight against the usual 40 or so, with 7 Fear Wards out."
+    },
+    {
+      "encounterId": 50611,
+      "text": "Vaelastrasz in 0:30 against a median of 0:40, with a median parse of 80 against the usual 67."
+    }
+  ],
+  "bosses": [
+    {
+      "encounterId": 50610,
+      "name": "Razorgore the Untamed",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:27 once Razorgore himself was up, a second under the median, no deaths. Drikkle parsed 96."
+        }
+      ]
+    },
+    {
+      "encounterId": 50611,
+      "name": "Vaelastrasz the Corrupt",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:30 against a median of 0:40 on 33k raid DPS (usually 25k). Skoomael 97, Miniwrecker 92, Eduard 91."
+        },
+        {
+          "tone": "bad",
+          "text": "Two deaths: Flame Breath killed a mage at 0:17, and his melee killed a DPS warrior at 0:28, two seconds before the kill. Boss melee did 47k, about four times its usual share of the damage."
+        }
+      ]
+    },
+    {
+      "encounterId": 50612,
+      "name": "Broodlord Lashlayer",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:48, right on the median, no deaths. Blast Wave hit 20 raiders, 0.5 per raider against the usual 0.9."
+        }
+      ]
+    },
+    {
+      "encounterId": 50613,
+      "name": "Firemaw",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:45, two seconds off the guild record and 43 seconds under the median, with no deaths and 22k raid DPS against a usual 12k. Shadow Flame touched one raider twice."
+        }
+      ]
+    },
+    {
+      "encounterId": 50614,
+      "name": "Ebonroc",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:04, just under the median 1:07, no deaths. Skoomael 99, Drikkle 97, Tochopolvo 96."
+        },
+        {
+          "tone": "info",
+          "text": "Shadow of Ebonroc landed 7 times, the usual rate. The log shows him healing 25,000 per hit on a tank with it, 363k in all; older logs don't record those heals, so there's no guild average to compare it with."
+        }
+      ]
+    },
+    {
+      "encounterId": 50615,
+      "name": "Flamegor",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:53 against a median of 1:00, no deaths. 5 Tranquilizing Shots from three hunters, Grenan 2, and Fire Nova hit 4 times per raider against a usual 5.4."
+        }
+      ]
+    },
+    {
+      "encounterId": 50616,
+      "name": "Chromaggus",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:20 against a median of 1:44 with no deaths. Breaths hit 5 raiders 18 times, half the usual rate, and 65 afflictions were cleansed."
+        },
+        {
+          "tone": "info",
+          "text": "The breaths that did land were Ignite Flesh (11k) and Frost Burn (5k)."
+        }
+      ]
+    },
+    {
+      "encounterId": 50617,
+      "name": "Nefarian",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:54 against a median of 2:06 on 21k raid DPS. Shadow Flame hit 27 raiders about once each, as usual."
+        },
+        {
+          "tone": "bad",
+          "text": "Two late deaths to Bone Constructs, the skeletons of the last phase, at 1:37 and 1:52, both mages."
+        }
+      ]
+    }
+  ]
+}
