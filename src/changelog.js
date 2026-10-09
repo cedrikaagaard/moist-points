@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.3.6",
+    date: "2026-10-09",
+    changes: [
+      "Claude's analysis of the 2 October BWL now says how Firemaw got pulled: a body pull while the trash was being fought next to him.",
+    ],
+  },
+  {
     version: "2.3.5",
     date: "2026-10-09",
     changes: [

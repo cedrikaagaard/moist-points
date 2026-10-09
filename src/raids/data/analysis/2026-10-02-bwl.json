@@ -27,14 +27,14 @@
       "pull": 1,
       "title": "Firemaw's room, pull 1 (Firemaw at 98%)",
       "whatHappened": "The raid was fighting the Blackwing trash pack in front of Firemaw when Firemaw joined the fight. Drikkle died to a bomb and a Shadow Bolt at 0:10, Birkler (tank) at 0:18, then four healers between 0:25 and 0:34 (Etowa, Ishilly, Vallon, Thormund), mostly to Technician bombs. With the healing gone, 12 died in 1:24.",
-      "likelyCause": "Firemaw being pulled while the trash pack was still up, so the raid had his Flame Buffet and Wing Buffet on top of bombs and Shadow Bolts. The log can't say how he got pulled (a body pull, a knockback or someone running in).",
+      "likelyCause": "Firemaw being body pulled while the trash pack was still up: nobody attacked him first, and the Technicians were being fought within about 20 yards of him when he engaged. The raid then had his Flame Buffet on top of the bombs and Shadow Bolts.",
       "evidence": [
         "The fight contains Firemaw plus Blackwing Warlocks, Felguards, Technicians, a Spellbinder and a Death Talon Overseer",
         "Bomb (Blackwing Technician) 50k on 15 raiders and Shadow Bolt (Blackwing Warlock) 27k: on a usual Firemaw kill both are 0",
         "A tank and four healers dead in the first 34 seconds",
         "10 of the 12 dead lost every world buff they had and didn't get them back"
       ],
-      "avoid": "Clear the trash pack well away from Firemaw before engaging him, and kill or crowd control the Technicians first: their bombs did the most damage."
+      "avoid": "Pull the Technicians and Warlocks back toward the entrance and fight them well away from Firemaw, then kill or crowd control the Technicians first: their bombs did the most damage."
     }
   ],
   "wentWell": [
