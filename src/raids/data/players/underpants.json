@@ -1,0 +1,1 @@
+{"name":"Underpants","class":"Warlock","spec":null,"role":"dps","nights":[{"night":"2025-06-03-ony","zones":[2001],"role":"dps","spec":null,"deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":56,"amount":270,"role":"dps"}],"mech":{"51084:fear":3},"casts":{"Curse of Shadow":1,"Major Healthstone":1}}]}
