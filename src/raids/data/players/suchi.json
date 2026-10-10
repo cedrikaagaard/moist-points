@@ -1,0 +1,1 @@
+{"name":"Suchi","class":"Mage","spec":null,"role":"dps","nights":[{"night":"2025-04-11-ony","zones":[2001],"role":"dps","spec":null,"deaths":2,"firstDeaths":1,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":93,"amount":357,"role":"dps"}],"mech":{"51084:breath":1,"51084:deep":3,"51084:fear":8,"51084:eruption":2},"casts":{"Restore Mana":7}}]}

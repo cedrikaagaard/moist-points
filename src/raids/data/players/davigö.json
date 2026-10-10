@@ -1,0 +1,1 @@
+{"name":"Davigö","class":"Rogue","spec":null,"role":"dps","nights":[{"night":"2025-04-11-ony","zones":[2001],"role":"dps","spec":null,"deaths":2,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":14,"amount":177,"role":"dps"}],"mech":{"51084:breath":1,"51084:deep":4,"51084:fear":8,"51084:eruption":5},"casts":{}}]}
