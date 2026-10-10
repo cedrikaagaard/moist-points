@@ -1,0 +1,1 @@
+{"name":"Sarun","class":"Mage","spec":null,"role":"dps","nights":[{"night":"2025-02-09-ony","zones":[2001],"role":"dps","spec":null,"deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":86,"amount":375,"role":"dps"}],"mech":{"51084:breath":1,"51084:fear":3},"casts":{}}]}
