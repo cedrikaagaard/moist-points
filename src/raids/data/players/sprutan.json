@@ -1,0 +1,1 @@
+{"name":"Sprutan","class":"Druid","spec":null,"role":"healer","nights":[{"night":"2025-09-16-ony","zones":[2001],"role":"healer","spec":null,"deaths":1,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":31,"amount":0,"role":"healer"}],"mech":{"51084:fear":1},"casts":{"Innervate":1}}]}
