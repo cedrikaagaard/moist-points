@@ -2,7 +2,7 @@ import { GUILD_NIGHTS as NIGHTS, ALL_TIME, CLASS_OF, useBosses } from "./data.js
 import { bossImg, classColor, fmtDate, mmss, zoneImg, zoneOf } from "./assets.js";
 import { Banner, BarList, BossIcon, Panel, Player, SpellIcon, Tile, ZoneIcon, useTip } from "./components.jsx";
 import { ClearTrend, KillSparkline } from "./charts.jsx";
-import { BossMechanicsAllTime, BossParsesAllTime } from "./MechanicsView.jsx";
+import { BossMechanicsAllTime, BossMechTrends, BossParsesAllTime } from "./MechanicsView.jsx";
 import { href } from "../router.js";
 
 const playerInfo = new Map(ALL_TIME.players.map((p) => [p.name, p]));
@@ -149,7 +149,10 @@ function Boss({ b }) {
         <AttemptChart attempts={b.attempts} best={b.bestKillSec} />
       </Panel>
 
+      <CloseCallList b={b} />
+
       <BossMechanicsAllTime b={b} />
+      <BossMechTrends b={b} />
       <BossParsesAllTime b={b} />
 
       <div className="stat-row rr-stat-row">
@@ -316,5 +319,30 @@ function AttemptChart({ attempts, best }) {
       </div>
       {tip}
     </div>
+  );
+}
+
+// Kills with 3+ deaths in their last 10 seconds, and wipes at 5% or less:
+// the ones the raid still talks about. Newest first, linking to the night.
+function CloseCallList({ b }) {
+  const list = [...(b.closeCalls || [])].reverse();
+  if (!list.length) return null;
+  return (
+    <Panel title="Close calls" sub="kills that almost weren't, wipes that almost were">
+      <div className="rr-night-list">
+        {list.map((c, i) => (
+          <a key={`${c.night}-${c.pull}-${i}`} className="rr-night-row rr-night-row-sm" href={href("raids", c.night, b.id)}>
+            <span className="muted">{fmtDate(c.night)}</span>
+            <span>
+              {c.kind === "kill" ? (
+                <span><span className="rr-chip gold">close call</span> <span className="muted">{c.lateDeaths} deaths in the last 10 seconds of a {mmss(c.durationSec)} kill</span></span>
+              ) : (
+                <span><span className="rr-chip wipe">so close</span> <span className="muted">wiped at {c.bossPctLeft}%</span></span>
+              )}
+            </span>
+          </a>
+        ))}
+      </div>
+    </Panel>
   );
 }

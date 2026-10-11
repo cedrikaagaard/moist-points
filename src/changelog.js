@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.23",
+    date: "2026-10-11",
+    changes: [
+      "Boss pages now chart each mechanic per night (hits per raider, oldest first), list close calls (3+ deaths in a kill's last 10 seconds, wipes at 5% or less, also badged on night pages), and the overview has a new recruit watch for raiders with fewer than 10 logged raids.",
+    ],
+  },
+  {
     version: "2.5.22",
     date: "2026-10-11",
     changes: [

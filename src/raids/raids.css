@@ -134,6 +134,16 @@
 .rr-boss-time b { font-size: 15px; }
 .rr-chip { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; padding: 1px 6px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; }
 .rr-chip.gold { background: rgba(212, 175, 90, 0.18); color: var(--gold-bright); border: 1px solid var(--gold-deep); }
+.rr-chip.wipe { background: rgba(224, 82, 95, 0.15); color: #f08791; border: 1px solid rgba(224, 82, 95, 0.4); }
+.rr-cc-notes { display: flex; flex-direction: column; gap: 6px; margin: 12px 0 0; }
+.rr-cc-note { font-size: 13.5px; color: var(--text-2); }
+.rr-recruits { display: flex; flex-direction: column; }
+.rr-recruit { display: flex; align-items: center; gap: 12px; padding: 7px 4px; border-top: 1px solid var(--border-soft); text-decoration: none; color: inherit; }
+.rr-recruit:first-child { border-top: 0; }
+.rr-recruit:hover { background: var(--surface-2); border-radius: 8px; }
+.rr-recruit-name { min-width: 170px; }
+.rr-recruit-nights { min-width: 64px; }
+.rr-recruit-dots { flex-shrink: 0; }
 .rr-pulls { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
 .rr-pull { font-size: 10.5px; font-weight: 700; padding: 1px 6px; border-radius: 4px; font-variant-numeric: tabular-nums; }
 .rr-pull.kill { background: rgba(212, 175, 90, 0.2); color: var(--gold-bright); }

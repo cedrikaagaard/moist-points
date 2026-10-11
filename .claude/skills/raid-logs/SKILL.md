@@ -238,6 +238,9 @@ other PUG runs too (summary.json `kind: "pug"`), never with the guild's.
   positions, health %) in `data/events/<night>/<code>/page-NNN.json.gz` (local
   only, git-ignored, ~2-12 MB per night). `raids:fetch` downloads it for new
   nights; `npm run raids:events` backfills nights that don't have it yet.
+  For bulk backfills use the runner instead: `npm run raids:backfill`
+  (events + replays, resumable, stops at the hourly budget; guide in
+  `scripts/raids/BACKFILL.md`).
   Current mana is NOT in it (the API leaves `classResources` empty).
 - `scripts/raids/derive.mjs` turns one log's events into per-fight numbers:
   damage taken by ability (players only, friendly fire included, like WCL),

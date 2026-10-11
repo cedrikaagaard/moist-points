@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { MECHANICS } from "./mechanics.js";
 import { ALL_TIME, CLASS_OF } from "./data.js";
 import { classColor, fmtDate } from "./assets.js";
-import { BarList, Panel, Player, SpellIcon, useTip } from "./components.jsx";
+import { BarList, Panel, Player, SpellIcon, Tabs, useTip } from "./components.jsx";
 import { parseColor, ParseBadge, Bands } from "./RaidProfile.jsx";
 import { HoverColumns, rollingMedian } from "./charts.jsx";
 
@@ -267,6 +268,82 @@ function MedianTrend({ medians }) {
         {medians.map((m, i) => (
           <circle key={i} cx={x(i)} cy={y(m.median)} r="5" fill={parseColor(m.median)} stroke="var(--surface-1)" strokeWidth="1.5" {...bind(<>{fmtDate(m.night)} · median {m.median} ({m.count} ranked)</>)} />
         ))}
+      </svg>
+      {tip}
+    </div>
+  );
+}
+
+// ---------- mechanics over time ----------
+
+// One full-size trend chart per mechanic: hits (or kicks, dispels) per raider
+// on each night, oldest first. Bad mechanics going down is the guild improving;
+// good ones going up means the jobs are covered. Only mechanics with at least
+// two logged nights get a tab.
+export function BossMechTrends({ b }) {
+  const list = (MECHANICS[b.id] || [])
+    .map((m) => ({ m, nights: (b.mechNights?.[m.key] || []).filter((x) => x.present) }))
+    .filter((x) => x.nights.length >= 2);
+  const [key, setKey] = useState(() => list.find((x) => x.m.tone === "bad")?.m.key || list[0]?.m.key);
+  if (!list.length) return null;
+  const sel = list.find((x) => x.m.key === key) || list[0];
+  return (
+    <Panel title="Mechanic trends" sub="per raider per night · is the guild getting better at it?">
+      <Tabs tabs={list.map((x) => ({ key: x.m.key, label: x.m.label }))} value={sel.m.key} onChange={setKey} />
+      <MechFullTrend m={sel.m} nights={sel.nights} bossId={b.id} />
+    </Panel>
+  );
+}
+
+function MechFullTrend({ m, nights, bossId }) {
+  const [tip, bind] = useTip();
+  const vals = nights.map((x) => x.total / Math.max(1, x.present));
+  const W = 1000;
+  const H = 200;
+  const pad = { l: 40, r: 12, t: 10, b: 26 };
+  const x = (i) => pad.l + (i / Math.max(1, nights.length - 1)) * (W - pad.l - pad.r);
+  const max = Math.max(...vals, 0.01);
+  const y = (v) => pad.t + (1 - v / max) * (H - pad.t - pad.b);
+  const color = m.tone === "bad" ? "#e0525f" : "#d4af5a";
+  const med = nights.length > 5 ? rollingMedian(vals) : null;
+  const every = Math.max(1, Math.ceil(nights.length / 12));
+  const first = vals[0];
+  const last = vals[vals.length - 1];
+  const delta = first ? Math.round(((last - first) / first) * 100) : null;
+  return (
+    <div className="rr-timeline">
+      <div className="rr-legend">
+        <span>
+          {m.tone === "bad" ? "Fewer is better" : "More is better"} · first {first.toFixed(1)} per raider, latest {last.toFixed(1)}
+          {delta != null && delta !== 0 && ` (${delta > 0 ? "+" : ""}${delta}%)`}
+        </span>
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${m.label} per raider per night`}>
+        {[0, 0.5, 1].map((f) => (
+          <g key={f}>
+            <line x1={pad.l} x2={W - pad.r} y1={y(max * f)} y2={y(max * f)} stroke="var(--border-soft)" />
+            <text x={pad.l - 6} y={y(max * f) + 4} textAnchor="end" className="rr-axis">{(max * f).toFixed(1)}</text>
+          </g>
+        ))}
+        {med && <polyline points={med.map((v, i) => `${x(i)},${y(v)}`).join(" ")} fill="none" stroke="var(--text)" strokeWidth="2.5" strokeLinejoin="round" />}
+        <polyline points={vals.map((v, i) => `${x(i)},${y(v)}`).join(" ")} fill="none" stroke={color} strokeWidth={med ? 1 : 2} opacity={med ? 0.45 : 0.9} />
+        {vals.map((v, i) => (
+          <circle key={nights[i].night} cx={x(i)} cy={y(v)} r={nights.length > 30 ? 3 : 4.5} fill={color} stroke="var(--surface-1)" strokeWidth="1.5" />
+        ))}
+        <HoverColumns
+          xs={vals.map((_, i) => x(i))}
+          top={pad.t}
+          bottom={H - pad.b}
+          bind={bind}
+          hrefFor={(i) => `#/raids/${nights[i].night}/${bossId}`}
+          tipFor={(i) => (
+            <>
+              <strong>{fmtDate(nights[i].night)}</strong> · {nights[i].total} total ({vals[i].toFixed(2)} per raider)
+              <div className="muted">{nights[i].raiders} raiders involved · open that night</div>
+            </>
+          )}
+        />
+        {nights.map((n, i) => (i % every === 0 ? <text key={n.night} x={x(i)} y={H - 8} textAnchor="middle" className="rr-axis">{fmtDate(n.night, { day: "numeric", month: "short" })}</text> : null))}
       </svg>
       {tip}
     </div>

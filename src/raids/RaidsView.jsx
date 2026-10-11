@@ -8,6 +8,7 @@ import { nightZones } from "./aggregate.js";
 import { ZonePage, BossPage } from "./BossPages.jsx";
 import NightBossPage from "./NightBoss.jsx";
 import Analysis from "./Analysis.jsx";
+import { usePlayerRaids, parseColor } from "./RaidProfile.jsx";
 import { href } from "../router.js";
 import "./raids.css";
 
@@ -74,6 +75,8 @@ function Overview() {
           </div>
         </Panel>
       </div>
+
+      <RecruitWatch />
 
       <ClearTimes />
       <HallOfFame />
@@ -681,4 +684,64 @@ function countBy(list, key) {
   const m = {};
   for (const x of list) m[key(x)] = (m[key(x)] || 0) + 1;
   return Object.entries(m).sort((a, b) => b[1] - a[1]);
+}
+
+// New recruit watch: guild members with fewer than 10 logged raids. Nights so
+// far, average parse per raid as a trajectory, deaths per raid, best parse.
+// Each row lazy-loads the recruit's own file, so the overview stays light.
+function RecruitWatch() {
+  const recruits = ALL_TIME.players.filter((p) => p.nights < 10).slice(0, 8);
+  if (!recruits.length) return null;
+  return (
+    <Panel title="New recruit watch" sub="fewer than 10 logged raids · click through for the full record">
+      <div className="rr-recruits">
+        {recruits.map((p) => (
+          <RecruitRow key={p.name} name={p.name} nights={p.nights} />
+        ))}
+      </div>
+    </Panel>
+  );
+}
+
+function RecruitRow({ name, nights }) {
+  const p = usePlayerRaids(name);
+  if (p === undefined) return <div className="rr-recruit muted rr-loading">Loading {name}…</div>;
+  if (!p) return null;
+  const perNight = p.nights.map((n) => {
+    const pcts = (n.parses || []).map((x) => x.pct).filter((x) => x != null);
+    return { night: n.night, avg: pcts.length ? Math.round(pcts.reduce((a, x) => a + x, 0) / pcts.length) : null, deaths: n.deaths || 0 };
+  });
+  const deaths = perNight.reduce((t, n) => t + n.deaths, 0);
+  const avgs = perNight.map((n) => n.avg).filter((x) => x != null);
+  const best = avgs.length ? Math.max(...avgs) : null;
+  return (
+    <a className="rr-recruit" href={href("players", name)}>
+      <span className="rr-recruit-name"><P name={name} size={20} /></span>
+      <span className="muted rr-recruit-nights">{nights} {nights === 1 ? "raid" : "raids"}</span>
+      <RecruitDots perNight={perNight} />
+      <span className="rr-night-stats-sm muted">
+        {best != null ? <>best <b style={{ color: parseColor(best) }}>{best}</b> · </> : null}
+        {(deaths / Math.max(1, perNight.length)).toFixed(1)} deaths/raid
+      </span>
+    </a>
+  );
+}
+
+// Average parse per raid, oldest to newest, coloured like every other parse.
+function RecruitDots({ perNight }) {
+  const W = 140;
+  const H = 26;
+  const pts = perNight.map((n) => n.avg);
+  const x = (i) => 5 + (i / Math.max(1, pts.length - 1)) * (W - 10);
+  const y = (v) => v == null ? H - 4 : 3 + (1 - v / 100) * (H - 6);
+  return (
+    <svg className="rr-recruit-dots" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true">
+      {pts.length > 1 && <polyline points={pts.map((v, i) => `${x(i)},${y(v == null ? 0 : v)}`).join(" ")} fill="none" stroke="var(--muted)" strokeWidth="1" />}
+      {pts.map((v, i) => (
+        <circle key={i} cx={pts.length > 1 ? x(i) : W / 2} cy={y(v)} r="3.5" fill={v == null ? "var(--muted)" : parseColor(v)}>
+          <title>{`${perNight[i].night}: ${v ?? "unranked"}${perNight[i].deaths ? ` · ${perNight[i].deaths} deaths` : ""}`}</title>
+        </circle>
+      ))}
+    </svg>
+  );
 }

@@ -1,6 +1,6 @@
 import { ALL_TIME, CLASS_OF, useNight } from "./data.js";
 import { bossImg, classColor, fmtDate, mmss, zoneOf } from "./assets.js";
-import { zoneForEncounter, nightZones } from "./aggregate.js";
+import { zoneForEncounter, nightZones, closeCall } from "./aggregate.js";
 import { Banner, Panel, Player, SpellIcon, useTip } from "./components.jsx";
 import { useState } from "react";
 import { NightMechanics, NightFightWork } from "./MechanicsView.jsx";
@@ -88,6 +88,7 @@ function NightBoss({ n, b }) {
       {tab === "overview" && (
         <>
         <Compare b={b} night={n.night} />
+        <CloseCallNotes pulls={pulls} bossName={b.name} />
 
         <NightMechanics b={b} icons={n.icons} />
 
@@ -250,4 +251,26 @@ function ordinal(n) {
   const s = ["th", "st", "nd", "rd"];
   const v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+// "That kill almost wasn't": a kill with 3+ deaths in its last 10 seconds,
+// or a wipe at 5% or less. Computed live from this night's own deaths.
+function CloseCallNotes({ pulls, bossName }) {
+  const notes = pulls
+    .map((p) => ({ p, cc: closeCall(p, p.deathsList) }))
+    .filter((x) => x.cc);
+  if (!notes.length) return null;
+  return (
+    <div className="rr-cc-notes">
+      {notes.map(({ p, cc }) => (
+        <div key={p.n} className="rr-cc-note">
+          {cc.kind === "kill" ? (
+            <span><span className="rr-chip gold">close call</span> Pull {p.n}: {cc.lateDeaths} deaths in the last 10 seconds of the kill.</span>
+          ) : (
+            <span><span className="rr-chip wipe">so close</span> Pull {p.n}: wiped at {p.bossPctLeft}%.</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }

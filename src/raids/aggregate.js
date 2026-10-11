@@ -85,13 +85,15 @@ export function aggregate(nights) {
           id: b.encounterId, name: b.name, zoneId: zoneForEncounter(b.encounterId),
           kills: 0, wipes: 0, pulls: 0, timeSec: 0, deaths: 0, bestKillSec: null, bestKillNight: null, history: [],
           attempts: [], deathsBy: {}, firstDeathsBy: {}, killingBlows: {}, raidersBy: {},
-          mech: {}, mechNights: {}, dispelsBy: {}, kicksBy: {}, bestParse: {}, parseNights: [],
+          mech: {}, mechNights: {}, dispelsBy: {}, kicksBy: {}, bestParse: {}, parseNights: [], closeCalls: [],
         });
       }
       const s = bosses.get(b.name);
-      for (const p of b.pulls) {
+      b.pulls.forEach((p, idx) => {
         s.attempts.push({ night: n.night, kill: p.kill, durationSec: p.durationSec, bossPctLeft: p.bossPctLeft, deaths: p.deaths });
-      }
+        const cc = closeCall(p, n.deaths.filter((d) => d.boss === b.name));
+        if (cc) s.closeCalls.push({ night: n.night, pull: idx + 1, durationSec: p.durationSec, bossPctLeft: p.bossPctLeft, ...cc });
+      });
       for (const d of n.deaths.filter((d) => d.boss === b.name)) {
         s.deathsBy[d.player] = (s.deathsBy[d.player] || 0) + 1;
         if (d.firstOfPull) s.firstDeathsBy[d.player] = (s.firstDeathsBy[d.player] || 0) + 1;
@@ -165,6 +167,18 @@ export function aggregate(nights) {
     castTotals,
     icons: Object.assign({}, ...nights.map((n) => n.icons || {})),
   };
+}
+
+// A kill with 3+ deaths in its last 10 seconds, or a wipe at 5% boss health
+// or less. `deaths` are the night's deaths on this boss; the pull carries its
+// own start (`at`) and length. Shared by the aggregator and the night pages.
+export function closeCall(pull, deaths) {
+  const list = (deaths || []).filter((d) => d.at >= pull.at - 1 && d.at <= pull.at + pull.durationSec + 2);
+  if (pull.kill) {
+    const late = list.filter((d) => d.at >= pull.at + pull.durationSec - 10);
+    return late.length >= 3 ? { kind: "kill", lateDeaths: late.length } : null;
+  }
+  return pull.bossPctLeft != null && pull.bossPctLeft <= 5 ? { kind: "wipe", lateDeaths: list.length } : null;
 }
 
 // Most frequent killer, skipping plain "Melee" when something more colourful exists.
