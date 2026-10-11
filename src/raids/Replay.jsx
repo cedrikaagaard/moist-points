@@ -153,6 +153,8 @@ function Player_({ data, icons }) {
         </div>
       </Panel>
 
+      <EventTimeline events={data.events || []} dur={dur} t={t} onSeek={setT} />
+
       <div className="rr-replay-grid">
         <Panel title={`Raid ${metric === "damage" ? "DPS" : "HPS"}`} sub="over the fight · skulls are deaths">
           <OutputChart raid={raid} step={data.step} dur={dur} t={t} deaths={(data.events || []).filter((e) => e.kind === "death")} onSeek={setT} />
@@ -216,3 +218,84 @@ function Ticker({ events, t, icons }) {
 }
 
 const fmtK = (v) => (v >= 1e6 ? `${(v / 1e6).toFixed(2)}M` : v >= 1e3 ? `${(v / 1e3).toFixed(1)}k` : `${Math.round(v)}`);
+
+// Fight story: every tracked event on one scrubable timeline, synced to the
+// same playhead as the race. Deaths on the top lane, bad mechanics in the
+// middle, good plays and neutral mechanics at the bottom. No new data needed:
+// replay files already carry timestamped events.
+const LANES = [
+  { key: "death", label: "Deaths", kinds: ["death"], color: "#f08791" },
+  { key: "bad", label: "Bad", kinds: ["bad"], color: "#e0525f" },
+  { key: "good", label: "Good & info", kinds: ["good", "info"], color: "#d4af5a" },
+];
+
+function EventTimeline({ events, dur, t, onSeek }) {
+  const [filter, setFilter] = useState("all");
+  const counts = {};
+  for (const e of events) counts[e.kind] = (counts[e.kind] || 0) + 1;
+  const lanes = LANES.map((l) => ({ ...l, list: events.filter((e) => l.kinds.includes(e.kind)) })).filter(
+    (l) => filter === "all" || l.key === filter
+  );
+  const shown = lanes.flatMap((l) => l.list);
+  if (!events.length) return null;
+  const W = 1000;
+  const laneH = 30;
+  const pad = { l: 96, r: 12, t: 8, b: 22 };
+  const H = pad.t + lanes.length * laneH + pad.b;
+  const x = (s) => pad.l + (s / Math.max(1, dur)) * (W - pad.l - pad.r);
+  const r = shown.length > 200 ? 2.5 : 4;
+  const tabs = [{ key: "all", label: `All (${events.length})` }].concat(
+    LANES.filter((l) => events.some((e) => l.kinds.includes(e.kind))).map((l) => ({
+      key: l.key,
+      label: `${l.label} (${l.kinds.reduce((n, k) => n + (counts[k] || 0), 0)})`,
+    }))
+  );
+  return (
+    <Panel
+      title="Fight story"
+      sub="every death and tracked mechanic · click to jump · hover a dot"
+      right={<Tabs tabs={tabs} value={filter} onChange={setFilter} />}
+    >
+      <div className="rr-timeline">
+        <svg
+          viewBox={`0 0 ${W} ${H}`}
+          role="img"
+          aria-label="Fight events over time"
+          onClick={(e) => {
+            const b = e.currentTarget.getBoundingClientRect();
+            onSeek(Math.max(0, Math.min(dur, (((e.clientX - b.left) / b.width) * W - pad.l) / (W - pad.l - pad.r) * dur)));
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          {lanes.map((l, li) => (
+            <g key={l.key}>
+              <text x={pad.l - 8} y={pad.t + li * laneH + laneH / 2 + 4} textAnchor="end" className="rr-axis">{l.label}</text>
+              <line x1={pad.l} x2={W - pad.r} y1={pad.t + li * laneH + laneH / 2} y2={pad.t + li * laneH + laneH / 2} stroke="var(--border-soft)" />
+              {l.list.map((e, i) => (
+                e.kind === "death" ? (
+                  <text key={`${e.t}-${i}`} x={x(e.t)} y={pad.t + li * laneH + laneH / 2 + 4} textAnchor="middle" fontSize="12" opacity={e.t <= t ? 1 : 0.3}>
+                    ☠<title>{`${mmss(e.t)} · ${e.player || "?"} died · ${e.text}`}</title>
+                  </text>
+                ) : (
+                  <circle
+                    key={`${e.t}-${i}`}
+                    cx={x(e.t)}
+                    cy={pad.t + li * laneH + laneH / 2}
+                    r={r}
+                    fill={e.kind === "good" ? "#d4af5a" : e.kind === "bad" ? "#e0525f" : "var(--text-2)"}
+                    opacity={e.t <= t ? 0.9 : 0.3}
+                  >
+                    <title>{`${mmss(e.t)} · ${e.player ? `${e.player} · ` : ""}${e.text}`}</title>
+                  </circle>
+                )
+              ))}
+            </g>
+          ))}
+          <line x1={x(t)} x2={x(t)} y1={pad.t - 2} y2={H - pad.b} stroke="var(--text)" strokeWidth="1.5" />
+          <text x={pad.l} y={H - 6} textAnchor="start" className="rr-axis">0</text>
+          <text x={W - pad.r} y={H - 6} textAnchor="end" className="rr-axis">{mmss(dur)}</text>
+        </svg>
+      </div>
+    </Panel>
+  );
+}

@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.24",
+    date: "2026-10-11",
+    changes: [
+      "Fight replays have a story timeline: every death and tracked mechanic on three scrubable lanes, synced to the race playhead, with filters.",
+    ],
+  },
+  {
     version: "2.5.23",
     date: "2026-10-11",
     changes: [
