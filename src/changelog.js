@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.28",
+    date: "2026-10-11",
+    changes: [
+      "Stat tiles now count up when scrolled into view.",
+    ],
+  },
+  {
     version: "2.5.27",
     date: "2026-10-11",
     changes: [

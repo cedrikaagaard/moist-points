@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { href } from "../router.js";
 import { bossImg, classColor, FALLBACK_ICON, iconFor, specImg, zoneImg, zoneOf } from "./assets.js";
 
@@ -101,11 +101,59 @@ export function Panel({ title, sub, children, className = "", right }) {
 export function Tile({ value, label, sub, accent }) {
   return (
     <div className="stat-tile">
-      <div className="stat-value" style={accent ? { color: accent } : undefined}>{value}</div>
+      <div className="stat-value" style={accent ? { color: accent } : undefined}><CountVal value={value} /></div>
       <div className="stat-label">{label}</div>
       {sub && <div className="stat-sub">{sub}</div>}
     </div>
   );
+}
+
+// Numbers tick up from zero the first time they scroll into view. Anything
+// that isn't a plain number (times, dashes, formatted strings) renders as-is.
+function CountVal({ value }) {
+  const ref = useRef(null);
+  const [disp, setDisp] = useState(null); // null = not started yet
+  useEffect(() => {
+    setDisp(null);
+    if (typeof value !== "number" || !isFinite(value)) return;
+    if (typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisp(value);
+      return;
+    }
+    let raf = 0;
+    const run = () => {
+      const t0 = performance.now();
+      const DUR = 900;
+      const step = (now) => {
+        const f = Math.min(1, (now - t0) / DUR);
+        setDisp(value * (1 - Math.pow(1 - f, 3)));
+        if (f < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    };
+    if (typeof IntersectionObserver === "undefined") return run();
+    const el = ref.current;
+    if (!el) return run();
+    const io = new IntersectionObserver(
+      (es) => {
+        if (es.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          run();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, [value]);
+  if (typeof value !== "number" || !isFinite(value)) return <>{value}</>;
+  const v = disp == null ? 0 : disp;
+  const dec = Number.isInteger(value) ? 0 : String(value).split(".")[1]?.length || 0;
+  const txt = dec ? v.toFixed(dec) : Math.round(v).toLocaleString("en-US");
+  return <span ref={ref}>{txt}</span>;
 }
 
 export function Tabs({ tabs, value, onChange }) {
