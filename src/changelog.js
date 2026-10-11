@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.27",
+    date: "2026-10-11",
+    changes: [
+      "The unreadable raid calendar highlight is now a raid pace chart: kills per week for 26 weeks, bars growing in on scroll.",
+    ],
+  },
+  {
     version: "2.5.26",
     date: "2026-10-11",
     changes: [

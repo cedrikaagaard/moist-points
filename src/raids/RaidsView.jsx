@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { NIGHTS, GUILD_NIGHTS, ALL_TIME, CLASS_OF, useNight, lockoutOf, isPug } from "./data.js";
 import { classColor, fmtDate, hm, mmss, zoneImg, zoneOf, ZONES } from "./assets.js";
 import { Banner, BarList, BossIcon, ClassIcon, Panel, Player, SpellIcon, Tabs, Tile, ZoneIcon } from "./components.jsx";
-import { ActivityCalendar, ClearTrend, KillSparkline, NightTimeline } from "./charts.jsx";
+import { ClearTrend, KillSparkline, NightTimeline, RaidPace } from "./charts.jsx";
 import { deathless, friendlyFire, nightHighlights, records } from "./highlights.js";
 import { nightZones } from "./aggregate.js";
 import { ZonePage, BossPage } from "./BossPages.jsx";
@@ -64,8 +64,8 @@ function Overview() {
       <ZoneStrip />
 
       <div className="rr-grid-main">
-        <Panel title="Raid calendar" sub="every logged raid">
-          <ActivityCalendar nights={NIGHTS} />
+        <Panel title="Raid pace" sub="boss kills per week · guild raids">
+          <RaidPace nights={GUILD_NIGHTS} />
         </Panel>
         <Panel title="Recent raids" right={<span className="muted">{GUILD_NIGHTS.length} total</span>}>
           <div className="rr-night-list">

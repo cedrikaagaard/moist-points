@@ -194,76 +194,136 @@ function PullTip({ p }) {
   );
 }
 
-// ---------- Activity calendar ----------
-// One square per day for the logged period, filled with the colour of the raid
-// done that day (two raids = split square, each half opens its raid).
-export function ActivityCalendar({ nights }) {
+// ---------- Scroll-into-view ----------
+// Reveal-once hook for growing charts in as they enter the viewport. Returns
+// [ref, seen]. Respects reduced-motion (content just appears) and non-visual
+// environments (seen immediately). Shared by the animated charts below.
+export function useInView() {
+  const ref = useRef(null);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return setSeen(true);
+    if (typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches) return setSeen(true);
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (es) => {
+        if (es.some((e) => e.isIntersecting)) {
+          setSeen(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, seen];
+}
+
+// ---------- Raid pace ----------
+// Boss kills per week for the last 26 weeks: how much raiding the guild
+// actually does. Bars grow in on scroll; the best week is solid gold.
+export function RaidPace({ nights }) {
   const [tip, bind] = useTip();
-  if (!nights.length) return null;
-  const byDate = new Map(); // date -> its raids, in the order they happened
-  for (const n of [...nights].reverse()) {
-    const d = n.night.slice(0, 10);
-    if (!byDate.has(d)) byDate.set(d, []);
-    byDate.get(d).push(n);
-  }
-  const first = new Date(`${nights.at(-1).night.slice(0, 10)}T12:00:00`);
-  const last = new Date(`${nights[0].night.slice(0, 10)}T12:00:00`);
-  const start = new Date(first);
-  start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // back to Monday
-
-  const weeks = [];
-  for (let d = new Date(start); d <= last; d.setDate(d.getDate() + 1)) {
-    const wi = Math.floor((d - start) / (7 * 864e5));
-    (weeks[wi] ||= []).push(d.toISOString().slice(0, 10));
-  }
-  const C = 16;
-  const G = 3;
-  const zonesSeen = [...new Set(nights.flatMap((n) => n.zoneIds))];
-
+  const [ref, seen] = useInView();
+  const W = 1000;
+  const H = 200;
+  const pad = { l: 34, r: 12, t: 12, b: 26 };
+  const today = new Date();
+  const monday = new Date(today);
+  monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+  monday.setHours(0, 0, 0, 0);
+  const weeks = Array.from({ length: 26 }, (_, i) => {
+    const start = new Date(monday);
+    start.setDate(start.getDate() - (25 - i) * 7);
+    const end = new Date(start);
+    end.setDate(end.getDate() + 7);
+    const key = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    const list = (nights || []).filter((n) => {
+      const d = n.night.slice(0, 10);
+      return d >= key(start) && d < key(end);
+    });
+    return { start, list, kills: list.reduce((t, n) => t + (n.totals?.kills || 0), 0) };
+  });
+  const max = Math.max(1, ...weeks.map((w) => w.kills));
+  const bw = (W - pad.l - pad.r) / weeks.length;
+  const y = (v) => pad.t + (1 - v / max) * (H - pad.t - pad.b);
+  let best = 0;
+  weeks.forEach((w, i) => {
+    if (w.kills > weeks[best].kills) best = i;
+  });
+  let lastMonth = "";
   return (
-    <div className="rr-cal">
-      <svg viewBox={`0 0 ${30 + weeks.length * (C + G)} ${7 * (C + G) + 4}`} role="img" aria-label="Raid calendar">
-        {["Mon", "", "Wed", "", "Fri", "", "Sun"].map((l, i) => (
-          <text key={i} x="0" y={i * (C + G) + C - 4} className="rr-axis">{l}</text>
+    <div className="rr-timeline" ref={ref}>
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Boss kills per week">
+        {[0, 0.5, 1].map((f) => (
+          <g key={f}>
+            <line x1={pad.l} x2={W - pad.r} y1={y(max * f)} y2={y(max * f)} stroke="var(--border-soft)" />
+            <text x={pad.l - 6} y={y(max * f) + 4} textAnchor="end" className="rr-axis">{Math.round(max * f)}</text>
+          </g>
         ))}
-        {weeks.map((days, wi) =>
-          days.map((day, di) => {
-            const raids = byDate.get(day);
-            const X = 30 + wi * (C + G);
-            const Y = di * (C + G);
-            if (!raids) return <rect key={day} x={X} y={Y} width={C} height={C} rx="3" className="rr-cal-empty" />;
-            // One segment per raid (older files can still hold two zones in one).
-            const segs = raids.flatMap((n) => (n.zoneIds.length ? n.zoneIds : [0]).map((z) => ({ n, z })));
-            const w = C / segs.length;
-            return (
-              <g key={day}>
-                {segs.map(({ n, z }, i) => (
-                  <a key={i} href={href("raids", n.night)} {...bind(<CalTip n={n} />)}>
-                    <rect x={X + i * w} y={Y} width={w - (i < segs.length - 1 ? 1 : 0)} height={C} rx="3" fill={zoneOf(z).color} opacity={n.kind === "pug" ? 0.35 : 1} />
-                  </a>
-                ))}
-              </g>
-            );
-          })
-        )}
+        {weeks.map((w, i) => {
+          const h = H - pad.b - y(w.kills);
+          const label = w.start.toLocaleDateString("en-GB", { month: "short" });
+          const showLabel = label !== lastMonth;
+          lastMonth = label;
+          return (
+            <g key={i} {...bind(<WeekTip w={w} />)}>
+              <rect x={pad.l} y={pad.t} width={bw} height={H - pad.t - pad.b} fill="transparent" />
+              {w.kills > 0 ? (
+                <rect
+                  x={pad.l + i * bw + 2}
+                  y={y(w.kills)}
+                  width={Math.max(2, bw - 4)}
+                  height={Math.max(1, h)}
+                  rx="3"
+                  fill="#d4af5a"
+                  opacity={i === best ? 1 : 0.55}
+                  style={{
+                    transform: seen ? undefined : "scaleY(0)",
+                    transformOrigin: "bottom",
+                    transformBox: "fill-box",
+                    transition: `transform 0.45s ease ${i * 25}ms`,
+                  }}
+                />
+              ) : (
+                <line
+                  x1={pad.l + i * bw + 3}
+                  x2={pad.l + (i + 1) * bw - 3}
+                  y1={H - pad.b}
+                  y2={H - pad.b}
+                  stroke="var(--border-soft)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              )}
+              {showLabel && <text x={pad.l + i * bw} y={H - 8} className="rr-axis">{label}</text>}
+            </g>
+          );
+        })}
       </svg>
       <div className="rr-legend">
-        {zonesSeen.map((z) => (
-          <span key={z}><i style={{ background: zoneOf(z).color }} /> {zoneOf(z).short}</span>
-        ))}
-        {nights.some((n) => n.kind === "pug") && <span><i style={{ background: "var(--text-2)", opacity: 0.35 }} /> PUG run (faded)</span>}
+        <span><i style={{ background: "#d4af5a" }} /> Kills per week · solid = best ({weeks[best].kills})</span>
       </div>
       {tip}
     </div>
   );
 }
 
-function CalTip({ n }) {
+function WeekTip({ w }) {
+  const end = new Date(w.start);
+  end.setDate(end.getDate() + 6);
+  const range = `${w.start.toLocaleDateString("en-GB", { day: "numeric", month: "short" })} – ${end.toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`;
   return (
     <>
-      <strong>{fmtDate(n.night)}</strong>
-      <div className="muted">{n.zoneIds.map((z) => zoneOf(z).short).join(" + ")}{n.kind === "pug" ? " · PUG run" : ""}</div>
-      <div className="muted">{n.totals.kills} kills · {n.totals.wipes} wipes · {n.totals.deaths} deaths</div>
+      <strong>{range}</strong> <span className="muted">· {w.kills} kills</span>
+      {w.list.map((n) => (
+        <div key={n.night} className="muted">
+          {fmtDate(n.night, { day: "numeric", month: "short" })} · {n.zoneIds.map((z) => zoneOf(z).short).join(" + ")} · {n.totals.kills} kills{n.totals.wipes ? ` · ${n.totals.wipes} wipes` : ""}
+        </div>
+      ))}
+      {!w.list.length && <div className="muted">No raids this week</div>}
     </>
   );
 }
