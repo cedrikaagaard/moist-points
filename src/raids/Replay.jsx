@@ -238,9 +238,17 @@ function EventTimeline({ events, dur, t, onSeek }) {
   );
   const shown = lanes.flatMap((l) => l.list);
   if (!events.length) return null;
+  const reduced = useMemo(
+    () => typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches,
+    []
+  );
+  // The most recent event at or behind the playhead gets an expanding ring.
+  const latest = shown.reduce((m, e) => (e.t <= t && (!m || e.t > m.t) ? e : m), null);
+  const latestAge = latest ? t - latest.t : Infinity;
+  const ringLane = latest ? lanes.findIndex((l) => l.list.includes(latest)) : -1;
   const W = 1000;
   const laneH = 30;
-  const pad = { l: 96, r: 12, t: 8, b: 22 };
+  const pad = { l: 96, r: 12, t: 24, b: 22 };
   const H = pad.t + lanes.length * laneH + pad.b;
   const x = (s) => pad.l + (s / Math.max(1, dur)) * (W - pad.l - pad.r);
   const r = shown.length > 200 ? 2.5 : 4;
@@ -271,27 +279,61 @@ function EventTimeline({ events, dur, t, onSeek }) {
             <g key={l.key}>
               <text x={pad.l - 8} y={pad.t + li * laneH + laneH / 2 + 4} textAnchor="end" className="rr-axis">{l.label}</text>
               <line x1={pad.l} x2={W - pad.r} y1={pad.t + li * laneH + laneH / 2} y2={pad.t + li * laneH + laneH / 2} stroke="var(--border-soft)" />
-              {l.list.map((e, i) => (
-                e.kind === "death" ? (
-                  <text key={`${e.t}-${i}`} x={x(e.t)} y={pad.t + li * laneH + laneH / 2 + 4} textAnchor="middle" fontSize="12" opacity={e.t <= t ? 1 : 0.3}>
-                    ☠<title>{`${mmss(e.t)} · ${e.player || "?"} died · ${e.text}`}</title>
-                  </text>
-                ) : (
+              {l.list.map((e, i) => {
+                const age = t - e.t;
+                const cy = pad.t + li * laneH + laneH / 2;
+                if (e.kind === "death") {
+                  // Skulls drop in from above in the moment they happen.
+                  const drop = !reduced && age >= 0 && age < 0.8 ? -9 * (1 - age / 0.8) : 0;
+                  return (
+                    <text
+                      key={`${e.t}-${i}`}
+                      x={x(e.t)}
+                      y={cy + 4}
+                      textAnchor="middle"
+                      fontSize="12"
+                      opacity={age < 0 ? 0.3 : 1}
+                      style={drop ? { transform: `translateY(${drop.toFixed(1)}px)` } : undefined}
+                    >
+                      ☠<title>{`${mmss(e.t)} · ${e.player || "?"} died · ${e.text}`}</title>
+                    </text>
+                  );
+                }
+                return (
                   <circle
                     key={`${e.t}-${i}`}
                     cx={x(e.t)}
-                    cy={pad.t + li * laneH + laneH / 2}
+                    cy={cy}
                     r={r}
                     fill={e.kind === "good" ? "#d4af5a" : e.kind === "bad" ? "#e0525f" : "var(--text-2)"}
-                    opacity={e.t <= t ? 0.9 : 0.3}
+                    opacity={age < 0 ? 0.3 : 0.9}
                   >
                     <title>{`${mmss(e.t)} · ${e.player ? `${e.player} · ` : ""}${e.text}`}</title>
                   </circle>
-                )
-              ))}
+                );
+              })}
             </g>
           ))}
-          <line x1={x(t)} x2={x(t)} y1={pad.t - 2} y2={H - pad.b} stroke="var(--text)" strokeWidth="1.5" />
+          {!reduced && latest && latestAge < 1.2 && ringLane >= 0 && (
+            <circle
+              cx={x(latest.t)}
+              cy={pad.t + ringLane * laneH + laneH / 2}
+              r={5 + latestAge * 16}
+              fill="none"
+              stroke={latest.kind === "death" ? "#f08791" : latest.kind === "bad" ? "#e0525f" : "#d4af5a"}
+              strokeWidth="2"
+              opacity={0.55 * (1 - latestAge / 1.2)}
+            />
+          )}
+          <line x1={x(t)} x2={x(t)} y1={pad.t - 2} y2={H - pad.b} stroke="var(--text)" strokeWidth="1.5" style={{ filter: "drop-shadow(0 0 3px rgba(255,255,255,0.45))" }} />
+          <text
+            x={Math.max(pad.l + 26, Math.min(W - pad.r - 26, x(t)))}
+            y={11}
+            textAnchor="middle"
+            className="rr-axis rr-story-bubble"
+          >
+            {mmss(t)}
+          </text>
           <text x={pad.l} y={H - 6} textAnchor="start" className="rr-axis">0</text>
           <text x={W - pad.r} y={H - 6} textAnchor="end" className="rr-axis">{mmss(dur)}</text>
         </svg>

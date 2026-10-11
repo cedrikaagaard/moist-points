@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.25",
+    date: "2026-10-11",
+    changes: [
+      "Fight story timeline got some life: skulls drop in as deaths happen, the latest event pulses, and a time bubble rides the playhead. Respects reduced-motion settings.",
+    ],
+  },
+  {
     version: "2.5.24",
     date: "2026-10-11",
     changes: [
