@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.32",
+    date: "2026-10-11",
+    changes: [
+      "Profiles now have milestone badges: raid-count tiers, first big parse, deathless tiers, with NEW on anything earned last raid.",
+    ],
+  },
+  {
     version: "2.5.31",
     date: "2026-10-11",
     changes: [

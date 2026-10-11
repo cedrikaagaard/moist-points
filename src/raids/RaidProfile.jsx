@@ -80,6 +80,8 @@ function Record({ p, reviews }) {
 
       {parses.length > 0 && <Parses parses={parses} />}
 
+      <Milestones p={p} best={best} clean={clean} />
+
       <div className="grid-2">
         <Panel title="Utility" sub="all raids">
           <QuietWork p={p} me={me} dispels={dispels} kicks={kicks} />
@@ -361,5 +363,49 @@ function Mechanics({ p }) {
         </a>
       ))}
     </div>
+  );
+}
+
+// Milestone badges: raid-count tiers, first big parse, deathless tiers. A
+// badge earned on the player's latest raid gets a NEW pill. File order is
+// oldest first, so "first reached" is a straight scan.
+function Milestones({ p, best, clean }) {
+  const nights = p.nights;
+  if (!nights.length) return null;
+  const latest = nights[nights.length - 1].night;
+  const badges = [];
+  for (const t of [10, 25, 50, 100, 150, 200]) {
+    if (nights.length >= t) {
+      const at = nights[t - 1].night;
+      badges.push({ label: `${t} raids`, night: at, isNew: at === latest });
+    }
+  }
+  for (const [pct, label] of [[90, "90+ parse"], [95, "95+ parse"], [99, "99 parse"], [100, "Gold parse"]]) {
+    const hit = nights.find((n) => (n.parses || []).some((x) => x.pct >= pct));
+    if (hit) badges.push({ label, night: hit.night, isNew: hit.night === latest });
+  }
+  let cleanCount = 0;
+  const cleanAt = {};
+  nights.forEach((n) => {
+    if (n.deaths === 0) {
+      cleanCount++;
+      for (const t of [10, 25, 50]) if (cleanCount === t) cleanAt[t] = n.night;
+    }
+  });
+  for (const t of [10, 25, 50]) {
+    if (cleanAt[t]) badges.push({ label: `${t} deathless`, night: cleanAt[t], isNew: cleanAt[t] === latest });
+  }
+  if (!badges.length) return null;
+  return (
+    <Panel title="Milestones" sub="earned across all logged raids">
+      <div className="rr-ms">
+        {badges.map((m, i) => (
+          <span key={i} className="rr-ms-badge" title={`${m.label} · ${fmtDate(m.night, { day: "numeric", month: "short", year: "numeric" })}`}>
+            {m.label} <span className="muted">{fmtDate(m.night, { day: "numeric", month: "short" })}</span>
+            {m.isNew && <span className="rr-chip gold">new</span>}
+          </span>
+        ))}
+      </div>
+    </Panel>
   );
 }
