@@ -137,6 +137,8 @@
 .rr-chip.wipe { background: rgba(224, 82, 95, 0.15); color: #f08791; border: 1px solid rgba(224, 82, 95, 0.4); }
 .rr-cc-notes { display: flex; flex-direction: column; gap: 6px; margin: 12px 0 0; }
 .rr-cc-note { font-size: 13.5px; color: var(--text-2); }
+.rr-relive { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.rr-relive-label { font-size: 13px; }
 .rr-story-bubble { font-weight: 700; paint-order: stroke; stroke: var(--surface-1); stroke-width: 4px; }
 .rr-recruits { display: flex; flex-direction: column; }
 .rr-recruit { display: flex; align-items: center; gap: 12px; padding: 7px 4px; border-top: 1px solid var(--border-soft); text-decoration: none; color: inherit; }

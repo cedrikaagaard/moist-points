@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { bossImg, classColor, fmtDate, mmss, zoneOf } from "./assets.js";
 import { Player, useTip } from "./components.jsx";
 import { href } from "../router.js";
@@ -8,9 +9,12 @@ const WIPE = "#e0525f";
 // ---------- The night at a glance ----------
 // Every boss pull as a bar on one time axis (gold = kill, red = wipe, labelled
 // with the boss portrait), and every death as a dot stacked above the moment it
-// happened, in the player's class colour.
+// happened, in the player's class colour. "Relive the night" sweeps a playhead
+// across the evening: pulls light up as they happen, the rest stays dimmed.
 export function NightTimeline({ n }) {
   const [tip, bind] = useTip();
+  const [t, setT] = useState(null); // null = overview; seconds into the night while reliving
+  const [playing, setPlaying] = useState(false);
   const W = 1000;
   const end = Math.max(60, n.durationMin * 60, ...n.deaths.map((d) => d.at));
   const x = (s) => 16 + (s / end) * (W - 32);
@@ -56,8 +60,53 @@ export function NightTimeline({ n }) {
   const ticks = [];
   for (let t = 0; t <= end; t += 1800) ticks.push(t);
 
+  // Relive clock: the whole evening in about two minutes.
+  const SPEED = 60;
+  const last = useRef(null);
+  useEffect(() => {
+    if (!playing) return;
+    let raf;
+    const tick = (now) => {
+      if (last.current != null) {
+        const dt = ((now - last.current) / 1000) * SPEED;
+        setT((x) => {
+          const next = Math.min(end, (x ?? 0) + dt);
+          if (next >= end) setPlaying(false);
+          return next;
+        });
+      }
+      last.current = now;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(raf);
+      last.current = null;
+    };
+  }, [playing, end]);
+  const live = t != null;
+  const nowPull = live ? pulls.find((p) => t >= p.at && t <= p.at + p.durationSec) : null;
+  const toggle = () => {
+    if (playing) return setPlaying(false);
+    if (t == null || t >= end) setT(0);
+    setPlaying(true);
+  };
+
   return (
     <div className="rr-timeline rr-scroll">
+      <div className="rr-relive">
+        <button className="rr-play" onClick={toggle} aria-label={playing ? "Pause" : "Relive the night"}>
+          {playing ? "❚❚" : "►"}
+        </button>
+        <span className="rr-relive-label muted">
+          {live ? (nowPull ? `${nowPull.boss.name} · ${mmss(t)}` : `Break · ${mmss(t)}`) : "Relive the night"}
+        </span>
+        {live && (
+          <button className="link-btn" onClick={() => { setPlaying(false); setT(null); }}>
+            Back to overview
+          </button>
+        )}
+      </div>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Timeline of boss pulls and deaths">
         {/* death towers */}
         {dots.map(({ d, cx, level }, i) =>
@@ -71,6 +120,7 @@ export function NightTimeline({ n }) {
               stroke="var(--surface-1)"
               strokeWidth="1.5"
               className="rr-dot"
+              opacity={!live || d.at <= t ? 1 : 0.12}
               {...bind(
                 <>
                   <Player name={d.player} cls={d.class} link={false} />
@@ -94,6 +144,7 @@ export function NightTimeline({ n }) {
             width={ICON}
             height={ICON}
             className="rr-tl-boss"
+            opacity={!live || p.at <= t ? 1 : 0.2}
             {...bind(<PullTip p={p} />)}
           />
         ))}
@@ -107,10 +158,14 @@ export function NightTimeline({ n }) {
             height={barH}
             rx="3"
             fill={p.kill ? KILL : WIPE}
+            opacity={!live ? 1 : p.at + p.durationSec <= t ? 1 : p.at > t ? 0.18 : 0.55}
             {...bind(<PullTip p={p} />)}
           />
         ))}
         <line x1={x(0)} x2={x(end)} y1={barY + barH / 2} y2={barY + barH / 2} stroke="var(--border-soft)" strokeWidth="1" />
+        {live && (
+          <line x1={x(t)} x2={x(t)} y1={8} y2={axisY} stroke="var(--text)" strokeWidth="1.5" style={{ filter: "drop-shadow(0 0 3px rgba(255,255,255,0.45))" }} />
+        )}
         {ticks.map((t) => (
           <text key={t} x={x(t)} y={axisY} className="rr-axis" textAnchor="middle">
             {t === 0 ? "start" : `${Math.floor(t / 3600)}:${String((t % 3600) / 60).padStart(2, "0")}`}

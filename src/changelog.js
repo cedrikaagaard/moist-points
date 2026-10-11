@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.26",
+    date: "2026-10-11",
+    changes: [
+      "Relive the night: the raid timeline now plays the whole evening back, pulls lighting up as they happen.",
+    ],
+  },
+  {
     version: "2.5.25",
     date: "2026-10-11",
     changes: [
