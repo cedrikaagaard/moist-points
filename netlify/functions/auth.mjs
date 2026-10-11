@@ -91,14 +91,23 @@ async function callback(req, url) {
 
 function me(req) {
   const s = verify(readCookie(req, SESSION));
-  const body = s ? { verified: true, characters: s.characters } : { verified: false, characters: [] };
+  const body = s
+    ? { verified: true, characters: s.characters, admin: isAdmin(s.characters) }
+    : { verified: false, characters: [], admin: false };
   return new Response(JSON.stringify(body), { headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 }
 
 // Reviews live in data/reviews/<raid id>.json (bundled with this function via
 // netlify.toml's included_files), never in the site bundle: only the verified
 // owner of a character gets that character's reviews.
+//
+// Site owner: verified ownership of one of these Firemaw characters unlocks
+// every player's reviews (for checking what the reviews say). The check is
+// name + realm, so a same-named character on another realm doesn't qualify.
 const REALM = "firemaw";
+const ADMINS = ["drikkle"];
+const isAdmin = (characters) =>
+  (characters || []).some((c) => c.realm === REALM && ADMINS.includes((c.name || "").toLowerCase()));
 function reviewDir() {
   const here = path.dirname(fileURLToPath(import.meta.url));
   const tries = [process.cwd(), process.env.LAMBDA_TASK_ROOT, here, path.resolve(here, ".."), path.resolve(here, "../..")].filter(Boolean).map((d) => path.join(d, "data/reviews"));
@@ -113,17 +122,18 @@ function allReviews() {
 }
 function reviews(req) {
   const s = verify(readCookie(req, SESSION));
-  if (!s) return json({ verified: false, reviews: [], raidsWithReviews: allReviews().length }, 401);
+  if (!s) return json({ verified: false, admin: false, reviews: [], raidsWithReviews: allReviews().length }, 401);
+  const admin = isAdmin(s.characters);
   const mine = new Set(s.characters.filter((c) => c.realm === REALM).map((c) => c.name.toLowerCase()));
   const out = [];
   for (const raid of allReviews()) {
     for (const [name, p] of Object.entries(raid.players || {})) {
-      if (!p.review || !mine.has(name.toLowerCase())) continue;
+      if (!p.review || (!admin && !mine.has(name.toLowerCase()))) continue;
       out.push({ night: raid.night, date: raid.date, zones: raid.zones, zoneIds: raid.zoneIds, icons: raid.icons, kind: raid.kind, raiders: raid.raiders, durationMin: raid.durationMin, player: name, stats: p.stats, review: p.review });
     }
   }
   out.sort((a, b) => (a.night < b.night ? 1 : -1));
-  return json({ verified: true, reviews: out });
+  return json({ verified: true, admin, reviews: out });
 }
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "private, no-store" } });

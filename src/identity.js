@@ -16,6 +16,7 @@ const REALM = "firemaw";
 const state = {
   manual: safeGet(),
   verified: false,
+  admin: false,
   loading: true,
   owned: [], // verified guild characters, main first
   version: 0,
@@ -56,6 +57,7 @@ if (typeof fetch !== "undefined") {
         // Guild characters first (the ones the raid logs know), main = most raids.
         const known = firemaw.filter((n) => roster[n]);
         state.verified = true;
+        state.admin = d.admin === true;
         state.owned = (known.length ? known : firemaw).sort((a, b) => raids(b) - raids(a));
         state.allFiremaw = firemaw;
       }
@@ -90,10 +92,10 @@ export function useMe() {
   return activeMe();
 }
 
-// { me, verified, loading, owned: [names], allFiremaw: [names] }
+// { me, verified, admin, loading, owned: [names], allFiremaw: [names] }
 export function useIdentity() {
   useSyncExternalStore(subscribe, () => state.version);
-  return { me: activeMe(), verified: state.verified, loading: state.loading, owned: state.owned, allFiremaw: state.allFiremaw || [] };
+  return { me: activeMe(), verified: state.verified, admin: state.admin, loading: state.loading, owned: state.owned, allFiremaw: state.allFiremaw || [] };
 }
 
 // Case-insensitive "is this name me?"; a verified user's alts count too.

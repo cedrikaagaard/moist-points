@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.21",
+    date: "2026-10-11",
+    changes: [
+      "11 October AQ40 counts as a guild raid after all (new players, not a PUG), with rewritten analysis: four guild records. AI prose now carries a tag naming the model that wrote it, and Drikkle can inspect any player's private reviews.",
+    ],
+  },
+  {
     version: "2.5.20",
     date: "2026-10-11",
     changes: [

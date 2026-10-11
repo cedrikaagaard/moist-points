@@ -192,6 +192,10 @@ const pick = (o, keys) => Object.fromEntries(keys.filter((k) => k in o).map((k) 
 //   other  under 5% regulars: not a Moist raid, left out entirely
 // Regulars = in at least 20% of the guild's raids (two passes, so PUG
 // regulars don't count as guild regulars).
+// Owner overrides: the automatic rule can't tell new guild members from PUG
+// fillers. A guild raid full of new faces (e.g. 2026-10-11-aq40) is still a
+// guild raid if the owner says so.
+const KIND_OVERRIDE = { "2026-10-11-aq40": "guild" };
 export function classifyRaids(nights) {
   const share = (n, reg) => n.raiders.filter((r) => reg.has(r.name)).length / Math.max(1, n.raiders.length);
   const regulars = (raids, part) => {
@@ -203,6 +207,10 @@ export function classifyRaids(nights) {
   reg = regulars(nights.filter((n) => share(n, reg) >= 0.4), 0.2);
   return new Map(
     nights.map((n) => {
+      if (KIND_OVERRIDE[n.night]) {
+        const s = share(n, reg);
+        return [n.night, { kind: KIND_OVERRIDE[n.night], regulars: Math.round(s * n.raiders.length) }];
+      }
       const s = share(n, reg);
       return [n.night, { kind: s < 0.05 ? "other" : s < 0.3 ? "pug" : "guild", regulars: Math.round(s * n.raiders.length) }];
     })

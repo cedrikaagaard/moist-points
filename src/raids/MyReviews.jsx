@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useIdentity, setMe } from "../identity.js";
 import { useMyReviews, reviewsOf } from "../reviews.js";
 import { LockedReviews } from "../components/BnetVerify.jsx";
@@ -20,13 +21,16 @@ const gradeColor = (g) => GRADE_COLOR[g?.[0]] || "var(--muted)";
 
 // The Reviews tab on My Page. night: the raid to show (#/me/reviews/<raid id>).
 export default function MyReviews({ night, locked }) {
-  const { me, owned } = useIdentity();
+  const { me, owned, admin } = useIdentity();
   const all = useMyReviews();
+  const [inspect, setInspect] = useState(null); // admin: look at another player's reviews
   if (locked) return <LockedReviews />;
   if (!all) return <div className="muted rr-loading">Loading your reviews…</div>;
-  const mine = reviewsOf(all, me);
+  const viewed = admin && inspect ? inspect : me;
+  const mine = reviewsOf(all, viewed);
   const others = owned.filter((n) => n !== me && reviewsOf(all, n).length);
   const current = mine.find((r) => r.night === night) || mine[0];
+  const inspectingOther = admin && !!inspect && inspect.toLowerCase() !== (me || "").toLowerCase();
 
   return (
     <div className="rv">
@@ -35,6 +39,12 @@ export default function MyReviews({ night, locked }) {
         review. The numbers come straight from the log, but AI often gets vanilla mechanics wrong, so if an explanation
         doesn't match what you remember, you're probably right.
       </p>
+      {admin && <AdminInspect all={all} me={me} inspect={inspect} setInspect={setInspect} />}
+      {inspectingOther && (
+        <p className="rv-admin-note">
+          Admin view: these are {inspect}'s private reviews, not yours.
+        </p>
+      )}
 
       {!mine.length && (
         <div className="rv-empty">
@@ -70,6 +80,27 @@ export default function MyReviews({ night, locked }) {
       )}
 
       {current && <Review r={current} />}
+    </div>
+  );
+}
+
+// Admin: pick any reviewed player to inspect their reviews. `me` stays
+// untouched so site-wide highlighting keeps following your own character.
+function AdminInspect({ all, me, inspect, setInspect }) {
+  const counts = new Map();
+  for (const r of all || []) counts.set(r.player, (counts.get(r.player) || 0) + 1);
+  const names = [...counts.keys()].sort((a, b) => a.localeCompare(b));
+  if (!names.length) return null;
+  return (
+    <div className="rv-admin">
+      <label>
+        Admin: inspect{" "}
+        <select value={inspect || me || ""} onChange={(e) => setInspect(e.target.value || null)}>
+          {(me ? [me, ...names.filter((n) => n.toLowerCase() !== me.toLowerCase())] : names).map((n) => (
+            <option key={n} value={n}>{n} ({counts.get(n)})</option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 }
