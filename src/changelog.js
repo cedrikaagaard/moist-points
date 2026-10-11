@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.30",
+    date: "2026-10-11",
+    changes: [
+      "Pull strips on night-boss pages grow in on scroll, deaths dropping in the order they happened.",
+    ],
+  },
+  {
     version: "2.5.29",
     date: "2026-10-11",
     changes: [

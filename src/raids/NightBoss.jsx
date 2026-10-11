@@ -1,6 +1,7 @@
 import { ALL_TIME, CLASS_OF, useNight } from "./data.js";
 import { bossImg, classColor, fmtDate, mmss, zoneOf } from "./assets.js";
 import { zoneForEncounter, nightZones, closeCall } from "./aggregate.js";
+import { useInView } from "./charts.jsx";
 import { Banner, Panel, Player, SpellIcon, useTip } from "./components.jsx";
 import { useState } from "react";
 import { NightMechanics, NightFightWork } from "./MechanicsView.jsx";
@@ -198,6 +199,7 @@ function Compare({ b, night }) {
 // A horizontal bar per pull on a shared time scale, deaths as dots on it.
 function PullStrips({ pulls }) {
   const [tip, bind] = useTip();
+  const [ref, seen] = useInView();
   const max = Math.max(...pulls.map((p) => p.durationSec), 30);
   // Stack deaths that land close together (within 2% of the width) upwards.
   const placed = pulls.map((p) => {
@@ -210,7 +212,7 @@ function PullStrips({ pulls }) {
     });
   });
   return (
-    <div className="rr-pullstrips">
+    <div className={`rr-pullstrips${seen ? " seen" : ""}`} ref={ref}>
       {pulls.map((p, pi) => {
         const tall = Math.max(0, ...placed[pi].map((x) => x.level));
         return (
@@ -220,12 +222,12 @@ function PullStrips({ pulls }) {
             <span className={p.kill ? "rr-gold" : "rr-wipe-txt"}>{p.kill ? "Kill" : `Wipe · ${p.bossPctLeft ?? "?"}% left`}</span>
           </div>
           <div className="rr-pullstrip-track" style={{ height: Math.max(30, tall * 9 + 22) }}>
-            <div className={`rr-pullstrip-bar ${p.kill ? "kill" : "wipe"}`} style={{ width: `${(p.durationSec / max) * 100}%` }} />
+            <div className={`rr-pullstrip-bar ${p.kill ? "kill" : "wipe"}`} style={{ width: `${(p.durationSec / max) * 100}%`, animationDelay: `${pi * 90}ms` }} />
             {placed[pi].map(({ d, pct, level }, k) => (
               <span
                 key={k}
                 className="rr-pullstrip-dot"
-                style={{ left: `${pct}%`, background: classColor(d.class), bottom: `${10 + level * 9}px` }}
+                style={{ left: `${pct}%`, background: classColor(d.class), bottom: `${10 + level * 9}px`, animationDelay: `${pi * 90 + 250 + pct * 4}ms` }}
                 {...bind(
                   <>
                     <Player name={d.player} cls={d.class} link={false} />

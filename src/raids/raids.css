@@ -266,10 +266,19 @@ a.rr-boss-cell:hover { color: var(--gold-bright); }
 .rr-pullstrip { display: grid; grid-template-columns: 150px minmax(0, 1fr) 70px; align-items: end; gap: 14px; }
 .rr-pullstrip-label { display: flex; flex-direction: column; font-size: 12.5px; }
 .rr-pullstrip-track { position: relative; height: 30px; background: var(--surface-2); border-radius: 6px; }
-.rr-pullstrip-bar { position: absolute; left: 0; bottom: 0; height: 8px; border-radius: 4px; opacity: 0.9; }
+.rr-pullstrip-bar { position: absolute; left: 0; bottom: 0; height: 8px; border-radius: 4px; opacity: 0.9; transform-origin: left center; }
+.rr-pullstrips:not(.seen) .rr-pullstrip-bar { transform: scaleX(0); }
+.rr-pullstrips.seen .rr-pullstrip-bar { animation: rr-grow-x 0.55s ease backwards; }
+@keyframes rr-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .rr-pullstrip-bar.kill { background: #d4af5a; }
 .rr-pullstrip-bar.wipe { background: #e0525f; }
 .rr-pullstrip-dot { position: absolute; width: 9px; height: 9px; margin-left: -4px; border-radius: 50%; border: 1.5px solid var(--surface-1); }
+.rr-pullstrips:not(.seen) .rr-pullstrip-dot { opacity: 0; }
+.rr-pullstrips.seen .rr-pullstrip-dot { animation: rr-drop-in 0.4s ease backwards; }
+@keyframes rr-drop-in { from { transform: translateY(-9px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .rr-pullstrips.seen .rr-pullstrip-bar, .rr-pullstrips.seen .rr-pullstrip-dot { animation: none; }
+}
 .rr-pullstrip-meta { display: flex; flex-direction: column; align-items: flex-end; font-size: 12.5px; font-variant-numeric: tabular-nums; }
 .rr-deathlog tr.rr-first td { background: rgba(224, 82, 95, 0.06); }
 .rr-deathlog .rr-chip { background: rgba(224, 82, 95, 0.15); color: #f08791; }
