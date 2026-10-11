@@ -1,6 +1,6 @@
 ---
 name: raid-logs
-description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs - fetch new raid nights, sanity-check them, write the optional "Claude's analysis" for a night, and extend the stats/charts. Use after a raid night, to backfill older nights, to analyse a night's wipes, or when asked for new raid stats.
+description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs - fetch new raid nights, sanity-check them, write the optional "AI analysis" for a night, and extend the stats/charts. Use after a raid night, to backfill older nights, to analyse a night's wipes, or when asked for new raid stats.
 ---
 
 # Raid logs
@@ -8,8 +8,8 @@ description: Update the Raid Logs pages (src/raids/) from Moist's Warcraft Logs 
 The **Raid Logs** pages (`#/raids`, `#/raids/<raid>`, `#/raids/<raid>/<boss>`,
 `#/raid-zone/<id>`, `#/raid-boss/<id>`) are built from the guild's Warcraft Logs (Moist,
 EU-Firemaw, Classic Era). Everything on them is **computed from data**: stats,
-charts, and award cards from fixed rules. The only prose is the "Claude's analysis" panel (see below),
-always collapsed and labelled as AI-written.
+charts, and award cards from fixed rules. The only prose is the "AI analysis" panel (see below),
+always collapsed and labelled as AI-written, with a tag naming the model that wrote it.
 
 This lives entirely in `scripts/raids/` and `src/raids/` (plus one nav link and
 route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
@@ -49,17 +49,17 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
    (`node --env-file=.env.local scripts/raids/watch-live.mjs --until <last boss id>`),
    then `raids:fetch -- --night <today> --refresh --done` (the logs are final once
    the raid is over; add `--reserve 20` if the hourly budget is tight), push, write
-   Claude's analysis, push. Pause the backfill while a raid is on.
+   the AI analysis, push. Pause the backfill while a raid is on.
 2. **Follow-up (later that night or the next morning):** rebuild the facts from
    the full log, recheck every claim in the analysis (world buffs, consumables,
    deaths, anything written from the summary tables) and correct or add to it.
    Say in the changelog what changed.
 
-## Claude's analysis (optional, per raid)
+## AI analysis (optional, per raid)
 
 Each night can have an AI-written analysis, shown on the night page (and the
 boss's part on each night-boss page) as a faded preview, clearly labelled
-"✨ Claude's analysis" panel. It is the one place prose is allowed. Write it
+"✨ AI analysis" panel with a tag naming the model that wrote it. It is the one place prose is allowed. Write it
 only when asked, or for new nights after a fetch if the user wants it.
 
 1. **Read the reference first** (when unsure of a mechanic, also `reference/research/*.md`, sourced): `reference/classes-and-log-reading.md` and the
@@ -79,9 +79,9 @@ only when asked, or for new nights after a fetch if the user wants it.
 
    ```json
    {
-     "night": "2026-09-23",
-     "model": "Claude (Opus 5.5)",
-     "generatedAt": "<ISO date>",
+      "night": "2026-09-23",
+      "model": "<the model that wrote it, e.g. Claude (Opus 5.5) or Muse Spark>",
+      "generatedAt": "<ISO date>",
      "headline": "one line, max ~80 chars",
      "overview": ["1-2 short paragraphs: the shape of the night"],
      "wipes": [{ "encounterId": 51119, "pull": 1, "title": "Sapphiron, pull 1 (2%)",
@@ -286,7 +286,7 @@ other PUG runs too (summary.json `kind: "pug"`), never with the guild's.
   compact "vs other nights" line. **Guild history** pages (`RaidsView.jsx`
   overview, `BossPages.jsx` zone and boss) hold the all-time stats. Don't mix
   all-time panels into night pages.
-- `Analysis.jsx`: the Claude's analysis panel (faded preview until opened) (data in
+- `Analysis.jsx`: the AI analysis panel (faded preview until opened) (data in
   `src/raids/data/analysis/<raid id>.json`, written by this skill).
 - Other files: `charts.jsx` (timeline, calendar, clear-time trend, sparklines),
   `components.jsx` and `assets.js` (WCL CDN art: zones, bosses, specs, spells).

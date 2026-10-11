@@ -3,7 +3,7 @@ import { lazyJson } from "./lazyJson.js";
 import { BossIcon, Player } from "./components.jsx";
 import { CLASS_OF } from "./data.js";
 
-// "Claude's analysis": optional, AI-written commentary on a raid night,
+// "AI analysis": optional, AI-written commentary on a raid night,
 // written by the /raid-logs skill from `npm run raids:facts` and stored in
 // src/raids/data/analysis/<night>.json. Clearly labelled, and only a faded
 // preview until someone opens it, so it never takes over the page.
@@ -53,10 +53,10 @@ export default function Analysis({ night, encounterId, bossName, raiders = [] })
   return (
     <div className={`rr-llm${open || short ? " open" : ""}`}>
       <div className="rr-llm-head">
-        <span className="rr-llm-label">✨ Claude's analysis</span>
-        <span className="rr-llm-note">AI-written from the logs · Claude often gets vanilla mechanics wrong, so take the explanations with salt</span>
+        <span className="rr-llm-label">✨ AI analysis</span>
+        <span className="rr-llm-note"><span className="rr-llm-model">{a.model || "AI"}</span> AI-written from the logs · often gets vanilla mechanics wrong, so take the explanations with salt</span>
       </div>
-      <h3 className="rr-llm-title">{encounterId == null ? a.headline : `What Claude made of ${bossName}`}</h3>
+      <h3 className="rr-llm-title">{encounterId == null ? a.headline : `AI take on ${bossName}`}</h3>
       <div ref={body} className="rr-llm-body" inert={open || short ? undefined : ""} onClick={open || short ? undefined : () => setOpen(true)}>
         {encounterId == null && a.mvp && (
           <div className="rr-llm-mvp">

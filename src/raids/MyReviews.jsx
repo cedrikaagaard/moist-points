@@ -7,7 +7,7 @@ import { fmtDate, zoneOf } from "./assets.js";
 import { href } from "../router.js";
 import "./raids.css";
 
-// Private, per-player raid reviews on My Page. Written by Claude (the
+// Private, per-player raid reviews on My Page. Written by an AI (the
 // /raid-logs skill) into data/reviews/<raid id>.json and served only to the
 // verified owner by /api/reviews (netlify/functions/auth.mjs). Never part of
 // the site bundle.
@@ -31,14 +31,14 @@ export default function MyReviews({ night, locked }) {
   return (
     <div className="rv">
       <p className="rv-private">
-        <span aria-hidden="true">🔒</span> Only you can see these. Claude reads the logs of each raid you were in and writes you a
-        review. The numbers come straight from the log, but Claude often gets vanilla mechanics wrong, so if an explanation
+        <span aria-hidden="true">🔒</span> Only you can see these. An AI reads the logs of each raid you were in and writes you a
+        review. The numbers come straight from the log, but AI often gets vanilla mechanics wrong, so if an explanation
         doesn't match what you remember, you're probably right.
       </p>
 
       {!mine.length && (
         <div className="rv-empty">
-          No reviews for {me} yet. Claude writes them for recent raids, so check back after the next one.
+          No reviews for {me} yet. Personal reviews get written for recent raids, so check back after the next one.
           {others.length > 0 && (
             <span>
               {" "}Your other characters have some:{" "}
@@ -92,6 +92,7 @@ function Review({ r }) {
           <div className="rv-meta">
             <a href={href("raids", r.night)}>{r.zones?.join(" + ")} · {fmtDate(r.date || r.night.slice(0, 10))}</a>
             <span>· {r.player}</span>
+            <span className="rr-llm-model" title="The AI model that wrote this review">{v.model || "AI"}</span>
           </div>
           <h3>{v.verdict}</h3>
           <p>{v.summary}</p>
@@ -139,7 +140,7 @@ function Review({ r }) {
       {s.consumes && <Consumes c={s.consumes} icons={r.icons} />}
 
       <footer className="rv-foot">
-        Written by {v.model || "Claude"} from the logs of {fmtDate(r.date || r.night.slice(0, 10))}. Only you can see this page. Claude often gets vanilla mechanics wrong; trust the numbers more than the explanations.
+        Written by {v.model || "AI"} from the logs of {fmtDate(r.date || r.night.slice(0, 10))}. Only you can see this page. AI often gets vanilla mechanics wrong; trust the numbers more than the explanations.
       </footer>
     </article>
   );
@@ -173,7 +174,7 @@ function Point({ x, bosses, icon }) {
 }
 
 // Boss by boss: parse bar with your own usual marked, time spent doing
-// something, deaths, and Claude's note for that boss.
+// something, deaths, and the AI's note for that boss.
 function BossRows({ s, notes }) {
   const healer = s.role === "healer";
   return (

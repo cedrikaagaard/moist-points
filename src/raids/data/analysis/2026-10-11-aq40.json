@@ -1,0 +1,172 @@
+{
+ "bosses": [
+  {
+   "encounterId": 50709,
+   "name": "The Prophet Skeram",
+   "notes": [
+    {
+     "text": "Skeram went in with no world buffs on anyone (40 snapshots, all empty). From the Trio on, 38 of 40 had Rallying Cry and Spirit of Zandalar, 33 Songflower, around 30 of each Dire Maul buff and 24 Sayge's Fortune. Raid DPS was 9710 against a PUG usual of 11704.",
+     "tone": "info"
+    },
+    {
+     "text": "Arcane Explosion hit 85 times (2.13 per raider against a PUG usual of 1.26) across 37 raiders. 11 casts started and 7 were interrupted. Two healers died to it in the final second of the 69 second kill, so the healing never noticed.",
+     "tone": "bad"
+    },
+    {
+     "text": "Tochopolvo died to melee at 0:24 with only 48 overkill. Mind controls (5) came at the usual rate and Earth Shock did almost nothing (7.8k).",
+     "tone": "info"
+    }
+   ]
+  },
+  {
+   "encounterId": 50710,
+   "name": "Silithid Royalty",
+   "notes": [
+    {
+     "text": "68 seconds with no deaths. Yauj's fear landed 42 times (1.05 per raider against a PUG usual of 1.47).",
+     "tone": "good"
+    },
+    {
+     "text": "Toxic Vapors hit 44 times (1.1 per raider against a usual 0.36) across 20 raiders, so Kri died in a sloppy spot, but nobody died to it (a PUG kill usually loses 0.67 there). Yauj started 4 Great Heals and 3 were interrupted, with no healing landing on the bosses.",
+     "tone": "info"
+    }
+   ]
+  },
+  {
+   "encounterId": 50711,
+   "name": "Battleguard Sartura",
+   "notes": [
+    {
+     "text": "59 seconds with no deaths. Whirlwind hit 162 times (4.05 per raider against a PUG usual of 4.92) and damage taken ran at 4.3k per second.",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "encounterId": 50712,
+   "name": "Fankriss the Unyielding",
+   "notes": [
+    {
+     "text": "33 seconds with no deaths on 30k raid DPS. Only 4 Mortal Wound stacks landed on one raider and 3 players were Entangled. No worm ever got going.",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "encounterId": 50713,
+   "name": "Viscidus",
+   "notes": [
+    {
+     "text": "120 seconds. Poison Bolt Volley hit 541 times (13.5 per raider against a PUG usual of 18.3). Only 1 Nature Protection Potion was drunk where a PUG usually drinks around 9.",
+     "tone": "info"
+    },
+    {
+     "text": "Both deaths were Toxin clouds: Broimtiny at 0:29 with 1487 overkill and Marulock at 1:53 with 39. Stood in Toxin hits (17) ran at the usual rate, so this was two people not moving, not a raid problem.",
+     "tone": "bad"
+    }
+   ]
+  },
+  {
+   "encounterId": 50714,
+   "name": "Princess Huhuran",
+   "notes": [
+    {
+     "text": "33 seconds with no deaths. Frenzy came once and Punintended tranquilized it, the only Tranq of the fight. 16 raiders soaked the 29 Poison Bolts and 8 Nature Protection Potions were drunk.",
+     "tone": "good"
+    },
+    {
+     "text": "The burn was so short that volleys soaked ran at 0.73 per raider against a PUG usual of 2.01. Nothing had time to go wrong.",
+     "tone": "info"
+    }
+   ]
+  },
+  {
+   "encounterId": 50715,
+   "name": "Twin Emperors",
+   "notes": [
+    {
+     "text": "149 seconds with no deaths. Blizzard caught 6 hits (0.15 per raider against a PUG usual of 0.98) and exploding bugs 7 (0.18 against 0.4). No Heal Brother landed, so the emperors stayed apart all fight.",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "encounterId": 50716,
+   "name": "Ouro",
+   "notes": [
+    {
+     "text": "73 seconds with no deaths. Sand Blast hit 3 times (0.08 per raider against a PUG usual of 0.64), so the raid stayed out of the cone and the tanks held every swap. Sweeps (62) ran at the usual rate.",
+     "tone": "good"
+    }
+   ]
+  },
+  {
+   "encounterId": 50717,
+   "name": "C'Thun",
+   "notes": [
+    {
+     "text": "205 seconds with no deaths. Eye Beam hit 14 times (0.35 per raider against a PUG usual of 1.28) across 10 raiders, and only 7 raiders ever had to go to the stomach (38 visits against a usual rate three times higher).",
+     "tone": "good"
+    },
+    {
+     "text": "Ground Rupture was the top damage as usual and Digestive Acid did 19k. With that few beams and stomach trips the healers were never under pressure.",
+     "tone": "info"
+    }
+   ]
+  }
+ ],
+ "generatedAt": "2026-10-11T20:00:00Z",
+ "headline": "9 of 9 with no wipes in 69 minutes, all 5 boss deaths on two bosses",
+ "model": "Muse Spark",
+ "mvp": {
+  "also": [
+   {
+    "player": "E\u00eenherjer",
+    "text": "49 dispels, more than double the next best (Mohg 20)"
+   },
+   {
+    "player": "Valethia",
+    "text": "91 average as dps, 96 or better on four bosses, no deaths"
+   },
+   {
+    "player": "Macharius",
+    "text": "90 average as tank, 90 or better on seven bosses, no deaths"
+   }
+  ],
+  "headline": "91 average across all nine bosses, no deaths, tanking plus soaks",
+  "player": "Bagayaga",
+  "why": [
+   "Top average parse of the night (91) with nothing below 76 on any of the nine bosses",
+   "Tanked throughout without dying and soaked 2 Poison Bolts on Huhuran",
+   "Full consumables on every pull: Mongoose, Giants, Armor, Firewater, Titans, Zanza and Stamina, all 9 of 9"
+  ]
+ },
+ "night": "2026-10-11-aq40",
+ "overview": [
+  "A PUG run (6 of 40 are Moist regulars) that cleared 9 of 9 with no wipes in 69 minutes. Recent PUG AQ40s took 65 to 89 minutes, so this sits at the good end. Only 5 of the 17 deaths came on bosses, all on Skeram (3) and Viscidus (2); the other 12 were trash.",
+  "Skeram went in with no world buffs on anyone, then the raid was fully buffed from the Bug Trio on (38 Rallying Cry and Spirit of Zandalar, 33 Songflower, around 30 of each Dire Maul buff, 24 Sayge's, 15 Warchief's Blessing). Interrupts were good all night (7 of 11 Arcane Explosions, 3 of 4 Great Heals, the only Huhuran Frenzy) and C'Thun's Eye Beams stayed at a third of the PUG usual."
+ ],
+ "wentWell": [
+  {
+   "encounterId": 50714,
+   "text": "Huhuran in 33 seconds with no deaths. The one Frenzy was tranquilized and 16 raiders shared the 29 Poison Bolts."
+  },
+  {
+   "encounterId": 50717,
+   "text": "C'Thun in 205 seconds with no deaths. Only 14 Eye Beam hits (0.35 per raider against a PUG usual of 1.28) and 38 stomach visits against a usual rate three times higher."
+  },
+  {
+   "encounterId": 50715,
+   "text": "Twin Emperors in 149 seconds with no deaths. 6 Blizzard hits against a PUG usual near 40, and no Heal Brother."
+  },
+  {
+   "encounterId": 50716,
+   "text": "Ouro in 73 seconds with no deaths. 3 Sand Blasts against a PUG usual near 26."
+  },
+  {
+   "encounterId": 50712,
+   "text": "Fankriss in 33 seconds with no deaths on 30k raid DPS, 4 Mortal Wound stacks all night."
+  }
+ ],
+ "wipes": []
+}

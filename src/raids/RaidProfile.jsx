@@ -109,7 +109,7 @@ function Record({ p, reviews }) {
                 <span
                   className="rr-review-chip"
                   role="link"
-                  title="Claude's review of your raid (only you can see it)"
+                  title="AI review of your raid (only you can see it)"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();

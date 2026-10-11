@@ -26,6 +26,9 @@ const MIN_FREE_GB = 2; // never fill the disk
 
 const only = process.argv.includes("--night") ? process.argv[process.argv.indexOf("--night") + 1] : null;
 
+// (declared up here: main() runs before the rest of the module finishes loading)
+let pagesThisRun = 0;
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((e) => {
     console.error(e.message);
@@ -64,7 +67,6 @@ async function main() {
 // Download one log's full event stream for the given fights into
 // data/events/<night>/<code>/. Resumes a stopped download. Returns false when
 // the hourly API budget is nearly spent (run again after the reset).
-let pagesThisRun = 0;
 export async function downloadEvents(night, report, fightIDs) {
   const dir = path.join(OUT, night, report.code);
   const done = readJson(path.join(dir, "done.json"));

@@ -63,7 +63,7 @@ export function BnetLogin() {
       <div className="bnet-perk">
         <span className="bnet-perk-icon" aria-hidden="true">✨</span>
         <div>
-          <b>Your own raid reviews.</b> Claude goes through the logs of every raid you were in and writes you a personal
+          <b>Your own raid reviews.</b> An AI goes through the logs of every raid you were in and writes you a personal
           review: what you did well, what to fix, and when the wipe was your fault. Only you can read yours.
         </div>
       </div>
@@ -139,7 +139,7 @@ export function LockedReviews() {
       <div className="acct-locked-text">
         <b>Your raid reviews are locked.</b>
         <p>
-          Claude has read the logs of your raids and has opinions. A personal review per raid: what went well, what to fix,
+          An AI has read the logs of your raids and has opinions. A personal review per raid: what went well, what to fix,
           and who to blame. Log in with Battle.net to prove this is you; nobody else can read yours.
         </p>
         {error && <div className="bnet-error">Battle.net login didn't work ({error}). Try again?</div>}

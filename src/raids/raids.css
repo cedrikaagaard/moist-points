@@ -358,11 +358,12 @@ a.rr-player-link:hover span { text-decoration: underline; }
 .rr-bossparse-best .rr-parse { font-size: 16px; padding: 3px 8px; }
 @media (max-width: 640px) { .rr-parses .panel-head .muted { text-align: left; } }
 
-/* ---------- Claude's analysis (faded preview until opened) ---------- */
+/* ---------- AI analysis (faded preview until opened) ---------- */
 .rr-llm { --llm: #c4a1ff; border-radius: var(--radius); border: 1px solid rgba(168, 85, 247, 0.28); background: linear-gradient(160deg, rgba(168, 85, 247, 0.07), var(--surface-1) 55%); padding: 16px 20px 6px; }
 .rr-llm-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
 .rr-llm-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--llm); }
 .rr-llm-note { font-size: 12px; color: var(--muted); }
+.rr-llm-model { display: inline-block; font-size: 11px; font-weight: 600; color: var(--llm); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 999px; padding: 0 8px; margin-right: 6px; white-space: nowrap; }
 .rr-llm-title { font-family: var(--font); font-size: 16px; font-weight: 600; color: var(--text); margin: 6px 0 10px; line-height: 1.4; }
 .rr-llm-body { line-height: 1.6; font-size: 14px; color: var(--text-2); }
 .rr-llm:not(.open) .rr-llm-body { max-height: 120px; overflow: hidden; cursor: pointer; -webkit-mask-image: linear-gradient(#000 25%, transparent); mask-image: linear-gradient(#000 25%, transparent); }
