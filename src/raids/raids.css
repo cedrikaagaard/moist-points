@@ -115,7 +115,24 @@
 .rr-awards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
 .rr-award { display: flex; gap: 12px; align-items: flex-start; padding: 12px; border-radius: var(--radius-sm); background: linear-gradient(160deg, var(--surface-2), var(--surface-1)); border: 1px solid var(--border); }
 .rr-award .rr-ic { box-shadow: 0 0 0 1px var(--gold-deep), 0 0 12px rgba(212, 175, 90, 0.25); }
-.rr-award-record { border-color: var(--gold); background: linear-gradient(160deg, rgba(212, 175, 90, 0.16), var(--surface-1)); }
+.rr-award-record { border-color: var(--gold); background: linear-gradient(160deg, rgba(212, 175, 90, 0.16), var(--surface-1)); position: relative; overflow: hidden; }
+.rr-award-record::after, .rr-chip.gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 42%, rgba(212, 175, 90, 0.22) 50%, transparent 58%);
+  background-size: 280% 100%;
+  animation: rr-shine 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.rr-chip.gold { position: relative; overflow: hidden; }
+@keyframes rr-shine {
+  0% { background-position: 120% 0; }
+  55%, 100% { background-position: -120% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rr-award-record::after, .rr-chip.gold::after { display: none; }
+}
 .rr-award-title { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); font-weight: 700; }
 .rr-award-who { margin: 3px 0 2px; font-size: 15px; }
 .rr-award-val { font-size: 13px; }
