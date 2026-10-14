@@ -1,0 +1,261 @@
+{
+  "night": "2026-10-14-naxx",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-14T21:40:00Z",
+  "headline": "Full clear in 1:44:17, the guild's fastest Naxxramas, fifteen bosses and no wipes",
+  "mvp": {
+    "player": "Hjärterkung",
+    "headline": "picked Kel'Thuzad up twice when the tanks were chained, and battle-rezzed a healer on Sapphiron",
+    "why": [
+      "Took Kel'Thuzad straight away when Chains hit Birkler at 0:55, and again when it hit Macharius at 2:00",
+      "Rebirth on Woness during Sapphiron, 16 Life Drains removed there, and a 93 on the Horsemen",
+      "Average parse 80 across 13 bosses in whatever role the boss needed"
+    ],
+    "also": [
+      {
+        "player": "Rannek",
+        "text": "average parse 84 with 99 on Thaddius and 98 on Anub'Rekhan, 10 interrupts, no deaths"
+      },
+      {
+        "player": "Macharius",
+        "text": "took all 56 Hateful Strikes on Patchwerk on his own, 334k damage"
+      },
+      {
+        "player": "Utzemekanism",
+        "text": "72 dispels, the most in the raid, 15 of them Life Drains"
+      }
+    ]
+  },
+  "overview": [
+    "15 of 15 in 1:44:17, 44 seconds under the guild's previous best Naxxramas (1:45:01) and 27 minutes under the usual night (2:11:25). Every boss died on the first pull, and raid DPS beat the guild's usual on every one of them: Thaddius 50k against 32k, Anub'Rekhan 42k against 31k, Faerlina 37k against 26k.",
+    "Faerlina (0:47) equalled the guild record and Anub'Rekhan (0:49) and Thaddius (2:32) came within seconds of theirs. Twenty deaths on bosses, nine of them on Kel'Thuzad.",
+    "A heavily buffed raid: at Anub'Rekhan 37 of 39 had Rallying Cry and Zandalar, 36 Songflower, 37 Mol'dar's Moxie and 28 a Sayge's fortune. The snapshots show none at Razuvious and Gothik, the usual sign of buffs stored in a Chronoboon, and they were back on for the Horsemen. Rallying Cry was still on 30 at Sapphiron, while Songflower and Warchief's Blessing ran out around Heigan and Loatheb."
+  ],
+  "wipes": [],
+  "wentWell": [
+    {
+      "encounterId": 51120,
+      "text": "Thaddius in 2:32 (median 3:57), three seconds off the record, on 50k raid DPS. Two hits from the wrong charge in the whole fight, where a usual kill has about one per raider. Rannek 99."
+    },
+    {
+      "encounterId": 51110,
+      "text": "Faerlina in 0:47, equal to the guild record. Rain of Fire hit 12 raiders 17 times, under a fifth of the usual rate, and Yulefuel controlled all four Worshippers."
+    },
+    {
+      "encounterId": 51118,
+      "text": "Patchwerk in 2:13 with Macharius taking all 56 Hateful Strikes himself and nobody dying."
+    },
+    {
+      "encounterId": 51114,
+      "text": "Kel'Thuzad's mind controls were handled hard: polymorphs from Caesartje, Paiyro, Osinir and Utzemekanism, Blinds from Rannek, Selenax and Fluffycatto, Psychic Screams from Foggiie and Apoutchou, Hammers of Justice from Roman and a Fear from Snotspat on the chained raiders."
+    },
+    {
+      "encounterId": 51117,
+      "text": "Noth in 1:04 (median 1:25) with all 20 Curses of the Plaguebringer removed. Etowa took five, Caesartje, Utzemekanism and Osinir four each."
+    }
+  ],
+  "bosses": [
+    {
+      "encounterId": 51107,
+      "name": "Anub'Rekhan",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:49, a second off the record, on 42k raid DPS against a usual 31k. No deaths, and Impale hit half as many raiders as usual. Rannek 98."
+        }
+      ]
+    },
+    {
+      "encounterId": 51110,
+      "name": "Grand Widow Faerlina",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "0:47, equal to the guild record, no deaths. Yulefuel mind-controlled 4 Worshippers."
+        },
+        {
+          "tone": "info",
+          "text": "Rain of Fire hit 12 raiders 17 times, against a usual 2.3 hits per raider. Mohg took three."
+        }
+      ]
+    },
+    {
+      "encounterId": 51116,
+      "name": "Maexxna",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:08 (median 1:12). Sixto cleansed both Necrotic Poisons on the tank, in a median 1.9 seconds."
+        },
+        {
+          "tone": "bad",
+          "text": "Seven seconds after her Frenzy at 0:55, Maexxna took one swing at Thornhild (5,970) and one at Bruceli (7,246) and killed both, then went straight back to Birkler. Most likely threat, the same thing that cost two people here on 7 October."
+        }
+      ]
+    },
+    {
+      "encounterId": 51118,
+      "name": "Patchwerk",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "2:13 against a median of 2:31, no deaths. Macharius took all 56 Hateful Strikes, 334k damage, while Birkler held Patchwerk (190k melee)."
+        }
+      ]
+    },
+    {
+      "encounterId": 51111,
+      "name": "Grobbulus",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:19 (median 1:38) with no deaths and 28k raid DPS against 23k."
+        },
+        {
+          "tone": "info",
+          "text": "Poison clouds hit 14 raiders 19 times, a bit under the usual rate. Farlopo took three."
+        }
+      ]
+    },
+    {
+      "encounterId": 51108,
+      "name": "Gluth",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:02 (median 1:14), no deaths. Punintended and Speldosan landed three Tranquilizing Shots each. Birkler 96 while tanking."
+        }
+      ]
+    },
+    {
+      "encounterId": 51120,
+      "name": "Thaddius",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "2:32, three seconds off the guild record, on 50k raid DPS against a usual 32k, and no deaths."
+        },
+        {
+          "tone": "good",
+          "text": "Only Birkler and Miniwrecker took a hit from the wrong charge, once each. Chain Lightning hit 4.1 times per raider against a usual 6.8, with the fight that much shorter."
+        }
+      ]
+    },
+    {
+      "encounterId": 51113,
+      "name": "Instructor Razuvious",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:37 (median 1:50), no deaths. Understudy mind controls: Mornie 3, Yulefuel 2."
+        }
+      ]
+    },
+    {
+      "encounterId": 51109,
+      "name": "Gothik the Harvester",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "5:04, right on the median. Eduard died at 2:11 to a Spectral Death Knight on the dead side (4.6k melee and its Whirlwind) with 124 healing on him in his last ten seconds."
+        },
+        {
+          "tone": "info",
+          "text": "Two of four Shadow Bolt Volleys were interrupted, and Spectral Riders healed themselves for 31k with Drain Life."
+        }
+      ]
+    },
+    {
+      "encounterId": 51121,
+      "name": "The Four Horsemen",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "4:16, 22 seconds off the record from 7 October (3:54) and a minute under the median (5:20). Meteor was split by 15 raiders, Eïnherjar 92 and Rannek 97."
+        },
+        {
+          "tone": "bad",
+          "text": "Mograine's side cost four warriors. Eduard and Farlopo died to his third Mark at 1:39 with almost no healing on them (100 and 0 in the last ten seconds), and Gertb and Thornhild to the fourth at 1:52 as they moved off. Selenax died to Zeliek's third Mark and a Holy Wrath at 1:00."
+        }
+      ]
+    },
+    {
+      "encounterId": 51117,
+      "name": "Noth the Plaguebringer",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:04 against a median of 1:25, no deaths, and every Curse of the Plaguebringer removed (median 4.4 seconds)."
+        }
+      ]
+    },
+    {
+      "encounterId": 51112,
+      "name": "Heigan the Unclean",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "1:11 (median 1:28), no deaths. All 32 Decrepit Fevers were cured, Gallahan 8 and Mornie 7."
+        },
+        {
+          "tone": "info",
+          "text": "Heigan teleported Amima into the tunnel at about 0:44. The 11k Mind Flay from an Eye Stalk and the night's only Eruption hit most likely both came on her way back."
+        }
+      ]
+    },
+    {
+      "encounterId": 51115,
+      "name": "Loatheb",
+      "notes": [
+        {
+          "tone": "good",
+          "text": "3:03, just under the median, with 39 spores taken and 12 Shadow Protection Potions."
+        },
+        {
+          "tone": "info",
+          "text": "One death, against a usual 1.7 to Inevitable Doom: Voidlocks had Life Tapped to 40% at 1:44, was at 24% after the first Doom tick at 2:11, and the second one killed him at 2:40. With Corrupted Mind limiting each healer to one heal a minute, Life Tap on this fight costs more than it looks."
+        }
+      ]
+    },
+    {
+      "encounterId": 51119,
+      "name": "Sapphiron",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "3:48 (median 3:53). Two early deaths: Woness to the Blizzard at 0:49 after two Chill applications, and Speldosan at 0:58 when he became the Icebolt target already at 39% from Frost Aura with little healing on him. Hjärterkung brought Woness back with Rebirth."
+        },
+        {
+          "tone": "good",
+          "text": "All 68 Life Drains were removed (median 2.8 seconds): Caesartje and Hjärterkung 16 each, Utzemekanism 15, Osinir 13."
+        },
+        {
+          "tone": "info",
+          "text": "Life Drain still healed Sapphiron for 113k, about twice a usual kill."
+        }
+      ]
+    },
+    {
+      "encounterId": 51114,
+      "name": "Kel'Thuzad",
+      "notes": [
+        {
+          "tone": "info",
+          "text": "Chains at 0:55 took Birkler, Fluffycatto, Apoutchou, Amima and Punintended; Hjärterkung had Kel'Thuzad straight away and Macharius took over at about 1:15."
+        },
+        {
+          "tone": "bad",
+          "text": "The second Chains at 2:00 took Macharius, Thornhild, Krits, Bruceli and Sixto. Kel'Thuzad went to Hjärterkung, and at 2:03 a Frost Blast on Gertb chained to five raiders standing next to him: all six died at 2:05 and 2:06. Birkler had Kel'Thuzad again by about 2:10."
+        },
+        {
+          "tone": "info",
+          "text": "The three deaths after that came out of the mind control: Apoutchou to a Guardian and a chained Thornhild at 2:12, Sixto at 2:21 to his own Blessing of Sacrifice, which Kel'Thuzad had made him cast on the boss, and Krits at 2:23 to a Shadow Fissure while still under the fear that kept him in check."
+        },
+        {
+          "tone": "good",
+          "text": "2:49 against a median of 2:58. 15 Frostbolts interrupted, Selenax 5 and Rannek 4, and 10 Shackles on Guardians (Foggiie 4, Woness 3). Caesartje 92."
+        }
+      ]
+    }
+  ]
+}

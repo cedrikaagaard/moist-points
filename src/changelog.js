@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.33",
+    date: "2026-10-14",
+    changes: [
+      "Tonight's Naxxramas: full clear in 1:44:17, the guild's fastest, with its AI analysis.",
+    ],
+  },
+  {
     version: "2.5.32",
     date: "2026-10-11",
     changes: [
