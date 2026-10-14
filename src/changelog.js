@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.35",
+    date: "2026-10-14",
+    changes: [
+      "New, just for fun: \"Fair parse\" on every boss's Performance tab. An estimate of each DPS's parse with things evened out: time a mechanic took you out (Heigan's teleport, Web Wrap, ice blocks, mind control...), job casts like decurses and Tranquilizing Shots, and optionally world buffs, consumables and gear. Values come from Moist's own logs. The real parse always shows next to it.",
+    ],
+  },
+  {
     version: "2.5.34",
     date: "2026-10-14",
     changes: [

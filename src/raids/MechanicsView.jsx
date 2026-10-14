@@ -4,6 +4,7 @@ import { ALL_TIME, CLASS_OF } from "./data.js";
 import { classColor, fmtDate } from "./assets.js";
 import { BarList, Panel, Player, SpellIcon, Tabs, useTip } from "./components.jsx";
 import { parseColor, ParseBadge, Bands } from "./RaidProfile.jsx";
+import { FairPanel } from "./FairParse.jsx";
 import { HoverColumns, rollingMedian } from "./charts.jsx";
 
 const ranked = (obj) => Object.entries(obj || {}).sort((a, b) => b[1] - a[1]);
@@ -78,7 +79,7 @@ export function NightMechanics({ b, icons }) {
 }
 
 // Dispels/interrupts and parses for one fight.
-export function NightFightWork({ b, icons }) {
+export function NightFightWork({ b, icons, night }) {
   const has = (b.dispels?.length || 0) + (b.kicks?.length || 0) > 0;
   return (
     <>
@@ -87,6 +88,7 @@ export function NightFightWork({ b, icons }) {
           <ParseList parses={b.parses} />
         </Panel>
       )}
+      {b.parses?.length > 0 && night && <FairPanel night={night} b={b} />}
       {has && (
         <div className="grid-2">
           <Panel title="Dispels" sub="on this fight">

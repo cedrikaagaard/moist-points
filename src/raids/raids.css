@@ -556,3 +556,25 @@ a.rr-player-link:hover span { text-decoration: underline; }
 }
 .rr-review-chip { font-size: 11.5px; color: #c3a6ff; border: 1px solid rgba(160, 120, 255, 0.35); border-radius: 999px; padding: 1px 8px; white-space: nowrap; cursor: pointer; }
 .rr-review-chip:hover { background: rgba(160, 120, 255, 0.12); }
+
+/* ---------- Fair parse (just for fun, under the real parses) ---------- */
+.rr-fair-toggles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.rr-fair-note { font-size: 12px; margin-bottom: 10px; }
+.rr-fair-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.rr-fair-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 4px; border-bottom: 1px solid var(--border-soft); }
+.rr-fair-list li:last-child { border-bottom: 0; }
+.rr-fair-who { min-width: 0; }
+.rr-fair-why { font-size: 11.5px; margin-top: 2px; line-height: 1.35; }
+.rr-fair-nums { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.rr-fair-real .rr-parse { opacity: 0.75; }
+.rr-fair-out { font-size: 12px; min-width: 28px; text-align: center; }
+.rr-fair-delta { min-width: 30px; font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; color: var(--muted); }
+.rr-fair-delta.up { color: #7fd38a; }
+.rr-fair-delta.down { color: #f08791; }
+.rr-fair-explain { margin-top: 14px; font-size: 13px; line-height: 1.5; color: var(--text-2); }
+.rr-fair-explain summary { cursor: pointer; color: var(--gold-bright); font-weight: 500; }
+.rr-fair-explain ul { padding-left: 18px; margin: 6px 0; }
+.rr-fair-explain li { margin: 4px 0; }
+.rr-fair-values { margin-top: 12px; overflow-x: auto; }
+.rr-fair-values td { font-size: 12px; vertical-align: top; }
+.rr-fair-foot { font-size: 11.5px; margin-top: 6px; }

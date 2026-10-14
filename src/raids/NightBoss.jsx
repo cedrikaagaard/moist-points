@@ -99,7 +99,7 @@ function NightBoss({ n, b }) {
         </>
       )}
 
-      {tab === "performance" && <NightFightWork b={b} icons={n.icons} />}
+      {tab === "performance" && <NightFightWork b={b} icons={n.icons} night={n.night} />}
 
       {tab === "deaths" && (
         <Panel title="Death log" sub={deaths.length ? "in order, per pull" : undefined}>

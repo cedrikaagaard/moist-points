@@ -33,12 +33,17 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
 
    Needs `WCL_CLIENT_ID`/`WCL_CLIENT_SECRET` in `.env.local` (git-ignored).
    Never print the secret or commit it.
-2. Sanity-check with `npm run raids:history`. Look for silly numbers, such as
+2. `npm run raids:fair` rebuilds the "Fair parse" files (src/raids/data/fair/,
+   the just-for-fun adjusted parses on the night-boss Performance tab). It reads
+   each new night's full log once (cached in data/fair-cache/, git-ignored),
+   refits the model from all nights and writes one file per raid. No API calls.
+   How it works and what it adjusts for: the header of scripts/raids/fair.mjs.
+3. Sanity-check with `npm run raids:history`. Look for silly numbers, such as
    a night with 60+ raiders (two groups logged under the guild) or deaths
    counted twice.
-3. Run `npm run build` and open the new night in the dev server
+4. Run `npm run build` and open the new night in the dev server
    (`npm run dev`, `#/raids/<date>-<raid>`, e.g. `#/raids/2026-10-02-bwl`).
-4. Report what came in (nights, kills, anything notable from the numbers).
+5. Report what came in (nights, kills, anything notable from the numbers).
    Commit only if asked. Every change except pure backfill data bumps the
    version, including new or corrected analyses: add an entry at the top of
    `src/changelog.js` and keep `package.json` and `package-lock.json` in sync.
