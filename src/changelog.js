@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.36",
+    date: "2026-10-15",
+    changes: [
+      "Fair parse explained properly: a plain intro and a description on every switch, click any raider to see the working step by step with the parse curve, and a new \"How Fair parse works\" page with an example, what it can't see and a FAQ.",
+    ],
+  },
+  {
     version: "2.5.35",
     date: "2026-10-14",
     changes: [

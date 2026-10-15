@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { FairAbout } from "./FairParse.jsx";
 import { NIGHTS, GUILD_NIGHTS, ALL_TIME, CLASS_OF, useNight, lockoutOf, isPug } from "./data.js";
 import { classColor, fmtDate, hm, mmss, zoneImg, zoneOf, ZONES } from "./assets.js";
 import { Banner, BarList, BossIcon, ClassIcon, Panel, Player, SpellIcon, Tabs, Tile, ZoneIcon } from "./components.jsx";
@@ -27,6 +28,7 @@ export default function RaidsView({ view, param, sub }) {
   }
   if (view === "raid-zone") return <ZonePage id={Number(param)} />;
   if (view === "raid-boss") return <BossPage id={Number(param)} />;
+  if (view === "raid-fair") return <FairAbout />;
   if (param && sub) return <NightBossPage night={param} bossId={Number(sub)} />;
   return param ? <NightPage night={param} /> : <Overview />;
 }
