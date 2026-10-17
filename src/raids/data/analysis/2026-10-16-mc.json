@@ -1,0 +1,53 @@
+{
+  "night": "2026-10-16-mc",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-17T12:30:00Z",
+  "headline": "10 of 10 in 35:08 with no boss deaths, every boss under its median",
+  "mvp": {
+    "player": "Birdiebird",
+    "headline": "average parse 94, never under 86",
+    "why": [
+      "98 on Magmadar and Golemagg, 96 on Garr and Geddon, the highest average in the raid",
+      "Landed a Tranquilizing Shot on Magmadar and didn't die all night"
+    ],
+    "also": [
+      { "player": "Tochopolvo", "text": "average parse 91, 95 on Magmadar" },
+      { "player": "Gallahan", "text": "81 dispels, 5 Impending Dooms on Lucifron and 6 Ignite Manas on Geddon" },
+      { "player": "Mstermage", "text": "18 curses removed on Lucifron and Gehennas" }
+    ]
+  },
+  "overview": [
+    "A clean MC an hour after BWL: 35:08 against the guild's usual 45:03, no wipes, and no deaths on any boss. Raid DPS was over the guild's usual on all ten, from Majordomo (17k against 12k) to Ragnaros (22k against 16k).",
+    "The weak spot was curses: half of Gehennas' Curses (17 of 34) and almost all of Shazzrah's (29 of 35) were never removed, and Lucifron's took a median 7.8 seconds to come off.",
+    "Skooma came to MC on a warrior and averaged 64, with 40 on Magmadar and 50 on Sulfuron, an hour after the same player parsed 96 in BWL on the druid. Different character, same habit of being nowhere near the top of the meter."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50672, "text": "Ragnaros in 0:50 against a median of 1:08, no deaths, Lava Burst hitting under the usual rate." },
+    { "encounterId": 50671, "text": "Majordomo in 0:51 against a median of 1:10, nobody died." },
+    { "encounterId": 50668, "text": "Baron Geddon in 0:35 (median 0:46). No deaths, with Labwar carrying the one Living Bomb." }
+  ],
+  "bosses": [
+    { "encounterId": 50663, "name": "Lucifron", "notes": [
+      { "tone": "good", "text": "0:30 (median 0:37), no deaths. 20 Impending Dooms dispelled (Pinkcheese 6) and 27 curses removed (Mstermage 9)." },
+      { "tone": "info", "text": "9 of 36 Lucifron's Curses were never removed, and the rest took a median 7.8 seconds." } ] },
+    { "encounterId": 50664, "name": "Magmadar", "notes": [
+      { "tone": "good", "text": "0:44, no deaths. Birdiebird 98." } ] },
+    { "encounterId": 50665, "name": "Gehennas", "notes": [
+      { "tone": "bad", "text": "0:28 and no deaths, but 17 of 34 Gehennas' Curses were never removed. Mstermage took 9, Cladá 6." } ] },
+    { "encounterId": 50666, "name": "Garr", "notes": [
+      { "tone": "good", "text": "0:34 against a median of 0:47 on 20k raid DPS (usually 15k)." } ] },
+    { "encounterId": 50668, "name": "Baron Geddon", "notes": [
+      { "tone": "good", "text": "0:35, no deaths. 20 Ignite Manas dispelled (Gallahan 6, Mornie 5)." } ] },
+    { "encounterId": 50667, "name": "Shazzrah", "notes": [
+      { "tone": "info", "text": "0:18. Only 6 of his 35 curses were removed, Cladá 5 of them, though the fight was over before most would have mattered." } ] },
+    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [
+      { "tone": "bad", "text": "0:41, no deaths, but Dark Mending healed the priests for 61k, twice the usual. 4 of 8 casts were interrupted (Terrora, Fenhira, Skooma, Orbywan)." } ] },
+    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [
+      { "tone": "good", "text": "0:45 (median 0:55), no deaths. Birdiebird 98, Eduard 95." } ] },
+    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [
+      { "tone": "good", "text": "0:51 against a median of 1:10 on 17k raid DPS (usually 12k)." } ] },
+    { "encounterId": 50672, "name": "Ragnaros", "notes": [
+      { "tone": "good", "text": "0:50, no deaths. Yulepunch tanked through 51k of Elemental Fire and parsed 98." } ] }
+  ]
+}

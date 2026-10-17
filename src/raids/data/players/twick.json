@@ -1,0 +1,1 @@
+{"name":"Twick","class":"Paladin","spec":null,"role":"dps","nights":[{"night":"2025-03-21-ony","zones":[2001],"role":"dps","spec":null,"deaths":0,"firstDeaths":0,"dispels":0,"kicks":0,"parses":[{"id":51084,"boss":"Onyxia","pct":63,"amount":142,"role":"dps"}],"mech":{"51084:fear":5,"51084:eruption":1},"casts":{"Restore Mana":1,"Demonic Rune":1}}]}

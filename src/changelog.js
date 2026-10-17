@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.5.37",
+    date: "2026-10-17",
+    changes: [
+      "New raids: Thursday ZG (15 Oct) and BWL + MC (16 Oct), with AI analyses and Fair parses.",
+      "Fixed which raids count as guild raids: \"regular\" now means regular in the two months around a raid, not since January 2025. With the old rule the roster turnover had started marking this autumn's guild raids as PUGs.",
+    ],
+  },
+  {
     version: "2.5.36",
     date: "2026-10-15",
     changes: [

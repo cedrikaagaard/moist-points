@@ -1,0 +1,51 @@
+{
+  "night": "2026-10-16-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-17T12:30:00Z",
+  "headline": "7 bosses in record pace, then Nefarian's landing cost twelve lives in twelve seconds",
+  "mvp": {
+    "player": "Skoomael",
+    "headline": "96 average, never under 91, and still nowhere near the top of the damage meter",
+    "why": [
+      "98 on Broodlord, Firemaw and Chromaggus, 96 on Nefarian, the highest average parse in the raid",
+      "Alive through the Nefarian landing that killed twelve, though Bellowing Roar feared him four times for the effort"
+    ],
+    "also": [
+      { "player": "Tochopolvo", "text": "average parse 95 and 3 interrupts" },
+      { "player": "Pinkcheese", "text": "20 Brood Afflictions cleansed on Chromaggus" },
+      { "player": "Norgewian", "text": "9 Fear Wards, 4 of them on Nefarian, and 3 Power Infusions" }
+    ]
+  },
+  "overview": [
+    "37:42 for the full clear against the guild's usual 47:53, with the first seven bosses all well under their medians: Vaelastrasz in 0:27 ties the guild record, Firemaw (0:51) and Chromaggus (1:24) were half a minute or more under.",
+    "Seventeen boss deaths, twelve of them on Nefarian. Raid DPS was far over the usual on the drakes, 37k on Vaelastrasz against 22k.",
+    "Well buffed: at Broodlord 35 of 40 had Rallying Cry, 34 Zandalar and 26 Songflower."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50611, "text": "Vaelastrasz in 0:27, equal to the guild record, on 37k raid DPS (usually 22k) with no deaths." },
+    { "encounterId": 50613, "text": "Firemaw in 0:51 against a median of 1:41, so Flame Buffet stacked half as high as usual." },
+    { "encounterId": 50616, "text": "Chromaggus in 1:24 (median 1:57) with no deaths. Four of his five Frenzies were Tranquilized, and Pinkcheese cleansed 20 afflictions." }
+  ],
+  "bosses": [
+    { "encounterId": 50610, "name": "Razorgore the Untamed", "notes": [
+      { "tone": "bad", "text": "0:27 once Razorgore was up. Razorgore's own melee killed Eduard at 0:07 and Tochopolvo at 0:27, and Conflagration did 28k, four times the usual share." } ] },
+    { "encounterId": 50611, "name": "Vaelastrasz the Corrupt", "notes": [
+      { "tone": "good", "text": "0:27, equal to the guild record, no deaths. Macharius 96, Necroshadow 94." } ] },
+    { "encounterId": 50612, "name": "Broodlord Lashlayer", "notes": [
+      { "tone": "good", "text": "0:38 against a median of 0:50, no deaths. Skoomael 98, Yulepunch and Tochopolvo 97." } ] },
+    { "encounterId": 50613, "name": "Firemaw", "notes": [
+      { "tone": "good", "text": "0:51 against a median of 1:41, on twice the usual raid DPS." },
+      { "tone": "bad", "text": "Shadow Flame hit 12 raiders and killed Malyric, Mstermage and Speldosan at 0:29 and 0:30, all already worn down by Flame Buffet." } ] },
+    { "encounterId": 50614, "name": "Ebonroc", "notes": [
+      { "tone": "good", "text": "0:51 against a median of 1:15, no deaths. Donatelios 98." } ] },
+    { "encounterId": 50615, "name": "Flamegor", "notes": [
+      { "tone": "good", "text": "0:54, no deaths, Fire Nova hitting under half its usual rate. Five Tranquilizing Shots from Speldosan, Birdiebird and Darkestnight." } ] },
+    { "encounterId": 50616, "name": "Chromaggus", "notes": [
+      { "tone": "good", "text": "1:24 with no deaths. 57 afflictions cleansed (Pinkcheese 20, Rajja 10) and 4 of 5 Frenzies Tranquilized." } ] },
+    { "encounterId": 50617, "name": "Nefarian", "notes": [
+      { "tone": "bad", "text": "The landing Shadow Flame killed the main tank Macharius at 0:03. Wellan picked Nefarian up at 0:06, and at 0:08 the next Shadow Flame went through 34 of the 40 raiders for 4 to 7k each, and ten of them were dead by 0:11." },
+      { "tone": "info", "text": "From there it was a 2:53 kill with 12 deaths, against a usual 2:25 with two Shadow Flame deaths. Most likely Nefarian was facing the raid when Wellan took him, but the log can't show positions well enough to be sure." },
+      { "tone": "good", "text": "Ishilly, Norgewian and Thormund put out 12 Fear Wards, and Cladá removed two Veils of Shadow." } ] }
+  ]
+}

@@ -204,8 +204,10 @@ const pick = (o, keys) => Object.fromEntries(keys.filter((k) => k in o).map((k) 
 //   guild  the real thing; counts for every guild stat
 //   pug    under 30% regulars: own page, labelled, left out of guild stats
 //   other  under 5% regulars: not a Moist raid, left out entirely
-// Regulars = in at least 20% of the guild's raids (two passes, so PUG
-// regulars don't count as guild regulars).
+// Regulars = in at least 20% of the guild's raids within 60 days either side of
+// the raid (two passes, so PUG regulars don't count as guild regulars). A
+// rolling window, because the roster turns over: counted over all of history,
+// this autumn's raiders weren't "regulars" and real guild raids became PUGs.
 // Owner overrides: the automatic rule can't tell new guild members from PUG
 // fillers. A guild raid full of new faces (e.g. 2026-10-11-aq40) is still a
 // guild raid if the owner says so.
@@ -217,10 +219,16 @@ export function classifyRaids(nights) {
     for (const n of raids) for (const name of new Set(n.raiders.map((r) => r.name))) c.set(name, (c.get(name) || 0) + 1);
     return new Set([...c].filter(([, v]) => v >= raids.length * part).map(([k]) => k));
   };
-  let reg = regulars(nights, 0.15);
-  reg = regulars(nights.filter((n) => share(n, reg) >= 0.4), 0.2);
+  const day = (n) => new Date(`${n.night.slice(0, 10)}T12:00:00Z`).getTime();
+  const WINDOW = 60 * 864e5;
+  const regularsAround = (n) => {
+    const near = nights.filter((x) => Math.abs(day(x) - day(n)) <= WINDOW);
+    const first = regulars(near, 0.15);
+    return regulars(near.filter((x) => share(x, first) >= 0.4), 0.2);
+  };
   return new Map(
     nights.map((n) => {
+      const reg = regularsAround(n);
       if (KIND_OVERRIDE[n.night]) {
         const s = share(n, reg);
         return [n.night, { kind: KIND_OVERRIDE[n.night], regulars: Math.round(s * n.raiders.length) }];

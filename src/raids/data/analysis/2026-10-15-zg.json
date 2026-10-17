@@ -1,0 +1,47 @@
+{
+  "night": "2026-10-15-zg",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-17T12:30:00Z",
+  "headline": "8 of 8 in 37 minutes on a quiet Thursday, with almost no world buffs",
+  "mvp": {
+    "player": "Knäb",
+    "headline": "99 dispels in a 37-minute ZG",
+    "why": [
+      "99 dispels, three times the next healer (Palastino 32)",
+      "Dispelled Venoxis' Holy Fire and the Hex on Jin'do"
+    ],
+    "also": [
+      { "player": "Fluffycatto", "text": "average parse 75, 91 on Mar'li and 89 on Arlokk, 4 interrupts" },
+      { "player": "Speldosan", "text": "74 on Hakkar and 84 on Mandokir" },
+      { "player": "Palastino", "text": "32 dispels, 3 Blessings of Protection and a Lay on Hands" }
+    ]
+  },
+  "overview": [
+    "A 20-raider ZG with only a handful of the usual guild names, cleared in 36:58 against the guild's usual 46:37. No wipes and three boss deaths.",
+    "Almost nobody came buffed: 4 of 20 had Rallying Cry at Jeklik and nobody had Zandalar or Songflower, so raid DPS sat a little under the guild's usual on most bosses."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50786, "text": "Mar'li in 0:50 against a median of 0:58, Poison Bolt Volley hitting 4.5 times per raider against a usual 6.3. Fluffycatto 91." },
+    { "encounterId": 50784, "text": "Venoxis in 0:48 with the Holy Wrath chain hitting 7 raiders, under the usual rate." },
+    { "encounterId": 50793, "text": "Hakkar in 2:14, right on the median, with nobody dying through 57 Corrupted Blood applications." }
+  ],
+  "bosses": [
+    { "encounterId": 50785, "name": "High Priestess Jeklik", "notes": [
+      { "tone": "info", "text": "0:52, on the median. Sonic Burst hit 11 raiders 21 times, a bit above the usual rate." } ] },
+    { "encounterId": 50784, "name": "High Priest Venoxis", "notes": [
+      { "tone": "info", "text": "0:48. The tank Mercîless died a second before the kill: Venoxis' melee did 15k in his last ten seconds through 10k of healing." } ] },
+    { "encounterId": 50786, "name": "High Priestess Mar'li", "notes": [
+      { "tone": "good", "text": "0:50 against a median of 0:58, no deaths." } ] },
+    { "encounterId": 50787, "name": "Bloodlord Mandokir", "notes": [
+      { "tone": "bad", "text": "1:26, a bit over the median. Fenhira died to Guillotine at 0:30 while holding the Gaze, and Orbywan to his melee at 0:57. Whirlwind hit 12 raiders 27 times, more than usual." } ] },
+    { "encounterId": 50789, "name": "High Priest Thekal", "notes": [
+      { "tone": "info", "text": "1:48 against a median of 1:33 on 4.6k raid DPS (usually 5.4k), no deaths." } ] },
+    { "encounterId": 50791, "name": "High Priestess Arlokk", "notes": [
+      { "tone": "good", "text": "0:34, no deaths. Fluffycatto 89, Orbywan 85." } ] },
+    { "encounterId": 50792, "name": "Jin'do the Hexxer", "notes": [
+      { "tone": "good", "text": "0:51, no deaths, and Knäb dispelled the one Hex in 1.4 seconds." } ] },
+    { "encounterId": 50793, "name": "Hakkar", "notes": [
+      { "tone": "good", "text": "2:14, on the median, no deaths. Hakkar mind-controlled each tank three times. Speldosan 74." } ] }
+  ]
+}
