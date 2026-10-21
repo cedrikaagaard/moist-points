@@ -7,6 +7,7 @@ import "../raids/raids.css";
 import summaryMeta from "../raids/data/roster.json";
 
 const HomeRaids = lazy(() => import("../raids/HomeRaids.jsx"));
+const HallOfShame = lazy(() => import("../raids/HallOfShame.jsx"));
 
 const WELCOME_KEY = "moist.welcome.v2";
 const seenWelcome = () => {
@@ -47,6 +48,10 @@ export default function Home({ data }) {
           </div>
         </div>
       </div>
+
+      <Suspense fallback={null}>
+        <HallOfShame />
+      </Suspense>
 
       {welcome && (
         <section className="panel home-welcome">

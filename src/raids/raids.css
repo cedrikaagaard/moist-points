@@ -615,3 +615,27 @@ a.rr-player-link:hover span { text-decoration: underline; }
 .rr-fair-defs dd { margin: 0; }
 .rr-fair-limits { padding-left: 18px; margin: 0; display: grid; gap: 6px; }
 .rr-fair-values td { font-size: 12px; vertical-align: top; }
+
+/* ---------- Hall of Shame: Mr. Bigglesworth (home page) ---------- */
+.shame { border-color: rgba(224, 82, 95, 0.35); background: linear-gradient(180deg, rgba(224, 82, 95, 0.06), transparent 60%), var(--surface-1); }
+.shame-head { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+.shame-head h2 { margin: 0 0 4px; }
+.shame-head p { margin: 0; font-size: 13px; max-width: 70ch; }
+.shame-kicker { color: #f08791; }
+.shame-cat { border-radius: 10px; border: 2px solid rgba(224, 82, 95, 0.6); flex-shrink: 0; }
+.shame-grid { display: grid; grid-template-columns: minmax(180px, 1fr) minmax(220px, 1.3fr) minmax(220px, 1.3fr); gap: 16px; }
+.shame-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 6px; }
+.shame-worst { border: 1px solid var(--border-soft); border-radius: 10px; padding: 12px; background: var(--surface-2); }
+.shame-worst-name { font-size: 17px; }
+.shame-worst-n { font-size: 30px; line-height: 1.1; margin: 6px 0 4px; color: #f08791; }
+.shame-worst-n b { font-weight: 700; }
+.shame-small { font-size: 12px; }
+.shame-board { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.shame-board li { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.shame-rank { width: 16px; text-align: right; font-size: 11px; }
+.shame-paws { margin-left: auto; font-size: 11px; letter-spacing: -2px; opacity: 0.8; }
+.shame-n { width: 18px; text-align: right; color: #f08791; }
+.shame-recent ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 12.5px; }
+.shame-recent a { color: var(--text-2); }
+.shame-foot { font-size: 11.5px; margin-top: 12px; }
+@media (max-width: 860px) { .shame-grid { grid-template-columns: 1fr; } }

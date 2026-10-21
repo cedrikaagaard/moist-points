@@ -1,0 +1,405 @@
+{
+ "updated": "2026-10-21",
+ "kills": [
+  {
+   "date": "2026-09-30",
+   "killer": "Eduard",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-09-30-naxx"
+  },
+  {
+   "date": "2026-09-30",
+   "killer": "Mercîless",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-09-30-naxx"
+  },
+  {
+   "date": "2026-09-23",
+   "killer": "Eduard",
+   "class": "Warrior",
+   "with": "Shoot Bow",
+   "pet": null,
+   "night": "2026-09-23-naxx"
+  },
+  {
+   "date": "2026-09-23",
+   "killer": "Avekinho",
+   "class": "Warrior",
+   "with": "Shoot Gun",
+   "pet": null,
+   "night": "2026-09-23-naxx"
+  },
+  {
+   "date": "2026-09-16",
+   "killer": "Corvere",
+   "class": "Rogue",
+   "with": "Shoot Bow",
+   "pet": null,
+   "night": "2026-09-16-naxx"
+  },
+  {
+   "date": "2026-09-16",
+   "killer": "Disponenten",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-09-16-naxx"
+  },
+  {
+   "date": "2026-09-09",
+   "killer": "Apoutchou",
+   "class": "Priest",
+   "with": "Shoot",
+   "pet": null,
+   "night": "2026-09-09-naxx"
+  },
+  {
+   "date": "2026-09-09",
+   "killer": "Birdiebird",
+   "class": "Hunter",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-09-09-naxx"
+  },
+  {
+   "date": "2026-09-02",
+   "killer": "Macharius",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-09-02-naxx"
+  },
+  {
+   "date": "2026-08-05",
+   "killer": "Tsome",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-08-05-naxx"
+  },
+  {
+   "date": "2026-07-29",
+   "killer": "Tochopolvo",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-07-29-naxx"
+  },
+  {
+   "date": "2026-05-06",
+   "killer": "Kennor",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-05-06-naxx"
+  },
+  {
+   "date": "2026-04-29",
+   "killer": "Mèzz",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-04-29-naxx"
+  },
+  {
+   "date": "2026-04-22",
+   "killer": "Mèzz",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-04-22-naxx"
+  },
+  {
+   "date": "2026-04-15",
+   "killer": "Lilleline",
+   "class": "Mage",
+   "with": "Arcane Explosion",
+   "pet": null,
+   "night": "2026-04-15-naxx"
+  },
+  {
+   "date": "2026-04-08",
+   "killer": "Mezz",
+   "class": "Druid",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-04-08-naxx"
+  },
+  {
+   "date": "2026-04-08",
+   "killer": "Niedrig",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-04-08-naxx"
+  },
+  {
+   "date": "2026-04-08",
+   "killer": "Sixto",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-04-08-naxx"
+  },
+  {
+   "date": "2026-04-01",
+   "killer": "Fjall",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-04-01-naxx"
+  },
+  {
+   "date": "2026-03-04",
+   "killer": "Skoomael",
+   "class": "Druid",
+   "with": "Moonfire",
+   "pet": null,
+   "night": "2026-03-04-naxx"
+  },
+  {
+   "date": "2026-03-04",
+   "killer": "Tochopolvo",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-03-04-naxx"
+  },
+  {
+   "date": "2026-02-04",
+   "killer": "Fjordur",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-02-04-naxx"
+  },
+  {
+   "date": "2026-01-21",
+   "killer": "Boomer",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-01-21-naxx"
+  },
+  {
+   "date": "2026-01-12",
+   "killer": "Sixto",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-01-12-naxx"
+  },
+  {
+   "date": "2026-01-07",
+   "killer": "Mezz",
+   "class": "Druid",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-01-07-naxx"
+  },
+  {
+   "date": "2025-12-17",
+   "killer": "Mezz",
+   "class": "Druid",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-12-17-naxx"
+  },
+  {
+   "date": "2025-12-03",
+   "killer": "Mssingno",
+   "class": "Hunter",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-12-03-naxx"
+  },
+  {
+   "date": "2025-12-03",
+   "killer": "Mezz",
+   "class": "Druid",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-12-03-naxx"
+  },
+  {
+   "date": "2025-12-03",
+   "killer": "Zimligimli",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-12-03-naxx"
+  },
+  {
+   "date": "2025-11-19",
+   "killer": "Snotspat",
+   "class": "Warlock",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-11-19-naxx"
+  },
+  {
+   "date": "2025-11-19",
+   "killer": "Fjordur",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-11-19-naxx"
+  },
+  {
+   "date": "2025-11-12",
+   "killer": "Holychad",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-11-12-naxx"
+  },
+  {
+   "date": "2025-11-10",
+   "killer": "Amima",
+   "class": "Paladin",
+   "with": "Holy Shock",
+   "pet": null,
+   "night": "2025-11-10-naxx"
+  },
+  {
+   "date": "2025-11-05",
+   "killer": "Caesartje",
+   "class": "Mage",
+   "with": "Fire Blast",
+   "pet": null,
+   "night": "2025-11-05-naxx"
+  },
+  {
+   "date": "2025-10-22",
+   "killer": "Aminth",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-10-22-naxx"
+  },
+  {
+   "date": "2025-10-08",
+   "killer": "Sixto",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-10-08-naxx"
+  },
+  {
+   "date": "2025-09-24",
+   "killer": "Stridaren",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-09-24-naxx"
+  },
+  {
+   "date": "2025-09-17",
+   "killer": "Rannek",
+   "class": "Rogue",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-09-17-naxx"
+  },
+  {
+   "date": "2025-09-10",
+   "killer": "Snotspat",
+   "class": "Warlock",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-09-10-naxx"
+  },
+  {
+   "date": "2025-09-10",
+   "killer": "Divinê",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-09-10-naxx"
+  },
+  {
+   "date": "2025-09-03",
+   "killer": "Stridaren",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-09-03-naxx"
+  },
+  {
+   "date": "2025-08-27",
+   "killer": "Botcher",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-08-27-naxx"
+  },
+  {
+   "date": "2025-08-27",
+   "killer": "Michalion",
+   "class": "Priest",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-08-27-naxx"
+  },
+  {
+   "date": "2025-08-13",
+   "killer": "Divinê",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-08-13-naxx"
+  },
+  {
+   "date": "2025-07-30",
+   "killer": "Snotspat",
+   "class": "Warlock",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-07-30-naxx"
+  },
+  {
+   "date": "2025-06-01",
+   "killer": "Ashbringerr",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-06-01-naxx"
+  },
+  {
+   "date": "2025-05-25",
+   "killer": "Snotspat",
+   "class": "Warlock",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-05-25-naxx"
+  },
+  {
+   "date": "2025-05-25",
+   "killer": "Eirwin",
+   "class": "Paladin",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-05-25-naxx"
+  },
+  {
+   "date": "2025-05-04",
+   "killer": "Froxy",
+   "class": "Mage",
+   "with": "Flamestrike",
+   "pet": null,
+   "night": "2025-05-04-naxx"
+  },
+  {
+   "date": "2025-05-04",
+   "killer": "Snotspat",
+   "class": "Warlock",
+   "with": "Melee",
+   "pet": null,
+   "night": "2025-05-04-naxx"
+  }
+ ]
+}

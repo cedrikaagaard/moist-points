@@ -1,7 +1,7 @@
 {
   "name": "moist-sr-points",
   "private": true,
-  "version": "2.5.37",
+  "version": "2.6.0",
   "type": "module",
   "scripts": {
     "predev": "node scripts/copy-db.mjs",
@@ -16,7 +16,8 @@
     "raids:player-facts": "node scripts/raids/player-facts.mjs",
     "raids:events": "node --env-file=.env.local scripts/raids/events.mjs",
     "raids:backfill": "node --env-file=.env.local scripts/raids/backfill.mjs",
-    "raids:fair": "node --max-old-space-size=8000 scripts/raids/fair.mjs"
+    "raids:fair": "node --max-old-space-size=8000 scripts/raids/fair.mjs",
+    "raids:biggles": "node scripts/raids/bigglesworth.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.0",
+    date: "2026-10-21",
+    changes: [
+      "Hall of Shame on the front page: everyone who has killed Mr. Bigglesworth, Kel'Thuzad's cat, straight from the combat logs. Worst offender, the leaderboard and the latest crimes.",
+    ],
+  },
+  {
     version: "2.5.37",
     date: "2026-10-17",
     changes: [

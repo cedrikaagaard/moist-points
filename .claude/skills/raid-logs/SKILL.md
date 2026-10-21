@@ -38,6 +38,8 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
    each new night's full log once (cached in data/fair-cache/, git-ignored),
    refits the model from all nights and writes one file per raid. No API calls.
    How it works and what it adjusts for: the header of scripts/raids/fair.mjs.
+   Then `npm run raids:biggles` updates the home page's Hall of Shame (who
+   killed Mr. Bigglesworth, from the full logs).
 3. Sanity-check with `npm run raids:history`. Look for silly numbers, such as
    a night with 60+ raiders (two groups logged under the guild) or deaths
    counted twice.
