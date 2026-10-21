@@ -9,6 +9,7 @@ import { nightZones } from "./aggregate.js";
 import { ZonePage, BossPage } from "./BossPages.jsx";
 import NightBossPage from "./NightBoss.jsx";
 import Analysis from "./Analysis.jsx";
+import ParseTable from "./ParseTable.jsx";
 import { usePlayerRaids, parseColor } from "./RaidProfile.jsx";
 import { MoistLogsHero, LocalLogNote, latestLocal } from "./MoistLogs.jsx";
 import { href } from "../router.js";
@@ -369,6 +370,8 @@ function Night({ n }) {
       />
 
       <Analysis night={n.night} raiders={n.raiders} />
+
+      <ParseTable n={n} NP={NP} />
 
       <Panel title="The night at a glance" sub="pulls and deaths over time">
         <NightTimeline n={n} />

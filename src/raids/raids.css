@@ -700,3 +700,22 @@ a.rr-player-link:hover span { text-decoration: underline; }
 .ml-wrap + .view .ml-note { display: none; } /* the hero above already says it */
 .ml-hero-warn { margin-top: 10px !important; padding: 8px 12px; border-left: 3px solid #2ef2ff; background: rgba(46, 242, 255, 0.07); border-radius: 4px; }
 .ml-hero-warn b { color: var(--text-1, #fff); }
+
+/* Parse grid (Warcraft Logs' rankings tab) on the raid page */
+.pt-scroll { overflow-x: auto; margin: 0 -4px; }
+.pt { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+.pt th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-2); padding: 4px 4px 6px; cursor: pointer; user-select: none; white-space: nowrap; text-align: center; }
+.pt th.pt-sorted { color: var(--gold-bright); }
+.pt th.pt-sorted .rr-boss-ic { outline: 2px solid var(--gold-bright); outline-offset: 1px; }
+.pt th.pt-boss a { display: inline-block; line-height: 0; }
+.pt td { padding: 3px 4px; border-top: 1px solid rgba(255, 255, 255, 0.04); }
+.pt .pt-name { text-align: left; white-space: nowrap; position: sticky; left: 0; background: var(--surface-1); z-index: 1; padding-right: 10px; }
+.pt-cell { text-align: center; font-weight: 700; min-width: 30px; }
+.pt-avg .rr-parse { min-width: 30px; font-size: 12px; }
+.pt-none { color: var(--text-3, rgba(255, 255, 255, 0.2)); font-weight: 400; }
+.pt tbody tr:not(.pt-group):hover td { background: rgba(255, 255, 255, 0.03); }
+.pt tbody tr:not(.pt-group):hover td.pt-name { background: var(--surface-2); }
+.pt-group td { padding-top: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-2); border-top: none; position: sticky; left: 0; }
+.pt-summary td { border-top: none; border-bottom: 1px solid var(--border); padding-bottom: 6px; font-size: 12px; }
+.ml-hero-tagline { font-style: italic; color: var(--text-1, #e8e6e3) !important; margin: 0 0 8px !important; }
+.pt-beyond { text-shadow: 0 0 6px #2ef2ff; }

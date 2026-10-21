@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.3",
+    date: "2026-10-21",
+    changes: [
+      "Parse table on every raid page, like the Rankings tab on Warcraft Logs: every raider's parse on every boss, with average, median and best, grouped by role and sortable by any column.",
+      "Raw-log raids only count players who were in the raid: people who just walked past in the instance (and buffed someone) no longer show up as raiders.",
+    ],
+  },
+  {
     version: "2.6.2",
     date: "2026-10-21",
     changes: [

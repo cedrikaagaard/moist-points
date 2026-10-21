@@ -5,6 +5,12 @@ import { href } from "../router.js";
 import { NIGHTS } from "./data.js";
 import "./raids.css";
 
+// A line for one raid under the title, when the night earned one.
+const TAGLINE = {
+  "2026-10-21-naxx":
+    "Warcraft Logs went down before the first pull. So did Skoomael: one Gift of the Wild on Sabrina at 19:44, cast from outside the raid, and that is his entire night in the combat log. Warcraft Logs at least had a status page.",
+};
+
 export function MoistLogsHero({ night }) {
   return (
     <div className="view rr ml-wrap">
@@ -13,6 +19,7 @@ export function MoistLogsHero({ night }) {
         <h1>
           Warcraft Logs down? <span>No worries, Moist got you.</span>
         </h1>
+        {TAGLINE[night] && <p className="ml-hero-tagline">{TAGLINE[night]}</p>}
         <p>
           Warcraft Logs couldn't take uploads tonight, so this raid was read straight from the raw combat log. Same pages as any other raid on the site:
           pulls, deaths, damage, healing, mechanics, replays.

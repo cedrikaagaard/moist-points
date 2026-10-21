@@ -196,7 +196,7 @@ async function parse(dict) {
   const N = (t) => {
     const date = nightOf(t);
     if (!nights.has(date))
-      nights.set(date, { date, start: t, end: t, names: new Map(), actors: [], abil: new Map(), events: [], encounters: [], open: null, classVotes: new Map(), owners: new Map() });
+      nights.set(date, { date, start: t, end: t, names: new Map(), grouped: new Set(), actors: [], abil: new Map(), events: [], encounters: [], open: null, classVotes: new Map(), owners: new Map() });
     const s = nights.get(date);
     s.end = Math.max(s.end, t);
     return s;
@@ -237,6 +237,9 @@ async function parse(dict) {
     s.events.push({ t: l.t, ev, f, pre, adv, suf: f.slice(i) });
     s.lastEv = l.t;
     if (f[0].startsWith("Player-") && f[1]) s.names.set(f[0], f[1]);
+    // in our group or raid (affiliation mine/party/raid); 0x...8 is an outsider who just walked past
+    if (f[0].startsWith("Player-") && parseInt(f[2], 16) & 7) s.grouped.add(f[0]);
+    if (f[4].startsWith("Player-") && parseInt(f[6], 16) & 7) s.grouped.add(f[4]);
     if (f[4].startsWith("Player-") && f[5]) s.names.set(f[4], f[5]);
     // owners of pets and totems
     if (ev === "SPELL_SUMMON" && f[0].startsWith("Player-")) s.owners.set(f[4], f[0]);
@@ -436,8 +439,8 @@ function buildReport(s, dict, owner) {
       if (f[8] === "1" || x.t - (feignAt.get(f[4]) ?? -1e9) < 1500) e.feign = true;
     }
     else continue;
-    if (src > 0 && actors[src]?.type === "Player") seenPlayers.get(fi.id).add(src);
-    if (dst > 0 && actors[dst]?.type === "Player") seenPlayers.get(fi.id).add(dst);
+    if (src > 0 && actors[src]?.type === "Player" && s.grouped.has(f[0])) seenPlayers.get(fi.id).add(src);
+    if (dst > 0 && actors[dst]?.type === "Player" && s.grouped.has(f[4])) seenPlayers.get(fi.id).add(dst);
     for (const id of [src, dst]) if (id > 0 && actors[id].type === "NPC") seenNpcs.get(fi.id).set(id, actors[id].gameID);
     if (e.ignite) {
       const feed = (igniteFeed.get(e.ignite) || []).filter((c) => c.t >= x.t - 4100 && c.t <= x.t);
