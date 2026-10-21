@@ -1421,37 +1421,52 @@
    },
    "review": {
     "model": "Claude (Opus 5.5)",
-    "generatedAt": "2026-10-21T20:54:42.260Z",
-    "grade": "A",
-    "verdict": "Most healing on four bosses, 22 Fear Wards",
-    "summary": "First of the healers on Anub'Rekhan, Grobbulus, the Horsemen and Noth, second on Faerlina, Thaddius, Gothik and Sapphiron (845/s). 22 Fear Wards and 22 Mana Potions. No boss deaths; Kel'Thuzad mind-controlled you once.",
+    "generatedAt": "2026-10-21T21:15:04.754Z",
+    "grade": "A-",
+    "verdict": "Top healer on four bosses, which only makes the rest of the night harder to explain",
+    "summary": "Credit where it's due, once: first of the healers on Anub'Rekhan, Grobbulus, the Horsemen and Noth, 845 HPS on Sapphiron, 22 Fear Wards. Now the rest. On Patchwerk, the one boss where healing is the whole fight, you were 12th of 12 at 116 HPS with 87% overheal: you spent two minutes topping up people who were already full. You died twice on trash, the second time needing Etowa's Rebirth to get off the floor. Kel'Thuzad mind-controlled you, so for a while you were on his team, which, given Patchwerk, may have been a fair trade for us. 22 Mana Potions to get through the night, the most of any healer, and Spirit of Zanza on 2 pulls out of 15.",
     "good": [
      {
       "title": "Healing",
-      "text": "First on four bosses, second on four more."
-     },
-     {
-      "title": "Fear Ward",
-      "text": "22 casts."
+      "text": "First on Anub'Rekhan, Grobbulus, the Four Horsemen and Noth. Annoyingly good."
      },
      {
       "title": "Sapphiron",
-      "text": "845 HPS on the kill, second.",
+      "text": "845 HPS on the kill, second of the healers.",
       "boss": 51119
+     },
+     {
+      "title": "Fear Ward",
+      "text": "22 casts. The one job you did all night without a footnote."
      }
     ],
     "fix": [
      {
       "title": "Patchwerk",
-      "impact": "low",
+      "impact": "high",
       "boss": 51118,
-      "text": "Last of the healers at 116/s with 87% overheal. Probably assigned somewhere quiet, but worth a look."
+      "text": "Last of twelve healers at 116 HPS, 87% overheal. Patchwerk is a healing check and you sat it out with full mana bars on full health bars."
      },
      {
-      "title": "Faerlina",
+      "title": "Standing in things",
+      "impact": "medium",
+      "text": "Two Rain of Fire hits on Faerlina, Web Wrapped on Maexxna, four Chain Lightnings on Thaddius. For a healer who is supposed to stand still at the back, you found a lot of things to stand in."
+     },
+     {
+      "title": "Trash",
+      "impact": "medium",
+      "text": "Two trash deaths, and the second one cost Etowa a Rebirth."
+     },
+     {
+      "title": "Kel'Thuzad",
       "impact": "low",
-      "boss": 51110,
-      "text": "Two Rain of Fire hits."
+      "boss": 51114,
+      "text": "Mind-controlled. Briefly the most useful you were to the boss all night."
+     },
+     {
+      "title": "Consumables",
+      "impact": "low",
+      "text": "Spirit of Zanza on 2 of 15 pulls, then 22 Mana Potions to make up for it."
      }
     ],
     "bosses": {
@@ -1459,9 +1474,13 @@
       "tone": "good",
       "text": "First, 458 HPS."
      },
-     "51118": {
+     "51114": {
       "tone": "info",
-      "text": "Last of the healers, 87% overheal."
+      "text": "Mind-controlled by Kel'Thuzad."
+     },
+     "51118": {
+      "tone": "bad",
+      "text": "Last of the healers, 116 HPS, 87% overheal."
      }
     }
    }
