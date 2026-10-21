@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.2",
+    date: "2026-10-21",
+    changes: [
+      "AI analysis for tonight's Naxxramas (21 Oct): records on Thaddius and the Four Horsemen.",
+    ],
+  },
+  {
     version: "2.6.1",
     date: "2026-10-21",
     changes: [
