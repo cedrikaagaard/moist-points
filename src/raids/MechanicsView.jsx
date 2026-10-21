@@ -79,12 +79,12 @@ export function NightMechanics({ b, icons }) {
 }
 
 // Dispels/interrupts and parses for one fight.
-export function NightFightWork({ b, icons, night }) {
+export function NightFightWork({ b, icons, night, estimated }) {
   const has = (b.dispels?.length || 0) + (b.kicks?.length || 0) > 0;
   return (
     <>
       {b.parses?.length > 0 && (
-        <Panel title="Parses" sub="Warcraft Logs rank on this kill · DPS, or HPS for healers">
+        <Panel title="Parses" sub={estimated ? "Rough estimate, not Warcraft Logs: guessed from the guild's own past parses on this boss · DPS, or HPS for healers" : "Warcraft Logs rank on this kill · DPS, or HPS for healers"}>
           <ParseList parses={b.parses} />
         </Panel>
       )}
@@ -210,7 +210,7 @@ export function BossParsesAllTime({ b }) {
             <li key={name}>
               <div className="rr-bar-label"><P name={name} size={16} /></div>
               <div className="rr-bar-track">
-                <div className="rr-bar-fill" style={{ width: `${p.pct}%`, background: parseColor(p.pct) }} />
+                <div className="rr-bar-fill" style={{ width: `${Math.min(100, p.pct)}%`, background: parseColor(p.pct) }} />
               </div>
               <div className="rr-bar-val"><ParseBadge pct={p.pct} /></div>
               <div className="rr-bar-note muted">{fmtDate(p.night)} · {p.amount.toLocaleString()} {p.role === "healer" ? "HPS" : "DPS"}</div>

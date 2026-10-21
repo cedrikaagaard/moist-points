@@ -256,6 +256,7 @@ export function buildSummary(nights) {
           zones: n.zones,
           zoneIds: nightZones(n),
           durationMin: n.durationMin,
+          ...(n.localLog ? { localLog: true } : {}), // from a raw combat log, Warcraft Logs was down
           raiders: n.raiders.length,
           totals: n.totals,
           bosses: n.bosses.map((b) => ({ id: b.encounterId, name: b.name, killed: b.killed, wipes: b.wipes, killTimeSec: b.killTimeSec })),

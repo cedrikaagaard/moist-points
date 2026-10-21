@@ -9,6 +9,7 @@ import Replay, { hasReplay } from "./Replay.jsx";
 import Analysis from "./Analysis.jsx";
 import { PageTabs } from "./components.jsx";
 import { href } from "../router.js";
+import { LocalLogNote } from "./MoistLogs.jsx";
 
 // #/raids/<night>/<boss> - ONE boss on ONE night: what happened on each pull.
 // The only all-time element is a single compact comparison line, which links
@@ -53,6 +54,7 @@ function NightBoss({ n, b }) {
 
   return (
     <div className="view rr">
+      <LocalLogNote n={n} />
       <Banner
         kind="night"
         accent={zone.color}
@@ -99,7 +101,7 @@ function NightBoss({ n, b }) {
         </>
       )}
 
-      {tab === "performance" && <NightFightWork b={b} icons={n.icons} night={n.night} />}
+      {tab === "performance" && <NightFightWork b={b} icons={n.icons} night={n.night} estimated={n.localLog} />}
 
       {tab === "deaths" && (
         <Panel title="Death log" sub={deaths.length ? "in order, per pull" : undefined}>

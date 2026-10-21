@@ -10,6 +10,7 @@ import { ZonePage, BossPage } from "./BossPages.jsx";
 import NightBossPage from "./NightBoss.jsx";
 import Analysis from "./Analysis.jsx";
 import { usePlayerRaids, parseColor } from "./RaidProfile.jsx";
+import { MoistLogsHero, LocalLogNote, latestLocal } from "./MoistLogs.jsx";
 import { href } from "../router.js";
 import "./raids.css";
 
@@ -29,6 +30,15 @@ export default function RaidsView({ view, param, sub }) {
   if (view === "raid-zone") return <ZonePage id={Number(param)} />;
   if (view === "raid-boss") return <BossPage id={Number(param)} />;
   if (view === "raid-fair") return <FairAbout />;
+  if (view === "moistlogs") {
+    const id = param || latestLocal();
+    return (
+      <>
+        <MoistLogsHero night={id} />
+        {sub ? <NightBossPage night={id} bossId={Number(sub)} /> : <NightPage night={id} />}
+      </>
+    );
+  }
   if (param && sub) return <NightBossPage night={param} bossId={Number(sub)} />;
   return param ? <NightPage night={param} /> : <Overview />;
 }
@@ -306,6 +316,7 @@ function Night({ n }) {
 
   return (
     <div className="view rr">
+      <LocalLogNote n={n} />
       <Banner
         kind="night"
         accent={zoneOf(zones[0]).color}
@@ -520,11 +531,11 @@ function Night({ n }) {
       <Roster n={n} />
 
       <p className="muted rr-sources">
-        Stitched from the logs of{" "}
+        {n.localLog ? "Read from" : "Stitched from the logs of"}{" "}
         {n.sources.map((s, i) => (
           <span key={s.code}>
             {i > 0 && ", "}
-            <a href={s.url} target="_blank" rel="noreferrer">{s.owner || s.code}</a>
+            {s.url ? <a href={s.url} target="_blank" rel="noreferrer">{s.owner || s.code}</a> : <>the raw combat log{s.owner ? ` (logged by ${s.owner})` : ""}</>}
           </span>
         ))}
       </p>

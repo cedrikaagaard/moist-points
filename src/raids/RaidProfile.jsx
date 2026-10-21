@@ -29,9 +29,11 @@ export function usePlayerRaids(name) {
   return state.name === name ? state.data : undefined; // undefined = loading, null = none
 }
 
-// Warcraft Logs' parse colours: grey, green, blue, purple, orange, pink, gold.
+// Warcraft Logs' parse colours: grey, green, blue, purple, orange, pink, gold,
+// plus one Warcraft Logs doesn't have: above 100, only seen on raw-log nights.
 export function parseColor(pct) {
   if (pct == null) return "var(--muted)";
+  if (pct > 100) return "#2ef2ff";
   if (pct >= 100) return "#e5cc80";
   if (pct >= 99) return "#e268a8";
   if (pct >= 95) return "#ff8000";
@@ -41,7 +43,7 @@ export function parseColor(pct) {
   return "#9d9d9d";
 }
 export const ParseBadge = ({ pct }) => (
-  <span className="rr-parse" style={{ color: parseColor(pct), borderColor: parseColor(pct) }}>{pct ?? "-"}</span>
+  <span className={pct > 100 ? "rr-parse rr-parse-beyond" : "rr-parse"} style={{ color: parseColor(pct), borderColor: parseColor(pct) }}>{pct ?? "-"}</span>
 );
 
 export default function RaidProfile({ name, reviews }) {

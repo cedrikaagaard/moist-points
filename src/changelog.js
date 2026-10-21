@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.1",
+    date: "2026-10-21",
+    changes: [
+      "Moist logs: when Warcraft Logs is down, a raid can now be read straight from the raw combat log and gets the full raid pages anyway, with a shareable link at #/moistlogs. Parses on those raids are estimates from the guild's own Warcraft Logs history for each boss and class.",
+    ],
+  },
+  {
     version: "2.6.0",
     date: "2026-10-21",
     changes: [

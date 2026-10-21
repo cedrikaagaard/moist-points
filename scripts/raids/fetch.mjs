@@ -58,7 +58,8 @@ main().catch((e) => {
 async function rebuildOffline() {
   const list = JSON.parse(fs.readFileSync(path.join(RAW_DIR, "reports.json"), "utf8"));
   const byNight = groupBy(list, (r) => nightOf(r.startTime));
-  const nights = [...new Set(fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, 10)))].filter((n) => !args.night || n === args.night).sort();
+  // --night may name a night with no file yet: one built from a raw combat log (rawlog.mjs)
+  const nights = args.night ? [args.night] : [...new Set(fs.readdirSync(NIGHTS_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, 10)))].sort();
   let done = 0;
   let skipped = 0;
   for (const night of nights) {
@@ -435,7 +436,7 @@ async function buildNight(date, reports) {
   const evOf = new Map();
   for (const r of used) {
     const ids = fights.filter((f) => f.report === r).map((f) => f.id);
-    const fresh = !args.done && Date.now() - r.endTime < 3 * 3600e3; // --done: tonight's raid is over, the logs are final
+    const fresh = !args.done && !r.local && Date.now() - r.endTime < 3 * 3600e3; // a raw combat log (rawlog.mjs) is final // --done: tonight's raid is over, the logs are final
     if (!offline && !fresh && !(await downloadEvents(date, r, ids))) throw new BudgetError();
     if (!fresh && hasEvents(date, r.code)) evOf.set(r, deriveLog(date, r, keepForMechanics(r)));
     else {
@@ -740,8 +741,11 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
       code: r.code,
       title: r.title,
       owner: r.owner?.name ?? null,
-      url: `${SITE_URL}/reports/${r.code}`,
+      url: r.local ? null : `${SITE_URL}/reports/${r.code}`,
+      ...(r.local ? { local: true } : {}),
     })),
+    // Built from a raw combat log while Warcraft Logs was down; parses are estimates.
+    ...(used.some((r) => r.local) ? { localLog: true } : {}),
     // No spec: Warcraft Logs only guesses it for Classic Era (no talent data).
     raiders: [...present].sort().map((name) => ({ name, class: classOf.get(name) || null, spec: null, role: roleOf.get(name) || null })),
     totals: {

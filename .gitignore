@@ -23,3 +23,6 @@ public/moistdb.sqlite
 data/events/
 local_logs/
 data/fair-cache/
+
+# raw combat logs (rawlog.mjs input)
+WoWCombatLog*.txt

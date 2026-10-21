@@ -33,6 +33,22 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
 
    Needs `WCL_CLIENT_ID`/`WCL_CLIENT_SECRET` in `.env.local` (git-ignored).
    Never print the secret or commit it.
+   **Warcraft Logs down?** Build the night from the raw combat log instead
+   (WoWCombatLog*.txt, Advanced Combat Logging on; the client may split a raid
+   over several files, pass them all or the folder, overlaps are de-duplicated):
+   - `npm run raids:rawlog -- <files|folder> --inspect`: field layout per event
+     type. Check the advanced block is 17 fields and the damage suffix 11
+     before trusting anything.
+   - `npm run raids:rawlog -- <files|folder> --list`: nights, pulls, kills.
+     Several nights in one file are split by the usual 06:00 cutoff.
+   - `npm run raids:rawlog -- <files|folder> --write --owner <logger> [--night <date>]`
+     writes the report, events and estimated parses (code `MOIST<date>RAW`),
+     then `npm run raids:fetch -- --rebuild --night <date>` and
+     `npm run raids:replays -- --offline --night <date>`.
+   The Discord link is `#/moistlogs/<date>-<raid>`. Parses are estimates
+   (self-test on 14 Oct Naxx: DPS 4 points off on average, healers 7, tanks 10).
+   If the real Warcraft Logs report shows up later, remove the MOIST entry
+   from data/wcl/reports.json (and its files) so the night isn't counted twice.
 2. `npm run raids:fair` rebuilds the "Fair parse" files (src/raids/data/fair/,
    the just-for-fun adjusted parses on the night-boss Performance tab). It reads
    each new night's full log once (cached in data/fair-cache/, git-ignored),

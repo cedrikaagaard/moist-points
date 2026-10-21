@@ -35,7 +35,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [step, setStep] = useState("engine");
   const { view, param, sub } = useHashRoute();
-  const standalone = view === "changelog" || view === "home" || view.startsWith("raid"); // pages that don't need the SR data
+  const standalone = view === "changelog" || view === "home" || view.startsWith("raid") || view === "moistlogs"; // pages that don't need the SR data
   const hasPageSearch = view === "points" || view === "players" || view === "history";
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function App() {
       <main className="content">
         {view === "changelog" && <Changelog />}
         {view === "home" && <Home data={data} />}
-        {view.startsWith("raid") && (
+        {(view.startsWith("raid") || view === "moistlogs") && (
           <Suspense fallback={null}>
             <RaidsView view={view} param={param} sub={sub} />
           </Suspense>
