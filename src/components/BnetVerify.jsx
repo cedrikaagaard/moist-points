@@ -10,9 +10,23 @@ import { rosterOf, classColor, specIcon } from "../lib/roster.js";
 
 const BNET_BLUE = "#148eff";
 
+// Back from Blizzard with an OK, but the browser didn't keep the login cookie.
+function loginLost(verified) {
+  const q = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
+  return q.get("bnet") === "ok" && !verified;
+}
+
 function loginError() {
   const q = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   return q.get("bnet") === "error" ? q.get("reason") || "unknown error" : null;
+}
+
+function LoginError({ error }) {
+  return (
+    <div className="bnet-error">
+      Battle.net login didn't work: {error}. Try again, and if it keeps failing, screenshot this and send it in the guild Discord.
+    </div>
+  );
 }
 
 export function BnetButton({ children = "Log in with Battle.net" }) {
@@ -67,7 +81,7 @@ export function BnetLogin() {
           review: what you did well, what to fix, and when the wipe was your fault. Only you can read yours.
         </div>
       </div>
-      {error && <div className="bnet-error">Battle.net login didn't work ({error}). Try again?</div>}
+      {error && <LoginError error={error} />}
       <BnetButton />
       <div className="bnet-sub">All your characters at once, no typing.</div>
       <WhatWeCollect />
@@ -79,8 +93,18 @@ export function BnetLogin() {
 export function AccountBar() {
   const id = useIdentity();
   if (id.loading) return null;
+  const error = loginError();
+  const lost = loginLost(id.verified);
   if (!id.verified)
     return (
+      <>
+      {error && <LoginError error={error} />}
+      {lost && (
+        <div className="bnet-error">
+          Blizzard said yes, but your browser didn't keep the login. Allow cookies for this site, or open it in your normal browser instead of
+          Discord's built-in one, and try again. Still stuck? Screenshot this and send it in the guild Discord. <code>[COOKIE-LOST]</code>
+        </div>
+      )}
       <div className="acct-bar acct-bar-quiet">
         <div className="acct-state">
           <span className="acct-dot off" aria-hidden="true" />
@@ -90,6 +114,7 @@ export function AccountBar() {
           <a href="/api/auth/login" className="acct-login">Log in with Battle.net</a>
         </div>
       </div>
+      </>
     );
 
   const others = id.allFiremaw.filter((n) => !id.owned.includes(n));
@@ -121,7 +146,13 @@ export function AccountBar() {
             </button>
           );
         })}
-        {id.owned.length === 0 && <span className="muted">No characters on Firemaw on this Battle.net account.</span>}
+        {id.owned.length === 0 && (
+          <span className="muted">
+            Logged in, but none of the {id.total || 0} Classic character{id.total === 1 ? "" : "s"} on this Battle.net account are in Moist's raid logs
+            {id.others.length ? ` (realms: ${id.others.join(", ")})` : ""}. If your raider is on another Battle.net account, log out and log in with that one.
+            Otherwise screenshot this and send it in the guild Discord. <code>[NO-GUILD-CHARS]</code>
+          </span>
+        )}
       </div>
       <div className="acct-end">
         {others.length > 0 && <span className="muted" title={others.join(", ")}>+{others.length} not in the raid logs</span>}
@@ -142,7 +173,7 @@ export function LockedReviews() {
           An AI has read the logs of your raids and has opinions. A personal review per raid: what went well, what to fix,
           and who to blame. Log in with Battle.net to prove this is you; nobody else can read yours.
         </p>
-        {error && <div className="bnet-error">Battle.net login didn't work ({error}). Try again?</div>}
+        {error && <LoginError error={error} />}
         <WhatWeCollect />
       </div>
       <div className="acct-locked-cta">

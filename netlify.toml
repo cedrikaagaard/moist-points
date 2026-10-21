@@ -12,4 +12,4 @@
 
 # The private player reviews are read by the auth function (never shipped in the site).
 [functions]
-  included_files = ["data/reviews/**"]
+  included_files = ["data/reviews/**", "data/raider-realms.json"]

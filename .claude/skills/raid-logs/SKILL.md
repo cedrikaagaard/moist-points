@@ -55,7 +55,9 @@ route in `src/App.jsx`). Never touch the SR-points side (the SQLite database,
    refits the model from all nights and writes one file per raid. No API calls.
    How it works and what it adjusts for: the header of scripts/raids/fair.mjs.
    Then `npm run raids:biggles` updates the home page's Hall of Shame (who
-   killed Mr. Bigglesworth, from the full logs).
+   killed Mr. Bigglesworth, from the full logs), and `npm run raids:realms`
+   refreshes data/raider-realms.json, which the Battle.net login uses to know
+   which characters are guild characters (the guild raids cross-realm).
 3. Sanity-check with `npm run raids:history`. Look for silly numbers, such as
    a night with 60+ raiders (two groups logged under the guild) or deaths
    counted twice.

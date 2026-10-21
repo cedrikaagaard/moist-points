@@ -26,3 +26,4 @@ data/fair-cache/
 
 # raw combat logs (rawlog.mjs input)
 WoWCombatLog*.txt
+parses-*.png

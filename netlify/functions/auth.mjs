@@ -39,7 +39,10 @@ export default async (req) => {
     if (route === "/api/reviews") return reviews(req);
   } catch (e) {
     console.error(e);
-    return redirect(`/?bnet=error&reason=${encodeURIComponent(e.message.slice(0, 80))}#/me`, [clear(STATE)]);
+    // "[CODE] what happened", code first so it survives the length cap
+    const m = e.message.match(/\s*\[([A-Z0-9-]+)\]$/);
+    const reason = m ? `[${m[1]}] ${e.message.slice(0, m.index)}` : `[ERROR] ${e.message}`;
+    return redirect(`/?bnet=error&reason=${encodeURIComponent(reason.slice(0, 160))}#/me`, [clear(STATE)]);
   }
   return new Response("Not found", { status: 404 });
 };
@@ -58,8 +61,10 @@ function login(url) {
 
 async function callback(req, url) {
   const state = readCookie(req, STATE);
-  if (!state || state !== url.searchParams.get("state")) throw new Error("login expired, try again");
-  if (url.searchParams.get("error")) throw new Error(url.searchParams.get("error"));
+  // Error texts end in a short code, so a screenshot says which step failed.
+  if (!state) throw new Error("the login cookie was missing when Blizzard sent you back (blocked cookies, or a different browser than you started in) [STATE-MISSING]");
+  if (state !== url.searchParams.get("state")) throw new Error("the login took too long or was started twice [STATE-MISMATCH]");
+  if (url.searchParams.get("error")) throw new Error(`Blizzard said: ${url.searchParams.get("error_description") || url.searchParams.get("error")} [BNET]`);
 
   const tok = await fetch(TOKEN, {
     method: "POST",
@@ -69,30 +74,37 @@ async function callback(req, url) {
     },
     body: new URLSearchParams({ grant_type: "authorization_code", code: url.searchParams.get("code") || "", redirect_uri: `${url.origin}/api/auth/callback` }),
   });
-  if (!tok.ok) throw new Error(`token ${tok.status}`);
+  if (!tok.ok) throw new Error(`Blizzard wouldn't hand over the login (${tok.status}) [TOKEN-${tok.status}]`);
   const { access_token } = await tok.json();
 
   const prof = await fetch(PROFILE, { headers: { Authorization: `Bearer ${access_token}` } });
   // 404 = the account has no Classic Era characters at all.
-  if (!prof.ok && prof.status !== 404) throw new Error(`profile ${prof.status}`);
+  if (!prof.ok && prof.status !== 404) throw new Error(`Blizzard's character list failed (${prof.status}) [PROFILE-${prof.status}]`);
   const data = prof.ok ? await prof.json() : { wow_accounts: [] };
-  const characters = (data.wow_accounts || []).flatMap((a) =>
+  const all = (data.wow_accounts || []).flatMap((a) =>
     (a.characters || []).map((c) => ({
       name: c.name,
       realm: c.realm?.slug || "",
       class: c.playable_class?.name?.en_GB || c.playable_class?.name || null,
       level: c.level ?? null,
-      faction: c.faction?.type || null,
     }))
   );
-  const session = sign({ characters, exp: Date.now() + DAYS * 864e5 });
+  // Only guild characters go in the cookie: the site uses nothing else, and a
+  // whole account's list (alts on every Era, Hardcore and Season realm) can pass
+  // the browser's 4 KB cookie limit, which silently drops the login. The guild
+  // raids cross-realm, so "guild character" = a raider in the logs on that same
+  // realm, or anyone on one of the guild's realms (a recruit not logged yet).
+  const { realms, raiders } = raiderRealms();
+  const characters = all.filter((c) => raiders[c.name]?.includes(c.realm) || (realms.includes(c.realm) && !raiders[c.name]));
+  const others = [...new Set(all.filter((c) => !characters.includes(c)).map((c) => c.realm))].slice(0, 8);
+  const session = sign({ characters, total: all.length, others, exp: Date.now() + DAYS * 864e5 });
   return redirect("/?bnet=ok#/me", [cookie(SESSION, session, DAYS * 86400), clear(STATE)]);
 }
 
 function me(req) {
   const s = verify(readCookie(req, SESSION));
   const body = s
-    ? { verified: true, characters: s.characters, admin: isAdmin(s.characters) }
+    ? { verified: true, characters: s.characters, total: s.total ?? s.characters.length, others: s.others || [], admin: isAdmin(s.characters) }
     : { verified: false, characters: [], admin: false };
   return new Response(JSON.stringify(body), { headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 }
@@ -108,10 +120,19 @@ const REALM = "firemaw";
 const ADMINS = ["drikkle"];
 const isAdmin = (characters) =>
   (characters || []).some((c) => c.realm === REALM && ADMINS.includes((c.name || "").toLowerCase()));
-function reviewDir() {
+function dataPath(rel) {
   const here = path.dirname(fileURLToPath(import.meta.url));
-  const tries = [process.cwd(), process.env.LAMBDA_TASK_ROOT, here, path.resolve(here, ".."), path.resolve(here, "../..")].filter(Boolean).map((d) => path.join(d, "data/reviews"));
+  const tries = [process.cwd(), process.env.LAMBDA_TASK_ROOT, here, path.resolve(here, ".."), path.resolve(here, "../..")].filter(Boolean).map((d) => path.join(d, rel));
   return tries.find((d) => fs.existsSync(d)) || null;
+}
+const reviewDir = () => dataPath("data/reviews");
+// data/raider-realms.json (scripts/raids/realms.mjs): the guild's realms and each raider's realm(s).
+let realmCache = null;
+function raiderRealms() {
+  if (realmCache) return realmCache;
+  const f = dataPath("data/raider-realms.json");
+  realmCache = f ? JSON.parse(fs.readFileSync(f, "utf8")) : { realms: [REALM], raiders: {} };
+  return realmCache;
 }
 let cache = null;
 function allReviews() {
@@ -124,7 +145,8 @@ function reviews(req) {
   const s = verify(readCookie(req, SESSION));
   if (!s) return json({ verified: false, admin: false, reviews: [], raidsWithReviews: allReviews().length }, 401);
   const admin = isAdmin(s.characters);
-  const mine = new Set(s.characters.filter((c) => c.realm === REALM).map((c) => c.name.toLowerCase()));
+  // The cookie only holds guild characters (checked against the raiders' realms at login).
+  const mine = new Set(s.characters.map((c) => c.name.toLowerCase()));
   const out = [];
   for (const raid of allReviews()) {
     for (const [name, p] of Object.entries(raid.players || {})) {
@@ -147,9 +169,14 @@ function sign(obj) {
 function verify(value) {
   if (!value || !env("SESSION_SECRET")) return null;
   const [body, mac] = value.split(".");
-  if (!body || !mac || !crypto.timingSafeEqual(Buffer.from(mac), Buffer.from(hmac(body)))) return null;
-  const obj = JSON.parse(Buffer.from(body, "base64url").toString());
-  return obj.exp > Date.now() ? obj : null;
+  const want = Buffer.from(hmac(body || ""));
+  if (!body || !mac || Buffer.from(mac).length !== want.length || !crypto.timingSafeEqual(Buffer.from(mac), want)) return null;
+  try {
+    const obj = JSON.parse(Buffer.from(body, "base64url").toString());
+    return obj.exp > Date.now() ? obj : null;
+  } catch {
+    return null; // a cookie from an older version, or mangled: just not logged in
+  }
 }
 function hmac(s) {
   return crypto.createHmac("sha256", env("SESSION_SECRET")).update(s).digest("base64url");

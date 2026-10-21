@@ -11,7 +11,6 @@ import { useSyncExternalStore } from "react";
 import roster from "./raids/data/roster.json";
 
 const KEY = "moist:me"; // manual pick, or which verified character is active
-const REALM = "firemaw";
 
 const state = {
   manual: safeGet(),
@@ -52,7 +51,8 @@ if (typeof fetch !== "undefined") {
     .then((d) => {
       state.loading = false;
       if (d?.verified) {
-        const firemaw = (d.characters || []).filter((c) => c.realm === REALM).map((c) => c.name);
+        // The login only keeps guild characters (any realm the guild raids from).
+        const firemaw = (d.characters || []).map((c) => c.name);
         const raids = (n) => roster[n]?.nights || 0;
         // Guild characters first (the ones the raid logs know), main = most raids.
         const known = firemaw.filter((n) => roster[n]);
@@ -60,6 +60,8 @@ if (typeof fetch !== "undefined") {
         state.admin = d.admin === true;
         state.owned = (known.length ? known : firemaw).sort((a, b) => raids(b) - raids(a));
         state.allFiremaw = firemaw;
+        state.total = d.total ?? (d.characters || []).length;
+        state.others = d.others || [];
       }
       emit();
     });
@@ -95,7 +97,7 @@ export function useMe() {
 // { me, verified, admin, loading, owned: [names], allFiremaw: [names] }
 export function useIdentity() {
   useSyncExternalStore(subscribe, () => state.version);
-  return { me: activeMe(), verified: state.verified, admin: state.admin, loading: state.loading, owned: state.owned, allFiremaw: state.allFiremaw || [] };
+  return { me: activeMe(), verified: state.verified, admin: state.admin, loading: state.loading, owned: state.owned, allFiremaw: state.allFiremaw || [], total: state.total ?? 0, others: state.others || [] };
 }
 
 // Case-insensitive "is this name me?"; a verified user's alts count too.

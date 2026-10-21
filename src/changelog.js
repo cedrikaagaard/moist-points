@@ -6,6 +6,15 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.5",
+    date: "2026-10-21",
+    changes: [
+      "Battle.net login now works for raiders on every realm the guild raids from (Ashbringer, Bloodfang, Golemagg, Noggenfogger and the rest), not just Firemaw. Before, it logged you in and then found no characters.",
+      "Battle.net login fixed for accounts with lots of characters: it used to get too big for the browser and silently disappear.",
+      "When the Battle.net login fails, My Page now says what went wrong with a short code, also if you had already picked your character by hand.",
+    ],
+  },
+  {
     version: "2.6.4",
     date: "2026-10-21",
     changes: ["Reworded the line at the top of tonight's Moist logs page."],
