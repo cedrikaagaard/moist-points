@@ -8,7 +8,7 @@ import "./raids.css";
 // A line for one raid under the title, when the night earned one.
 const TAGLINE = {
   "2026-10-21-naxx":
-    "Warcraft Logs went down before the first pull. So did Skoomael: one Gift of the Wild on Sabrina at 19:44, cast from outside the raid, and that is his entire night in the combat log. Warcraft Logs at least had a status page.",
+    "Warcraft Logs went down tonight, which makes it the second thing in this guild known for not showing up when the raid needs it. Skooma still holds the title. Warcraft Logs at least has a status page.",
 };
 
 export function MoistLogsHero({ night }) {
