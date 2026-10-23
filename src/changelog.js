@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.9",
+    date: "2026-10-23",
+    changes: ["Personal reviews for Friday's Blackwing Lair and Molten Core (23 Oct). Log in with Battle.net on My Page to read yours."],
+  },
+  {
     version: "2.6.8",
     date: "2026-10-23",
     changes: [
