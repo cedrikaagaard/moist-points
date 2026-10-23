@@ -1,0 +1,43 @@
+{
+  "night": "2026-10-23-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-23T21:30:00Z",
+  "headline": "Blackwing Lair in 33:00, the guild's fastest clear, eight bosses and no wipes",
+  "mvp": {
+    "player": "Künigünde",
+    "headline": "most healing on three bosses and 11 Chromaggus afflictions cleansed",
+    "why": [
+      "First of the healers on Razorgore, Vaelastrasz (33k in 30 seconds) and Firemaw, second on Broodlord, third on Ebonroc, Flamegor and Nefarian",
+      "11 Brood Afflictions cleansed on Chromaggus, tied for the most with Norgewian",
+      "Two Fear Wards on Nefarian"
+    ],
+    "also": [
+      { "player": "Gertggs", "text": "most damage on Firemaw, Ebonroc and Nefarian (148k), second on Chromaggus and Flamegor" },
+      { "player": "Tochopolvo", "text": "most damage on Vaelastrasz (70k) and Chromaggus (123k)" },
+      { "player": "Punintended", "text": "6 Tranquilizing Shots across Flamegor and Chromaggus, with Zbleh taking the rest" }
+    ]
+  },
+  "overview": [
+    "8 of 8 in 33:00, 23 seconds under the guild's previous best Blackwing Lair (33:23) and 14 minutes under the usual night (47:34). Ebonroc (0:45) equalled the guild record and Firemaw (0:44) was a second off it. One boss death all night.",
+    "Fast everywhere: Nefarian in 1:34 against a usual 2:27, Chromaggus 1:21 against 1:57, Firemaw 0:44 against 1:41. The median parse on Nefarian was 88, where the guild usually sits around 65.",
+    "World buffs: Razorgore and Vaelastrasz had them on only 15 of 40, then 37 had Rallying Cry and Zandalar from Broodlord on, the usual sign of buffs stored in a Chronoboon for the first two. Warchief's Blessing was on 8 to 10 raiders all night.",
+    "Skoomael came on the character the logs know him by and was top three on parses on Vaelastrasz, Broodlord, Firemaw and Flamegor, and battle-rezzed Hulldor after Lord Victor Nefarius killed him before the fight. Recorded here because it might not happen again."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50617, "text": "Nefarian in 1:34 (median 2:27) with no deaths. 0.25 fears per raider against a usual 1.3, 9 Fear Wards, and only 3 class calls landed on anyone." },
+    { "encounterId": 50613, "text": "Firemaw in 0:44, a second off the guild record (median 1:41). Flame Buffet stacks at 6.6 per raider, half the usual 13.6." },
+    { "encounterId": 50614, "text": "Ebonroc in 0:45, equal to the guild record." },
+    { "encounterId": 50616, "text": "Chromaggus in 1:21 (median 1:57) with no deaths. 51 afflictions cleansed: Künigünde and Norgewian 11 each, Elozia 10." }
+  ],
+  "bosses": [
+    { "encounterId": 50610, "name": "Razorgore the Untamed", "notes": [ { "tone": "good", "text": "0:24 on the dragon (median 0:28), no deaths." } ] },
+    { "encounterId": 50611, "name": "Vaelastrasz the Corrupt", "notes": [ { "tone": "good", "text": "0:30 (median 0:46), no deaths, 33k raid DPS against a usual 22k. Tochopolvo 70k." }, { "tone": "info", "text": "Cleave did 38k, 17% of the damage taken, against about 2.5% on a usual kill." } ] },
+    { "encounterId": 50612, "name": "Broodlord Lashlayer", "notes": [ { "tone": "bad", "text": "Hjärterkung, tanking, went from 87% to dead in under two seconds at 0:08, with a Mortal Strike among the hits. The only boss death of the night." }, { "tone": "good", "text": "0:40 (median 0:50) regardless. Blast Wave hit 18 raiders, half the usual rate." } ] },
+    { "encounterId": 50613, "name": "Firemaw", "notes": [ { "tone": "good", "text": "0:44, a second off the record. Gertggs 66k, Tochopolvo 63k." } ] },
+    { "encounterId": 50614, "name": "Ebonroc", "notes": [ { "tone": "good", "text": "0:45, equal to the guild record. Gertggs 71k." } ] },
+    { "encounterId": 50615, "name": "Flamegor", "notes": [ { "tone": "good", "text": "0:52 (median 1:05). Frenzy came up 5 times; Punintended and Zbleh tranquilized 4 of them." } ] },
+    { "encounterId": 50616, "name": "Chromaggus", "notes": [ { "tone": "good", "text": "1:21 (median 1:57), no deaths, 51 afflictions cleansed. Tochopolvo did 123k." }, { "tone": "info", "text": "Corrosive Acid did 21k, a quarter of the damage taken; the breaths change from week to week." } ] },
+    { "encounterId": 50617, "name": "Nefarian", "notes": [ { "tone": "good", "text": "1:34 (median 2:27), no deaths, median parse 88. Gertggs 148k, Tochopolvo 137k." }, { "tone": "good", "text": "9 Fear Wards: Ishilly 3, Norgewian and Künigünde 2." } ] }
+  ]
+}

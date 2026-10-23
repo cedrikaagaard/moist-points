@@ -1,0 +1,45 @@
+{
+  "night": "2026-10-23-mc",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-23T21:35:00Z",
+  "headline": "Molten Core in 31:56, thirteen minutes under the usual night, with one boss death",
+  "mvp": {
+    "player": "Gertggs",
+    "headline": "most damage on five of the ten bosses, and nearly double the next on Gehennas",
+    "why": [
+      "First on Lucifron, Magmadar, Gehennas, Baron Geddon and Sulfuron, second on Golemagg and Ragnaros, third on Garr",
+      "51k on Gehennas in 25 seconds, where the next best did 28k",
+      "Also the most damage in Blackwing Lair on Firemaw, Ebonroc and Nefarian earlier the same night"
+    ],
+    "also": [
+      { "player": "Thormund", "text": "71 dispels, 5 Impending Dooms on Lucifron and 3 Ignite Manas on Geddon" },
+      { "player": "Holiphucheal", "text": "73 dispels, the most in the raid, after swapping in for Molten Core" },
+      { "player": "Tochopolvo", "text": "most damage on Garr and Ragnaros (73k), and interrupted a Flamewaker Priest's heal on Sulfuron" }
+    ]
+  },
+  "overview": [
+    "10 of 10 in 31:56, against a usual 44:51 and the guild's best of 29:44. One boss death, Osinir on Majordomo, and one on trash. Every boss went down on the first pull.",
+    "The curses were handled: 30 Lucifron's Curses (Elozia and Orbywan 8 each), 34 Gehennas' Curses (Cladá 8) and 17 Shazzrah's Curses removed, and 15 Impending Dooms dispelled on Lucifron.",
+    "World buffs were thinner than in Blackwing Lair: 36 with Rallying Cry at Lucifron, Songflower on 25 and down to 2 by Ragnaros, Warchief's Blessing on 8.",
+    "A few characters swapped between Blackwing Lair and Molten Core (Fluffycatto to Sneakycatto among them), so 42 names are listed with 40 at every boss."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50663, "text": "Lucifron in 0:28 (median 0:37). 30 curses and 15 Impending Dooms removed." },
+    { "encounterId": 50672, "text": "Ragnaros in 0:49 (median 1:08), no deaths. Macharius took 43 Elemental Fires and Birkler 31." },
+    { "encounterId": 50671, "text": "Majordomo in 0:42 (median 1:10)." },
+    { "encounterId": 50668, "text": "Baron Geddon in 0:32 (median 0:46). Inferno hit 1.4 times per raider against a usual 2.2." }
+  ],
+  "bosses": [
+    { "encounterId": 50663, "name": "Lucifron", "notes": [ { "tone": "good", "text": "0:28 (median 0:37), no deaths. Thormund dispelled 5 Impending Dooms, Holiphucheal 4." }, { "tone": "info", "text": "Birkler was mind-controlled twice, Hjärterkung once." } ] },
+    { "encounterId": 50664, "name": "Magmadar", "notes": [ { "tone": "info", "text": "0:44 (median 0:47), no deaths." }, { "tone": "bad", "text": "Lava Breath did 49k, over half of all damage taken; a usual kill has none in the log. Künigünde (9) and Icyvains (8) took all 17 Lava Bomb fire hits." } ] },
+    { "encounterId": 50665, "name": "Gehennas", "notes": [ { "tone": "good", "text": "0:25 (median 0:33). Gertggs 51k, almost twice the next. 34 curses removed." }, { "tone": "info", "text": "Rain of Fire hit 31 raiders 34 times, half the usual rate." } ] },
+    { "encounterId": 50666, "name": "Garr", "notes": [ { "tone": "good", "text": "0:31 (median 0:47), no deaths. The night's one trash death was Gowned, to a Firesworn's Eruption." } ] },
+    { "encounterId": 50668, "name": "Baron Geddon", "notes": [ { "tone": "good", "text": "0:32 (median 0:46), no deaths. Ignite Mana dispelled 13 times, Gallahan 4." }, { "tone": "info", "text": "Groomz was the Living Bomb once; it caught Norgewian." } ] },
+    { "encounterId": 50667, "name": "Shazzrah", "notes": [ { "tone": "good", "text": "0:18 (median 0:21). 17 curses removed." }, { "tone": "info", "text": "None of his 3 Arcane Explosions were interrupted; they hit 20 raiders 54 times." } ] },
+    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [ { "tone": "good", "text": "0:37 (median 0:50), no deaths. Terrora, Tochopolvo and Yulepunch each kicked a Dark Mending." }, { "tone": "info", "text": "5 of the priests' 8 Dark Mendings went through and healed them for 81k, against 29k on a usual kill." } ] },
+    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [ { "tone": "good", "text": "0:42 (median 0:55), no deaths." } ] },
+    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [ { "tone": "good", "text": "0:42 (median 1:10)." }, { "tone": "bad", "text": "Osinir died at 0:31 to a Flamewaker Healer's melee, 87% to 0 over seven seconds, the night's only boss death." }, { "tone": "info", "text": "Blast Wave did 42k, 17% of the damage taken against 6% on a usual kill, and the Aegis of Ragnaros healed Majordomo for 32k." } ] },
+    { "encounterId": 50672, "name": "Ragnaros", "notes": [ { "tone": "good", "text": "0:49 (median 1:08), no deaths. Tochopolvo 73k, Gertggs 64k." }, { "tone": "info", "text": "Lava Burst hit 37 raiders 117 times, a bit above the usual rate." } ] }
+  ]
+}

@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.8",
+    date: "2026-10-23",
+    changes: [
+      "New raids: Friday's Blackwing Lair (the guild's fastest clear, 33:00) and Molten Core (23 Oct), with AI analyses and Fair parses.",
+      "The Moist logs page for 21 Oct now says so once the real Warcraft Logs report has replaced the raw-log version.",
+    ],
+  },
+  {
     version: "2.6.7",
     date: "2026-10-21",
     changes: ["Rewrote one of tonight's Naxxramas reviews."],
