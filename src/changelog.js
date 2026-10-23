@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.10",
+    date: "2026-10-23",
+    changes: [
+      "21 Oct Naxxramas now uses the real Warcraft Logs report instead of the raw combat log: real parses, and the Moist logs page says Warcraft Logs is back. The analysis and reviews are updated where the numbers changed.",
+      "Raiders are now people who were in the raid group on a boss pull, not everyone Warcraft Logs saw nearby.",
+    ],
+  },
+  {
     version: "2.6.9",
     date: "2026-10-23",
     changes: ["Personal reviews for Friday's Blackwing Lair and Molten Core (23 Oct). Log in with Battle.net on My Page to read yours."],

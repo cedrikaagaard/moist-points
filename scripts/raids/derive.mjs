@@ -77,6 +77,7 @@ export function deriveLog(night, report, keep = null) {
       bossCasts: [],
       bossHp: [],
       auras: {}, // player -> buffs at the pull (from the combatantinfo snapshot)
+      grouped: new Set(), // players with a snapshot: the game only writes one for your own group/raid
       recent: new Map(), // player -> last RECAP_MS of damage/heals, for death recaps
     });
   const bossIds = new Map();
@@ -180,6 +181,7 @@ export function deriveLog(night, report, keep = null) {
       case "combatantinfo": {
         // Buffs each raider had at the pull: [name, icon] (consumables, world buffs).
         const p = nameOf(e.sourceID);
+        if (p) s.grouped.add(p);
         if (p && (e.auras || []).length) s.auras[p] = e.auras.map((x) => [x.name, x.icon]);
         break;
       }

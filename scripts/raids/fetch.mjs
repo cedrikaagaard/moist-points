@@ -497,8 +497,11 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
   for (const r of used) {
     const names = new Map(players(r).map((a) => [a.id, a]));
     for (const a of players(r)) classOf.set(a.name, a.subType);
+    // Warcraft Logs lists anyone it saw near the raid; with the full log, a raider
+    // is someone with a pull snapshot on some boss tonight (swaps still count).
+    const grouped = groupedOf(r, evOf, fights);
     for (const f of fights.filter((f) => f.report === r)) {
-      for (const id of f.friendlyPlayers || []) if (names.has(id)) present.add(names.get(id).name);
+      for (const id of f.friendlyPlayers || []) if (names.has(id) && (!grouped || grouped.has(names.get(id).name))) present.add(names.get(id).name);
     }
     const pd = r.players?.data?.playerDetails || {};
     for (const [role, list] of [["tank", pd.tanks], ["healer", pd.healers], ["dps", pd.dps]]) {
@@ -651,7 +654,8 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
     }
     for (const f of own.filter((f) => f.encounterID)) {
       const pb = bossSlot(perBoss, f.encounterID);
-      for (const id of f.friendlyPlayers || []) if (isPlayer(id)) pb.present.add(actor.get(id).name);
+      const snap = evOf.get(r)?.fights?.[f.id]?.grouped;
+      for (const id of f.friendlyPlayers || []) if (isPlayer(id) && (!snap?.size || snap.has(actor.get(id).name))) pb.present.add(actor.get(id).name);
     }
     // Parses: Warcraft Logs' rank % per player on each kill (dps, or hps for healers).
     for (const rk of (x.rankings || r.rankings)?.data || []) {
@@ -767,6 +771,16 @@ async function buildRaid(date, part, reports, evOf, rankingsOf) {
 }
 
 // ---------- helpers ----------
+
+// Players with a pull snapshot (combatantinfo) on any of this log's boss fights,
+// or null when the full log isn't there or has no snapshots.
+function groupedOf(r, evOf, fights) {
+  const d = evOf.get(r);
+  if (!d) return null;
+  const set = new Set();
+  for (const f of fights.filter((f) => f.report === r && f.encounterID)) for (const n of d.fights?.[f.id]?.grouped || []) set.add(n);
+  return set.size ? set : null;
+}
 
 // Role from casts. Names as Warcraft Logs shows them for Classic Era, which
 // often uses a later expansion's name: bear Swipe is "Swipe (Bear)", Holy

@@ -2,26 +2,26 @@
   "night": "2026-10-21-naxx",
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-10-21T20:55:00Z",
-  "headline": "Guild records on Thaddius and the Four Horsemen, on a night that lost its time to two trash wipes and a Sapphiron restart",
+  "headline": "A guild record on Thaddius and an equal one on the Four Horsemen, on a night that lost its time to two trash wipes and a Sapphiron restart",
   "mvp": {
     "player": "Etowa",
-    "headline": "the raid's dispeller: 77 dispels, ten Life Drains on Sapphiron and a Rebirth",
+    "headline": "the raid's dispeller: 66 dispels, ten Life Drains on Sapphiron and a Rebirth",
     "why": [
-      "77 dispels, the most in the raid, 18 more than the next (Osinir and Sixto, 59 each)",
+      "66 dispels, the most in the raid, 11 more than the next (Sixto, 55)",
       "Removed 10 Life Drains on the Sapphiron kill and 5 Curses of the Plaguebringer on Noth",
       "Brought Apoutchou back with Rebirth"
     ],
     "also": [
-      { "player": "Snotspat", "text": "417k on Thaddius and 217k on Patchwerk, the most damage in the raid on both" },
+      { "player": "Corvere", "text": "parse 99 on Thaddius, 98 on Faerlina and 96 on the Horsemen, and 11 interrupts" },
       { "player": "Macharius", "text": "took 36 of the 51 Hateful Strikes on Patchwerk, Fenhir the other 15, nobody died" },
       { "player": "Fluffycatto", "text": "13 interrupts, the most in the raid, 6 of them Kel'Thuzad's Frostbolts" }
     ]
   },
   "overview": [
-    "15 of 15 in 2:21:48, ten minutes over the usual night (2:11:25). Two guild records: Thaddius in 2:19, ten seconds under the old best of 2:29, on 55k raid DPS against a usual 32k, and the Four Horsemen in 3:53, one second under. Patchwerk (2:01 against a median 2:29), Grobbulus (1:17 against 1:38) and Faerlina (0:52 against 1:05) were all well under the usual too.",
-    "The time went elsewhere. Two trash wipes after Gothik, 21 deaths at 20:57 and 37 at 21:01, and a run back from the graveyard. Earlier, six died on the spider trash before Anub'Rekhan, Drikkle first, and Drikkle died again to the next pack of Necro Stalkers. Then a Sapphiron pull that was over in 38 seconds, and 22 minutes before the next one. 77 trash deaths in all, against 15 on 14 Oct.",
+    "15 of 15 in 2:21:48, ten minutes over the usual night (2:11:25). A guild record on Thaddius, 2:16 against the old best of 2:29, on 56k raid DPS against a usual 32k, and the Four Horsemen in 3:54, equal to the record. Patchwerk (2:01 against a median 2:29), Grobbulus (1:17 against 1:38) and Faerlina (0:52 against 1:05) were all well under the usual too.",
+    "The time went elsewhere. Two trash wipes after Gothik, 21 deaths at 20:57 and 37 at 21:01, and a run back from the graveyard. Earlier, six died on the spider trash before Anub'Rekhan, Drikkle first, and Drikkle died again to the next pack of Necro Stalkers. Then a Sapphiron pull that was over in 38 seconds, and 22 minutes before the next one. 72 trash deaths in all, against 15 on 14 Oct.",
     "World buffs: at Anub'Rekhan 38 of 40 had Rallying Cry and Zandalar, 37 Songflower, 20 Warchief's Blessing. As on 14 Oct the snapshots show almost none at Razuvious and Gothik (2 and 1), the usual sign of buffs stored in a Chronoboon, and they were back on 33 at the Horsemen. Warchief's Blessing was gone by Loatheb and Songflower by Sapphiron.",
-    "Warcraft Logs was down tonight, so this raid was read from the raw combat log. The parses are rough estimates from the guild's own past parses, not Warcraft Logs rankings, so the analysis leaves them out."
+    "Warcraft Logs was down on the night, so this was first written from the raw combat log. The real Warcraft Logs report has replaced it since, parses included; the numbers here are from the real report."
   ],
   "wipes": [
     {
@@ -40,8 +40,8 @@
     }
   ],
   "wentWell": [
-    { "encounterId": 51120, "text": "Thaddius in 2:19, a guild record (old best 2:29, median 3:57), on 55k raid DPS. Chain Lightning hit 2.5 times per raider against a usual 6.7, and nobody died to a charge." },
-    { "encounterId": 51121, "text": "The Four Horsemen in 3:53, one second under the guild record. 505 Marks, 12.6 per raider against a usual 18.6, and 30 Meteors soaked by 15 raiders." },
+    { "encounterId": 51120, "text": "Thaddius in 2:16, a guild record (old best 2:29, median 3:57), on 56k raid DPS. Chain Lightning hit 2.5 times per raider against a usual 6.7, and nobody died to a charge." },
+    { "encounterId": 51121, "text": "The Four Horsemen in 3:54, equal to the guild record. 505 Marks, 12.6 per raider against a usual 18.6, and 30 Meteors soaked by 15 raiders." },
     { "encounterId": 51118, "text": "Patchwerk in 2:01 (median 2:29) with no deaths. Macharius took 36 Hateful Strikes and Fenhir 15." },
     { "encounterId": 51119, "text": "Sapphiron on the second pull in 3:49 with no deaths. 71 Life Drains removed: Utzemekanism 16, Drikkle and Osinir 15 each, Etowa 10, Caesartje 9." },
     { "encounterId": 51114, "text": "21 of Kel'Thuzad's 22 Frostbolts interrupted: Fluffycatto 6, Tochopolvo, Bruceli and Corvere 4 each." }
@@ -50,13 +50,13 @@
     { "encounterId": 51107, "name": "Anub'Rekhan", "notes": [ { "tone": "good", "text": "0:52 (median 1:08) with no deaths, on 40k raid DPS against a usual 31k. Impale hit 0.56 times per raider, half the usual." } ] },
     { "encounterId": 51110, "name": "Grand Widow Faerlina", "notes": [ { "tone": "good", "text": "0:52 (median 1:05), no deaths. Rain of Fire hit 16 times, 0.4 per raider against a usual 2.3. Yulefuel mind-controlled 3 Worshippers and Palastino cleansed 4 poisons." } ] },
     { "encounterId": 51116, "name": "Maexxna", "notes": [ { "tone": "good", "text": "1:06 (median 1:12), no deaths, 6 Web Wraps." }, { "tone": "info", "text": "Poison Shock did 46k, 22% of the damage taken, against about 5% on a usual kill." } ] },
-    { "encounterId": 51118, "name": "Patchwerk", "notes": [ { "tone": "good", "text": "2:01 (median 2:29, best 1:49), no deaths. Macharius soaked 36 Hateful Strikes and Fenhir 15. Snotspat did 217k, the most in the raid." } ] },
+    { "encounterId": 51118, "name": "Patchwerk", "notes": [ { "tone": "good", "text": "2:01 (median 2:29, best 1:49), no deaths. Macharius soaked 36 Hateful Strikes and Fenhir 15." } ] },
     { "encounterId": 51111, "name": "Grobbulus", "notes": [ { "tone": "good", "text": "1:17 (median 1:38), no deaths. Sixto dispelled 4 of the 5 Mutating Injections." }, { "tone": "info", "text": "Palastino stood in a poison cloud 6 times, 6 of the 8 cloud hits in the raid." } ] },
     { "encounterId": 51108, "name": "Gluth", "notes": [ { "tone": "good", "text": "1:01 (median 1:14), no deaths. Gluth's Frenzy came up 6 times and Punintended and Speldosan tranquilized 5 of them, 3 shots each." } ] },
-    { "encounterId": 51120, "name": "Thaddius", "notes": [ { "tone": "good", "text": "2:19, the guild's fastest Thaddius (old best 2:29), on 55k raid DPS against a usual 32k. No deaths; a usual kill has two to charges. Snotspat 417k, Valethia 369k." } ] },
+    { "encounterId": 51120, "name": "Thaddius", "notes": [ { "tone": "good", "text": "2:16, the guild's fastest Thaddius (old best 2:29), on 56k raid DPS against a usual 32k. No deaths; a usual kill has two to charges. Corvere parse 99." } ] },
     { "encounterId": 51113, "name": "Instructor Razuvious", "notes": [ { "tone": "good", "text": "1:31 (median 1:50). Mornie and Yulefuel controlled two Understudies each." }, { "tone": "bad", "text": "Thornhild died to Razuvious's melee at 1:02, 23k in one hit." } ] },
     { "encounterId": 51109, "name": "Gothik the Harvester", "notes": [ { "tone": "info", "text": "5:05 (median 5:07). Three deaths: Caesartje to an Unrelenting Deathknight's Shadow Mark at 1:21, Alanakos and Tochopolvo to Spectral Horses at 3:10 and 3:20." }, { "tone": "good", "text": "All 4 Shadow Bolt Volleys interrupted. Utzemekanism did the most damage, 126k." } ] },
-    { "encounterId": 51121, "name": "The Four Horsemen", "notes": [ { "tone": "good", "text": "3:53, a second under the guild record. 12.6 Marks per raider against a usual 18.6." }, { "tone": "info", "text": "Three deaths: Sabrina to Mograine's Righteous Fire and melee at 1:46, Alanakos to a Mark at 1:55, Thornhild to a Void Zone at 3:38." } ] },
+    { "encounterId": 51121, "name": "The Four Horsemen", "notes": [ { "tone": "good", "text": "3:54, equal to the guild record. 12.6 Marks per raider against a usual 18.6." }, { "tone": "info", "text": "Three deaths: Sabrina to Mograine's Righteous Fire and melee at 1:46, Alanakos to a Mark at 1:55, Thornhild to a Void Zone at 3:38." } ] },
     { "encounterId": 51117, "name": "Noth the Plaguebringer", "notes": [ { "tone": "good", "text": "1:07 (median 1:22), no deaths. 24 Curses of the Plaguebringer removed: Utzemekanism 6, Osinir and Etowa 5, Caesartje and Drikkle 4." } ] },
     { "encounterId": 51112, "name": "Heigan the Unclean", "notes": [ { "tone": "good", "text": "1:16 (median 1:28), no deaths. 38 Decrepit Fevers cured, Eternalsky 8, Yulefuel and Woness 7." }, { "tone": "info", "text": "Mana Burn did 33k, almost a third of the damage taken; a usual kill has none in the log." } ] },
     { "encounterId": 51115, "name": "Loatheb", "notes": [ { "tone": "good", "text": "3:03 (median 3:08), no deaths. 50 spores taken by 31 raiders." } ] },
