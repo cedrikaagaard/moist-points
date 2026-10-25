@@ -56,9 +56,6 @@ function login(url) {
   auth.searchParams.set("response_type", "code");
   auth.searchParams.set("scope", "wow.profile");
   auth.searchParams.set("state", state);
-  // After a refused permission: ask Blizzard to show its permission screen again
-  // (standard OAuth; harmless if Blizzard ignores it, the manual steps still apply).
-  if (url.searchParams.get("reconsent")) auth.searchParams.set("prompt", "consent");
   return redirect(auth.toString(), [cookie(STATE, state, 600)]);
 }
 

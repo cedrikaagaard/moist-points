@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.13",
+    date: "2026-10-25",
+    changes: ["Removed the \"ask Blizzard to show the permissions again\" link from the login help: Blizzard ignores it. Removing the site on Blizzard's Connections page is the way."],
+  },
+  {
     version: "2.6.12",
     date: "2026-10-25",
     changes: ["The Battle.net login help now links straight to Blizzard's Connections page, where you can remove the site to reset its permissions."],
