@@ -30,8 +30,8 @@ function LoginError({ error }) {
       {permission ? (
         <ol className="bnet-steps">
           <li>
-            Blizzard remembers that choice, so logging in again won't ask. Go to <a href="https://account.battle.net/connections" target="_blank" rel="noreferrer">account.battle.net/connections</a> (or
-            Security, Authorized applications), and remove this site.
+            Blizzard remembers that choice, so logging in again won't ask. Go to <a href="https://account.battle.net/connections" target="_blank" rel="noreferrer">account.battle.net/connections</a> , and under
+            <b>Authorized Applications</b> remove <b>Moist</b>.
           </li>
           <li>Then log in here again, leaving <b>World of Warcraft profile</b> ticked.</li>
           <li>Still failing? Screenshot this and send it in the guild Discord.</li>
