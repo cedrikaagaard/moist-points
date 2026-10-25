@@ -22,9 +22,26 @@ function loginError() {
 }
 
 function LoginError({ error }) {
+  // Blizzard remembers a refused permission, so "try again" alone won't fix these two.
+  const permission = /\[(SCOPE|PROFILE-403)\]/.test(error);
   return (
     <div className="bnet-error">
-      Battle.net login didn't work: {error}. Try again, and if it keeps failing, screenshot this and send it in the guild Discord.
+      Battle.net login didn't work: {error}.
+      {permission ? (
+        <ol className="bnet-steps">
+          <li>
+            <a href="/api/auth/login?reconsent=1">Log in again and ask Blizzard to show the permissions</a>, and leave <b>World of Warcraft profile</b> ticked.
+          </li>
+          <li>
+            If Blizzard doesn't show them: go to <a href="https://account.battle.net/" target="_blank" rel="noreferrer">account.battle.net</a>, open <b>Connections</b> (or
+            Security, Authorized applications), and remove this site.
+          </li>
+          <li>Then log in here again, leaving <b>World of Warcraft profile</b> ticked.</li>
+          <li>Still failing? Screenshot this and send it in the guild Discord.</li>
+        </ol>
+      ) : (
+        <> Try again, and if it keeps failing, screenshot this and send it in the guild Discord.</>
+      )}
     </div>
   );
 }

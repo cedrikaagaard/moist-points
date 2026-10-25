@@ -755,6 +755,8 @@ h1, h2 {
 .bnet-btn:hover { filter: brightness(1.1); transform: translateY(-1px); color: #fff; }
 .bnet-sub { font-size: 12.5px; color: var(--muted); }
 .bnet-error { color: #f08791; font-size: 13px; }
+.bnet-steps { margin: 6px 0 0; padding-left: 18px; line-height: 1.5; }
+.bnet-steps a { color: inherit; text-decoration: underline; }
 .bnet-privacy { font-size: 12.5px; color: var(--text-2); }
 .bnet-privacy .link-btn { font-size: 12.5px; color: var(--text-2); padding: 0; }
 .bnet-privacy ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; line-height: 1.45; }

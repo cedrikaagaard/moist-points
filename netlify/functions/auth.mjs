@@ -56,6 +56,9 @@ function login(url) {
   auth.searchParams.set("response_type", "code");
   auth.searchParams.set("scope", "wow.profile");
   auth.searchParams.set("state", state);
+  // After a refused permission: ask Blizzard to show its permission screen again
+  // (standard OAuth; harmless if Blizzard ignores it, the manual steps still apply).
+  if (url.searchParams.get("reconsent")) auth.searchParams.set("prompt", "consent");
   return redirect(auth.toString(), [cookie(STATE, state, 600)]);
 }
 
@@ -75,11 +78,19 @@ async function callback(req, url) {
     body: new URLSearchParams({ grant_type: "authorization_code", code: url.searchParams.get("code") || "", redirect_uri: `${url.origin}/api/auth/callback` }),
   });
   if (!tok.ok) throw new Error(`Blizzard wouldn't hand over the login (${tok.status}) [TOKEN-${tok.status}]`);
-  const { access_token } = await tok.json();
+  const { access_token, scope } = await tok.json();
+  // Blizzard's login page lets people untick "World of Warcraft profile", and then
+  // remembers it. Without that scope the character list is a 403.
+  if (scope != null && !String(scope).split(/[\s,]+/).includes("wow.profile"))
+    throw new Error("the World of Warcraft profile permission wasn't allowed on Blizzard's page. See the steps below [SCOPE]");
 
   const prof = await fetch(PROFILE, { headers: { Authorization: `Bearer ${access_token}` } });
   // 404 = the account has no Classic Era characters at all.
-  if (!prof.ok && prof.status !== 404) throw new Error(`Blizzard's character list failed (${prof.status}) [PROFILE-${prof.status}]`);
+  if (!prof.ok && prof.status !== 404) {
+    console.error(`profile ${prof.status} (scope: ${scope}):`, (await prof.text()).slice(0, 300));
+    if (prof.status === 403) throw new Error("Blizzard wouldn't share this account's characters. See the steps below [PROFILE-403]");
+    throw new Error(`Blizzard's character list failed (${prof.status}) [PROFILE-${prof.status}]`);
+  }
   const data = prof.ok ? await prof.json() : { wow_accounts: [] };
   const all = (data.wow_accounts || []).flatMap((a) =>
     (a.characters || []).map((c) => ({
