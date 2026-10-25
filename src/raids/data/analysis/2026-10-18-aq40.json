@@ -1,0 +1,43 @@
+{
+  "night": "2026-10-18-aq40",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-25T21:30:00Z",
+  "headline": "Twin Emperors in 2:09, twenty seconds under the guild record, and a full clear with no wipes",
+  "mvp": {
+    "player": "Wøx",
+    "headline": "most damage on Skeram, the Twin Emperors and C'Thun",
+    "why": [
+      "First on Skeram (53k), the Twin Emperors (141k, parse 99) and C'Thun (220k, parse 97)",
+      "Fourth on Silithid Royalty, third on Sartura, fifth on Ouro",
+      "The top damage on the record Twins kill"
+    ],
+    "also": [
+      { "player": "Bagayaga", "text": "most damage on Fankriss, Princess Huhuran and Ouro (108k)" },
+      { "player": "Youlloveme", "text": "most healing on Viscidus (71k), Huhuran and C'Thun (71k)" },
+      { "player": "Harrylarry", "text": "most damage on Viscidus and parses of 97 to 99 on Royalty, Huhuran, the Twins and Ouro" }
+    ]
+  },
+  "overview": [
+    "9 of 9, no wipes, 25 deaths, 16 of them on bosses. The Twin Emperors went down in 2:09, twenty seconds under the guild's best (2:29) and half the usual 4:04, and Ouro (1:13) equalled the guild record. Princess Huhuran (0:34) was a second off hers.",
+    "Viscidus was the slow one: 2:02 against a usual 1:59 and a best of 1:33, with 9 of the night's 16 boss deaths. C'Thun took 3:59 against a usual 5:16, with 6 deaths and four Rebirths during the fight.",
+    "World buffs: none on anyone at Skeram and only one raider at Viscidus, while 39 of 40 had Rallying Cry and Zandalar on the other bosses. That pattern is the usual sign of buffs stored in a Chronoboon for those two."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50715, "text": "Twin Emperors in 2:09, a guild record (old best 2:29, median 4:04). One death, Blizzard hits at a third of the usual rate, and Wøx 141k, Valethia 135k, Gertggs 128k." },
+    { "encounterId": 50716, "text": "Ouro in 1:13, equal to the guild record. One Sand Blast hit all night (Birkler), against a usual 0.6 per raider." },
+    { "encounterId": 50709, "text": "8 of Skeram's 10 Arcane Explosions interrupted, Fluffycatto 2." },
+    { "encounterId": 50717, "text": "C'Thun in 3:59 (median 5:16). Four Rebirths during the fight: Dramima on Fluffycatto, Naturelocks on Thornhild, Snoillim on Pinkcheese, Hjärterkung on Pinguwan." }
+  ],
+  "bosses": [
+    { "encounterId": 50709, "name": "The Prophet Skeram", "notes": [ { "tone": "good", "text": "0:59 (median 1:14), no deaths. 8 of 10 Arcane Explosions interrupted." } ] },
+    { "encounterId": 50710, "name": "Silithid Royalty", "notes": [ { "tone": "good", "text": "0:55 (median 1:21), no deaths. 13 raiders feared, a quarter of the usual rate." } ] },
+    { "encounterId": 50711, "name": "Battleguard Sartura", "notes": [ { "tone": "good", "text": "0:54 (median 1:10), no deaths." }, { "tone": "info", "text": "Whirlwind hit 25 raiders 224 times, a bit above the usual rate; Hjärterkung took 24 and Wøx 20." } ] },
+    { "encounterId": 50712, "name": "Fankriss the Unyielding", "notes": [ { "tone": "good", "text": "0:35 (median 0:46), no deaths. Bagayaga 64k." } ] },
+    { "encounterId": 50713, "name": "Viscidus", "notes": [ { "tone": "bad", "text": "2:02 with 9 deaths. Taurenlover went first, to Poison Shock at 1:13; then Poison Bolt Volley took Pinguwan, Wøx and Zuzul between 1:28 and 1:34, Toxin took Tirrhor at 1:35 and Poison Shock took Miniwrecker at 1:41." }, { "tone": "info", "text": "Only 5 Nature Protection Potions were used (0.13 per raider, against a usual 0.22), and one raider had world buffs at the pull." } ] },
+    { "encounterId": 50714, "name": "Princess Huhuran", "notes": [ { "tone": "good", "text": "0:34, a second off the guild record (median 0:52), no deaths. 15 Nature Protection Potions." } ] },
+    { "encounterId": 50715, "name": "Twin Emperors", "notes": [ { "tone": "good", "text": "2:09, the guild's fastest Twin Emperors. Median parse 88." }, { "tone": "info", "text": "Lebh died at 1:39 to Vek'lor's Shadow Bolt, the only death." } ] },
+    { "encounterId": 50716, "name": "Ouro", "notes": [ { "tone": "good", "text": "1:13, equal to the guild record. Bagayaga 108k, Eufrasia 104k, Thornhild 100k." } ] },
+    { "encounterId": 50717, "name": "C'Thun", "notes": [ { "tone": "good", "text": "3:59 (median 5:16). Eye Beam hit a third as often as usual." }, { "tone": "bad", "text": "Dark Glare caught Pinkcheese and Fluffycatto at 0:50 and Thornhild at 0:53, after an Eye Beam killed Pinguwan at 0:25. Ground Rupture got Pinguwan again at 2:45 and Pinkcheese at 3:16." } ] }
+  ]
+}
