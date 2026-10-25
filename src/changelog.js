@@ -8,7 +8,7 @@ export const CHANGELOG = [
   {
     version: "2.6.14",
     date: "2026-10-25",
-    changes: ["Clearer Battle.net login help: remove \"Moist\" under Authorized Applications."],
+    changes: ["Clearer Battle.net login help: remove \"Moist\" under Authorized Applications on Blizzard's Connections page."],
   },
   {
     version: "2.6.13",
