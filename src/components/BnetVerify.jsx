@@ -33,7 +33,7 @@ function LoginError({ error }) {
             <a href="/api/auth/login?reconsent=1">Log in again and ask Blizzard to show the permissions</a>, and leave <b>World of Warcraft profile</b> ticked.
           </li>
           <li>
-            If Blizzard doesn't show them: go to <a href="https://account.battle.net/" target="_blank" rel="noreferrer">account.battle.net</a>, open <b>Connections</b> (or
+            If Blizzard doesn't show them: go to <a href="https://account.battle.net/connections" target="_blank" rel="noreferrer">account.battle.net/connections</a> (or
             Security, Authorized applications), and remove this site.
           </li>
           <li>Then log in here again, leaving <b>World of Warcraft profile</b> ticked.</li>

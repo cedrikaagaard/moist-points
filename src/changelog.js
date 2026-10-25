@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.12",
+    date: "2026-10-25",
+    changes: ["The Battle.net login help now links straight to Blizzard's Connections page, where you can remove the site to reset its permissions."],
+  },
+  {
     version: "2.6.11",
     date: "2026-10-25",
     changes: ["Battle.net login: when Blizzard refuses to share your characters (usually the World of Warcraft profile permission unticked), My Page now says so and walks you through fixing it, with a button that asks Blizzard to show the permissions again."],
