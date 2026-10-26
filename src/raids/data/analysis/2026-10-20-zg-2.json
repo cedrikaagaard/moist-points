@@ -1,0 +1,40 @@
+{
+  "night": "2026-10-20-zg-2",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-26T12:00:00Z",
+  "headline": "Zul'Gurub in 37:30 with no boss deaths",
+  "mvp": {
+    "player": "Bonjour",
+    "headline": "75 dispels, the most in the raid by 30",
+    "why": [
+      "75 dispels, ahead of Palastino (45) and Gallahan (27)",
+      "Fifth of the healers or better on Jeklik, Venoxis and Mandokir",
+      "No deaths, on a night with no boss deaths at all"
+    ],
+    "also": [
+      { "player": "Wizness", "text": "most damage on Mandokir (59k) and Hakkar (77k), and 3 Delusions removed on Jin'do" },
+      { "player": "Miniwrecker", "text": "most damage on Mar'li (40k) and Thekal (57k)" },
+      { "player": "Macharius", "text": "tanked, most damage on Arlokk, and took all five of Hakkar's mind controls without anyone dying" }
+    ]
+  },
+  "overview": [
+    "8 bosses in 37:30, nine minutes under the usual night (46:37). No boss deaths and no wipes. The only deaths were three healers, Künigünde, Taurenlover and Yuleblessing, to a Gurubashi Bat Rider's Unstable Concoction on the trash at the start.",
+    "Warcraft Logs wouldn't hand out parses for this run, so there are none on the pages. The afternoon ZG the same day, a mostly non-guild group with Eduard, is on its own page as a separate raid."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50793, "text": "Hakkar in 1:57 (median 2:12) with no deaths. Corrupted Blood at 1.9 per raider against a usual 2.2." },
+    { "encounterId": 50789, "text": "Thekal in 1:12 (median 1:33), both Great Heals interrupted." },
+    { "encounterId": 50786, "text": "Mar'li in 0:47 (median 0:58)." }
+  ],
+  "bosses": [
+    { "encounterId": 50785, "name": "High Priestess Jeklik", "notes": [ { "tone": "good", "text": "0:50 (median 0:52), no deaths." } ] },
+    { "encounterId": 50784, "name": "High Priest Venoxis", "notes": [ { "tone": "good", "text": "0:41 (median 0:48). Osinir 38k." } ] },
+    { "encounterId": 50786, "name": "High Priestess Mar'li", "notes": [ { "tone": "good", "text": "0:47 (median 0:58), no deaths." } ] },
+    { "encounterId": 50787, "name": "Bloodlord Mandokir", "notes": [ { "tone": "info", "text": "1:20 (median 1:19), no deaths. Cokedog got the Gaze twice and survived both." } ] },
+    { "encounterId": 50789, "name": "High Priest Thekal", "notes": [ { "tone": "good", "text": "1:12 (median 1:33). Miniwrecker 57k." } ] },
+    { "encounterId": 50791, "name": "High Priestess Arlokk", "notes": [ { "tone": "good", "text": "0:26 (median 0:33). Macharius did the most damage, 36k." } ] },
+    { "encounterId": 50792, "name": "Jin'do the Hexxer", "notes": [ { "tone": "good", "text": "0:46 (median 0:49). Wizness removed 3 Delusions." } ] },
+    { "encounterId": 50793, "name": "Hakkar", "notes": [ { "tone": "good", "text": "1:57 (median 2:12), no deaths. Wizness 77k." }, { "tone": "info", "text": "All five of Hakkar's mind controls went on Macharius." } ] }
+  ]
+}

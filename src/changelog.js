@@ -6,6 +6,15 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.18",
+    date: "2026-10-26",
+    changes: [
+      "New raids: 20 Oct Zul'Gurub (guild run, with AI analysis and reviews) and Onyxia, plus the PUG ZGs on 20 and 24 Oct.",
+      "Two runs of the same raid on one night are now two separate raids (the second gets \"-2\"), each counted as guild or PUG on its own.",
+      "Parses that Warcraft Logs only half-delivered are fetched again instead of being kept incomplete.",
+    ],
+  },
+  {
     version: "2.6.17",
     date: "2026-10-26",
     changes: [

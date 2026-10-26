@@ -1,0 +1,18 @@
+{
+  "night": "2026-10-20-ony",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-26T12:00:00Z",
+  "headline": "Onyxia in 3:11 with no deaths",
+  "mvp": {
+    "player": "Snotspat",
+    "headline": "the most damage, 102k",
+    "why": [ "102k, ahead of Osinir (92k) and Barnstoker (79k)" ],
+    "also": [ { "player": "Yuleblessing", "text": "the most healing, 38k" } ]
+  },
+  "overview": [
+    "One pull, 3:11 against a usual 4:26, no deaths. 29 fears, 1.2 per raider against a usual 2.6, and lava cracks hit half as often as usual. Warcraft Logs didn't hand out parses for this kill."
+  ],
+  "wipes": [],
+  "wentWell": [ { "encounterId": 51084, "text": "No deaths, and fears and lava cracks at about half the usual rate." } ],
+  "bosses": [ { "encounterId": 51084, "name": "Onyxia", "notes": [ { "tone": "good", "text": "3:11 (median 4:26), no deaths." }, { "tone": "info", "text": "Lava cracks hit 11 raiders 17 times; Fenhir took 3." } ] } ]
+}

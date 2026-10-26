@@ -324,15 +324,17 @@ async function rankings(code, kills) {
     // plenty of hourly points left: ask one fight at a time instead.
     if (!/failed: 5\d\d|database points/.test(e.message)) throw e;
     const data = [];
+    let incomplete = false;
     for (const id of kills) {
       try {
         data.push(...((await gql(q, { code, ids: [id] })).reportData.report.rankings?.data || []));
       } catch (e2) {
         if (!/failed: 5\d\d|database points/.test(e2.message)) throw e2;
         console.log(`  (no parses for ${code} fight ${id}: Warcraft Logs keeps erroring)`);
+        incomplete = true;
       }
     }
-    return { data };
+    return { data, incomplete };
   }
 }
 
@@ -472,10 +474,18 @@ function splitByRaid(fights) {
     while (k >= 0 && (fights[k].encounterID == null || zone[k] == null)) k--;
     zone[i] = j < fights.length ? zone[j] : k >= 0 ? zone[k] : fights[i].report.zone?.id ?? null;
   }
+  // Two runs of the same raid in one night (an afternoon PUG, then the guild
+  // run) are two raids: a new run starts after a long gap in that zone.
+  const RUN_GAP = 75 * 60e3;
   const parts = new Map();
+  const last = new Map(); // zone -> { key, end }
   fights.forEach((f, i) => {
-    if (!parts.has(zone[i])) parts.set(zone[i], { zoneId: zone[i], fights: [] });
-    parts.get(zone[i]).fights.push(f);
+    const prev = last.get(zone[i]);
+    let key = prev?.key ?? `${zone[i]}#1`;
+    if (prev && f.absStart - prev.end > RUN_GAP) key = `${zone[i]}#${+prev.key.split("#")[1] + 1}`;
+    if (!parts.has(key)) parts.set(key, { zoneId: zone[i], run: +key.split("#")[1], fights: [] });
+    parts.get(key).fights.push(f);
+    last.set(zone[i], { key, end: Math.max(prev?.key === key ? prev.end : 0, f.absEnd) });
   });
   // A raid with no boss pulls (someone logged a trash clear) isn't a raid.
   const list = [...parts.values()];
@@ -484,7 +494,7 @@ function splitByRaid(fights) {
 
 async function buildRaid(date, part, reports, evOf, rankingsOf) {
   const { fights, zoneId } = part;
-  const night = `${date}-${ZONE_SLUG[zoneId] || "raid"}`; // the raid's id, e.g. 2026-10-02-bwl
+  const night = `${date}-${ZONE_SLUG[zoneId] || "raid"}${part.run > 1 ? `-${part.run}` : ""}`; // the raid's id, e.g. 2026-10-02-bwl (a second run that night: -2)
   const used = reports.filter((r) => fights.some((f) => f.report === r));
   const nightStart = fights[0]?.absStart ?? used[0]?.startTime ?? 0;
   const nightEnd = Math.max(...fights.map((f) => f.absEnd), nightStart);
@@ -865,7 +875,7 @@ async function reportRankings(report, kills, fightIDs) {
   if (stored) return stored;
   if (offline) return null;
   const x = await rankings(report.code, kills);
-  writeRaw(rel, x, report);
+  if (!x?.incomplete) writeRaw(rel, x, report); // a partial answer is used now but asked for again next run
   return x;
 }
 
