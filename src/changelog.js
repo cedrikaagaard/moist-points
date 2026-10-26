@@ -6,6 +6,13 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.17",
+    date: "2026-10-26",
+    changes: [
+      "New raids: Sunday's AQ40 (25 Oct), the guild's first clear under an hour (58:27), with AI analysis, Fair parses and personal reviews; and the Monday MC PUG run (19 Oct).",
+    ],
+  },
+  {
     version: "2.6.16",
     date: "2026-10-25",
     changes: ["Personal reviews for the 18 Oct AQ40."],

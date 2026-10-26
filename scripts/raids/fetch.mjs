@@ -319,13 +319,16 @@ async function rankings(code, kills) {
   try {
     return (await gql(q, { code, ids: kills })).reportData.report.rankings;
   } catch (e) {
-    if (!/failed: 5\d\d/.test(e.message)) throw e;
+    // 5xx, or "no database points remaining", which Warcraft Logs answers for a
+    // rankings query over many fights (a report with two raids in it) even with
+    // plenty of hourly points left: ask one fight at a time instead.
+    if (!/failed: 5\d\d|database points/.test(e.message)) throw e;
     const data = [];
     for (const id of kills) {
       try {
         data.push(...((await gql(q, { code, ids: [id] })).reportData.report.rankings?.data || []));
       } catch (e2) {
-        if (!/failed: 5\d\d/.test(e2.message)) throw e2;
+        if (!/failed: 5\d\d|database points/.test(e2.message)) throw e2;
         console.log(`  (no parses for ${code} fight ${id}: Warcraft Logs keeps erroring)`);
       }
     }

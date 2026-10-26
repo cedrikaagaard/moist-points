@@ -1,0 +1,44 @@
+{
+  "night": "2026-10-25-aq40",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-26T09:00:00Z",
+  "headline": "Temple of Ahn'Qiraj in 58:27, the guild's first clear under an hour",
+  "mvp": {
+    "player": "Eduard",
+    "headline": "most damage on Skeram and Silithid Royalty, top three on four more",
+    "why": [
+      "First on Skeram (52k) and Silithid Royalty (96k, parse 93)",
+      "Second on the Twin Emperors (139k), third on Huhuran, Ouro and C'Thun",
+      "Four Poison Bolts soaked on Huhuran"
+    ],
+    "also": [
+      { "player": "Youlloveme", "text": "most healing on Skeram, Viscidus (74k), Huhuran, Ouro (43k) and C'Thun (82k)" },
+      { "player": "Eufrasia", "text": "most damage on C'Thun, 203k, parse 98" },
+      { "player": "Harrylarry", "text": "3 of Skeram's 11 interrupted Arcane Explosions, and parses of 95 to 96 on the Twins and Ouro" }
+    ]
+  },
+  "overview": [
+    "9 of 9 in 58:27, two minutes under the guild's previous best AQ40 (1:00:47) and seventeen under the usual night (1:18:55). No wipes, 21 deaths, 9 of them on bosses.",
+    "C'Thun in 3:31 against a usual 5:16, six seconds off the record, with Eye Beam hitting a third as often as usual. Viscidus in 1:50 with one death, a big step from last week's nine. Fankriss (0:36) and Huhuran (0:40) were close to their records.",
+    "The Twin Emperors took 2:40, slower than last week's record 2:09: Heal Brother healed them for 180k, where a usual kill has none in the log, and the Blizzard hit 26 raiders 41 times.",
+    "World buffs: none at Skeram and two raiders at Viscidus, while 39 or 40 had Rallying Cry and Zandalar from Royalty on. The usual sign of a Chronoboon."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50717, "text": "C'Thun in 3:31 (median 5:16), 6 seconds off the guild record. Eye Beam hit 0.43 times per raider against a usual 1.2, and only 7 raiders went to the stomach." },
+    { "encounterId": 50709, "text": "11 of Skeram's 12 Arcane Explosions interrupted: Harrylarry 3, Groomz 2." },
+    { "encounterId": 50713, "text": "Viscidus in 1:50 (median 2:00) with one death, and 11.9 Poison Bolt Volley hits per raider against a usual 17.4." },
+    { "encounterId": 50714, "text": "Huhuran in 0:40 (median 0:52), no deaths: 58 Poison Bolts soaked by 22 raiders, 15 Nature Protection Potions, both Frenzies tranquilized." }
+  ],
+  "bosses": [
+    { "encounterId": 50709, "name": "The Prophet Skeram", "notes": [ { "tone": "good", "text": "1:09 (median 1:14). 11 of 12 Arcane Explosions interrupted." }, { "tone": "info", "text": "7 mind controls, Lebh twice. Storestine died to Skeram's melee at 0:10." } ] },
+    { "encounterId": 50710, "name": "Silithid Royalty", "notes": [ { "tone": "good", "text": "1:11 (median 1:21), no deaths. Eduard 96k." }, { "tone": "info", "text": "One of Yauj's three Great Heals went through and healed her for 50k. 18 Toxic Vapors hits, 5 of them on Shaaw." } ] },
+    { "encounterId": 50711, "name": "Battleguard Sartura", "notes": [ { "tone": "good", "text": "1:00 (median 1:10). Osinir 83k, the most." }, { "tone": "info", "text": "Norgewian died to Whirlwind at 0:56." } ] },
+    { "encounterId": 50712, "name": "Fankriss the Unyielding", "notes": [ { "tone": "good", "text": "0:36 (median 0:46), no deaths. Eïnherjar 61k." } ] },
+    { "encounterId": 50713, "name": "Viscidus", "notes": [ { "tone": "good", "text": "1:50 (median 2:00). One death, Redjab to Poison Bolt Volley at 1:37." }, { "tone": "info", "text": "Toxin hit 17 raiders 32 times, almost twice the usual rate." } ] },
+    { "encounterId": 50714, "name": "Princess Huhuran", "notes": [ { "tone": "good", "text": "0:40 (median 0:52), no deaths. Punintended and Speldosan tranquilized both Frenzies." } ] },
+    { "encounterId": 50715, "name": "Twin Emperors", "notes": [ { "tone": "info", "text": "2:40 (median 4:04). Heal Brother healed them for 180k; a usual kill has none." }, { "tone": "bad", "text": "Storestine died to Vek'lor's Shadow Bolt at 1:59, and Whorm in the Blizzard at 2:28 after five ticks of it." } ] },
+    { "encounterId": 50716, "name": "Ouro", "notes": [ { "tone": "good", "text": "1:19 (median 1:44), no deaths. Valethia 105k, Gertggs 100k." } ] },
+    { "encounterId": 50717, "name": "C'Thun", "notes": [ { "tone": "good", "text": "3:31, six seconds off the record. Eufrasia 203k, parse 98." }, { "tone": "info", "text": "Four deaths: Wicckz to an Eye Beam at 0:33, Norgewian at 1:09 after Dark Glare, Redjab to an Eye Tentacle's Mind Flay at 2:28, and Bagayaga to Digestive Acid in the stomach at 3:03." } ] }
+  ]
+}
