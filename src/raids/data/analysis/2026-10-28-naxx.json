@@ -1,0 +1,64 @@
+{
+  "night": "2026-10-28-naxx",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-10-28T22:30:00Z",
+  "headline": "Thirteen bosses and a Sapphiron wipe, on a night decided by three moments",
+  "mvp": {
+    "player": "Corvere",
+    "headline": "the most damage on Anub'Rekhan, Maexxna and the Horsemen, no boss deaths",
+    "why": [
+      "First on Anub'Rekhan (127k, parse 96), Maexxna (94k) and the Four Horsemen (143k, parse 95)",
+      "Second on Gothik, parse 83",
+      "No deaths on any boss"
+    ],
+    "also": [
+      { "player": "Apoutchou", "text": "the most healing on Thaddius, Gothik, the Horsemen, Heigan and Sapphiron (296k)" },
+      { "player": "Fenhir", "text": "soaked 49 of Patchwerk's 61 Hateful Strikes with nobody dying" },
+      { "player": "Caesartje", "text": "25 Life Drains removed on Sapphiron, the most, with Eldoren 24 and Drikkle 23" }
+    ]
+  },
+  "overview": [
+    "13 of 15. Anub'Rekhan through Gluth went smoothly: six bosses, one death, every kill at or under the usual time. Sapphiron ended in a wipe at 22% and Kel'Thuzad wasn't pulled.",
+    "Three moments decided the rest. On the Unholy weapons after Razuvious, a second pack reached the raid while the next one was being pulled, and the raid wiped (36 deaths). Noth ran 20 seconds longer than usual, into a second curse wave, and the curses that weren't removed exploded right as he died (31 deaths in all). And Heigan's fast dance took 28 people at once from 1:36.",
+    "The Noth explosions also took most of the raid's world buffs with them: 24 had Rallying Cry at Noth, 6 at Heigan and 2 at Loatheb and Sapphiron. Unbuffed, Sapphiron became a 7½ minute fight on 42% of the usual raid damage, and healing ran out after about five minutes.",
+    "Razuvious and Gothik had no world buffs on anyone, the usual sign of buffs stored in a Chronoboon, which is also why the trash wipe in between didn't cost them."
+  ],
+  "wipes": [
+    {
+      "encounterId": 51119,
+      "pull": 1,
+      "title": "Sapphiron, pull 1 (Sapphiron at 22%)",
+      "whatHappened": "Two raiders died to Sapphiron's melee in the first five seconds and two to the first Frost Breath at 1:07. After that it was a long fight: raid DPS 5.9k against about 14k on a usual kill, with Frost Aura, Life Drain, Chill and Icebolt taking people one at a time until healing gave out from 5:23.",
+      "likelyCause": "No world buffs: two of the 40 had Rallying Cry. Without them the damage wasn't there for a kill before the raid's mana and health ran out.",
+      "evidence": [
+        "Raid DPS 5.9k against 14k on a usual kill (42%)",
+        "41 deaths: Frost Aura 15, Life Drain 8, Chill 7, Icebolt 6",
+        "Life Drain healed Sapphiron for 218k, against 56k on a usual kill, because the fight ran twice as long",
+        "2 of 40 with Rallying Cry at the pull"
+      ],
+      "avoid": "Pull Sapphiron with buffs, and let the tanks get a few seconds of threat before melee starts."
+    }
+  ],
+  "wentWell": [
+    { "encounterId": 51118, "text": "Patchwerk in 2:09 (median 2:29) with no deaths: Fenhir soaked 49 Hateful Strikes and Shadowtelios 12." },
+    { "encounterId": 51110, "text": "Faerlina in 0:52 (median 1:04), Rain of Fire at a tenth of the usual rate and Yulefuel controlling all four Worshippers." },
+    { "encounterId": 51109, "text": "Gothik with all four Shadow Bolt Volleys interrupted." },
+    { "encounterId": 51119, "text": "115 Life Drains removed on Sapphiron: Caesartje 25, Eldoren 24, Drikkle 23, Hjärterkung 20." }
+  ],
+  "bosses": [
+    { "encounterId": 51107, "name": "Anub'Rekhan", "notes": [ { "tone": "good", "text": "1:01 (median 1:08), no deaths, Impale at half the usual rate." } ] },
+    { "encounterId": 51110, "name": "Grand Widow Faerlina", "notes": [ { "tone": "good", "text": "0:52 (median 1:04), no deaths. Yulefuel controlled 4 Worshippers." } ] },
+    { "encounterId": 51116, "name": "Maexxna", "notes": [ { "tone": "good", "text": "1:09 (median 1:11), no deaths. Naturelocks cleansed four Necrotic Poisons." } ] },
+    { "encounterId": 51118, "name": "Patchwerk", "notes": [ { "tone": "good", "text": "2:09 (median 2:29), no deaths. 61 Hateful Strikes soaked, 49 by Fenhir." } ] },
+    { "encounterId": 51111, "name": "Grobbulus", "notes": [ { "tone": "info", "text": "1:28 (median 1:35), one death. Poison cloud hits at almost twice the usual rate." } ] },
+    { "encounterId": 51108, "name": "Gluth", "notes": [ { "tone": "good", "text": "1:06 (median 1:14), no deaths. 6 of 7 Frenzies tranquilized by Punintended and Speldosan." } ] },
+    { "encounterId": 51120, "name": "Thaddius", "notes": [ { "tone": "info", "text": "3:28 (median 3:56), 9 deaths. Three went at 0:49 to Shock and War Stomp in the first phase, and wrong-side polarity hits ran about half again over the usual." } ] },
+    { "encounterId": 51113, "name": "Instructor Razuvious", "notes": [ { "tone": "bad", "text": "2:13 (median 1:49), 9 deaths. Both Understudy controls ended within half a second at 0:47, and Razuvious was free for 17 seconds: his Disrupting Shout hit 12 at 0:52." } ] },
+    { "encounterId": 51109, "name": "Gothik the Harvester", "notes": [ { "tone": "good", "text": "5:09 (median 5:07), 3 deaths, all four Shadow Bolt Volleys kicked." } ] },
+    { "encounterId": 51121, "name": "The Four Horsemen", "notes": [ { "tone": "info", "text": "4:22 (median 5:18), 10 deaths, 7 of them to Holy Wrath against a usual 0.4. Three went at the same moment at 3:10." } ] },
+    { "encounterId": 51117, "name": "Noth the Plaguebringer", "notes": [ { "tone": "bad", "text": "1:24 against a usual 1:00 or so, long enough for a second curse wave at 1:10. 15 of its 20 curses were removed; the other five exploded around 1:20 and Wrath of the Plaguebringer killed 25 over the next nine seconds, as Noth died." }, { "tone": "info", "text": "The first wave went perfectly: all 20 curses gone within nine seconds. Curses removed: Drikkle 11, Eldoren 10, Osinir 7, Naturelocks 7." } ] },
+    { "encounterId": 51112, "name": "Heigan the Unclean", "notes": [ { "tone": "bad", "text": "3:22 (median 1:27) with 32 deaths, 28 of them to Eruption from 1:36 on. Eruption hits at about three times the usual rate. 6 raiders had world buffs." } ] },
+    { "encounterId": 51115, "name": "Loatheb", "notes": [ { "tone": "good", "text": "3:40 (median 3:08) without world buffs, one death. 23 Shadow Protection Potions." } ] },
+    { "encounterId": 51119, "name": "Sapphiron", "notes": [ { "tone": "bad", "text": "Wipe at 22% after 7:34, with two raiders buffed. See the wipe above." } ] }
+  ]
+}

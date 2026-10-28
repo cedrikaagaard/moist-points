@@ -1,6 +1,22 @@
 {
- "updated": "2026-10-26",
+ "updated": "2026-10-28",
  "kills": [
+  {
+   "date": "2026-10-28",
+   "killer": "Fatwhaleirl",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-10-28-naxx"
+  },
+  {
+   "date": "2026-10-28",
+   "killer": "Eduard",
+   "class": "Warrior",
+   "with": "Melee",
+   "pet": null,
+   "night": "2026-10-28-naxx"
+  },
   {
    "date": "2026-10-21",
    "killer": "Fatwhaleirl",

@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.19",
+    date: "2026-10-28",
+    changes: ["New raid: Wednesday's Naxxramas (28 Oct), with an AI analysis of what decided the night, replays and Fair parses."],
+  },
+  {
     version: "2.6.18",
     date: "2026-10-26",
     changes: [
