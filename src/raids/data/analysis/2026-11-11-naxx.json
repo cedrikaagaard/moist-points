@@ -59,7 +59,7 @@
     { "encounterId": 51117, "name": "Noth the Plaguebringer", "notes": [ { "tone": "good", "text": "1:10, so only one curse wave, and all 20 removed. No deaths." } ] },
     { "encounterId": 51112, "name": "Heigan the Unclean", "notes": [ { "tone": "good", "text": "1:06 (median 1:28), no deaths. Caesartje top at 1911/s." } ] },
     { "encounterId": 51115, "name": "Loatheb", "notes": [ { "tone": "info", "text": "2:59 (median 3:08). Snotspat was killed by Loatheb's melee at 0:22, the only death. 24 Shadow Protection Potions, spores spread over 25 raiders." } ] },
-    { "encounterId": 51119, "name": "Sapphiron", "notes": [ { "tone": "info", "text": "3:33 (best 3:30), 5 deaths: Yulefuel and Eïnherjar to the first Frost Breath at 1:15, Tochopolvo and Sanjji to Chill at 1:48 and 1:54, Etowa to Frost Aura at 2:11. Blizzard hits a little over the usual rate." }, { "tone": "good", "text": "67 Life Drains removed, Storestine 24 and Osinir 14. Woness healed 198k." } ] },
+    { "encounterId": 51119, "name": "Sapphiron", "notes": [ { "tone": "info", "text": "3:33 (best 3:20), 5 deaths: Yulefuel and Eïnherjar to the first Frost Breath at 1:15, Tochopolvo and Sanjji to Chill at 1:48 and 1:54, Etowa to Frost Aura at 2:11. Blizzard hits a little over the usual rate." }, { "tone": "good", "text": "67 Life Drains removed, Storestine 24 and Osinir 14. Woness healed 198k." } ] },
     { "encounterId": 51114, "name": "Kel'Thuzad", "notes": [ { "tone": "bad", "text": "Pull 1 wiped at 6% once the Guardians got loose. See the wipe above." }, { "tone": "good", "text": "Pull 2: 3:01 with 22 shackles and 19 of 19 Frostbolts kicked. Three late deaths: Shadowtelios, Groomz and Mornie between 2:44 and 2:54." } ] }
   ]
 }

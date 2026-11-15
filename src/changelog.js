@@ -6,6 +6,14 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.29",
+    date: "2026-11-15",
+    changes: [
+      "AI analyses and personal reviews for 1 Nov: the guild's fastest Ahn'Qiraj (51:27) and the Sunday Sapphiron (a guild-best 3:20) and Kel'Thuzad.",
+      "Corrected the 13 Nov analyses: that night went Ahn'Qiraj, Blackwing Lair, then Molten Core (not the other way round), and its 57:00 Ahn'Qiraj was not a record, since 1 Nov was faster. 11 Nov's Sapphiron note now compares with the 3:20 best.",
+    ],
+  },
+  {
     version: "2.6.28",
     date: "2026-11-15",
     changes: ["AI analyses and personal reviews for 3 Nov Zul'Gurub and Onyxia."],

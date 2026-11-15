@@ -2,14 +2,14 @@
   "night": "2026-11-13-bwl",
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-11-15T16:00:00Z",
-  "headline": "Blackwing Lair in 28:29, the guild's fastest clear by four and a half minutes",
+  "headline": "Blackwing Lair in 28:29, the guild's fastest clear by four minutes",
   "mvp": {
     "player": "Thornhild",
     "headline": "the most damage on four bosses, parse 90 or better on all eight",
     "why": [
       "First on Razorgore (parse 99), Vaelastrasz (2494/s), Flamegor (98) and Chromaggus (103k), second on Nefarian",
       "Average parse 95 across the raid, no deaths",
-      "Also the most damage on Sulfuron in Molten Core earlier the same night"
+      "Also the most damage on Sulfuron in Molten Core later the same night"
     ],
     "also": [
       { "player": "Speldosan", "text": "5 Tranquilizing Shots on Flamegor and Chromaggus, and parse 99 on Firemaw and Ebonroc" },
@@ -18,7 +18,7 @@
     ]
   },
   "overview": [
-    "Eight kills on eight pulls in 28:29. The guild's best was 33:00 and a usual night is 47:25. Razorgore (0:20), Vaelastrasz (0:26) and Firemaw (0:36) are new guild bests, and Chromaggus (1:15) equals the old one.",
+    "Eight kills on eight pulls in 28:29. The guild's best was 32:38 and a usual night is 47:25. It was the middle raid of the night, after Ahn'Qiraj and before Molten Core. Razorgore (0:20), Vaelastrasz (0:26) and Firemaw (0:36) are new guild bests, and Chromaggus (1:15) equals the old one.",
     "Five boss deaths, three of them one raider: Roguina on Broodlord, Firemaw and Ebonroc. Zuzul went to Flame Buffet on Firemaw and Salma to Shadow Flame five seconds into Nefarian.",
     "World buffs grew during the raid: 21 with Rallying Cry on Vaelastrasz, 35 by Firemaw."
   ],

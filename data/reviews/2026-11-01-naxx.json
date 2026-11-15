@@ -1,0 +1,4626 @@
+{
+ "night": "2026-11-01-naxx",
+ "zones": [
+  "Naxxramas"
+ ],
+ "zoneIds": [
+  2006
+ ],
+ "date": "2026-11-01",
+ "durationMin": 16,
+ "raiders": 39,
+ "icons": {
+  "Kreeg's Stout Beatdown": "inv_drink_05.jpg",
+  "Increased Stamina": "inv_boots_plate_03.jpg",
+  "Elixir of the Mongoose": "inv_potion_32.jpg",
+  "Mana Regeneration": "spell_nature_manaregentotem.jpg",
+  "Rallying Cry of the Dragonslayer": "inv_misc_head_dragon_01.jpg",
+  "Spirit of Zandalar": "ability_creature_poison_05.jpg",
+  "Elixir of Fortitude": "inv_potion_43.jpg",
+  "Winterfall Firewater": "inv_potion_92.jpg",
+  "Greater Armor": "inv_potion_86.jpg",
+  "Fengus' Ferocity": "spell_nature_undyingstrength.jpg",
+  "Slip'kik's Savvy": "spell_holy_lesserheal02.jpg",
+  "Mol'dar's Moxie": "spell_nature_massteleport.jpg",
+  "Spirit of Zanza": "inv_potion_30.jpg",
+  "Songflower Serenade": "spell_holy_mindvision.jpg",
+  "Gordok Green Grog": "inv_drink_03.jpg",
+  "Rumsey Rum Black Label": "inv_drink_04.jpg",
+  "Warchief's Blessing": "spell_arcane_teleportorgrimmar.jpg",
+  "Greater Arcane Elixir": "inv_potion_25.jpg",
+  "Greater Firepower": "inv_potion_60.jpg",
+  "Elixir of the Giants": "inv_potion_61.jpg",
+  "Shadow Power": "inv_potion_46.jpg",
+  "Strike of the Scorpok": "spell_nature_forceofnature.jpg",
+  "Mighty Troll's Blood Elixir": "inv_potion_80.jpg",
+  "Distilled Wisdom": "inv_potion_97.jpg",
+  "Mageblood Elixir": "inv_potion_45.jpg",
+  "Juju Chill": "inv_misc_monsterscales_09.jpg",
+  "Flask of the Titans": "inv_potion_62.jpg",
+  "Well Fed": "spell_misc_food.jpg",
+  "Juju Power": "inv_misc_monsterscales_11.jpg",
+  "Increased Agility": "inv_gauntlets_19.jpg",
+  "Supreme Power": "inv_potion_41.jpg",
+  "Blessed Sunfruit": "spell_holy_devotion.jpg"
+ },
+ "players": {
+  "Alanakos": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 63,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 32,
+      "best": 42,
+      "perSec": 708,
+      "rank": "10/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 51,
+      "best": 65,
+      "perSec": 553,
+      "rank": "13/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 3,
+     "potion: Major Healthstone": 1,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Sunder Armor": 13
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Alive on both",
+    "summary": "Tenth on Sapphiron, 13th on Kel'Thuzad, and alive at the end of both.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "text": "13th on Kel'Thuzad."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "Alive."
+     }
+    }
+   }
+  },
+  "Amima": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 401,
+      "rank": "9/12 healers",
+      "healShare": 6,
+      "overheal": 50,
+      "active": 90,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 77,
+      "perSec": 294,
+      "rank": "4/12 healers",
+      "healShare": 9,
+      "overheal": 58,
+      "active": 90,
+      "activeMedian": 79,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "potion: Mana Potion": 2,
+     "potion: Demonic Rune": 1,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Fourth healer on Kel'Thuzad, alive",
+    "summary": "Fourth of the healers on Kel'Thuzad, alive at the end. Ninth on Sapphiron.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "Fourth of the healers, alive.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "9th of the healers."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "Alive."
+     }
+    }
+   }
+  },
+  "Apoutchou": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 68,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 774,
+      "rank": "3/12 healers",
+      "healShare": 11,
+      "overheal": 19,
+      "active": 56,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 50,
+      "best": 66,
+      "perSec": 414,
+      "rank": "1/12 healers",
+      "healShare": 12,
+      "overheal": 33,
+      "active": 73,
+      "activeMedian": 79,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:26",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     }
+    ],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "drink": [
+       "Kreeg's Stout Beatdown 1/1",
+       "Gordok Green Grog 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 3,
+     "potion: Dark Rune": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "First healer on Kel'Thuzad, then a Guardian found you",
+    "summary": "First of the healers on Kel'Thuzad and third on Sapphiron, so the healing is fine again. A Guardian of Icecrown killed you at 3:26, eighteen seconds before the end. And on the guild's best Sapphiron, with three Blizzard hits in the whole raid, one of them was yours.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "First of the healers.",
+      "boss": 51114
+     },
+     {
+      "title": "Sapphiron",
+      "text": "Third of the healers.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Guardian at 3:26."
+     },
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "One of the raid's three Blizzard hits."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "First of the healers."
+     }
+    }
+   }
+  },
+  "Birkler": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": null,
+    "ownAvgParseBefore": 68,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 30,
+      "best": 51,
+      "perSec": 350,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 67,
+      "activeMedian": 80,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 79,
+      "best": 86,
+      "perSec": 409,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 98,
+      "activeMedian": 98,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 8,
+     "roleMedian": 8,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Giants 1/1",
+       "Elixir of the Mongoose 1/1",
+       "Elixir of Fortitude 1/1",
+       "Greater Armor 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Increased Stamina 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Greater Stoneshield Potion": 3,
+     "utility: Intimidating Shout": 2,
+     "raid debuff: Demoralizing Shout": 2,
+     "raid debuff: Sunder Armor": 8
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "A-",
+    "verdict": "Main tank on both, alive",
+    "summary": "Main tank on Sapphiron and Kel'Thuzad, and alive at the end of both, two Chains included.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "Both bosses, no deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "One Blizzard hit."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "Tanked, alive."
+     }
+    }
+   }
+  },
+  "Bruceli": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 66,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 37,
+      "best": 62,
+      "perSec": 436,
+      "rank": "21/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 70,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 44,
+      "best": 67,
+      "perSec": 445,
+      "rank": "16/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 84,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "2:54",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 7,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Giants 1/1",
+       "Elixir of the Mongoose 1/1",
+       "Greater Armor 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "explosive: Goblin Sapper Charge": 1,
+     "potion: Major Healthstone": 1,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Demoralizing Shout": 1,
+     "raid debuff: Sunder Armor": 15
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C+",
+    "verdict": "Died at 2:54 on Kel'Thuzad",
+    "summary": "21st on Sapphiron, 16th on Kel'Thuzad. A Frostbolt killed you at 2:54.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "No deaths.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "text": "21st on Sapphiron."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Died at 2:54."
+     }
+    }
+   }
+  },
+  "Caesartje": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 50,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 13,
+      "best": 42,
+      "perSec": 377,
+      "rank": "23/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 50,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 71,
+      "best": 92,
+      "perSec": 445,
+      "rank": "15/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 76,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Greater Arcane Elixir 1/1",
+       "Greater Firepower 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "10 Life Drains, alive on both",
+    "summary": "10 Life Drains on Sapphiron and a Flash of Light kicked. Alive on both.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "10 Life Drains removed.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "text": "23rd on Sapphiron."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "10 Life Drains."
+     }
+    }
+   }
+  },
+  "Corvere": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 63,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 58,
+      "best": 84,
+      "perSec": 772,
+      "rank": "7/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 70,
+      "best": 88,
+      "perSec": 703,
+      "rank": "5/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "juju": [
+       "Juju Chill 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Giants 1/1",
+       "Elixir of the Mongoose 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 3,
+     "potion: Thistle Tea": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "A",
+    "verdict": "7 Frostbolts kicked, alive at the end",
+    "summary": "Seven of Kel'Thuzad's Frostbolts kicked, the most, fifth on his damage and alive at the end. Seventh on Sapphiron.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "7 Frostbolts kicked, fifth on damage.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "Seventh."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "7 Frostbolts kicked."
+     }
+    }
+   }
+  },
+  "Eduard": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 59,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 28,
+      "best": 51,
+      "perSec": 664,
+      "rank": "15/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 72,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 40,
+      "best": 86,
+      "perSec": 278,
+      "rank": "22/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "1:01",
+      "by": "Frost Blast",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 8,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1",
+       "Elixir of Fortitude 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1",
+       "Gordok Green Grog 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "potion: Major Healthstone": 1,
+     "potion: Mighty Rage Potion": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C",
+    "verdict": "First death on Kel'Thuzad",
+    "summary": "15th on Sapphiron. Frost Blast killed you at 1:01 on Kel'Thuzad, the first death of the fight.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "No deaths.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Frost Blast at 1:01, the first death."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "First death."
+     }
+    }
+   }
+  },
+  "Eldoren": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 59,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 14,
+      "best": 27,
+      "perSec": 416,
+      "rank": "22/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 72,
+      "best": 84,
+      "perSec": 1057,
+      "rank": "2/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Greater Arcane Elixir 1/1",
+       "Greater Firepower 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 2,
+     "potion: Demonic Rune": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.666Z",
+    "grade": "A",
+    "verdict": "19 Life Drains removed, second on Kel'Thuzad",
+    "summary": "19 Life Drains removed on Sapphiron, the most, on the guild's fastest kill of him. Then second on Kel'Thuzad with 237k. No deaths.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "19 Life Drains removed.",
+      "boss": 51119
+     },
+     {
+      "title": "Kel'Thuzad",
+      "text": "Second, 237k.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron damage",
+      "impact": "low",
+      "boss": 51119,
+      "text": "22nd, the price of the decursing."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "Second, 237k."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "19 Life Drains removed."
+     }
+    }
+   }
+  },
+  "Eïnherjar": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 61,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 32,
+      "best": 50,
+      "perSec": 777,
+      "rank": "6/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 66,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 44,
+      "best": 79,
+      "perSec": 584,
+      "rank": "11/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:07",
+      "by": "Void Blast",
+      "killer": "Shadow Fissure"
+     }
+    ],
+    "consumes": {
+     "perPull": 7,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1",
+       "Elixir of Fortitude 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1",
+       "Gordok Green Grog 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "explosive: Goblin Sapper Charge": 2,
+     "potion: Major Healthstone": 1,
+     "utility: Intimidating Shout": 2,
+     "raid debuff: Sunder Armor": 6
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "Sixth on Sapphiron, Shadow Fissure on Kel'Thuzad",
+    "summary": "Sixth on Sapphiron. Frost Blasted once on Kel'Thuzad and a Shadow Fissure killed you at 3:06.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "Sixth.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Void Blast at 3:06."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Shadow Fissure."
+     }
+    }
+   }
+  },
+  "Farlopo": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 54,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 39,
+      "best": 51,
+      "perSec": 857,
+      "rank": "3/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 56,
+      "best": 81,
+      "perSec": 641,
+      "rank": "8/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:21",
+      "by": "Melee",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 7,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "juju": [
+       "Juju Chill 1/1",
+       "Juju Power 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1",
+       "Gordok Green Grog 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "potion: Major Healthstone": 1,
+     "potion: Healing Potion": 1,
+     "raid debuff: Sunder Armor": 9
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Third on Sapphiron",
+    "summary": "Third on Sapphiron (171k), eighth on Kel'Thuzad. His melee killed you at 3:21.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "Third, 171k.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died at 3:21."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "Third."
+     }
+    }
+   }
+  },
+  "Fluffycatto": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 71,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 39,
+      "best": 55,
+      "perSec": 667,
+      "rank": "14/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 63,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 54,
+      "best": 85,
+      "perSec": 603,
+      "rank": "10/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:23",
+      "by": "Melee",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 9,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "juju": [
+       "Juju Chill 1/1",
+       "Juju Power 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 1/1",
+       "Mighty Troll's Blood Elixir 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1",
+       "Gordok Green Grog 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 3,
+     "explosive: Goblin Sapper Charge": 1,
+     "potion: Thistle Tea": 2,
+     "raid debuff: Expose Armor": 6
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "6 Frostbolts kicked",
+    "summary": "Six Frostbolts kicked and tenth on Kel'Thuzad. His melee killed you at 3:23.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "6 Frostbolts kicked.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died at 3:23."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "6 Frostbolts kicked."
+     }
+    }
+   }
+  },
+  "Foggiie": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 716,
+      "rank": "5/12 healers",
+      "healShare": 11,
+      "overheal": 7,
+      "active": 73,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 50,
+      "best": 62,
+      "perSec": 278,
+      "rank": "7/12 healers",
+      "healShare": 8,
+      "overheal": 42,
+      "active": 63,
+      "activeMedian": 79,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:10",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Kreeg's Stout Beatdown 1/1",
+       "Gordok Green Grog 1/1"
+      ]
+     }
+    },
+    "used": {
+     "utility: Power Infusion": 2,
+     "potion: Mana Potion": 2,
+     "potion: Demonic Rune": 1,
+     "utility: Shackle Undead": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "Fifth healer on Sapphiron, two Shackles",
+    "summary": "Fifth of the healers on Sapphiron, two Shackles on Kel'Thuzad. You died at 3:10.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "2 Shackles.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died at 3:10."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Died at 3:10."
+     }
+    }
+   }
+  },
+  "Gallahan": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 77,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 584,
+      "rank": "6/12 healers",
+      "healShare": 9,
+      "overheal": 21,
+      "active": 90,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 225,
+      "rank": "10/12 healers",
+      "healShare": 7,
+      "overheal": 58,
+      "active": 84,
+      "activeMedian": 79,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:41",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     }
+    ],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ]
+     }
+    },
+    "used": {
+     "utility: Blessing of Protection": 1,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C+",
+    "verdict": "Guardian at 3:41",
+    "summary": "Sixth of the healers on Sapphiron, tenth on Kel'Thuzad. A Guardian killed you three seconds before the end.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "Sixth of the healers.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "10th of the healers, Guardian at 3:41."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Died at 3:41."
+     }
+    }
+   }
+  },
+  "Gertggs": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 74,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 34,
+      "best": 58,
+      "perSec": 786,
+      "rank": "5/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 71,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 49,
+      "best": 68,
+      "perSec": 542,
+      "rank": "14/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:07",
+      "by": "Void Blast",
+      "killer": "Shadow Fissure"
+     }
+    ],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "explosive: Goblin Sapper Charge": 1,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Sunder Armor": 9
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "Fifth on Sapphiron, Shadow Fissure on Kel'Thuzad",
+    "summary": "Fifth on Sapphiron. A Shadow Fissure killed you at 3:06 on Kel'Thuzad.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "Fifth, 157k.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Void Blast at 3:06."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Shadow Fissure."
+     }
+    }
+   }
+  },
+  "Harrylarry": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 66,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 40,
+      "best": 63,
+      "perSec": 717,
+      "rank": "9/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 64,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 55,
+      "best": 76,
+      "perSec": 626,
+      "rank": "9/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ],
+      "food": [
+       "Increased Agility 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "potion: Thistle Tea": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Ninth on both, alive",
+    "summary": "Ninth on Sapphiron and Kel'Thuzad, two Frostbolts kicked, alive at the end.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "Alive, 2 Frostbolts kicked.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "text": "Ninth on both."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "Alive."
+     }
+    }
+   }
+  },
+  "Hjärterkung": {
+   "stats": {
+    "class": "Druid",
+    "role": "tank",
+    "avgParse": null,
+    "ownAvgParseBefore": 75,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 0,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": 18,
+      "active": 80,
+      "activeMedian": 80,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 51,
+      "best": 51,
+      "perSec": 203,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 98,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:31",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 8,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Elixir of Fortitude 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 1,
+     "potion: Demonic Rune": 1,
+     "utility: Innervate": 1,
+     "raid debuff: Faerie Fire": 8,
+     "raid debuff: Faerie Fire (Feral)": 24
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "Off-tank on both, 6 Life Drains",
+    "summary": "Off-tanked Sapphiron and Kel'Thuzad, 6 Life Drains removed. You died at 3:30 on Kel'Thuzad, fourteen seconds before the kill.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "6 Life Drains removed.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died at 3:30."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "6 Life Drains removed."
+     }
+    }
+   }
+  },
+  "Macharius": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 36,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 27,
+      "best": 34,
+      "perSec": 478,
+      "rank": "20/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 67,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 16,
+      "best": 16,
+      "perSec": 250,
+      "rank": "23/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "2:39",
+      "by": "Melee",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 8,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Giants 1/1",
+       "Elixir of the Mongoose 1/1",
+       "Elixir of Fortitude 1/1",
+       "Greater Armor 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Increased Stamina 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "potion: Greater Stoneshield Potion": 1,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Demoralizing Shout": 3,
+     "raid debuff: Sunder Armor": 10
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C",
+    "verdict": "Low damage, killed by Kel'Thuzad",
+    "summary": "Not tanking here: 20th on Sapphiron, 23rd on Kel'Thuzad, where his melee killed you at 2:39.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "No deaths.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "His melee at 2:39."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Died at 2:39."
+     }
+    }
+   }
+  },
+  "Miniwrecker": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 67,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 30,
+      "best": 44,
+      "perSec": 687,
+      "rank": "11/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 65,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 42,
+      "best": 60,
+      "perSec": 211,
+      "rank": "25/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "1:04",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "raid debuff: Sunder Armor": 14
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C",
+    "verdict": "Frostbolt volley at 1:03",
+    "summary": "11th on Sapphiron. A Frostbolt volley killed you at 1:03 on Kel'Thuzad, last on his damage.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "11th.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Died at 1:03."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Died at 1:03."
+     }
+    }
+   }
+  },
+  "Mohg": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 70,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 408,
+      "rank": "8/12 healers",
+      "healShare": 6,
+      "overheal": 54,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 93,
+      "perSec": 285,
+      "rank": "6/12 healers",
+      "healShare": 8,
+      "overheal": 45,
+      "active": 76,
+      "activeMedian": 79,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "potion: Mana Potion": 3,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Alive on both",
+    "summary": "Sixth of the healers on Kel'Thuzad, eighth on Sapphiron, alive at the end of both.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "low",
+      "text": "Middle of the pack."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Alive."
+     }
+    }
+   }
+  },
+  "Mornie": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 71,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 80,
+      "best": 87,
+      "perSec": 753,
+      "rank": "4/12 healers",
+      "healShare": 11,
+      "overheal": 17,
+      "active": 62,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 50,
+      "best": 77,
+      "perSec": 336,
+      "rank": "3/12 healers",
+      "healShare": 10,
+      "overheal": 49,
+      "active": 75,
+      "activeMedian": 79,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 7,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Elixir of Fortitude 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Kreeg's Stout Beatdown 1/1",
+       "Rumsey Rum Black Label 1/1"
+      ]
+     }
+    },
+    "used": {
+     "utility: Power Infusion": 3,
+     "potion: Mana Potion": 3,
+     "potion: Dark Rune": 1,
+     "utility: Shackle Undead": 4
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "Third healer on Kel'Thuzad, 3 Shackles, alive",
+    "summary": "Third of the healers on Kel'Thuzad, fourth on Sapphiron. Three Shackles, the most, and alive at the end despite two Chains.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "3 Shackles, alive.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Shackles",
+      "impact": "low",
+      "boss": 51114,
+      "text": "9 in the raid, and the Guardians still killed five."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "3 Shackles."
+     }
+    }
+   }
+  },
+  "Naturelocks": {
+   "stats": {
+    "class": "Druid",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 66,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 139,
+      "rank": "12/12 healers",
+      "healShare": 2,
+      "overheal": 11,
+      "active": 66,
+      "activeMedian": 88,
+      "deaths": 1
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 215,
+      "rank": "11/12 healers",
+      "healShare": 6,
+      "overheal": 40,
+      "active": 77,
+      "activeMedian": 79,
+      "deaths": 0
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Sapphiron",
+      "id": 51119,
+      "pull": "1 (kill)",
+      "at": "1:47",
+      "by": "Frost Aura",
+      "killer": "Sapphiron"
+     }
+    ],
+    "consumes": {
+     "perPull": 3,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "raid debuff: Faerie Fire": 19
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C",
+    "verdict": "The only death on Sapphiron",
+    "summary": "Frost Aura killed you at 1:47 on Sapphiron, the only death of the fight, after a Blizzard hit. Last of the healers there, 11th on Kel'Thuzad.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "Alive.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "high",
+      "boss": 51119,
+      "text": "The only death, Frost Aura at 1:47."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "bad",
+      "text": "The only death."
+     }
+    }
+   }
+  },
+  "Orbywan": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 54,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 350,
+      "rank": "24/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 431,
+      "rank": "18/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:42",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 7,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Greater Arcane Elixir 1/1",
+       "Greater Firepower 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Kreeg's Stout Beatdown 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "flask": [
+       "Supreme Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "potion: Mana Potion": 2,
+     "potion: Healing Potion": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "10 Life Drains removed",
+    "summary": "10 Life Drains on Sapphiron. A Frostbolt volley killed you at 3:42 on Kel'Thuzad.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "10 Life Drains removed.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "text": "24th on Sapphiron."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "10 Life Drains."
+     }
+    }
+   }
+  },
+  "Osinir": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 57,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 10,
+      "best": 15,
+      "perSec": 599,
+      "rank": "16/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 60,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 64,
+      "best": 74,
+      "perSec": 390,
+      "rank": "19/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "1:27",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Greater Arcane Elixir 1/1",
+       "Greater Firepower 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "flask": [
+       "Supreme Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "11 Life Drains, early death on Kel'Thuzad",
+    "summary": "11 Life Drains removed on Sapphiron. A Frostbolt volley killed you at 1:27 on Kel'Thuzad.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "11 Life Drains removed.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Frostbolt at 1:27."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "11 Life Drains."
+     }
+    }
+   }
+  },
+  "Palastino": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 72,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 77,
+      "best": 77,
+      "perSec": 453,
+      "rank": "7/12 healers",
+      "healShare": 7,
+      "overheal": 32,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 273,
+      "rank": "8/12 healers",
+      "healShare": 8,
+      "overheal": 42,
+      "active": 74,
+      "activeMedian": 79,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "potion: Major Healthstone": 1,
+     "potion: Mana Potion": 1,
+     "utility: Blessing of Protection": 1,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Alive on both",
+    "summary": "Seventh and eighth of the healers, alive at the end of both.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "low",
+      "text": "Seventh and eighth."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Alive."
+     }
+    }
+   }
+  },
+  "Punintended": {
+   "stats": {
+    "class": "Hunter",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 76,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 68,
+      "best": 76,
+      "perSec": 492,
+      "rank": "19/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 65,
+      "best": 74,
+      "perSec": 376,
+      "rank": "21/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 80,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Elixir of the Mongoose 1/1"
+      ],
+      "juju": [
+       "Juju Chill 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 4
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "Alive on both",
+    "summary": "19th on Sapphiron, 21st on Kel'Thuzad. Alive at the end. Mana Detonation twice.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "text": "19th and 21st."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Alive."
+     }
+    }
+   }
+  },
+  "Rannek": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 61,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 45,
+      "best": 83,
+      "perSec": 725,
+      "rank": "8/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 68,
+      "best": 95,
+      "perSec": 1061,
+      "rank": "1/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "juju": [
+       "Juju Chill 1/1",
+       "Juju Power 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Blessed Sunfruit 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "potion: Thistle Tea": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "A",
+    "verdict": "First on Kel'Thuzad, alive at the end",
+    "summary": "The most damage on Kel'Thuzad (238k) and three of his Frostbolts kicked. Eighth on Sapphiron. One of the few still alive when he died.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "First, 238k.",
+      "boss": 51114
+     },
+     {
+      "title": "Interrupts",
+      "text": "3 Frostbolts."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "Eighth."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "First, alive at the end."
+     }
+    }
+   }
+  },
+  "Sabrina": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 55,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 25,
+      "best": 44,
+      "perSec": 513,
+      "rank": "18/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 79,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 38,
+      "best": 66,
+      "perSec": 435,
+      "rank": "17/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:14",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     }
+    ],
+    "consumes": {
+     "perPull": 10,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "juju": [
+       "Juju Chill 1/1",
+       "Juju Power 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 1/1",
+       "Elixir of Fortitude 1/1",
+       "Greater Armor 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1",
+       "Gordok Green Grog 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 3,
+     "potion: Major Healthstone": 1,
+     "raid debuff: Demoralizing Shout": 1,
+     "raid debuff: Sunder Armor": 21
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C+",
+    "verdict": "Died late on Kel'Thuzad",
+    "summary": "18th on Sapphiron, 17th on Kel'Thuzad. You died at 3:14 in the last phase.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "No deaths.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died at 3:14."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Died at 3:14."
+     }
+    }
+   }
+  },
+  "Sandomin": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 71,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 286,
+      "rank": "11/12 healers",
+      "healShare": 4,
+      "overheal": 65,
+      "active": 86,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 72,
+      "perSec": 213,
+      "rank": "12/12 healers",
+      "healShare": 6,
+      "overheal": 68,
+      "active": 92,
+      "activeMedian": 79,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "potion: Mana Potion": 1,
+     "potion: Dark Rune": 1,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C+",
+    "verdict": "Last healer on Kel'Thuzad",
+    "summary": "11th of the healers on Sapphiron, last on Kel'Thuzad. Alive on both.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "text": "Last on Kel'Thuzad."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Last of the healers."
+     }
+    }
+   }
+  },
+  "Selenax": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 67,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 48,
+      "best": 78,
+      "perSec": 804,
+      "rank": "4/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 72,
+      "best": 97,
+      "perSec": 921,
+      "rank": "3/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:07",
+      "by": "Void Blast",
+      "killer": "Shadow Fissure"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "zanza": [
+       "Strike of the Scorpok 1/1"
+      ],
+      "juju": [
+       "Juju Chill 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Giants 1/1",
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 3,
+     "explosive: Goblin Sapper Charge": 2,
+     "potion: Thistle Tea": 2,
+     "explosive: Dense Dynamite": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B",
+    "verdict": "Third on Kel'Thuzad, then a Shadow Fissure",
+    "summary": "Fourth on Sapphiron, third on Kel'Thuzad. A Shadow Fissure killed you with three others at 3:06.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "Third.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Void Blast at 3:06."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Shadow Fissure at 3:06."
+     }
+    }
+   }
+  },
+  "Sixto": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 71,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 387,
+      "rank": "10/12 healers",
+      "healShare": 6,
+      "overheal": 52,
+      "active": 90,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 292,
+      "rank": "5/12 healers",
+      "healShare": 9,
+      "overheal": 60,
+      "active": 97,
+      "activeMedian": 79,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:34",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     }
+    ],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 2,
+     "utility: Blessing of Protection": 1,
+     "utility: Lay on Hands": 1
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B-",
+    "verdict": "Fifth healer on Kel'Thuzad",
+    "summary": "Fifth of the healers on Kel'Thuzad. A Guardian killed you at 3:34.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "Fifth of the healers.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Guardian at 3:34."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "info",
+      "text": "Died at 3:34."
+     }
+    }
+   }
+  },
+  "Snotspat": {
+   "stats": {
+    "class": "Warlock",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 67,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 76,
+      "best": 88,
+      "perSec": 521,
+      "rank": "17/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 84,
+      "best": 95,
+      "perSec": 559,
+      "rank": "12/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "2:44",
+      "by": "Melee",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Rumsey Rum Black Label 1/1"
+      ],
+      "elixir": [
+       "Greater Arcane Elixir 1/1",
+       "Greater Firepower 1/1",
+       "Shadow Power 1/1"
+      ],
+      "flask": [
+       "Supreme Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 2,
+     "raid debuff: Curse of the Elements": 3,
+     "raid debuff: Curse of Recklessness": 12
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C+",
+    "verdict": "Killed by Kel'Thuzad's melee",
+    "summary": "17th on Sapphiron, 12th on Kel'Thuzad. His melee killed you at 2:44.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "12th.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "His melee at 2:44."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Died at 2:44."
+     }
+    }
+   }
+  },
+  "Soulchained": {
+   "stats": {
+    "class": "Warlock",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 45,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 39,
+      "best": 58,
+      "perSec": 256,
+      "rank": "25/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 64,
+      "best": 85,
+      "perSec": 381,
+      "rank": "20/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 71,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "2:50",
+      "by": "Frost Blast",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 2,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Greater Arcane Elixir 1/1",
+       "Shadow Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 1,
+     "raid debuff: Curse of the Elements": 8
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C",
+    "verdict": "Last on Sapphiron, Frost Blast on Kel'Thuzad",
+    "summary": "Last of 25 on Sapphiron, 20th on Kel'Thuzad, where Frost Blast killed you at 2:50.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "20th.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "medium",
+      "boss": 51119,
+      "text": "Last of 25."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "bad",
+      "text": "Last."
+     }
+    }
+   }
+  },
+  "Thornhild": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 56,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 34,
+      "best": 68,
+      "perSec": 862,
+      "rank": "2/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 51,
+      "best": 89,
+      "perSec": 816,
+      "rank": "4/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:43",
+      "by": "Melee",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 5,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "explosive: Goblin Sapper Charge": 1,
+     "explosive: Stratholme Holy Water": 5,
+     "potion: Major Healthstone": 1,
+     "potion: Mighty Rage Potion": 2,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Demoralizing Shout": 5
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "Second on Sapphiron, fourth on Kel'Thuzad",
+    "summary": "Second on Sapphiron (172k), fourth on Kel'Thuzad. His melee killed you at 3:43, a second before he died.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "Second.",
+      "boss": 51119
+     },
+     {
+      "title": "Kel'Thuzad",
+      "text": "Fourth.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died at 3:43."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "Second."
+     }
+    }
+   }
+  },
+  "Tochopolvo": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 42,
+      "best": 55,
+      "perSec": 875,
+      "rank": "1/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 60,
+      "best": 91,
+      "perSec": 690,
+      "rank": "6/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:07",
+      "by": "Void Blast",
+      "killer": "Shadow Fissure"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1",
+       "Gordok Green Grog 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 1,
+     "explosive: Goblin Sapper Charge": 1,
+     "potion: Major Healthstone": 1,
+     "potion: Mighty Rage Potion": 3,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Sunder Armor": 6
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "First on Sapphiron, caught by a Shadow Fissure",
+    "summary": "The most damage on Sapphiron (175k), three Frostbolts kicked on Kel'Thuzad. A Shadow Fissure killed you and three others at 3:06.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "First, 175k.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Void Blast at 3:06."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Shadow Fissure at 3:06."
+     },
+     "51119": {
+      "tone": "good",
+      "text": "First."
+     }
+    }
+   }
+  },
+  "Whorm": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 61,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 27,
+      "best": 27,
+      "perSec": 685,
+      "rank": "12/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 69,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 35,
+      "best": 35,
+      "perSec": 222,
+      "rank": "24/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 84,
+      "activeMedian": 84,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "1:04",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ],
+      "flask": [
+       "Flask of the Titans 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Great Rage Potion": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Warchief's Blessing",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "C",
+    "verdict": "Frostbolt volley at 1:03",
+    "summary": "12th on Sapphiron. A Frostbolt volley killed you at 1:03 on Kel'Thuzad, together with Miniwrecker.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "12th.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "medium",
+      "boss": 51114,
+      "text": "Died at 1:03."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "bad",
+      "text": "Died at 1:03."
+     }
+    }
+   }
+  },
+  "Willythepimp": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": null,
+    "ownAvgParseBefore": 64,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 48,
+      "best": 62,
+      "perSec": 668,
+      "rank": "13/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 65,
+      "activeMedian": 70,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 57,
+      "best": 87,
+      "perSec": 669,
+      "rank": "7/25 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 84,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 6,
+     "pulls": 1,
+     "groups": {
+      "juju": [
+       "Juju Chill 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Giants 1/1",
+       "Elixir of the Mongoose 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Frost Protection Potion": 4,
+     "potion: Thistle Tea": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Fengus' Ferocity",
+       "Mol'dar's Moxie",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "4 Frostbolts kicked, alive",
+    "summary": "Four Frostbolts kicked, seventh on Kel'Thuzad and alive at the end. Thirteenth on Sapphiron.",
+    "good": [
+     {
+      "title": "Kel'Thuzad",
+      "text": "4 Frostbolts, alive.",
+      "boss": 51114
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sapphiron",
+      "impact": "low",
+      "boss": 51119,
+      "text": "13th."
+     }
+    ],
+    "bosses": {
+     "51114": {
+      "tone": "good",
+      "text": "4 Frostbolts kicked."
+     }
+    }
+   }
+  },
+  "Woness": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 63,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 849,
+      "rank": "2/12 healers",
+      "healShare": 13,
+      "overheal": 21,
+      "active": 89,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 345,
+      "rank": "2/12 healers",
+      "healShare": 10,
+      "overheal": 49,
+      "active": 79,
+      "activeMedian": 79,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "3:02",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     }
+    ],
+    "consumes": {
+     "perPull": 6,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Elixir of Fortitude 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Rumsey Rum Black Label 1/1"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 2,
+     "utility: Shackle Undead": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "B+",
+    "verdict": "Second healer on both bosses",
+    "summary": "Second of the healers on Sapphiron and Kel'Thuzad, two Shackles. A Guardian killed you at 3:02.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "Second on both."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Guardian at 3:02."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "Second of the healers."
+     }
+    }
+   }
+  },
+  "Yulefuel": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 71,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51119,
+      "name": "Sapphiron",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 1036,
+      "rank": "1/12 healers",
+      "healShare": 15,
+      "overheal": 11,
+      "active": 92,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 51114,
+      "name": "Kel'Thuzad",
+      "parse": null,
+      "own": 50,
+      "best": 55,
+      "perSec": 234,
+      "rank": "9/12 healers",
+      "healShare": 7,
+      "overheal": 45,
+      "active": 80,
+      "activeMedian": 79,
+      "deaths": 2
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "2:47",
+      "by": "Melee",
+      "killer": "Guardian of Icecrown"
+     },
+     {
+      "boss": "Kel'Thuzad",
+      "id": 51114,
+      "pull": "1 (kill)",
+      "at": "2:55",
+      "by": "Frostbolt",
+      "killer": "Kel'Thuzad"
+     }
+    ],
+    "consumes": {
+     "perPull": 7,
+     "roleMedian": 5,
+     "pulls": 1,
+     "groups": {
+      "flask": [
+       "Distilled Wisdom 1/1"
+      ],
+      "food": [
+       "Mana Regeneration 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1",
+       "Elixir of Fortitude 1/1"
+      ],
+      "zanza": [
+       "Spirit of Zanza 1/1"
+      ],
+      "drink": [
+       "Kreeg's Stout Beatdown 1/1",
+       "Gordok Green Grog 1/1"
+      ]
+     }
+    },
+    "used": {
+     "utility: Power Infusion": 3,
+     "potion: Mana Potion": 2,
+     "utility: Shackle Undead": 2
+    },
+    "worldBuffs": [
+     {
+      "id": 51119,
+      "boss": "Sapphiron",
+      "pull": 1,
+      "kill": true,
+      "buffs": [
+       "Mol'dar's Moxie",
+       "Slip'kik's Savvy",
+       "Rallying Cry of the Dragonslayer",
+       "Spirit of Zandalar",
+       "Songflower Serenade"
+      ]
+     }
+    ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:08:24.667Z",
+    "grade": "A-",
+    "verdict": "207k on Sapphiron",
+    "summary": "The most healing on Sapphiron, 207k. On Kel'Thuzad you shackled twice, a Guardian killed you at 2:47 and a Frostbolt volley again at 2:55.",
+    "good": [
+     {
+      "title": "Sapphiron",
+      "text": "First of the healers, 207k.",
+      "boss": 51119
+     }
+    ],
+    "fix": [
+     {
+      "title": "Kel'Thuzad",
+      "impact": "low",
+      "boss": 51114,
+      "text": "Died twice in the last phase."
+     }
+    ],
+    "bosses": {
+     "51119": {
+      "tone": "good",
+      "text": "First of the healers."
+     }
+    }
+   }
+  }
+ }
+}

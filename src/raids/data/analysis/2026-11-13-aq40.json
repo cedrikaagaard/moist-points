@@ -2,14 +2,14 @@
   "night": "2026-11-13-aq40",
   "model": "Claude (Opus 5.5)",
   "generatedAt": "2026-11-15T16:00:00Z",
-  "headline": "Ahn'Qiraj in 57:00, a guild record, as the last of three raids in one night",
+  "headline": "Ahn'Qiraj in 57:00 to open a three-raid night",
   "mvp": {
     "player": "Tochopolvo",
     "headline": "the most damage on the Bug Trio, Huhuran and the Twins, no deaths",
     "why": [
       "First on the Bug Trio, Princess Huhuran and the Twin Emperors (165k), second on Skeram, Sartura and C'Thun",
       "Average parse 90, with 98 on the Twins",
-      "Also the most damage on Gehennas and Firemaw earlier the same night"
+      "Also the most damage on Firemaw and Gehennas later the same night"
     ],
     "also": [
       { "player": "Birkler", "text": "tanked all nine bosses, parse 97 on Fankriss and 96 on the Twins" },
@@ -18,7 +18,7 @@
     ]
   },
   "overview": [
-    "Nine kills on nine pulls in 57:00, a minute and a half under the guild's best (58:27) and 21 minutes under a usual night, after Molten Core and Blackwing Lair the same evening.",
+    "Nine kills on nine pulls in 57:00, 21 minutes under a usual night, to start an evening that went on to Blackwing Lair and Molten Core. The guild's fastest is still 1 Nov's 51:27.",
     "Skeram went without world buffs on anyone (stored in Chronoboons, by the look of it), then 39 of 40 had Rallying Cry from the Bug Trio to the Twins. Ouro and C'Thun were fought with buffs on 2 and 1 raiders. Only Roguina died on the Twins, so they weren't lost to deaths. Ouro was the one boss slower than usual.",
     "Nine deaths: four on C'Thun, one each on Sartura, the Twins and Ouro, two on trash."
   ],

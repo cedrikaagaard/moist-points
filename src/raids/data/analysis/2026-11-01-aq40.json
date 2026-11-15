@@ -1,0 +1,43 @@
+{
+  "night": "2026-11-01-aq40",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T22:00:00Z",
+  "headline": "Ahn'Qiraj in 51:27, the guild's fastest by more than five minutes",
+  "mvp": {
+    "player": "Gertggs",
+    "headline": "the most damage on Viscidus, Huhuran, the Twins and C'Thun",
+    "why": [
+      "First on Viscidus, Princess Huhuran, the Twin Emperors (143k) and C'Thun (172k), second on the Bug Trio, third on Fankriss",
+      "Average parse 90 against a usual 74",
+      "No deaths, 6 Poison Bolt Volleys removed"
+    ],
+    "also": [
+      { "player": "Valethia", "text": "the most damage on Skeram, Sartura and Ouro" },
+      { "player": "Hjärterkung", "text": "tanked all nine, parse 98 on C'Thun and 95 or 96 on five more" },
+      { "player": "Youlloveme", "text": "the most healing on six bosses, 23% of it on C'Thun" }
+    ]
+  },
+  "overview": [
+    "Nine kills on nine pulls in 51:27. The guild's next fastest is 57:00 (13 Nov) and a usual night is 1:16. C'Thun fell in 3:24 without a death, also a guild best, and Eye Beam hits ran at a quarter of the usual rate.",
+    "Three boss deaths: Osinir to Vem at 0:50, Shaaw to Sartura's Whirlwind at 0:56, and Thornhild to Ouro's melee six seconds in. Skeram went with buffs stored; from the Bug Trio on 32 to 36 raiders had Rallying Cry.",
+    "Trash cost five, three of them to an Anubisath Defender's Meteor and Shadow Storm."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50717, "text": "C'Thun in 3:24, a guild best, no deaths and 11 Eye Beam hits against about 47 usually." },
+    { "encounterId": 50709, "text": "All 9 of Skeram's Arcane Explosions kicked." },
+    { "encounterId": 50710, "text": "Bug Trio in 0:55 (median 1:21), both of Yauj's Great Heals kicked (Tochopolvo and Willythepimp)." },
+    { "encounterId": 50715, "text": "Twin Emperors in 2:44 without a death, Blizzard at a third of the usual rate." }
+  ],
+  "bosses": [
+    { "encounterId": 50709, "name": "The Prophet Skeram", "notes": [ { "tone": "good", "text": "0:58 (median 1:13), no deaths, 9 of 9 Arcane Explosions interrupted." } ] },
+    { "encounterId": 50710, "name": "Silithid Royalty", "notes": [ { "tone": "good", "text": "0:55. Osinir died to Vem's melee at 0:50. Fears at a third of the usual rate, both Great Heals kicked." } ] },
+    { "encounterId": 50711, "name": "Battleguard Sartura", "notes": [ { "tone": "info", "text": "0:57 (median 1:10). Whirlwind killed Shaaw at 0:56, a second before the kill. Valethia top at 63k." } ] },
+    { "encounterId": 50712, "name": "Fankriss the Unyielding", "notes": [ { "tone": "good", "text": "0:38 (median 0:46), no deaths. Tochopolvo top." } ] },
+    { "encounterId": 50713, "name": "Viscidus", "notes": [ { "tone": "good", "text": "1:39 (median 1:59), no deaths, Poison Bolt Volley at about 60% of the usual rate." } ] },
+    { "encounterId": 50714, "name": "Princess Huhuran", "notes": [ { "tone": "good", "text": "0:38 (median 0:51), no deaths, the one Frenzy tranquilized by Punintended, 15 Nature Protection Potions." } ] },
+    { "encounterId": 50715, "name": "Twin Emperors", "notes": [ { "tone": "good", "text": "2:44 (median 4:03), no deaths. Exploding bug hits a little over the usual." } ] },
+    { "encounterId": 50716, "name": "Ouro", "notes": [ { "tone": "info", "text": "1:21 (median 1:43). Ouro's melee killed Thornhild at 0:06, the only death. Valethia top at 124k." } ] },
+    { "encounterId": 50717, "name": "C'Thun", "notes": [ { "tone": "good", "text": "3:24, a guild best, no deaths. Seven raiders went to the stomach. Gertggs 172k." } ] }
+  ]
+}
