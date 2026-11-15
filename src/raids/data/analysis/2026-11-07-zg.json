@@ -1,0 +1,54 @@
+{
+  "night": "2026-11-07-zg",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T19:30:00Z",
+  "headline": "Zul'Gurub with 13 people, cleared with one Hakkar wipe at 6%",
+  "mvp": {
+    "player": "Fluffycatto",
+    "headline": "the most damage on five of the nine bosses",
+    "why": [
+      "First on Venoxis, Mar'li, Mandokir, Wushoolay and Jin'do, second on Jeklik, Arlokk and Hakkar",
+      "Average parse 79 against a usual 70",
+      "3 interrupts, one of them a Great Heal"
+    ],
+    "also": [
+      { "player": "Tochopolvo", "text": "8 interrupts, the most, and the most damage on Jeklik, Thekal, Arlokk and Hakkar" },
+      { "player": "Foggiie", "text": "the most healing on Venoxis, Mar'li, Mandokir and Thekal, 48% of it on Venoxis" },
+      { "player": "Dramima", "text": "96 dispels, 34 of them Curse of Blood" }
+    ]
+  },
+  "overview": [
+    "Thirteen raiders, no world buffs, nine kills in 1:19:29 against a usual 52 minutes. Raid damage ran at 37% to 85% of a usual 20-man kill, so every boss took longer than usual and the attrition mechanics had more time to work.",
+    "Hakkar wiped once at 6% and died on the next pull. A pack of Mad Voidwalkers killed 8 at the 34 minute mark."
+  ],
+  "wipes": [
+    {
+      "encounterId": 50793,
+      "pull": 1,
+      "title": "Hakkar, pull 1 (6%)",
+      "whatHappened": "A 4:34 fight. Corrupted Blood killed Pomo at 3:15, then Hakkar killed Mercîless (tanking) at 3:22. Mind-controlled tanks killed two healers: Macharius hit Yuleblessing at 3:37 and Alanakos Künigünde at 4:17. Corrupted Blood took Terrora, Fluffycatto, Gael and Yulepunch.",
+      "likelyCause": "Most likely Corrupted Blood spreading between players standing close, over a long fight: 85 hits, 6.5 per raider, against about 2 on a usual kill. With the tanks mind-controlled 11 times, two healers went down and the raid couldn't hold the last 6%.",
+      "evidence": [
+        "5 deaths to Corrupted Blood, against almost none on a usual kill",
+        "12 mind controls, 11 of them on the tanks (Mercîless and Macharius 4 each, Alanakos 3)",
+        "Raid DPS 3.0k against 5.7k on a usual kill"
+      ],
+      "avoid": "Spread wider for Corrupted Blood, and control the mind-controlled tank before it reaches a healer."
+    }
+  ],
+  "wentWell": [
+    { "encounterId": 50793, "text": "Hakkar pull 2 in 3:37 with no deaths, Corrupted Blood down to 51 hits." },
+    { "encounterId": 50785, "text": "Jeklik's one Great Heal kicked by Tochopolvo." }
+  ],
+  "bosses": [
+    { "encounterId": 50785, "name": "High Priestess Jeklik", "notes": [ { "tone": "info", "text": "1:21 (median 0:52), no deaths, Great Heal kicked." } ] },
+    { "encounterId": 50784, "name": "High Priest Venoxis", "notes": [ { "tone": "info", "text": "0:56 (median 0:48), no deaths. Foggiie did 48% of the healing." } ] },
+    { "encounterId": 50786, "name": "High Priestess Mar'li", "notes": [ { "tone": "info", "text": "1:40 (median 0:57), no deaths. Her Drain Life healed her for 76k, against a usual 23k." } ] },
+    { "encounterId": 50787, "name": "Bloodlord Mandokir", "notes": [ { "tone": "bad", "text": "2:48 (median 1:19), 3 deaths: Yulepunch to Guillotine at 0:45, Gael to Mortal Strike at 2:03 and Alanakos, tanking, at 2:12. Whirlwind hits at two and a half times the usual rate." } ] },
+    { "encounterId": 50788, "name": "Edge of Madness", "notes": [ { "tone": "info", "text": "Wushoolay in 1:03, no deaths. Lightning Cloud did a third of all damage taken." } ] },
+    { "encounterId": 50789, "name": "High Priest Thekal", "notes": [ { "tone": "info", "text": "2:16. Macharius died to Thekal's melee at 2:14, just before the kill. 2 of 3 Great Heals kicked." } ] },
+    { "encounterId": 50791, "name": "High Priestess Arlokk", "notes": [ { "tone": "info", "text": "1:44 (median 0:33), no deaths, raid damage at 37% of a usual kill." } ] },
+    { "encounterId": 50792, "name": "Jin'do the Hexxer", "notes": [ { "tone": "info", "text": "1:37 (median 0:49), no deaths." } ] },
+    { "encounterId": 50793, "name": "Hakkar", "notes": [ { "tone": "bad", "text": "Pull 1 wiped at 6%. See the wipe above." }, { "tone": "good", "text": "Pull 2: 3:37, no deaths." } ] }
+  ]
+}

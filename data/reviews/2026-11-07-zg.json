@@ -1,0 +1,2596 @@
+{
+ "night": "2026-11-07-zg",
+ "zones": [
+  "Zul'Gurub"
+ ],
+ "zoneIds": [
+  2003
+ ],
+ "date": "2026-11-07",
+ "durationMin": 88,
+ "raiders": 13,
+ "icons": {
+  "Gordok Green Grog": "inv_drink_03.jpg",
+  "Blessed Sunfruit": "spell_holy_devotion.jpg",
+  "Elixir of the Mongoose": "inv_potion_32.jpg",
+  "Winterfall Firewater": "inv_potion_92.jpg",
+  "Elixir of the Giants": "inv_potion_61.jpg",
+  "Greater Intellect": "inv_potion_10.jpg",
+  "Kreeg's Stout Beatdown": "inv_drink_05.jpg",
+  "Mana Regeneration": "spell_nature_manaregentotem.jpg",
+  "Juju Power": "inv_misc_monsterscales_11.jpg",
+  "Well Fed": "spell_misc_food.jpg",
+  "Mageblood Elixir": "inv_potion_45.jpg",
+  "Blessed Sunfruit Juice": "spell_holy_layonhands.jpg"
+ },
+ "players": {
+  "Alanakos": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 68,
+    "ownAvgParseBefore": 93,
+    "raidMedianParse": 62,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 71,
+      "own": 77,
+      "best": 92,
+      "perSec": 652,
+      "rank": "3/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 95,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 77,
+      "own": 64,
+      "best": 94,
+      "perSec": 651,
+      "rank": "4/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 74,
+      "own": 72,
+      "best": 95,
+      "perSec": 689,
+      "rank": "2/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 56,
+      "own": 77,
+      "best": 95,
+      "perSec": 532,
+      "rank": "2/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 96,
+      "activeMedian": 94,
+      "deaths": 1
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 77,
+      "own": 75,
+      "best": 97,
+      "perSec": 578,
+      "rank": "3/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 76,
+      "own": 77,
+      "best": 96,
+      "perSec": 610,
+      "rank": "2/6 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 56,
+      "own": 86,
+      "best": 95,
+      "perSec": 503,
+      "rank": "3/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 81,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 57,
+      "own": 80,
+      "best": 95,
+      "perSec": 521,
+      "rank": "3/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 65,
+      "own": 76,
+      "best": 92,
+      "perSec": 540,
+      "rank": "3/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 90,
+      "deaths": 0
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Bloodlord Mandokir",
+      "id": 50787,
+      "pull": "1 (kill)",
+      "at": "2:12",
+      "by": "Melee",
+      "killer": "Bloodlord Mandokir"
+     }
+    ],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 4,
+     "pulls": 9,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 9/9"
+      ],
+      "juju": [
+       "Juju Power 9/9"
+      ],
+      "food": [
+       "Well Fed 9/9"
+      ],
+      "drink": [
+       "Winterfall Firewater 9/9"
+      ]
+     }
+    },
+    "used": {
+     "potion: Healing Potion": 1,
+     "raid debuff: Sunder Armor": 186
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "B",
+    "verdict": "Top four on every boss, died tanking Mandokir",
+    "summary": "Second on Mar'li, Mandokir and Thekal, third on five more. 186 Sunders, two Heals kicked. Mandokir's melee killed you at 2:12, and on the Hakkar wipe you were mind-controlled three times, once killing Künigünde.",
+    "good": [
+     {
+      "title": "Consistency",
+      "text": "Top four on all nine."
+     },
+     {
+      "title": "Sunders",
+      "text": "186."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Mandokir",
+      "impact": "medium",
+      "boss": 50787,
+      "text": "Died at 2:12, 5 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50787": {
+      "tone": "bad",
+      "text": "Died at 2:12."
+     }
+    }
+   }
+  },
+  "Dramima": {
+   "stats": {
+    "class": "Druid",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 63,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 158,
+      "rank": "3/4 healers",
+      "healShare": 18,
+      "overheal": 47,
+      "active": 78,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 137,
+      "rank": "3/4 healers",
+      "healShare": 15,
+      "overheal": 68,
+      "active": 75,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 135,
+      "rank": "3/4 healers",
+      "healShare": 16,
+      "overheal": 47,
+      "active": 72,
+      "activeMedian": 85,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 166,
+      "rank": "4/4 healers",
+      "healShare": 15,
+      "overheal": 46,
+      "active": 46,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 189,
+      "rank": "3/4 healers",
+      "healShare": 19,
+      "overheal": 55,
+      "active": 94,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 240,
+      "rank": "3/4 healers",
+      "healShare": 19,
+      "overheal": 19,
+      "active": 68,
+      "activeMedian": 68,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 163,
+      "rank": "3/4 healers",
+      "healShare": 22,
+      "overheal": 44,
+      "active": 63,
+      "activeMedian": 63,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": null,
+      "own": 70,
+      "best": 70,
+      "perSec": 169,
+      "rank": "3/4 healers",
+      "healShare": 20,
+      "overheal": 57,
+      "active": 76,
+      "activeMedian": 79,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": null,
+      "own": 43,
+      "best": 43,
+      "perSec": 155,
+      "rank": "4/4 healers",
+      "healShare": 17,
+      "overheal": 33,
+      "active": 39,
+      "activeMedian": 69,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0.2,
+     "roleMedian": 1.8,
+     "pulls": 9,
+     "groups": {
+      "food": [
+       "Blessed Sunfruit Juice 2/9"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 3,
+     "utility: Innervate": 7,
+     "potion: Healing Potion": 1,
+     "potion: Demonic Rune": 1,
+     "raid debuff: Faerie Fire": 40
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "B+",
+    "verdict": "96 dispels",
+    "summary": "96 dispels: 34 Curse of Blood, 16 Venom Spit, 9 Tranquilizing Poison, 9 Shrink. Seven Innervates. Healing third or fourth of four on every boss.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "96, the most by far."
+     },
+     {
+      "title": "Innervate",
+      "text": "7."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "low",
+      "text": "Third or fourth of four on every boss."
+     }
+    ],
+    "bosses": {
+     "50789": {
+      "tone": "good",
+      "text": "19% overheal."
+     }
+    }
+   }
+  },
+  "Fluffycatto": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 79,
+    "ownAvgParseBefore": 70,
+    "raidMedianParse": 60,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 85,
+      "own": 90,
+      "best": 94,
+      "perSec": 679,
+      "rank": "2/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 94,
+      "own": 76,
+      "best": 83,
+      "perSec": 770,
+      "rank": "1/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 86,
+      "own": 91,
+      "best": 93,
+      "perSec": 733,
+      "rank": "1/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 95,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 73,
+      "own": 91,
+      "best": 94,
+      "perSec": 617,
+      "rank": "1/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 97,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 90,
+      "own": 94,
+      "best": 94,
+      "perSec": 681,
+      "rank": "1/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 68,
+      "own": 82,
+      "best": 82,
+      "perSec": 512,
+      "rank": "3/6 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 67,
+      "own": 96,
+      "best": 98,
+      "perSec": 518,
+      "rank": "2/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 75,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 76,
+      "own": 88,
+      "best": 98,
+      "perSec": 602,
+      "rank": "1/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 68,
+      "own": 71,
+      "best": 96,
+      "perSec": 542,
+      "rank": "2/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 90,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "4:26",
+      "by": "Corrupted Blood",
+      "killer": "Hakkar"
+     }
+    ],
+    "consumes": {
+     "perPull": 1,
+     "roleMedian": 1.7,
+     "pulls": 9,
+     "groups": {
+      "food": [
+       "Blessed Sunfruit 9/9"
+      ]
+     }
+    },
+    "used": {
+     "raid debuff: Expose Armor": 4
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.538Z",
+    "grade": "A",
+    "verdict": "First on five bosses in a 13-person ZG",
+    "summary": "The most damage on Venoxis, Mar'li, Mandokir, Wushoolay and Jin'do, second on Jeklik, Arlokk and Hakkar. Average parse 79 against your usual 70. Three interrupts, one a Great Heal. Corrupted Blood killed you at 4:26 on the Hakkar wipe.",
+    "good": [
+     {
+      "title": "Damage",
+      "text": "First on five of nine bosses."
+     },
+     {
+      "title": "Venoxis",
+      "text": "First, parse 94.",
+      "boss": 50784
+     }
+    ],
+    "fix": [
+     {
+      "title": "Hakkar",
+      "impact": "low",
+      "boss": 50793,
+      "text": "Corrupted Blood at 4:26 on the wipe, 9 hits."
+     }
+    ],
+    "bosses": {
+     "50784": {
+      "tone": "good",
+      "text": "First."
+     },
+     "50787": {
+      "tone": "good",
+      "text": "First."
+     }
+    }
+   }
+  },
+  "Foggiie": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": null,
+      "own": 60,
+      "best": 76,
+      "perSec": 295,
+      "rank": "2/4 healers",
+      "healShare": 33,
+      "overheal": 55,
+      "active": 76,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 425,
+      "rank": "1/4 healers",
+      "healShare": 48,
+      "overheal": 35,
+      "active": 78,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 337,
+      "rank": "1/4 healers",
+      "healShare": 40,
+      "overheal": 33,
+      "active": 88,
+      "activeMedian": 85,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": null,
+      "own": 75,
+      "best": 75,
+      "perSec": 382,
+      "rank": "1/4 healers",
+      "healShare": 34,
+      "overheal": 37,
+      "active": 83,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": null,
+      "own": 60,
+      "best": 78,
+      "perSec": 351,
+      "rank": "2/4 healers",
+      "healShare": 35,
+      "overheal": 51,
+      "active": 85,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 513,
+      "rank": "1/4 healers",
+      "healShare": 41,
+      "overheal": 21,
+      "active": 87,
+      "activeMedian": 68,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": null,
+      "own": 50,
+      "best": 50,
+      "perSec": 236,
+      "rank": "2/4 healers",
+      "healShare": 32,
+      "overheal": 42,
+      "active": 48,
+      "activeMedian": 63,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 258,
+      "rank": "2/4 healers",
+      "healShare": 31,
+      "overheal": 49,
+      "active": 93,
+      "activeMedian": 79,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": null,
+      "own": 10,
+      "best": 59,
+      "perSec": 304,
+      "rank": "2/4 healers",
+      "healShare": 32,
+      "overheal": 35,
+      "active": 70,
+      "activeMedian": 69,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 2.1,
+     "roleMedian": 1.8,
+     "pulls": 9,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 4/9",
+       "Kreeg's Stout Beatdown 4/9"
+      ],
+      "elixir": [
+       "Greater Intellect 9/9"
+      ],
+      "food": [
+       "Mana Regeneration 2/9"
+      ]
+     }
+    },
+    "used": {
+     "potion: Mana Potion": 5,
+     "utility: Power Infusion": 4,
+     "potion: Demonic Rune": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "A",
+    "verdict": "First healer on four bosses",
+    "summary": "First of the healers on Venoxis (48%), Mar'li, Mandokir and Thekal (513 HPS), second on the rest. 18 dispels, including 5 Hexes. No deaths.",
+    "good": [
+     {
+      "title": "Venoxis",
+      "text": "48% of the healing.",
+      "boss": 50784
+     },
+     {
+      "title": "Thekal",
+      "text": "First, 513 HPS.",
+      "boss": 50789
+     }
+    ],
+    "fix": [
+     {
+      "title": "Power Infusion",
+      "impact": "low",
+      "text": "4 in a long night."
+     }
+    ],
+    "bosses": {
+     "50784": {
+      "tone": "good",
+      "text": "First of the healers, 48%."
+     }
+    }
+   }
+  },
+  "Gael": {
+   "stats": {
+    "class": "Warlock",
+    "role": "dps",
+    "avgParse": 22,
+    "ownAvgParseBefore": 31,
+    "raidMedianParse": 60,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 31,
+      "own": 70,
+      "best": 70,
+      "perSec": 260,
+      "rank": "8/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 60,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 76,
+      "own": 81,
+      "best": 81,
+      "perSec": 407,
+      "rank": "7/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 9,
+      "own": 52,
+      "best": 52,
+      "perSec": 165,
+      "rank": "7/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 9,
+      "own": 55,
+      "best": 55,
+      "perSec": 177,
+      "rank": "6/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 94,
+      "deaths": 1
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 18,
+      "own": 62,
+      "best": 62,
+      "perSec": 186,
+      "rank": "7/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 21,
+      "own": 54,
+      "best": 54,
+      "perSec": 193,
+      "rank": "6/6 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 18,
+      "own": 64,
+      "best": 64,
+      "perSec": 152,
+      "rank": "7/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 61,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 7,
+      "own": 53,
+      "best": 53,
+      "perSec": 119,
+      "rank": "7/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 53,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 7,
+      "own": 23,
+      "best": 23,
+      "perSec": 133,
+      "rank": "7/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 54,
+      "activeMedian": 90,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Bloodlord Mandokir",
+      "id": 50787,
+      "pull": "1 (kill)",
+      "at": "2:03",
+      "by": "Mortal Strike",
+      "killer": "Bloodlord Mandokir"
+     },
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "4:26",
+      "by": "Corrupted Blood",
+      "killer": "Hakkar"
+     }
+    ],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1.7,
+     "pulls": 9,
+     "groups": {}
+    },
+    "used": {
+     "potion: Fire Protection Potion": 2,
+     "raid debuff: Curse of the Elements": 135,
+     "raid debuff: Curse of Recklessness": 7
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "D+",
+    "verdict": "Last or near it on every boss, two boss deaths",
+    "summary": "135 Curses of the Elements. Damage last on six bosses, parse 22 average. Mandokir's Mortal Strike killed you at 2:03 and Corrupted Blood on the Hakkar wipe.",
+    "good": [
+     {
+      "title": "Curse duty",
+      "text": "135 Curses of the Elements."
+     },
+     {
+      "title": "Venoxis",
+      "text": "Parse 76.",
+      "boss": 50784
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "high",
+      "text": "Last on six bosses."
+     },
+     {
+      "title": "Mandokir",
+      "impact": "medium",
+      "boss": 50787,
+      "text": "Mortal Strike at 2:03."
+     }
+    ],
+    "bosses": {
+     "50787": {
+      "tone": "bad",
+      "text": "Mortal Strike at 2:03."
+     }
+    }
+   }
+  },
+  "Künigünde": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": null,
+      "own": 60,
+      "best": 91,
+      "perSec": 449,
+      "rank": "1/4 healers",
+      "healShare": 50,
+      "overheal": 36,
+      "active": 93,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": null,
+      "own": 80,
+      "best": 82,
+      "perSec": 330,
+      "rank": "2/4 healers",
+      "healShare": 37,
+      "overheal": 58,
+      "active": 66,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": null,
+      "own": 60,
+      "best": 86,
+      "perSec": 329,
+      "rank": "2/4 healers",
+      "healShare": 39,
+      "overheal": 40,
+      "active": 85,
+      "activeMedian": 85,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": null,
+      "own": 75,
+      "best": 75,
+      "perSec": 300,
+      "rank": "2/4 healers",
+      "healShare": 27,
+      "overheal": 28,
+      "active": 63,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 368,
+      "rank": "1/4 healers",
+      "healShare": 37,
+      "overheal": 48,
+      "active": 90,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": null,
+      "own": 60,
+      "best": 94,
+      "perSec": 322,
+      "rank": "2/4 healers",
+      "healShare": 26,
+      "overheal": 28,
+      "active": 68,
+      "activeMedian": 68,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": null,
+      "own": 50,
+      "best": 57,
+      "perSec": 254,
+      "rank": "1/4 healers",
+      "healShare": 35,
+      "overheal": 58,
+      "active": 68,
+      "activeMedian": 63,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 311,
+      "rank": "1/4 healers",
+      "healShare": 37,
+      "overheal": 48,
+      "active": 79,
+      "activeMedian": 79,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": null,
+      "own": 42,
+      "best": 59,
+      "perSec": 304,
+      "rank": "1/4 healers",
+      "healShare": 33,
+      "overheal": 42,
+      "active": 69,
+      "activeMedian": 69,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "4:17",
+      "by": "Slam",
+      "killer": "Alanakos"
+     }
+    ],
+    "consumes": {
+     "perPull": 1.8,
+     "roleMedian": 1.8,
+     "pulls": 9,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 2/9",
+       "Kreeg's Stout Beatdown 2/9"
+      ],
+      "food": [
+       "Well Fed 7/9",
+       "Mana Regeneration 1/9"
+      ],
+      "elixir": [
+       "Mageblood Elixir 4/9"
+      ]
+     }
+    },
+    "used": {
+     "utility: Fear Ward": 11,
+     "potion: Mana Potion": 5,
+     "utility: Power Infusion": 9
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "A-",
+    "verdict": "First healer on five bosses, killed by a mind-controlled Alanakos",
+    "summary": "First of the healers on Jeklik (50%), Wushoolay, Arlokk, Jin'do and Hakkar. 11 Fear Wards and 9 Power Infusions. On the Hakkar wipe a mind-controlled Alanakos killed you at 4:17.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "First on five bosses."
+     },
+     {
+      "title": "Fear Ward",
+      "text": "11."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Dispels",
+      "impact": "low",
+      "text": "2."
+     }
+    ],
+    "bosses": {
+     "50785": {
+      "tone": "good",
+      "text": "First of the healers, 50%."
+     },
+     "50793": {
+      "tone": "good",
+      "text": "First of the healers."
+     }
+    }
+   }
+  },
+  "Macharius": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 62,
+    "ownAvgParseBefore": 66,
+    "raidMedianParse": 62,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 56,
+      "own": 68,
+      "best": 87,
+      "perSec": 404,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 83,
+      "own": 57,
+      "best": 95,
+      "perSec": 545,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 91,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 68,
+      "own": 60,
+      "best": 90,
+      "perSec": 464,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 48,
+      "own": 72,
+      "best": 94,
+      "perSec": 284,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 75,
+      "own": 71,
+      "best": 96,
+      "perSec": 450,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 82,
+      "own": 62,
+      "best": 91,
+      "perSec": 458,
+      "rank": "1/3 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 88,
+      "activeMedian": 88,
+      "deaths": 1
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 55,
+      "own": 80,
+      "best": 93,
+      "perSec": 309,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 63,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 64,
+      "own": 69,
+      "best": 90,
+      "perSec": 524,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 31,
+      "own": 59,
+      "best": 87,
+      "perSec": 219,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 93,
+      "deaths": 0
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "High Priest Thekal",
+      "id": 50789,
+      "pull": "1 (kill)",
+      "at": "2:14",
+      "by": "Melee",
+      "killer": "High Priest Thekal"
+     }
+    ],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 9,
+     "groups": {}
+    },
+    "used": {
+     "utility: Challenging Shout": 4,
+     "utility: Intimidating Shout": 1,
+     "raid debuff: Sunder Armor": 78,
+     "raid debuff: Demoralizing Shout": 9
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "B",
+    "verdict": "Main tank on eight bosses, died to Thekal at the end",
+    "summary": "First of the tanks on every boss but Hakkar, parse 83 on Venoxis and 82 on Thekal, where his melee killed you two seconds before the kill. Mind-controlled nine times over the two Hakkar pulls; on the wipe you killed Yuleblessing while controlled.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "First of the tanks on eight bosses."
+     },
+     {
+      "title": "Venoxis",
+      "text": "Parse 83.",
+      "boss": 50784
+     }
+    ],
+    "fix": [
+     {
+      "title": "Thekal",
+      "impact": "medium",
+      "boss": 50789,
+      "text": "Died at 2:14."
+     }
+    ],
+    "bosses": {
+     "50789": {
+      "tone": "info",
+      "text": "Tanked, died at 2:14."
+     }
+    }
+   }
+  },
+  "Mercîless": {
+   "stats": {
+    "class": "Warrior",
+    "role": "tank",
+    "avgParse": 44,
+    "ownAvgParseBefore": 68,
+    "raidMedianParse": 62,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 42,
+      "own": 34,
+      "best": 93,
+      "perSec": 459,
+      "rank": "7/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 95,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 52,
+      "own": 44,
+      "best": 81,
+      "perSec": 481,
+      "rank": "6/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 51,
+      "own": 64,
+      "best": 92,
+      "perSec": 360,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 24,
+      "own": 76,
+      "best": 97,
+      "perSec": 196,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 53,
+      "own": 64,
+      "best": 84,
+      "perSec": 319,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 35,
+      "own": 55,
+      "best": 96,
+      "perSec": 231,
+      "rank": "3/3 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 53,
+      "own": 90,
+      "best": 95,
+      "perSec": 291,
+      "rank": "2/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 53,
+      "own": 46,
+      "best": 91,
+      "perSec": 496,
+      "rank": "4/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 35,
+      "own": 52,
+      "best": 80,
+      "perSec": 232,
+      "rank": "1/2 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 93,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "3:22",
+      "by": "Melee",
+      "killer": "Hakkar"
+     }
+    ],
+    "consumes": {
+     "perPull": 2.3,
+     "roleMedian": 4,
+     "pulls": 9,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 4/9"
+      ],
+      "food": [
+       "Blessed Sunfruit 2/9"
+      ],
+      "juju": [
+       "Juju Power 8/9"
+      ],
+      "drink": [
+       "Gordok Green Grog 7/9"
+      ]
+     }
+    },
+    "used": {
+     "utility: Challenging Shout": 4,
+     "potion: Limited Invulnerability Potion": 1,
+     "potion: Healing Potion": 1,
+     "raid debuff: Sunder Armor": 197,
+     "raid debuff: Demoralizing Shout": 15
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "B-",
+    "verdict": "Tanked six bosses, 197 Sunders",
+    "summary": "Off-tank on Mar'li, Mandokir, Wushoolay, Thekal, Arlokk and Hakkar. 197 Sunders, the most. Hakkar killed you at 3:22 on the wipe after four mind controls.",
+    "good": [
+     {
+      "title": "Sunders",
+      "text": "197."
+     },
+     {
+      "title": "Tanking",
+      "text": "Six bosses."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Hakkar",
+      "impact": "medium",
+      "boss": 50793,
+      "text": "Killed by Hakkar at 3:22 on the wipe."
+     }
+    ],
+    "bosses": {
+     "50793": {
+      "tone": "bad",
+      "text": "Died at 3:22 on the wipe."
+     }
+    }
+   }
+  },
+  "Pomo": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 30,
+    "ownAvgParseBefore": 39,
+    "raidMedianParse": 60,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 47,
+      "own": 47,
+      "best": 47,
+      "perSec": 460,
+      "rank": "6/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 40,
+      "own": 34,
+      "best": 34,
+      "perSec": 380,
+      "rank": "8/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 73,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 26,
+      "own": 35,
+      "best": 35,
+      "perSec": 377,
+      "rank": "6/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 23,
+      "own": 41,
+      "best": 41,
+      "perSec": 359,
+      "rank": "5/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 40,
+      "own": 75,
+      "best": 75,
+      "perSec": 354,
+      "rank": "6/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 94,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 31,
+      "own": 18,
+      "best": 18,
+      "perSec": 347,
+      "rank": "5/6 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 35,
+      "own": 70,
+      "best": 70,
+      "perSec": 299,
+      "rank": "5/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 62,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 0,
+      "own": 58,
+      "best": 58,
+      "perSec": 0,
+      "rank": "8/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 2,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 27,
+      "own": 38,
+      "best": 38,
+      "perSec": 362,
+      "rank": "6/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 90,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "3:15",
+      "by": "Corrupted Blood",
+      "killer": "Hakkar"
+     }
+    ],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1.7,
+     "pulls": 9,
+     "groups": {}
+    },
+    "used": {
+     "raid debuff: Expose Armor": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "C",
+    "verdict": "First death on the Hakkar wipe",
+    "summary": "Damage 5th to 8th of 8 on every boss, nothing on Jin'do. Six Whirlwind hits on Mandokir, the most, and four Poison Clouds on Venoxis. Corrupted Blood killed you at 3:15, the first death of the Hakkar wipe.",
+    "good": [
+     {
+      "title": "Jeklik",
+      "text": "Sixth, parse 47.",
+      "boss": 50785
+     }
+    ],
+    "fix": [
+     {
+      "title": "Hakkar",
+      "impact": "medium",
+      "boss": 50793,
+      "text": "First death of the wipe, Corrupted Blood at 3:15."
+     },
+     {
+      "title": "Mandokir",
+      "impact": "low",
+      "boss": 50787,
+      "text": "6 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50793": {
+      "tone": "bad",
+      "text": "First death of the wipe."
+     }
+    }
+   }
+  },
+  "Terrora": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 60,
+    "ownAvgParseBefore": 59,
+    "raidMedianParse": 60,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 48,
+      "own": 49,
+      "best": 80,
+      "perSec": 463,
+      "rank": "5/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 74,
+      "own": 54,
+      "best": 75,
+      "perSec": 548,
+      "rank": "5/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 61,
+      "own": 53,
+      "best": 59,
+      "perSec": 548,
+      "rank": "4/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 53,
+      "own": 56,
+      "best": 83,
+      "perSec": 501,
+      "rank": "3/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 96,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 76,
+      "own": 71,
+      "best": 81,
+      "perSec": 541,
+      "rank": "4/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 56,
+      "own": 32,
+      "best": 49,
+      "perSec": 455,
+      "rank": "4/6 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 56,
+      "own": 78,
+      "best": 80,
+      "perSec": 414,
+      "rank": "4/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 76,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 54,
+      "own": 54,
+      "best": 80,
+      "perSec": 480,
+      "rank": "5/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 59,
+      "own": 62,
+      "best": 73,
+      "perSec": 499,
+      "rank": "4/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 90,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "3:34",
+      "by": "Corrupted Blood",
+      "killer": "Hakkar"
+     }
+    ],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1.7,
+     "pulls": 9,
+     "groups": {}
+    },
+    "used": {
+     "explosive: Iron Grenade": 14,
+     "potion: Healing Potion": 3
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "B",
+    "verdict": "Four interrupts, steady damage",
+    "summary": "Third on Mandokir, fourth on Mar'li, Wushoolay, Thekal, Arlokk and Hakkar. Four interrupts: a Great Heal, a Drain Life, a Flamestrike and a Rain of Fire. Corrupted Blood at 3:34 on the Hakkar wipe.",
+    "good": [
+     {
+      "title": "Interrupts",
+      "text": "4."
+     },
+     {
+      "title": "Edge of Madness",
+      "text": "Parse 76.",
+      "boss": 50788
+     }
+    ],
+    "fix": [
+     {
+      "title": "Hakkar",
+      "impact": "low",
+      "boss": 50793,
+      "text": "Corrupted Blood at 3:34 on the wipe."
+     }
+    ],
+    "bosses": {
+     "50787": {
+      "tone": "good",
+      "text": "Third."
+     }
+    }
+   }
+  },
+  "Tochopolvo": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 70,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": 60,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 89,
+      "own": 75,
+      "best": 98,
+      "perSec": 836,
+      "rank": "1/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 96,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 79,
+      "own": 79,
+      "best": 95,
+      "perSec": 668,
+      "rank": "3/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 70,
+      "own": 77,
+      "best": 93,
+      "perSec": 660,
+      "rank": "3/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 47,
+      "own": 75,
+      "best": 94,
+      "perSec": 479,
+      "rank": "4/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 85,
+      "own": 72,
+      "best": 99,
+      "perSec": 677,
+      "rank": "2/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 100,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 80,
+      "own": 62,
+      "best": 87,
+      "perSec": 647,
+      "rank": "1/6 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 63,
+      "own": 88,
+      "best": 95,
+      "perSec": 614,
+      "rank": "1/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 68,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 58,
+      "own": 76,
+      "best": 95,
+      "perSec": 530,
+      "rank": "2/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 93,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 63,
+      "own": 66,
+      "best": 94,
+      "perSec": 556,
+      "rank": "1/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 92,
+      "activeMedian": 90,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1.8,
+     "roleMedian": 1.7,
+     "pulls": 9,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 5/9",
+       "Elixir of the Giants 5/9"
+      ],
+      "food": [
+       "Blessed Sunfruit 6/9"
+      ]
+     }
+    },
+    "used": {
+     "explosive: Goblin Sapper Charge": 7,
+     "potion: Mighty Rage Potion": 9,
+     "utility: Challenging Shout": 1,
+     "potion: Limited Invulnerability Potion": 2,
+     "utility: Intimidating Shout": 5,
+     "explosive: Dense Dynamite": 6,
+     "raid debuff: Sunder Armor": 158,
+     "raid debuff: Demoralizing Shout": 9
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "A",
+    "verdict": "First on four bosses, 8 interrupts",
+    "summary": "The most damage on Jeklik, Thekal, Arlokk and Hakkar, second on Wushoolay and Jin'do. Eight interrupts, the most: Jeklik's Great Heal, two Heals, two Flamestrikes. No boss deaths, three trash deaths.",
+    "good": [
+     {
+      "title": "Interrupts",
+      "text": "8, the most."
+     },
+     {
+      "title": "Hakkar",
+      "text": "First on the kill, 121k.",
+      "boss": 50793
+     }
+    ],
+    "fix": [
+     {
+      "title": "Trash",
+      "impact": "low",
+      "text": "Three trash deaths."
+     }
+    ],
+    "bosses": {
+     "50785": {
+      "tone": "good",
+      "text": "First, kicked the Great Heal."
+     },
+     "50793": {
+      "tone": "good",
+      "text": "First."
+     }
+    }
+   }
+  },
+  "Yuleblessing": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 0,
+      "rank": "4/4 healers",
+      "healShare": 0,
+      "overheal": null,
+      "active": 0,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": null,
+      "own": 80,
+      "best": 80,
+      "perSec": 0,
+      "rank": "4/4 healers",
+      "healShare": 0,
+      "overheal": null,
+      "active": 0,
+      "activeMedian": 75,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": null,
+      "own": 74,
+      "best": 92,
+      "perSec": 36,
+      "rank": "4/4 healers",
+      "healShare": 4,
+      "overheal": null,
+      "active": 9,
+      "activeMedian": 85,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": null,
+      "own": 75,
+      "best": 75,
+      "perSec": 272,
+      "rank": "3/4 healers",
+      "healShare": 24,
+      "overheal": 27,
+      "active": 78,
+      "activeMedian": 78,
+      "deaths": 0
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 100,
+      "rank": "4/4 healers",
+      "healShare": 10,
+      "overheal": null,
+      "active": 22,
+      "activeMedian": 90,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": null,
+      "own": 60,
+      "best": 60,
+      "perSec": 168,
+      "rank": "4/4 healers",
+      "healShare": 14,
+      "overheal": 40,
+      "active": 38,
+      "activeMedian": 68,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": null,
+      "own": 50,
+      "best": 72,
+      "perSec": 79,
+      "rank": "4/4 healers",
+      "healShare": 11,
+      "overheal": 66,
+      "active": 22,
+      "activeMedian": 63,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": null,
+      "own": 60,
+      "best": 76,
+      "perSec": 94,
+      "rank": "4/4 healers",
+      "healShare": 11,
+      "overheal": null,
+      "active": 21,
+      "activeMedian": 79,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": null,
+      "own": 48,
+      "best": 53,
+      "perSec": 173,
+      "rank": "3/4 healers",
+      "healShare": 18,
+      "overheal": 41,
+      "active": 47,
+      "activeMedian": 69,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "3:37",
+      "by": "Melee",
+      "killer": "Macharius"
+     }
+    ],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1.8,
+     "pulls": 9,
+     "groups": {}
+    },
+    "used": {
+     "utility: Fear Ward": 1,
+     "potion: Mana Potion": 2,
+     "utility: Power Infusion": 4
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "C-",
+    "verdict": "No healing on the first two bosses",
+    "summary": "Nothing logged on Jeklik and Venoxis, 4% on Mar'li, then fourth of four on most bosses. Third on Mandokir (24%). Killed by a mind-controlled Macharius at 3:37 on the Hakkar wipe.",
+    "good": [
+     {
+      "title": "Mandokir",
+      "text": "24% of the healing.",
+      "boss": 50787
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "high",
+      "text": "None on Jeklik and Venoxis, last on seven bosses."
+     }
+    ],
+    "bosses": {
+     "50785": {
+      "tone": "bad",
+      "text": "No healing."
+     }
+    }
+   }
+  },
+  "Yulepunch": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 42,
+    "ownAvgParseBefore": 53,
+    "raidMedianParse": 60,
+    "bosses": [
+     {
+      "id": 50785,
+      "name": "High Priestess Jeklik",
+      "parse": 54,
+      "own": 40,
+      "best": 56,
+      "perSec": 534,
+      "rank": "4/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 96,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50784,
+      "name": "High Priest Venoxis",
+      "parse": 81,
+      "own": 39,
+      "best": 55,
+      "perSec": 697,
+      "rank": "2/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 85,
+      "activeMedian": 94,
+      "deaths": 0
+     },
+     {
+      "id": 50786,
+      "name": "High Priestess Mar'li",
+      "parse": 37,
+      "own": 49,
+      "best": 73,
+      "perSec": 445,
+      "rank": "5/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 91,
+      "activeMedian": 95,
+      "deaths": 0
+     },
+     {
+      "id": 50787,
+      "name": "Bloodlord Mandokir",
+      "parse": 3,
+      "own": 39,
+      "best": 60,
+      "perSec": 81,
+      "rank": "7/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 94,
+      "deaths": 1
+     },
+     {
+      "id": 50788,
+      "name": "Edge of Madness",
+      "parse": 65,
+      "own": 45,
+      "best": 83,
+      "perSec": 483,
+      "rank": "5/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 100,
+      "deaths": 0
+     },
+     {
+      "id": 50789,
+      "name": "High Priest Thekal",
+      "parse": 51,
+      "own": 40,
+      "best": 82,
+      "perSec": 290,
+      "rank": "2/3 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 76,
+      "activeMedian": 88,
+      "deaths": 0
+     },
+     {
+      "id": 50791,
+      "name": "High Priestess Arlokk",
+      "parse": 27,
+      "own": 66,
+      "best": 83,
+      "perSec": 270,
+      "rank": "6/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 74,
+      "activeMedian": 74,
+      "deaths": 0
+     },
+     {
+      "id": 50792,
+      "name": "Jin'do the Hexxer",
+      "parse": 24,
+      "own": 26,
+      "best": 77,
+      "perSec": 322,
+      "rank": "6/8 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 78,
+      "activeMedian": 93,
+      "deaths": 0
+     },
+     {
+      "id": 50793,
+      "name": "Hakkar",
+      "parse": 40,
+      "own": 45,
+      "best": 81,
+      "perSec": 407,
+      "rank": "5/7 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 90,
+      "deaths": 1
+     }
+    ],
+    "deaths": [
+     {
+      "boss": "Bloodlord Mandokir",
+      "id": 50787,
+      "pull": "1 (kill)",
+      "at": "0:45",
+      "by": "Guillotine",
+      "killer": "Bloodlord Mandokir"
+     },
+     {
+      "boss": "Hakkar",
+      "id": 50793,
+      "pull": "1 (wipe at 6%)",
+      "at": "4:34",
+      "by": "Corrupted Blood",
+      "killer": "Hakkar"
+     }
+    ],
+    "consumes": {
+     "perPull": 1.7,
+     "roleMedian": 1.7,
+     "pulls": 9,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 7/9"
+      ],
+      "food": [
+       "Blessed Sunfruit 3/9"
+      ],
+      "drink": [
+       "Gordok Green Grog 5/9"
+      ]
+     }
+    },
+    "used": {
+     "explosive: Goblin Sapper Charge": 3,
+     "utility: Challenging Shout": 2,
+     "potion: Limited Invulnerability Potion": 2,
+     "utility: Intimidating Shout": 2,
+     "raid debuff: Sunder Armor": 44,
+     "raid debuff: Demoralizing Shout": 62,
+     "raid debuff: Thunder Clap": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:47:52.539Z",
+    "grade": "C+",
+    "verdict": "Seven interrupts, killed by Guillotine",
+    "summary": "Seven interrupts and 62 Demoralizing Shouts. Second on Venoxis (parse 81), off-tank on Thekal. Guillotine killed you on Mandokir at 0:45, and you were the last Corrupted Blood death on the Hakkar wipe, after 10 hits (the most).",
+    "good": [
+     {
+      "title": "Interrupts",
+      "text": "7."
+     },
+     {
+      "title": "Venoxis",
+      "text": "Second, parse 81.",
+      "boss": 50784
+     }
+    ],
+    "fix": [
+     {
+      "title": "Mandokir",
+      "impact": "medium",
+      "boss": 50787,
+      "text": "Guillotine at 0:45."
+     },
+     {
+      "title": "Hakkar",
+      "impact": "low",
+      "boss": 50793,
+      "text": "10 Corrupted Blood hits on the wipe."
+     }
+    ],
+    "bosses": {
+     "50787": {
+      "tone": "bad",
+      "text": "Guillotine at 0:45."
+     }
+    }
+   }
+  }
+ }
+}
