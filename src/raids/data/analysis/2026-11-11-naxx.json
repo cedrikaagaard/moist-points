@@ -1,0 +1,65 @@
+{
+  "night": "2026-11-11-naxx",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T17:00:00Z",
+  "headline": "Full clear in 1:55, a Horsemen record, and Kel'Thuzad on the second pull",
+  "mvp": {
+    "player": "Corvere",
+    "headline": "17 interrupts and a parse over 90 on five bosses",
+    "why": [
+      "17 interrupts, the most in the raid: 8 of Kel'Thuzad's Frostbolts, 6 Shadow Bolt Volleys, 3 Slime Bolts",
+      "Parse 96 on Anub'Rekhan and the Horsemen, 92 on Grobbulus, 91 on Faerlina, average 82 against a usual 63",
+      "No deaths until the Kel'Thuzad wipe"
+    ],
+    "also": [
+      { "player": "Apoutchou", "text": "the most healing on nine bosses, Kel'Thuzad included" },
+      { "player": "Fenhir", "text": "39 of Patchwerk's 49 Hateful Strikes after Macharius went down at 0:39" },
+      { "player": "Storestine", "text": "24 Life Drains removed on Sapphiron, the most, from 67 in all" }
+    ]
+  },
+  "overview": [
+    "15 of 15 in 1:55:05, against a usual 2:11 and the guild's best of 1:44. The Four Horsemen fell in 3:43, a new guild best, and seven bosses went without a death, Heigan among them.",
+    "The raid came in buffed (35 of 40 with Rallying Cry on Anub'Rekhan, 32 with Sayge's) and kept most of it: 27 still had it on Sapphiron. Razuvious and Gothik were fought with buffs stored, which is why they show none.",
+    "Kel'Thuzad was the one wipe, at 6%. The kill came on the next pull."
+  ],
+  "wipes": [
+    {
+      "encounterId": 51114,
+      "pull": 1,
+      "title": "Kel'Thuzad, pull 1 (6%)",
+      "whatHappened": "Groomz died to a Shadow Fissure at 0:19 and a Frost Blast took Fenhir, Mercîless and Foggiie together at 1:04, so two tanks and a shackler were gone before phase 3. From 2:56 the Guardians of Icecrown killed 13 people, mostly healers, while a Chained Tochopolvo killed Thornhild and Pinkpill.",
+      "likelyCause": "The Guardians weren't held. Only 4 Shackle Undead went out on this pull (Yulefuel and Mornie, 2 each), against 22 on the kill, and two tanks were already dead.",
+      "evidence": [
+        "Shackles cast: 4 on the wipe, 22 on the kill (Woness 8, Mornie 6, Foggiie 5, Yulefuel 3)",
+        "18 deaths to melee against a usual 4, 13 of them to Guardians of Icecrown",
+        "All 29 single-target Frostbolts were interrupted, so the tank wasn't lost to Frostbolt",
+        "Raid DPS 11.6k against 18.8k on a usual kill"
+      ],
+      "avoid": "Three shacklers named before the pull, with a backup for anyone who dies or gets Chained, and the fissures called on the tanks."
+    }
+  ],
+  "wentWell": [
+    { "encounterId": 51121, "text": "Four Horsemen in 3:43, a new guild best, with Marks at 11 per raider against a usual 18." },
+    { "encounterId": 51112, "text": "Heigan in 1:06 without a death, 32 Decrepit Fevers cured." },
+    { "encounterId": 51120, "text": "Thaddius with one wrong-side polarity hit all fight, against about 40 on a usual night, and Chain Lightning at less than half the usual rate." },
+    { "encounterId": 51117, "text": "Noth in 1:10 with all 20 curses removed by six decursers (Caesartje 5, Etowa 4) and no deaths." },
+    { "encounterId": 51114, "text": "Every one of Kel'Thuzad's 48 Frostbolts interrupted across both pulls (Corvere 8, Fluffycatto 9)." }
+  ],
+  "bosses": [
+    { "encounterId": 51107, "name": "Anub'Rekhan", "notes": [ { "tone": "good", "text": "0:51 (best 0:48), no deaths. Tochopolvo top at 2474/s, Corvere parse 96. Impale hit 27 raiders, slightly over the usual rate." } ] },
+    { "encounterId": 51110, "name": "Grand Widow Faerlina", "notes": [ { "tone": "good", "text": "0:50 (median 1:04), no deaths. Rain of Fire hits at under half the usual rate. 18 poisons cleansed (Naturelocks and Palastino 6 each), Yulefuel controlled 2 Worshippers." } ] },
+    { "encounterId": 51116, "name": "Maexxna", "notes": [ { "tone": "good", "text": "1:05, no deaths. Osinir top at 1518/s." }, { "tone": "info", "text": "One Necrotic Poison cleansed (Naturelocks), against about five on a usual kill." } ] },
+    { "encounterId": 51118, "name": "Patchwerk", "notes": [ { "tone": "info", "text": "2:03 (median 2:29). Macharius died to a Hateful Strike at 0:39 from 42% health, and Fenhir took 39 of the 49 Strikes after that with nobody else dying. Mohg and Sixto healed the most." } ] },
+    { "encounterId": 51111, "name": "Grobbulus", "notes": [ { "tone": "good", "text": "1:13 (median 1:35), no deaths, poison cloud hits at a third of the usual rate. Sandomin dispelled all 5 Mutating Injections." } ] },
+    { "encounterId": 51108, "name": "Gluth", "notes": [ { "tone": "info", "text": "1:02, no deaths. Speldosan tranquilized 3 of 5 Frenzies on his own; the other two ran their course." } ] },
+    { "encounterId": 51120, "name": "Thaddius", "notes": [ { "tone": "good", "text": "2:28 (median 3:56). One wrong-side polarity hit (Birkler). The only death was Osinir to Thaddius' melee at 2:23." }, { "tone": "info", "text": "The log credits Osinir with 1.1M damage on the fight, most likely the fire mages' shared Ignite, which counts for its owner (his parse is 52). Ignite threat is the usual reason a mage gets hit by the boss." } ] },
+    { "encounterId": 51113, "name": "Instructor Razuvious", "notes": [ { "tone": "good", "text": "1:36 (median 1:50). Disrupting Shout hit one raider, against about 15 usually. Caesartje was that one, at 0:51." } ] },
+    { "encounterId": 51109, "name": "Gothik the Harvester", "notes": [ { "tone": "good", "text": "5:04, all 4 Shadow Bolt Volleys kicked. Mercîless died to a Spectral Horse at 2:42." } ] },
+    { "encounterId": 51121, "name": "The Four Horsemen", "notes": [ { "tone": "good", "text": "3:43, a guild best. Two deaths near the end: Mohg to a Void Zone at 3:23 and Thornhild to Blaumeux's Mark at 3:35." } ] },
+    { "encounterId": 51117, "name": "Noth the Plaguebringer", "notes": [ { "tone": "good", "text": "1:10, so only one curse wave, and all 20 removed. No deaths." } ] },
+    { "encounterId": 51112, "name": "Heigan the Unclean", "notes": [ { "tone": "good", "text": "1:06 (median 1:28), no deaths. Caesartje top at 1911/s." } ] },
+    { "encounterId": 51115, "name": "Loatheb", "notes": [ { "tone": "info", "text": "2:59 (median 3:08). Snotspat was killed by Loatheb's melee at 0:22, the only death. 24 Shadow Protection Potions, spores spread over 25 raiders." } ] },
+    { "encounterId": 51119, "name": "Sapphiron", "notes": [ { "tone": "info", "text": "3:33 (best 3:30), 5 deaths: Yulefuel and Eïnherjar to the first Frost Breath at 1:15, Tochopolvo and Sanjji to Chill at 1:48 and 1:54, Etowa to Frost Aura at 2:11. Blizzard hits a little over the usual rate." }, { "tone": "good", "text": "67 Life Drains removed, Storestine 24 and Osinir 14. Woness healed 198k." } ] },
+    { "encounterId": 51114, "name": "Kel'Thuzad", "notes": [ { "tone": "bad", "text": "Pull 1 wiped at 6% once the Guardians got loose. See the wipe above." }, { "tone": "good", "text": "Pull 2: 3:01 with 22 shackles and 19 of 19 Frostbolts kicked. Three late deaths: Shadowtelios, Groomz and Mornie between 2:44 and 2:54." } ] }
+  ]
+}
