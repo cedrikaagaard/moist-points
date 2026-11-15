@@ -1,0 +1,46 @@
+{
+  "night": "2026-11-08-aq40",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T19:00:00Z",
+  "headline": "Ahn'Qiraj in 1:08 with no wipes, and the Bug Trio cloud as the one bad moment",
+  "mvp": {
+    "player": "Eufrasia",
+    "headline": "the most damage on the Bug Trio and the Twins, top six on every boss",
+    "why": [
+      "First on the Bug Trio (124k) and the Twin Emperors (153k), second on Fankriss, Ouro and C'Thun",
+      "Average parse 87 against a usual 73",
+      "No deaths"
+    ],
+    "also": [
+      { "player": "Slappin", "text": "parse 99 on Huhuran, the Twins and C'Thun, and one of the two Frenzy Tranquilizing Shots" },
+      { "player": "Youlloveme", "text": "the most healing on six bosses, 89k on C'Thun" },
+      { "player": "Sefarine", "text": "61 dispels, three times the next healer" }
+    ]
+  },
+  "overview": [
+    "Nine kills on nine pulls in 1:07:58, ten minutes under a usual night. C'Thun went down in 3:55 without a single death, and Viscidus, Huhuran, the Twins and Ouro were all faster than usual.",
+    "The Bug Trio cost six deaths, four of them in Lord Kri's Toxic Vapors around 0:30, and with them world buffs: 33 had Rallying Cry on the Trio, 26 on Sartura. Skeram was fought with buffs stored.",
+    "Trash took 13 deaths, six of them to Impales and falls among the Vekniss Guardians."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50717, "text": "C'Thun in 3:55 (median 5:11) with no deaths, Eye Beam hits at half the usual rate and a parse median of 83 against a usual 62." },
+    { "encounterId": 50714, "text": "Huhuran in 0:42, both Frenzies tranquilized (Slappin and Speldosan), 16 Nature Protection Potions." },
+    { "encounterId": 50709, "text": "8 of Skeram's 10 Arcane Explosions kicked (Fluffycatto and Lebh 2 each)." },
+    { "encounterId": 50715, "text": "Twin Emperors in 3:10 against a usual 4:03, Blizzard hits at a third of the usual rate." }
+  ],
+  "bosses": [
+    { "encounterId": 50709, "name": "The Prophet Skeram", "notes": [ { "tone": "good", "text": "1:04 (median 1:13), no deaths, 8 of 10 Arcane Explosions interrupted. Alanakos top at 640/s." } ] },
+    { "encounterId": 50710, "name": "Silithid Royalty", "notes": [
+      { "tone": "bad", "text": "1:36 (median 1:21), 6 deaths. Labwar, Shaaw and Stinkycat died to Toxic Vapors at 0:29 to 0:30, Harrylarry to Toxic Volley at 0:32 and Alanakos to Ravage at 0:34, then Künigünde to Toxic Vapors at 1:01. Toxic Vapors hits ran at twice the usual rate, so most likely Kri died where the melee stood." },
+      { "tone": "bad", "text": "Yauj started 5 Great Heals and 3 were kicked; the other two healed her for 152k, where a usual kill has none." }
+    ] },
+    { "encounterId": 50711, "name": "Battleguard Sartura", "notes": [ { "tone": "info", "text": "1:13 (median 1:10). Whirlwind killed Harrylarry at 0:40 and Stinkycat at 0:50, at about the usual hit rate. Akinf top at 1406/s." } ] },
+    { "encounterId": 50712, "name": "Fankriss the Unyielding", "notes": [ { "tone": "good", "text": "0:47 (median 0:46), no deaths. Osinir top at 2152/s." } ] },
+    { "encounterId": 50713, "name": "Viscidus", "notes": [ { "tone": "good", "text": "1:43 (median 1:59), no deaths, Poison Bolt Volley at two thirds of the usual rate. Taurenlover healed 68k." } ] },
+    { "encounterId": 50714, "name": "Princess Huhuran", "notes": [ { "tone": "good", "text": "0:42 (median 0:51), no deaths, both Frenzies tranquilized." } ] },
+    { "encounterId": 50715, "name": "Twin Emperors", "notes": [ { "tone": "info", "text": "3:10. Amima died to Vek'nilash's melee at 1:42, the only death. Heal Brother healed the emperors for 120k, where a usual kill has none, so they were close together at least twice." } ] },
+    { "encounterId": 50716, "name": "Ouro", "notes": [ { "tone": "good", "text": "1:26 (median 1:43). Stinkycat died to Sand Blast at 0:49, the only death. Osinir top at 1743/s." } ] },
+    { "encounterId": 50717, "name": "C'Thun", "notes": [ { "tone": "good", "text": "3:55, no deaths. Seven raiders went to the stomach, about a third of the usual rate. Eïnherjar top at 168k." } ] }
+  ]
+}
