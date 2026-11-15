@@ -1,0 +1,41 @@
+{
+  "night": "2026-11-03-zg",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T21:30:00Z",
+  "headline": "Zul'Gurub in 40:48, no wipes, Alanakos top on six bosses",
+  "mvp": {
+    "player": "Alanakos",
+    "headline": "the most damage on six of nine bosses",
+    "why": [
+      "First on Venoxis, Mar'li, Thekal, Arlokk, Jin'do and Hakkar, second on Mandokir and Wushoolay",
+      "Average parse 89 against a usual 63",
+      "No deaths"
+    ],
+    "also": [
+      { "player": "Daki", "text": "the most healing on seven bosses" },
+      { "player": "Bonjour", "text": "78 dispels, 30 of them Venom Spit" },
+      { "player": "Mercîless", "text": "the most damage on Jeklik and Mandokir, and tanked Arlokk to a 95" }
+    ]
+  },
+  "overview": [
+    "Nine kills on nine pulls in 40:48, against a usual 52:30, with 20 raiders. Five boss deaths: Macharius and Wrenn to Wushoolay at 0:29 and 0:30, Palastino to Zealot Zath and Macharius again on Thekal (Paidwithbeer brought him back), and Wellan to Hakkar at 1:41, just before the kill.",
+    "Five trash deaths, two of them around the 21 minute mark to a Mad Voidwalker and a Mad Servant."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50793, "text": "Hakkar in 1:43 (median 2:12), Corrupted Blood at about the usual rate." },
+    { "encounterId": 50789, "text": "Thekal's one Great Heal kicked, and Paidwithbeer's Rebirth on Macharius after he died at 0:51." },
+    { "encounterId": 50785, "text": "Jeklik in 0:40, two seconds off the guild best." }
+  ],
+  "bosses": [
+    { "encounterId": 50785, "name": "High Priestess Jeklik", "notes": [ { "tone": "good", "text": "0:40 (median 0:52), no deaths. Mercîless top, Wizness parse 96." } ] },
+    { "encounterId": 50784, "name": "High Priest Venoxis", "notes": [ { "tone": "good", "text": "0:39 (median 0:48), no deaths. The Holy Wrath chain hit 12 raiders, a little over the usual." } ] },
+    { "encounterId": 50786, "name": "High Priestess Mar'li", "notes": [ { "tone": "good", "text": "0:47 (median 0:58), no deaths." } ] },
+    { "encounterId": 50787, "name": "Bloodlord Mandokir", "notes": [ { "tone": "good", "text": "1:11, no deaths. Four Gazes, no Guillotines." } ] },
+    { "encounterId": 50788, "name": "Edge of Madness", "notes": [ { "tone": "info", "text": "Wushoolay in 0:32. He killed Macharius, tanking, at 0:29 and Wrenn a second later. Lightning Cloud did over half the damage taken." } ] },
+    { "encounterId": 50789, "name": "High Priest Thekal", "notes": [ { "tone": "info", "text": "1:27. Zealot Zath's Sweeping Strikes killed Palastino at 0:42 and Thekal killed Macharius at 0:51; Paidwithbeer's Rebirth brought him back." } ] },
+    { "encounterId": 50791, "name": "High Priestess Arlokk", "notes": [ { "tone": "good", "text": "0:28, no deaths. Mercîless tanked her to a 95." } ] },
+    { "encounterId": 50792, "name": "Jin'do the Hexxer", "notes": [ { "tone": "good", "text": "0:41, no deaths, the Hex dispelled by Daki." } ] },
+    { "encounterId": 50793, "name": "Hakkar", "notes": [ { "tone": "info", "text": "1:43. Wellan, tanking, died to Hakkar at 1:41. Macharius was mind-controlled four times." } ] }
+  ]
+}

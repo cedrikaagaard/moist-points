@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.28",
+    date: "2026-11-15",
+    changes: ["AI analyses and personal reviews for 3 Nov Zul'Gurub and Onyxia."],
+  },
+  {
     version: "2.6.27",
     date: "2026-11-15",
     changes: ["AI analysis and personal reviews for Wednesday's Naxxramas (4 Nov): full clear, Kel'Thuzad on the first pull."],

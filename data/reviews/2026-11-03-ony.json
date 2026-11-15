@@ -1,0 +1,1547 @@
+{
+ "night": "2026-11-03-ony",
+ "zones": [
+  "Onyxia"
+ ],
+ "zoneIds": [
+  2001
+ ],
+ "date": "2026-11-03",
+ "durationMin": 7,
+ "raiders": 23,
+ "icons": {
+  "Mana Regeneration": "spell_nature_manaregentotem.jpg",
+  "Well Fed": "spell_misc_food.jpg",
+  "Gordok Green Grog": "inv_drink_03.jpg",
+  "Mageblood Elixir": "inv_potion_45.jpg",
+  "Kreeg's Stout Beatdown": "inv_drink_05.jpg",
+  "Juju Power": "inv_misc_monsterscales_11.jpg",
+  "Elixir of the Mongoose": "inv_potion_32.jpg",
+  "Winterfall Firewater": "inv_potion_92.jpg",
+  "Blessed Sunfruit": "spell_holy_devotion.jpg",
+  "Elixir of the Giants": "inv_potion_61.jpg"
+ },
+ "players": {
+  "Alanakos": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 96,
+    "ownAvgParseBefore": 63,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 96,
+      "own": 76,
+      "best": 92,
+      "perSec": 553,
+      "rank": "1/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 76,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "juju": [
+       "Juju Power 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ],
+      "drink": [
+       "Winterfall Firewater 1/1"
+      ]
+     }
+    },
+    "used": {
+     "raid debuff: Sunder Armor": 5
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.436Z",
+    "grade": "A",
+    "verdict": "The most damage, parse 96",
+    "summary": "First on Onyxia, 116k, parse 96. Two lava cracks.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "First, parse 96.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "2 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "First, parse 96."
+     }
+    }
+   }
+  },
+  "Allipalli": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 78,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": 28,
+      "best": 28,
+      "perSec": 229,
+      "rank": "1/8 healers",
+      "healShare": 21,
+      "overheal": 52,
+      "active": 87,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "utility: Blessing of Protection": 1,
+     "potion: Mana Potion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A",
+    "verdict": "The most healing and 3 Flame Lashes dispelled",
+    "summary": "First of the healers (48k, 21%) and 3 Flame Lashes dispelled.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "First, 48k.",
+      "boss": 51084
+     },
+     {
+      "title": "Dispels",
+      "text": "3 Flame Lashes."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "First of the healers."
+     }
+    }
+   }
+  },
+  "Barnstoker": {
+   "stats": {
+    "class": "Warlock",
+    "role": "dps",
+    "avgParse": 87,
+    "ownAvgParseBefore": 52,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 87,
+      "own": 60,
+      "best": 80,
+      "perSec": 419,
+      "rank": "6/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 97,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "potion: Major Healthstone": 1,
+     "raid debuff: Curse of Recklessness": 6
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B+",
+    "verdict": "Sixth, parse 87",
+    "summary": "Sixth on Onyxia, parse 87, against your usual 52. Three lava cracks, feared three times.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 87.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "3 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 87."
+     }
+    }
+   }
+  },
+  "Bonjour": {
+   "stats": {
+    "class": "Paladin",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 72,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": 43,
+      "best": 43,
+      "perSec": 165,
+      "rank": "4/8 healers",
+      "healShare": 15,
+      "overheal": 37,
+      "active": 82,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "potion: Mana Potion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B",
+    "verdict": "Fourth healer",
+    "summary": "Fourth of the healers, 35k. Feared three times.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "Fourth, 35k.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Fear",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Feared three times."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Fourth of the healers."
+     }
+    }
+   }
+  },
+  "Cladá": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 70,
+    "ownAvgParseBefore": 43,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 70,
+      "own": 83,
+      "best": 83,
+      "perSec": 308,
+      "rank": "11/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 82,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {},
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B",
+    "verdict": "Parse 70 against a usual 43",
+    "summary": "11th on Onyxia, parse 70.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 70.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "boss": 51084,
+      "text": "11th of 14."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Parse 70."
+     }
+    }
+   }
+  },
+  "Daki": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 73,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 181,
+      "rank": "3/8 healers",
+      "healShare": 16,
+      "overheal": 40,
+      "active": 82,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "utility: Power Infusion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B+",
+    "verdict": "Third healer",
+    "summary": "Third of the healers, 38k.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "Third, 38k.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Third of the healers."
+     }
+    }
+   }
+  },
+  "Donatelios": {
+   "stats": {
+    "class": "Warlock",
+    "role": "dps",
+    "avgParse": 93,
+    "ownAvgParseBefore": 71,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 93,
+      "own": 90,
+      "best": 97,
+      "perSec": 489,
+      "rank": "3/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 90,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "potion: Major Healthstone": 1,
+     "utility: Soulstone Resurrection": 1,
+     "raid debuff: Curse of Shadow": 2
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A",
+    "verdict": "Third, parse 93",
+    "summary": "Third on Onyxia, 103k, parse 93. Two lava cracks.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Third, parse 93.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "2 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 93."
+     }
+    }
+   }
+  },
+  "Dramima": {
+   "stats": {
+    "class": "Druid",
+    "role": "dps",
+    "avgParse": 53,
+    "ownAvgParseBefore": 60,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 53,
+      "own": null,
+      "best": null,
+      "perSec": 169,
+      "rank": "14/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 47,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "utility: Innervate": 1,
+     "raid debuff: Faerie Fire (Feral)": 8,
+     "raid debuff: Faerie Fire": 2
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "C",
+    "verdict": "Last on damage",
+    "summary": "14th of 14 on Onyxia, parse 53. Feared three times.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "medium",
+      "boss": 51084,
+      "text": "Last of 14."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "bad",
+      "text": "Last."
+     }
+    }
+   }
+  },
+  "Firetoad": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 53,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 53,
+      "own": null,
+      "best": null,
+      "perSec": 259,
+      "rank": "12/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 87,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "potion: Mana Potion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "C+",
+    "verdict": "12th, parse 53",
+    "summary": "12th of 14 on Onyxia, parse 53. Feared three times.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "medium",
+      "boss": 51084,
+      "text": "12th of 14."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Parse 53."
+     }
+    }
+   }
+  },
+  "Holephuc": {
+   "stats": {
+    "class": "Hunter",
+    "role": "dps",
+    "avgParse": 87,
+    "ownAvgParseBefore": 83,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 87,
+      "own": 75,
+      "best": 75,
+      "perSec": 382,
+      "rank": "8/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 77,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "raid debuff: Hunter's Mark": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B+",
+    "verdict": "Eighth, parse 87",
+    "summary": "Eighth on Onyxia, parse 87. Two lava cracks.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 87.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "2 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 87."
+     }
+    }
+   }
+  },
+  "Holiphucheal": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 39,
+      "rank": "8/8 healers",
+      "healShare": 4,
+      "overheal": null,
+      "active": 5,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "utility: Fear Ward": 5,
+     "utility: Power Infusion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "C-",
+    "verdict": "Last healer, 4%",
+    "summary": "Last of the eight healers with 4% of the healing. Two lava cracks.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "boss": 51084,
+      "text": "Last of 8, 4%."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "bad",
+      "text": "Last of the healers."
+     }
+    }
+   }
+  },
+  "Künigünde": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 69,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": 55,
+      "best": 77,
+      "perSec": 194,
+      "rank": "2/8 healers",
+      "healShare": 18,
+      "overheal": 54,
+      "active": 58,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 4,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {
+      "food": [
+       "Well Fed 1/1"
+      ],
+      "drink": [
+       "Gordok Green Grog 1/1",
+       "Kreeg's Stout Beatdown 1/1"
+      ],
+      "elixir": [
+       "Mageblood Elixir 1/1"
+      ]
+     }
+    },
+    "used": {
+     "utility: Fear Ward": 2,
+     "utility: Power Infusion": 1,
+     "potion: Mana Potion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A-",
+    "verdict": "Second healer",
+    "summary": "Second of the healers, 41k, a Flame Lash dispelled. Two lava cracks.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "Second, 41k.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "2 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Second of the healers."
+     }
+    }
+   }
+  },
+  "Macharius": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 90,
+    "ownAvgParseBefore": 36,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 90,
+      "own": 47,
+      "best": 84,
+      "perSec": 365,
+      "rank": "1/1 tanks",
+      "healShare": null,
+      "overheal": null,
+      "active": 83,
+      "activeMedian": 83,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {
+      "food": [
+       "Well Fed 1/1"
+      ]
+     }
+    },
+    "used": {
+     "utility: Challenging Shout": 1,
+     "raid debuff: Sunder Armor": 26
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A-",
+    "verdict": "Tanked her to a 90",
+    "summary": "Tanked Onyxia, parse 90, no deaths in the raid. Three lava cracks.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "Parse 90, nobody died.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "3 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Tanked, parse 90."
+     }
+    }
+   }
+  },
+  "Maruanwar": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 72,
+    "ownAvgParseBefore": 48,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 72,
+      "own": 66,
+      "best": 73,
+      "perSec": 345,
+      "rank": "9/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 64,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {
+      "food": [
+       "Blessed Sunfruit 1/1"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B",
+    "verdict": "Ninth, parse 72",
+    "summary": "Ninth on Onyxia, parse 72, over your usual 48.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 72.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 72."
+     }
+    }
+   }
+  },
+  "Paidwithbeer": {
+   "stats": {
+    "class": "Druid",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 116,
+      "rank": "5/8 healers",
+      "healShare": 11,
+      "overheal": 53,
+      "active": 44,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "utility: Innervate": 1,
+     "potion: Demonic Rune": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B-",
+    "verdict": "Fifth healer, three lava cracks",
+    "summary": "Fifth of the healers, 24k. Three lava cracks, feared three times.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "Fifth.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Lava cracks",
+      "impact": "low",
+      "boss": 51084,
+      "text": "3 hits."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Fifth of the healers."
+     }
+    }
+   }
+  },
+  "Palome": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": 20,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": 20,
+      "best": 20,
+      "perSec": 111,
+      "rank": "6/8 healers",
+      "healShare": 10,
+      "overheal": 40,
+      "active": 64,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {
+      "food": [
+       "Mana Regeneration 1/1"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "C+",
+    "verdict": "Sixth healer",
+    "summary": "Sixth of the healers, 10%. Feared three times.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Sixth of eight."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Sixth of the healers."
+     }
+    }
+   }
+  },
+  "Roguina": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 21,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 21,
+      "own": null,
+      "best": null,
+      "perSec": 201,
+      "rank": "13/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 57,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 1,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {
+      "elixir": [
+       "Elixir of the Mongoose 1/1"
+      ]
+     }
+    },
+    "used": {},
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "C-",
+    "verdict": "13th, parse 21",
+    "summary": "13th of 14 on Onyxia, parse 21.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "high",
+      "boss": 51084,
+      "text": "Parse 21."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "bad",
+      "text": "Parse 21."
+     }
+    }
+   }
+  },
+  "Smolsister": {
+   "stats": {
+    "class": "Priest",
+    "role": "healer",
+    "avgParse": null,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": null,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": null,
+      "own": null,
+      "best": null,
+      "perSec": 64,
+      "rank": "7/8 healers",
+      "healShare": 6,
+      "overheal": 64,
+      "active": 53,
+      "activeMedian": 64,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 4,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "utility: Fear Ward": 4,
+     "utility: Power Infusion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "C",
+    "verdict": "Seventh healer",
+    "summary": "Seventh of the healers, 6%.",
+    "good": [
+     {
+      "title": "Alive",
+      "text": "No deaths."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "medium",
+      "boss": 51084,
+      "text": "7th of 8, 6%."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Seventh of the healers."
+     }
+    }
+   }
+  },
+  "Wellan": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 82,
+    "ownAvgParseBefore": 50,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 82,
+      "own": 30,
+      "best": 36,
+      "perSec": 397,
+      "rank": "7/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 64,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "raid debuff: Sunder Armor": 14,
+     "raid debuff: Demoralizing Shout": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B+",
+    "verdict": "Seventh, parse 82",
+    "summary": "Seventh on Onyxia, parse 82, over your usual 50.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 82.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 82."
+     }
+    }
+   }
+  },
+  "Whorm": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 69,
+    "ownAvgParseBefore": 61,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 69,
+      "own": 64,
+      "best": 74,
+      "perSec": 334,
+      "rank": "10/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 52,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "raid debuff: Sunder Armor": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "B-",
+    "verdict": "Tenth, parse 69",
+    "summary": "Tenth on Onyxia, parse 69. Feared twice.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 69.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "low",
+      "boss": 51084,
+      "text": "10th of 14."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "info",
+      "text": "Parse 69."
+     }
+    }
+   }
+  },
+  "Wizness": {
+   "stats": {
+    "class": "Mage",
+    "role": "dps",
+    "avgParse": 92,
+    "ownAvgParseBefore": null,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 92,
+      "own": null,
+      "best": null,
+      "perSec": 431,
+      "rank": "5/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 89,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {},
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A-",
+    "verdict": "Fifth, parse 92",
+    "summary": "Fifth on Onyxia, parse 92.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 92.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 92."
+     }
+    }
+   }
+  },
+  "Wrenn": {
+   "stats": {
+    "class": "Warrior",
+    "role": "dps",
+    "avgParse": 95,
+    "ownAvgParseBefore": 47,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 95,
+      "own": 28,
+      "best": 43,
+      "perSec": 520,
+      "rank": "2/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 86,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 3,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {
+      "drink": [
+       "Gordok Green Grog 1/1"
+      ],
+      "elixir": [
+       "Elixir of the Mongoose 1/1",
+       "Elixir of the Giants 1/1"
+      ]
+     }
+    },
+    "used": {
+     "raid debuff: Sunder Armor": 11
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A",
+    "verdict": "Second, parse 95",
+    "summary": "Second on Onyxia, 109k, parse 95, against your usual 47.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Second, parse 95.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 95."
+     }
+    }
+   }
+  },
+  "Zimligemein": {
+   "stats": {
+    "class": "Rogue",
+    "role": "dps",
+    "avgParse": 91,
+    "ownAvgParseBefore": 57,
+    "raidMedianParse": 87,
+    "bosses": [
+     {
+      "id": 51084,
+      "name": "Onyxia",
+      "parse": 91,
+      "own": null,
+      "best": null,
+      "perSec": 431,
+      "rank": "4/14 dps",
+      "healShare": null,
+      "overheal": null,
+      "active": 60,
+      "activeMedian": 77,
+      "deaths": 0
+     }
+    ],
+    "deaths": [],
+    "consumes": {
+     "perPull": 0,
+     "roleMedian": 1,
+     "pulls": 1,
+     "groups": {}
+    },
+    "used": {
+     "potion: Healing Potion": 1
+    },
+    "worldBuffs": []
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T12:01:29.437Z",
+    "grade": "A-",
+    "verdict": "Fourth, parse 91",
+    "summary": "Fourth on Onyxia, parse 91.",
+    "good": [
+     {
+      "title": "Onyxia",
+      "text": "Parse 91.",
+      "boss": 51084
+     }
+    ],
+    "fix": [
+     {
+      "title": "Nothing",
+      "impact": "low",
+      "boss": 51084,
+      "text": "Clean kill."
+     }
+    ],
+    "bosses": {
+     "51084": {
+      "tone": "good",
+      "text": "Parse 91."
+     }
+    }
+   }
+  }
+ }
+}
