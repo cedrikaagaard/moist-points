@@ -1,0 +1,41 @@
+{
+  "night": "2026-11-10-zg",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T18:00:00Z",
+  "headline": "Zul'Gurub in 45:37 with no wipes and a Thekal record",
+  "mvp": {
+    "player": "Alanakos",
+    "headline": "the most damage on Jeklik, Arlokk and Jin'do, top four on all nine",
+    "why": [
+      "First on Jeklik, Arlokk and Jin'do, second on Venoxis, third on Mar'li, the Edge of Madness and Thekal",
+      "Average parse 88 against a usual 63",
+      "No deaths"
+    ],
+    "also": [
+      { "player": "Farlopo", "text": "the most damage on Venoxis, Mar'li and Hakkar" },
+      { "player": "Dramima", "text": "44 dispels, 29 of them Venom Spit, and a Rebirth on Fluffycatto on Hakkar" },
+      { "player": "Zimligemein", "text": "parse 99 on the Edge of Madness and 96 on Thekal and Arlokk" }
+    ]
+  },
+  "overview": [
+    "Nine kills on nine pulls in 45:37, against a usual 52:30 and a best of 39:28, with 20 raiders and world buffs on two of them. Thekal fell in 1:05, a new guild best.",
+    "Four deaths: Tysiv on Venoxis, Roguina and Orbywan on Mandokir (both revived by the Chained Spirits), Fluffycatto on Hakkar (battle rezzed)."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50789, "text": "Thekal in 1:05, a guild best, with his one Great Heal kicked." },
+    { "encounterId": 50788, "text": "Edge of Madness in 0:28, a second off the best." },
+    { "encounterId": 50793, "text": "Hakkar in 1:50 (median 2:12), Dramima battle-rezzed Fluffycatto after he died at 0:31." }
+  ],
+  "bosses": [
+    { "encounterId": 50785, "name": "High Priestess Jeklik", "notes": [ { "tone": "good", "text": "0:49, no deaths. Her one Great Heal went through." } ] },
+    { "encounterId": 50784, "name": "High Priest Venoxis", "notes": [ { "tone": "info", "text": "0:41. Tysiv died to the Holy Wrath chain at 0:29. Poison Cloud hits ran half again over the usual (54 on 10 raiders, Empala 7)." } ] },
+    { "encounterId": 50786, "name": "High Priestess Mar'li", "notes": [ { "tone": "bad", "text": "0:52, no deaths, but her Drain Life healed her for 63k against a usual 23k. Cokedog, Tanknarok and Zimligemein each kicked one Drain Life over the night." } ] },
+    { "encounterId": 50787, "name": "Bloodlord Mandokir", "notes": [ { "tone": "info", "text": "1:17. Roguina died to Guillotine at 0:19 and Orbywan to Mortal Strike at 0:37; both came back through the Chained Spirits." } ] },
+    { "encounterId": 50788, "name": "Edge of Madness", "notes": [ { "tone": "good", "text": "0:28 (best 0:27), no deaths. Zimligemein and Fluffycatto parse 99." } ] },
+    { "encounterId": 50789, "name": "High Priest Thekal", "notes": [ { "tone": "good", "text": "1:05, a guild best (was 1:07), no deaths. Wizness top at 883/s, parse 98." } ] },
+    { "encounterId": 50791, "name": "High Priestess Arlokk", "notes": [ { "tone": "good", "text": "0:25 (best 0:23), no deaths." } ] },
+    { "encounterId": 50792, "name": "Jin'do the Hexxer", "notes": [ { "tone": "good", "text": "0:41, no deaths. Lyrica cleared 3 Delusions, Mohg dispelled the Hex." } ] },
+    { "encounterId": 50793, "name": "Hakkar", "notes": [ { "tone": "info", "text": "1:50 (median 2:12). Hakkar's melee killed Fluffycatto at 0:31 and Dramima brought him back. Macharius was mind-controlled three times." } ] }
+  ]
+}
