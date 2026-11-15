@@ -1,0 +1,59 @@
+{
+  "night": "2026-11-13-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T16:00:00Z",
+  "headline": "Blackwing Lair in 28:29, the guild's fastest clear by four and a half minutes",
+  "mvp": {
+    "player": "Thornhild",
+    "headline": "the most damage on four bosses, parse 90 or better on all eight",
+    "why": [
+      "First on Razorgore (parse 99), Vaelastrasz (2494/s), Flamegor (98) and Chromaggus (103k), second on Nefarian",
+      "Average parse 95 across the raid, no deaths",
+      "Also the most damage on Sulfuron in Molten Core earlier the same night"
+    ],
+    "also": [
+      { "player": "Speldosan", "text": "5 Tranquilizing Shots on Flamegor and Chromaggus, and parse 99 on Firemaw and Ebonroc" },
+      { "player": "Orbywan", "text": "11 Black afflictions cleansed on Chromaggus, the most, then parse 99 on Nefarian" },
+      { "player": "Fluffycatto", "text": "7 interrupts, the most in the raid" }
+    ]
+  },
+  "overview": [
+    "Eight kills on eight pulls in 28:29. The guild's best was 33:00 and a usual night is 47:25. Razorgore (0:20), Vaelastrasz (0:26) and Firemaw (0:36) are new guild bests, and Chromaggus (1:15) equals the old one.",
+    "Five boss deaths, three of them one raider: Roguina on Broodlord, Firemaw and Ebonroc. Zuzul went to Flame Buffet on Firemaw and Salma to Shadow Flame five seconds into Nefarian.",
+    "World buffs grew during the raid: 21 with Rallying Cry on Vaelastrasz, 35 by Firemaw."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50613, "text": "Firemaw in 0:36, a guild best by seven seconds, with a parse median of 95 and half the usual Flame Buffet stacks." },
+    { "encounterId": 50615, "text": "All four of Flamegor's Frenzies tranquilized, by Speldosan and Emanuelxxion." },
+    { "encounterId": 50610, "text": "Razorgore in 0:20, a guild best, Thornhild and Wizness parse 99." },
+    { "encounterId": 50617, "text": "Nefarian in 1:30 with a parse median of 85 against a usual 66. 6 Fear Wards (Künigünde 3)." }
+  ],
+  "bosses": [
+    { "encounterId": 50610, "name": "Razorgore the Untamed", "notes": [
+      { "tone": "good", "text": "0:20, a guild best (was 0:21), no deaths." }
+    ] },
+    { "encounterId": 50611, "name": "Vaelastrasz the Corrupt", "notes": [
+      { "tone": "good", "text": "0:26, a guild best (was 0:27), no deaths. Raid damage 38.4k a second, the highest of the night. One Burning Adrenaline, on Speldosan." }
+    ] },
+    { "encounterId": 50612, "name": "Broodlord Lashlayer", "notes": [
+      { "tone": "info", "text": "0:46 (median 0:50). Roguina died to his Cleave at 0:23. Gertggs top at 1459/s." }
+    ] },
+    { "encounterId": 50613, "name": "Firemaw", "notes": [
+      { "tone": "good", "text": "0:36, a guild best (was 0:43, median 1:40). Flame Buffet killed Roguina at 0:27 and Zuzul at 0:35. Shadow Flame hit 3, against a usual 11." }
+    ] },
+    { "encounterId": 50614, "name": "Ebonroc", "notes": [
+      { "tone": "info", "text": "0:49 (median 1:15). Roguina died to Shadow Flame at 0:39. Shadow of Ebonroc on Birkler 3 times and Wellan once." }
+    ] },
+    { "encounterId": 50615, "name": "Flamegor", "notes": [
+      { "tone": "good", "text": "0:46 (median 1:04), no deaths, 4 of 4 Frenzies tranquilized. Fire Nova hits a bit over the usual rate." }
+    ] },
+    { "encounterId": 50616, "name": "Chromaggus", "notes": [
+      { "tone": "good", "text": "1:15, equal to the guild best, no deaths. 4 of 5 Frenzies tranquilized (Speldosan 3 shots, Emanuelxxion 2). 58 afflictions cleansed, Orbywan 11." },
+      { "tone": "bad", "text": "Ignite Flesh did 40k, all of it to four players: Whorm 18.7k and Skoomael 11k took more of the breath than Macharius, who was tanking." }
+    ] },
+    { "encounterId": 50617, "name": "Nefarian", "notes": [
+      { "tone": "info", "text": "1:30 (best 1:23, median 2:25). Salma took five Shadow Flames and died at 0:05, the only death. Gertggs 140k and Thornhild 137k." }
+    ] }
+  ]
+}

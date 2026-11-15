@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.21",
+    date: "2026-11-15",
+    changes: ["New raids: the 13 Nov triple (Molten Core, a record Blackwing Lair in 28:29 and a record Ahn'Qiraj in 57:00), with AI analyses and personal reviews. Raid data for 6 to 11 Nov is in too; analyses for those follow."],
+  },
+  {
     version: "2.6.20",
     date: "2026-10-28",
     changes: ["Personal reviews for Wednesday's Naxxramas (28 Oct)."],

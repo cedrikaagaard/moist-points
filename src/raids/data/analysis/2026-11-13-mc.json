@@ -1,0 +1,65 @@
+{
+  "night": "2026-11-13-mc",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T16:00:00Z",
+  "headline": "Molten Core in 33:16, the first of three raids in one night, with two boss deaths",
+  "mvp": {
+    "player": "Gertggs",
+    "headline": "the most damage on five of the ten bosses and no deaths",
+    "why": [
+      "First on Lucifron, Magmadar, Baron Geddon, Golemagg and Ragnaros, second on Gehennas, Garr and Sulfuron",
+      "Parse 94 or higher on nine of ten bosses",
+      "Then the most damage on Broodlord, Ebonroc and Nefarian in Blackwing Lair the same night"
+    ],
+    "also": [
+      { "player": "Eînherjer", "text": "164 dispels, twice the next healer: 86 Ancient Dreads, 13 Ignite Manas and 6 Impending Dooms" },
+      { "player": "Macharius", "text": "tanked eight bosses including Ragnaros, where he took all 63 Elemental Fires, and parsed 96 on Garr and Majordomo" },
+      { "player": "Orbywan", "text": "19 curses removed (7 Lucifron's, 6 Gehennas', 6 Shazzrah's) with Imnevermor's 18" }
+    ]
+  },
+  "overview": [
+    "The first leg of a night that also cleared Blackwing Lair and Ahn'Qiraj. Molten Core took 33:16 for ten kills on ten pulls, against a usual 44:48 and the guild's best of 29:44. Two boss deaths: Emanuelxxion in Orbywan's Living Bomb on Geddon and Suintila to fire on the ground at Majordomo.",
+    "The raid came in buffed (28 of 39 with Rallying Cry and Zandalar, 26 with Sayge's Fortune, a Darkmoon week), and seven of the ten bosses finished within six seconds of the guild's fastest kill.",
+    "Trash cost nine deaths, three of them to Core Hounds and two to a Firesworn's Eruption."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50669, "text": "4 of Sulfuron's 6 Dark Mendings kicked, by Roguina, Nessla, Suintila and Groomz." },
+    { "encounterId": 50668, "text": "16 Ignite Manas dispelled on Geddon, 9 of them by Eînherjer." },
+    { "encounterId": 50665, "text": "Gehennas in 0:20, one second off the guild's best." },
+    { "encounterId": 50671, "text": "Majordomo in 0:41, one second off the best, with 45k healing each from Phemmy and Foggiie." }
+  ],
+  "bosses": [
+    { "encounterId": 50663, "name": "Lucifron", "notes": [
+      { "tone": "good", "text": "0:27 (median 0:37), no deaths. 27 Impending Dooms dispelled, 9 Lucifron's Curses removed (Orbywan 7)." }
+    ] },
+    { "encounterId": 50664, "name": "Magmadar", "notes": [
+      { "tone": "bad", "text": "0:34 without deaths, but Lava Breath reached 34 raiders for 55k, where on a usual kill it hits nobody: the breath came round to the raid at least once." },
+      { "tone": "info", "text": "140 Lava Bomb fire hits, 3.5 per raider against a usual 2.0, mostly melee (Thornhild 12, Tochopolvo and Eïnherjar 11). 2 Frenzies, 1 tranquilized." }
+    ] },
+    { "encounterId": 50665, "name": "Gehennas", "notes": [
+      { "tone": "good", "text": "0:20, no deaths. 14 Gehennas' Curses removed (Imnevermor 6, Orbywan 5, Skoomael 3). Rain of Fire hits a little over the usual rate, 79 on 25 raiders." }
+    ] },
+    { "encounterId": 50666, "name": "Garr", "notes": [
+      { "tone": "good", "text": "0:32 (median 0:47), no deaths. Eduard top at 1465/s, Sneakycatto parse 98." }
+    ] },
+    { "encounterId": 50668, "name": "Baron Geddon", "notes": [
+      { "tone": "info", "text": "0:36. Orbywan and Salma were the Living Bombs; Orbywan's killed Emanuelxxion at 0:21, and five raiders were caught in an explosion. Explosion damage ran three times the usual rate." }
+    ] },
+    { "encounterId": 50667, "name": "Shazzrah", "notes": [
+      { "tone": "good", "text": "0:15 (best 0:14), no deaths. Alanakos top at 1798/s, parse 97." }
+    ] },
+    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [
+      { "tone": "good", "text": "0:36 (median 0:50), no deaths, 4 of 6 priest heals kicked." }
+    ] },
+    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [
+      { "tone": "good", "text": "0:43 (median 0:54), no deaths. Raid damage 26.5k a second, the highest of the raid. Gertggs 85k." }
+    ] },
+    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [
+      { "tone": "info", "text": "0:41. Suintila died to fire at 0:22. Blast Wave and the adds' Damage Shield both ran about five times the usual rate, so melee kept hitting into the shields (Tochopolvo, Lebh and Labwar took the most)." }
+    ] },
+    { "encounterId": 50672, "name": "Ragnaros", "notes": [
+      { "tone": "good", "text": "0:54 (median 1:08, best 0:41), no deaths. Macharius tanked through 63 Elemental Fires. Lava Burst hits were slightly above the usual rate." }
+    ] }
+  ]
+}

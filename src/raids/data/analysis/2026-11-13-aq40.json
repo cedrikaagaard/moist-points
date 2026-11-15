@@ -1,0 +1,61 @@
+{
+  "night": "2026-11-13-aq40",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T16:00:00Z",
+  "headline": "Ahn'Qiraj in 57:00, a guild record, as the last of three raids in one night",
+  "mvp": {
+    "player": "Tochopolvo",
+    "headline": "the most damage on the Bug Trio, Huhuran and the Twins, no deaths",
+    "why": [
+      "First on the Bug Trio, Princess Huhuran and the Twin Emperors (165k), second on Skeram, Sartura and C'Thun",
+      "Average parse 90, with 98 on the Twins",
+      "Also the most damage on Gehennas and Firemaw earlier the same night"
+    ],
+    "also": [
+      { "player": "Birkler", "text": "tanked all nine bosses, parse 97 on Fankriss and 96 on the Twins" },
+      { "player": "Youlloveme", "text": "the most healing on five bosses, 99k on C'Thun" },
+      { "player": "Skoomael", "text": "Rebirth on Eduard after Dark Glare at 0:55 on C'Thun" }
+    ]
+  },
+  "overview": [
+    "Nine kills on nine pulls in 57:00, a minute and a half under the guild's best (58:27) and 21 minutes under a usual night, after Molten Core and Blackwing Lair the same evening.",
+    "Skeram went without world buffs on anyone (stored in Chronoboons, by the look of it), then 39 of 40 had Rallying Cry from the Bug Trio to the Twins. Ouro and C'Thun were fought with buffs on 2 and 1 raiders. Only Roguina died on the Twins, so they weren't lost to deaths. Ouro was the one boss slower than usual.",
+    "Nine deaths: four on C'Thun, one each on Sartura, the Twins and Ouro, two on trash."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50709, "text": "9 of Skeram's 11 Arcane Explosions kicked (Labwar and Wellan 2 each)." },
+    { "encounterId": 50711, "text": "Sartura's Whirlwind hit 2.0 per raider, against a usual 4.8." },
+    { "encounterId": 50715, "text": "Twin Emperors in 2:37 against a usual 4:03, Blizzard hits at half the usual rate." },
+    { "encounterId": 50717, "text": "C'Thun in 4:27 (median 5:11), Eye Beam hits at half the usual rate." }
+  ],
+  "bosses": [
+    { "encounterId": 50709, "name": "The Prophet Skeram", "notes": [
+      { "tone": "good", "text": "1:09 (median 1:13) with no Rallying Cry on anyone, no deaths. 9 of 11 Arcane Explosions interrupted." }
+    ] },
+    { "encounterId": 50710, "name": "Silithid Royalty", "notes": [
+      { "tone": "info", "text": "1:10 (median 1:21), no deaths. Yauj started 3 Great Heals and Fluffycatto kicked 2; the third healed her for 55k. Toxic Volley hits at half the usual rate." }
+    ] },
+    { "encounterId": 50711, "name": "Battleguard Sartura", "notes": [
+      { "tone": "good", "text": "0:58 (median 1:10). Whirlwind at less than half the usual rate; it killed Roguina at 0:35. Imnevermor top at 68k." }
+    ] },
+    { "encounterId": 50712, "name": "Fankriss the Unyielding", "notes": [
+      { "tone": "good", "text": "0:38 (median 0:46), no deaths. Wizness top at 1897/s." }
+    ] },
+    { "encounterId": 50713, "name": "Viscidus", "notes": [
+      { "tone": "good", "text": "1:38 (best 1:33), no deaths. Poison Bolt Volley hits at half the usual rate. Youlloveme 79k healing." }
+    ] },
+    { "encounterId": 50714, "name": "Princess Huhuran", "notes": [
+      { "tone": "good", "text": "0:37 (best 0:33), no deaths. 17 Nature Protection Potions, and the one Frenzy tranquilized by Emanuelxxion." }
+    ] },
+    { "encounterId": 50715, "name": "Twin Emperors", "notes": [
+      { "tone": "good", "text": "2:37 (best 2:09, median 4:03). One death, Roguina to Arcane Burst at 0:34." }
+    ] },
+    { "encounterId": 50716, "name": "Ouro", "notes": [
+      { "tone": "info", "text": "1:52 against a usual 1:43, with 2 raiders buffed. Phemmy died to Sand Blast at 0:26, and Sweep hit 2.25 per raider against a usual 1.7." }
+    ] },
+    { "encounterId": 50717, "name": "C'Thun", "notes": [
+      { "tone": "info", "text": "4:27, four deaths. Eduard to Dark Glare at 0:55 (back up through Skoomael's Rebirth), Emanuelxxion to an Eye Beam at 3:34, Marulock in the stomach late on." }
+    ] }
+  ]
+}
