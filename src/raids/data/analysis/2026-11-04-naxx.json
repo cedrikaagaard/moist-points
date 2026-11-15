@@ -1,0 +1,63 @@
+{
+  "night": "2026-11-04-naxx",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T21:00:00Z",
+  "headline": "Full clear in 2:11 with Kel'Thuzad on the first pull, after a costly Acolyte volley",
+  "mvp": {
+    "player": "Apoutchou",
+    "headline": "the most healing on eight bosses and no deaths",
+    "why": [
+      "First of the healers on Anub'Rekhan, Faerlina, Thaddius, Gothik, the Horsemen, Noth, Heigan and Kel'Thuzad",
+      "122k on the Horsemen and 121k on Kel'Thuzad, the most both times",
+      "No deaths, trash included"
+    ],
+    "also": [
+      { "player": "Rannek", "text": "15 interrupts, 7 of them Kel'Thuzad's Frostbolts, and second on Anub'Rekhan and Kel'Thuzad" },
+      { "player": "Etowa", "text": "Rebirth on Fluffycatto on Kel'Thuzad and 57 dispels" },
+      { "player": "Snotspat", "text": "an average parse of 81, 92 on Heigan" }
+    ]
+  },
+  "overview": [
+    "15 of 15 in 2:10:56, about a usual night. Kel'Thuzad fell on the first pull, Gothik took two, and Heigan, Noth, Loatheb and Maexxna went without a death.",
+    "The costliest moment was trash: a pack of Naxxramas Acolytes killed 15 raiders within seconds at the 31 minute mark (Shadow Bolt Volley, Arcane Explosion, Shadow Burst), and Faerlina was fought with 21 on Rallying Cry against 32 on Anub'Rekhan.",
+    "Razuvious went the way it went on 28 Oct: one Understudy control broke at 0:24, three tries to take it back failed, and when the other control ended at 0:48 nothing was holding him."
+  ],
+  "wipes": [
+    {
+      "encounterId": 51109,
+      "pull": 1,
+      "title": "Gothik the Harvester, pull 1 (78%)",
+      "whatHappened": "Bruceli died to a Spectral Horse at 2:47 and Gertggs to a Spectral Rider a second later. Pinkpill went to another Horse at 3:45 and Osinir to an Unrelenting Death Knight at 4:08, and the pull ended at 4:46 with Gothik at 78%.",
+      "likelyCause": "The log shows four deaths to the undead adds and then the pull ending, but not why it was called.",
+      "evidence": [
+        "First death Bruceli, at 2:47",
+        "All four deaths to undead-side adds",
+        "The next pull killed Gothik in 5:04 with no deaths"
+      ],
+      "avoid": "Nothing the log can point to; the next pull went cleanly."
+    }
+  ],
+  "wentWell": [
+    { "encounterId": 51114, "text": "Kel'Thuzad on the first pull, every one of his 22 Frostbolts interrupted." },
+    { "encounterId": 51108, "text": "Gluth with all 6 Frenzies tranquilized (Punintended and Speldosan, 3 each)." },
+    { "encounterId": 51120, "text": "Thaddius with 6 wrong-side polarity hits against about 40 on a usual night." },
+    { "encounterId": 51119, "text": "Sapphiron with 3 Blizzard hits, against about 19 usually." }
+  ],
+  "bosses": [
+    { "encounterId": 51107, "name": "Anub'Rekhan", "notes": [ { "tone": "info", "text": "1:01 (median 1:08). Thornhild was killed by Anub'Rekhan's melee at 0:19. Impale at less than half the usual rate." } ] },
+    { "encounterId": 51110, "name": "Grand Widow Faerlina", "notes": [ { "tone": "info", "text": "1:05. Mercîless, tanking a Follower, died at 0:05. Rain of Fire at under a third of the usual rate, Yulefuel controlled 5 Worshippers." } ] },
+    { "encounterId": 51116, "name": "Maexxna", "notes": [ { "tone": "good", "text": "1:07, no deaths. Osinir top." } ] },
+    { "encounterId": 51118, "name": "Patchwerk", "notes": [ { "tone": "good", "text": "2:20, no deaths. Macharius soaked 42 Hateful Strikes, Shadowtelios 16. Sixto healed 107k." } ] },
+    { "encounterId": 51111, "name": "Grobbulus", "notes": [ { "tone": "info", "text": "1:27. Tochopolvo died to Poison at 0:37. Sixto dispelled all 6 Mutating Injections." } ] },
+    { "encounterId": 51108, "name": "Gluth", "notes": [ { "tone": "good", "text": "1:06, no deaths, 6 of 6 Frenzies tranquilized." } ] },
+    { "encounterId": 51120, "name": "Thaddius", "notes": [ { "tone": "good", "text": "2:35 (median 3:56). The only death was Osinir to Thaddius' melee at 1:43, the second week running, with the fire mages' shared Ignite (1.2M in the log) credited to him." } ] },
+    { "encounterId": 51113, "name": "Instructor Razuvious", "notes": [ { "tone": "bad", "text": "2:04 (median 1:50), 5 deaths. Yulefuel's control broke at 0:24 and casts at 0:33, 0:36 and 0:39 didn't land. Mornie's control ended at 0:48 and nobody held an Understudy until 0:58. Thornhild, Bruceli, Rannek and Gertggs died to his melee between 0:50 and 0:59. Blues had died to Unbalancing Strike at 0:16." } ] },
+    { "encounterId": 51109, "name": "Gothik the Harvester", "notes": [ { "tone": "bad", "text": "Pull 1 called at 78%. See the wipe above." }, { "tone": "good", "text": "Pull 2: 5:04, no deaths." } ] },
+    { "encounterId": 51121, "name": "The Four Horsemen", "notes": [ { "tone": "info", "text": "4:12 (median 5:14). Bruceli died to Zeliek's Mark at 2:56, the only death. Apoutchou healed 122k." } ] },
+    { "encounterId": 51117, "name": "Noth the Plaguebringer", "notes": [ { "tone": "good", "text": "1:10, no deaths. 32 curses removed by six decursers." } ] },
+    { "encounterId": 51112, "name": "Heigan the Unclean", "notes": [ { "tone": "good", "text": "1:10 (median 1:28), no deaths. 31 Decrepit Fevers cured." } ] },
+    { "encounterId": 51115, "name": "Loatheb", "notes": [ { "tone": "good", "text": "2:56 (median 3:08), no deaths." } ] },
+    { "encounterId": 51119, "name": "Sapphiron", "notes": [ { "tone": "info", "text": "3:33. Five deaths: Lebh to Frost Aura at 1:43, Harrylarry to Chill at 1:53, Sandomin to Icebolt at 2:39, Foggiie and Valethia to Frost Breath at 2:46. 60 Life Drains removed (Blues 12)." } ] },
+    { "encounterId": 51114, "name": "Kel'Thuzad", "notes": [ { "tone": "good", "text": "3:31 on the first pull. 11 deaths, five of them to Frost Blast, starting with Fluffycatto at 0:38 (Etowa brought him back). Shadowtelios, tanking, died to Kel'Thuzad's melee at 0:47." } ] }
+  ]
+}
