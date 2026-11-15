@@ -1,0 +1,40 @@
+{
+  "night": "2026-10-30-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T23:00:00Z",
+  "headline": "Blackwing Lair in 32:38, a guild best at the time, with one boss death",
+  "mvp": {
+    "player": "Gertggs",
+    "headline": "the most damage on the last five bosses",
+    "why": [
+      "First on Firemaw, Ebonroc, Flamegor, Chromaggus (118k) and Nefarian (134k), third on the first three",
+      "No deaths"
+    ],
+    "also": [
+      { "player": "Tochopolvo", "text": "the most damage on Broodlord, second on Vaelastrasz, Firemaw and Chromaggus" },
+      { "player": "Elozia", "text": "26 afflictions cleansed on Chromaggus, the most, and a Rebirth on Osinir" },
+      { "player": "Fluffycatto", "text": "the most damage on Razorgore and 7 interrupts, the most" }
+    ]
+  },
+  "overview": [
+    "Eight kills in 32:38, then the guild's fastest Blackwing Lair (13 Nov has since done 28:29), against a usual 47:25. The one boss death was Firetoad to a Bone Construct at 1:26 on Nefarian.",
+    "After Razorgore died the log has a second 45-second Razorgore segment at full health with no deaths, almost all of its damage from Blackwing Technician bombs, so most likely trash the log tagged with the encounter rather than a real wipe.",
+    "Every Frenzy on Flamegor was tranquilized and 4 of 5 on Chromaggus. Warcraft Logs handed out no parses for this raid."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50615, "text": "Flamegor with all 4 Frenzies tranquilized and Fire Nova at about 60% of the usual rate." },
+    { "encounterId": 50616, "text": "Chromaggus with 88 afflictions cleansed (Elozia 26, Eînherjer 25, Allipalli 22) and every breath on the tank." },
+    { "encounterId": 50611, "text": "Vaelastrasz in 0:27 with no deaths." }
+  ],
+  "bosses": [
+    { "encounterId": 50610, "name": "Razorgore the Untamed", "notes": [ { "tone": "good", "text": "0:23, no deaths. Fluffycatto top." } ] },
+    { "encounterId": 50611, "name": "Vaelastrasz the Corrupt", "notes": [ { "tone": "good", "text": "0:27 (median 0:46), no deaths. One Burning Adrenaline, on Birdiebird." } ] },
+    { "encounterId": 50612, "name": "Broodlord Lashlayer", "notes": [ { "tone": "good", "text": "0:45, no deaths. Tochopolvo top." } ] },
+    { "encounterId": 50613, "name": "Firemaw", "notes": [ { "tone": "good", "text": "0:50 (median 1:40), no deaths, Flame Buffet stacks at about half the usual." } ] },
+    { "encounterId": 50614, "name": "Ebonroc", "notes": [ { "tone": "good", "text": "0:47 (median 1:15), no deaths." } ] },
+    { "encounterId": 50615, "name": "Flamegor", "notes": [ { "tone": "good", "text": "0:46, no deaths, 4 of 4 Frenzies tranquilized (Darkestnight 2, Speldosan 2, Birdiebird 1 shot)." } ] },
+    { "encounterId": 50616, "name": "Chromaggus", "notes": [ { "tone": "good", "text": "1:20, no deaths. All six breath hits on Macharius, who was tanking. 4 of 5 Frenzies tranquilized." } ] },
+    { "encounterId": 50617, "name": "Nefarian", "notes": [ { "tone": "info", "text": "1:31 (median 2:25). A Bone Construct killed Firetoad at 1:26, the only death. Gertggs 134k, Orbywan 131k." } ] }
+  ]
+}

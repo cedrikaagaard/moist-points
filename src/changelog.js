@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.30",
+    date: "2026-11-15",
+    changes: ["AI analyses and personal reviews for 30 Oct Blackwing Lair (32:38, the guild's fastest at the time) and Molten Core. Warcraft Logs hasn't sent parses for that night yet."],
+  },
+  {
     version: "2.6.29",
     date: "2026-11-15",
     changes: [

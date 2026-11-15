@@ -1,0 +1,40 @@
+{
+  "night": "2026-10-30-mc",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T23:00:00Z",
+  "headline": "Molten Core in 31 minutes, Geddon and Shazzrah pulled together",
+  "mvp": {
+    "player": "Tochopolvo",
+    "headline": "the most damage on five bosses",
+    "why": [
+      "First on Magmadar, Garr, Geddon, Golemagg and Ragnaros, second on Gehennas, Sulfuron and Majordomo",
+      "No deaths"
+    ],
+    "also": [
+      { "player": "Gertggs", "text": "the most damage on Lucifron, Gehennas and Sulfuron" },
+      { "player": "Eînherjer", "text": "86 dispels, including 11 Magma Shackles and 18 Cauterizing Flames" },
+      { "player": "Taurenlover", "text": "the most healing on four bosses" }
+    ]
+  },
+  "overview": [
+    "Nine boss fights in 31 minutes from the Lucifron pull to Ragnaros, after Blackwing Lair the same evening. Shazzrah has no fight of his own: his Arcane Explosion and curses show up inside the Geddon fight, which Warcraft Logs lists under a different encounter number, so the two were pulled together.",
+    "Two boss deaths: Santamuerte to Lucifron's melee at 0:12 and Firetoad in Yulepunch's Living Bomb at 0:37 on Geddon. No parses from Warcraft Logs for this raid."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50663, "text": "Lucifron with 23 curses removed (Elozia 10, Firetoad 8) and 20 Impending Dooms dispelled." },
+    { "encounterId": 50665, "text": "Gehennas in 0:23 with Rain of Fire at a quarter of the usual rate." },
+    { "encounterId": 50672, "text": "Ragnaros in 0:50, no deaths, Lava Burst hits at two thirds of the usual rate." }
+  ],
+  "bosses": [
+    { "encounterId": 50663, "name": "Lucifron", "notes": [ { "tone": "info", "text": "0:30. Lucifron's melee killed Santamuerte at 0:12. Gertggs top at 52k." } ] },
+    { "encounterId": 50664, "name": "Magmadar", "notes": [ { "tone": "info", "text": "0:35, no deaths, both Frenzies tranquilized by Speldosan. Lava Bomb fire hits nearly twice the usual rate (149 on 17 raiders)." } ] },
+    { "encounterId": 50665, "name": "Gehennas", "notes": [ { "tone": "good", "text": "0:23 (median 0:33), no deaths, 14 curses removed." } ] },
+    { "encounterId": 50666, "name": "Garr", "notes": [ { "tone": "good", "text": "0:33 (median 0:47), no deaths." } ] },
+    { "encounterId": 675, "name": "Baron Geddon", "notes": [ { "tone": "info", "text": "0:49 with Shazzrah in the same fight. Yulepunch's Living Bomb killed Firetoad at 0:37. 32 Shazzrah's Curses removed by Firetoad, Orbywan and Osinir." } ] },
+    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [ { "tone": "info", "text": "0:36, no deaths. 2 of 5 Dark Mendings kicked (Shaaw, Terrora), and Hand of Ragnaros did three times its usual share of damage." } ] },
+    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [ { "tone": "good", "text": "0:43 (median 0:55), no deaths." } ] },
+    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [ { "tone": "good", "text": "0:44 (median 1:09), no deaths. Osinir top at 78k." } ] },
+    { "encounterId": 50672, "name": "Ragnaros", "notes": [ { "tone": "good", "text": "0:50 (median 1:08), no deaths. Macharius took 56 Elemental Fires and Hjärterkung 10." } ] }
+  ]
+}
