@@ -317,6 +317,39 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "First on Sartura, parse 88 average",
+    "summary": "First on Sartura (1406/s), fifth on Skeram and the Bug Trio, parse 96 on C'Thun and 95 on Fankriss and Ouro. Average 88. Huhuran (22nd) was the gap.",
+    "good": [
+     {
+      "title": "Sartura",
+      "text": "First, 103k.",
+      "boss": 50711
+     },
+     {
+      "title": "C'Thun",
+      "text": "Parse 96.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran",
+      "impact": "low",
+      "boss": 50714,
+      "text": "22nd of 27."
+     }
+    ],
+    "bosses": {
+     "50711": {
+      "tone": "good",
+      "text": "First."
+     }
+    }
    }
   },
   "Alanakos": {
@@ -557,6 +590,43 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B-",
+    "verdict": "First on Skeram, Ravaged on the Bug Trio",
+    "summary": "First on Skeram (640/s), sixth on C'Thun, seventh on Huhuran. On the Bug Trio you stood in Toxic Vapors three times and Yauj's Ravage killed you at 0:34.",
+    "good": [
+     {
+      "title": "Skeram",
+      "text": "First, parse 83.",
+      "boss": 50709
+     },
+     {
+      "title": "C'Thun",
+      "text": "Sixth, parse 89.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bug Trio",
+      "impact": "high",
+      "boss": 50710,
+      "text": "Ravage at 0:34 after 3 Toxic Vapors hits."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "good",
+      "text": "First."
+     },
+     "50710": {
+      "tone": "bad",
+      "text": "Died at 0:34."
+     }
+    }
    }
   },
   "Amima": {
@@ -823,6 +893,38 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C+",
+    "verdict": "Killed by Vek'nilash, 20 dispels",
+    "summary": "Fourth of the healers on Skeram, Sartura and Fankriss. 20 dispels. Vek'nilash's melee killed you at 1:42 on the Twins, the only death of that fight.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "20, second most."
+     },
+     {
+      "title": "Sartura",
+      "text": "Fourth of the healers.",
+      "boss": 50711
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "high",
+      "boss": 50715,
+      "text": "Vek'nilash's melee at 1:42."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "bad",
+      "text": "Died at 1:42."
+     }
+    }
    }
   },
   "Barnstoker": {
@@ -1085,6 +1187,32 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C+",
+    "verdict": "Curse of the Elements up, low damage",
+    "summary": "144 Curses of the Elements and a Soulstone. Damage 21st or lower on seven bosses, parse 76 on C'Thun.",
+    "good": [
+     {
+      "title": "Curse duty",
+      "text": "144 Curses of the Elements."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "medium",
+      "text": "24th or lower on Fankriss, Huhuran, the Twins and Ouro."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "info",
+      "text": "Parse 76."
+     }
+    }
    }
   },
   "Birkler": {
@@ -1355,6 +1483,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A",
+    "verdict": "Main tank on all nine, parse 95 on C'Thun",
+    "summary": "First of the tanks on all nine bosses. Parse 95 on C'Thun, 92 on Fankriss and the Twins, average 84 against your usual 68. No deaths. Four Eye Beams on C'Thun.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "First of the tanks on all nine, no deaths."
+     },
+     {
+      "title": "C'Thun",
+      "text": "Parse 95.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun",
+      "impact": "low",
+      "boss": 50717,
+      "text": "4 Eye Beam hits, the most."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "Tanked, parse 95."
+     }
+    }
    }
   },
   "Cokedog": {
@@ -1637,6 +1797,40 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C+",
+    "verdict": "Seventh on Ouro, 23rd on C'Thun",
+    "summary": "Seventh on Ouro (parse 86), eighth on Sartura, ninth on Huhuran. C'Thun (parse 23) and Viscidus (22nd) were low. Twelve Whirlwind hits and two Toxic Vapors.",
+    "good": [
+     {
+      "title": "Ouro",
+      "text": "Seventh, parse 86.",
+      "boss": 50716
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun",
+      "impact": "medium",
+      "boss": 50717,
+      "text": "18th, parse 23."
+     },
+     {
+      "title": "Sartura",
+      "impact": "low",
+      "boss": 50711,
+      "text": "12 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "good",
+      "text": "Seventh."
+     }
+    }
    }
   },
   "Eufrasia": {
@@ -1917,6 +2111,51 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.956Z",
+    "grade": "A",
+    "verdict": "First on the Bug Trio and the Twins, top six on every boss",
+    "summary": "The most damage on the Bug Trio (124k) and the Twin Emperors (153k), second on Fankriss, Ouro and C'Thun. Top six on all nine bosses, average parse 87 against your usual 73. No deaths.",
+    "good": [
+     {
+      "title": "Twin Emperors",
+      "text": "First, 153k, parse 95.",
+      "boss": 50715
+     },
+     {
+      "title": "Bug Trio",
+      "text": "First, 124k, parse 93.",
+      "boss": 50710
+     },
+     {
+      "title": "Consistency",
+      "text": "Top six on all nine."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Skeram",
+      "impact": "low",
+      "boss": 50709,
+      "text": "Fourth, parse 70, your lowest."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "good",
+      "text": "First, 124k."
+     },
+     "50715": {
+      "tone": "good",
+      "text": "First, 153k."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "Second, parse 91."
+     }
+    }
    }
   },
   "Eïnherjar": {
@@ -2125,6 +2364,39 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "First on C'Thun, 168k",
+    "summary": "In from Fankriss on: the most damage on C'Thun (168k, parse 93), second on Huhuran, fourth on the Twins and Ouro. No deaths.",
+    "good": [
+     {
+      "title": "C'Thun",
+      "text": "First, 168k.",
+      "boss": 50717
+     },
+     {
+      "title": "Huhuran",
+      "text": "Second, parse 90.",
+      "boss": 50714
+     }
+    ],
+    "fix": [
+     {
+      "title": "Fankriss",
+      "impact": "low",
+      "boss": 50712,
+      "text": "22nd, parse 18."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "First, 168k."
+     }
+    }
    }
   },
   "Fluffycatto": {
@@ -2403,6 +2675,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "First on Viscidus, parse 96 on Huhuran",
+    "summary": "First on Viscidus, third on Fankriss (parse 95), fifth on Huhuran (96). Two Arcane Explosions and one Great Heal kicked. Average 84.",
+    "good": [
+     {
+      "title": "Interrupts",
+      "text": "3, including a Great Heal on the Bug Trio."
+     },
+     {
+      "title": "Huhuran",
+      "text": "Parse 96.",
+      "boss": 50714
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "low",
+      "boss": 50715,
+      "text": "16th, parse 84."
+     }
+    ],
+    "bosses": {
+     "50713": {
+      "tone": "good",
+      "text": "First."
+     }
+    }
    }
   },
   "Foggiie": {
@@ -2671,6 +2975,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "First healer on Skeram and Huhuran",
+    "summary": "First of the healers on Skeram and Huhuran (691 HPS), second on Ouro and C'Thun, third on the Bug Trio, Sartura and the Twins. 9 Power Infusions.",
+    "good": [
+     {
+      "title": "Huhuran",
+      "text": "First of the healers, 691 HPS.",
+      "boss": 50714
+     },
+     {
+      "title": "Power Infusion",
+      "text": "9."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Ouro",
+      "impact": "low",
+      "boss": 50716,
+      "text": "A Sand Blast."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "good",
+      "text": "First of the healers."
+     }
+    }
    }
   },
   "Gertggs": {
@@ -2901,6 +3237,39 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B+",
+    "verdict": "Fourth on C'Thun, two trash deaths",
+    "summary": "Fourth on C'Thun, fifth on Viscidus, sixth on Fankriss. Average 80. Two trash deaths, an Impale and an Anubisath Defender's Thunderclap.",
+    "good": [
+     {
+      "title": "C'Thun",
+      "text": "Fourth, parse 90.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "Trash",
+      "impact": "medium",
+      "text": "Two trash deaths."
+     },
+     {
+      "title": "Sartura",
+      "impact": "low",
+      "boss": 50711,
+      "text": "8 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "Fourth."
+     }
+    }
    }
   },
   "Groomz": {
@@ -3162,6 +3531,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B",
+    "verdict": "Tanked the first four, fifth on the Twins",
+    "summary": "Tanked Skeram, the Bug Trio, Sartura and Fankriss, then fifth on the Twins (parse 91) and eighth on Huhuran and C'Thun. 140 Sunders. No deaths.",
+    "good": [
+     {
+      "title": "Twin Emperors",
+      "text": "Fifth, parse 91.",
+      "boss": 50715
+     },
+     {
+      "title": "Tanking",
+      "text": "Four bosses."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura",
+      "impact": "low",
+      "boss": 50711,
+      "text": "9 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "good",
+      "text": "Fifth."
+     }
+    }
    }
   },
   "Harrylarry": {
@@ -3408,6 +3809,43 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C",
+    "verdict": "Two boss deaths and a trash death",
+    "summary": "Sixth on Viscidus, parse 84 on Huhuran, the Twins and Ouro. Toxic Volley killed you on the Bug Trio at 0:32 after three Toxic Vapors hits, Whirlwind on Sartura at 0:40, and a Qiraji Slayer on trash.",
+    "good": [
+     {
+      "title": "Viscidus",
+      "text": "Sixth.",
+      "boss": 50713
+     }
+    ],
+    "fix": [
+     {
+      "title": "Deaths",
+      "impact": "high",
+      "text": "Bug Trio at 0:32, Sartura at 0:40."
+     },
+     {
+      "title": "C'Thun",
+      "impact": "low",
+      "boss": 50717,
+      "text": "23rd, parse 17."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Died at 0:32."
+     },
+     "50711": {
+      "tone": "bad",
+      "text": "Died at 0:40."
+     }
+    }
    }
   },
   "Hjärterkung": {
@@ -3691,6 +4129,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "Tanked all nine, parse 93 on C'Thun",
+    "summary": "Tanked every boss: parse 93 on C'Thun, 92 on Ouro, 91 on Sartura, average 84. 118 Feral Faerie Fires and a Flash Heal kicked. No deaths.",
+    "good": [
+     {
+      "title": "Tanking",
+      "text": "All nine, no deaths."
+     },
+     {
+      "title": "Ouro",
+      "text": "Parse 92.",
+      "boss": 50716
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura",
+      "impact": "low",
+      "boss": 50711,
+      "text": "17 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "Tanked, parse 93."
+     }
+    }
    }
   },
   "Holywife": {
@@ -3952,6 +4422,34 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B-",
+    "verdict": "Second healer on the Twins",
+    "summary": "Second of the healers on the Twins (58k), fourth on C'Thun. Last on Ouro. Two exploding bugs and two Eye Beams.",
+    "good": [
+     {
+      "title": "Twin Emperors",
+      "text": "Second of the healers.",
+      "boss": 50715
+     }
+    ],
+    "fix": [
+     {
+      "title": "Ouro",
+      "impact": "low",
+      "boss": 50716,
+      "text": "10th of 10 healers."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "good",
+      "text": "Second of the healers."
+     }
+    }
    }
   },
   "Künigünde": {
@@ -4190,6 +4688,37 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B-",
+    "verdict": "17 Power Infusions and 20 Fear Wards, dead in Kri's cloud",
+    "summary": "17 Power Infusions and 20 Fear Wards, the most of both. Second of the healers on Fankriss, third on Viscidus. On the Bug Trio you stood in Toxic Vapors three times and died at 1:01.",
+    "good": [
+     {
+      "title": "Fear Ward",
+      "text": "20."
+     },
+     {
+      "title": "Power Infusion",
+      "text": "17."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bug Trio",
+      "impact": "high",
+      "boss": 50710,
+      "text": "3 Toxic Vapors hits, dead at 1:01."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Toxic Vapors at 1:01."
+     }
+    }
    }
   },
   "Labwar": {
@@ -4414,6 +4943,39 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C-",
+    "verdict": "First death of the Bug Trio, two trash deaths",
+    "summary": "Toxic Vapors killed you on the Bug Trio at 0:30, the first death of the fight. Two trash deaths among the Vekniss Guardians. Last on Viscidus. Average 42 against your usual 60. One Arcane Explosion kicked.",
+    "good": [
+     {
+      "title": "Skeram",
+      "text": "Kicked an Arcane Explosion.",
+      "boss": 50709
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bug Trio",
+      "impact": "high",
+      "boss": 50710,
+      "text": "Toxic Vapors at 0:30."
+     },
+     {
+      "title": "Trash",
+      "impact": "medium",
+      "text": "Impale and a fall."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Toxic Vapors at 0:30."
+     }
+    }
    }
   },
   "Lebh": {
@@ -4680,6 +5242,39 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "Top five on five bosses, three interrupts",
+    "summary": "Third on the Bug Trio and Ouro, fourth on Fankriss and Huhuran, fifth on Sartura. Two Arcane Explosions kicked on Skeram. Average 82.",
+    "good": [
+     {
+      "title": "Ouro",
+      "text": "Third, parse 94.",
+      "boss": 50716
+     },
+     {
+      "title": "Skeram",
+      "text": "2 Arcane Explosions kicked.",
+      "boss": 50709
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun",
+      "impact": "low",
+      "boss": 50717,
+      "text": "9th, one Eye Beam."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "good",
+      "text": "Third."
+     }
+    }
    }
   },
   "Marulock": {
@@ -4930,6 +5525,32 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C",
+    "verdict": "166 Curses of Recklessness, last on three bosses",
+    "summary": "166 Curses of Recklessness. Last on Skeram, Huhuran and the Twins, parse 70 on Sartura. Two Blizzards and an exploding bug on the Twins.",
+    "good": [
+     {
+      "title": "Curse duty",
+      "text": "166 Curses of Recklessness."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "medium",
+      "text": "Last on Skeram, Huhuran and the Twins."
+     }
+    ],
+    "bosses": {
+     "50714": {
+      "tone": "bad",
+      "text": "Last."
+     }
+    }
    }
   },
   "Orbywan": {
@@ -5201,6 +5822,39 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B",
+    "verdict": "Parse 95 on C'Thun, a Great Heal kicked",
+    "summary": "Parse 95 on C'Thun, 94 on Ouro, 93 on Fankriss, 90 on Sartura and the Twins. Kicked a Great Heal on the Bug Trio. 26th on Huhuran.",
+    "good": [
+     {
+      "title": "C'Thun",
+      "text": "Parse 95.",
+      "boss": 50717
+     },
+     {
+      "title": "Bug Trio",
+      "text": "Kicked a Great Heal.",
+      "boss": 50710
+     }
+    ],
+    "fix": [
+     {
+      "title": "Huhuran",
+      "impact": "low",
+      "boss": 50714,
+      "text": "26th of 27."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "Parse 95."
+     }
+    }
    }
   },
   "Osinir": {
@@ -5468,6 +6122,47 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "First on Fankriss, Huhuran and Ouro",
+    "summary": "The most damage on Fankriss (2152/s), Huhuran and Ouro (parse 97), fourth on Sartura. Average 80 against your usual 59. Viscidus (18th) and the Bug Trio (13th) were the soft spots.",
+    "good": [
+     {
+      "title": "Ouro",
+      "text": "First, parse 97.",
+      "boss": 50716
+     },
+     {
+      "title": "Fankriss",
+      "text": "First, 2152/s.",
+      "boss": 50712
+     }
+    ],
+    "fix": [
+     {
+      "title": "Viscidus",
+      "impact": "low",
+      "boss": 50713,
+      "text": "18th, parse 28."
+     }
+    ],
+    "bosses": {
+     "50712": {
+      "tone": "good",
+      "text": "First."
+     },
+     "50714": {
+      "tone": "good",
+      "text": "First."
+     },
+     "50716": {
+      "tone": "good",
+      "text": "First."
+     }
+    }
    }
   },
   "Salma": {
@@ -5724,6 +6419,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C+",
+    "verdict": "17 dispels, low healing",
+    "summary": "17 dispels. Healing sat 6th to 9th on every boss. Three exploding bugs on the Twins, the most.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "17."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "low",
+      "boss": 50715,
+      "text": "3 exploding bugs, the most."
+     },
+     {
+      "title": "Healing",
+      "impact": "low",
+      "text": "9th on the Bug Trio, Sartura and Ouro."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "bad",
+      "text": "3 exploding bugs."
+     }
+    }
    }
   },
   "Sefarine": {
@@ -5979,6 +6706,32 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B",
+    "verdict": "61 dispels, three times the next healer",
+    "summary": "61 dispels: 12 Poison Bolt Volleys, 8 Vekniss Catalysts, 8 Virulent Poisons, 7 Fears. Healing mid to low, 9th on Viscidus.",
+    "good": [
+     {
+      "title": "Dispels",
+      "text": "61, the most by far."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "low",
+      "text": "8th or 9th of the healers on four bosses."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "info",
+      "text": "Fifth of the healers."
+     }
+    }
    }
   },
   "Shaaw": {
@@ -6208,6 +6961,39 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "D+",
+    "verdict": "Died in Kri's cloud, two trash deaths",
+    "summary": "Toxic Vapors killed you on the Bug Trio at 0:31. Two trash deaths. Average parse 28 against your usual 59, 27th of 28 on C'Thun.",
+    "good": [
+     {
+      "title": "Skeram",
+      "text": "Kicked an Arcane Explosion.",
+      "boss": 50709
+     }
+    ],
+    "fix": [
+     {
+      "title": "Bug Trio",
+      "impact": "high",
+      "boss": 50710,
+      "text": "Toxic Vapors at 0:31."
+     },
+     {
+      "title": "Damage",
+      "impact": "high",
+      "text": "Parse 28 average."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Toxic Vapors at 0:31."
+     }
+    }
    }
   },
   "Slappin": {
@@ -6479,6 +7265,48 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A",
+    "verdict": "Parse 99 on Huhuran, the Twins and C'Thun",
+    "summary": "Parse 99 on Huhuran, the Twins and C'Thun, 97 on Ouro, 96 on Skeram and Sartura. Average 90. Second on the Twins, third on Skeram, and one of the two Tranquilizing Shots that took Huhuran's Frenzies. Viscidus (24th) was the only weak one.",
+    "good": [
+     {
+      "title": "Twin Emperors",
+      "text": "Second, parse 99.",
+      "boss": 50715
+     },
+     {
+      "title": "Huhuran",
+      "text": "Parse 99, tranquilized a Frenzy.",
+      "boss": 50714
+     },
+     {
+      "title": "C'Thun",
+      "text": "Parse 99.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "Viscidus",
+      "impact": "low",
+      "boss": 50713,
+      "text": "24th of 27."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "good",
+      "text": "Parse 99."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "Parse 99."
+     }
+    }
    }
   },
   "Speldosan": {
@@ -6743,6 +7571,39 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B+",
+    "verdict": "Parse 97 on the Twins and C'Thun",
+    "summary": "Parse 97 on the Twins and C'Thun, 93 on Fankriss, 90 on Sartura, Huhuran and Ouro. Tranquilized one of Huhuran's Frenzies. Average 83.",
+    "good": [
+     {
+      "title": "Huhuran",
+      "text": "Tranquilized a Frenzy.",
+      "boss": 50714
+     },
+     {
+      "title": "C'Thun",
+      "text": "Parse 97.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "Skeram",
+      "impact": "low",
+      "boss": 50709,
+      "text": "18th, parse 56."
+     }
+    ],
+    "bosses": {
+     "50715": {
+      "tone": "good",
+      "text": "Parse 97."
+     }
+    }
    }
   },
   "Stinkycat": {
@@ -6989,6 +7850,46 @@
       "buffs": null
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "D",
+    "verdict": "Three boss deaths",
+    "summary": "Died on the Bug Trio (Toxic Vapors, 0:31), Sartura (Whirlwind, 0:50) and Ouro (Sand Blast, 0:49), plus a trash death. Last on the Bug Trio, Fankriss and Ouro. 26 Poison Bolt Volley hits on Viscidus, the most. Kicked a Great Heal.",
+    "good": [
+     {
+      "title": "Bug Trio",
+      "text": "Kicked a Great Heal.",
+      "boss": 50710
+     }
+    ],
+    "fix": [
+     {
+      "title": "Deaths",
+      "impact": "high",
+      "text": "Three boss deaths."
+     },
+     {
+      "title": "Damage",
+      "impact": "high",
+      "text": "Last on three bosses, parse 27 average."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "bad",
+      "text": "Toxic Vapors at 0:31."
+     },
+     "50711": {
+      "tone": "bad",
+      "text": "Whirlwind at 0:50."
+     },
+     "50716": {
+      "tone": "bad",
+      "text": "Sand Blast at 0:49."
+     }
+    }
    }
   },
   "Suintila": {
@@ -7254,6 +8155,34 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B-",
+    "verdict": "Parse 86 on the Twins",
+    "summary": "Eighth on the Twins (parse 86), ninth on Fankriss, eighth on Viscidus. Average 67 against your usual 49. Fourteen Whirlwind hits on Sartura and two Toxic Vapors on the Bug Trio.",
+    "good": [
+     {
+      "title": "Twin Emperors",
+      "text": "Eighth, parse 86.",
+      "boss": 50715
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura",
+      "impact": "medium",
+      "boss": 50711,
+      "text": "14 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50711": {
+      "tone": "bad",
+      "text": "14 Whirlwind hits."
+     }
+    }
    }
   },
   "Taurenlover": {
@@ -7498,6 +8427,39 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B+",
+    "verdict": "First healer on Viscidus, third on five bosses",
+    "summary": "First of the healers on Viscidus (68k), second on Sartura, third on Skeram, Fankriss, Huhuran, Ouro and C'Thun. A trash death to a Vekniss Stinger.",
+    "good": [
+     {
+      "title": "Viscidus",
+      "text": "First of the healers, 68k.",
+      "boss": 50713
+     },
+     {
+      "title": "Sartura",
+      "text": "Second, 21% overheal.",
+      "boss": 50711
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "low",
+      "boss": 50715,
+      "text": "8th of the healers."
+     }
+    ],
+    "bosses": {
+     "50713": {
+      "tone": "good",
+      "text": "First of the healers."
+     }
+    }
    }
   },
   "Thornhild": {
@@ -7613,6 +8575,34 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C",
+    "verdict": "In for Ouro and C'Thun",
+    "summary": "Only in the log for Ouro (17th, parse 73) and C'Thun (24th). A Sand Blast on Ouro.",
+    "good": [
+     {
+      "title": "Ouro",
+      "text": "Parse 73.",
+      "boss": 50716
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun",
+      "impact": "low",
+      "boss": 50717,
+      "text": "24th, parse 18."
+     }
+    ],
+    "bosses": {
+     "50716": {
+      "tone": "info",
+      "text": "Parse 73."
+     }
+    }
    }
   },
   "Tiianna": {
@@ -7877,6 +8867,37 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C-",
+    "verdict": "Last healer on eight bosses",
+    "summary": "Last of the healers on every boss but Ouro, with nothing logged on Fankriss. 214 Faerie Fires and 9 dispels.",
+    "good": [
+     {
+      "title": "Faerie Fire",
+      "text": "214."
+     },
+     {
+      "title": "Ouro",
+      "text": "7th of the healers.",
+      "boss": 50716
+     }
+    ],
+    "fix": [
+     {
+      "title": "Healing",
+      "impact": "high",
+      "text": "10th of 10 on eight bosses."
+     }
+    ],
+    "bosses": {
+     "50712": {
+      "tone": "bad",
+      "text": "No healing."
+     }
+    }
    }
   },
   "Tirrhor": {
@@ -8139,6 +9160,39 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B",
+    "verdict": "Parse 66 against a usual 31",
+    "summary": "Second on Viscidus, seventh on Fankriss, parse 90 on the Twins and 88 on Ouro. Average 66, more than double your usual. Three Toxin hits on Viscidus, the most, and 25th on C'Thun.",
+    "good": [
+     {
+      "title": "Viscidus",
+      "text": "Second.",
+      "boss": 50713
+     },
+     {
+      "title": "Twin Emperors",
+      "text": "Parse 90.",
+      "boss": 50715
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun",
+      "impact": "medium",
+      "boss": 50717,
+      "text": "25th of 28."
+     }
+    ],
+    "bosses": {
+     "50713": {
+      "tone": "good",
+      "text": "Second."
+     }
+    }
    }
   },
   "Unknowngirl": {
@@ -8387,6 +9441,34 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C",
+    "verdict": "Last on Sartura, parse 44 average",
+    "summary": "11th on Huhuran (parse 80), 80 on the Twins too. Last on Sartura (70/s). Average 44, over your usual 36.",
+    "good": [
+     {
+      "title": "Huhuran",
+      "text": "Parse 80.",
+      "boss": 50714
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura",
+      "impact": "medium",
+      "boss": 50711,
+      "text": "Last, 70/s."
+     }
+    ],
+    "bosses": {
+     "50711": {
+      "tone": "bad",
+      "text": "Last."
+     }
+    }
    }
   },
   "Utze": {
@@ -8620,6 +9702,33 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C",
+    "verdict": "Eighth on the Bug Trio, low elsewhere",
+    "summary": "Eighth on the Bug Trio (parse 75). 23rd on Sartura and Huhuran, 22nd on C'Thun. A trash death to a fall among the Vekniss Guardians.",
+    "good": [
+     {
+      "title": "Bug Trio",
+      "text": "Eighth, parse 75.",
+      "boss": 50710
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "medium",
+      "text": "23rd on Sartura and Huhuran."
+     }
+    ],
+    "bosses": {
+     "50711": {
+      "tone": "bad",
+      "text": "23rd of 24."
+     }
+    }
    }
   },
   "Valethia": {
@@ -8889,6 +9998,43 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A-",
+    "verdict": "Second on Skeram and Sartura, top five on eight bosses",
+    "summary": "Second on Skeram and Sartura, third on Huhuran and the Twins, fourth on the Bug Trio, fifth on Fankriss, Ouro and C'Thun. Average 84. No deaths. Nine Whirlwind hits on Sartura.",
+    "good": [
+     {
+      "title": "Sartura",
+      "text": "Second, parse 88.",
+      "boss": 50711
+     },
+     {
+      "title": "Twin Emperors",
+      "text": "Third, parse 93.",
+      "boss": 50715
+     }
+    ],
+    "fix": [
+     {
+      "title": "Sartura",
+      "impact": "low",
+      "boss": 50711,
+      "text": "9 Whirlwind hits."
+     }
+    ],
+    "bosses": {
+     "50709": {
+      "tone": "good",
+      "text": "Second."
+     },
+     "50711": {
+      "tone": "good",
+      "text": "Second."
+     }
+    }
    }
   },
   "Wellan": {
@@ -9174,6 +10320,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B+",
+    "verdict": "Tanked six bosses, third on C'Thun",
+    "summary": "Tanked Skeram, the Bug Trio, Sartura, Fankriss, the Twins and Ouro, then third on C'Thun (parse 90). 190 Sunders. On the Twins you took three Blizzards and an Arcane Burst.",
+    "good": [
+     {
+      "title": "C'Thun",
+      "text": "Third, 613/s.",
+      "boss": 50717
+     },
+     {
+      "title": "Sunders",
+      "text": "190."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Twin Emperors",
+      "impact": "low",
+      "boss": 50715,
+      "text": "3 Blizzards, an Arcane Burst, an exploding bug."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "good",
+      "text": "Third."
+     }
+    }
    }
   },
   "Whorm": {
@@ -9406,6 +10584,33 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C+",
+    "verdict": "Second on the Bug Trio, low after",
+    "summary": "Second on the Bug Trio (99k, parse 87). After that 13th to 21st, average 53 against your usual 62. A trash death to an Impale.",
+    "good": [
+     {
+      "title": "Bug Trio",
+      "text": "Second, 99k.",
+      "boss": 50710
+     }
+    ],
+    "fix": [
+     {
+      "title": "Damage",
+      "impact": "medium",
+      "text": "19th on Huhuran and the Twins, 21st on C'Thun."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "good",
+      "text": "Second."
+     }
+    }
    }
   },
   "Youlloveme": {
@@ -9682,6 +10887,42 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "A",
+    "verdict": "First healer on six bosses",
+    "summary": "First of the healers on the Bug Trio, Sartura, Fankriss, the Twins, Ouro and C'Thun (89k), second on Skeram, Viscidus and Huhuran. No deaths.",
+    "good": [
+     {
+      "title": "Healing",
+      "text": "First or second on all nine."
+     },
+     {
+      "title": "C'Thun",
+      "text": "89k, 20%.",
+      "boss": 50717
+     }
+    ],
+    "fix": [
+     {
+      "title": "Viscidus",
+      "impact": "low",
+      "boss": 50713,
+      "text": "15 Poison Bolt Volley hits."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "good",
+      "text": "First of the healers."
+     },
+     "50717": {
+      "tone": "good",
+      "text": "First of the healers, 89k."
+     }
+    }
    }
   },
   "Yulefuel": {
@@ -9945,6 +11186,38 @@
       ]
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "B",
+    "verdict": "12 Power Infusions, second healer on the Bug Trio",
+    "summary": "Second of the healers on the Bug Trio, fourth on Viscidus, Huhuran and the Twins. 12 Power Infusions, 4 Fears dispelled.",
+    "good": [
+     {
+      "title": "Bug Trio",
+      "text": "Second of the healers.",
+      "boss": 50710
+     },
+     {
+      "title": "Power Infusion",
+      "text": "12."
+     }
+    ],
+    "fix": [
+     {
+      "title": "Fankriss",
+      "impact": "low",
+      "boss": 50712,
+      "text": "9th of the healers."
+     }
+    ],
+    "bosses": {
+     "50710": {
+      "tone": "good",
+      "text": "Second of the healers."
+     }
+    }
    }
   },
   "Zuzul": {
@@ -10178,6 +11451,39 @@
       "buffs": []
      }
     ]
+   },
+   "review": {
+    "model": "Claude (Opus 5.5)",
+    "generatedAt": "2026-11-15T11:45:11.957Z",
+    "grade": "C-",
+    "verdict": "Last on C'Thun, two trash deaths",
+    "summary": "Twin Emperors parse 74 was the best of your night. Last on C'Thun (95/s), 25th on Viscidus. Two trash deaths, a fall and a Qiraji Slayer.",
+    "good": [
+     {
+      "title": "Huhuran",
+      "text": "3 Poison Bolts soaked.",
+      "boss": 50714
+     }
+    ],
+    "fix": [
+     {
+      "title": "C'Thun",
+      "impact": "high",
+      "boss": 50717,
+      "text": "Last of 28."
+     },
+     {
+      "title": "Trash",
+      "impact": "low",
+      "text": "Two trash deaths."
+     }
+    ],
+    "bosses": {
+     "50717": {
+      "tone": "bad",
+      "text": "Last."
+     }
+    }
    }
   }
  }
