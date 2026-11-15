@@ -1,0 +1,41 @@
+{
+  "night": "2026-11-06-bwl",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T20:00:00Z",
+  "headline": "Blackwing Lair in 33:45 with two deaths, both on Nefarian's landing",
+  "mvp": {
+    "player": "Tochopolvo",
+    "headline": "the most damage on Vaelastrasz, Broodlord and Chromaggus, top five on all eight",
+    "why": [
+      "First on Vaelastrasz, Broodlord and Chromaggus (115k), second on Firemaw, third on Razorgore, Flamegor and Nefarian",
+      "Average parse 94 against a usual 69",
+      "No deaths"
+    ],
+    "also": [
+      { "player": "Gertggs", "text": "the most damage on Firemaw and Flamegor and second on four more" },
+      { "player": "Speldosan", "text": "every Tranquilizing Shot of the night, 2 on Flamegor and 3 on Chromaggus" },
+      { "player": "Elozia", "text": "18 afflictions cleansed on Chromaggus, 17 of them Black" }
+    ]
+  },
+  "overview": [
+    "Eight kills on eight pulls in 33:45, against a usual 47:25. Two boss deaths, Pomo and Malyric to Shadow Flame three and five seconds into Nefarian, and one trash death.",
+    "The tranquilizing was one hunter deep. Speldosan took 2 of Flamegor's 4 Frenzies and 3 of Chromaggus' 5, and on Flamegor the other two let Fire Nova hit the raid 432 times, more than twice the usual rate. Nobody died to it.",
+    "World buffs were light on Vaelastrasz (17 with Rallying Cry) and back up to 35 by Firemaw."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50616, "text": "Chromaggus in 1:19 with breaths hitting 6 times, against about 65 on a usual kill, and 73 afflictions cleansed." },
+    { "encounterId": 50613, "text": "Firemaw in 0:44 with a parse median of 90 and Flame Buffet stacks at under half the usual." },
+    { "encounterId": 50617, "text": "Nefarian in 1:37 against a usual 2:25, fears at a quarter of the usual rate, parse median 84." }
+  ],
+  "bosses": [
+    { "encounterId": 50610, "name": "Razorgore the Untamed", "notes": [ { "tone": "good", "text": "0:25 (median 0:28), no deaths. Alanakos top, Wizness parse 97." } ] },
+    { "encounterId": 50611, "name": "Vaelastrasz the Corrupt", "notes": [ { "tone": "good", "text": "0:28 (median 0:45), no deaths. One Burning Adrenaline, on Mohg." } ] },
+    { "encounterId": 50612, "name": "Broodlord Lashlayer", "notes": [ { "tone": "good", "text": "0:38 (median 0:50), no deaths, Blast Wave hits at half the usual rate." } ] },
+    { "encounterId": 50613, "name": "Firemaw", "notes": [ { "tone": "good", "text": "0:44 (median 1:40), no deaths. Gertggs and Tochopolvo 70k each." } ] },
+    { "encounterId": 50614, "name": "Ebonroc", "notes": [ { "tone": "good", "text": "0:51 (median 1:15), no deaths. Mercîless top at 65k." } ] },
+    { "encounterId": 50615, "name": "Flamegor", "notes": [ { "tone": "bad", "text": "0:52, no deaths, but only 2 of 4 Frenzies tranquilized (both by Speldosan), and Fire Nova did 190k to the raid, 75% of all damage taken." } ] },
+    { "encounterId": 50616, "name": "Chromaggus", "notes": [ { "tone": "good", "text": "1:19 (median 1:57), no deaths. 3 of 5 Frenzies tranquilized, all by Speldosan. Elozia cleansed 18 afflictions, Thormund 14, Künigünde 11." } ] },
+    { "encounterId": 50617, "name": "Nefarian", "notes": [ { "tone": "info", "text": "1:37. Pomo (4 Shadow Flames) and Malyric (6) died at 0:03 and 0:05, the only deaths. Miniwrecker top at 139k." } ] }
+  ]
+}

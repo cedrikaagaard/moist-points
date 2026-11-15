@@ -1,0 +1,43 @@
+{
+  "night": "2026-11-06-mc",
+  "model": "Claude (Opus 5.5)",
+  "generatedAt": "2026-11-15T20:00:00Z",
+  "headline": "Molten Core in 36:23 after Blackwing Lair, two boss deaths",
+  "mvp": {
+    "player": "Gertggs",
+    "headline": "the most damage on five bosses, second on four more",
+    "why": [
+      "First on Lucifron, Gehennas, Sulfuron, Golemagg and Majordomo, second on Garr, Geddon, Shazzrah and Ragnaros",
+      "Average parse 94 against a usual 73",
+      "Kicked a Dark Mending on Sulfuron"
+    ],
+    "also": [
+      { "player": "Thormund", "text": "121 dispels, the most: 31 Immolates, 18 Cauterizing Flames, 6 Impending Dooms" },
+      { "player": "Macharius", "text": "main tank on nine bosses, parse 97 on Geddon and 96 on Ragnaros through 62 Elemental Fires" },
+      { "player": "Tochopolvo", "text": "the most damage on Magmadar, Garr and Ragnaros" }
+    ]
+  },
+  "overview": [
+    "Ten kills on ten pulls in 36:23, against a usual 44:48, the same evening as Blackwing Lair. Two boss deaths: Malyric to Shazzrah's Arcane Explosion at 0:25 and Roguina to a Flamewaker Healer's Shadow Bolt on Majordomo at 0:36.",
+    "A Firelord's Massive Tremor killed Selenax and Mercîless on trash, and Selenax and Marulock aren't in the log after Magmadar.",
+    "Shazzrah was the one slow boss: 0:29 against a usual 0:21, parse median 61 against 78."
+  ],
+  "wipes": [],
+  "wentWell": [
+    { "encounterId": 50669, "text": "4 of Sulfuron's 6 Dark Mendings kicked (Gertggs, Nessla, Sneakycatto, Tochopolvo)." },
+    { "encounterId": 50663, "text": "Lucifron in 0:26 with 18 curses and 17 Impending Dooms removed." },
+    { "encounterId": 50672, "text": "Ragnaros in 0:53 (median 1:08), no deaths, Tochopolvo parse 97." }
+  ],
+  "bosses": [
+    { "encounterId": 50663, "name": "Lucifron", "notes": [ { "tone": "good", "text": "0:26, no deaths. Lucifron's Curses removed: Elozia 7, Firetoad 5." } ] },
+    { "encounterId": 50664, "name": "Magmadar", "notes": [ { "tone": "info", "text": "0:35, no deaths, both Frenzies tranquilized (Amima and Speldosan). Lava Breath reached the raid for 19k, where it usually hits nobody." } ] },
+    { "encounterId": 50665, "name": "Gehennas", "notes": [ { "tone": "good", "text": "0:28, no deaths, 15 curses removed. Gertggs 57k, half again the next." } ] },
+    { "encounterId": 50666, "name": "Garr", "notes": [ { "tone": "good", "text": "0:35 (median 0:47), no deaths. Sabrina tanked an add to a 97." } ] },
+    { "encounterId": 50668, "name": "Baron Geddon", "notes": [ { "tone": "good", "text": "0:34 (median 0:46), no deaths, Inferno hits under the usual rate. 13 Ignite Manas dispelled, Gallahan and Thormund 5 each." } ] },
+    { "encounterId": 50667, "name": "Shazzrah", "notes": [ { "tone": "bad", "text": "0:29 against a usual 0:21. Arcane Explosion killed Malyric at 0:25 and hit 2.7 per raider against a usual 2.3." } ] },
+    { "encounterId": 50669, "name": "Sulfuron Harbinger", "notes": [ { "tone": "good", "text": "0:44 (median 0:50), no deaths, 4 of 6 priest heals kicked." } ] },
+    { "encounterId": 50670, "name": "Golemagg the Incinerator", "notes": [ { "tone": "good", "text": "0:46 (median 0:54), no deaths. Gertggs 75k." } ] },
+    { "encounterId": 50671, "name": "Majordomo Executus", "notes": [ { "tone": "info", "text": "0:56 (median 1:08). Roguina died to a Flamewaker Healer's Shadow Bolt at 0:36. Youlloveme healed 53k." } ] },
+    { "encounterId": 50672, "name": "Ragnaros", "notes": [ { "tone": "good", "text": "0:53, no deaths. Macharius held him through 62 Elemental Fires. Lava Burst hits a little over the usual rate." } ] }
+  ]
+}

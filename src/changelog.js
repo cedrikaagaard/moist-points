@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.26",
+    date: "2026-11-15",
+    changes: ["AI analyses and personal reviews for 6 Nov Blackwing Lair and Molten Core."],
+  },
+  {
     version: "2.6.25",
     date: "2026-11-15",
     changes: ["AI analysis and personal reviews for the 13-person Zul'Gurub on 7 Nov."],
