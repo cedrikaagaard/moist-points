@@ -211,7 +211,7 @@ const pick = (o, keys) => Object.fromEntries(keys.filter((k) => k in o).map((k) 
 // Owner overrides: the automatic rule can't tell new guild members from PUG
 // fillers. A guild raid full of new faces (e.g. 2026-10-11-aq40) is still a
 // guild raid if the owner says so.
-const KIND_OVERRIDE = { "2026-10-11-aq40": "guild" };
+const KIND_OVERRIDE = { "2026-10-11-aq40": "guild", "2026-10-19-mc": "pug" };
 export function classifyRaids(nights) {
   const share = (n, reg) => n.raiders.filter((r) => reg.has(r.name)).length / Math.max(1, n.raiders.length);
   const regulars = (raids, part) => {

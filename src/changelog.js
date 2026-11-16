@@ -6,6 +6,11 @@ export const REPO_URL = "https://github.com/cedrikaagaard/moist-points";
 
 export const CHANGELOG = [
   {
+    version: "2.6.32",
+    date: "2026-11-16",
+    changes: ["19 Oct Molten Core (\"MC-Moist Pug\") now counts as a PUG run, so it no longer affects the guild's Molten Core records and medians."],
+  },
+  {
     version: "2.6.31",
     date: "2026-11-16",
     changes: ["Parses arrived for 30 Oct (Blackwing Lair, Molten Core) and 1 Nov (Sapphiron, Kel'Thuzad). Places and tank roles on those raids now follow Warcraft Logs' rankings, so the affected AI analyses and personal reviews were updated to match."],
